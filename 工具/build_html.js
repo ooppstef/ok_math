@@ -441,51 +441,6 @@ for (const l of ALL_LESSONS) {
   });
 }
 
-const LESSONS = [
-  { no: '01', dir: 'L01-满十进一', title: '满十进一', q: '为什么数到十，就要换一根柱子？', badge: '成片 2:54', ready: true },
-  { no: '02', dir: 'L02-竖式的秘密', title: '竖式的秘密', q: '为什么竖式要把相同数位对齐？', badge: '分镜完成', ready: true },
-  { no: '03', dir: 'L03-乘法的形状', title: '乘法的形状', q: '为什么 3×4 和 4×3 一样多？', badge: '成片 1:34', ready: true },
-  { no: '04', dir: 'L04-除法的两张脸', title: '除法的两张脸', q: '12÷3 到底在问什么？', badge: '分镜完成', ready: true },
-  { no: '05', dir: '', title: '倍不是“多”', q: '3 倍为什么不是多 3？', badge: '待写稿', ready: false },
-  { no: '06', dir: '', title: '0 的隐身术', q: '为什么 0 不能随便去掉？', badge: '待写稿', ready: false },
-  { no: '07', dir: '', title: '估算的边界', q: '为什么“差不多”也是一种本事？', badge: '待写稿', ready: false },
-  { no: '08', dir: '', title: '单位是人的尺', q: '毫米、分米、千米为什么这么怪？', badge: '待写稿', ready: false },
-  { no: '09', dir: '', title: '周长的边界', q: '为什么周长不是“边加起来”这么简单？', badge: '待写稿', ready: false },
-  { no: '10', dir: '', title: '分数的诞生', q: '为什么必须“平均分”？', badge: '待写稿', ready: false },
-  { no: '11', dir: '', title: '集合圈', q: '为什么数数会“数重”？', badge: '待写稿', ready: false },
-  { no: '12', dir: '', title: '时间的刻度', q: '为什么一天是 24 小时？', badge: '待写稿', ready: false }
-];
-
-const LESSONS_5B = [
-  { no: '01', dir: 'L01-因数与倍数', title: '因数与倍数', q: '为什么质数只能排成一行？', badge: '课稿待审', ready: true },
-  { no: '02', dir: 'L02-2-5-3的倍数', title: '2/5/3 的倍数', q: '为什么有的看个位，有的看数字和？', badge: '课稿待审', ready: true },
-  { no: '03', dir: 'L03-公因数与公倍数', title: '公因数与公倍数', q: '共同的积木与共同的节奏，怎么找？', badge: '课稿待审', ready: true },
-  { no: '04', dir: 'L04-观察物体', title: '观察物体', q: '为什么一个方向不够？', badge: '课稿待审', ready: true },
-  { no: '05', dir: 'L05-旋转', title: '旋转', q: '转完之后，什么变了，什么没变？', badge: '课稿待审', ready: true },
-  { no: '06', dir: 'L06-长方体与正方体', title: '长方体与正方体', q: '6 个面、12 条棱、8 个顶点怎么数？', badge: '课稿待审', ready: true },
-  { no: '07', dir: 'L07-表面积', title: '表面积', q: '为什么要先“展开”？', badge: '课稿待审', ready: true },
-  { no: '08', dir: 'L08-体积与容积', title: '体积与容积', q: '体积和容积差在哪？', badge: '课稿待审', ready: true },
-  { no: '09', dir: '', title: '分数的意义', q: '为什么同一个分数，整体变了它就变了？', badge: '待写稿', ready: false },
-  { no: '10', dir: '', title: '分数基本性质', q: '分子分母同时乘，为什么分数不变？', badge: '待写稿', ready: false },
-  { no: '11', dir: '', title: '分数加减', q: '分母不同，为什么不能直接加？', badge: '待写稿', ready: false },
-  { no: '12', dir: '', title: '找次品', q: '为什么三分法比一个一个称快？', badge: '待写稿', ready: false }
-];
-
-const LESSONS_5A = [
-  { no: '01', dir: 'L01-小数乘法', title: '小数乘法', q: '小数点为什么能“搬家”？', badge: '课稿待审', ready: true },
-  { no: '02', dir: 'L02-小数除法', title: '小数除法', q: '除以小数，为什么先把它变成整数？', badge: '课稿待审', ready: true },
-  { no: '03', dir: 'L03-循环小数', title: '循环小数', q: '1÷3 为什么写不完？', badge: '课稿待审', ready: true },
-  { no: '04', dir: 'L04-数对', title: '数对', q: '为什么先横后竖？', badge: '课稿待审', ready: true },
-  { no: '05', dir: 'L05-可能性', title: '可能性', q: '可能性大，就一定会发生吗？', badge: '课稿待审', ready: true },
-  { no: '06', dir: 'L06-字母表示数', title: '字母表示数', q: '为什么用字母表示数？', badge: '课稿待审', ready: true },
-  { no: '07', dir: 'L07-等式与方程', title: '等式与方程', q: '天平为什么能帮你解方程？', badge: '课稿待审', ready: true },
-  { no: '08', dir: 'L08-列方程', title: '列方程', q: '方程是“顺着说”还是“倒着走”？', badge: '课稿待审', ready: true },
-  { no: '09', dir: 'L09-平行四边形面积', title: '平行四边形面积', q: '为什么是底×高？', badge: '课稿待审', ready: true },
-  { no: '10', dir: 'L10-三角形面积', title: '三角形面积', q: '为什么要除以 2？', badge: '课稿待审', ready: true },
-  { no: '11', dir: 'L11-梯形面积', title: '梯形面积', q: '为什么是（上底+下底）×高÷2？', badge: '课稿待审', ready: true },
-  { no: '12', dir: 'L12-植树', title: '植树', q: '那个“1”到底加在哪？', badge: '课稿待审', ready: true }
-];
-
 function rootRel(outRel) {
   const dir = path.dirname(path.join(ROOT, outRel));
   let r = path.relative(dir, ROOT).split(path.sep).join('/');
@@ -755,176 +710,6 @@ ${cards.map(c => `<a class="hub-card" href="${c[4]}">
   console.log('✓', out);
 }
 
-function renderCourseHub() {
-  const out = '课程/三上/index.html';
-  const root = rootRel(out);
-  const ready = LESSONS.filter(l => l.ready);
-  const pending = LESSONS.filter(l => !l.ready);
-  const row = l => l.ready
-    ? `<a class="lesson-row" href="${l.dir}/讲授稿.html">
-        <div class="no">${l.no}</div>
-        <div><h3>${l.title} <span class="badge ${l.badge.includes('成片') ? 'red' : 'gold'}">${l.badge}</span></h3><p>${l.q}</p></div>
-        <div class="meta">讲解稿 →</div>
-      </a>`
-    : `<div class="lesson-row">
-        <div class="no">${l.no}</div>
-        <div><h3>${l.title} <span class="badge">${l.badge}</span></h3><p>${l.q}</p></div>
-        <div class="meta">已在地图，待写稿</div>
-      </div>`;
-
-  const content = `<section class="hub-hero">
-  <div class="hub-hero-grid">
-    <div>
-      <div class="kicker">COURSE · 三上</div>
-      <h1 class="doc-title">三年级上册 · 12 课</h1>
-      <p class="doc-sub">第一单元四课已写完：位值、竖式、乘法、除法。后面 8 课已在地图里，按批次继续。</p>
-      <div class="actions">
-        <a class="btn primary" href="../../课程/三上/L01-满十进一/讲授稿.html">从第 1 课开始</a>
-        <a class="btn" href="../../00-方案/01-48课知识地图.html">看完整地图</a>
-        <a class="btn" href="../../00-方案/05-入学诊断.html">先做诊断</a>
-      </div>
-    </div>
-    <aside class="hub-side">
-      <div class="side-label">第一单元的关系</div>
-      <div class="flow">位值 <span>→</span> 竖式 <span>→</span> 乘法 <span>→</span> 除法</div>
-      <p>四课连起来，是运算的基础。先懂单位，再懂对齐；先懂阵列，再懂平均分。</p>
-    </aside>
-  </div>
-</section>
-<h2 class="hub-section">第一单元 · 运算基础</h2>
-<p class="hub-section-sub">四课连起来，是运算的基础。</p>
-${ready.map(row).join('')}
-<h2 class="hub-section">本学期后续</h2>
-<p class="hub-section-sub">标题和原理已定，稿子与视频按批次生产。</p>
-${pending.map(row).join('')}`;
-  const html = shell({ root, title: '三上 · 12 课', kicker: 'COURSE', subtitle: '', content, bodyClass: 'hub' });
-  fs.mkdirSync(path.join(ROOT, '课程/三上'), { recursive: true });
-  fs.writeFileSync(path.join(ROOT, out), html);
-  console.log('✓', out);
-}
-
-function renderCourseHub5A() {
-  const out = '课程/五上/index.html';
-  const root = rootRel(out);
-  const ready = LESSONS_5A.filter(l => l.ready);
-  const ready1 = ready.filter(l => Number(l.no) <= 4);
-  const ready2 = ready.filter(l => Number(l.no) >= 5 && Number(l.no) <= 8);
-  const ready3 = ready.filter(l => Number(l.no) >= 9 && Number(l.no) <= 11);
-  const ready4 = ready.filter(l => Number(l.no) === 12);
-  const pending = LESSONS_5A.filter(l => !l.ready);
-  const row = l => l.ready
-    ? `<a class="lesson-row" href="${l.dir}/讲授稿.html">
-        <div class="no">${l.no}</div>
-        <div><h3>${l.title} <span class="badge gold">${l.badge}</span></h3><p>${l.q}</p></div>
-        <div class="meta">讲解稿 →</div>
-      </a>`
-    : `<div class="lesson-row">
-        <div class="no">${l.no}</div>
-        <div><h3>${l.title} <span class="badge">${l.badge}</span></h3><p>${l.q}</p></div>
-        <div class="meta">已在地图，待写稿</div>
-      </div>`;
-
-  const content = `<section class="hub-hero">
-  <div class="hub-hero-grid">
-    <div>
-      <div class="kicker">COURSE · 五上</div>
-      <h1 class="doc-title">五年级上册 · 12 课</h1>
-      <p class="doc-sub">小数、方程、多边形面积、植树。第 1–12 课已写完，等你审。先不做视频。</p>
-      <div class="actions">
-        <a class="btn primary" href="L01-小数乘法/讲授稿.html">从第 1 课开始</a>
-        <a class="btn" href="../../00-方案/08-五六年级48课地图.html">看五、六年级地图</a>
-        <a class="btn" href="../../00-方案/12-课程审查清单.html">按清单审</a>
-      </div>
-    </div>
-    <aside class="hub-side">
-      <div class="side-label">前四课的关系</div>
-      <div class="flow">小数乘法 <span>→</span> 小数除法 <span>→</span> 循环小数</div>
-      <p>先懂数位缩放，再懂商不变；除不尽时，余数会告诉你为什么循环。数对单独成课，练“有序”。</p>
-    </aside>
-  </div>
-</section>
-<h2 class="hub-section">第 1 单元 · 小数与位置</h2>
-<p class="hub-section-sub">四课连起来，是小数运算和坐标的入口。</p>
-${ready1.map(row).join('')}
-<h2 class="hub-section">第 2 单元 · 可能性与方程</h2>
-<p class="hub-section-sub">从不确定到字母，再到等式和列方程。</p>
-${ready2.map(row).join('')}
-<h2 class="hub-section">第 3 单元 · 面积</h2>
-<p class="hub-section-sub">剪拼、等积变形和面积公式。</p>
-${ready3.map(row).join('')}
-<h2 class="hub-section">第 4 单元 · 植树</h2>
-<p class="hub-section-sub">先分段，再看端点。</p>
-${ready4.map(row).join('')}
-${pending.length ? `<h2 class="hub-section">本学期后续</h2>
-<p class="hub-section-sub">标题和原理已定，按批次写稿。</p>
-${pending.map(row).join('')}` : ''}`;
-  const html = shell({ root, title: '五上 · 12 课', kicker: 'COURSE', subtitle: '', content, bodyClass: 'hub' });
-  fs.mkdirSync(path.join(ROOT, '课程/五上'), { recursive: true });
-  fs.writeFileSync(path.join(ROOT, out), html);
-  console.log('✓', out);
-}
-
-function renderCourseHub5B() {
-  const out = '课程/五下/index.html';
-  const root = rootRel(out);
-  const ready = LESSONS_5B.filter(l => l.ready);
-  const ready1 = ready.filter(l => Number(l.no) <= 3);
-  const ready2 = ready.filter(l => Number(l.no) === 4);
-  const ready3 = ready.filter(l => Number(l.no) === 5);
-  const ready4 = ready.filter(l => Number(l.no) >= 6 && Number(l.no) <= 8);
-  const pending = LESSONS_5B.filter(l => !l.ready);
-  const row = l => l.ready
-    ? `<a class="lesson-row" href="${l.dir}/讲授稿.html">
-        <div class="no">${l.no}</div>
-        <div><h3>${l.title} <span class="badge gold">${l.badge}</span></h3><p>${l.q}</p></div>
-        <div class="meta">讲解稿 →</div>
-      </a>`
-    : `<div class="lesson-row">
-        <div class="no">${l.no}</div>
-        <div><h3>${l.title} <span class="badge">${l.badge}</span></h3><p>${l.q}</p></div>
-        <div class="meta">已在地图，待写稿</div>
-      </div>`;
-
-  const content = `<section class="hub-hero">
-  <div class="hub-hero-grid">
-    <div>
-      <div class="kicker">COURSE · 五下</div>
-      <h1 class="doc-title">五年级下册 · 12 课</h1>
-      <p class="doc-sub">因数倍数、长方体、分数、旋转、找次品。第 1–8 课已写完，等你审。先不做视频。</p>
-      <div class="actions">
-        <a class="btn primary" href="L01-因数与倍数/讲授稿.html">从第 1 课开始</a>
-        <a class="btn" href="../../00-方案/08-五六年级48课地图.html">看五、六年级地图</a>
-        <a class="btn" href="../../00-方案/12-课程审查清单.html">按清单审</a>
-      </div>
-    </div>
-    <aside class="hub-side">
-      <div class="side-label">第一单元的关系</div>
-      <div class="flow">因数 <span>→</span> 倍数 <span>→</span> 公因数与公倍数</div>
-      <p>先看一个数的因数，再看两个数共同的因数和倍数；观察物体单独成课，练三个方向的投影。</p>
-    </aside>
-  </div>
-</section>
-<h2 class="hub-section">第 1 单元 · 因数与倍数</h2>
-<p class="hub-section-sub">从因数、倍数到公因数、公倍数。</p>
-${ready1.map(row).join('')}
-<h2 class="hub-section">第 2 单元 · 观察物体</h2>
-<p class="hub-section-sub">一个方向不够，三个方向一起看。</p>
-${ready2.map(row).join('')}
-<h2 class="hub-section">第 3 单元 · 图形的运动</h2>
-<p class="hub-section-sub">绕点旋转，中心、方向、角度。</p>
-${ready3.map(row).join('')}
-<h2 class="hub-section">第 4 单元 · 长方体与正方体</h2>
-<p class="hub-section-sub">面、棱、顶点，展开图，表面积和体积。</p>
-${ready4.map(row).join('')}
-${pending.length ? `<h2 class="hub-section">本学期后续</h2>
-<p class="hub-section-sub">标题和原理已定，按批次写稿。</p>
-${pending.map(row).join('')}` : ''}`;
-  const html = shell({ root, title: '五下 · 12 课', kicker: 'COURSE', subtitle: '', content, bodyClass: 'hub' });
-  fs.mkdirSync(path.join(ROOT, '课程/五下'), { recursive: true });
-  fs.writeFileSync(path.join(ROOT, out), html);
-  console.log('✓', out);
-}
-
 function renderAutoHubs() {
   for (const sem of SEMESTERS) {
     const lessons = ALL_LESSONS.filter(l => l.sem === sem);
@@ -933,7 +718,7 @@ function renderAutoHubs() {
     const root = rootRel(out);
     const rows = lessons.map(l => `<a class="lesson-row" href="${l.dir}/讲授稿.html">
         <div class="no">${l.no}</div>
-        <div><h3>${escapeHtml(l.title)} <span class="badge gold">课稿待审</span></h3><p></p></div>
+        <div><h3>${escapeHtml(l.title)} <span class="badge gold">课稿待审</span></h3></div>
         <div class="meta">讲解稿 →</div>
       </a>`).join('');
     const content = `<section class="hub-hero">
@@ -1016,9 +801,6 @@ ${cards.map(c => `<a class="hub-card" href="${c[3]}">
 // 先渲染所有文档，最后生成 hub
 DOCS.forEach(renderDoc);
 renderDocsHub();
-renderCourseHub();
-renderCourseHub5A();
-renderCourseHub5B();
 renderAutoHubs();
 renderCourseIndex();
 
