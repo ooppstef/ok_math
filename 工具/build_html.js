@@ -300,9 +300,64 @@ const DOCS = [
     courseHub: '课程/五上/index.html'
   },
   {
-    src: '课程/五上/L12-植树/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 12',
+    src: '课程/五下/L01-因数与倍数/讲授稿.md', kind: 'lesson', kicker: 'LESSON 01 · 五下',
+    subtitle: '为什么质数只能排成一行？',
+    courseHub: '课程/五下/index.html'
+  },
+  {
+    src: '课程/五下/L01-因数与倍数/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 五下 01',
+    subtitle: '摆长方形，找因数和倍数。',
+    courseHub: '课程/五下/index.html'
+  },
+  {
+    src: '课程/五下/L01-因数与倍数/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五下 01',
     subtitle: 'A/B/C 三层，带答案和边界。',
-    courseHub: '课程/五上/index.html'
+    courseHub: '课程/五下/index.html'
+  },
+  {
+    src: '课程/五下/L02-2-5-3的倍数/讲授稿.md', kind: 'lesson', kicker: 'LESSON 02 · 五下',
+    subtitle: '为什么有的看个位，有的看数字和？',
+    courseHub: '课程/五下/index.html'
+  },
+  {
+    src: '课程/五下/L02-2-5-3的倍数/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 五下 02',
+    subtitle: '拆数位，找倍数特征。',
+    courseHub: '课程/五下/index.html'
+  },
+  {
+    src: '课程/五下/L02-2-5-3的倍数/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五下 02',
+    subtitle: 'A/B/C 三层，带答案和边界。',
+    courseHub: '课程/五下/index.html'
+  },
+  {
+    src: '课程/五下/L03-公因数与公倍数/讲授稿.md', kind: 'lesson', kicker: 'LESSON 03 · 五下',
+    subtitle: '共同的积木与共同的节奏，怎么找？',
+    courseHub: '课程/五下/index.html'
+  },
+  {
+    src: '课程/五下/L03-公因数与公倍数/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 五下 03',
+    subtitle: '铺正方形，找共同节奏。',
+    courseHub: '课程/五下/index.html'
+  },
+  {
+    src: '课程/五下/L03-公因数与公倍数/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五下 03',
+    subtitle: 'A/B/C 三层，带答案和边界。',
+    courseHub: '课程/五下/index.html'
+  },
+  {
+    src: '课程/五下/L04-观察物体/讲授稿.md', kind: 'lesson', kicker: 'LESSON 04 · 五下',
+    subtitle: '为什么一个方向不够？',
+    courseHub: '课程/五下/index.html'
+  },
+  {
+    src: '课程/五下/L04-观察物体/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 五下 04',
+    subtitle: '搭 T 形，画三视图。',
+    courseHub: '课程/五下/index.html'
+  },
+  {
+    src: '课程/五下/L04-观察物体/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五下 04',
+    subtitle: 'A/B/C 三层，带答案和边界。',
+    courseHub: '课程/五下/index.html'
   }
 ];
 
@@ -319,6 +374,21 @@ const LESSONS = [
   { no: '10', dir: '', title: '分数的诞生', q: '为什么必须“平均分”？', badge: '待写稿', ready: false },
   { no: '11', dir: '', title: '集合圈', q: '为什么数数会“数重”？', badge: '待写稿', ready: false },
   { no: '12', dir: '', title: '时间的刻度', q: '为什么一天是 24 小时？', badge: '待写稿', ready: false }
+];
+
+const LESSONS_5B = [
+  { no: '01', dir: 'L01-因数与倍数', title: '因数与倍数', q: '为什么质数只能排成一行？', badge: '课稿待审', ready: true },
+  { no: '02', dir: 'L02-2-5-3的倍数', title: '2/5/3 的倍数', q: '为什么有的看个位，有的看数字和？', badge: '课稿待审', ready: true },
+  { no: '03', dir: 'L03-公因数与公倍数', title: '公因数与公倍数', q: '共同的积木与共同的节奏，怎么找？', badge: '课稿待审', ready: true },
+  { no: '04', dir: 'L04-观察物体', title: '观察物体', q: '为什么一个方向不够？', badge: '课稿待审', ready: true },
+  { no: '05', dir: '', title: '旋转', q: '转完之后，什么变了，什么没变？', badge: '待写稿', ready: false },
+  { no: '06', dir: '', title: '长方体与正方体', q: '6 个面、12 条棱、8 个顶点怎么数？', badge: '待写稿', ready: false },
+  { no: '07', dir: '', title: '表面积', q: '为什么要先“展开”？', badge: '待写稿', ready: false },
+  { no: '08', dir: '', title: '体积与容积', q: '体积和容积差在哪？', badge: '待写稿', ready: false },
+  { no: '09', dir: '', title: '分数的意义', q: '为什么同一个分数，整体变了它就变了？', badge: '待写稿', ready: false },
+  { no: '10', dir: '', title: '分数基本性质', q: '分子分母同时乘，为什么分数不变？', badge: '待写稿', ready: false },
+  { no: '11', dir: '', title: '分数加减', q: '分母不同，为什么不能直接加？', badge: '待写稿', ready: false },
+  { no: '12', dir: '', title: '找次品', q: '为什么三分法比一个一个称快？', badge: '待写稿', ready: false }
 ];
 
 const LESSONS_5A = [
@@ -752,6 +822,59 @@ ${pending.map(row).join('')}` : ''}`;
   console.log('✓', out);
 }
 
+function renderCourseHub5B() {
+  const out = '课程/五下/index.html';
+  const root = rootRel(out);
+  const ready = LESSONS_5B.filter(l => l.ready);
+  const ready1 = ready.filter(l => Number(l.no) <= 3);
+  const ready2 = ready.filter(l => Number(l.no) === 4);
+  const pending = LESSONS_5B.filter(l => !l.ready);
+  const row = l => l.ready
+    ? `<a class="lesson-row" href="${l.dir}/讲授稿.html">
+        <div class="no">${l.no}</div>
+        <div><h3>${l.title} <span class="badge gold">${l.badge}</span></h3><p>${l.q}</p></div>
+        <div class="meta">讲授稿 · 动手单 · 挑战单 →</div>
+      </a>`
+    : `<div class="lesson-row">
+        <div class="no">${l.no}</div>
+        <div><h3>${l.title} <span class="badge">${l.badge}</span></h3><p>${l.q}</p></div>
+        <div class="meta">已在地图，待写稿</div>
+      </div>`;
+
+  const content = `<section class="hub-hero">
+  <div class="hub-hero-grid">
+    <div>
+      <div class="kicker">COURSE · 五下</div>
+      <h1 class="doc-title">五年级下册 · 12 课</h1>
+      <p class="doc-sub">因数倍数、长方体、分数、旋转、找次品。第 1–4 课已写完，等你审。先不做视频。</p>
+      <div class="actions">
+        <a class="btn primary" href="L01-因数与倍数/讲授稿.html">从第 1 课开始</a>
+        <a class="btn" href="../../00-方案/08-五六年级48课地图.html">看五、六年级地图</a>
+        <a class="btn" href="../../00-方案/12-课程审查清单.html">按清单审</a>
+      </div>
+    </div>
+    <aside class="hub-side">
+      <div class="side-label">第一单元的关系</div>
+      <div class="flow">因数 <span>→</span> 倍数 <span>→</span> 公因数与公倍数</div>
+      <p>先看一个数的因数，再看两个数共同的因数和倍数；观察物体单独成课，练三个方向的投影。</p>
+    </aside>
+  </div>
+</section>
+<h2 class="hub-section">第 1 单元 · 因数与倍数</h2>
+<p class="hub-section-sub">从因数、倍数到公因数、公倍数。</p>
+${ready1.map(row).join('')}
+<h2 class="hub-section">第 2 单元 · 观察物体</h2>
+<p class="hub-section-sub">一个方向不够，三个方向一起看。</p>
+${ready2.map(row).join('')}
+${pending.length ? `<h2 class="hub-section">本学期后续</h2>
+<p class="hub-section-sub">标题和原理已定，按批次写稿。</p>
+${pending.map(row).join('')}` : ''}`;
+  const html = shell({ root, title: '五下 · 12 课', kicker: 'COURSE', subtitle: '', content, bodyClass: 'hub' });
+  fs.mkdirSync(path.join(ROOT, '课程/五下'), { recursive: true });
+  fs.writeFileSync(path.join(ROOT, out), html);
+  console.log('✓', out);
+}
+
 function renderCourseIndex() {
   const out = '课程/index.html';
   const root = rootRel(out);
@@ -760,7 +883,7 @@ function renderCourseIndex() {
     ['五上', '五上 · 12 课', '小数、方程、多边形面积、植树。第 1–12 课课稿待审。', '五上/index.html', '12 课待审'],
     ['三下', '三下 · 12 课', '面积、小数、年月日、搭配。已在地图。', '../00-方案/01-48课知识地图.html', '待写稿'],
     ['四下', '四下 · 12 课', '运算律、小数、三角形、统计。已在地图。', '../00-方案/01-48课知识地图.html', '待写稿'],
-    ['五下', '五下 · 12 课', '因数倍数、长方体、分数。已在地图。', '../00-方案/08-五六年级48课地图.html', '待写稿'],
+    ['五下', '五下 · 12 课', '因数倍数、长方体、分数。第 1–4 课课稿待审。', '五下/index.html', '4 课待审'],
     ['六上', '六上 · 12 课', '分数乘除、比、圆、百分数。已在地图。', '../00-方案/08-五六年级48课地图.html', '待写稿'],
     ['六下', '六下 · 12 课', '负数、圆柱圆锥、比例。已在地图。', '../00-方案/08-五六年级48课地图.html', '待写稿']
   ];
@@ -806,6 +929,7 @@ DOCS.forEach(renderDoc);
 renderDocsHub();
 renderCourseHub();
 renderCourseHub5A();
+renderCourseHub5B();
 renderCourseIndex();
 
 // 首页里的 .md 链接统一换成 .html
