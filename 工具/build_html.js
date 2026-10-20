@@ -185,7 +185,62 @@ const DOCS = [
     courseHub: '课程/五上/index.html'
   },
   {
-    src: '课程/五上/L04-数对/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 04',
+    src: '课程/五上/L05-可能性/讲授稿.md', kind: 'lesson', kicker: 'LESSON 05 · 五上',
+    subtitle: '可能性大，就一定会发生吗？',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L05-可能性/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 五上 05',
+    subtitle: '摸 20 次，记录并放回。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L05-可能性/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 05',
+    subtitle: 'A/B/C 三层，带答案和边界。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L06-字母表示数/讲授稿.md', kind: 'lesson', kicker: 'LESSON 06 · 五上',
+    subtitle: '为什么用 n 表示所有正方形？',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L06-字母表示数/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 五上 06',
+    subtitle: '摆正方形，找 3n+1。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L06-字母表示数/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 06',
+    subtitle: 'A/B/C 三层，带答案和边界。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L07-等式与方程/讲授稿.md', kind: 'lesson', kicker: 'LESSON 07 · 五上',
+    subtitle: '天平为什么能帮你解方程？',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L07-等式与方程/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 五上 07',
+    subtitle: '用天平解 x+3=8。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L07-等式与方程/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 07',
+    subtitle: 'A/B/C 三层，带答案和边界。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L08-列方程/讲授稿.md', kind: 'lesson', kicker: 'LESSON 08 · 五上',
+    subtitle: '方程是“顺着说”还是“倒着走”？',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L08-列方程/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 五上 08',
+    subtitle: '画线段图，列方程。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L08-列方程/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 08',
     subtitle: 'A/B/C 三层，带答案和边界。',
     courseHub: '课程/五上/index.html'
   }
@@ -211,10 +266,10 @@ const LESSONS_5A = [
   { no: '02', dir: 'L02-小数除法', title: '小数除法', q: '除以小数，为什么先把它变成整数？', badge: '课稿待审', ready: true },
   { no: '03', dir: 'L03-循环小数', title: '循环小数', q: '1÷3 为什么写不完？', badge: '课稿待审', ready: true },
   { no: '04', dir: 'L04-数对', title: '数对', q: '为什么先横后竖？', badge: '课稿待审', ready: true },
-  { no: '05', dir: '', title: '可能性', q: '可能性大，就一定会发生吗？', badge: '待写稿', ready: false },
-  { no: '06', dir: '', title: '字母表示数', q: '为什么用字母表示数？', badge: '待写稿', ready: false },
-  { no: '07', dir: '', title: '等式与方程', q: '天平为什么能帮你解方程？', badge: '待写稿', ready: false },
-  { no: '08', dir: '', title: '列方程', q: '方程是“顺着说”还是“倒着走”？', badge: '待写稿', ready: false },
+  { no: '05', dir: 'L05-可能性', title: '可能性', q: '可能性大，就一定会发生吗？', badge: '课稿待审', ready: true },
+  { no: '06', dir: 'L06-字母表示数', title: '字母表示数', q: '为什么用字母表示数？', badge: '课稿待审', ready: true },
+  { no: '07', dir: 'L07-等式与方程', title: '等式与方程', q: '天平为什么能帮你解方程？', badge: '课稿待审', ready: true },
+  { no: '08', dir: 'L08-列方程', title: '列方程', q: '方程是“顺着说”还是“倒着走”？', badge: '课稿待审', ready: true },
   { no: '09', dir: '', title: '平行四边形面积', q: '为什么是底×高？', badge: '待写稿', ready: false },
   { no: '10', dir: '', title: '三角形面积', q: '为什么要除以 2？', badge: '待写稿', ready: false },
   { no: '11', dir: '', title: '梯形面积', q: '为什么是（上底+下底）×高÷2？', badge: '待写稿', ready: false },
@@ -581,6 +636,8 @@ function renderCourseHub5A() {
   const out = '课程/五上/index.html';
   const root = rootRel(out);
   const ready = LESSONS_5A.filter(l => l.ready);
+  const ready1 = ready.filter(l => Number(l.no) <= 4);
+  const ready2 = ready.filter(l => Number(l.no) >= 5 && Number(l.no) <= 8);
   const pending = LESSONS_5A.filter(l => !l.ready);
   const row = l => l.ready
     ? `<a class="lesson-row" href="${l.dir}/讲授稿.html">
@@ -599,7 +656,7 @@ function renderCourseHub5A() {
     <div>
       <div class="kicker">COURSE · 五上</div>
       <h1 class="doc-title">五年级上册 · 12 课</h1>
-      <p class="doc-sub">小数、方程、多边形面积、植树。第 1–4 课已写完，等你审。先不做视频。</p>
+      <p class="doc-sub">小数、方程、多边形面积、植树。第 1–8 课已写完，等你审。先不做视频。</p>
       <div class="actions">
         <a class="btn primary" href="L01-小数乘法/讲授稿.html">从第 1 课开始</a>
         <a class="btn" href="../../00-方案/08-五六年级48课地图.html">看五、六年级地图</a>
@@ -615,7 +672,10 @@ function renderCourseHub5A() {
 </section>
 <h2 class="hub-section">第 1 单元 · 小数与位置</h2>
 <p class="hub-section-sub">四课连起来，是小数运算和坐标的入口。</p>
-${ready.map(row).join('')}
+${ready1.map(row).join('')}
+<h2 class="hub-section">第 2 单元 · 可能性与方程</h2>
+<p class="hub-section-sub">从不确定到字母，再到等式和列方程。</p>
+${ready2.map(row).join('')}
 <h2 class="hub-section">本学期后续</h2>
 <p class="hub-section-sub">标题和原理已定，按批次写稿。</p>
 ${pending.map(row).join('')}`;
@@ -630,7 +690,7 @@ function renderCourseIndex() {
   const root = rootRel(out);
   const cards = [
     ['三上', '三上 · 12 课', '位值、竖式、乘除、周长。第 1–4 课已成稿，两课有视频。', '三上/index.html', '4 课可读'],
-    ['五上', '五上 · 12 课', '小数、方程、多边形面积、植树。第 1–4 课课稿待审。', '五上/index.html', '4 课待审'],
+    ['五上', '五上 · 12 课', '小数、方程、多边形面积、植树。第 1–8 课课稿待审。', '五上/index.html', '8 课待审'],
     ['三下', '三下 · 12 课', '面积、小数、年月日、搭配。已在地图。', '../00-方案/01-48课知识地图.html', '待写稿'],
     ['四下', '四下 · 12 课', '运算律、小数、三角形、统计。已在地图。', '../00-方案/01-48课知识地图.html', '待写稿'],
     ['五下', '五下 · 12 课', '因数倍数、长方体、分数。已在地图。', '../00-方案/08-五六年级48课地图.html', '待写稿'],
