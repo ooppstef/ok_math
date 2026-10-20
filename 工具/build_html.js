@@ -54,6 +54,11 @@ const DOCS = [
     fullWidth: true
   },
   {
+    src: '00-方案/19-教材版本映射.md', kind: 'doc', kicker: 'MAPPING · 教材版本',
+    subtitle: '先确认学校教材，再把单元映射到课次。',
+    fullWidth: true
+  },
+  {
     src: '00-方案/06-覆盖核对.md', kind: 'doc', kicker: 'COVERAGE · 三、四年级',
     subtitle: '三、四年级 71 个知识点，逐个找到落点。',
     fullWidth: true
@@ -521,8 +526,7 @@ ${note}
   <article class="article">
 ${body}
   </article>
-  ${tocHtml}
-</div>`;
+${tocHtml ? '  ' + tocHtml + '\n' : ''}</div>`;
 
   fs.mkdirSync(path.dirname(path.join(ROOT, out)), { recursive: true });
   fs.writeFileSync(path.join(ROOT, out), shell({
