@@ -35,50 +35,64 @@
 
 <div class="doc-layout">
   <article class="article">
-<h2 id="sec-1">A 层</h2>
+<h2 id="sec-1">先修补丁：小数除以整数</h2>
+<ol>
+<li>7.2÷8</li>
+<li>0.72÷8</li>
+<li>6.08÷4</li>
+<li>3.06÷3</li>
+</ol>
+<h2 id="sec-2">A 层</h2>
 <ol>
 <li>0.8÷0.2</li>
 <li>2.4÷0.6</li>
 <li>0.45÷0.5</li>
 </ol>
-<h2 id="sec-2">B 层</h2>
+<h2 id="sec-3">B 层</h2>
 <ol>
-<li>1.2÷0.03</li>
-<li>0.36÷0.04</li>
-<li>4.8÷0.12</li>
+<li>0.72÷0.09</li>
+<li>2.5÷0.05</li>
+<li>0.144÷0.12</li>
 <li>小明写：1.2÷0.3=0.4。他错在哪？用乘法检查。</li>
 <li>4.8 米绳子，每段 0.7 米，最多剪几整段？剩多少米？</li>
 <li>4.8 升油，每瓶最多装 0.7 升，至少几瓶？</li>
 </ol>
-<h2 id="sec-3">C 层</h2>
+<h2 id="sec-4">C 层</h2>
 <ol>
 <li>A÷B=4，A 和 B 同时乘 10，商是多少？</li>
 <li>A×10，B 不变，商怎么变？</li>
 <li>A 不变，B×10，商怎么变？</li>
 </ol>
-<h2 id="sec-4">答案与说明</h2>
-<h3 id="sec-5">A 层</h3>
+<h2 id="sec-5">答案与说明</h2>
+<h3 id="sec-6">先修补丁</h3>
+<ol>
+<li>0.9。72 个十分之一÷8=9 个十分之一。</li>
+<li>0.09。72 个百分之一÷8=9 个百分之一。</li>
+<li>1.52。6.08÷4，商的小数点与被除数对齐。</li>
+<li>1.02。3.06÷3，十分位商 0。</li>
+</ol>
+<h3 id="sec-7">A 层</h3>
 <ol>
 <li>4。0.8÷0.2 = 8÷2。</li>
 <li>4。2.4÷0.6 = 24÷6。</li>
 <li>0.9。0.45÷0.5 = 4.5÷5 = 0.9。</li>
 </ol>
-<h3 id="sec-6">B 层</h3>
+<h3 id="sec-8">B 层</h3>
 <ol>
-<li>40。1.2÷0.03 = 120÷3。</li>
-<li>9。0.36÷0.04 = 36÷4。</li>
-<li>40。4.8÷0.12 = 480÷12。</li>
+<li>8。0.72÷0.09 = 72÷9。</li>
+<li>50。2.5÷0.05 = 250÷5。</li>
+<li>1.2。0.144÷0.12 = 14.4÷12。</li>
 <li>0.3×0.4=0.12，不是 1.2，所以 0.4 不对。正确是 12÷3=4。他可能只把除数变成了整数，被除数没有跟着变。</li>
 <li>4.8÷0.7=6 余 0.6，最多 6 整段，剩 0.6 米。</li>
 <li>4.8÷0.7=6 余 0.6，6 瓶只装 4.2 升，剩下 0.6 升还要一瓶，所以至少 7 瓶。</li>
 </ol>
-<h3 id="sec-7">C 层</h3>
+<h3 id="sec-9">C 层</h3>
 <ol>
 <li>4。两个数同时乘 10，商不变。</li>
 <li>商乘 10。被除数扩大 10 倍，除数不变，每份不变，份数变多。</li>
 <li>商除以 10。除数扩大 10 倍，被除数不变，份数变少。</li>
 </ol>
-<h2 id="sec-8">边界</h2>
+<h2 id="sec-10">边界</h2>
 <ul>
 <li>除数不能是 0。</li>
 <li>被除数和除数要同时乘同一个 10 的幂。</li>
@@ -89,7 +103,7 @@
   </article>
   <aside class="toc">
         <div class="toc-title">本页目录</div>
-        <a class="lvl2" href="#sec-1">A 层</a><a class="lvl2" href="#sec-2">B 层</a><a class="lvl2" href="#sec-3">C 层</a><a class="lvl2" href="#sec-4">答案与说明</a><a class="lvl3" href="#sec-5">A 层</a><a class="lvl3" href="#sec-6">B 层</a><a class="lvl3" href="#sec-7">C 层</a><a class="lvl2" href="#sec-8">边界</a>
+        <a class="lvl2" href="#sec-1">先修补丁：小数除以整数</a><a class="lvl2" href="#sec-2">A 层</a><a class="lvl2" href="#sec-3">B 层</a><a class="lvl2" href="#sec-4">C 层</a><a class="lvl2" href="#sec-5">答案与说明</a><a class="lvl3" href="#sec-6">先修补丁</a><a class="lvl3" href="#sec-7">A 层</a><a class="lvl3" href="#sec-8">B 层</a><a class="lvl3" href="#sec-9">C 层</a><a class="lvl2" href="#sec-10">边界</a>
       </aside>
 </div>
 <footer class="doc-footer">
