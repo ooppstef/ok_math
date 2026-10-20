@@ -25,7 +25,7 @@
 <main class="page">
 <section class="doc-hero"><div class="hero-copy">
     <div class="hero-main">
-      <div class="kicker">LESSON 12 · 六上</div>
+      <div class="kicker">LESSON 12 · 六年级上期</div>
       <h1 class="doc-title">第 12 课：数与形</h1>
       <div class="actions"><a class="btn" href="../../../课程/六上/index.html">课程目录</a></div>    </div>
   </div></section>
@@ -83,10 +83,8 @@
 <td align="right">9</td>
 </tr>
 </tbody></table></div>
-<p>每次增加的点数正好是一个奇数。第 n 次从 (n−1)×(n−1) 变成 n×n 时，增加的点数是：</p>
-<pre><code>n²−(n−1)²
-=n²−(n²−2n+1)
-=2n−1
+<p>每次增加的点数正好是一个奇数。当 n≥2，从 (n−1)×(n−1) 变成 n×n 时，新的一列有 n 个点，新的一行除去已算过的角上那个点，还有 n−1 个。新增 L 形一共有：</p>
+<pre><code>n+(n−1)=2n−1
 </code></pre>
 <p>2n−1 正是第 n 个奇数。</p>
 <p>所以：</p>
@@ -122,7 +120,7 @@
 <li>把 1+3+5+7 算成 4×7=28。应该看个数：4 个奇数，和是 4²=16。</li>
 <li>认为所有连续自然数的和都是平方数。1+2+3+4=10，不是平方数；平方数对应的是连续奇数的和。</li>
 <li>求第 n 个奇数时写成 n。第 n 个奇数是 2n−1。</li>
-<li>数正方形最外层点数时，把四个角重复计算。n×n 点阵最外层是 4n−4 个点。</li>
+<li>数正方形最外层点数时，把四个角重复计算。n≥2 时，n×n 点阵最外层是 4n−4 个点；1×1 只有 1 个点，要单独数。</li>
 <li>把“边长”和“层数”混在一起。边长是 n，最外层是第 n 层。</li>
 </ul>
 <h2 id="sec-8">练习</h2>
@@ -148,10 +146,6 @@
         <a class="lvl2" href="#sec-1">一句话</a><a class="lvl2" href="#sec-2">为什么</a><a class="lvl2" href="#sec-3">例子</a><a class="lvl3" href="#sec-4">例 1：前 5 个奇数的和</a><a class="lvl3" href="#sec-5">例 2：1+3+5+…+19</a><a class="lvl3" href="#sec-6">例 3：101+103+…+199</a><a class="lvl2" href="#sec-7">易错</a><a class="lvl2" href="#sec-8">练习</a><a class="lvl2" href="#sec-9">答案</a>
       </aside>
 </div>
-<footer class="doc-footer">
-  <span>为什么实验室 · 小学数学 · 三上 → 六下</span>
-  <span><a href="../../../index.html">返回总览</a> · <a href="../../../README.html">使用说明</a></span>
-</footer>
 <div class="backtop"><a href="#top">↑ 回到顶部</a></div>
 </main>
 <script src="../../../assets/doc.js"></script>

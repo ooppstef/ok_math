@@ -224,6 +224,7 @@ h1.doc-title{
   font-family:var(--font-mono);
   font-size:.86em;background:var(--blue-soft);color:#173a9b;padding:2px 5px;border-radius:1px;
 }
+.article img{display:block;max-width:100%;height:auto;margin:20px auto;background:#fff}
 .article pre{
   margin:20px 0;padding:16px 18px;background:#101826;
   border:1px solid #101826;border-radius:2px;overflow:auto;
@@ -277,13 +278,6 @@ h1.doc-title{
 .toc a:hover,.toc a.active{color:var(--blue);border-left-color:var(--orange)}
 
 /* 页脚 */
-.doc-footer{
-  margin-top:64px;padding-top:16px;border-top:1px solid var(--ink);
-  display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
-  font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:.02em;
-}
-.doc-footer a{border:0;color:var(--muted)}
-.doc-footer a:hover{color:var(--orange-ink)}
 .backtop{margin-top:24px;text-align:right;font-family:var(--font-mono);font-size:10.5px}
 .backtop a{border:0;color:var(--muted)}
 
@@ -366,7 +360,7 @@ h1.doc-title{
 @media print{
   @page{margin:16mm 14mm}
   body{background:#fff;color:#000}
-  .topbar,.progress,.toc,.actions,.video-hero,.doc-footer,.backtop,.note{display:none!important}
+  .topbar,.progress,.toc,.actions,.video-hero,.backtop,.note{display:none!important}
   .page{max-width:none;padding:0}
   .doc-hero{padding-top:0;border-bottom:1px solid #000}
   .doc-layout{display:block;margin-top:16px}

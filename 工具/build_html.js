@@ -59,6 +59,11 @@ const DOCS = [
     fullWidth: true
   },
   {
+    src: '00-方案/21-课程修复与循环复验.md', kind: 'doc', kicker: 'REVIEW · 修复与复验',
+    subtitle: '问题处理位置、循环审查记录与验证边界。',
+    fullWidth: true
+  },
+  {
     src: '00-方案/06-覆盖核对.md', kind: 'doc', kicker: 'COVERAGE · 三、四年级',
     subtitle: '三、四年级 71 个知识点，逐个找到落点。',
     fullWidth: true
@@ -186,6 +191,11 @@ const DOCS = [
     courseHub: '课程/五上/index.html'
   },
   {
+    src: '课程/五上/L04-数对/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 04',
+    subtitle: 'A/B/C 三层，带答案和边界。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
     src: '课程/五上/L05-可能性/讲授稿.md', kind: 'lesson', kicker: 'LESSON 05 · 五上',
     subtitle: '可能性大，就一定会发生吗？',
     courseHub: '课程/五上/index.html'
@@ -238,6 +248,11 @@ const DOCS = [
   {
     src: '课程/五上/L08-列方程/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 五上 08',
     subtitle: '画线段图，列方程。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L08-列方程/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 08',
+    subtitle: 'A/B/C 三层，带答案和边界。',
     courseHub: '课程/五上/index.html'
   },
   {
@@ -296,6 +311,11 @@ const DOCS = [
     courseHub: '课程/五上/index.html'
   },
   {
+    src: '课程/五上/L12-植树/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 12',
+    subtitle: 'A/B/C 三层，带答案和边界。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
     src: '课程/五下/L01-因数与倍数/讲授稿.md', kind: 'lesson', kicker: 'LESSON 01 · 五下',
     subtitle: '为什么质数只能排成一行？',
     courseHub: '课程/五下/index.html'
@@ -348,6 +368,11 @@ const DOCS = [
   {
     src: '课程/五下/L04-观察物体/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 五下 04',
     subtitle: '搭 T 形，画三视图。',
+    courseHub: '课程/五下/index.html'
+  },
+  {
+    src: '课程/五下/L04-观察物体/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五下 04',
+    subtitle: 'A/B/C 三层，带答案和边界。',
     courseHub: '课程/五下/index.html'
   },
   {
@@ -413,7 +438,11 @@ const DOCS = [
 ];
 
 const SEMESTERS = ['三上', '三下', '四上', '四下', '五上', '五下', '六上', '六下'];
-const SEM_NAMES = { '三上': '三年级上册', '三下': '三年级下册', '四上': '四年级上册', '四下': '四年级下册', '五上': '五年级上册', '五下': '五年级下册', '六上': '六年级上册', '六下': '六年级下册' };
+const SEM_NAMES = { '三上': '三年级上期', '三下': '三年级下期', '四上': '四年级上期', '四下': '四年级下期', '五上': '五年级上期', '五下': '五年级下期', '六上': '六年级上期', '六下': '六年级下期' };
+const SEM_RE = /三上|三下|四上|四下|五上|五下|六上|六下/g;
+function expandSem(text) {
+  return String(text).replace(SEM_RE, m => SEM_NAMES[m]);
+}
 const ALL_LESSONS = [];
 
 for (const sem of SEMESTERS) {
@@ -476,14 +505,6 @@ function topbar(root) {
 </header>`;
 }
 
-function footer(root) {
-  return `<footer class="doc-footer">
-  <span>为什么实验室 · 小学数学 · 三上 → 六下</span>
-  <span><a href="${href(root, 'index.html')}">返回总览</a> · <a href="${href(root, 'README.html')}">使用说明</a></span>
-</footer>
-<div class="backtop"><a href="#top">↑ 回到顶部</a></div>`;
-}
-
 function shell({ root, title, kicker, subtitle, content, bodyClass }) {
   return `<!DOCTYPE html>
 <html lang="zh-CN">
@@ -499,7 +520,7 @@ function shell({ root, title, kicker, subtitle, content, bodyClass }) {
 ${topbar(root)}
 <main class="page">
 ${content}
-${footer(root)}
+<div class="backtop"><a href="#top">↑ 回到顶部</a></div>
 </main>
 <script src="${href(root, 'assets/doc.js')}"></script>
 </body>
@@ -631,7 +652,7 @@ function renderDoc(doc) {
 
   const heroCopy = `<div class="hero-copy">
     <div class="hero-main">
-      <div class="kicker">${escapeHtml(doc.kicker || '为什么实验室')}</div>
+      <div class="kicker">${escapeHtml(expandSem(doc.kicker || '为什么实验室'))}</div>
       <h1 class="doc-title">${escapeHtml(title)}</h1>
 ${doc.subtitle ? `      <p class="doc-sub">${escapeHtml(doc.subtitle)}</p>\n` : ''}      <div class="actions">${actions.join('')}</div>    </div>
   </div>`;
@@ -651,7 +672,7 @@ ${tocHtml ? '  ' + tocHtml + '\n' : ''}</div>`;
 
   fs.mkdirSync(path.dirname(path.join(ROOT, out)), { recursive: true });
   fs.writeFileSync(path.join(ROOT, out), shell({
-    root, title, kicker: doc.kicker, subtitle: doc.subtitle,
+    root, title, kicker: expandSem(doc.kicker || ''), subtitle: doc.subtitle,
     content, bodyClass: doc.kind || 'doc'
   }));
   console.log('✓', out);
@@ -674,7 +695,9 @@ function renderDocsHub() {
     ['11', '视频生产说明', '等课稿审完再做', '一份 JSON，生成一集。', '04-视频生产说明.html'],
     ['12', '入学诊断', '10 分钟，看孩子现在在哪', '8 个问题，只记录原话，不打分。', '05-入学诊断.html'],
     ['13', '研究依据', '为什么是 96 课', '课标、教材目录、taxonomy 和取舍。', '13-研究依据.html'],
-    ['14', '教材版本映射', '先确认学校教材', '出版社、版次、当前单元和已学内容。', '19-教材版本映射.html']
+    ['14', '教材版本映射', '先确认学校教材', '出版社、版次、当前单元和已学内容。', '19-教材版本映射.html'],
+    ['15', '96 课全量复审', '修复前的 18 项问题', '保留审查时的发现与修改要求。', '20-96课文本初稿全量复审.html'],
+    ['16', '修复与循环复验', '当前处理结果', '逐项修复位置、审查轮次与验证证据。', '21-课程修复与循环复验.html']
   ];
   const content = `<section class="hub-hero">
   <div class="hub-hero-grid">
@@ -718,15 +741,15 @@ function renderAutoHubs() {
     const root = rootRel(out);
     const rows = lessons.map(l => `<a class="lesson-row" href="${l.dir}/讲授稿.html">
         <div class="no">${l.no}</div>
-        <div><h3>${escapeHtml(l.title)} <span class="badge gold">课稿待审</span></h3></div>
+        <div><h3>${escapeHtml(l.title)} <span class="badge gold">待教师复核</span></h3></div>
         <div class="meta">讲解稿 →</div>
       </a>`).join('');
     const content = `<section class="hub-hero">
   <div class="hub-hero-grid">
     <div>
-      <div class="kicker">COURSE · ${sem}</div>
-      <h1 class="doc-title">${SEM_NAMES[sem]} · 12 课</h1>
-      <p class="doc-sub">12 课文本稿已齐，等你审。先不做视频。</p>
+      <div class="kicker">COURSE · ${SEM_NAMES[sem]}</div>
+      <h1 class="doc-title">${SEM_NAMES[sem]}</h1>
+      <p class="doc-sub">文本稿已齐，修订与复验见方案区记录；教师复核和学生试用尚未完成。</p>
       <div class="actions">
         <a class="btn primary" href="${lessons[0].dir}/讲授稿.html">从第 1 课开始</a>
         <a class="btn" href="${root}/00-方案/09-96课总图.html">看 96 课总图</a>
@@ -738,10 +761,10 @@ function renderAutoHubs() {
     </aside>
   </div>
 </section>
-<h2 class="hub-section">${SEM_NAMES[sem]} · 12 课</h2>
-<p class="hub-section-sub">文本讲解稿，待人工 review。</p>
+<h2 class="hub-section">${SEM_NAMES[sem]}</h2>
+<p class="hub-section-sub">先按实际先修知识选择课次，选学内容可跳过。</p>
 ${rows}`;
-    const html = shell({ root, title: `${sem} · 12 课`, kicker: 'COURSE', subtitle: '', content, bodyClass: 'hub' });
+    const html = shell({ root, title: SEM_NAMES[sem], kicker: 'COURSE', subtitle: '', content, bodyClass: 'hub' });
     fs.mkdirSync(path.join(ROOT, '课程', sem), { recursive: true });
     fs.writeFileSync(path.join(ROOT, out), html);
     console.log('✓', out);
@@ -752,24 +775,24 @@ function renderCourseIndex() {
   const out = '课程/index.html';
   const root = rootRel(out);
   const cards = [
-    ['三上', '三上 · 12 课', '位值、竖式、乘除、周长。12 课文本稿待审。', '三上/index.html', '12 课待审'],
-    ['三下', '三下 · 12 课', '面积、小数、年月日、搭配。12 课文本稿待审。', '三下/index.html', '12 课待审'],
-    ['四上', '四上 · 12 课', '大数、角度、积商规律、优化。12 课文本稿待审。', '四上/index.html', '12 课待审'],
-    ['四下', '四下 · 12 课', '运算律、小数、三角形、统计。12 课文本稿待审。', '四下/index.html', '12 课待审'],
-    ['五上', '五上 · 12 课', '小数、方程、面积、植树。12 课文本稿待审。', '五上/index.html', '12 课待审'],
-    ['五下', '五下 · 12 课', '因数倍数、长方体、分数。12 课文本稿待审。', '五下/index.html', '12 课待审'],
-    ['六上', '六上 · 12 课', '分数乘除、比、圆、百分数。12 课文本稿待审。', '六上/index.html', '12 课待审'],
-    ['六下', '六下 · 12 课', '负数、圆柱圆锥、比例、鸽巢。12 课文本稿待审。', '六下/index.html', '12 课待审']
+    ['三年级上期', '三年级上期', '位值、竖式、乘除、周长。文本稿，待教师复核。', '三上/index.html', '待教师复核'],
+    ['三年级下期', '三年级下期', '面积、小数、年月日、搭配。文本稿，待教师复核。', '三下/index.html', '待教师复核'],
+    ['四年级上期', '四年级上期', '大数、角度、积商规律、优化。文本稿，待教师复核。', '四上/index.html', '待教师复核'],
+    ['四年级下期', '四年级下期', '运算律、小数、三角形、统计。文本稿，待教师复核。', '四下/index.html', '待教师复核'],
+    ['五年级上期', '五年级上期', '小数、方程、面积、植树。文本稿，待教师复核。', '五上/index.html', '待教师复核'],
+    ['五年级下期', '五年级下期', '因数倍数、长方体、分数。文本稿，待教师复核。', '五下/index.html', '待教师复核'],
+    ['六年级上期', '六年级上期', '分数乘除、比、圆、百分数。文本稿，待教师复核。', '六上/index.html', '待教师复核'],
+    ['六年级下期', '六年级下期', '负数、圆柱圆锥、比例、鸽巢。文本稿，待教师复核。', '六下/index.html', '待教师复核']
   ];
   const content = `<section class="hub-hero">
   <div class="hub-hero-grid">
     <div>
       <div class="kicker">COURSE · 课程目录</div>
       <h1 class="doc-title">从哪一册开始？</h1>
-      <p class="doc-sub">96 课文本初稿已齐，按学期进入；先审文字，视频后做。</p>
+      <p class="doc-sub">96 课讲解稿已齐，按学期进入；文本修订记录见方案区，教师复核和学生试用待开展。</p>
       <div class="actions">
-        <a class="btn primary" href="五上/L01-小数乘法/讲授稿.html">五上第 1 课</a>
-        <a class="btn" href="三上/L01-满十进一/讲授稿.html">三上第 1 课</a>
+        <a class="btn primary" href="五上/L01-小数乘法/讲授稿.html">五年级上期第 1 课</a>
+        <a class="btn" href="三上/L01-满十进一/讲授稿.html">三年级上期第 1 课</a>
         <a class="btn" href="../00-方案/09-96课总图.html">96 课总图</a>
       </div>
     </div>
@@ -777,7 +800,8 @@ function renderCourseIndex() {
       <div class="side-label">生产顺序</div>
       <ol>
         <li>96 课文本初稿：已完成</li>
-        <li>人工 review：按学期逐课</li>
+        <li>文本审查与修订：见 21 号复验记录</li>
+        <li>教师复核：待开展</li>
         <li>学生试教、独立验收：未开始</li>
         <li>视频：只保留已有两段</li>
       </ol>

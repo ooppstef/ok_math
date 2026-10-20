@@ -9,8 +9,9 @@
 <meta name="description" content="三上到六下，96 节小学数学 B 卷原理课。每课只讲一个为什么。">
 <link rel="stylesheet" href="assets/doc.css">
 <style>
+  .page{padding-top:18px}
   .home-hero{
-    padding:48px 0 34px;border-bottom:2px solid var(--ink);
+    padding:12px 0 30px;border-bottom:2px solid var(--ink);
   }
   .home-title{
     font-family:var(--font-sans);font-size:clamp(40px,4.8vw,58px);
@@ -26,26 +27,12 @@
     max-width:650px;margin:0;color:#4a5361;
     font-family:var(--font-serif);font-size:17px;line-height:1.85;
   }
-  .home-progress{
-    max-width:650px;margin-top:22px;padding-top:12px;border-top:1px solid var(--line);
-    font-family:var(--font-mono);font-size:10.5px;color:var(--muted);letter-spacing:.02em;
-  }
-  .home-progress strong{color:var(--ink);font-size:15px;font-weight:700;margin:0 2px}
-  .home-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-  .index-head{
-    display:flex;justify-content:space-between;align-items:baseline;gap:20px;
-    border-bottom:2px solid var(--ink);margin-top:38px;padding-bottom:10px;
-  }
-  .index-head h2{
-    font-family:var(--font-sans);font-size:20px;font-weight:780;
-    letter-spacing:-.02em;margin:0;color:var(--ink);
-  }
-  .index-note{font-family:var(--font-mono);font-size:9.5px;color:var(--muted);letter-spacing:.02em;text-align:right}
+  #courses{padding-top:26px}
   .term{border-top:1px solid var(--line);margin-top:22px;padding-top:13px}
-  .term-head{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:baseline;margin-bottom:9px}
+  #courses .term:first-of-type{border-top:0;margin-top:0;padding-top:0}
+  .term-head{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:baseline;margin-bottom:9px}
   .term-no{font-family:var(--font-mono);font-size:10px;color:var(--orange-ink);letter-spacing:.04em}
   .term-head h3{font-family:var(--font-sans);font-size:22px;font-weight:780;letter-spacing:-.02em;margin:0;color:var(--ink)}
-  .term-count{font-family:var(--font-mono);font-size:9.5px;color:var(--muted)}
   .term-list{
     display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
     gap:0;list-style:none;margin:0;padding:0;
@@ -69,8 +56,6 @@
   }
   @media (max-width:700px){
     .home-hero{padding-top:36px}
-    .index-head{display:block}
-    .index-note{display:block;margin-top:6px;text-align:left}
     .term-list{grid-template-columns:repeat(2,minmax(0,1fr))}
   }
   @media (max-width:560px){
@@ -79,11 +64,10 @@
   }
   @media (max-width:460px){
     .term-list{grid-template-columns:1fr}
-    .term-head{grid-template-columns:26px 1fr auto}
+    .term-head{grid-template-columns:26px 1fr}
   }
   @media print{
     .home-hero{padding-top:0}
-    .home-actions{display:none}
     .term{break-inside:avoid}
   }
 </style>
@@ -92,36 +76,20 @@
 <header class="topbar">
   <div class="inner">
     <a class="brand" href="index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
-    <nav class="nav">
-      <a href="00-方案/00-总方案.html">总方案</a>
-      <a href="00-方案/09-96课总图.html">96 课地图</a>
-      <a href="00-方案/12-课程审查清单.html">审查清单</a>
-      <a href="README.html">使用说明</a>
-    </nav>
   </div>
 </header>
 <main class="page">
   <header class="home-hero">
-    <div class="kicker">三上 → 六下 · 96 LESSONS</div>
+    <div class="kicker">三年级上期 → 六年级下期 · 96 LESSONS</div>
     <h1 class="home-title"><span>小学数学</span> <em>B 卷原理课</em></h1>
-    <p class="home-lede">每课只讲一个“为什么”。先看讲解，再读原理和例子，最后用 B 卷题验收。</p>
-    <div class="home-progress"><strong>96</strong> / 96 课初稿 · <strong>2</strong> 段成片 · 0 课待写</div>
-    <div class="home-actions">
-      <a class="btn primary" href="课程/三上/L01-满十进一/讲授稿.html">从三上第 1 课开始</a>
-      <a class="btn" href="课程/五上/L01-小数乘法/讲授稿.html">看五上新稿</a>
-    </div>
+    <p class="home-lede">每课只讲一个“为什么”，再用 B 卷题验收。</p>
   </header>
 
   <section id="courses">
-    <div class="index-head">
-      <h2>课程索引</h2>
-      <span class="index-note">按学期排列 · 点课名进入讲解稿</span>
-    </div>
       <section class="term">
         <div class="term-head">
           <span class="term-no">01</span>
-          <h3>三上</h3>
-          <span class="term-count">12 课待审</span>
+          <h3>三年级上期</h3>
         </div>
         <ol class="term-list">
             <li><a class="lesson" href="课程/三上/L01-满十进一/讲授稿.html"><span class="lesson-no">01</span><span class="lesson-name">满十进一</span><span class="state draft">课稿</span></a></li>
@@ -141,8 +109,7 @@
       <section class="term">
         <div class="term-head">
           <span class="term-no">02</span>
-          <h3>三下</h3>
-          <span class="term-count">12 课待审</span>
+          <h3>三年级下期</h3>
         </div>
         <ol class="term-list">
             <li><a class="lesson" href="课程/三下/L01-除法竖式/讲授稿.html"><span class="lesson-no">01</span><span class="lesson-name">除法竖式</span><span class="state draft">课稿</span></a></li>
@@ -162,8 +129,7 @@
       <section class="term">
         <div class="term-head">
           <span class="term-no">03</span>
-          <h3>四上</h3>
-          <span class="term-count">12 课待审</span>
+          <h3>四年级上期</h3>
         </div>
         <ol class="term-list">
             <li><a class="lesson" href="课程/四上/L01-一亿有多大/讲授稿.html"><span class="lesson-no">01</span><span class="lesson-name">一亿有多大</span><span class="state draft">课稿</span></a></li>
@@ -183,8 +149,7 @@
       <section class="term">
         <div class="term-head">
           <span class="term-no">04</span>
-          <h3>四下</h3>
-          <span class="term-count">12 课待审</span>
+          <h3>四年级下期</h3>
         </div>
         <ol class="term-list">
             <li><a class="lesson" href="课程/四下/L01-运算顺序/讲授稿.html"><span class="lesson-no">01</span><span class="lesson-name">运算顺序</span><span class="state draft">课稿</span></a></li>
@@ -204,8 +169,7 @@
       <section class="term">
         <div class="term-head">
           <span class="term-no">05</span>
-          <h3>五上</h3>
-          <span class="term-count">12 课待审</span>
+          <h3>五年级上期</h3>
         </div>
         <ol class="term-list">
             <li><a class="lesson" href="课程/五上/L01-小数乘法/讲授稿.html"><span class="lesson-no">01</span><span class="lesson-name">小数乘法</span><span class="state draft">课稿</span></a></li>
@@ -225,8 +189,7 @@
       <section class="term">
         <div class="term-head">
           <span class="term-no">06</span>
-          <h3>五下</h3>
-          <span class="term-count">12 课待审</span>
+          <h3>五年级下期</h3>
         </div>
         <ol class="term-list">
             <li><a class="lesson" href="课程/五下/L01-因数与倍数/讲授稿.html"><span class="lesson-no">01</span><span class="lesson-name">因数与倍数</span><span class="state draft">课稿</span></a></li>
@@ -246,8 +209,7 @@
       <section class="term">
         <div class="term-head">
           <span class="term-no">07</span>
-          <h3>六上</h3>
-          <span class="term-count">12 课待审</span>
+          <h3>六年级上期</h3>
         </div>
         <ol class="term-list">
             <li><a class="lesson" href="课程/六上/L01-分数乘法/讲授稿.html"><span class="lesson-no">01</span><span class="lesson-name">分数乘法</span><span class="state draft">课稿</span></a></li>
@@ -267,8 +229,7 @@
       <section class="term">
         <div class="term-head">
           <span class="term-no">08</span>
-          <h3>六下</h3>
-          <span class="term-count">12 课待审</span>
+          <h3>六年级下期</h3>
         </div>
         <ol class="term-list">
             <li><a class="lesson" href="课程/六下/L01-负数/讲授稿.html"><span class="lesson-no">01</span><span class="lesson-name">负数</span><span class="state draft">课稿</span></a></li>
@@ -287,10 +248,6 @@
       </section>
   </section>
 
-  <footer class="doc-footer">
-    <span>为什么实验室 · 小学数学 · 三上 → 六下</span>
-    <span><a href="00-方案/00-总方案.html">总方案</a> · <a href="00-方案/09-96课总图.html">96 课地图</a> · <a href="00-方案/12-课程审查清单.html">审查清单</a> · <a href="README.html">使用说明</a></span>
-  </footer>
   <div class="backtop"><a href="#top">↑ 回到顶部</a></div>
 </main>
 </body>
