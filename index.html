@@ -3,197 +3,316 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101826">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iNSIgZmlsbD0iIzFlNGZkOCIvPjxwYXRoIGQ9Ik0xNCA0OFYxNmg4bDEwIDE3IDEwLTE3aDh2MzJoLThWMjlMMzIgNDYgMjIgMjl2MTl6IiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iNDciIHk9IjQ3IiB3aWR0aD0iOSIgaGVpZ2h0PSI5IiBmaWxsPSIjZjNjODRiIi8+PC9zdmc+">
 <title>小学数学 · B 卷原理课</title>
 <style>
   :root{
-    --paper:#f6f0e2;
-    --paper-2:#fffdf6;
-    --ink:#24211d;
-    --muted:#7a7368;
-    --line:#d8cdb8;
-    --red:#c34a36;
-    --teal:#2e6f6a;
-    --gold:#cb9637;
-    --red-bg:#f4e0da;
-    --teal-bg:#e0ece8;
-    --gold-bg:#f7ecd1;
+    --paper:#eff1ec;
+    --paper-2:#fbfcf8;
+    --ink:#101826;
+    --body:#283342;
+    --muted:#5f6875;
+    --line:#d2d7dd;
+    --line-soft:#e4e7ea;
+    --blue:#1e4fd8;
+    --blue-soft:#e6ebfc;
+    --orange:#ee5a2a;
+    --orange-ink:#b4421b;
+    --orange-soft:#fbe4dc;
+    --yellow:#f3c84b;
+    --yellow-soft:#fbf0c8;
+    --green:#146c60;
+    --green-soft:#ddefea;
+    --red:var(--orange);
+    --red-bg:var(--orange-soft);
+    --teal:var(--green);
+    --teal-bg:var(--green-soft);
+    --gold:#b98513;
+    --gold-bg:var(--yellow-soft);
+    --font-sans:"PingFang SC","Noto Sans SC","Source Han Sans SC","Microsoft YaHei",sans-serif;
+    --font-serif:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC","SimSun",serif;
+    --font-mono:"SFMono-Regular","Roboto Mono",Menlo,Consolas,monospace;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
     margin:0;
     background:
-      linear-gradient(rgba(240,233,218,.55) 1px, transparent 1px) 0 0/40px 40px,
-      linear-gradient(90deg, rgba(240,233,218,.55) 1px, transparent 1px) 0 0/40px 40px,
+      linear-gradient(rgba(16,24,38,.04) 1px, transparent 1px) 0 0/32px 32px,
+      linear-gradient(90deg, rgba(16,24,38,.04) 1px, transparent 1px) 0 0/32px 32px,
       var(--paper);
-    color:var(--ink);
-    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-    line-height:1.75;
+    color:var(--body);
+    font-family:var(--font-serif);
+    line-height:1.8;
     -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  ::selection{background:var(--yellow);color:var(--ink)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 30px}
   a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
   .top{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:26px 0 0;font-size:13px;color:var(--muted);letter-spacing:.04em;
+    position:sticky;top:0;z-index:50;
+    border-bottom:1px solid var(--ink);
+    background:rgba(251,252,248,.93);backdrop-filter:blur(12px);
+    font-size:12px;color:var(--muted);letter-spacing:.02em;
   }
-  .top .brand{display:flex;align-items:center;gap:12px}
+  .top-inner{
+    max-width:1180px;margin:0 auto;padding:16px 30px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .top .brand{display:flex;align-items:center;gap:11px;font-family:var(--font-sans);font-weight:650;color:var(--ink)}
   .chip{
     display:inline-flex;align-items:center;justify-content:center;
-    width:40px;height:40px;border-radius:8px;background:var(--red);color:var(--paper-2);
-    font-weight:700;font-size:14px;letter-spacing:.02em;
+    width:29px;height:29px;border-radius:2px;background:var(--blue);color:#fff;
+    font-family:var(--font-mono);font-weight:700;font-size:12px;
+    box-shadow:3px 3px 0 var(--yellow);
   }
-  .top nav{display:flex;gap:22px}
-  .top nav a:hover{color:var(--red)}
-  header.hero{padding:64px 0 46px;border-bottom:1px solid var(--line)}
+  .top nav{display:flex;gap:21px;font-family:var(--font-sans);font-size:11.5px}
+  .top nav a{padding:2px 0;border-bottom:1px solid transparent}
+  .top nav a:hover{color:var(--ink);border-bottom-color:var(--orange)}
+
+  header.hero{padding:62px 0 54px;border-bottom:2px solid var(--ink)}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.06fr) 420px;gap:54px;align-items:end}
   .kicker{
-    color:var(--red);font-size:13px;font-weight:700;letter-spacing:.18em;
-    text-transform:uppercase;margin-bottom:18px;
+    color:var(--blue);font-family:var(--font-mono);font-size:10.5px;font-weight:700;
+    letter-spacing:.17em;text-transform:uppercase;margin-bottom:20px;
+    display:flex;align-items:center;gap:9px;
   }
+  .kicker:before{content:"";width:8px;height:8px;background:var(--orange);display:inline-block}
   h1{
-    font-family:"Songti SC","STSong","Noto Serif SC",serif;
-    font-size:clamp(42px,7vw,78px);
-    line-height:1.12;font-weight:700;margin:0 0 22px;letter-spacing:-.02em;
+    font-family:var(--font-sans);margin:0 0 24px;color:var(--ink);
+    letter-spacing:-.055em;line-height:.98;
   }
-  h1 em{font-style:normal;color:var(--red)}
-  .lede{max-width:720px;font-size:18px;color:#4a453c;margin:0}
-  .hero-meta{
-    display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;
+  h1 span{
+    display:block;font-family:var(--font-mono);font-size:11.5px;font-weight:500;
+    letter-spacing:.18em;color:var(--muted);margin-bottom:16px;
   }
+  h1 strong{
+    display:block;font-family:var(--font-sans);font-weight:800;
+    font-size:clamp(58px,8vw,96px);line-height:.95;
+  }
+  h1 em{
+    font-style:normal;color:var(--blue);
+    background:linear-gradient(transparent 72%,var(--yellow) 72%);
+    -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  }
+  .lede{max-width:640px;font-family:var(--font-serif);font-size:17.5px;color:#4a5361;margin:0;line-height:1.85}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:26px}
   .tag{
-    font-size:12px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;
-    color:var(--muted);background:rgba(255,252,244,.6);
+    font-family:var(--font-mono);font-size:10px;padding:4px 9px;
+    border:1px solid var(--line);border-radius:1px;color:var(--muted);
+    background:rgba(251,252,248,.7);letter-spacing:.02em;
   }
-  .tag.red{color:var(--red);border-color:#e4b9ae;background:var(--red-bg)}
-  .tag.teal{color:var(--teal);border-color:#b9d2cc;background:var(--teal-bg)}
-  .tag.gold{color:#8a641f;border-color:#e4cf9e;background:var(--gold-bg)}
-  .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .tag.red{color:var(--orange-ink);border-color:#e9b5a4;background:var(--orange-soft)}
+  .tag.teal{color:var(--green);border-color:#b6d5ce;background:var(--green-soft)}
+  .tag.gold{color:#7c5a1c;border-color:#e5cf83;background:var(--yellow-soft)}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
   .btn-main,.btn-line{
-    display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;
-    font-size:13px;font-weight:600;border:1px solid transparent;
+    display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:2px;
+    font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.02em;
+    border:1px solid transparent;
   }
-  .btn-main{background:var(--red);color:#fff}
-  .btn-main:hover{background:#a93d2c}
+  .btn-main{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .btn-main:hover{background:#173fb0;border-color:#173fb0}
   .btn-line{border-color:var(--line);color:var(--ink);background:var(--paper-2)}
-  .btn-line:hover{border-color:var(--red);color:var(--red)}
+  .btn-line:hover{border-color:var(--ink);color:var(--ink)}
 
-  section{padding:56px 0;border-bottom:1px solid var(--line)}
-  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:28px}
-  .sec-no{
-    font-family:"Songti SC",serif;font-size:13px;color:var(--red);
-    border:1px solid #e4b9ae;background:var(--red-bg);padding:2px 8px;border-radius:4px;
+  /* 96 课进度板：首页的签名元素 */
+  .hero-board{
+    background:var(--paper-2);border:1px solid var(--ink);padding:17px 17px 14px;
+    box-shadow:8px 8px 0 var(--yellow);
   }
+  .board-head{
+    display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+    font-family:var(--font-mono);font-size:9.5px;color:var(--muted);letter-spacing:.12em;
+    border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:12px;
+  }
+  .board-head strong{font-family:var(--font-mono);font-size:16px;color:var(--blue);letter-spacing:-.04em}
+  .board-grid{display:grid;grid-template-columns:34px repeat(12,1fr);gap:5px;align-items:center}
+  .board-row{display:contents}
+  .row-label{font-family:var(--font-mono);font-size:9px;color:var(--muted);letter-spacing:.02em}
+  .cell{height:16px;border:1px solid var(--line);background:transparent;border-radius:1px}
+  .cell.live{background:var(--orange);border-color:var(--orange)}
+  .cell.draft{background:var(--blue-soft);border-color:var(--blue)}
+  .cell.planned{background:transparent;border-color:var(--line)}
+  .cell:hover{outline:2px solid var(--ink);outline-offset:1px}
+  .board-legend{
+    display:flex;flex-wrap:wrap;gap:13px;font-family:var(--font-mono);font-size:9px;
+    color:var(--muted);border-top:1px solid var(--line);padding-top:9px;margin-top:12px;
+  }
+  .legend-item{display:flex;align-items:center;gap:5px}
+  .key{width:8px;height:8px;border-radius:1px;display:inline-block}
+  .key.live{background:var(--orange)}
+  .key.draft{background:var(--blue-soft);border:1px solid var(--blue)}
+  .key.planned{background:transparent;border:1px solid var(--line)}
+  .board-foot{font-family:var(--font-mono);font-size:9.5px;color:var(--muted);margin-top:8px;letter-spacing:.02em}
+
+  section{padding:46px 0 54px;border-bottom:1px solid var(--line)}
+  #start{padding-top:38px}
+  #start .sec-head{border-top:0;padding-top:0}
+  .sec-head{
+    display:grid;grid-template-columns:44px 1fr auto;gap:15px;align-items:baseline;
+    border-top:2px solid var(--ink);padding-top:12px;margin-bottom:28px;
+  }
+  .sec-no{font-family:var(--font-mono);font-size:10px;color:var(--orange-ink);letter-spacing:.1em}
   h2{
-    font-family:"Songti SC","STSong",serif;font-size:32px;margin:0;font-weight:700;
-    letter-spacing:-.01em;
+    font-family:var(--font-sans);font-size:clamp(26px,3.2vw,36px);margin:0;font-weight:800;
+    letter-spacing:-.035em;line-height:1.2;
   }
-  .sec-sub{color:var(--muted);font-size:14px;margin-left:auto}
+  .sec-sub{font-family:var(--font-mono);font-size:9.5px;color:var(--muted);letter-spacing:.06em;text-align:right}
 
-  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .grid-3{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line)}
   .card{
-    background:var(--paper-2);border:1px solid var(--line);border-radius:14px;
-    padding:24px 22px;transition:transform .18s ease, box-shadow .18s ease;
-    box-shadow:0 1px 0 rgba(36,33,29,.03);
+    display:flex;flex-direction:column;min-height:188px;
+    background:transparent;border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    border-top:3px solid var(--blue);border-radius:0;padding:20px 18px 17px;
+    transition:background .18s ease,transform .18s ease;
   }
-  .card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(36,33,29,.08)}
-  .card .num{
-    font-family:"Songti SC",serif;font-size:12px;color:var(--red);letter-spacing:.12em;
-    margin-bottom:10px;
-  }
-  .card h3{font-size:19px;margin:0 0 8px;line-height:1.4}
-  .card p{font-size:14px;color:var(--muted);margin:0 0 16px}
-  .arrow{font-size:13px;color:var(--red);font-weight:700}
+  .card:nth-child(2){border-top-color:var(--orange)}
+  .card:nth-child(3){border-top-color:var(--yellow)}
+  .card:nth-child(4){border-top-color:var(--ink)}
+  .card:hover{background:var(--paper-2);transform:translateY(-2px)}
+  .card .num{font-family:var(--font-mono);font-size:9px;color:var(--blue);letter-spacing:.09em;margin-bottom:10px}
+  .card h3{font-family:var(--font-sans);font-size:18px;font-weight:750;line-height:1.35;margin:0 0 7px;letter-spacing:-.02em;color:var(--ink)}
+  .card p{font-family:var(--font-serif);font-size:13px;color:var(--muted);margin:0 0 14px;line-height:1.7}
+  .arrow{margin-top:auto;font-family:var(--font-mono);font-size:10px;color:var(--orange-ink);font-weight:600}
   .arrow:after{content:" →"}
 
-  .lesson-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+  .lesson-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
   .video-card{
-    background:var(--paper-2);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    background:var(--paper-2);border:1px solid var(--ink);border-radius:2px;overflow:hidden;
+    box-shadow:5px 5px 0 var(--line);
   }
-  .video-frame{position:relative;aspect-ratio:16/9;background:#1b1a18;overflow:hidden}
+  .video-frame{position:relative;aspect-ratio:16/9;background:#0d1420;overflow:hidden;border-bottom:1px solid var(--ink)}
   .video-frame video{display:block;width:100%;height:100%;object-fit:cover}
   .play{
     position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;
-    padding:16px;border:0;background:transparent;cursor:pointer;font-family:inherit;
+    padding:14px;border:0;background:transparent;cursor:pointer;font-family:inherit;
   }
   .play .pill{
-    display:flex;align-items:center;gap:9px;background:rgba(36,33,29,.8);color:#fff;
-    border-radius:999px;padding:7px 16px 7px 7px;font-size:12px;letter-spacing:.14em;
-    backdrop-filter:blur(4px);transition:background .18s ease;
+    display:flex;align-items:center;gap:8px;background:var(--paper-2);color:var(--ink);
+    border-radius:2px;padding:6px 12px 6px 6px;font-family:var(--font-mono);font-size:10px;
+    letter-spacing:.06em;transition:background .18s ease;
   }
-  .play:hover .pill{background:var(--red)}
+  .play:hover .pill{background:var(--yellow)}
   .play .tri{
-    width:32px;height:32px;border-radius:50%;background:var(--red);
-    display:flex;align-items:center;justify-content:center;font-size:11px;padding-left:2px;
+    width:28px;height:28px;border-radius:1px;background:var(--orange);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:10px;padding-left:2px;
   }
   .play.hidden{display:none}
-  .video-body{padding:18px 20px 20px}
-  .video-body .eyebrow{font-size:12px;color:var(--red);letter-spacing:.12em;margin-bottom:6px}
-  .video-body h3{font-size:21px;margin:0 0 6px}
-  .video-body p{font-size:14px;color:var(--muted);margin:0 0 14px}
-  .links{display:flex;flex-wrap:wrap;gap:10px;font-size:13px}
+  .video-body{padding:17px 18px 18px}
+  .video-body .eyebrow{font-family:var(--font-mono);font-size:9px;color:var(--blue);letter-spacing:.12em;margin-bottom:6px}
+  .video-body h3{font-family:var(--font-sans);font-size:19px;font-weight:750;letter-spacing:-.02em;line-height:1.4;margin:0 0 5px;color:var(--ink)}
+  .video-body p{font-family:var(--font-serif);font-size:13px;color:var(--muted);margin:0 0 12px}
+  .links{display:flex;flex-wrap:wrap;gap:10px;font-family:var(--font-mono);font-size:10px}
   .links a{border-bottom:1px solid var(--line);padding-bottom:1px}
-  .links a:hover{color:var(--red);border-color:var(--red)}
-  .lesson-side{display:flex;flex-direction:column;gap:14px}
+  .links a:hover{color:var(--orange-ink);border-color:var(--orange)}
+  .lesson-side{display:flex;flex-direction:column;gap:0}
   .mini{
     display:flex;align-items:center;justify-content:space-between;gap:14px;
-    background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:15px 18px;
+    background:transparent;border:0;border-top:1px solid var(--line);
+    border-radius:0;padding:13px 0;transition:background .16s ease,padding .16s ease;
   }
-  .mini:hover{border-color:#c9b99a}
-  .mini .t{font-size:15px;font-weight:600}
-  .mini .d{font-size:12px;color:var(--muted);margin-top:2px}
-  .mini .go{color:var(--red);font-size:18px}
+  .mini:last-child{border-bottom:1px solid var(--line)}
+  .mini:hover{background:var(--blue-soft);padding-left:8px}
+  .mini .t{font-family:var(--font-sans);font-size:14.5px;font-weight:650;color:var(--ink)}
+  .mini .d{font-family:var(--font-serif);font-size:12px;color:var(--muted);margin-top:2px}
+  .mini .go{color:var(--orange-ink);font-family:var(--font-mono);font-size:16px}
+  .subhead{font-family:var(--font-sans);font-size:22px;font-weight:780;letter-spacing:-.025em;margin:32px 0 4px;color:var(--ink)}
+  .subhead-note{font-family:var(--font-mono);font-size:9.5px;color:var(--muted);margin:0 0 12px;letter-spacing:.03em}
 
-  .semester-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .semester-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:sem;
+    border-left:1px solid var(--line);border-top:1px solid var(--line);
+  }
+  .sem{
+    counter-increment:sem;padding:17px 17px 16px;
+    border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:transparent;
+  }
   .sem h3{
-    font-family:"Songti SC",serif;font-size:20px;margin:0 0 10px;
-    padding-bottom:8px;border-bottom:2px solid var(--ink);
+    display:flex;align-items:baseline;gap:9px;
+    font-family:var(--font-sans);font-size:17px;font-weight:750;letter-spacing:-.02em;
+    margin:0 0 7px;padding-bottom:8px;border-bottom:1px solid var(--ink);color:var(--ink);
   }
-  .sem .goal{font-size:12px;color:var(--muted);margin-bottom:12px;min-height:38px}
-  .sem ol{margin:0;padding-left:18px;font-size:13.5px;color:#3e3a33}
-  .sem li{margin:5px 0}
-  .sem li::marker{color:var(--red);font-size:11px}
+  .sem h3:before{
+    content:counter(sem,decimal-leading-zero);
+    font-family:var(--font-mono);font-size:9px;color:var(--orange-ink);letter-spacing:0;
+  }
+  .sem .goal{font-family:var(--font-sans);font-size:10.5px;color:var(--muted);margin-bottom:9px;min-height:34px;line-height:1.6}
+  .sem ol{
+    margin:0;padding-left:16px;font-family:var(--font-sans);font-size:12px;
+    color:#3e4755;line-height:1.7;columns:2;column-gap:16px;
+  }
+  .sem li{margin:0 0 3px;break-inside:avoid}
+  .sem li::marker{color:var(--orange);font-size:10px}
 
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s;border-left:1px solid var(--line)}
   .step{
-    position:relative;background:var(--paper-2);border:1px solid var(--line);
-    border-radius:14px;padding:22px 20px 18px;
+    counter-increment:s;background:transparent;border:0;border-right:1px solid var(--line);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    border-radius:0;padding:18px 18px 16px;
   }
   .step:before{
-    counter-increment:s;content:counter(s);
-    font-family:"Songti SC",serif;font-size:34px;color:var(--red);line-height:1;
-    display:block;margin-bottom:12px;
+    content:counter(s,decimal-leading-zero);
+    font-family:var(--font-mono);font-size:26px;color:var(--blue);line-height:1;
+    display:block;margin-bottom:12px;letter-spacing:-.04em;
   }
-  .step h4{font-size:15px;margin:0 0 6px}
-  .step p{font-size:13px;color:var(--muted);margin:0}
+  .step h4{font-family:var(--font-sans);font-size:14px;font-weight:700;margin:0 0 5px;color:var(--ink)}
+  .step p{font-family:var(--font-serif);font-size:12.5px;color:var(--muted);margin:0;line-height:1.7}
 
-  .quote{
-    background:var(--ink);color:var(--paper);border-radius:16px;padding:38px 42px;
-    display:flex;gap:26px;align-items:flex-start;
-  }
-  .quote .mark{font-family:"Songti SC",serif;font-size:54px;color:var(--gold);line-height:.8}
-  .quote p{margin:0;font-family:"Songti SC",serif;font-size:24px;line-height:1.6}
-  .quote small{display:block;margin-top:14px;font-size:12px;color:#b9b1a3;letter-spacing:.08em}
+  footer{padding:30px 0 44px;color:var(--muted);font-family:var(--font-mono);font-size:10px}
+  footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--ink);padding-top:14px}
+  footer a{border-bottom:1px solid var(--line);color:var(--muted)}
 
-  footer{padding:34px 0 46px;color:var(--muted);font-size:12.5px}
-  footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  header.hero{animation:rise .45s ease both}
+  .card,.video-card{animation:rise .45s ease backwards}
+  .card:nth-child(2){animation-delay:.04s}
+  .card:nth-child(3){animation-delay:.08s}
+  .card:nth-child(4){animation-delay:.12s}
 
-  @media (max-width:900px){
-    .grid-3,.lesson-grid,.semester-grid,.steps{grid-template-columns:1fr 1fr}
+  @media (max-width:1000px){
+    .hero-grid{grid-template-columns:1fr;gap:32px;align-items:start}
+    .hero-board{max-width:540px}
+    .grid-3{grid-template-columns:1fr 1fr}
     .lesson-grid{grid-template-columns:1fr}
+    .semester-grid{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr}
   }
   @media (max-width:600px){
     .wrap{padding:0 18px}
-    .grid-3,.semester-grid,.steps{grid-template-columns:1fr}
+    .top-inner{padding:14px 18px}
     .top nav{display:none}
-    h1{font-size:44px}
-    .quote{padding:28px 24px}
-    .quote p{font-size:20px}
+    header.hero{padding:44px 0 40px}
+    h1 strong{font-size:54px}
+    .lede{font-size:16px}
+    .grid-3,.semester-grid,.steps{grid-template-columns:1fr}
+    .hero-board{box-shadow:5px 5px 0 var(--yellow);padding:14px}
+    .board-grid{grid-template-columns:30px repeat(12,1fr);gap:4px}
+    .cell{height:13px}
+    .sec-head{grid-template-columns:34px 1fr;gap:10px}
+    .sec-sub{grid-column:2;text-align:left}
+    .sem ol{columns:1}
+    footer .row{display:block}
+    footer .row span{display:block;margin-bottom:8px}
+  }
+  @media print{
+    .top,.hero-board,.hero-actions,.video-card,.lesson-side{display:none!important}
+    body{background:#fff}
+    section{break-inside:avoid}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
   }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="top">
+<div class="top">
+  <div class="top-inner">
     <div class="brand"><span class="chip">M</span><span>为什么实验室 · 小学数学</span></div>
     <nav>
       <a href="#start">先看这些</a>
@@ -203,22 +322,159 @@
       <a href="#how">怎么开始</a>
     </nav>
   </div>
-
+</div>
+<div class="wrap">
   <header class="hero">
-    <div class="kicker">GRADE 3 → GRADE 6</div>
-    <h1>小学数学<br><em>B 卷原理课</em></h1>
-    <p class="lede">
-      96 节课，覆盖人教版三上到六下。每节一个实验、一份讲稿、三层挑战。五、六年级先审课稿，再做视频。
-    </p>
-    <div class="hero-meta">
-      <span class="tag red">96 节核心课</span>
-      <span class="tag teal">2 支成片</span>
-      <span class="tag gold">8 节完整样课</span>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="kicker">GRADE 3 → GRADE 6 · 96 LESSONS</div>
+        <h1><span>为什么实验室 · 三上 → 六下</span><strong><em>B 卷</em>原理课</strong></h1>
+        <p class="lede">
+          96 节课，每节只讲一个“为什么”。配动手实验、家长讲稿和三层挑战；B 卷题用来检验原理，不靠刷题型。
+        </p>
+        <div class="hero-meta">
+          <span class="tag red">96 节核心课</span>
+          <span class="tag teal">8 课成稿</span>
+          <span class="tag gold">2 段成片</span>
+          <span class="tag">五、六年级待审</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn-main" href="课程/三上/L01-满十进一/讲授稿.html">从三上第 1 课开始</a>
+          <a class="btn-line" href="课程/五上/L01-小数乘法/讲授稿.html">看五上新稿</a>
+          <a class="btn-line" href="00-方案/09-96课总图.html">看 96 课总图</a>
+        </div>
+      </div>
+      <aside class="hero-board" aria-label="96 课进度">
+        <div class="board-head"><span>96 课 / 进度矩阵</span><strong>8 / 96</strong></div>
+        <div class="board-grid">
+    <div class="board-row">
+      <span class="row-label">三上</span>
+      <span class="cell live" title="三上 01 满十进一 · 成片"></span>
+      <span class="cell draft" title="三上 02 竖式的秘密 · 课稿"></span>
+      <span class="cell live" title="三上 03 乘法的形状 · 成片"></span>
+      <span class="cell draft" title="三上 04 除法的两张脸 · 课稿"></span>
+      <span class="cell planned" title="三上 05 倍不是“多” · 待写"></span>
+      <span class="cell planned" title="三上 06 0 的隐身术 · 待写"></span>
+      <span class="cell planned" title="三上 07 估算的边界 · 待写"></span>
+      <span class="cell planned" title="三上 08 单位是人的尺 · 待写"></span>
+      <span class="cell planned" title="三上 09 周长的边界 · 待写"></span>
+      <span class="cell planned" title="三上 10 分数的诞生 · 待写"></span>
+      <span class="cell planned" title="三上 11 集合圈 · 待写"></span>
+      <span class="cell planned" title="三上 12 时间的刻度 · 待写"></span>
     </div>
-    <div class="hero-actions">
-      <a class="btn-main" href="课程/三上/L01-满十进一/讲授稿.html">从三上第 1 课开始</a>
-      <a class="btn-line" href="课程/五上/L01-小数乘法/讲授稿.html">看五上新稿</a>
-      <a class="btn-line" href="00-方案/09-96课总图.html">看 96 课总图</a>
+    <div class="board-row">
+      <span class="row-label">三下</span>
+      <span class="cell planned" title="三下 01 除法竖式 · 待写"></span>
+      <span class="cell planned" title="三下 02 两位数乘法 · 待写"></span>
+      <span class="cell planned" title="三下 03 面积 · 待写"></span>
+      <span class="cell planned" title="三下 04 周长与面积 · 待写"></span>
+      <span class="cell planned" title="三下 05 1 平方厘米 · 待写"></span>
+      <span class="cell planned" title="三下 06 小数的诞生 · 待写"></span>
+      <span class="cell planned" title="三下 07 年月日 · 待写"></span>
+      <span class="cell planned" title="三下 08 方向 · 待写"></span>
+      <span class="cell planned" title="三下 09 搭配 · 待写"></span>
+      <span class="cell planned" title="三下 10 统计表 · 待写"></span>
+      <span class="cell planned" title="三下 11 周期 · 待写"></span>
+      <span class="cell planned" title="三下 12 植树 · 待写"></span>
+    </div>
+    <div class="board-row">
+      <span class="row-label">四上</span>
+      <span class="cell planned" title="四上 01 大数 · 待写"></span>
+      <span class="cell planned" title="四上 02 进制 · 待写"></span>
+      <span class="cell planned" title="四上 03 角度 · 待写"></span>
+      <span class="cell planned" title="四上 04 平行与垂直 · 待写"></span>
+      <span class="cell planned" title="四上 05 三位数乘法 · 待写"></span>
+      <span class="cell planned" title="四上 06 积的变化 · 待写"></span>
+      <span class="cell planned" title="四上 07 试商 · 待写"></span>
+      <span class="cell planned" title="四上 08 商不变 · 待写"></span>
+      <span class="cell planned" title="四上 09 图形稳定性 · 待写"></span>
+      <span class="cell planned" title="四上 10 优化 · 待写"></span>
+      <span class="cell planned" title="四上 11 容斥 · 待写"></span>
+      <span class="cell planned" title="四上 12 数字谜 · 待写"></span>
+    </div>
+    <div class="board-row">
+      <span class="row-label">四下</span>
+      <span class="cell planned" title="四下 01 运算顺序 · 待写"></span>
+      <span class="cell planned" title="四下 02 运算律 · 待写"></span>
+      <span class="cell planned" title="四下 03 简便计算 · 待写"></span>
+      <span class="cell planned" title="四下 04 小数意义 · 待写"></span>
+      <span class="cell planned" title="四下 05 小数点搬家 · 待写"></span>
+      <span class="cell planned" title="四下 06 三边关系 · 待写"></span>
+      <span class="cell planned" title="四下 07 内角和 · 待写"></span>
+      <span class="cell planned" title="四下 08 图形运动 · 待写"></span>
+      <span class="cell planned" title="四下 09 平均数 · 待写"></span>
+      <span class="cell planned" title="四下 10 鸡兔同笼 · 待写"></span>
+      <span class="cell planned" title="四下 11 行程 · 待写"></span>
+      <span class="cell planned" title="四下 12 建模 · 待写"></span>
+    </div>
+    <div class="board-row">
+      <span class="row-label">五上</span>
+      <span class="cell draft" title="五上 01 小数乘法 · 课稿"></span>
+      <span class="cell draft" title="五上 02 小数除法 · 课稿"></span>
+      <span class="cell draft" title="五上 03 循环小数 · 课稿"></span>
+      <span class="cell draft" title="五上 04 数对 · 课稿"></span>
+      <span class="cell planned" title="五上 05 可能性 · 待写"></span>
+      <span class="cell planned" title="五上 06 字母表示数 · 待写"></span>
+      <span class="cell planned" title="五上 07 等式与方程 · 待写"></span>
+      <span class="cell planned" title="五上 08 列方程 · 待写"></span>
+      <span class="cell planned" title="五上 09 平行四边形面积 · 待写"></span>
+      <span class="cell planned" title="五上 10 三角形面积 · 待写"></span>
+      <span class="cell planned" title="五上 11 梯形面积 · 待写"></span>
+      <span class="cell planned" title="五上 12 植树 · 待写"></span>
+    </div>
+    <div class="board-row">
+      <span class="row-label">五下</span>
+      <span class="cell planned" title="五下 01 因数与倍数 · 待写"></span>
+      <span class="cell planned" title="五下 02 2/5/3 的倍数 · 待写"></span>
+      <span class="cell planned" title="五下 03 公因数与公倍数 · 待写"></span>
+      <span class="cell planned" title="五下 04 观察物体 · 待写"></span>
+      <span class="cell planned" title="五下 05 旋转 · 待写"></span>
+      <span class="cell planned" title="五下 06 长方体与正方体 · 待写"></span>
+      <span class="cell planned" title="五下 07 表面积 · 待写"></span>
+      <span class="cell planned" title="五下 08 体积与容积 · 待写"></span>
+      <span class="cell planned" title="五下 09 分数的意义 · 待写"></span>
+      <span class="cell planned" title="五下 10 分数基本性质 · 待写"></span>
+      <span class="cell planned" title="五下 11 分数加减 · 待写"></span>
+      <span class="cell planned" title="五下 12 找次品 · 待写"></span>
+    </div>
+    <div class="board-row">
+      <span class="row-label">六上</span>
+      <span class="cell planned" title="六上 01 分数乘法 · 待写"></span>
+      <span class="cell planned" title="六上 02 分数除法 · 待写"></span>
+      <span class="cell planned" title="六上 03 比 · 待写"></span>
+      <span class="cell planned" title="六上 04 按比分配 · 待写"></span>
+      <span class="cell planned" title="六上 05 位置与方向 · 待写"></span>
+      <span class="cell planned" title="六上 06 圆 · 待写"></span>
+      <span class="cell planned" title="六上 07 圆的面积 · 待写"></span>
+      <span class="cell planned" title="六上 08 扇形 · 待写"></span>
+      <span class="cell planned" title="六上 09 百分数 · 待写"></span>
+      <span class="cell planned" title="六上 10 百分数应用 · 待写"></span>
+      <span class="cell planned" title="六上 11 扇形统计图 · 待写"></span>
+      <span class="cell planned" title="六上 12 数与形 · 待写"></span>
+    </div>
+    <div class="board-row">
+      <span class="row-label">六下</span>
+      <span class="cell planned" title="六下 01 负数 · 待写"></span>
+      <span class="cell planned" title="六下 02 折扣利率税率 · 待写"></span>
+      <span class="cell planned" title="六下 03 圆柱表面积 · 待写"></span>
+      <span class="cell planned" title="六下 04 圆柱体积 · 待写"></span>
+      <span class="cell planned" title="六下 05 圆锥体积 · 待写"></span>
+      <span class="cell planned" title="六下 06 比例 · 待写"></span>
+      <span class="cell planned" title="六下 07 正比例 · 待写"></span>
+      <span class="cell planned" title="六下 08 反比例 · 待写"></span>
+      <span class="cell planned" title="六下 09 比例尺 · 待写"></span>
+      <span class="cell planned" title="六下 10 鸽巢 · 待写"></span>
+      <span class="cell planned" title="六下 11 统计图选择 · 待写"></span>
+      <span class="cell planned" title="六下 12 整理复习 · 待写"></span>
+    </div>
+        </div>
+        <div class="board-legend">
+          <span class="legend-item"><i class="key live"></i>成片</span>
+          <span class="legend-item"><i class="key draft"></i>课稿</span>
+          <span class="legend-item"><i class="key planned"></i>待写</span>
+        </div>
+        <div class="board-foot">8 课成稿 · 2 段成片 · 88 课待写</div>
+      </aside>
     </div>
   </header>
 
@@ -312,8 +568,8 @@
         <span class="go">→</span>
       </a>
     </div>
-    <h3 style="font-family:'Songti SC',serif;font-size:24px;margin:34px 0 6px">五上新稿 · 4 课</h3>
-    <p style="font-size:13px;color:var(--muted);margin:0 0 12px">没有视频。每课三份：讲授稿、动手单、挑战单。等你审。</p>
+    <h3 class="subhead">五上新稿 · 4 课</h3>
+    <p class="subhead-note">没有视频。每课三份：讲授稿、动手单、挑战单。等你审。</p>
     <div class="lesson-side">
       <a class="mini" href="课程/五上/L01-小数乘法/讲授稿.html">
         <div><div class="t">五上 01 · 小数乘法</div><div class="d">小数点为什么能“搬家” · 0.3×0.4 的方格实验</div></div>

@@ -279,6 +279,8 @@ function shell({ root, title, kicker, subtitle, content, bodyClass }) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101826">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iNSIgZmlsbD0iIzFlNGZkOCIvPjxwYXRoIGQ9Ik0xNCA0OFYxNmg4bDEwIDE3IDEwLTE3aDh2MzJoLThWMjlMMzIgNDYgMjIgMjl2MTl6IiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iNDciIHk9IjQ3IiB3aWR0aD0iOSIgaGVpZ2h0PSI5IiBmaWxsPSIjZjNjODRiIi8+PC9zdmc+">
 <title>${escapeHtml(title)} · 为什么实验室</title>
 <link rel="stylesheet" href="${href(root, 'assets/doc.css')}">
 </head>
@@ -442,16 +444,22 @@ function renderDoc(doc) {
     : '';
 
   const heroCopy = `<div class="hero-copy">
-    <div class="kicker">${escapeHtml(doc.kicker || '为什么实验室')}</div>
-    <h1 class="doc-title">${escapeHtml(title)}</h1>
-    ${doc.subtitle ? `<p class="doc-sub">${escapeHtml(doc.subtitle)}</p>` : ''}
-    ${facts.length ? `<div class="facts">${facts.join('')}</div>` : ''}
-    <div class="actions">${actions.join('')}</div>
+    <div class="hero-main">
+      <div class="kicker">${escapeHtml(doc.kicker || '为什么实验室')}</div>
+      <h1 class="doc-title">${escapeHtml(title)}</h1>
+      ${doc.subtitle ? `<p class="doc-sub">${escapeHtml(doc.subtitle)}</p>` : ''}
+      <div class="actions">${actions.join('')}</div>${doc.kind === 'lesson' ? `
+      <div class="lesson-route"><span>实验</span><i>→</i><span>讲解</span><i>→</i><span>四问</span><i>→</i><span>挑战</span><i>→</i><span>复述</span></div>` : ''}
+    </div>${facts.length ? `
+    <div class="facts">${facts.join('')}</div>` : ''}
   </div>`;
   const heroMedia = video || mediaPlaceholder;
+  const heroClasses = ['doc-hero'];
+  if (heroMedia) heroClasses.push('has-media');
+  if (facts.length) heroClasses.push('has-facts');
   const hero = heroMedia
-    ? `<section class="doc-hero"><div class="hero-grid">${heroCopy}<div class="hero-media">${heroMedia}</div></div></section>`
-    : `<section class="doc-hero">${heroCopy}</section>`;
+    ? `<section class="${heroClasses.join(' ')}"><div class="hero-grid">${heroCopy}<div class="hero-media">${heroMedia}</div></div></section>`
+    : `<section class="${heroClasses.join(' ')}">${heroCopy}</section>`;
   const content = `${hero}
 ${note}
 <div class="doc-layout${doc.fullWidth || !tocHtml ? ' no-toc' : ''}">
@@ -557,11 +565,11 @@ function renderCourseHub() {
     </aside>
   </div>
 </section>
-<h2 style="font-family:'Songti SC',serif;font-size:26px;margin:38px 0 6px">第一单元 · 运算基础</h2>
-<p style="font-size:13px;color:var(--muted);margin:0 0 14px">四课连起来，是运算的基础。</p>
+<h2 class="hub-section">第一单元 · 运算基础</h2>
+<p class="hub-section-sub">四课连起来，是运算的基础。</p>
 ${ready.map(row).join('')}
-<h2 style="font-family:'Songti SC',serif;font-size:26px;margin:44px 0 6px">本学期后续</h2>
-<p style="font-size:13px;color:var(--muted);margin:0 0 14px">标题和原理已定，稿子与视频按批次生产。</p>
+<h2 class="hub-section">本学期后续</h2>
+<p class="hub-section-sub">标题和原理已定，稿子与视频按批次生产。</p>
 ${pending.map(row).join('')}`;
   const html = shell({ root, title: '三上 · 12 课', kicker: 'COURSE', subtitle: '', content, bodyClass: 'hub' });
   fs.mkdirSync(path.join(ROOT, '课程/三上'), { recursive: true });
@@ -605,11 +613,11 @@ function renderCourseHub5A() {
     </aside>
   </div>
 </section>
-<h2 style="font-family:'Songti SC',serif;font-size:26px;margin:38px 0 6px">第 1 单元 · 小数与位置</h2>
-<p style="font-size:13px;color:var(--muted);margin:0 0 14px">四课连起来，是小数运算和坐标的入口。</p>
+<h2 class="hub-section">第 1 单元 · 小数与位置</h2>
+<p class="hub-section-sub">四课连起来，是小数运算和坐标的入口。</p>
 ${ready.map(row).join('')}
-<h2 style="font-family:'Songti SC',serif;font-size:26px;margin:44px 0 6px">本学期后续</h2>
-<p style="font-size:13px;color:var(--muted);margin:0 0 14px">标题和原理已定，按批次写稿。</p>
+<h2 class="hub-section">本学期后续</h2>
+<p class="hub-section-sub">标题和原理已定，按批次写稿。</p>
 ${pending.map(row).join('')}`;
   const html = shell({ root, title: '五上 · 12 课', kicker: 'COURSE', subtitle: '', content, bodyClass: 'hub' });
   fs.mkdirSync(path.join(ROOT, '课程/五上'), { recursive: true });
