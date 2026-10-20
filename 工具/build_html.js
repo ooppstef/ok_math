@@ -412,6 +412,35 @@ const DOCS = [
   }
 ];
 
+const SEMESTERS = ['三上', '三下', '四上', '四下', '五上', '五下', '六上', '六下'];
+const SEM_NAMES = { '三上': '三年级上册', '三下': '三年级下册', '四上': '四年级上册', '四下': '四年级下册', '五上': '五年级上册', '五下': '五年级下册', '六上': '六年级上册', '六下': '六年级下册' };
+const ALL_LESSONS = [];
+
+for (const sem of SEMESTERS) {
+  const base = path.join(ROOT, '课程', sem);
+  if (!fs.existsSync(base)) continue;
+  const dirs = fs.readdirSync(base, { withFileTypes: true })
+    .filter(d => d.isDirectory() && /^L\d{2}-/.test(d.name))
+    .map(d => d.name)
+    .sort();
+  for (const dir of dirs) {
+    const src = `课程/${sem}/${dir}/讲授稿.md`;
+    if (!fs.existsSync(path.join(ROOT, src))) continue;
+    const no = dir.slice(1, 3);
+    const title = dir.replace(/^L\d{2}-/, '');
+    ALL_LESSONS.push({ sem, dir, no, title, src, hub: `课程/${sem}/index.html` });
+  }
+}
+
+const knownDocs = new Set(DOCS.map(d => d.src));
+for (const l of ALL_LESSONS) {
+  if (knownDocs.has(l.src)) continue;
+  DOCS.push({
+    src: l.src, kind: 'lesson', kicker: `LESSON ${l.no} · ${l.sem}`,
+    subtitle: '', courseHub: l.hub
+  });
+}
+
 const LESSONS = [
   { no: '01', dir: 'L01-满十进一', title: '满十进一', q: '为什么数到十，就要换一根柱子？', badge: '成片 2:54', ready: true },
   { no: '02', dir: 'L02-竖式的秘密', title: '竖式的秘密', q: '为什么竖式要把相同数位对齐？', badge: '分镜完成', ready: true },
@@ -649,8 +678,7 @@ function renderDoc(doc) {
     <div class="hero-main">
       <div class="kicker">${escapeHtml(doc.kicker || '为什么实验室')}</div>
       <h1 class="doc-title">${escapeHtml(title)}</h1>
-      ${doc.subtitle ? `<p class="doc-sub">${escapeHtml(doc.subtitle)}</p>` : ''}
-      <div class="actions">${actions.join('')}</div>    </div>
+${doc.subtitle ? `      <p class="doc-sub">${escapeHtml(doc.subtitle)}</p>\n` : ''}      <div class="actions">${actions.join('')}</div>    </div>
   </div>`;
   const heroMedia = video || mediaPlaceholder;
   const heroClasses = ['doc-hero'];
@@ -679,18 +707,19 @@ function renderDocsHub() {
   const root = rootRel(out);
   const cards = [
     ['01', '总方案', '课程怎么安排', '目标、课程结构、四个学年安排、家长做什么。', '00-总方案.html'],
-    ['02', '三、四年级地图', '48 课，每一课一个“为什么”', '原理内核、教材锚点、B 卷接口、动手实验、轻奥延伸。', '01-48课知识地图.html'],
+    ['02', '三、四年级地图', '48 课，每一课一个“为什么”', '原理内核、教材锚点、B 卷接口、直观例子、轻奥延伸。', '01-48课知识地图.html'],
     ['03', '五、六年级地图', '48 课，接到六年级', '小数、方程、分数、比、圆、比例。', '08-五六年级48课地图.html'],
     ['04', '96 课总图', '八个学期，一条线', '一张表看完整，再看 8 条线索怎么长。', '09-96课总图.html'],
     ['05', '三、四年级覆盖', '71 个知识点都有落点', '对照 cn-math-taxonomy 的三、四年级清单。', '06-覆盖核对.html'],
     ['06', '五、六年级覆盖', '85 个知识点都有落点', '对照 cn-math-taxonomy 的五、六年级清单。', '10-五六年级覆盖核对.html'],
     ['07', '五、六年级 B 卷', 'B 卷题对应课次', '小数、分数、比例、几何、数论。', '11-五六年级B卷题型表.html'],
-    ['08', '课程审查清单', '人工 review 看什么', '数学、实验、语言、答案、边界。', '12-课程审查清单.html'],
-    ['09', '每课标准流程', '75 分钟怎么跑', '开场、实验、讲解、四个问题、三层挑战、复述。', '02-每课标准流程.html'],
+    ['08', '课程审查清单', '人工 review 看什么', '数学、语言、答案、边界和独立验收。', '12-课程审查清单.html'],
+    ['09', '每课标准流程', '旧版 75 分钟流程（历史参考）', '课程已改为视频/文本讲解；本页保留旧流程。', '02-每课标准流程.html'],
     ['10', 'B 卷题型对照表', '三、四年级 B 卷题', '40+ 题型对应课次。', '03-B卷题型对照表.html'],
     ['11', '视频生产说明', '等课稿审完再做', '一份 JSON，生成一集。', '04-视频生产说明.html'],
     ['12', '入学诊断', '10 分钟，看孩子现在在哪', '8 个问题，只记录原话，不打分。', '05-入学诊断.html'],
-    ['13', '研究依据', '为什么是 96 课', '课标、教材目录、taxonomy 和取舍。', '13-研究依据.html']
+    ['13', '研究依据', '为什么是 96 课', '课标、教材目录、taxonomy 和取舍。', '13-研究依据.html'],
+    ['14', '教材版本映射', '先确认学校教材', '出版社、版次、当前单元和已学内容。', '19-教材版本映射.html']
   ];
   const content = `<section class="hub-hero">
   <div class="hub-hero-grid">
@@ -896,24 +925,63 @@ ${pending.map(row).join('')}` : ''}`;
   console.log('✓', out);
 }
 
+function renderAutoHubs() {
+  for (const sem of SEMESTERS) {
+    const lessons = ALL_LESSONS.filter(l => l.sem === sem);
+    if (!lessons.length) continue;
+    const out = `课程/${sem}/index.html`;
+    const root = rootRel(out);
+    const rows = lessons.map(l => `<a class="lesson-row" href="${l.dir}/讲授稿.html">
+        <div class="no">${l.no}</div>
+        <div><h3>${escapeHtml(l.title)} <span class="badge gold">课稿待审</span></h3><p></p></div>
+        <div class="meta">讲解稿 →</div>
+      </a>`).join('');
+    const content = `<section class="hub-hero">
+  <div class="hub-hero-grid">
+    <div>
+      <div class="kicker">COURSE · ${sem}</div>
+      <h1 class="doc-title">${SEM_NAMES[sem]} · 12 课</h1>
+      <p class="doc-sub">12 课文本稿已齐，等你审。先不做视频。</p>
+      <div class="actions">
+        <a class="btn primary" href="${lessons[0].dir}/讲授稿.html">从第 1 课开始</a>
+        <a class="btn" href="${root}/00-方案/09-96课总图.html">看 96 课总图</a>
+      </div>
+    </div>
+    <aside class="hub-side">
+      <div class="side-label">阅读顺序</div>
+      <p>按课次从上到下读；先看一句话，再看例子和易错，最后做练习。</p>
+    </aside>
+  </div>
+</section>
+<h2 class="hub-section">${SEM_NAMES[sem]} · 12 课</h2>
+<p class="hub-section-sub">文本讲解稿，待人工 review。</p>
+${rows}`;
+    const html = shell({ root, title: `${sem} · 12 课`, kicker: 'COURSE', subtitle: '', content, bodyClass: 'hub' });
+    fs.mkdirSync(path.join(ROOT, '课程', sem), { recursive: true });
+    fs.writeFileSync(path.join(ROOT, out), html);
+    console.log('✓', out);
+  }
+}
+
 function renderCourseIndex() {
   const out = '课程/index.html';
   const root = rootRel(out);
   const cards = [
-    ['三上', '三上 · 12 课', '位值、竖式、乘除、周长。第 1–4 课已成稿，两课有视频。', '三上/index.html', '4 课可读'],
-    ['五上', '五上 · 12 课', '小数、方程、多边形面积、植树。第 1–12 课课稿待审。', '五上/index.html', '12 课待审'],
-    ['三下', '三下 · 12 课', '面积、小数、年月日、搭配。已在地图。', '../00-方案/01-48课知识地图.html', '待写稿'],
-    ['四下', '四下 · 12 课', '运算律、小数、三角形、统计。已在地图。', '../00-方案/01-48课知识地图.html', '待写稿'],
-    ['五下', '五下 · 12 课', '因数倍数、长方体、分数。第 1–8 课课稿待审。', '五下/index.html', '8 课待审'],
-    ['六上', '六上 · 12 课', '分数乘除、比、圆、百分数。已在地图。', '../00-方案/08-五六年级48课地图.html', '待写稿'],
-    ['六下', '六下 · 12 课', '负数、圆柱圆锥、比例。已在地图。', '../00-方案/08-五六年级48课地图.html', '待写稿']
+    ['三上', '三上 · 12 课', '位值、竖式、乘除、周长。12 课文本稿待审。', '三上/index.html', '12 课待审'],
+    ['三下', '三下 · 12 课', '面积、小数、年月日、搭配。12 课文本稿待审。', '三下/index.html', '12 课待审'],
+    ['四上', '四上 · 12 课', '大数、角度、积商规律、优化。12 课文本稿待审。', '四上/index.html', '12 课待审'],
+    ['四下', '四下 · 12 课', '运算律、小数、三角形、统计。12 课文本稿待审。', '四下/index.html', '12 课待审'],
+    ['五上', '五上 · 12 课', '小数、方程、面积、植树。12 课文本稿待审。', '五上/index.html', '12 课待审'],
+    ['五下', '五下 · 12 课', '因数倍数、长方体、分数。12 课文本稿待审。', '五下/index.html', '12 课待审'],
+    ['六上', '六上 · 12 课', '分数乘除、比、圆、百分数。12 课文本稿待审。', '六上/index.html', '12 课待审'],
+    ['六下', '六下 · 12 课', '负数、圆柱圆锥、比例、鸽巢。12 课文本稿待审。', '六下/index.html', '12 课待审']
   ];
   const content = `<section class="hub-hero">
   <div class="hub-hero-grid">
     <div>
       <div class="kicker">COURSE · 课程目录</div>
       <h1 class="doc-title">从哪一册开始？</h1>
-      <p class="doc-sub">三、四年级已有一套样课；五、六年级从五上第 1 课开始。课稿先审，视频后做。</p>
+      <p class="doc-sub">96 课文本初稿已齐，按学期进入；先审文字，视频后做。</p>
       <div class="actions">
         <a class="btn primary" href="五上/L01-小数乘法/讲授稿.html">五上第 1 课</a>
         <a class="btn" href="三上/L01-满十进一/讲授稿.html">三上第 1 课</a>
@@ -923,10 +991,10 @@ function renderCourseIndex() {
     <aside class="hub-side">
       <div class="side-label">生产顺序</div>
       <ol>
-        <li>五上 01–04：小数与位置</li>
-        <li>五上 05–08：方程</li>
-        <li>五上 09–12：面积与植树</li>
-        <li>五下、六上、六下</li>
+        <li>96 课文本初稿：已完成</li>
+        <li>人工 review：按学期逐课</li>
+        <li>学生试教、独立验收：未开始</li>
+        <li>视频：只保留已有两段</li>
       </ol>
     </aside>
   </div>
@@ -951,6 +1019,7 @@ renderDocsHub();
 renderCourseHub();
 renderCourseHub5A();
 renderCourseHub5B();
+renderAutoHubs();
 renderCourseIndex();
 
 // 首页里的 .md 链接统一换成 .html

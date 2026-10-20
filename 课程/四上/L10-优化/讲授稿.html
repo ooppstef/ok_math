@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101826">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iNSIgZmlsbD0iIzFlNGZkOCIvPjxwYXRoIGQ9Ik0xNCA0OFYxNmg4bDEwIDE3IDEwLTE3aDh2MzJoLThWMjlMMzIgNDYgMjIgMjl2MTl6IiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iNDciIHk9IjQ3IiB3aWR0aD0iOSIgaGVpZ2h0PSI5IiBmaWxsPSIjZjNjODRiIi8+PC9zdmc+">
+<title>第 10 课：优化：烙饼、沏茶、赛马 · 为什么实验室</title>
+<link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body class="doc-page lesson" id="top">
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../../../index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
+    <nav class="nav">
+      <a href="../../../00-方案/00-总方案.html">总方案</a>
+      <a href="../../../00-方案/09-96课总图.html">96 课地图</a>
+      <a href="../../../00-方案/03-B卷题型对照表.html">B 卷对照</a>
+      <a href="../../../课程/index.html">课程</a>
+      <a href="../../../index.html">首页</a>
+    </nav>
+  </div>
+  <div class="progress"><span></span></div>
+</header>
+<main class="page">
+<section class="doc-hero"><div class="hero-copy">
+    <div class="hero-main">
+      <div class="kicker">LESSON 10 · 四上</div>
+      <h1 class="doc-title">第 10 课：优化：烙饼、沏茶、赛马</h1>
+      <div class="actions"><a class="btn" href="../../../课程/四上/index.html">课程目录</a></div>    </div>
+  </div></section>
+
+<div class="doc-layout">
+  <article class="article">
+
+<h2 id="sec-1">一句话</h2>
+<p>优化是让等待和空闲的时间最少：能同时做的事并排做，必须先后做的事排好顺序。</p>
+<h2 id="sec-2">为什么</h2>
+<p>很多事情由若干步组成。有的步必须等前一步做完，有的步可以同时进行。优化就是找出哪些能并行、哪些必须排队，把总时间压到最短。</p>
+<p>烙饼就是一个例子。锅一次能放 2 张饼，每张饼两面都要烙，每面 3 分钟。锅的位置是有限的资源，不让锅空着，就是最省时间的方法。</p>
+<p>沏茶也是。烧水要 8 分钟，这 8 分钟里人是空闲的，可以同时洗茶杯、找茶叶。把这两件事塞进烧水的时间里，总时间就短了。</p>
+<h2 id="sec-3">例子</h2>
+<h3 id="sec-4">例 1：3 张饼最少几分钟</h3>
+<p>一张饼有正、反两面，3 张饼一共 6 面。锅一次能放 2 面，所以至少要烙 3 轮，每轮 3 分钟：</p>
+<pre><code>第 1 轮：A 正、B 正        3 分钟
+第 2 轮：A 反、C 正        3 分钟
+第 3 轮：B 反、C 反        3 分钟
+</code></pre>
+<p>一共 3×3=9 分钟。</p>
+<p>如果先烙 A、B 两张（6 分钟），再单独烙 C（6 分钟），就要 12 分钟。区别在于第二种做法让锅空了一半。</p>
+<h3 id="sec-5">例 2：沏茶最少几分钟</h3>
+<p>要做的事：</p>
+<pre><code>洗水壶        1 分钟
+烧水          8 分钟
+洗茶杯        2 分钟
+找茶叶        1 分钟
+沏茶          1 分钟
+</code></pre>
+<p>先洗水壶 1 分钟，再烧水 8 分钟。烧水的时候，同时洗茶杯 2 分钟、找茶叶 1 分钟，这两件事一共 3 分钟，在 8 分钟里做得完。</p>
+<p>最后沏茶 1 分钟。</p>
+<pre><code>1+8+1=10 分钟
+</code></pre>
+<h3 id="sec-6">例 3：5 张饼最少几分钟</h3>
+<p>5 张饼一共 10 面，锅一次放 2 面，需要 5 轮：</p>
+<pre><code>5×3=15 分钟
+</code></pre>
+<p>只要饼的数量大于等于 2，每面 3 分钟、锅一次放 2 张时，最省时间就是“张数×3”分钟。</p>
+<h2 id="sec-7">易错</h2>
+<ul>
+<li>烙 3 张饼算成 12 分钟，先烙两张再烙一张，中间让锅空着。</li>
+<li>把“正面、反面”当成两张饼，轮数算多。</li>
+<li>沏茶时把洗水壶也塞进烧水时间里。洗水壶必须在烧水之前做。</li>
+<li>忘了锅一次只能放 2 张，安排出一次烙 3 张的方案。</li>
+<li>把优化理解成“少做几件事”。优化是减少等待，不是偷工减料。</li>
+</ul>
+<h2 id="sec-8">练习</h2>
+<ol>
+<li>锅一次烙 2 张饼，每面 3 分钟，烙 4 张饼最少几分钟？</li>
+<li>同样条件下，烙 3 张饼最少几分钟？</li>
+<li>洗水壶 1 分钟，烧水 8 分钟，洗茶杯 2 分钟，找茶叶 1 分钟，沏茶 1 分钟。最少几分钟能喝上茶？</li>
+<li>烧水要 8 分钟，洗茶杯要 2 分钟，找茶叶要 1 分钟。从开始烧水到做完这两件事，一共需要多少分钟？</li>
+<li>田忌赛马：田忌的下等马、上等马、中等马，应该分别对国王的哪一等马？</li>
+<li>判断：优化就是尽量少做事情。</li>
+</ol>
+<h2 id="sec-9">答案</h2>
+<ol>
+<li>4 张饼 8 面，4 轮，4×3=12 分钟。</li>
+<li>9 分钟。</li>
+<li>1+8+1=10 分钟。</li>
+<li>8 分钟，因为洗杯和找茶叶都在烧水时完成。</li>
+<li>下等马对上等马，上等马对中等马，中等马对下等马，三局两胜。</li>
+<li>错。优化是合理安排顺序、减少等待，该做的事一件也不能少。</li>
+</ol>
+
+  </article>
+  <aside class="toc">
+        <div class="toc-title">本页目录</div>
+        <a class="lvl2" href="#sec-1">一句话</a><a class="lvl2" href="#sec-2">为什么</a><a class="lvl2" href="#sec-3">例子</a><a class="lvl3" href="#sec-4">例 1：3 张饼最少几分钟</a><a class="lvl3" href="#sec-5">例 2：沏茶最少几分钟</a><a class="lvl3" href="#sec-6">例 3：5 张饼最少几分钟</a><a class="lvl2" href="#sec-7">易错</a><a class="lvl2" href="#sec-8">练习</a><a class="lvl2" href="#sec-9">答案</a>
+      </aside>
+</div>
+<footer class="doc-footer">
+  <span>为什么实验室 · 小学数学 · 三上 → 六下</span>
+  <span><a href="../../../index.html">返回总览</a> · <a href="../../../README.html">使用说明</a></span>
+</footer>
+<div class="backtop"><a href="#top">↑ 回到顶部</a></div>
+</main>
+<script src="../../../assets/doc.js"></script>
+</body>
+</html>

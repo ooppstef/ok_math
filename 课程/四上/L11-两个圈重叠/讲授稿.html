@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101826">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iNSIgZmlsbD0iIzFlNGZkOCIvPjxwYXRoIGQ9Ik0xNCA0OFYxNmg4bDEwIDE3IDEwLTE3aDh2MzJoLThWMjlMMzIgNDYgMjIgMjl2MTl6IiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iNDciIHk9IjQ3IiB3aWR0aD0iOSIgaGVpZ2h0PSI5IiBmaWxsPSIjZjNjODRiIi8+PC9zdmc+">
+<title>第 11 课：容斥：两个圈重叠怎么数？ · 为什么实验室</title>
+<link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body class="doc-page lesson" id="top">
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../../../index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
+    <nav class="nav">
+      <a href="../../../00-方案/00-总方案.html">总方案</a>
+      <a href="../../../00-方案/09-96课总图.html">96 课地图</a>
+      <a href="../../../00-方案/03-B卷题型对照表.html">B 卷对照</a>
+      <a href="../../../课程/index.html">课程</a>
+      <a href="../../../index.html">首页</a>
+    </nav>
+  </div>
+  <div class="progress"><span></span></div>
+</header>
+<main class="page">
+<section class="doc-hero"><div class="hero-copy">
+    <div class="hero-main">
+      <div class="kicker">LESSON 11 · 四上</div>
+      <h1 class="doc-title">第 11 课：容斥：两个圈重叠怎么数？</h1>
+      <div class="actions"><a class="btn" href="../../../课程/四上/index.html">课程目录</a></div>    </div>
+  </div></section>
+
+<div class="doc-layout">
+  <article class="article">
+
+<h2 id="sec-1">一句话</h2>
+<p>两类都数一遍，重叠部分被数了两次，减去一次才不重不漏。</p>
+<h2 id="sec-2">为什么</h2>
+<p>统计“会游泳或会滑冰”的人数时，如果直接把会游泳的 32 人和会滑冰的 25 人相加，两项都会的 12 人就被算了两次。</p>
+<pre><code>只游泳：32−12=20 人
+只滑冰：25−12=13 人
+两项都会：12 人
+</code></pre>
+<p>一共：</p>
+<pre><code>20+13+12=45 人
+</code></pre>
+<p>也可以直接：</p>
+<pre><code>32+25−12=45 人
+</code></pre>
+<p>这就是容斥原理：先把两类分别加起来，再减去重叠的一次。</p>
+<p>用两个圈表示，可以分成三块：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>只游泳</th>
+<th>两项都会</th>
+<th>只滑冰</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>20 人</td>
+<td>12 人</td>
+<td>13 人</td>
+</tr>
+</tbody></table></div>
+<p>两个圈合起来覆盖的总人数，就是“至少会一项”的人数。如果还知道全班人数，用全班人数减去这个数，就是“两项都不会”的人数。</p>
+<h2 id="sec-3">例子</h2>
+<h3 id="sec-4">例 1：至少会一项</h3>
+<p>班里会游泳的有 32 人，会滑冰的有 25 人，两项都会的有 12 人。</p>
+<pre><code>32+25−12=45 人
+</code></pre>
+<p>至少会一项的有 45 人。</p>
+<h3 id="sec-5">例 2：两项都不会</h3>
+<p>这个班一共有 48 人，至少会一项的有 45 人。</p>
+<pre><code>48−45=3 人
+</code></pre>
+<p>两项都不会的有 3 人。</p>
+<h3 id="sec-6">例 3：三个圈</h3>
+<p>三个兴趣组：</p>
+<pre><code>美术 10 人，音乐 12 人，体育 15 人
+美术和音乐都参加 4 人
+美术和体育都参加 3 人
+音乐和体育都参加 5 人
+三个组都参加 2 人
+</code></pre>
+<p>先算至少参加一个组的人数：</p>
+<pre><code>10+12+15−4−3−5+2
+=37−12+2
+=27 人
+</code></pre>
+<p>为什么最后要加回 2？三个组都参加的人，在减两两重叠时被减了三次，已经一次不剩，必须加回一次。</p>
+<h2 id="sec-7">易错</h2>
+<ul>
+<li>直接把两类人数相加，忘了减去重叠部分。</li>
+<li>把“两项都会”当成“两项都不会”。</li>
+<li>求“只会一项”时，忘记把两项都会的人排除掉。</li>
+<li>用总人数减“至少会一项”时，把顺序弄反。</li>
+<li>三个圈相加减两两重叠后，忘记把三个都包含的部分加回来。</li>
+</ul>
+<h2 id="sec-8">练习</h2>
+<ol>
+<li>18 人会足球，22 人会篮球，8 人两项都会。至少会一项的有多少人？</li>
+<li>只喜欢苹果的有 15 人，只喜欢香蕉的有 10 人，两种都喜欢的有 6 人。一共有多少人？</li>
+<li>班里 40 人，会游泳的 26 人，会骑车的 18 人，两项都会的 10 人。两项都不会的有多少人？</li>
+<li>参加甲比赛的有 25 人，参加乙比赛的有 20 人，参加比赛的共有 35 人。两项都参加的有多少人？</li>
+<li>三个组人数分别是 10、12、15，两两重叠分别是 4、3、5，三个都参加的有 2 人。至少参加一个组的有多少人？</li>
+<li>判断：把两类人数直接相加，就是总人数。</li>
+</ol>
+<h2 id="sec-9">答案</h2>
+<ol>
+<li>18+22−8=32 人。</li>
+<li>15+10+6=31 人。</li>
+<li>26+18−10=34 人至少会一项；40−34=6 人两项都不会。</li>
+<li>25+20−35=10 人。</li>
+<li>10+12+15−4−3−5+2=27 人。</li>
+<li>错。重叠的人被数了两次，要减去一次。</li>
+</ol>
+
+  </article>
+  <aside class="toc">
+        <div class="toc-title">本页目录</div>
+        <a class="lvl2" href="#sec-1">一句话</a><a class="lvl2" href="#sec-2">为什么</a><a class="lvl2" href="#sec-3">例子</a><a class="lvl3" href="#sec-4">例 1：至少会一项</a><a class="lvl3" href="#sec-5">例 2：两项都不会</a><a class="lvl3" href="#sec-6">例 3：三个圈</a><a class="lvl2" href="#sec-7">易错</a><a class="lvl2" href="#sec-8">练习</a><a class="lvl2" href="#sec-9">答案</a>
+      </aside>
+</div>
+<footer class="doc-footer">
+  <span>为什么实验室 · 小学数学 · 三上 → 六下</span>
+  <span><a href="../../../index.html">返回总览</a> · <a href="../../../README.html">使用说明</a></span>
+</footer>
+<div class="backtop"><a href="#top">↑ 回到顶部</a></div>
+</main>
+<script src="../../../assets/doc.js"></script>
+</body>
+</html>

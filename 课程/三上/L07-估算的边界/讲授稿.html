@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101826">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iNSIgZmlsbD0iIzFlNGZkOCIvPjxwYXRoIGQ9Ik0xNCA0OFYxNmg4bDEwIDE3IDEwLTE3aDh2MzJoLThWMjlMMzIgNDYgMjIgMjl2MTl6IiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iNDciIHk9IjQ3IiB3aWR0aD0iOSIgaGVpZ2h0PSI5IiBmaWxsPSIjZjNjODRiIi8+PC9zdmc+">
+<title>第 7 课：估算的边界 · 为什么实验室</title>
+<link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body class="doc-page lesson" id="top">
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../../../index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
+    <nav class="nav">
+      <a href="../../../00-方案/00-总方案.html">总方案</a>
+      <a href="../../../00-方案/09-96课总图.html">96 课地图</a>
+      <a href="../../../00-方案/03-B卷题型对照表.html">B 卷对照</a>
+      <a href="../../../课程/index.html">课程</a>
+      <a href="../../../index.html">首页</a>
+    </nav>
+  </div>
+  <div class="progress"><span></span></div>
+</header>
+<main class="page">
+<section class="doc-hero"><div class="hero-copy">
+    <div class="hero-main">
+      <div class="kicker">LESSON 07 · 三上</div>
+      <h1 class="doc-title">第 7 课：估算的边界</h1>
+      <div class="actions"><a class="btn" href="../../../课程/三上/index.html">课程目录</a></div>    </div>
+  </div></section>
+
+<div class="doc-layout">
+  <article class="article">
+
+<h2 id="sec-1">一句话</h2>
+<p>估算要知道结果可能偏大还是偏小，还要知道这个误差会不会影响最后的判断。</p>
+<h2 id="sec-2">为什么</h2>
+<p>估算常用的办法，是把数看成整十、整百。取近似会带来误差，误差有方向：可能比实际大，也可能比实际小。</p>
+<p>判断“够不够”时，标准通常是“不能超过”的上限，比如带的钱、座位数。可以把估算结果看成一条边界：</p>
+<ul>
+<li>把结果往大估，得到一个上限。上限没有超过标准，实际一定没有超过。</li>
+<li>把结果往小估，得到一个下限。下限已经超过标准，实际一定超过。</li>
+<li>估算结果落在标准附近，或者估算的范围跨过标准，就不能下结论，要算得更准。</li>
+</ul>
+<p>所以估算的关键，是这个近似值能不能支撑判断，不只是算得快。有时估到十位就够，有时必须估到个位，甚至直接精确计算。</p>
+<h2 id="sec-3">例子</h2>
+<h3 id="sec-4">例 1：带 300 元买 3 个 98 元的书包</h3>
+<p>把 98 往大估成 100。3×100=300，上限是 300，没有超过 300 元，所以实际一定够。</p>
+<p>精确算：98×3=294 元，294&lt;300。</p>
+<h3 id="sec-5">例 2：197 人和 208 人，400 个座位</h3>
+<p>如果都看成 200 人，200+200=400，会得到“刚好够”。</p>
+<p>实际要算误差：197 看成 200，多算了 3；208 看成 200，少算了 8。一多一少，合起来少算了 5。</p>
+<p>所以实际人数是 400+5=405 人。405&gt;400，不够坐。</p>
+<h3 id="sec-6">例 3：每趟运 48 箱，运 6 趟，280 箱能运完吗</h3>
+<p>把 48 往小估成 45：6 趟至少运 45×6=270 箱。
+把 48 往大估成 50：6 趟最多运 50×6=300 箱。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>估法</th>
+<th>算式</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>往小估</td>
+<td>45×6</td>
+<td>270</td>
+</tr>
+<tr>
+<td>往大估</td>
+<td>50×6</td>
+<td>300</td>
+</tr>
+</tbody></table></div>
+<p>实际运量在 270 到 300 之间，280 正好落在这个范围里。估算不能判断够不够。</p>
+<p>精确算：48×6=288 箱，288&gt;280，能运完。</p>
+<p>这个例子说明：估算给出的范围跨过了判断标准，就要继续算。</p>
+<h2 id="sec-7">易错</h2>
+<ul>
+<li>把估算当成随便写一个接近的数，不看误差方向。</li>
+<li>判断“够不够”时，把价格往小估，却用“够”下结论。往小估的结果可能低于实际，不能保证够。</li>
+<li>把 197+208 估成 200+200=400，就认定刚好够，忽略两个近似误差方向相反。</li>
+<li>估算结果离判断标准很近时，不再精确计算。</li>
+<li>把“约等于”和“等于”混用。</li>
+</ul>
+<h2 id="sec-8">练习</h2>
+<ol>
+<li>一支笔 19 元，买 5 支，带 100 元够吗？</li>
+<li>三年级 198 人，四年级 203 人，礼堂有 420 个座位，够坐吗？</li>
+<li>每盒鸡蛋 32 个，7 盒大约多少个？实际多少个？</li>
+<li>一张门票 49 元，6 个人带 300 元够吗？</li>
+<li>每辆车坐 42 人，5 辆车能坐下 210 人吗？</li>
+<li>判断：估算时把两个数都看成整百，结果一定可靠。</li>
+</ol>
+<h2 id="sec-9">答案</h2>
+<ol>
+<li>19&lt;20，5×20=100，上限是 100，带 100 元够。精确算 19×5=95 元。</li>
+<li>198&lt;200，203&lt;210，所以总人数小于 410；410 小于 420，够坐。实际 198+203=401 人。</li>
+<li>32 看成 30，7×30=210，大约 210 个；实际 32×7=224 个，比估计多 14 个。</li>
+<li>49&lt;50，6×50=300，上限是 300，带 300 元够。精确算 49×6=294 元。</li>
+<li>42×5=210，正好坐下。把 42 往小估成 40，得到 200，这只是下限，不能说明实际不到 210；这里估算离标准太近，必须精确算。</li>
+<li>错。比如 197+208，都看成整百是 200+200=400，实际是 405；用 400 判断 400 个座位就会出错。</li>
+</ol>
+
+  </article>
+  <aside class="toc">
+        <div class="toc-title">本页目录</div>
+        <a class="lvl2" href="#sec-1">一句话</a><a class="lvl2" href="#sec-2">为什么</a><a class="lvl2" href="#sec-3">例子</a><a class="lvl3" href="#sec-4">例 1：带 300 元买 3 个 98 元的书包</a><a class="lvl3" href="#sec-5">例 2：197 人和 208 人，400 个座位</a><a class="lvl3" href="#sec-6">例 3：每趟运 48 箱，运 6 趟，280 箱能运完吗</a><a class="lvl2" href="#sec-7">易错</a><a class="lvl2" href="#sec-8">练习</a><a class="lvl2" href="#sec-9">答案</a>
+      </aside>
+</div>
+<footer class="doc-footer">
+  <span>为什么实验室 · 小学数学 · 三上 → 六下</span>
+  <span><a href="../../../index.html">返回总览</a> · <a href="../../../README.html">使用说明</a></span>
+</footer>
+<div class="backtop"><a href="#top">↑ 回到顶部</a></div>
+</main>
+<script src="../../../assets/doc.js"></script>
+</body>
+</html>

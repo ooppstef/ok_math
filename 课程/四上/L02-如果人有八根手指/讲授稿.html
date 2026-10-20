@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101826">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iNSIgZmlsbD0iIzFlNGZkOCIvPjxwYXRoIGQ9Ik0xNCA0OFYxNmg4bDEwIDE3IDEwLTE3aDh2MzJoLThWMjlMMzIgNDYgMjIgMjl2MTl6IiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iNDciIHk9IjQ3IiB3aWR0aD0iOSIgaGVpZ2h0PSI5IiBmaWxsPSIjZjNjODRiIi8+PC9zdmc+">
+<title>第 2 课：进制：如果人有 8 根手指？ · 为什么实验室</title>
+<link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body class="doc-page lesson" id="top">
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../../../index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
+    <nav class="nav">
+      <a href="../../../00-方案/00-总方案.html">总方案</a>
+      <a href="../../../00-方案/09-96课总图.html">96 课地图</a>
+      <a href="../../../00-方案/03-B卷题型对照表.html">B 卷对照</a>
+      <a href="../../../课程/index.html">课程</a>
+      <a href="../../../index.html">首页</a>
+    </nav>
+  </div>
+  <div class="progress"><span></span></div>
+</header>
+<main class="page">
+<section class="doc-hero"><div class="hero-copy">
+    <div class="hero-main">
+      <div class="kicker">LESSON 02 · 四上</div>
+      <h1 class="doc-title">第 2 课：进制：如果人有 8 根手指？</h1>
+      <div class="actions"><a class="btn" href="../../../课程/四上/index.html">课程目录</a></div>    </div>
+  </div></section>
+
+<div class="doc-layout">
+  <article class="article">
+
+<h2 id="sec-1">一句话</h2>
+<p>十进制只是选了 10 作打包单位；换成几进制，就满几进一。</p>
+<h2 id="sec-2">为什么</h2>
+<p>我们平时写 235，意思是：</p>
+<pre><code>2 个百 + 3 个十 + 5 个一
+= 2×100 + 3×10 + 5×1
+</code></pre>
+<p>每一位的“份量”是 10 的幂：1、10、100、1000……这就是十进制。</p>
+<p>如果人有 8 根手指，最自然的打包单位会是 8。数到 7 以后，再添 1 个，就捆成 1 个八，写作 10。这里的 10 不读“十”，读“一零”，表示“1 个八、0 个一”。</p>
+<p>八进制只用 0 到 7 这八个数字，没有 8 和 9。同样，五进制只用 0 到 4，二进制只用 0 和 1。</p>
+<p>把其他进制化成十进制，就按位算：</p>
+<pre><code>1011₂ = 1×8 + 0×4 + 1×2 + 1×1 = 11
+</code></pre>
+<p>把十进制化成其他进制，就反复除以进制数，把余数从下往上读。</p>
+<h2 id="sec-3">例子</h2>
+<h3 id="sec-4">例 1：十进制 45 写成五进制</h3>
+<pre><code>45 ÷ 5 = 9 …… 0
+ 9 ÷ 5 = 1 …… 4
+ 1 ÷ 5 = 0 …… 1
+</code></pre>
+<p>余数从下往上读，是 140。所以 45 = 140₅。</p>
+<p>检验：1×25+4×5+0=25+20=45。</p>
+<h3 id="sec-5">例 2：二进制 1011 与十进制 11</h3>
+<pre><code>1011₂ = 1×8 + 0×4 + 1×2 + 1×1 = 11
+</code></pre>
+<p>反过来，把 11 写成二进制：</p>
+<pre><code>11 ÷ 2 = 5 …… 1
+ 5 ÷ 2 = 2 …… 1
+ 2 ÷ 2 = 1 …… 0
+ 1 ÷ 2 = 0 …… 1
+</code></pre>
+<p>余数从下往上读，是 1011。所以 11 = 1011₂。</p>
+<h3 id="sec-6">例 3：八进制 37 是多少</h3>
+<pre><code>37₈ = 3×8 + 7 = 24+7 = 31
+</code></pre>
+<p>八进制里的 37，表示 3 个八和 7 个一，不是三十七。</p>
+<h2 id="sec-7">易错</h2>
+<ul>
+<li>在八进制里写出 8 或 9。八进制的数字只有 0 到 7。</li>
+<li>在五进制里写出 5。满 5 就要进到上一位。</li>
+<li>把 10₈ 当成十。它表示 8。</li>
+<li>换算时把位权弄反。从右往左依次是 1、进制数、进制数的平方……</li>
+<li>除法取余数时从上往下读，顺序读反了。</li>
+<li>写进制数时丢掉右下角的下标，别人就不知道它是几进制。</li>
+</ul>
+<h2 id="sec-8">练习</h2>
+<ol>
+<li>五进制数 23 化成十进制是多少？</li>
+<li>十进制 17 化成二进制是多少？</li>
+<li>八进制数 100 化成十进制是多少？</li>
+<li>二进制数 1101 化成十进制是多少？</li>
+<li>十进制 50 化成五进制是多少？</li>
+<li>判断：在八进制里，7+1=10。</li>
+</ol>
+<h2 id="sec-9">答案</h2>
+<ol>
+<li>2×5+3=13。</li>
+<li>17=16+1=10001₂。</li>
+<li>1×64=64。</li>
+<li>8+4+0+1=13。</li>
+<li>50=2×25，所以是 200₅。</li>
+<li>对。八进制满 8 进一，7 再加 1 就是 10₈。</li>
+</ol>
+
+  </article>
+  <aside class="toc">
+        <div class="toc-title">本页目录</div>
+        <a class="lvl2" href="#sec-1">一句话</a><a class="lvl2" href="#sec-2">为什么</a><a class="lvl2" href="#sec-3">例子</a><a class="lvl3" href="#sec-4">例 1：十进制 45 写成五进制</a><a class="lvl3" href="#sec-5">例 2：二进制 1011 与十进制 11</a><a class="lvl3" href="#sec-6">例 3：八进制 37 是多少</a><a class="lvl2" href="#sec-7">易错</a><a class="lvl2" href="#sec-8">练习</a><a class="lvl2" href="#sec-9">答案</a>
+      </aside>
+</div>
+<footer class="doc-footer">
+  <span>为什么实验室 · 小学数学 · 三上 → 六下</span>
+  <span><a href="../../../index.html">返回总览</a> · <a href="../../../README.html">使用说明</a></span>
+</footer>
+<div class="backtop"><a href="#top">↑ 回到顶部</a></div>
+</main>
+<script src="../../../assets/doc.js"></script>
+</body>
+</html>

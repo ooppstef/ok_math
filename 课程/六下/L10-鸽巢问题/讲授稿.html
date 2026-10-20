@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101826">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iNSIgZmlsbD0iIzFlNGZkOCIvPjxwYXRoIGQ9Ik0xNCA0OFYxNmg4bDEwIDE3IDEwLTE3aDh2MzJoLThWMjlMMzIgNDYgMjIgMjl2MTl6IiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iNDciIHk9IjQ3IiB3aWR0aD0iOSIgaGVpZ2h0PSI5IiBmaWxsPSIjZjNjODRiIi8+PC9zdmc+">
+<title>第 10 课：鸽巢问题 · 为什么实验室</title>
+<link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body class="doc-page lesson" id="top">
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../../../index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
+    <nav class="nav">
+      <a href="../../../00-方案/00-总方案.html">总方案</a>
+      <a href="../../../00-方案/09-96课总图.html">96 课地图</a>
+      <a href="../../../00-方案/03-B卷题型对照表.html">B 卷对照</a>
+      <a href="../../../课程/index.html">课程</a>
+      <a href="../../../index.html">首页</a>
+    </nav>
+  </div>
+  <div class="progress"><span></span></div>
+</header>
+<main class="page">
+<section class="doc-hero"><div class="hero-copy">
+    <div class="hero-main">
+      <div class="kicker">LESSON 10 · 六下</div>
+      <h1 class="doc-title">第 10 课：鸽巢问题</h1>
+      <div class="actions"><a class="btn" href="../../../课程/六下/index.html">课程目录</a></div>    </div>
+  </div></section>
+
+<div class="doc-layout">
+  <article class="article">
+
+<h2 id="sec-1">一句话</h2>
+<p>把 n 个物体放进 m 个抽屉，必有一个抽屉，其数量不少于“n÷m 的商，有余数就加 1”个。</p>
+<h2 id="sec-2">为什么</h2>
+<p>5 只鸽子进 4 个笼。假设每个笼最多 1 只，4 个笼最多装 4 只，还剩 1 只没处放。所以无论怎么放，至少有一个笼里有 2 只或更多。</p>
+<p>这就是“最坏情况”的思路：要让每个抽屉尽量少，就先每个抽屉放 1 个；放完一轮还有剩余，剩余的那些无论放哪里，都会让某个抽屉多出 1 个。</p>
+<p>一般地，n 个物体放进 m 个抽屉：</p>
+<pre><code>n÷m=q……r
+</code></pre>
+<p>如果 r=0，至少有一个抽屉不少于 q 个；如果 r&gt;0，至少有一个抽屉不少于 q+1 个。</p>
+<p>也可以写成：至少数=⌈n/m⌉，⌈ ⌉ 表示向上取整。</p>
+<p>“至少”说的是保证。5 只鸽子进 4 个笼，可能是 2、1、1、1，也可能是 3、1、1、0，甚至 5、0、0、0；但每一种分法里，都至少有一个笼不少于 2 只。</p>
+<p>题目问“至少有几个进同一个笼”，不是求平均每笼几个。平均数是 5÷4=1.25，笼子不能装 1.25 只，所以要取 2。</p>
+<h2 id="sec-3">例子</h2>
+<h3 id="sec-4">例 1：5 只鸽子，4 个笼</h3>
+<pre><code>5÷4=1……1
+</code></pre>
+<p>先每笼 1 只，还剩 1 只；这只放进任意一笼，那个笼就有 2 只。</p>
+<p>至少有一个笼有 2 只。</p>
+<h3 id="sec-5">例 2：13 本书，4 个抽屉</h3>
+<pre><code>13÷4=3……1
+</code></pre>
+<p>每个抽屉先放 3 本，共用 12 本，还剩 1 本；放进任意抽屉，那个抽屉有 4 本。</p>
+<p>至少有一个抽屉有 4 本。</p>
+<h3 id="sec-6">例 3：45 人，12 个月</h3>
+<pre><code>45÷12=3……9
+</code></pre>
+<p>假设每个月最多 3 人过生日，12 个月最多 36 人；45-36=9，还有 9 人，无论放在哪个月，都会使那个月达到 4 人。</p>
+<p>至少有 4 人在同一个月过生日。</p>
+<h2 id="sec-7">易错</h2>
+<ul>
+<li>把“至少”理解成“每个抽屉都一样多”。至少是保证有一个抽屉不少于这个数。</li>
+<li>有余数时忘记加 1。13÷4=3……1，答案是 4，不是 3。</li>
+<li>整除时又加 1。12 本书放 4 个抽屉，12÷4=3，答案是 3，不是 4。</li>
+<li>把物体数和抽屉数弄反。45 人进 12 个月，除数是 12。</li>
+<li>用平均数代替“保证”。平均数 1.25 不能直接当答案。</li>
+<li>题目问“至少摸几个才能保证”时，只算到“每个抽屉 1 个”，忘了再摸 1 个。</li>
+</ul>
+<h2 id="sec-8">练习</h2>
+<ol>
+<li>7 只鸽子飞进 3 个笼，至少有几只进同一个笼？</li>
+<li>20 个苹果放进 6 个盘子，至少有一个盘子放几个？</li>
+<li>12 本书放进 4 个抽屉，至少有一个抽屉放几本？</li>
+<li>一个班有 45 人，至少有几人在同一个月过生日？</li>
+<li>有红、黄、蓝三种颜色的球，至少摸出几个才能保证有 2 个同色？</li>
+<li>判断：5 只鸽子进 4 个笼，一定有一个笼正好有 2 只。</li>
+</ol>
+<h2 id="sec-9">答案</h2>
+<ol>
+<li>7÷3=2……1，至少 3 只。</li>
+<li>20÷6=3……2，至少 4 个。</li>
+<li>12÷4=3，至少 3 本。</li>
+<li>45÷12=3……9，至少 4 人。</li>
+<li>最坏情况先摸出红、黄、蓝各 1 个，共 3 个；再摸 1 个必与其中一个同色，所以至少摸 4 个。</li>
+<li>错。“至少 2 只”包括 2 只、3 只、4 只、5 只，不能保证正好 2 只。</li>
+</ol>
+
+  </article>
+  <aside class="toc">
+        <div class="toc-title">本页目录</div>
+        <a class="lvl2" href="#sec-1">一句话</a><a class="lvl2" href="#sec-2">为什么</a><a class="lvl2" href="#sec-3">例子</a><a class="lvl3" href="#sec-4">例 1：5 只鸽子，4 个笼</a><a class="lvl3" href="#sec-5">例 2：13 本书，4 个抽屉</a><a class="lvl3" href="#sec-6">例 3：45 人，12 个月</a><a class="lvl2" href="#sec-7">易错</a><a class="lvl2" href="#sec-8">练习</a><a class="lvl2" href="#sec-9">答案</a>
+      </aside>
+</div>
+<footer class="doc-footer">
+  <span>为什么实验室 · 小学数学 · 三上 → 六下</span>
+  <span><a href="../../../index.html">返回总览</a> · <a href="../../../README.html">使用说明</a></span>
+</footer>
+<div class="backtop"><a href="#top">↑ 回到顶部</a></div>
+</main>
+<script src="../../../assets/doc.js"></script>
+</body>
+</html>

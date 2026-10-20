@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101826">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iNSIgZmlsbD0iIzFlNGZkOCIvPjxwYXRoIGQ9Ik0xNCA0OFYxNmg4bDEwIDE3IDEwLTE3aDh2MzJoLThWMjlMMzIgNDYgMjIgMjl2MTl6IiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iNDciIHk9IjQ3IiB3aWR0aD0iOSIgaGVpZ2h0PSI5IiBmaWxsPSIjZjNjODRiIi8+PC9zdmc+">
+<title>第 12 课：数与形 · 为什么实验室</title>
+<link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body class="doc-page lesson" id="top">
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../../../index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
+    <nav class="nav">
+      <a href="../../../00-方案/00-总方案.html">总方案</a>
+      <a href="../../../00-方案/09-96课总图.html">96 课地图</a>
+      <a href="../../../00-方案/03-B卷题型对照表.html">B 卷对照</a>
+      <a href="../../../课程/index.html">课程</a>
+      <a href="../../../index.html">首页</a>
+    </nav>
+  </div>
+  <div class="progress"><span></span></div>
+</header>
+<main class="page">
+<section class="doc-hero"><div class="hero-copy">
+    <div class="hero-main">
+      <div class="kicker">LESSON 12 · 六上</div>
+      <h1 class="doc-title">第 12 课：数与形</h1>
+      <div class="actions"><a class="btn" href="../../../课程/六上/index.html">课程目录</a></div>    </div>
+  </div></section>
+
+<div class="doc-layout">
+  <article class="article">
+
+<h2 id="sec-1">一句话</h2>
+<p>从 1 个点开始，依次增加 3、5、7……每增加一个奇数，就相当于在正方形外面加一层“L 形”；前 n 个奇数正好填满 n×n 的正方形，所以和是 n²。</p>
+<h2 id="sec-2">为什么</h2>
+<p>先看用点摆正方形：</p>
+<pre><code>1×1：        ●
+
+2×2：        ● ●
+             ● ●
+
+3×3：        ● ● ●
+             ● ● ●
+             ● ● ●
+</code></pre>
+<p>从 1×1 变成 2×2，要在右边和下边各加一层，新加 3 个点。</p>
+<p>从 2×2 变成 3×3，再加一层，新加 5 个点。</p>
+<p>把每次增加的点数排出来：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th align="right">正方形边长</th>
+<th align="right">总点数</th>
+<th align="right">这次增加的点数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="right">9</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="right">16</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td align="right">25</td>
+<td align="right">9</td>
+</tr>
+</tbody></table></div>
+<p>每次增加的点数正好是一个奇数。第 n 次从 (n−1)×(n−1) 变成 n×n 时，增加的点数是：</p>
+<pre><code>n²−(n−1)²
+=n²−(n²−2n+1)
+=2n−1
+</code></pre>
+<p>2n−1 正是第 n 个奇数。</p>
+<p>所以：</p>
+<pre><code>1=1²
+1+3=2²
+1+3+5=3²
+1+3+5+7=4²
+</code></pre>
+<p>一直加下去：</p>
+<pre><code>1+3+5+…+(2n−1)=n²
+</code></pre>
+<p>这里要分清两个数：n 是奇数的个数，也是正方形的边长；2n−1 是最后一个奇数。比如 1+3+5+7 有 4 个奇数，和是 4²=16，最后一个奇数是 2×4−1=7。</p>
+<p>数可以说明形的规律，形也可以帮我们记住数的规律。这就是“数与形”的互相验证。</p>
+<h2 id="sec-3">例子</h2>
+<h3 id="sec-4">例 1：前 5 个奇数的和</h3>
+<pre><code>1+3+5+7+9
+</code></pre>
+<p>一共 5 个奇数，所以和是 5²=25。</p>
+<h3 id="sec-5">例 2：1+3+5+…+19</h3>
+<p>最后一个奇数是 19，它排在第几个？</p>
+<pre><code>(19+1)÷2=10
+</code></pre>
+<p>共有 10 个奇数，和是 10²=100。</p>
+<h3 id="sec-6">例 3：101+103+…+199</h3>
+<p>从 101 到 199 的奇数，一共有：</p>
+<pre><code>(199−101)÷2+1=50（个）
+</code></pre>
+<p>前 100 个奇数的和是 100²=10000，前 50 个奇数的和是 50²=2500。</p>
+<p>所以 101+103+…+199=10000−2500=7500。</p>
+<h2 id="sec-7">易错</h2>
+<ul>
+<li>把最后一个奇数当成奇数的个数。1+3+5+…+19 有 10 个奇数，不是 19 个，和是 100，不是 19²。</li>
+<li>把 1+3+5+7 算成 4×7=28。应该看个数：4 个奇数，和是 4²=16。</li>
+<li>认为所有连续自然数的和都是平方数。1+2+3+4=10，不是平方数；平方数对应的是连续奇数的和。</li>
+<li>求第 n 个奇数时写成 n。第 n 个奇数是 2n−1。</li>
+<li>数正方形最外层点数时，把四个角重复计算。n×n 点阵最外层是 4n−4 个点。</li>
+<li>把“边长”和“层数”混在一起。边长是 n，最外层是第 n 层。</li>
+</ul>
+<h2 id="sec-8">练习</h2>
+<ol>
+<li>计算 1+3+5+7。</li>
+<li>计算 1+3+5+…+11。</li>
+<li>计算 1+3+5+…+99。</li>
+<li>第 8 个奇数是多少？前 8 个奇数的和是多少？</li>
+<li>一个 12×12 的点阵，最外层一共有多少个点？</li>
+</ol>
+<h2 id="sec-9">答案</h2>
+<ol>
+<li>共 4 个奇数，和是 4²=16。</li>
+<li>11 是第 (11+1)÷2=6 个奇数，和是 6²=36。</li>
+<li>99 是第 (99+1)÷2=50 个奇数，和是 50²=2500。</li>
+<li>第 8 个奇数是 2×8−1=15；前 8 个奇数的和是 8²=64。</li>
+<li>12×12=144 个点，去掉里面的 10×10=100 个点，最外层有 144−100=44 个点；也可以算 4×12−4=44。</li>
+</ol>
+
+  </article>
+  <aside class="toc">
+        <div class="toc-title">本页目录</div>
+        <a class="lvl2" href="#sec-1">一句话</a><a class="lvl2" href="#sec-2">为什么</a><a class="lvl2" href="#sec-3">例子</a><a class="lvl3" href="#sec-4">例 1：前 5 个奇数的和</a><a class="lvl3" href="#sec-5">例 2：1+3+5+…+19</a><a class="lvl3" href="#sec-6">例 3：101+103+…+199</a><a class="lvl2" href="#sec-7">易错</a><a class="lvl2" href="#sec-8">练习</a><a class="lvl2" href="#sec-9">答案</a>
+      </aside>
+</div>
+<footer class="doc-footer">
+  <span>为什么实验室 · 小学数学 · 三上 → 六下</span>
+  <span><a href="../../../index.html">返回总览</a> · <a href="../../../README.html">使用说明</a></span>
+</footer>
+<div class="backtop"><a href="#top">↑ 回到顶部</a></div>
+</main>
+<script src="../../../assets/doc.js"></script>
+</body>
+</html>
