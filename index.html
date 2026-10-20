@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小学数学 · B 卷原理课</title>
+<style>
+  :root{
+    --paper:#f6f0e2;
+    --paper-2:#fffdf6;
+    --ink:#24211d;
+    --muted:#7a7368;
+    --line:#d8cdb8;
+    --red:#c34a36;
+    --teal:#2e6f6a;
+    --gold:#cb9637;
+    --red-bg:#f4e0da;
+    --teal-bg:#e0ece8;
+    --gold-bg:#f7ecd1;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:
+      linear-gradient(rgba(240,233,218,.55) 1px, transparent 1px) 0 0/40px 40px,
+      linear-gradient(90deg, rgba(240,233,218,.55) 1px, transparent 1px) 0 0/40px 40px,
+      var(--paper);
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  .top{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:26px 0 0;font-size:13px;color:var(--muted);letter-spacing:.04em;
+  }
+  .top .brand{display:flex;align-items:center;gap:12px}
+  .chip{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:40px;height:40px;border-radius:8px;background:var(--red);color:var(--paper-2);
+    font-weight:700;font-size:14px;letter-spacing:.02em;
+  }
+  .top nav{display:flex;gap:22px}
+  .top nav a:hover{color:var(--red)}
+  header.hero{padding:64px 0 46px;border-bottom:1px solid var(--line)}
+  .kicker{
+    color:var(--red);font-size:13px;font-weight:700;letter-spacing:.18em;
+    text-transform:uppercase;margin-bottom:18px;
+  }
+  h1{
+    font-family:"Songti SC","STSong","Noto Serif SC",serif;
+    font-size:clamp(42px,7vw,78px);
+    line-height:1.12;font-weight:700;margin:0 0 22px;letter-spacing:-.02em;
+  }
+  h1 em{font-style:normal;color:var(--red)}
+  .lede{max-width:720px;font-size:18px;color:#4a453c;margin:0}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;
+  }
+  .tag{
+    font-size:12px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;
+    color:var(--muted);background:rgba(255,252,244,.6);
+  }
+  .tag.red{color:var(--red);border-color:#e4b9ae;background:var(--red-bg)}
+  .tag.teal{color:var(--teal);border-color:#b9d2cc;background:var(--teal-bg)}
+  .tag.gold{color:#8a641f;border-color:#e4cf9e;background:var(--gold-bg)}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .btn-main,.btn-line{
+    display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;
+    font-size:13px;font-weight:600;border:1px solid transparent;
+  }
+  .btn-main{background:var(--red);color:#fff}
+  .btn-main:hover{background:#a93d2c}
+  .btn-line{border-color:var(--line);color:var(--ink);background:var(--paper-2)}
+  .btn-line:hover{border-color:var(--red);color:var(--red)}
+
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:28px}
+  .sec-no{
+    font-family:"Songti SC",serif;font-size:13px;color:var(--red);
+    border:1px solid #e4b9ae;background:var(--red-bg);padding:2px 8px;border-radius:4px;
+  }
+  h2{
+    font-family:"Songti SC","STSong",serif;font-size:32px;margin:0;font-weight:700;
+    letter-spacing:-.01em;
+  }
+  .sec-sub{color:var(--muted);font-size:14px;margin-left:auto}
+
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{
+    background:var(--paper-2);border:1px solid var(--line);border-radius:14px;
+    padding:24px 22px;transition:transform .18s ease, box-shadow .18s ease;
+    box-shadow:0 1px 0 rgba(36,33,29,.03);
+  }
+  .card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(36,33,29,.08)}
+  .card .num{
+    font-family:"Songti SC",serif;font-size:12px;color:var(--red);letter-spacing:.12em;
+    margin-bottom:10px;
+  }
+  .card h3{font-size:19px;margin:0 0 8px;line-height:1.4}
+  .card p{font-size:14px;color:var(--muted);margin:0 0 16px}
+  .arrow{font-size:13px;color:var(--red);font-weight:700}
+  .arrow:after{content:" →"}
+
+  .lesson-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+  .video-card{
+    background:var(--paper-2);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  }
+  .video-frame{position:relative;aspect-ratio:16/9;background:#1b1a18;overflow:hidden}
+  .video-frame video{display:block;width:100%;height:100%;object-fit:cover}
+  .play{
+    position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;
+    padding:16px;border:0;background:transparent;cursor:pointer;font-family:inherit;
+  }
+  .play .pill{
+    display:flex;align-items:center;gap:9px;background:rgba(36,33,29,.8);color:#fff;
+    border-radius:999px;padding:7px 16px 7px 7px;font-size:12px;letter-spacing:.14em;
+    backdrop-filter:blur(4px);transition:background .18s ease;
+  }
+  .play:hover .pill{background:var(--red)}
+  .play .tri{
+    width:32px;height:32px;border-radius:50%;background:var(--red);
+    display:flex;align-items:center;justify-content:center;font-size:11px;padding-left:2px;
+  }
+  .play.hidden{display:none}
+  .video-body{padding:18px 20px 20px}
+  .video-body .eyebrow{font-size:12px;color:var(--red);letter-spacing:.12em;margin-bottom:6px}
+  .video-body h3{font-size:21px;margin:0 0 6px}
+  .video-body p{font-size:14px;color:var(--muted);margin:0 0 14px}
+  .links{display:flex;flex-wrap:wrap;gap:10px;font-size:13px}
+  .links a{border-bottom:1px solid var(--line);padding-bottom:1px}
+  .links a:hover{color:var(--red);border-color:var(--red)}
+  .lesson-side{display:flex;flex-direction:column;gap:14px}
+  .mini{
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+    background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:15px 18px;
+  }
+  .mini:hover{border-color:#c9b99a}
+  .mini .t{font-size:15px;font-weight:600}
+  .mini .d{font-size:12px;color:var(--muted);margin-top:2px}
+  .mini .go{color:var(--red);font-size:18px}
+
+  .semester-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .sem h3{
+    font-family:"Songti SC",serif;font-size:20px;margin:0 0 10px;
+    padding-bottom:8px;border-bottom:2px solid var(--ink);
+  }
+  .sem .goal{font-size:12px;color:var(--muted);margin-bottom:12px;min-height:38px}
+  .sem ol{margin:0;padding-left:18px;font-size:13.5px;color:#3e3a33}
+  .sem li{margin:5px 0}
+  .sem li::marker{color:var(--red);font-size:11px}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+  .step{
+    position:relative;background:var(--paper-2);border:1px solid var(--line);
+    border-radius:14px;padding:22px 20px 18px;
+  }
+  .step:before{
+    counter-increment:s;content:counter(s);
+    font-family:"Songti SC",serif;font-size:34px;color:var(--red);line-height:1;
+    display:block;margin-bottom:12px;
+  }
+  .step h4{font-size:15px;margin:0 0 6px}
+  .step p{font-size:13px;color:var(--muted);margin:0}
+
+  .quote{
+    background:var(--ink);color:var(--paper);border-radius:16px;padding:38px 42px;
+    display:flex;gap:26px;align-items:flex-start;
+  }
+  .quote .mark{font-family:"Songti SC",serif;font-size:54px;color:var(--gold);line-height:.8}
+  .quote p{margin:0;font-family:"Songti SC",serif;font-size:24px;line-height:1.6}
+  .quote small{display:block;margin-top:14px;font-size:12px;color:#b9b1a3;letter-spacing:.08em}
+
+  footer{padding:34px 0 46px;color:var(--muted);font-size:12.5px}
+  footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+  @media (max-width:900px){
+    .grid-3,.lesson-grid,.semester-grid,.steps{grid-template-columns:1fr 1fr}
+    .lesson-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 18px}
+    .grid-3,.semester-grid,.steps{grid-template-columns:1fr}
+    .top nav{display:none}
+    h1{font-size:44px}
+    .quote{padding:28px 24px}
+    .quote p{font-size:20px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand"><span class="chip">M</span><span>为什么实验室 · 小学数学</span></div>
+    <nav>
+      <a href="#start">先看这些</a>
+      <a href="#lessons">样课</a>
+      <a href="#map">48 课地图</a>
+      <a href="课程/三上/index.html">课程目录</a>
+      <a href="#how">怎么开始</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <div class="kicker">GRADE 3 → GRADE 4</div>
+    <h1>小学数学<br><em>B 卷原理课</em></h1>
+    <p class="lede">
+      48 节课，覆盖人教版三上到四下。每节一个实验、一支视频、一份讲稿。
+    </p>
+    <div class="hero-meta">
+      <span class="tag red">48 节核心课</span>
+      <span class="tag teal">2 支成片</span>
+      <span class="tag gold">4 节完整样课</span>
+    </div>
+    <div class="hero-actions">
+      <a class="btn-main" href="课程/三上/L01-满十进一/讲授稿.html">从第 1 课开始</a>
+      <a class="btn-line" href="00-方案/01-48课知识地图.html">看 48 课地图</a>
+      <a class="btn-line" href="README.html">使用说明</a>
+    </div>
+  </header>
+
+  <section id="start">
+    <div class="sec-head">
+      <span class="sec-no">01</span>
+      <h2>先看这些</h2>
+      <span class="sec-sub">按顺序看</span>
+    </div>
+    <div class="grid-3">
+      <a class="card" href="00-方案/00-总方案.html">
+        <div class="num">PLAN · 总方案</div>
+        <h3>课程怎么安排</h3>
+        <p>目标、课程结构、两年安排、家长做什么。</p>
+        <span class="arrow">读方案</span>
+      </a>
+      <a class="card" href="00-方案/01-48课知识地图.html">
+        <div class="num">MAP · 知识地图</div>
+        <h3>48 课全表</h3>
+        <p>课题、原理、对应 B 卷题、动手实验。</p>
+        <span class="arrow">看地图</span>
+      </a>
+      <a class="card" href="00-方案/03-B卷题型对照表.html">
+        <div class="num">B-PAPER · 对照表</div>
+        <h3>B 卷题对应课次</h3>
+        <p>40+ 题型对应课次。</p>
+        <span class="arrow">查题型</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="lessons">
+    <div class="sec-head">
+      <span class="sec-no">02</span>
+      <h2>两节样课</h2>
+      <span class="sec-sub">2.9 分钟 / 1.6 分钟</span>
+    </div>
+    <div class="lesson-grid">
+      <div class="video-card">
+        <div class="video-frame">
+          <video id="v1" preload="metadata" playsinline poster="课程/三上/L01-满十进一/poster.jpg">
+            <source src="课程/三上/L01-满十进一/视频.mp4" type="video/mp4">
+          </video>
+          <button class="play" data-target="v1"><span class="pill"><span class="tri">▶</span><span>播放</span></span></button>
+        </div>
+        <div class="video-body">
+          <div class="eyebrow">三上 · 第 1 课 · 位值</div>
+          <h3>满十进一：为什么数到十，就要换一根柱子？</h3>
+          <p>位值、进位、竖式对齐。</p>
+          <div class="links">
+            <a href="课程/三上/L01-满十进一/讲授稿.html">讲授稿</a>
+            <a href="课程/三上/L01-满十进一/动手单.html">动手单</a>
+            <a href="课程/三上/L01-满十进一/视频稿与分镜.html">分镜稿</a>
+            <a href="课程/三上/L01-满十进一/视频.srt">字幕</a>
+          </div>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-frame">
+          <video id="v3" preload="metadata" playsinline poster="课程/三上/L03-乘法的形状/poster.jpg">
+            <source src="课程/三上/L03-乘法的形状/视频.mp4" type="video/mp4">
+          </video>
+          <button class="play" data-target="v3"><span class="pill"><span class="tri">▶</span><span>播放</span></span></button>
+        </div>
+        <div class="video-body">
+          <div class="eyebrow">三上 · 第 3 课 · 乘法</div>
+          <h3>乘法的形状：为什么 3×4 和 4×3 一样多？</h3>
+          <p>阵列、交换律、面积。</p>
+          <div class="links">
+            <a href="课程/三上/L03-乘法的形状/讲授稿.html">讲授稿</a>
+            <a href="课程/三上/L03-乘法的形状/动手单.html">动手单</a>
+            <a href="课程/三上/L03-乘法的形状/视频稿与分镜.html">分镜稿</a>
+            <a href="课程/三上/L03-乘法的形状/视频.srt">字幕</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lesson-side" style="margin-top:18px">
+      <a class="mini" href="课程/三上/L02-竖式的秘密/讲授稿.html">
+        <div><div class="t">第 2 课 · 竖式的秘密</div><div class="d">对齐的是单位，不是数字 · 完整讲授稿 + 分镜 + 动手单</div></div>
+        <span class="go">→</span>
+      </a>
+      <a class="mini" href="课程/三上/L04-除法的两张脸/讲授稿.html">
+        <div><div class="t">第 4 课 · 除法的两张脸</div><div class="d">12÷3 到底在问什么 · 完整讲授稿 + 分镜 + 动手单</div></div>
+        <span class="go">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="map">
+    <div class="sec-head">
+      <span class="sec-no">03</span>
+      <h2>48 课怎么排</h2>
+      <span class="sec-sub">4 学期 × 12 课</span>
+    </div>
+    <div class="semester-grid">
+      <div class="sem">
+        <h3>三上 · 12 课</h3>
+        <div class="goal">位值、竖式、乘法、除法、倍、周长、分数</div>
+        <ol>
+          <li>满十进一</li><li>竖式的秘密</li><li>乘法的形状</li><li>除法的两张脸</li>
+          <li>倍不是“多”</li><li>0 的隐身术</li><li>估算的边界</li><li>单位是人的尺</li>
+          <li>周长的边界</li><li>分数的诞生</li><li>集合圈</li><li>时间的刻度</li>
+        </ol>
+      </div>
+      <div class="sem">
+        <h3>三下 · 12 课</h3>
+        <div class="goal">面积、等周、小数、年月日、搭配、周期、植树</div>
+        <ol>
+          <li>除法竖式</li><li>两位数乘法</li><li>面积</li><li>周长与面积</li>
+          <li>1 平方厘米</li><li>小数的诞生</li><li>年月日</li><li>方向</li>
+          <li>搭配</li><li>统计表</li><li>周期</li><li>植树</li>
+        </ol>
+      </div>
+      <div class="sem">
+        <h3>四上 · 12 课</h3>
+        <div class="goal">大数、进制、角度、积商规律、优化、容斥</div>
+        <ol>
+          <li>大数</li><li>进制</li><li>角度</li><li>平行与垂直</li>
+          <li>三位数乘法</li><li>积的变化</li><li>试商</li><li>商不变</li>
+          <li>图形稳定性</li><li>优化</li><li>容斥</li><li>数字谜</li>
+        </ol>
+      </div>
+      <div class="sem">
+        <h3>四下 · 12 课</h3>
+        <div class="goal">运算律、小数性质、三角形、统计、鸡兔、行程</div>
+        <ol>
+          <li>运算顺序</li><li>运算律</li><li>简便计算</li><li>小数意义</li>
+          <li>小数点搬家</li><li>三边关系</li><li>内角和</li><li>图形运动</li>
+          <li>平均数</li><li>鸡兔同笼</li><li>行程</li><li>建模</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="sec-head">
+      <span class="sec-no">04</span>
+      <h2>怎么开始</h2>
+      <span class="sec-sub">本周就能做</span>
+    </div>
+    <div class="steps">
+      <div class="step"><h4>做一次诊断</h4><p>8 个问题，10 分钟。只记录原话，不打分。</p></div>
+      <div class="step"><h4>准备实验盒</h4><p>小棒、皮筋、方格纸、剪刀、扑克牌、纸杯。</p></div>
+      <div class="step"><h4>从第 1 课开始</h4><p>先做实验，再看视频，最后让孩子讲给你听。</p></div>
+      <div class="step"><h4>固定时间</h4><p>每周留出 70 分钟，不被其他事挤掉。</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="row">
+      <span>小学数学 · B 卷原理课 · 三上 → 四下</span>
+      <span>视频：本地生成 · 1280×720 · 中文配音 · <a href="README.html" style="color:inherit;border-bottom:1px solid var(--line)">使用说明</a></span>
+    </div>
+  </footer>
+</div>
+<script>
+  document.querySelectorAll('.play').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var v = document.getElementById(btn.dataset.target);
+      btn.classList.add('hidden');
+      v.controls = true;
+      v.play();
+    });
+  });
+</script>
+</body>
+</html>

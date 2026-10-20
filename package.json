@@ -1,0 +1,12 @@
+{
+  "name": "ok-math",
+  "version": "0.1.0",
+  "private": true,
+  "description": "三到四年级 B 卷数学原理课",
+  "scripts": {
+    "build": "node 工具/build_html.js"
+  },
+  "dependencies": {
+    "marked": "^15.0.12"
+  }
+}

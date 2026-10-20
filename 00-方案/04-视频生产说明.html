@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>视频生产说明 · 为什么实验室</title>
+<link rel="stylesheet" href="../assets/doc.css">
+</head>
+<body class="doc-page doc" id="top">
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
+    <nav class="nav">
+      <a href="../00-方案/00-总方案.html">总方案</a>
+      <a href="../00-方案/01-48课知识地图.html">48 课地图</a>
+      <a href="../00-方案/03-B卷题型对照表.html">B 卷对照</a>
+      <a href="../课程/三上/index.html">课程</a>
+      <a href="../index.html">首页</a>
+    </nav>
+  </div>
+  <div class="progress"><span></span></div>
+</header>
+<main class="page">
+<section class="doc-hero"><div class="hero-copy">
+    <div class="kicker">VIDEO · 生产线</div>
+    <h1 class="doc-title">视频生产说明</h1>
+    <p class="doc-sub">一份 JSON，生成一集。改旁白、改数字、改时长，重新跑一条命令。</p>
+    
+    <div class="actions"><a class="btn" href="../课程/三上/index.html">课程目录</a></div>
+  </div></section>
+
+<div class="doc-layout">
+  <article class="article">
+
+<p>视频由 <code>工具/render_episode.py</code> 生成。改分镜 JSON，重跑一条命令，就能出新一集。</p>
+<h2 id="sec-1">环境</h2>
+<ul>
+<li>macOS</li>
+<li>Python 3.10+，Pillow</li>
+<li>ffmpeg</li>
+<li>系统字体：Hiragino Sans GB、STHeiti Medium</li>
+<li>系统中文配音：Tingting</li>
+</ul>
+<p>检查：</p>
+<pre><code class="language-bash">python3 -c &quot;import PIL; print(PIL.__version__)&quot;
+ffmpeg -version | head -1
+say -v &#39;?&#39; | grep Tingting
+</code></pre>
+<h2 id="sec-2">生成</h2>
+<pre><code class="language-bash">python3 工具/render_episode.py 工具/episodes/L01.json \
+  --out 课程/三上/L01-满十进一/视频.mp4
+</code></pre>
+<p>输出：</p>
+<ul>
+<li><code>视频.mp4</code>：1280×720，24fps，H.264 + AAC</li>
+<li><code>视频.srt</code>：按场景切分的字幕</li>
+</ul>
+<p>只预览某一幕：</p>
+<pre><code class="language-bash">python3 工具/render_episode.py 工具/episodes/L01.json \
+  --out /tmp/preview.mp4 --preview 3 --preview-frame 4.0
+</code></pre>
+<h2 id="sec-3">分镜 JSON</h2>
+<pre><code class="language-json">{
+  &quot;no&quot;: &quot;01&quot;,
+  &quot;kicker&quot;: &quot;为什么实验室 · 第 1 集&quot;,
+  &quot;scenes&quot;: [
+    {
+      &quot;type&quot;: &quot;title&quot;,
+      &quot;title&quot;: &quot;满十进一&quot;,
+      &quot;subtitle&quot;: &quot;为什么数到十，就要换一根柱子？&quot;,
+      &quot;narration&quot;: &quot;如果我问你，九加一等于几……&quot;
+    }
+  ]
+}
+</code></pre>
+<ul>
+<li><code>no</code>：右上角期号。</li>
+<li><code>kicker</code>：左上角小标题。</li>
+<li><code>scenes</code>：按顺序播放，每幕时长由配音长度决定。</li>
+<li><code>narration</code>：旁白。改旁白，节奏自动跟着变。</li>
+</ul>
+<h2 id="sec-4">场景类型</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>type</th>
+<th>用途</th>
+<th>关键参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>title</code></td>
+<td>片头</td>
+<td><code>title</code>, <code>subtitle</code>, <code>foot</code></td>
+</tr>
+<tr>
+<td><code>bullets</code></td>
+<td>要点列表</td>
+<td><code>heading</code>, <code>items</code>, <code>at</code>, <code>caption</code></td>
+</tr>
+<tr>
+<td><code>sticks</code></td>
+<td>小棒、捆、数位格</td>
+<td><code>hundreds</code>, <code>tens</code>, <code>ones</code>, <code>merge</code>, <code>zones</code></td>
+</tr>
+<tr>
+<td><code>place_value</code></td>
+<td>数位卡片</td>
+<td><code>digits</code>, <code>labels</code>, <code>values</code>, <code>note</code></td>
+</tr>
+<tr>
+<td><code>column_add</code></td>
+<td>竖式加法</td>
+<td><code>a</code>, <code>b</code>, <code>result</code>, <code>highlight</code>, <code>notes</code></td>
+</tr>
+<tr>
+<td><code>number_roll</code></td>
+<td>数字滚动、进位</td>
+<td><code>from</code>, <code>to</code>, <code>caption</code></td>
+</tr>
+<tr>
+<td><code>grid</code></td>
+<td>点阵、方格、旋转</td>
+<td><code>rows</code>, <code>cols</code>, <code>kind</code>, <code>rotate</code>, <code>equation</code></td>
+</tr>
+<tr>
+<td><code>challenge</code></td>
+<td>挑战页</td>
+<td><code>question</code>, <code>hint</code>, <code>digits</code></td>
+</tr>
+<tr>
+<td><code>outro</code></td>
+<td>片尾</td>
+<td><code>text</code>, <code>sub</code></td>
+</tr>
+</tbody></table></div>
+<h2 id="sec-5">时间参数</h2>
+<p>用来对齐旁白，不填就用默认值。</p>
+<ul>
+<li><code>at</code>：bullets 每条的出场时间</li>
+<li><code>cap_at</code>：说明文字出现时间</li>
+<li><code>eq_at</code>：等式出现时间</li>
+<li><code>note_at</code>：结论出现时间</li>
+<li><code>highlight_at</code> / <code>notes_at</code> / <code>result_at</code>：竖式</li>
+<li><code>carry_at</code> / <code>carry_step</code>：数字滚动</li>
+<li><code>line_at</code> / <code>hint_at</code> / <code>digits_at</code>：挑战页</li>
+<li><code>ones_at</code> / <code>ones_step</code> / <code>tens_at</code> / <code>bundle_step</code>：小棒</li>
+<li><code>band_at</code> / <code>merge_at</code> / <code>label_at</code>：捆小棒</li>
+</ul>
+<h2 id="sec-6">配音</h2>
+<p>默认 Tingting，语速 165。换音色：</p>
+<pre><code class="language-bash">--voice &quot;Eddy (中文（中国大陆）)&quot;
+</code></pre>
+<p>换语速：</p>
+<pre><code class="language-bash">--rate 150
+</code></pre>
+<h2 id="sec-7">加一集</h2>
+<ol>
+<li>写旁白。先写孩子听完能记住的一句话，再写 3–5 分钟口语稿。</li>
+<li>切成 6–10 幕，每幕只做一件事。</li>
+<li>选现有场景。不够再写新场景。</li>
+<li>先生成一版，听节奏，再填时间参数。</li>
+<li>最后一幕留一个孩子能动手做的问题，不给答案。</li>
+<li>检查旁白和画面是否对齐，重新生成。</li>
+</ol>
+<p>一集控制在 2.5–5 分钟。</p>
+<h2 id="sec-8">边界</h2>
+<ul>
+<li>只能做纸面动画，不能拍真人。</li>
+<li>配音是系统 TTS，情绪有限。</li>
+<li>适合讲清一个原理，不适合替代整节课。</li>
+<li>需要更活泼，可以在 MP4 上二次剪辑，加片头、音效或真人出镜。</li>
+</ul>
+
+  </article>
+  <aside class="toc">
+        <div class="toc-title">本页目录</div>
+        <a class="lvl2" href="#sec-1">环境</a><a class="lvl2" href="#sec-2">生成</a><a class="lvl2" href="#sec-3">分镜 JSON</a><a class="lvl2" href="#sec-4">场景类型</a><a class="lvl2" href="#sec-5">时间参数</a><a class="lvl2" href="#sec-6">配音</a><a class="lvl2" href="#sec-7">加一集</a><a class="lvl2" href="#sec-8">边界</a>
+      </aside>
+</div>
+<footer class="doc-footer">
+  <span>为什么实验室 · 小学数学 · 三上 → 四下</span>
+  <span><a href="../index.html">返回总览</a> · <a href="../README.html">使用说明</a></span>
+</footer>
+<div class="backtop"><a href="#top">↑ 回到顶部</a></div>
+</main>
+<script src="../assets/doc.js"></script>
+</body>
+</html>
