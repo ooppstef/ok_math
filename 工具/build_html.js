@@ -12,19 +12,49 @@ const ROOT = path.resolve(__dirname, '..');
 const DOCS = [
   {
     src: 'README.md', kind: 'doc', kicker: 'START HERE · 使用说明',
-    subtitle: '48 节课，每课一个为什么。'
+    subtitle: '三到六年级，96 节课，每课一个为什么。'
   },
   {
     src: '00-方案/00-总方案.md', kind: 'doc', kicker: 'PLAN · 总方案',
     subtitle: '目标、课程结构、两年安排、家长做什么。'
   },
   {
-    src: '00-方案/01-48课知识地图.md', kind: 'doc', kicker: 'MAP · 知识地图',
+    src: '00-方案/01-48课知识地图.md', kind: 'doc', kicker: 'MAP · 三、四年级',
     subtitle: '三上到四下，48 课全表。',
     fullWidth: true
   },
   {
-    src: '00-方案/06-覆盖核对.md', kind: 'doc', kicker: 'COVERAGE · 覆盖核对',
+    src: '00-方案/08-五六年级48课地图.md', kind: 'doc', kicker: 'MAP · 五、六年级',
+    subtitle: '五上到六下，48 课全表。',
+    fullWidth: true
+  },
+  {
+    src: '00-方案/09-96课总图.md', kind: 'doc', kicker: 'OVERVIEW · 96 课总图',
+    subtitle: '八个学期，一条线看完整。',
+    fullWidth: true
+  },
+  {
+    src: '00-方案/10-五六年级覆盖核对.md', kind: 'doc', kicker: 'COVERAGE · 五、六年级',
+    subtitle: '85 个知识点，逐个找到落点。',
+    fullWidth: true
+  },
+  {
+    src: '00-方案/11-五六年级B卷题型表.md', kind: 'doc', kicker: 'B-PAPER · 五、六年级',
+    subtitle: '五、六年级 B 卷题型对应课次。',
+    fullWidth: true
+  },
+  {
+    src: '00-方案/12-课程审查清单.md', kind: 'doc', kicker: 'REVIEW · 审查清单',
+    subtitle: '人工 review 时看什么。',
+    fullWidth: true
+  },
+  {
+    src: '00-方案/13-研究依据.md', kind: 'doc', kicker: 'RESEARCH · 研究依据',
+    subtitle: '用了哪些材料，做了什么取舍。',
+    fullWidth: true
+  },
+  {
+    src: '00-方案/06-覆盖核对.md', kind: 'doc', kicker: 'COVERAGE · 三、四年级',
     subtitle: '三、四年级 71 个知识点，逐个找到落点。',
     fullWidth: true
   },
@@ -97,6 +127,67 @@ const DOCS = [
   {
     src: '课程/三上/L04-除法的两张脸/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 第 4 课',
     subtitle: '打印出来，直接做。'
+  },
+
+  {
+    src: '课程/五上/L01-小数乘法/讲授稿.md', kind: 'lesson', kicker: 'LESSON 01 · 五上',
+    subtitle: '0.3×0.4 为什么是 0.12？',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L01-小数乘法/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 五上 01',
+    subtitle: '方格纸涂一涂，再算。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L01-小数乘法/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 01',
+    subtitle: 'A/B/C 三层，带答案和边界。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L02-小数除法/讲授稿.md', kind: 'lesson', kicker: 'LESSON 02 · 五上',
+    subtitle: '1.2÷0.3 为什么可以写成 12÷3？',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L02-小数除法/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 五上 02',
+    subtitle: '量纸条，换单位，再算。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L02-小数除法/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 02',
+    subtitle: 'A/B/C 三层，带答案和边界。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L03-循环小数/讲授稿.md', kind: 'lesson', kicker: 'LESSON 03 · 五上',
+    subtitle: '为什么余数一重复，商就重复？',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L03-循环小数/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 五上 03',
+    subtitle: '列竖式，圈余数。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L03-循环小数/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 03',
+    subtitle: 'A/B/C 三层，带答案和边界。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L04-数对/讲授稿.md', kind: 'lesson', kicker: 'LESSON 04 · 五上',
+    subtitle: '(3,4) 和 (4,3) 为什么不是同一个点？',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L04-数对/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 五上 04',
+    subtitle: '画格子，贴两个点。',
+    courseHub: '课程/五上/index.html'
+  },
+  {
+    src: '课程/五上/L04-数对/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 04',
+    subtitle: 'A/B/C 三层，带答案和边界。',
+    courseHub: '课程/五上/index.html'
   }
 ];
 
@@ -113,6 +204,21 @@ const LESSONS = [
   { no: '10', dir: '', title: '分数的诞生', q: '为什么必须“平均分”？', badge: '待写稿', ready: false },
   { no: '11', dir: '', title: '集合圈', q: '为什么数数会“数重”？', badge: '待写稿', ready: false },
   { no: '12', dir: '', title: '时间的刻度', q: '为什么一天是 24 小时？', badge: '待写稿', ready: false }
+];
+
+const LESSONS_5A = [
+  { no: '01', dir: 'L01-小数乘法', title: '小数乘法', q: '小数点为什么能“搬家”？', badge: '课稿待审', ready: true },
+  { no: '02', dir: 'L02-小数除法', title: '小数除法', q: '除以小数，为什么先把它变成整数？', badge: '课稿待审', ready: true },
+  { no: '03', dir: 'L03-循环小数', title: '循环小数', q: '1÷3 为什么写不完？', badge: '课稿待审', ready: true },
+  { no: '04', dir: 'L04-数对', title: '数对', q: '为什么先横后竖？', badge: '课稿待审', ready: true },
+  { no: '05', dir: '', title: '可能性', q: '可能性大，就一定会发生吗？', badge: '待写稿', ready: false },
+  { no: '06', dir: '', title: '字母表示数', q: '为什么用字母表示数？', badge: '待写稿', ready: false },
+  { no: '07', dir: '', title: '等式与方程', q: '天平为什么能帮你解方程？', badge: '待写稿', ready: false },
+  { no: '08', dir: '', title: '列方程', q: '方程是“顺着说”还是“倒着走”？', badge: '待写稿', ready: false },
+  { no: '09', dir: '', title: '平行四边形面积', q: '为什么是底×高？', badge: '待写稿', ready: false },
+  { no: '10', dir: '', title: '三角形面积', q: '为什么要除以 2？', badge: '待写稿', ready: false },
+  { no: '11', dir: '', title: '梯形面积', q: '为什么是（上底+下底）×高÷2？', badge: '待写稿', ready: false },
+  { no: '12', dir: '', title: '植树', q: '那个“1”到底加在哪？', badge: '待写稿', ready: false }
 ];
 
 function rootRel(outRel) {
@@ -149,9 +255,9 @@ function topbar(root) {
     <a class="brand" href="${href(root, 'index.html')}"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
     <nav class="nav">
       <a href="${href(root, '00-方案/00-总方案.html')}">总方案</a>
-      <a href="${href(root, '00-方案/01-48课知识地图.html')}">48 课地图</a>
+      <a href="${href(root, '00-方案/09-96课总图.html')}">96 课地图</a>
       <a href="${href(root, '00-方案/03-B卷题型对照表.html')}">B 卷对照</a>
-      <a href="${href(root, '课程/三上/index.html')}">课程</a>
+      <a href="${href(root, '课程/index.html')}">课程</a>
       <a href="${href(root, 'index.html')}">首页</a>
     </nav>
   </div>
@@ -161,7 +267,7 @@ function topbar(root) {
 
 function footer(root) {
   return `<footer class="doc-footer">
-  <span>为什么实验室 · 小学数学 · 三上 → 四下</span>
+  <span>为什么实验室 · 小学数学 · 三上 → 六下</span>
   <span><a href="${href(root, 'index.html')}">返回总览</a> · <a href="${href(root, 'README.html')}">使用说明</a></span>
 </footer>
 <div class="backtop"><a href="#top">↑ 回到顶部</a></div>`;
@@ -211,7 +317,7 @@ function renderDoc(doc) {
   }
 
   if (doc.kind === 'lesson' || doc.kind === 'handout') {
-    body = body.replace(/^\s*(?:<p><strong>(?:大问题|本课要点|一句话原理|核心一句话|时长|材料|状态|今天的大问题)<\/strong>[：:][\s\S]*?<\/p>\s*)+/, '');
+    body = body.replace(/^\s*(?:<p><strong>(?:大问题|本课要点|一句话原理|核心一句话|时长|材料|状态|今天的大问题|对应课|用法)<\/strong>[：:][\s\S]*?<\/p>\s*)+/, '');
   }
   if (doc.kind === 'handout') {
     body = body.replace(/<p><strong>今天的大问题<\/strong>[：:][\s\S]*?<\/p>\s*/, '');
@@ -249,8 +355,8 @@ function renderDoc(doc) {
   body = body.replace(/<a href="(https?:[^"]+)"/g, '<a href="$1" target="_blank" rel="noopener"');
 
   // 课程信息
-  const order = ['大问题', '今天的大问题', '本课要点', '一句话原理', '核心一句话', '时长', '材料', '状态'];
-  const fullKeys = new Set(['大问题', '今天的大问题', '本课要点', '一句话原理', '核心一句话', '材料']);
+  const order = ['大问题', '今天的大问题', '本课要点', '一句话原理', '核心一句话', '对应课', '用法', '时长', '材料', '状态'];
+  const fullKeys = new Set(['大问题', '今天的大问题', '本课要点', '一句话原理', '核心一句话', '材料', '对应课', '用法']);
   const seen = new Set();
   const facts = [];
   order.forEach(k => {
@@ -310,9 +416,11 @@ function renderDoc(doc) {
   if (doc.kind === 'handout') {
     actions.push('<button class="btn primary print-btn" type="button">打印本页</button>');
   }
+  const selfName = path.basename(doc.src);
   if (doc.kind === 'lesson') {
     if (hasVideo && fs.existsSync(path.join(ROOT, dir, '视频稿与分镜.html'))) actions.push('<a class="btn" href="视频稿与分镜.html">视频分镜</a>');
     if (fs.existsSync(path.join(ROOT, dir, '动手单.html'))) actions.push('<a class="btn" href="动手单.html">动手单</a>');
+    if (fs.existsSync(path.join(ROOT, dir, '挑战单.html'))) actions.push('<a class="btn" href="挑战单.html">挑战单</a>');
   }
   if (doc.kind === 'storyboard') {
     if (fs.existsSync(path.join(ROOT, dir, '讲授稿.html'))) actions.push('<a class="btn" href="讲授稿.html">讲授稿</a>');
@@ -320,9 +428,11 @@ function renderDoc(doc) {
   }
   if (doc.kind === 'handout') {
     if (fs.existsSync(path.join(ROOT, dir, '讲授稿.html'))) actions.push('<a class="btn" href="讲授稿.html">讲授稿</a>');
+    if (selfName !== '动手单.md' && fs.existsSync(path.join(ROOT, dir, '动手单.html'))) actions.push('<a class="btn" href="动手单.html">动手单</a>');
+    if (selfName !== '挑战单.md' && fs.existsSync(path.join(ROOT, dir, '挑战单.html'))) actions.push('<a class="btn" href="挑战单.html">挑战单</a>');
     if (fs.existsSync(path.join(ROOT, dir, '视频稿与分镜.html'))) actions.push('<a class="btn" href="视频稿与分镜.html">视频分镜</a>');
   }
-  actions.push(`<a class="btn" href="${href(root, '课程/三上/index.html')}">课程目录</a>`);
+  actions.push(`<a class="btn" href="${href(root, doc.courseHub || '课程/index.html')}">课程目录</a>`);
 
   const tocHtml = toc.length && !doc.fullWidth
     ? `<aside class="toc">
@@ -363,29 +473,36 @@ function renderDocsHub() {
   const out = '00-方案/index.html';
   const root = rootRel(out);
   const cards = [
-    ['01', '总方案', '课程怎么安排', '目标、课程结构、两年安排、家长做什么。', '00-总方案.html'],
-    ['02', '48 课知识地图', '每一课，一个“为什么”', '原理内核、教材锚点、B 卷接口、动手实验、轻奥延伸。', '01-48课知识地图.html'],
-    ['03', '覆盖核对', '71 个知识点都有落点', '对照 cn-math-taxonomy 的三、四年级清单。', '06-覆盖核对.html'],
-    ['04', '每课标准流程', '70 分钟怎么跑', '开场、实验、视频、四个问题、三层挑战、复述。', '02-每课标准流程.html'],
-    ['05', 'B 卷题型对照表', 'B 卷题对应课次', '40+ 题型对应课次。', '03-B卷题型对照表.html'],
-    ['06', '视频生产说明', '一份 JSON，生成一集', '改旁白、改数字、改时长，重新跑一条命令。', '04-视频生产说明.html'],
-    ['07', '入学诊断', '10 分钟，看孩子现在在哪', '8 个问题，只记录原话，不打分。', '05-入学诊断.html']
+    ['01', '总方案', '课程怎么安排', '目标、课程结构、四个学年安排、家长做什么。', '00-总方案.html'],
+    ['02', '三、四年级地图', '48 课，每一课一个“为什么”', '原理内核、教材锚点、B 卷接口、动手实验、轻奥延伸。', '01-48课知识地图.html'],
+    ['03', '五、六年级地图', '48 课，接到六年级', '小数、方程、分数、比、圆、比例。', '08-五六年级48课地图.html'],
+    ['04', '96 课总图', '八个学期，一条线', '一张表看完整，再看 8 条线索怎么长。', '09-96课总图.html'],
+    ['05', '三、四年级覆盖', '71 个知识点都有落点', '对照 cn-math-taxonomy 的三、四年级清单。', '06-覆盖核对.html'],
+    ['06', '五、六年级覆盖', '85 个知识点都有落点', '对照 cn-math-taxonomy 的五、六年级清单。', '10-五六年级覆盖核对.html'],
+    ['07', '五、六年级 B 卷', 'B 卷题对应课次', '小数、分数、比例、几何、数论。', '11-五六年级B卷题型表.html'],
+    ['08', '课程审查清单', '人工 review 看什么', '数学、实验、语言、答案、边界。', '12-课程审查清单.html'],
+    ['09', '每课标准流程', '70 分钟怎么跑', '开场、实验、讲解、四个问题、三层挑战、复述。', '02-每课标准流程.html'],
+    ['10', 'B 卷题型对照表', '三、四年级 B 卷题', '40+ 题型对应课次。', '03-B卷题型对照表.html'],
+    ['11', '视频生产说明', '等课稿审完再做', '一份 JSON，生成一集。', '04-视频生产说明.html'],
+    ['12', '入学诊断', '10 分钟，看孩子现在在哪', '8 个问题，只记录原话，不打分。', '05-入学诊断.html'],
+    ['13', '研究依据', '为什么是 96 课', '课标、教材目录、taxonomy 和取舍。', '13-研究依据.html']
   ];
   const content = `<section class="hub-hero">
   <div class="hub-hero-grid">
     <div>
       <div class="kicker">DOCS · 方案与工具</div>
       <h1 class="doc-title">先读哪一份？</h1>
-      <p class="doc-sub">先读总方案和 48 课地图；要上课，翻每课流程；要看孩子现在的位置，做入学诊断。</p>
+      <p class="doc-sub">先读总方案和 96 课总图；再看三、四年级和五、六年级两张地图；上课前翻每课流程。</p>
     </div>
     <aside class="hub-side">
       <div class="side-label">推荐阅读顺序</div>
       <ol>
-        <li>总方案：目标与两年安排</li>
-        <li>48 课地图：两年怎么走</li>
-        <li>覆盖核对：71 个知识点</li>
-        <li>每课流程：一节课怎么跑</li>
-        <li>入学诊断：孩子现在在哪</li>
+        <li>总方案：目标与四个学年</li>
+        <li>96 课总图：一条线看完整</li>
+        <li>三、四年级地图：48 课</li>
+        <li>五、六年级地图：48 课</li>
+        <li>覆盖核对：156 个知识点</li>
+        <li>审查清单：先审再拍视频</li>
         <li>第 1 课：本周就能开始</li>
       </ol>
     </aside>
@@ -452,10 +569,109 @@ ${pending.map(row).join('')}`;
   console.log('✓', out);
 }
 
+function renderCourseHub5A() {
+  const out = '课程/五上/index.html';
+  const root = rootRel(out);
+  const ready = LESSONS_5A.filter(l => l.ready);
+  const pending = LESSONS_5A.filter(l => !l.ready);
+  const row = l => l.ready
+    ? `<a class="lesson-row" href="${l.dir}/讲授稿.html">
+        <div class="no">${l.no}</div>
+        <div><h3>${l.title} <span class="badge gold">${l.badge}</span></h3><p>${l.q}</p></div>
+        <div class="meta">讲授稿 · 动手单 · 挑战单 →</div>
+      </a>`
+    : `<div class="lesson-row">
+        <div class="no">${l.no}</div>
+        <div><h3>${l.title} <span class="badge">${l.badge}</span></h3><p>${l.q}</p></div>
+        <div class="meta">已在地图，待写稿</div>
+      </div>`;
+
+  const content = `<section class="hub-hero">
+  <div class="hub-hero-grid">
+    <div>
+      <div class="kicker">COURSE · 五上</div>
+      <h1 class="doc-title">五年级上册 · 12 课</h1>
+      <p class="doc-sub">小数、方程、多边形面积、植树。第 1–4 课已写完，等你审。先不做视频。</p>
+      <div class="actions">
+        <a class="btn primary" href="L01-小数乘法/讲授稿.html">从第 1 课开始</a>
+        <a class="btn" href="../../00-方案/08-五六年级48课地图.html">看五、六年级地图</a>
+        <a class="btn" href="../../00-方案/12-课程审查清单.html">按清单审</a>
+      </div>
+    </div>
+    <aside class="hub-side">
+      <div class="side-label">前四课的关系</div>
+      <div class="flow">小数乘法 <span>→</span> 小数除法 <span>→</span> 循环小数</div>
+      <p>先懂数位缩放，再懂商不变；除不尽时，余数会告诉你为什么循环。数对单独成课，练“有序”。</p>
+    </aside>
+  </div>
+</section>
+<h2 style="font-family:'Songti SC',serif;font-size:26px;margin:38px 0 6px">第 1 单元 · 小数与位置</h2>
+<p style="font-size:13px;color:var(--muted);margin:0 0 14px">四课连起来，是小数运算和坐标的入口。</p>
+${ready.map(row).join('')}
+<h2 style="font-family:'Songti SC',serif;font-size:26px;margin:44px 0 6px">本学期后续</h2>
+<p style="font-size:13px;color:var(--muted);margin:0 0 14px">标题和原理已定，按批次写稿。</p>
+${pending.map(row).join('')}`;
+  const html = shell({ root, title: '五上 · 12 课', kicker: 'COURSE', subtitle: '', content, bodyClass: 'hub' });
+  fs.mkdirSync(path.join(ROOT, '课程/五上'), { recursive: true });
+  fs.writeFileSync(path.join(ROOT, out), html);
+  console.log('✓', out);
+}
+
+function renderCourseIndex() {
+  const out = '课程/index.html';
+  const root = rootRel(out);
+  const cards = [
+    ['三上', '三上 · 12 课', '位值、竖式、乘除、周长。第 1–4 课已成稿，两课有视频。', '三上/index.html', '4 课可读'],
+    ['五上', '五上 · 12 课', '小数、方程、多边形面积、植树。第 1–4 课课稿待审。', '五上/index.html', '4 课待审'],
+    ['三下', '三下 · 12 课', '面积、小数、年月日、搭配。已在地图。', '../00-方案/01-48课知识地图.html', '待写稿'],
+    ['四下', '四下 · 12 课', '运算律、小数、三角形、统计。已在地图。', '../00-方案/01-48课知识地图.html', '待写稿'],
+    ['五下', '五下 · 12 课', '因数倍数、长方体、分数。已在地图。', '../00-方案/08-五六年级48课地图.html', '待写稿'],
+    ['六上', '六上 · 12 课', '分数乘除、比、圆、百分数。已在地图。', '../00-方案/08-五六年级48课地图.html', '待写稿'],
+    ['六下', '六下 · 12 课', '负数、圆柱圆锥、比例。已在地图。', '../00-方案/08-五六年级48课地图.html', '待写稿']
+  ];
+  const content = `<section class="hub-hero">
+  <div class="hub-hero-grid">
+    <div>
+      <div class="kicker">COURSE · 课程目录</div>
+      <h1 class="doc-title">从哪一册开始？</h1>
+      <p class="doc-sub">三、四年级已有一套样课；五、六年级从五上第 1 课开始。课稿先审，视频后做。</p>
+      <div class="actions">
+        <a class="btn primary" href="五上/L01-小数乘法/讲授稿.html">五上第 1 课</a>
+        <a class="btn" href="三上/L01-满十进一/讲授稿.html">三上第 1 课</a>
+        <a class="btn" href="../00-方案/09-96课总图.html">96 课总图</a>
+      </div>
+    </div>
+    <aside class="hub-side">
+      <div class="side-label">生产顺序</div>
+      <ol>
+        <li>五上 01–04：小数与位置</li>
+        <li>五上 05–08：方程</li>
+        <li>五上 09–12：面积与植树</li>
+        <li>五下、六上、六下</li>
+      </ol>
+    </aside>
+  </div>
+</section>
+<div class="hub-grid">
+${cards.map(c => `<a class="hub-card" href="${c[3]}">
+  <div class="num">${c[0]} · ${c[4]}</div>
+  <h3>${c[1]}</h3>
+  <p>${c[2]}</p>
+  <span class="go">打开 →</span>
+</a>`).join('')}
+</div>`;
+  const html = shell({ root, title: '课程目录', kicker: 'COURSE', subtitle: '', content, bodyClass: 'hub' });
+  fs.mkdirSync(path.join(ROOT, '课程'), { recursive: true });
+  fs.writeFileSync(path.join(ROOT, out), html);
+  console.log('✓', out);
+}
+
 // 先渲染所有文档，最后生成 hub
 DOCS.forEach(renderDoc);
 renderDocsHub();
 renderCourseHub();
+renderCourseHub5A();
+renderCourseIndex();
 
 // 首页里的 .md 链接统一换成 .html
 const indexFile = path.join(ROOT, 'index.html');
