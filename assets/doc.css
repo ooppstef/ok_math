@@ -105,54 +105,6 @@ h1.doc-title{
   max-width:740px;margin:0;color:var(--muted);
   font-family:var(--font-serif);font-size:16.5px;line-height:1.82;
 }
-.facts{
-  display:grid;grid-template-columns:1fr 1fr;gap:0;
-  margin-top:24px;max-width:940px;border-top:1px solid var(--line);
-}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:44px;align-items:start}
-.hero-copy{min-width:0}
-.hero-media{min-width:0;padding-top:4px}
-.fact{
-  background:transparent;border:0;border-bottom:1px solid var(--line);
-  border-radius:0;padding:12px 18px 12px 0;
-}
-.fact:nth-child(odd){border-right:1px solid var(--line);padding-right:20px}
-.fact.full{grid-column:1/-1;border-right:0}
-.fact span{
-  display:block;font-family:var(--font-mono);font-size:9.5px;color:var(--muted);
-  letter-spacing:.13em;margin-bottom:4px;text-transform:uppercase;
-}
-.fact strong{
-  display:block;font-family:var(--font-sans);font-size:14px;font-weight:600;
-  line-height:1.65;color:var(--ink);
-}
-/* 没有视频的课：把信息栏做成右侧实验记录卡，避免左栏拉得过长 */
-.doc-hero.has-facts:not(.has-media) .hero-copy{
-  display:grid;grid-template-columns:minmax(0,1fr) 340px;
-  gap:0 44px;align-items:start;
-}
-.doc-hero.has-facts:not(.has-media) .hero-main{grid-column:1;grid-row:1;min-width:0}
-.doc-hero.has-facts:not(.has-media) .facts{
-  grid-column:2;grid-row:1;margin-top:0;max-width:none;
-  grid-template-columns:1fr 1fr;border-top:2px solid var(--ink);
-}
-.doc-hero.has-facts:not(.has-media) .facts:before{
-  content:"INFO / 本页信息";grid-column:1;display:block;
-  font-family:var(--font-mono);font-size:9px;color:var(--muted);
-  letter-spacing:.14em;padding:7px 0;border-bottom:1px solid var(--line);
-}
-.doc-hero.has-facts:not(.has-media) .fact{padding:10px 10px 10px 0;border-right:0}
-.doc-hero.has-facts:not(.has-media) .fact.full{grid-column:1/-1;padding-right:0}
-.doc-hero.has-facts:not(.has-media) .fact:nth-child(odd){border-right:0;padding-right:10px}
-
-.lesson-route{
-  display:flex;flex-wrap:wrap;align-items:center;gap:7px;
-  margin-top:22px;padding-top:11px;border-top:1px solid var(--line);
-  max-width:520px;font-family:var(--font-mono);font-size:9.5px;
-  color:var(--muted);letter-spacing:.04em;
-}
-.lesson-route i{font-style:normal;color:var(--orange-ink)}
-
 .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 .btn{
   display:inline-flex;align-items:center;gap:7px;
@@ -431,9 +383,6 @@ h1.doc-title{
 }
 
 @media (max-width:1000px){
-  .doc-hero.has-facts:not(.has-media) .hero-copy{display:block}
-  .doc-hero.has-facts:not(.has-media) .facts{grid-template-columns:1fr 1fr;max-width:940px;margin-top:24px}
-  .doc-hero.has-facts:not(.has-media) .facts:before{display:none}
   .hub-hero-grid{grid-template-columns:1fr;gap:24px}
   .doc-layout{grid-template-columns:1fr;gap:0}
   .toc{display:none}
@@ -446,9 +395,6 @@ h1.doc-title{
   .nav{display:none}
   .page{padding:28px 18px 52px}
   h1.doc-title{font-size:34px}
-  .facts{grid-template-columns:1fr}
-  .fact:nth-child(odd){border-right:0;padding-right:0}
-  .doc-hero.has-facts:not(.has-media) .facts{grid-template-columns:1fr}
   .hub-grid{grid-template-columns:1fr}
   .lesson-row{grid-template-columns:38px minmax(0,1fr);gap:12px}
   .lesson-row .meta{grid-column:2;text-align:left}

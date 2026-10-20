@@ -88,7 +88,6 @@ const DOCS = [
   {
     src: '课程/三上/L01-满十进一/视频稿与分镜.md', kind: 'storyboard', fullWidth: true, kicker: 'STORYBOARD · 第 1 课',
     subtitle: '分镜、旁白、暂停点。',
-    facts: { '状态': '成片已完成 · 2 分 54 秒', '本课要点': '数是“打包”出来的；位置决定同一个数字代表多大。' }
   },
   {
     src: '课程/三上/L01-满十进一/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 第 1 课',
@@ -101,7 +100,6 @@ const DOCS = [
   {
     src: '课程/三上/L02-竖式的秘密/视频稿与分镜.md', kind: 'storyboard', fullWidth: true, kicker: 'STORYBOARD · 第 2 课',
     subtitle: '分镜、旁白、暂停点。',
-    facts: { '状态': '分镜完成，视频待渲染', '本课要点': '加减法只在同一种单位之间进行；对齐的是单位。' }
   },
   {
     src: '课程/三上/L02-竖式的秘密/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 第 2 课',
@@ -114,7 +112,6 @@ const DOCS = [
   {
     src: '课程/三上/L03-乘法的形状/视频稿与分镜.md', kind: 'storyboard', fullWidth: true, kicker: 'STORYBOARD · 第 3 课',
     subtitle: '分镜、旁白、暂停点。',
-    facts: { '状态': '成片已完成 · 1 分 34 秒', '本课要点': '乘法是“每份一样多的阵列”；交换行列，总数不变。' }
   },
   {
     src: '课程/三上/L03-乘法的形状/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 第 3 课',
@@ -127,7 +124,6 @@ const DOCS = [
   {
     src: '课程/三上/L04-除法的两张脸/视频稿与分镜.md', kind: 'storyboard', fullWidth: true, kicker: 'STORYBOARD · 第 4 课',
     subtitle: '分镜、旁白、暂停点。',
-    facts: { '状态': '分镜完成，视频待渲染', '本课要点': '“平均分给 3 人”和“每 3 个装一袋”，是同一个除法的两种现实原型。' }
   },
   {
     src: '课程/三上/L04-除法的两张脸/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 第 4 课',
@@ -479,15 +475,6 @@ function escapeHtml(s) {
 function stripTags(s) {
   return String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 }
-function parseMeta(md) {
-  const out = {};
-  md.split('\n').forEach(line => {
-    let m = line.match(/^\s*>?\s*\*\*(.+?)\*\*\s*[：:]\s*(.*)$/);
-    if (!m) m = line.match(/^\s*>\s*([^：:]{1,10})\s*[：:]\s*(.*)$/);
-    if (m) out[m[1].replace(/\s+/g, '')] = m[2].trim();
-  });
-  return out;
-}
 
 function topbar(root) {
   return `<header class="topbar">
@@ -547,9 +534,7 @@ function renderDoc(doc) {
   const title = doc.title || (h1 ? stripTags(h1[1]) : path.basename(doc.src, '.md'));
   if (h1) body = body.replace(h1[0], '');
 
-  const meta = Object.assign({}, parseMeta(md), doc.facts || {});
-
-  // 课程类页面：去掉顶部那张“课程信息”引用块，已在 facts 里展示
+  // 课程类页面：去掉顶部的课程信息引用块
   if (doc.kind === 'lesson' || doc.kind === 'storyboard' || doc.kind === 'handout') {
     const bq = body.indexOf('<blockquote>');
     const h2 = body.indexOf('<h2');
@@ -596,28 +581,6 @@ function renderDoc(doc) {
   // 外链新窗口
   body = body.replace(/<a href="(https?:[^"]+)"/g, '<a href="$1" target="_blank" rel="noopener"');
 
-  // 课程信息
-  const order = ['大问题', '今天的大问题', '本课要点', '一句话原理', '核心一句话', '对应课', '用法', '时长', '材料', '状态'];
-  const fullKeys = new Set(['大问题', '今天的大问题', '本课要点', '一句话原理', '核心一句话', '材料', '对应课', '用法']);
-  const seen = new Set();
-  const facts = [];
-  order.forEach(k => {
-    if (!meta[k] || seen.has(k)) return;
-    if (k === '大问题' && doc.kind === 'lesson') return;
-    seen.add(k);
-    const isFull = fullKeys.has(k) || meta[k].length > 58;
-    facts.push(`<div class="fact${isFull ? ' full' : ''}"><span>${escapeHtml(k)}</span><strong>${escapeHtml(meta[k])}</strong></div>`);
-    if (k === '时长' && doc.kind === 'lesson') {
-      facts.push(`<div class="fact"><span>建议</span><strong>每周 1 课，允许一节课只做一个实验</strong></div>`);
-    }
-    if (k === '状态' && doc.kind === 'storyboard') {
-      facts.push(`<div class="fact"><span>用途</span><strong>给家长和剪辑参考</strong></div>`);
-    }
-  });
-  if (!facts.length && doc.kind === 'handout') {
-    facts.push(`<div class="fact full"><span>建议</span><strong>A4 打印，先做后讲</strong></div>`);
-  }
-
   // 视频
   const videoPath = path.join(ROOT, dir, '视频.mp4');
   const hasVideo = (doc.kind === 'lesson' || doc.kind === 'storyboard') && fs.existsSync(videoPath);
@@ -661,7 +624,6 @@ function renderDoc(doc) {
   const selfName = path.basename(doc.src);
   if (doc.kind === 'lesson') {
     if (hasVideo && fs.existsSync(path.join(ROOT, dir, '视频稿与分镜.html'))) actions.push('<a class="btn" href="视频稿与分镜.html">视频分镜</a>');
-    if (fs.existsSync(path.join(ROOT, dir, '动手单.html'))) actions.push('<a class="btn" href="动手单.html">动手单</a>');
     if (fs.existsSync(path.join(ROOT, dir, '挑战单.html'))) actions.push('<a class="btn" href="挑战单.html">挑战单</a>');
   }
   if (doc.kind === 'storyboard') {
@@ -688,15 +650,11 @@ function renderDoc(doc) {
       <div class="kicker">${escapeHtml(doc.kicker || '为什么实验室')}</div>
       <h1 class="doc-title">${escapeHtml(title)}</h1>
       ${doc.subtitle ? `<p class="doc-sub">${escapeHtml(doc.subtitle)}</p>` : ''}
-      <div class="actions">${actions.join('')}</div>${doc.kind === 'lesson' ? `
-      <div class="lesson-route"><span>实验</span><i>→</i><span>讲解</span><i>→</i><span>四问</span><i>→</i><span>挑战</span><i>→</i><span>复述</span></div>` : ''}
-    </div>${facts.length ? `
-    <div class="facts">${facts.join('')}</div>` : ''}
+      <div class="actions">${actions.join('')}</div>    </div>
   </div>`;
   const heroMedia = video || mediaPlaceholder;
   const heroClasses = ['doc-hero'];
   if (heroMedia) heroClasses.push('has-media');
-  if (facts.length) heroClasses.push('has-facts');
   const hero = heroMedia
     ? `<section class="${heroClasses.join(' ')}"><div class="hero-grid">${heroCopy}<div class="hero-media">${heroMedia}</div></div></section>`
     : `<section class="${heroClasses.join(' ')}">${heroCopy}</section>`;
@@ -777,7 +735,7 @@ function renderCourseHub() {
     ? `<a class="lesson-row" href="${l.dir}/讲授稿.html">
         <div class="no">${l.no}</div>
         <div><h3>${l.title} <span class="badge ${l.badge.includes('成片') ? 'red' : 'gold'}">${l.badge}</span></h3><p>${l.q}</p></div>
-        <div class="meta">讲授稿 · 动手单 · 分镜 →</div>
+        <div class="meta">讲解稿 →</div>
       </a>`
     : `<div class="lesson-row">
         <div class="no">${l.no}</div>
@@ -829,7 +787,7 @@ function renderCourseHub5A() {
     ? `<a class="lesson-row" href="${l.dir}/讲授稿.html">
         <div class="no">${l.no}</div>
         <div><h3>${l.title} <span class="badge gold">${l.badge}</span></h3><p>${l.q}</p></div>
-        <div class="meta">讲授稿 · 动手单 · 挑战单 →</div>
+        <div class="meta">讲解稿 →</div>
       </a>`
     : `<div class="lesson-row">
         <div class="no">${l.no}</div>
@@ -890,7 +848,7 @@ function renderCourseHub5B() {
     ? `<a class="lesson-row" href="${l.dir}/讲授稿.html">
         <div class="no">${l.no}</div>
         <div><h3>${l.title} <span class="badge gold">${l.badge}</span></h3><p>${l.q}</p></div>
-        <div class="meta">讲授稿 · 动手单 · 挑战单 →</div>
+        <div class="meta">讲解稿 →</div>
       </a>`
     : `<div class="lesson-row">
         <div class="no">${l.no}</div>
