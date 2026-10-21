@@ -13,9 +13,7 @@
   <div class="inner">
     <a class="brand" href="index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
     <nav class="nav" aria-label="网站导航">
-      <a href="00-方案/00-总方案.html">总方案</a>
-      <a href="00-方案/09-96课总图.html">96 课地图</a>
-      <a href="00-方案/03-B卷题型对照表.html">B 卷对照</a>
+      <a href="README.html">使用说明</a>
       <a href="课程/index.html">课程目录</a>
     </nav>
   </div>
@@ -24,9 +22,8 @@
 <main class="page">
 <section class="doc-hero"><div class="hero-copy">
     <div class="hero-main">
-      <div class="kicker">START HERE · 使用说明</div>
+      <div class="kicker">为什么实验室</div>
       <h1 class="doc-title">小学数学 · 三至六年级原理与提高课</h1>
-      <p class="doc-sub">三至六年级的数学讲解、例题与练习。</p>
       <div class="actions"><a class="btn" href="课程/index.html">课程目录</a></div>    </div>
   </div></section>
 
@@ -59,7 +56,7 @@
 <h2 id="sec-3">本地使用与修改</h2>
 <p>阅读课程直接打开 HTML 文件即可，无需安装依赖或启动服务。</p>
 <p>课程的 Markdown 文件是内容源文件，HTML 文件是阅读页面。修改内容后，在 Node.js 环境中生成页面：</p>
-<pre><code class="language-bash">npm install
+<pre><code class="language-bash">npm ci
 npm run build
 </code></pre>
 <p>主要目录：</p>
@@ -79,6 +76,10 @@ npm run build
 <td>讲解、练习、答案、视频和配套材料</td>
 </tr>
 <tr>
+<td><code>课程/学期/课名/视频源文件/</code></td>
+<td>本课动画分镜配置和当前配音，可用于修改或重新制作视频</td>
+</tr>
+<tr>
 <td><code>课程/学习安排.json</code></td>
 <td>课程分组、顺序与前置知识</td>
 </tr>
@@ -96,7 +97,7 @@ npm run build
 </tr>
 <tr>
 <td><code>工具/site/config.js</code></td>
-<td>文档清单与目录分组</td>
+<td>学段与目录分组</td>
 </tr>
 <tr>
 <td><code>工具/site/catalog.js</code></td>
@@ -110,15 +111,30 @@ npm run build
 <td><code>工具/site/render.js</code></td>
 <td>Markdown 转换与阅读页输出</td>
 </tr>
+<tr>
+<td><code>工具/batch_videos.py</code></td>
+<td>分幕配音与视频渲染入口</td>
+</tr>
+<tr>
+<td><code>工具/scenes/</code></td>
+<td>数学动画的绘制代码</td>
+</tr>
 </tbody></table></div>
 <p>课程分组和顺序由 <code>课程/学习安排.json</code> 管理。新增或调整课程后，运行构建命令即可同步首页和课程目录。</p>
 <p>页面结构在模板中修改，首页外观在 <code>assets/home.css</code> 中修改，全站公共样式在 <code>assets/doc.css</code> 中修改。HTML 是生成结果，直接修改其中的内容会在下次构建时被覆盖。</p>
 <p>修改目录或页面模板后，可运行 <code>npm run test:site</code> 检查课程清单、目录顺序和视频标识。</p>
+<h2 id="sec-4">修改视频</h2>
+<p>有成片的课程保留了分镜配置、分幕配音和字幕，配音使用“开朗学长”音色（<code>zh_male_kailangxuezhang_uranus_bigtts</code>），保持原速。文字版分镜在各课的 <code>视频稿与分镜.md</code> 中。</p>
+<p>视频工具使用 Python 3、Pillow 和 FFmpeg，目前使用 macOS 自带中文字体。已有配音可直接复用，例如：</p>
+<pre><code class="language-bash">python3 工具/batch_videos.py render 课程/三上/L03-乘法的形状/视频源文件/分镜.json
+</code></pre>
+<p>渲染结果、日志和检查图片放在 <code>.cache/videos/</code>，不会覆盖课程中的成片。确认画面和声音后再更新课程视频、字幕、封面和时间线；时间线中的源文件路径相对于其所在目录。</p>
+<p>换声音或修改旁白时，用 <code>工具/prepare_narration.py</code> 指定新的配音目录，再更新分镜配置中的 <code>audio_version</code>。生成配音复用相邻 <code>nba_biz</code> 项目的 <code>scripts/tts.py</code> 及其本地配置；阅读课程和使用已有配音渲染均不需要配音服务。</p>
 
   </article>
   <aside class="toc">
         <div class="toc-title">本页目录</div>
-        <a class="lvl2" href="#sec-1">课程内容</a><a class="lvl2" href="#sec-2">怎样学习</a><a class="lvl2" href="#sec-3">本地使用与修改</a>
+        <a class="lvl2" href="#sec-1">课程内容</a><a class="lvl2" href="#sec-2">怎样学习</a><a class="lvl2" href="#sec-3">本地使用与修改</a><a class="lvl2" href="#sec-4">修改视频</a>
       </aside>
 </div>
 <div class="backtop"><a href="#top">↑ 回到顶部</a></div>

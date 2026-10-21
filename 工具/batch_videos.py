@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""按已审核的成片 JSON 配音、渲染；只写制作目录，不直接发布课程。"""
+"""按课程分镜配音、渲染；配音保存在课程中，渲染结果和日志写入 .cache/videos。"""
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
@@ -12,13 +12,10 @@ VOICE = "zh_male_kailangxuezhang_uranus_bigtts"
 
 
 def paths(script):
-    term, no = script.stem.split("-")
-    matches = list((ROOT / "课程" / term).glob(no + "-*"))
-    if len(matches) != 1:
-        raise ValueError(f"课程目录不唯一：{script}")
-    work = ROOT / "制作" / (term + "-" + matches[0].name)
+    lesson = script.parent.parent
+    work = ROOT / ".cache/videos" / (lesson.parent.name + "-" + lesson.name)
     audio_version = json.loads(script.read_text()).get("audio_version", "配音-开朗学长-v1")
-    return work, work / audio_version, work / "成片" / "视频.mp4"
+    return work, script.parent / audio_version, work / "成片" / "视频.mp4"
 
 
 def run_one(script, stage):
@@ -32,7 +29,7 @@ def run_one(script, stage):
                "--out", str(movie), "--audio-dir", str(audio), "--burn-captions"]
     with (work / (stage + ".log")).open("w") as log:
         result = subprocess.run(cmd, stdout=log, stderr=subprocess.STDOUT)
-    print(f"{stage} {script.stem}: {'完成' if result.returncode == 0 else '失败，检查日志'}", flush=True)
+    print(f"{stage} {work.name}: {'完成' if result.returncode == 0 else '失败，检查日志'}", flush=True)
     return {"script": str(script.relative_to(ROOT)), "stage": stage, "ok": result.returncode == 0}
 
 
@@ -49,7 +46,7 @@ def main():
     with ThreadPoolExecutor(max_workers=args.jobs) as pool:
         for future in as_completed([pool.submit(run_one, p, args.stage) for p in scripts]):
             results.append(future.result())
-    report = ROOT / "制作" / ("批次-" + args.stage + "-" + scripts[0].stem + ".json")
+    report = ROOT / ".cache/videos" / ("批次-" + args.stage + ".json")
     report.write_text(json.dumps(results, ensure_ascii=False, indent=2) + "\n")
     if not all(r["ok"] for r in results):
         raise SystemExit(1)

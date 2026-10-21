@@ -4,7 +4,7 @@ const path = require('path');
 const { SEMESTERS } = require('./site/config');
 const { loadCatalog } = require('./site/catalog');
 const { renderDoc } = require('./site/render');
-const { docsPage, semesterPage, coursePage, homePage } = require('./site/templates');
+const { semesterPage, coursePage, homePage } = require('./site/templates');
 
 function build(root = path.resolve(__dirname, '..')) {
   const site = loadCatalog(root);
@@ -16,7 +16,6 @@ function build(root = path.resolve(__dirname, '..')) {
   }
 
   site.DOCS.forEach(doc => renderDoc(doc, site));
-  write('00-方案/index.html', docsPage());
   for (const sem of SEMESTERS) {
     const lessons = site.ALL_LESSONS.filter(l => l.sem === sem).sort((a, b) => a.no.localeCompare(b.no));
     if (lessons.length) write(`课程/${sem}/index.html`, semesterPage(sem, lessons));

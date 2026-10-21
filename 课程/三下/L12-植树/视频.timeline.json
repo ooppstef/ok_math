@@ -1,8 +1,8 @@
 {
-  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/三下-L12.json",
+  "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/三下-L12-植树/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v1",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
   "burn_captions": true,
   "scenes": [

@@ -40,7 +40,7 @@
 课程的 Markdown 文件是内容源文件，HTML 文件是阅读页面。修改内容后，在 Node.js 环境中生成页面：
 
 ```bash
-npm install
+npm ci
 npm run build
 ```
 
@@ -50,17 +50,34 @@ npm run build
 |---|---|
 | `index.html` | 课程首页 |
 | `课程/` | 讲解、练习、答案、视频和配套材料 |
+| `课程/学期/课名/视频源文件/` | 本课动画分镜配置和当前配音，可用于修改或重新制作视频 |
 | `课程/学习安排.json` | 课程分组、顺序与前置知识 |
 | `assets/` | 数学配图与页面样式 |
 | `assets/home.css` | 首页布局与手机样式 |
 | `工具/build_html.js` | 页面构建入口 |
-| `工具/site/config.js` | 文档清单与目录分组 |
+| `工具/site/config.js` | 学段与目录分组 |
 | `工具/site/catalog.js` | 课程读取与学习安排校验 |
 | `工具/site/templates.js` | 首页、课程页和目录页模板 |
 | `工具/site/render.js` | Markdown 转换与阅读页输出 |
+| `工具/batch_videos.py` | 分幕配音与视频渲染入口 |
+| `工具/scenes/` | 数学动画的绘制代码 |
 
 课程分组和顺序由 `课程/学习安排.json` 管理。新增或调整课程后，运行构建命令即可同步首页和课程目录。
 
 页面结构在模板中修改，首页外观在 `assets/home.css` 中修改，全站公共样式在 `assets/doc.css` 中修改。HTML 是生成结果，直接修改其中的内容会在下次构建时被覆盖。
 
 修改目录或页面模板后，可运行 `npm run test:site` 检查课程清单、目录顺序和视频标识。
+
+## 修改视频
+
+有成片的课程保留了分镜配置、分幕配音和字幕，配音使用“开朗学长”音色（`zh_male_kailangxuezhang_uranus_bigtts`），保持原速。文字版分镜在各课的 `视频稿与分镜.md` 中。
+
+视频工具使用 Python 3、Pillow 和 FFmpeg，目前使用 macOS 自带中文字体。已有配音可直接复用，例如：
+
+```bash
+python3 工具/batch_videos.py render 课程/三上/L03-乘法的形状/视频源文件/分镜.json
+```
+
+渲染结果、日志和检查图片放在 `.cache/videos/`，不会覆盖课程中的成片。确认画面和声音后再更新课程视频、字幕、封面和时间线；时间线中的源文件路径相对于其所在目录。
+
+换声音或修改旁白时，用 `工具/prepare_narration.py` 指定新的配音目录，再更新分镜配置中的 `audio_version`。生成配音复用相邻 `nba_biz` 项目的 `scripts/tts.py` 及其本地配置；阅读课程和使用已有配音渲染均不需要配音服务。

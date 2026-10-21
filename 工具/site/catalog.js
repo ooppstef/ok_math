@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { DOCS: DOCUMENTS, SEMESTERS, SEM_NAMES, LEARNING_GROUPS } = require('./config');
+const { SEMESTERS, SEM_NAMES, LEARNING_GROUPS } = require('./config');
 
 const SEM_RE = /三上|三下|四上|四下|五上|五下|六上|六下/g;
 function expandSem(text) {
@@ -13,7 +13,7 @@ function learningLabel(lesson) {
 function lessonsIn(group, lessons) { return lessons.filter(l => l.stage === group.stage && l.level === group.level); }
 
 function loadCatalog(ROOT) {
-  const DOCS = DOCUMENTS.map(doc => ({ ...doc }));
+  const DOCS = [{ src: 'README.md', kind: 'doc', kicker: '为什么实验室' }];
   const ALL_LESSONS = [];
   const learningPlan = JSON.parse(fs.readFileSync(path.join(ROOT, '课程/学习安排.json'), 'utf8')).lessons;
   const planById = new Map(learningPlan.map((item, order) => [item.id, { ...item, order }]));
@@ -42,20 +42,13 @@ function loadCatalog(ROOT) {
   if (ALL_LESSONS.length !== learningPlan.length) throw new Error('学习安排含不存在的课程');
   ALL_LESSONS.sort((a, b) => a.order - b.order);
 
-  const knownDocs = new Set(DOCS.map(d => d.src));
   for (const l of ALL_LESSONS) {
-    if (!knownDocs.has(l.src)) {
-      DOCS.push({
-        src: l.src, kind: 'lesson', kicker: `LESSON ${l.no} · ${l.sem}`,
-        subtitle: '', courseHub: l.hub
-      });
-    }
-    const storyboard = `课程/${l.sem}/${l.dir}/视频稿与分镜.md`;
-    if (!knownDocs.has(storyboard) && fs.existsSync(path.join(ROOT, storyboard))) {
-      DOCS.push({
-        src: storyboard, kind: 'storyboard', fullWidth: true,
-        kicker: `STORYBOARD · ${l.sem} ${l.no}`, subtitle: '', courseHub: l.hub
-      });
+    for (const [name, kind] of [['讲授稿', 'lesson'], ['动手单', 'handout'], ['挑战单', 'handout'], ['视频稿与分镜', 'storyboard']]) {
+      const src = `课程/${l.sem}/${l.dir}/${name}.md`;
+      if (fs.existsSync(path.join(ROOT, src))) {
+        DOCS.push({ src, kind, fullWidth: kind === 'storyboard',
+          kicker: `${l.sem} · ${l.title}`, courseHub: l.hub });
+      }
     }
   }
   return { ROOT, DOCS, ALL_LESSONS };

@@ -51,6 +51,7 @@ class RenderTests(unittest.TestCase):
             self.assertIn("一份", (folder / "video.srt").read_text())
             self.assertTrue((folder / "video.vtt").read_text().startswith("WEBVTT"))
             self.assertEqual(json.loads((folder / "video.timeline.json").read_text())["scenes"][0]["duration"], .25)
+            self.assertEqual(json.loads((folder / "video.timeline.json").read_text())["script"], "script.json")
             self.assertFalse(list(folder.glob(".render-*")))
 
 

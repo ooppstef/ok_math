@@ -101,16 +101,16 @@ ${lesson?.video_note ? `      <p class="video-scope">${escapeHtml(lesson.video_n
   const selfName = path.basename(doc.src);
   if (doc.kind === 'lesson') {
     if (fs.existsSync(path.join(ROOT, dir, '动手单.md'))) actions.push('<a class="btn" href="动手单.html">动手练习</a>');
-    if (fs.existsSync(path.join(ROOT, dir, '挑战单.html'))) actions.push('<a class="btn" href="挑战单.html">挑战单</a>');
+    if (fs.existsSync(path.join(ROOT, dir, '挑战单.md'))) actions.push('<a class="btn" href="挑战单.html">挑战单</a>');
   }
   if (doc.kind === 'storyboard') {
-    if (fs.existsSync(path.join(ROOT, dir, '讲授稿.html'))) actions.push('<a class="btn" href="讲授稿.html">课程讲解</a>');
-    if (fs.existsSync(path.join(ROOT, dir, '动手单.html'))) actions.push('<a class="btn" href="动手单.html">动手单</a>');
+    if (fs.existsSync(path.join(ROOT, dir, '讲授稿.md'))) actions.push('<a class="btn" href="讲授稿.html">课程讲解</a>');
+    if (fs.existsSync(path.join(ROOT, dir, '动手单.md'))) actions.push('<a class="btn" href="动手单.html">动手单</a>');
   }
   if (doc.kind === 'handout') {
-    if (fs.existsSync(path.join(ROOT, dir, '讲授稿.html'))) actions.push('<a class="btn" href="讲授稿.html">课程讲解</a>');
-    if (selfName !== '动手单.md' && fs.existsSync(path.join(ROOT, dir, '动手单.html'))) actions.push('<a class="btn" href="动手单.html">动手单</a>');
-    if (selfName !== '挑战单.md' && fs.existsSync(path.join(ROOT, dir, '挑战单.html'))) actions.push('<a class="btn" href="挑战单.html">挑战单</a>');
+    if (fs.existsSync(path.join(ROOT, dir, '讲授稿.md'))) actions.push('<a class="btn" href="讲授稿.html">课程讲解</a>');
+    if (selfName !== '动手单.md' && fs.existsSync(path.join(ROOT, dir, '动手单.md'))) actions.push('<a class="btn" href="动手单.html">动手单</a>');
+    if (selfName !== '挑战单.md' && fs.existsSync(path.join(ROOT, dir, '挑战单.md'))) actions.push('<a class="btn" href="挑战单.html">挑战单</a>');
   }
   const learning = doc.kind === 'lesson' || doc.kind === 'handout';
   const courseHub = learning ? '课程/index.html' : (doc.courseHub || '课程/index.html');

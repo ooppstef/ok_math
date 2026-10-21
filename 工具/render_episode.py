@@ -5,16 +5,16 @@
 把一份 JSON 分镜渲染成 1280x720 的讲解视频（中文配音 + 手绘风动画）。
 
 用法：
-  python3 工具/render_episode.py 工具/episodes/L01.json \
-      --out 制作/渲染示例/视频.mp4
+  python3 工具/batch_videos.py render 课程/三上/L03-乘法的形状/视频源文件/分镜.json
 
-分镜 JSON 结构见 工具/episodes/L01.json。
+分镜 JSON 和分幕配音放在对应课程的“视频源文件”目录中。
 """
 
 import argparse
 import importlib
 import json
 import math
+import os
 import random
 import re
 import subprocess
@@ -1036,9 +1036,9 @@ def main():
                              "pause_after": sc.get("pause_after", .45)})
             cursor += duration
         rendered.with_suffix(".timeline.json").write_text(json.dumps({
-            "script": str(Path(args.script).resolve()), "fps": args.fps,
+            "script": os.path.relpath(Path(args.script).resolve(), out.parent.resolve()), "fps": args.fps,
             "audio": "silent" if args.silent else "files" if args.audio_dir else "system",
-            "audio_dir": str(args.audio_dir.resolve()) if args.audio_dir else None,
+            "audio_dir": os.path.relpath(args.audio_dir.resolve(), out.parent.resolve()) if args.audio_dir else None,
             "voice_id": json.loads((args.audio_dir / "manifest.json").read_text())["voice_id"] if args.audio_dir else None,
             "burn_captions": args.burn_captions, "scenes": timeline,
         }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

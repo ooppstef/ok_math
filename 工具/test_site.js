@@ -1,5 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('fs');
 const path = require('path');
 const { loadCatalog, learningLabel } = require('./site/catalog');
 const { homePage, coursePage } = require('./site/templates');
@@ -16,6 +17,9 @@ test('读取课程可重复调用，不重复登记文档或遗漏课程', () =>
   assert.equal(first.ALL_LESSONS.filter(l => l.hasVideo).length, 49);
   assert.ok(first.ALL_LESSONS.every(l => !removedIds.includes(l.id)));
   assert.equal(first.ALL_LESSONS.filter(l => l.level === '轻奥').length, 13);
+  const sources = fs.readdirSync(path.join(root, '课程'), { recursive: true })
+    .filter(file => file.endsWith('.md')).map(file => '课程/' + file);
+  assert.deepEqual(first.DOCS.map(d => d.src).sort(), ['README.md', ...sources].sort());
   for (const lesson of first.ALL_LESSONS) assert.ok(learningLabel(lesson));
 });
 

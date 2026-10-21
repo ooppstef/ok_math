@@ -23,13 +23,18 @@ def check_subtitles(movie, scenes, timeline):
             assert movie.with_suffix(suffix).read_text() == expected.with_suffix(suffix).read_text(), (movie, suffix)
 
 
-def inspect(script, contact_sheet=False):
+def inspect(script, contact_sheet=False, published=False):
     data = json.loads(script.read_text())
     work, audio, movie = paths(script)
+    if published:
+        movie = script.parent.parent / "视频.mp4"
+    work.mkdir(parents=True, exist_ok=True)
     manifest = json.loads((audio / "manifest.json").read_text())
     assert manifest["voice_id"] == VOICE and manifest["speech_rate"] == 0
     assert manifest["scenes"] == [{"id": s["id"], "text": s["narration"]} for s in data["scenes"]]
     timeline = json.loads(movie.with_suffix(".timeline.json").read_text())
+    assert (movie.parent / timeline["script"]).resolve() == script.resolve()
+    assert (movie.parent / timeline["audio_dir"]).resolve() == audio.resolve()
     assert timeline["audio"] == "files" and timeline["voice_id"] == VOICE
     check_subtitles(movie, data["scenes"], timeline["scenes"])
     probe = json.loads(subprocess.check_output(["ffprobe", "-v", "error", "-show_streams", "-show_format", "-of", "json", str(movie)]))
@@ -77,7 +82,7 @@ def inspect(script, contact_sheet=False):
                 frame.thumbnail((426, 240))
                 out.paste(frame, (426 * j, 240 * i))
         capture.release()
-        out.save(movie.parent / "实际成片关键帧.jpg", quality=88)
+        out.save(work / "实际成片关键帧.jpg", quality=88)
     result = {"script": str(script.relative_to(ROOT)), "video": str(movie.relative_to(ROOT)),
               "duration": round(total, 3), "scenes": len(data["scenes"]), "voice_id": VOICE,
               "speech_rate": 0, "max_volume_db": peak, "mean_volume_db": mean,
@@ -85,7 +90,7 @@ def inspect(script, contact_sheet=False):
               "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
               "frame_samples_decoded": contact_sheet}
     (work / "成片技术核验.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
-    print("核验完成", script.stem, flush=True)
+    print("核验完成", work.name, flush=True)
     return result
 
 
@@ -93,10 +98,11 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("scripts", nargs="+", type=Path)
     ap.add_argument("--contact-sheet", action="store_true")
+    ap.add_argument("--published", action="store_true", help="核对课程目录中的成片；默认核对缓存中的新渲染结果")
     args = ap.parse_args()
     with ThreadPoolExecutor(max_workers=2) as pool:
-        results = list(pool.map(lambda p: inspect(p.resolve(), args.contact_sheet), args.scripts))
-    report = ROOT / "制作/成片技术核验汇总.json"
+        results = list(pool.map(lambda p: inspect(p.resolve(), args.contact_sheet, args.published), args.scripts))
+    report = ROOT / ".cache/videos/成片技术核验汇总.json"
     previous = json.loads(report.read_text()) if report.exists() else []
     merged = {item["script"]: item for item in previous + results}
     report.write_text(json.dumps([merged[key] for key in sorted(merged)], ensure_ascii=False, indent=2) + "\n")

@@ -1,5 +1,5 @@
 const path = require('path');
-const { LEARNING_GROUPS, SEM_NAMES, DOC_CARDS } = require('./config');
+const { LEARNING_GROUPS, SEM_NAMES } = require('./config');
 const { lessonsIn, learningLabel, expandSem } = require('./catalog');
 
 function rootRel(outRel, ROOT) {
@@ -32,9 +32,7 @@ function topbar(root, learning) {
   <div class="inner">
     <a class="brand" href="${href(root, 'index.html')}"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
     <nav class="nav${learning ? ' learning-nav' : ''}" aria-label="网站导航">
-${learning ? '' : `      <a href="${href(root, '00-方案/00-总方案.html')}">总方案</a>
-      <a href="${href(root, '00-方案/09-96课总图.html')}">96 课地图</a>
-      <a href="${href(root, '00-方案/03-B卷题型对照表.html')}">B 卷对照</a>\n`}      <a href="${href(root, '课程/index.html')}">课程目录</a>
+${learning ? '' : `      <a href="${href(root, 'README.html')}">使用说明</a>\n`}      <a href="${href(root, '课程/index.html')}">课程目录</a>
     </nav>
   </div>
   <div class="progress"><span></span></div>
@@ -93,38 +91,6 @@ ${body}
 ${tocHtml ? '  ' + tocHtml + '\n' : ''}</div>`;
 
   return shell({ root, title, content, bodyClass: doc.kind || 'doc', learning });
-}
-
-function docsPage() {
-  const root = '..';
-  const cards = DOC_CARDS;
-  const content = `<section class="hub-hero">
-  <div class="hub-hero-grid">
-    <div>
-      <div class="kicker">DOCS · 方案与工具</div>
-      <h1 class="doc-title">先读哪一份？</h1>
-      <p class="doc-sub">当前审查与教材边界见 29 号记录，学习入口按学段和前置安排。旧地图与报告保留作历史参考。</p>
-    </div>
-    <aside class="hub-side">
-      <div class="side-label">推荐阅读顺序</div>
-      <ol>
-        <li>29 号记录：全新复审与学习安排</li>
-        <li>课标覆盖核查：内容与证据</li>
-        <li>课程目录：选择正在学的内容</li>
-        <li>审查清单：视频制作前核对</li>
-      </ol>
-    </aside>
-  </div>
-</section>
-<div class="hub-grid">
-${cards.map(c => `<a class="hub-card" href="${c[4]}">
-  <div class="num">${c[0]} · ${c[1]}</div>
-  <h3>${c[2]}</h3>
-  <p>${c[3]}</p>
-  <span class="go">打开 →</span>
-</a>`).join('')}
-</div>`;
-  return shell({ root, title: '方案与工具', content, bodyClass: 'hub' });
 }
 
 function semesterPage(sem, lessons) {
@@ -207,4 +173,4 @@ ${terms}
 `;
 }
 
-module.exports = { rootRel, href, escapeHtml, stripTags, documentPage, docsPage, semesterPage, coursePage, homePage };
+module.exports = { rootRel, href, escapeHtml, stripTags, documentPage, semesterPage, coursePage, homePage };
