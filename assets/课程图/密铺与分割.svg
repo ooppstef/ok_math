@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="310" viewBox="0 0 760 310" role="img" aria-labelledby="title desc">
+  <title id="title">正方形密铺，分成三角形后仍可铺满</title>
+  <desc id="desc">左边四个正方形的四个直角在中央相接；右边相同的四个正方形各沿对角线分成两片，共八片三角形，拼成的区域不变。</desc>
+  <rect width="760" height="310" rx="14" fill="#faf7ed"/>
+  <g font-family="sans-serif" fill="#24364b" text-anchor="middle">
+    <text x="200" y="34" font-size="20">四个直角，围成一周</text>
+    <text x="560" y="34" font-size="20">剪开后，仍铺满原来的地方</text>
+  </g>
+  <g stroke="#334155" stroke-width="2">
+    <path d="M100 65h100v100H100z M200 165h100v100H200z" fill="#d4e6ee"/>
+    <path d="M200 65h100v100H200z M100 165h100v100H100z" fill="#f5d88b"/>
+    <path d="M184 165v-16h16 M200 149h16v16 M216 165v16h-16 M200 181h-16v-16" fill="none" stroke="#c65b37"/>
+    <path d="M460 65h100v100H460z M560 165h100v100H560z" fill="#d4e6ee"/>
+    <path d="M560 65h100v100H560z M460 165h100v100H460z" fill="#f5d88b"/>
+    <path d="M460 65l100 100 M560 65l100 100 M460 165l100 100 M560 165l100 100" stroke="#c65b37"/>
+  </g>
+  <g font-family="sans-serif" fill="#475569" text-anchor="middle" font-size="17">
+    <text x="200" y="292">4 片正方形</text><text x="560" y="292">8 片三角形</text>
+  </g>
+</svg>

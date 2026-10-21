@@ -1,0 +1,52 @@
+.page{padding-top:18px}
+  .home-hero{
+    padding:12px 0 32px;border-bottom:2px solid var(--ink);
+  }
+  .home-title{
+    font-family:var(--font-sans);font-size:clamp(40px,4.8vw,58px);
+    font-weight:800;letter-spacing:-.05em;line-height:1.04;
+    margin:0;color:var(--ink);
+  }
+  .home-title em{
+    font-style:normal;color:var(--blue);
+    background:linear-gradient(transparent 72%,var(--yellow) 72%);
+    -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  }
+  #courses{padding-top:26px}
+  .term{border-top:1px solid var(--line);margin-top:22px;padding-top:13px}
+  #courses .term:first-of-type{border-top:0;margin-top:0;padding-top:0}
+  .term-head{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:baseline;margin-bottom:9px}
+  .term-no{font-family:var(--font-mono);font-size:10px;color:var(--orange-ink);letter-spacing:.04em}
+  .term-head h3{font-family:var(--font-sans);font-size:22px;font-weight:780;letter-spacing:-.02em;margin:0;color:var(--ink)}
+  .term-list{
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:0;list-style:none;margin:0;padding:0;
+    border-top:1px solid var(--line);border-left:1px solid var(--line);
+  }
+  .term-list li{min-width:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .lesson{
+    display:grid;grid-template-columns:19px minmax(0,1fr);gap:6px;align-items:baseline;
+    padding:9px 10px;border:0;color:var(--ink);min-height:38px;
+  }
+  a.lesson:hover{background:var(--blue-soft);color:var(--ink)}
+  .lesson-no{font-family:var(--font-mono);font-size:9.5px;color:var(--muted)}
+  .lesson-name{font-family:var(--font-sans);font-size:13px;line-height:1.45}
+  @media (max-width:900px){
+    .term-list{grid-template-columns:repeat(3,minmax(0,1fr))}
+  }
+  @media (max-width:700px){
+    .home-hero{padding-top:36px}
+    .term-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media (max-width:560px){
+    .home-title span{display:block}
+    .home-title em{display:inline-block}
+  }
+  @media (max-width:460px){
+    .term-list{grid-template-columns:1fr}
+    .term-head{grid-template-columns:26px 1fr}
+  }
+  @media print{
+    .home-hero{padding-top:0}
+    .term{break-inside:avoid}
+  }

@@ -6,7 +6,7 @@
 
 用法：
   python3 工具/render_episode.py 工具/episodes/L01.json \
-      --out 课程/三上/L01-满十进一/视频.mp4
+      --out 制作/渲染示例/视频.mp4
 
 分镜 JSON 结构见 工具/episodes/L01.json。
 """

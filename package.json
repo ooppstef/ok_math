@@ -4,7 +4,8 @@
   "private": true,
   "description": "三到六年级 B 卷数学原理课",
   "scripts": {
-    "build": "node 工具/build_html.js"
+    "build": "node 工具/build_html.js",
+    "test:site": "node --test 工具/test_site.js"
   },
   "dependencies": {
     "marked": "^15.0.12"

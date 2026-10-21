@@ -34,7 +34,7 @@
   <article class="article">
 
 <p>视频由 <code>工具/render_episode.py</code> 生成。旁白、分幕音轨和画面分别保存；更换配音后，按新音轨长度重新渲染画面和字幕。</p>
-<p>本轮使用 <code>zh_male_kailangxuezhang_uranus_bigtts</code>（开朗学长 2.0）。用户已试听并确认保持当前语速，<code>speech_rate=0</code>，不对声音加速或拉伸。51 课的逐课输出与核验结果见<a href="28-原理视频制作与验收.html">28 号制作记录</a>。早期无声样片保留在制作目录。</p>
+<p>使用 <code>zh_male_kailangxuezhang_uranus_bigtts</code>（开朗学长 2.0）。用户已试听并确认保持当前语速，<code>speech_rate=0</code>，不对声音加速或拉伸。最初 51 课的逐课输出与核验结果见<a href="28-原理视频制作与验收.html">28 号制作记录</a>；移除两课基础回顾视频后，学习端保留 49 课。已移除课程的分镜配置与成片留在历史制作目录，批量制作使用的 <code>工具/episodes/成片/</code> 只保留当前课程配置。早期无声样片保留在制作目录。</p>
 <h2 id="sec-1">环境</h2>
 <ul>
 <li>macOS</li>
@@ -49,9 +49,9 @@ ffmpeg -version | head -1
 say -v &#39;?&#39; | grep Tingting
 </code></pre>
 <h2 id="sec-2">生成</h2>
-<pre><code class="language-bash">python3 工具/render_episode.py 工具/episodes/成片/三上-L01.json \
-  --audio-dir 制作/三上-L01-满十进一/配音-开朗学长-v1 --burn-captions \
-  --out 制作/三上-L01-满十进一/成片/视频.mp4
+<pre><code class="language-bash">python3 工具/render_episode.py 工具/episodes/成片/三上-L03.json \
+  --audio-dir 制作/三上-L03-乘法的形状/配音-开朗学长-v1 --burn-captions \
+  --out 制作/三上-L03-乘法的形状/成片/视频.mp4
 </code></pre>
 <p>输出：</p>
 <ul>

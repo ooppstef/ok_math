@@ -8,60 +8,7 @@
 <title>小学数学 · B 卷原理课</title>
 <meta name="description" content="三至六年级数学课程，包含知识讲解、例题与练习。">
 <link rel="stylesheet" href="assets/doc.css">
-<style>
-  .page{padding-top:18px}
-  .home-hero{
-    padding:12px 0 32px;border-bottom:2px solid var(--ink);
-  }
-  .home-title{
-    font-family:var(--font-sans);font-size:clamp(40px,4.8vw,58px);
-    font-weight:800;letter-spacing:-.05em;line-height:1.04;
-    margin:0;color:var(--ink);
-  }
-  .home-title em{
-    font-style:normal;color:var(--blue);
-    background:linear-gradient(transparent 72%,var(--yellow) 72%);
-    -webkit-box-decoration-break:clone;box-decoration-break:clone;
-  }
-  #courses{padding-top:26px}
-  .term{border-top:1px solid var(--line);margin-top:22px;padding-top:13px}
-  #courses .term:first-of-type{border-top:0;margin-top:0;padding-top:0}
-  .term-head{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:baseline;margin-bottom:9px}
-  .term-no{font-family:var(--font-mono);font-size:10px;color:var(--orange-ink);letter-spacing:.04em}
-  .term-head h3{font-family:var(--font-sans);font-size:22px;font-weight:780;letter-spacing:-.02em;margin:0;color:var(--ink)}
-  .term-list{
-    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
-    gap:0;list-style:none;margin:0;padding:0;
-    border-top:1px solid var(--line);border-left:1px solid var(--line);
-  }
-  .term-list li{min-width:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .lesson{
-    display:grid;grid-template-columns:19px minmax(0,1fr);gap:6px;align-items:baseline;
-    padding:9px 10px;border:0;color:var(--ink);min-height:38px;
-  }
-  a.lesson:hover{background:var(--blue-soft);color:var(--ink)}
-  .lesson-no{font-family:var(--font-mono);font-size:9.5px;color:var(--muted)}
-  .lesson-name{font-family:var(--font-sans);font-size:13px;line-height:1.45}
-  @media (max-width:900px){
-    .term-list{grid-template-columns:repeat(3,minmax(0,1fr))}
-  }
-  @media (max-width:700px){
-    .home-hero{padding-top:36px}
-    .term-list{grid-template-columns:repeat(2,minmax(0,1fr))}
-  }
-  @media (max-width:560px){
-    .home-title span{display:block}
-    .home-title em{display:inline-block}
-  }
-  @media (max-width:460px){
-    .term-list{grid-template-columns:1fr}
-    .term-head{grid-template-columns:26px 1fr}
-  }
-  @media print{
-    .home-hero{padding-top:0}
-    .term{break-inside:avoid}
-  }
-</style>
+<link rel="stylesheet" href="assets/home.css">
 </head>
 <body class="doc-page" id="top">
 <header class="topbar">
@@ -82,51 +29,48 @@
           <h3>三、四年级 · 基础</h3>
         </div>
         <ol class="term-list">
-          <li><a class="lesson" href="课程/三上/L01-满十进一/讲授稿.html"><span class="lesson-no">01</span><span class="lesson-name">满十进一<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/三上/L02-竖式的秘密/讲授稿.html"><span class="lesson-no">02</span><span class="lesson-name">竖式的秘密<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/三上/L06-0的隐身术/讲授稿.html"><span class="lesson-no">03</span><span class="lesson-name">0 的隐身术</span></a></li>
-          <li><a class="lesson" href="课程/三上/L03-乘法的形状/讲授稿.html"><span class="lesson-no">04</span><span class="lesson-name">乘法的形状<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/三上/L04-除法的两张脸/讲授稿.html"><span class="lesson-no">05</span><span class="lesson-name">除法的两张脸<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/三上/L05-倍不是多/讲授稿.html"><span class="lesson-no">06</span><span class="lesson-name">倍不是“多”<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/三上/L13-混合运算与括号/讲授稿.html"><span class="lesson-no">07</span><span class="lesson-name">混合运算与括号</span></a></li>
-          <li><a class="lesson" href="课程/三下/L01-除法竖式/讲授稿.html"><span class="lesson-no">08</span><span class="lesson-name">除法竖式<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/三下/L02-两位数乘法/讲授稿.html"><span class="lesson-no">09</span><span class="lesson-name">两位数乘法<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/三上/L07-估算的边界/讲授稿.html"><span class="lesson-no">10</span><span class="lesson-name">估算的边界</span></a></li>
-          <li><a class="lesson" href="课程/三上/L08-单位是人的尺/讲授稿.html"><span class="lesson-no">11</span><span class="lesson-name">单位是人的尺</span></a></li>
-          <li><a class="lesson" href="课程/三上/L14-吨、千克、克/讲授稿.html"><span class="lesson-no">12</span><span class="lesson-name">吨、千克、克</span></a></li>
-          <li><a class="lesson" href="课程/三上/L18-里程表与大数加减/讲授稿.html"><span class="lesson-no">13</span><span class="lesson-name">里程表上的数不是今天走的路</span></a></li>
-          <li><a class="lesson" href="课程/三上/L09-周长的边界/讲授稿.html"><span class="lesson-no">14</span><span class="lesson-name">周长的边界<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/三下/L03-面积/讲授稿.html"><span class="lesson-no">15</span><span class="lesson-name">面积<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/三下/L05-1平方厘米/讲授稿.html"><span class="lesson-no">16</span><span class="lesson-name">1 平方厘米</span></a></li>
-          <li><a class="lesson" href="课程/三下/L04-周长与面积/讲授稿.html"><span class="lesson-no">17</span><span class="lesson-name">周长与面积<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/三上/L10-分数的诞生/讲授稿.html"><span class="lesson-no">18</span><span class="lesson-name">分数的诞生<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/三下/L06-小数的诞生/讲授稿.html"><span class="lesson-no">19</span><span class="lesson-name">小数的诞生<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/三上/L12-时间的刻度/讲授稿.html"><span class="lesson-no">20</span><span class="lesson-name">时间的刻度<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/三下/L07-年月日/讲授稿.html"><span class="lesson-no">21</span><span class="lesson-name">年月日</span></a></li>
-          <li><a class="lesson" href="课程/三下/L08-方向/讲授稿.html"><span class="lesson-no">22</span><span class="lesson-name">方向</span></a></li>
-          <li><a class="lesson" href="课程/三上/L19-校园里的测量与路线/讲授稿.html"><span class="lesson-no">23</span><span class="lesson-name">校园里怎样量、怎样走</span></a></li>
-          <li><a class="lesson" href="课程/三上/L15-角与直角/讲授稿.html"><span class="lesson-no">24</span><span class="lesson-name">角与直角<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/四上/L03-一度是谁定的/讲授稿.html"><span class="lesson-no">25</span><span class="lesson-name">角度：1 度是谁定的？</span></a></li>
-          <li><a class="lesson" href="课程/四上/L14-量角器从哪边读/讲授稿.html"><span class="lesson-no">26</span><span class="lesson-name">量角器从哪边读</span></a></li>
-          <li><a class="lesson" href="课程/四上/L04-平行与垂直/讲授稿.html"><span class="lesson-no">27</span><span class="lesson-name">平行与垂直：方向的关系</span></a></li>
-          <li><a class="lesson" href="课程/四下/L14-图形怎样分类/讲授稿.html"><span class="lesson-no">28</span><span class="lesson-name">一个图形可以有两个名字吗</span></a></li>
-          <li><a class="lesson" href="课程/三上/L17-换个位置看物体/讲授稿.html"><span class="lesson-no">29</span><span class="lesson-name">换个位置看物体<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/三下/L13-对折与平移/讲授稿.html"><span class="lesson-no">30</span><span class="lesson-name">对折和滑动有什么不同<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/四下/L08-图形运动/讲授稿.html"><span class="lesson-no">31</span><span class="lesson-name">图形运动</span></a></li>
-          <li><a class="lesson" href="课程/三上/L16-调查与记录/讲授稿.html"><span class="lesson-no">32</span><span class="lesson-name">调查与记录</span></a></li>
-          <li><a class="lesson" href="课程/三下/L10-统计表/讲授稿.html"><span class="lesson-no">33</span><span class="lesson-name">统计表</span></a></li>
-          <li><a class="lesson" href="课程/三下/L16-从统计图里找答案/讲授稿.html"><span class="lesson-no">34</span><span class="lesson-name">统计图里的一格是几个</span></a></li>
-          <li><a class="lesson" href="课程/四下/L09-平均数/讲授稿.html"><span class="lesson-no">35</span><span class="lesson-name">平均数<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/三下/L15-关系与规律/讲授稿.html"><span class="lesson-no">36</span><span class="lesson-name">不把每道题算完，也能找到规律</span></a></li>
-          <li><a class="lesson" href="课程/四上/L01-一亿有多大/讲授稿.html"><span class="lesson-no">37</span><span class="lesson-name">大数：一亿到底有多大？</span></a></li>
-          <li><a class="lesson" href="课程/四上/L05-两层积的秘密/讲授稿.html"><span class="lesson-no">38</span><span class="lesson-name">三位数乘两位数：两层积的秘密</span></a></li>
-          <li><a class="lesson" href="课程/四上/L07-试商/讲授稿.html"><span class="lesson-no">39</span><span class="lesson-name">试商：为什么可以“猜”？</span></a></li>
-          <li><a class="lesson" href="课程/四上/L06-积的变化/讲授稿.html"><span class="lesson-no">40</span><span class="lesson-name">积的变化：谁在变，谁不变？<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/四上/L08-商不变/讲授稿.html"><span class="lesson-no">41</span><span class="lesson-name">商不变：一起变，为什么商不变？<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/四上/L13-从数量关系列算式/讲授稿.html"><span class="lesson-no">42</span><span class="lesson-name">先认清每个数在说什么</span></a></li>
-          <li><a class="lesson" href="课程/四下/L01-运算顺序/讲授稿.html"><span class="lesson-no">43</span><span class="lesson-name">运算顺序</span></a></li>
-          <li><a class="lesson" href="课程/四下/L02-运算律/讲授稿.html"><span class="lesson-no">44</span><span class="lesson-name">运算律<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/四上/L15-计算器也要会检查/讲授稿.html"><span class="lesson-no">45</span><span class="lesson-name">计算器给出的数，能直接相信吗</span></a></li>
+          <li><a class="lesson" href="课程/三上/L03-乘法的形状/讲授稿.html"><span class="lesson-no">01</span><span class="lesson-name">乘法的形状<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/三上/L04-除法的两张脸/讲授稿.html"><span class="lesson-no">02</span><span class="lesson-name">除法的两张脸<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/三上/L05-倍不是多/讲授稿.html"><span class="lesson-no">03</span><span class="lesson-name">倍不是“多”<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/三上/L13-混合运算与括号/讲授稿.html"><span class="lesson-no">04</span><span class="lesson-name">混合运算与括号</span></a></li>
+          <li><a class="lesson" href="课程/三下/L01-除法竖式/讲授稿.html"><span class="lesson-no">05</span><span class="lesson-name">除法竖式<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/三下/L02-两位数乘法/讲授稿.html"><span class="lesson-no">06</span><span class="lesson-name">两位数乘法<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/三上/L07-估算的边界/讲授稿.html"><span class="lesson-no">07</span><span class="lesson-name">估算的边界</span></a></li>
+          <li><a class="lesson" href="课程/三上/L08-单位是人的尺/讲授稿.html"><span class="lesson-no">08</span><span class="lesson-name">单位是人的尺</span></a></li>
+          <li><a class="lesson" href="课程/三上/L14-吨、千克、克/讲授稿.html"><span class="lesson-no">09</span><span class="lesson-name">吨、千克、克</span></a></li>
+          <li><a class="lesson" href="课程/三上/L18-里程表与大数加减/讲授稿.html"><span class="lesson-no">10</span><span class="lesson-name">里程表上的数不是今天走的路</span></a></li>
+          <li><a class="lesson" href="课程/三上/L09-周长的边界/讲授稿.html"><span class="lesson-no">11</span><span class="lesson-name">周长的边界<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/三下/L03-面积/讲授稿.html"><span class="lesson-no">12</span><span class="lesson-name">面积<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/三下/L05-1平方厘米/讲授稿.html"><span class="lesson-no">13</span><span class="lesson-name">1 平方厘米</span></a></li>
+          <li><a class="lesson" href="课程/三下/L04-周长与面积/讲授稿.html"><span class="lesson-no">14</span><span class="lesson-name">周长与面积<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/三上/L10-分数的诞生/讲授稿.html"><span class="lesson-no">15</span><span class="lesson-name">分数的诞生<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/三下/L06-小数的诞生/讲授稿.html"><span class="lesson-no">16</span><span class="lesson-name">小数的诞生<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/三上/L12-时间的刻度/讲授稿.html"><span class="lesson-no">17</span><span class="lesson-name">时间的刻度<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/三下/L07-年月日/讲授稿.html"><span class="lesson-no">18</span><span class="lesson-name">年月日</span></a></li>
+          <li><a class="lesson" href="课程/三下/L08-方向/讲授稿.html"><span class="lesson-no">19</span><span class="lesson-name">方向</span></a></li>
+          <li><a class="lesson" href="课程/三上/L19-校园里的测量与路线/讲授稿.html"><span class="lesson-no">20</span><span class="lesson-name">校园里怎样量、怎样走</span></a></li>
+          <li><a class="lesson" href="课程/三上/L15-角与直角/讲授稿.html"><span class="lesson-no">21</span><span class="lesson-name">角与直角<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/四上/L03-一度是谁定的/讲授稿.html"><span class="lesson-no">22</span><span class="lesson-name">角度：1 度是谁定的？</span></a></li>
+          <li><a class="lesson" href="课程/四上/L14-量角器从哪边读/讲授稿.html"><span class="lesson-no">23</span><span class="lesson-name">量角器从哪边读</span></a></li>
+          <li><a class="lesson" href="课程/四上/L04-平行与垂直/讲授稿.html"><span class="lesson-no">24</span><span class="lesson-name">平行与垂直：方向的关系</span></a></li>
+          <li><a class="lesson" href="课程/四下/L14-图形怎样分类/讲授稿.html"><span class="lesson-no">25</span><span class="lesson-name">一个图形可以有两个名字吗</span></a></li>
+          <li><a class="lesson" href="课程/三上/L17-换个位置看物体/讲授稿.html"><span class="lesson-no">26</span><span class="lesson-name">换个位置看物体<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/三下/L13-对折与平移/讲授稿.html"><span class="lesson-no">27</span><span class="lesson-name">对折和滑动有什么不同<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/四下/L08-图形运动/讲授稿.html"><span class="lesson-no">28</span><span class="lesson-name">图形运动</span></a></li>
+          <li><a class="lesson" href="课程/三上/L16-调查与记录/讲授稿.html"><span class="lesson-no">29</span><span class="lesson-name">调查与记录</span></a></li>
+          <li><a class="lesson" href="课程/三下/L10-统计表/讲授稿.html"><span class="lesson-no">30</span><span class="lesson-name">统计表</span></a></li>
+          <li><a class="lesson" href="课程/三下/L16-从统计图里找答案/讲授稿.html"><span class="lesson-no">31</span><span class="lesson-name">统计图里的一格是几个</span></a></li>
+          <li><a class="lesson" href="课程/四下/L09-平均数/讲授稿.html"><span class="lesson-no">32</span><span class="lesson-name">平均数<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/三下/L15-关系与规律/讲授稿.html"><span class="lesson-no">33</span><span class="lesson-name">不把每道题算完，也能找到规律</span></a></li>
+          <li><a class="lesson" href="课程/四上/L01-一亿有多大/讲授稿.html"><span class="lesson-no">34</span><span class="lesson-name">大数：一亿到底有多大？</span></a></li>
+          <li><a class="lesson" href="课程/四上/L05-两层积的秘密/讲授稿.html"><span class="lesson-no">35</span><span class="lesson-name">三位数乘两位数：两层积的秘密</span></a></li>
+          <li><a class="lesson" href="课程/四上/L07-试商/讲授稿.html"><span class="lesson-no">36</span><span class="lesson-name">试商：为什么可以“猜”？</span></a></li>
+          <li><a class="lesson" href="课程/四上/L06-积的变化/讲授稿.html"><span class="lesson-no">37</span><span class="lesson-name">积的变化：谁在变，谁不变？<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/四上/L08-商不变/讲授稿.html"><span class="lesson-no">38</span><span class="lesson-name">商不变：一起变，为什么商不变？<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/四上/L13-从数量关系列算式/讲授稿.html"><span class="lesson-no">39</span><span class="lesson-name">先认清每个数在说什么</span></a></li>
+          <li><a class="lesson" href="课程/四下/L01-运算顺序/讲授稿.html"><span class="lesson-no">40</span><span class="lesson-name">运算顺序</span></a></li>
+          <li><a class="lesson" href="课程/四下/L02-运算律/讲授稿.html"><span class="lesson-no">41</span><span class="lesson-name">运算律<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/四上/L15-计算器也要会检查/讲授稿.html"><span class="lesson-no">42</span><span class="lesson-name">计算器给出的数，能直接相信吗</span></a></li>
         </ol>
       </section>
       <section class="term">
@@ -135,25 +79,33 @@
           <h3>三、四年级 · 提高选学</h3>
         </div>
         <ol class="term-list">
-          <li><a class="lesson" href="课程/三上/L11-集合圈/讲授稿.html"><span class="lesson-no">01</span><span class="lesson-name">集合圈<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/三下/L09-搭配/讲授稿.html"><span class="lesson-no">02</span><span class="lesson-name">搭配</span></a></li>
-          <li><a class="lesson" href="课程/三下/L11-周期/讲授稿.html"><span class="lesson-no">03</span><span class="lesson-name">周期</span></a></li>
-          <li><a class="lesson" href="课程/三下/L12-植树/讲授稿.html"><span class="lesson-no">04</span><span class="lesson-name">植树<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/四上/L02-如果人有八根手指/讲授稿.html"><span class="lesson-no">05</span><span class="lesson-name">进制：如果人有 8 根手指？</span></a></li>
-          <li><a class="lesson" href="课程/四上/L09-三角形晃不动/讲授稿.html"><span class="lesson-no">06</span><span class="lesson-name">图形稳定性：三角形为什么晃不动？<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/四上/L10-优化/讲授稿.html"><span class="lesson-no">07</span><span class="lesson-name">优化：烙饼、沏茶、赛马</span></a></li>
-          <li><a class="lesson" href="课程/四上/L11-两个圈重叠/讲授稿.html"><span class="lesson-no">08</span><span class="lesson-name">容斥：两个圈重叠怎么数？</span></a></li>
-          <li><a class="lesson" href="课程/四上/L12-竖式侦探/讲授稿.html"><span class="lesson-no">09</span><span class="lesson-name">数字谜：竖式里的侦探</span></a></li>
-          <li><a class="lesson" href="课程/四下/L03-简便计算/讲授稿.html"><span class="lesson-no">10</span><span class="lesson-name">简便计算</span></a></li>
-          <li><a class="lesson" href="课程/四下/L10-鸡兔同笼/讲授稿.html"><span class="lesson-no">11</span><span class="lesson-name">鸡兔同笼<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/四下/L11-行程/讲授稿.html"><span class="lesson-no">12</span><span class="lesson-name">行程<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/四下/L12-建模/讲授稿.html"><span class="lesson-no">13</span><span class="lesson-name">建模</span></a></li>
-          <li><a class="lesson" href="课程/四下/L15-平均数里藏着总数/讲授稿.html"><span class="lesson-no">14</span><span class="lesson-name">知道平均数，能找回总数吗</span></a></li>
+          <li><a class="lesson" href="课程/四上/L02-如果人有八根手指/讲授稿.html"><span class="lesson-no">01</span><span class="lesson-name">进制：如果人有 8 根手指？</span></a></li>
+          <li><a class="lesson" href="课程/四上/L09-三角形晃不动/讲授稿.html"><span class="lesson-no">02</span><span class="lesson-name">图形稳定性：三角形为什么晃不动？<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/四下/L03-简便计算/讲授稿.html"><span class="lesson-no">03</span><span class="lesson-name">简便计算</span></a></li>
+          <li><a class="lesson" href="课程/四下/L12-建模/讲授稿.html"><span class="lesson-no">04</span><span class="lesson-name">建模</span></a></li>
+          <li><a class="lesson" href="课程/四下/L15-平均数里藏着总数/讲授稿.html"><span class="lesson-no">05</span><span class="lesson-name">知道平均数，能找回总数吗</span></a></li>
         </ol>
       </section>
       <section class="term">
         <div class="term-head">
           <span class="term-no">03</span>
+          <h3>三、四年级 · 轻奥选学</h3>
+        </div>
+        <ol class="term-list">
+          <li><a class="lesson" href="课程/三上/L11-集合圈/讲授稿.html"><span class="lesson-no">01</span><span class="lesson-name">集合圈<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/三下/L09-搭配/讲授稿.html"><span class="lesson-no">02</span><span class="lesson-name">搭配</span></a></li>
+          <li><a class="lesson" href="课程/三下/L11-周期/讲授稿.html"><span class="lesson-no">03</span><span class="lesson-name">周期</span></a></li>
+          <li><a class="lesson" href="课程/三下/L12-植树/讲授稿.html"><span class="lesson-no">04</span><span class="lesson-name">植树<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/四上/L10-优化/讲授稿.html"><span class="lesson-no">05</span><span class="lesson-name">优化：烙饼、沏茶、赛马</span></a></li>
+          <li><a class="lesson" href="课程/四上/L11-两个圈重叠/讲授稿.html"><span class="lesson-no">06</span><span class="lesson-name">容斥：两个圈重叠怎么数？</span></a></li>
+          <li><a class="lesson" href="课程/四上/L12-竖式侦探/讲授稿.html"><span class="lesson-no">07</span><span class="lesson-name">数字谜：竖式里的侦探</span></a></li>
+          <li><a class="lesson" href="课程/四下/L10-鸡兔同笼/讲授稿.html"><span class="lesson-no">08</span><span class="lesson-name">鸡兔同笼<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/四下/L11-行程/讲授稿.html"><span class="lesson-no">09</span><span class="lesson-name">行程<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+        </ol>
+      </section>
+      <section class="term">
+        <div class="term-head">
+          <span class="term-no">04</span>
           <h3>五、六年级 · 基础</h3>
         </div>
         <ol class="term-list">
@@ -221,19 +173,27 @@
       </section>
       <section class="term">
         <div class="term-head">
-          <span class="term-no">04</span>
+          <span class="term-no">05</span>
           <h3>五、六年级 · 提高选学</h3>
+        </div>
+        <ol class="term-list">
+          <li><a class="lesson" href="课程/六上/L16-连续变化与还原/讲授稿.html"><span class="lesson-no">01</span><span class="lesson-name">先增加，再减少，能回到原来吗<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/六下/L08-反比例/讲授稿.html"><span class="lesson-no">02</span><span class="lesson-name">乘积不变，两边怎样变<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/六下/L13-立体图形切拼/讲授稿.html"><span class="lesson-no">03</span><span class="lesson-name">切开以后，什么变多了<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
+          <li><a class="lesson" href="课程/六下/L14-比例与行程综合/讲授稿.html"><span class="lesson-no">04</span><span class="lesson-name">图上六厘米，路上要走多久</span></a></li>
+          <li><a class="lesson" href="课程/六下/L16-小学数学综合挑战/讲授稿.html"><span class="lesson-no">05</span><span class="lesson-name">给校园阅读角做个方案</span></a></li>
+        </ol>
+      </section>
+      <section class="term">
+        <div class="term-head">
+          <span class="term-no">06</span>
+          <h3>五、六年级 · 轻奥选学</h3>
         </div>
         <ol class="term-list">
           <li><a class="lesson" href="课程/五上/L12-植树/讲授稿.html"><span class="lesson-no">01</span><span class="lesson-name">植树</span></a></li>
           <li><a class="lesson" href="课程/五下/L12-找次品/讲授稿.html"><span class="lesson-no">02</span><span class="lesson-name">找次品</span></a></li>
           <li><a class="lesson" href="课程/六上/L12-数与形/讲授稿.html"><span class="lesson-no">03</span><span class="lesson-name">数与形<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/六上/L16-连续变化与还原/讲授稿.html"><span class="lesson-no">04</span><span class="lesson-name">先增加，再减少，能回到原来吗<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/六下/L08-反比例/讲授稿.html"><span class="lesson-no">05</span><span class="lesson-name">乘积不变，两边怎样变<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/六下/L10-鸽巢问题/讲授稿.html"><span class="lesson-no">06</span><span class="lesson-name">鸽巢问题</span></a></li>
-          <li><a class="lesson" href="课程/六下/L13-立体图形切拼/讲授稿.html"><span class="lesson-no">07</span><span class="lesson-name">切开以后，什么变多了<span class="badge video-badge" aria-label="本课有视频"><span aria-hidden="true">▶</span> 视频</span></span></a></li>
-          <li><a class="lesson" href="课程/六下/L14-比例与行程综合/讲授稿.html"><span class="lesson-no">08</span><span class="lesson-name">图上六厘米，路上要走多久</span></a></li>
-          <li><a class="lesson" href="课程/六下/L16-小学数学综合挑战/讲授稿.html"><span class="lesson-no">09</span><span class="lesson-name">给校园阅读角做个方案</span></a></li>
+          <li><a class="lesson" href="课程/六下/L10-鸽巢问题/讲授稿.html"><span class="lesson-no">04</span><span class="lesson-name">鸽巢问题</span></a></li>
         </ol>
       </section>
   </section>

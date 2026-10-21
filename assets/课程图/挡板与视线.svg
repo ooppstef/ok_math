@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="380" viewBox="0 0 780 380" role="img" aria-labelledby="title desc">
+  <title id="title">越过挡板的视线</title>
+  <desc id="desc">侧面图，眼睛高于挡板。眼睛与挡板上沿的连线延长至地面成为分界点，挡板与分界点之间的A点被遮住，更远的B点可见。</desc>
+  <rect width="780" height="380" rx="14" fill="#faf7ed"/>
+  <g font-family="sans-serif" fill="#24364b" font-size="19">
+    <text x="32" y="36">从侧面看：先找擦过挡板上沿的那条线</text>
+    <rect x="300" y="310" width="240" height="10" fill="#edb6a0"/>
+    <rect x="540" y="310" width="200" height="10" fill="#a7d6c4"/>
+    <path d="M45 320H740" stroke="#334155" stroke-width="2"/>
+    <path d="M300 200V320" stroke="#334155" stroke-width="6"/>
+    <path d="M60 80L540 320" stroke="#2563a5" stroke-width="3"/>
+    <path d="M60 80L600 320" stroke="#568c78" stroke-width="2" stroke-dasharray="7 5"/>
+    <circle cx="60" cy="80" r="6" fill="#24364b"/>
+    <circle cx="300" cy="200" r="5" fill="#2563a5"/>
+    <circle cx="420" cy="320" r="5" fill="#c65b37"/>
+    <circle cx="540" cy="320" r="5" fill="#2563a5"/>
+    <circle cx="600" cy="320" r="5" fill="#568c78"/>
+    <text x="45" y="111">眼睛</text><text x="220" y="245">挡板</text>
+    <text x="410" y="300">A</text><text x="590" y="300">B</text>
+    <text x="360" y="351" fill="#a44e2d">被遮住</text>
+    <text x="510" y="372" fill="#2563a5">分界点</text>
+    <text x="615" y="351" fill="#386e5a">能看到</text>
+  </g>
+</svg>
