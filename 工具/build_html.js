@@ -64,6 +64,11 @@ const DOCS = [
     fullWidth: true
   },
   {
+    src: '00-方案/22-成都教材对齐与课程扩展研究.md', kind: 'doc', kicker: 'RESEARCH · 教材对齐',
+    subtitle: '成都北师大版新教材、课量缺口、视频优先级与知识点补齐方案。',
+    fullWidth: true
+  },
+  {
     src: '00-方案/06-覆盖核对.md', kind: 'doc', kicker: 'COVERAGE · 三、四年级',
     subtitle: '三、四年级 71 个知识点，逐个找到落点。',
     fullWidth: true
@@ -88,7 +93,7 @@ const DOCS = [
 
   {
     src: '课程/三上/L01-满十进一/讲授稿.md', kind: 'lesson', kicker: 'LESSON 01 · 三上',
-    subtitle: '为什么数到十，就要换一根柱子？'
+    subtitle: '十个一怎样变成一个十？'
   },
   {
     src: '课程/三上/L01-满十进一/视频稿与分镜.md', kind: 'storyboard', fullWidth: true, kicker: 'STORYBOARD · 第 1 课',
@@ -147,7 +152,7 @@ const DOCS = [
   },
   {
     src: '课程/五上/L01-小数乘法/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 01',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五上/index.html'
   },
   {
@@ -162,7 +167,7 @@ const DOCS = [
   },
   {
     src: '课程/五上/L02-小数除法/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 02',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五上/index.html'
   },
   {
@@ -177,7 +182,7 @@ const DOCS = [
   },
   {
     src: '课程/五上/L03-循环小数/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 03',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五上/index.html'
   },
   {
@@ -192,7 +197,7 @@ const DOCS = [
   },
   {
     src: '课程/五上/L04-数对/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 04',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五上/index.html'
   },
   {
@@ -207,12 +212,12 @@ const DOCS = [
   },
   {
     src: '课程/五上/L05-可能性/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 05',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五上/index.html'
   },
   {
     src: '课程/五上/L06-字母表示数/讲授稿.md', kind: 'lesson', kicker: 'LESSON 06 · 五上',
-    subtitle: '为什么用 n 表示所有正方形？',
+    subtitle: '正方形的个数变了，怎样用一个式子表示？',
     courseHub: '课程/五上/index.html'
   },
   {
@@ -222,7 +227,7 @@ const DOCS = [
   },
   {
     src: '课程/五上/L06-字母表示数/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 06',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五上/index.html'
   },
   {
@@ -237,7 +242,7 @@ const DOCS = [
   },
   {
     src: '课程/五上/L07-等式与方程/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 07',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五上/index.html'
   },
   {
@@ -252,7 +257,7 @@ const DOCS = [
   },
   {
     src: '课程/五上/L08-列方程/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 08',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五上/index.html'
   },
   {
@@ -267,7 +272,7 @@ const DOCS = [
   },
   {
     src: '课程/五上/L09-平行四边形面积/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 09',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五上/index.html'
   },
   {
@@ -282,7 +287,7 @@ const DOCS = [
   },
   {
     src: '课程/五上/L10-三角形面积/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 10',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五上/index.html'
   },
   {
@@ -297,7 +302,7 @@ const DOCS = [
   },
   {
     src: '课程/五上/L11-梯形面积/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 11',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五上/index.html'
   },
   {
@@ -312,7 +317,7 @@ const DOCS = [
   },
   {
     src: '课程/五上/L12-植树/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五上 12',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五上/index.html'
   },
   {
@@ -327,7 +332,7 @@ const DOCS = [
   },
   {
     src: '课程/五下/L01-因数与倍数/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五下 01',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五下/index.html'
   },
   {
@@ -342,7 +347,7 @@ const DOCS = [
   },
   {
     src: '课程/五下/L02-2-5-3的倍数/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五下 02',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五下/index.html'
   },
   {
@@ -357,7 +362,7 @@ const DOCS = [
   },
   {
     src: '课程/五下/L03-公因数与公倍数/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五下 03',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五下/index.html'
   },
   {
@@ -372,7 +377,7 @@ const DOCS = [
   },
   {
     src: '课程/五下/L04-观察物体/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五下 04',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五下/index.html'
   },
   {
@@ -387,7 +392,7 @@ const DOCS = [
   },
   {
     src: '课程/五下/L05-旋转/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五下 05',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五下/index.html'
   },
   {
@@ -402,7 +407,7 @@ const DOCS = [
   },
   {
     src: '课程/五下/L06-长方体与正方体/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五下 06',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五下/index.html'
   },
   {
@@ -417,7 +422,7 @@ const DOCS = [
   },
   {
     src: '课程/五下/L07-表面积/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五下 07',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五下/index.html'
   },
   {
@@ -432,7 +437,7 @@ const DOCS = [
   },
   {
     src: '课程/五下/L08-体积与容积/挑战单.md', kind: 'handout', kicker: 'CHALLENGE · 五下 08',
-    subtitle: 'A/B/C 三层，带答案和边界。',
+    subtitle: '分三组练习，做完可以核对答案和解法。',
     courseHub: '课程/五下/index.html'
   }
 ];
@@ -697,7 +702,8 @@ function renderDocsHub() {
     ['13', '研究依据', '为什么是 96 课', '课标、教材目录、taxonomy 和取舍。', '13-研究依据.html'],
     ['14', '教材版本映射', '先确认学校教材', '出版社、版次、当前单元和已学内容。', '19-教材版本映射.html'],
     ['15', '96 课全量复审', '修复前的 18 项问题', '保留审查时的发现与修改要求。', '20-96课文本初稿全量复审.html'],
-    ['16', '修复与循环复验', '当前处理结果', '逐项修复位置、审查轮次与验证证据。', '21-课程修复与循环复验.html']
+    ['16', '修复与循环复验', '当前处理结果', '逐项修复位置、审查轮次与验证证据。', '21-课程修复与循环复验.html'],
+    ['17', '成都教材对齐研究', '新教材、课量与视频优先级', '北师大版新教材目录、知识点缺口与扩展方案。', '22-成都教材对齐与课程扩展研究.html']
   ];
   const content = `<section class="hub-hero">
   <div class="hub-hero-grid">
@@ -757,7 +763,7 @@ function renderAutoHubs() {
     </div>
     <aside class="hub-side">
       <div class="side-label">阅读顺序</div>
-      <p>按课次从上到下读；先看一句话，再看例子和易错，最后做练习。</p>
+      <p>按课次往下读，先看讲解和例题，再自己做练习。对答案时，也看看哪里容易弄错。</p>
     </aside>
   </div>
 </section>
