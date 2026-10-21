@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101826">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iNSIgZmlsbD0iIzFlNGZkOCIvPjxwYXRoIGQ9Ik0xNCA0OFYxNmg4bDEwIDE3IDEwLTE3aDh2MzJoLThWMjlMMzIgNDYgMjIgMjl2MTl6IiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iNDciIHk9IjQ3IiB3aWR0aD0iOSIgaGVpZ2h0PSI5IiBmaWxsPSIjZjNjODRiIi8+PC9zdmc+">
+<title>第 15 课：不把每道题算完，也能找到规律 · 为什么实验室</title>
+<link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body class="doc-page lesson" id="top">
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../../../index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
+    <nav class="nav learning-nav" aria-label="网站导航">
+      <a href="../../../课程/index.html">课程目录</a>
+    </nav>
+  </div>
+  <div class="progress"><span></span></div>
+</header>
+<main class="page">
+<section class="doc-hero"><div class="hero-copy">
+    <div class="hero-main">
+      <div class="kicker">三年级下期</div>
+      <h1 class="doc-title">第 15 课：不把每道题算完，也能找到规律</h1>
+      <div class="actions"><a class="btn" href="../../../课程/三下/index.html">本学期课程</a></div>    </div>
+  </div></section>
+
+<div class="doc-layout">
+  <article class="article">
+
+<p>一排摆一个小正方形要四根小棒。再在右边接一个，需要再添四根吗？</p>
+<h2 id="sec-1">先找哪些小棒共用</h2>
+<p>每个小正方形边长都是一根小棒，彼此并排，共用一条边。</p>
+<p><a class="lesson-figure" href="../../../assets/%E8%AF%BE%E7%A8%8B%E5%9B%BE/%E7%9B%B8%E8%BF%9E%E6%AD%A3%E6%96%B9%E5%BD%A2.svg" target="_blank" rel="noopener" aria-label="放大查看：一、二、三个正方形相连，分别用4、7、10根小棒。"><img src="../../../assets/%E8%AF%BE%E7%A8%8B%E5%9B%BE/%E7%9B%B8%E8%BF%9E%E6%AD%A3%E6%96%B9%E5%BD%A2.svg" alt="一、二、三个正方形相连，分别用4、7、10根小棒。"></a></p>
+<p>第一个用四根。以后每接一个，都和前一个共用一根，只需添三根。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>正方形个数</th>
+<th align="right">小棒根数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td>2</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td>3</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>4</td>
+<td align="right">13</td>
+</tr>
+</tbody></table></div>
+<p>摆六个时，第一个用 4 根，后面五个各加 3 根：<code>4+5×3=19（根）</code>。</p>
+<p>也可以先按每个四根算，再扣掉五条共用边：<code>6×4−5=19（根）</code>。扣的是重复数的那一根，不是把整条边拆掉。</p>
+<h2 id="sec-2">算式里的变化也有原因</h2>
+<p><code>38+25</code> 与 <code>38+26</code> 相比，第一个加数没变，第二个多了 1，和就多 1。</p>
+<p><code>60−27</code> 与 <code>60−28</code> 相比，总量不变，拿走的多了 1，剩下的反而少 1。看见一个数增大，不能不分加减就说结果增大。</p>
+<p>找规律时，要能说明每次为什么这样变。只看见几个数，还可能有别的接法；本课的小棒图明确规定了“每次向右接一个正方形”。</p>
+<h2 id="sec-3">自己试一试</h2>
+<ol>
+<li>按图中的摆法，五个小正方形用几根小棒？</li>
+<li>从五个增加到八个，要再添几根？</li>
+<li>用 25 根小棒，按这种办法最多摆几个完整的正方形？</li>
+<li>已知 <code>47+36=83</code>，不重新竖式计算，求 <code>47+39</code>。</li>
+<li>已知 <code>82−29=53</code>，求 <code>82−31</code>，并说理由。</li>
+<li>把四个正方形分开摆，彼此不共边，也用 13 根吗？</li>
+</ol>
+<h2 id="sec-4">答案与说明</h2>
+<ol>
+<li><code>4+4×3=16（根）</code>。</li>
+<li>多三个，每个添三根，共 9 根。</li>
+<li>第一个用 4 根，还剩 21 根，能再接 7 个，共 8 个。</li>
+<li>86。第二个加数多了 3，和也多 3。</li>
+<li>51。多减了 2，差少 2。</li>
+<li>不一样，要 <code>4×4=16</code> 根。13 根的规律只适用于图中共边相连的摆法。</li>
+</ol>
+
+  </article>
+  <aside class="toc">
+        <div class="toc-title">本页目录</div>
+        <a class="lvl2" href="#sec-1">先找哪些小棒共用</a><a class="lvl2" href="#sec-2">算式里的变化也有原因</a><a class="lvl2" href="#sec-3">自己试一试</a><a class="lvl2" href="#sec-4">答案与说明</a>
+      </aside>
+</div>
+<div class="backtop"><a href="#top">↑ 回到顶部</a></div>
+</main>
+<script src="../../../assets/doc.js"></script>
+</body>
+</html>

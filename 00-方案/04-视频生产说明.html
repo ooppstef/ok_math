@@ -12,12 +12,11 @@
 <header class="topbar">
   <div class="inner">
     <a class="brand" href="../index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
-    <nav class="nav">
+    <nav class="nav" aria-label="网站导航">
       <a href="../00-方案/00-总方案.html">总方案</a>
       <a href="../00-方案/09-96课总图.html">96 课地图</a>
       <a href="../00-方案/03-B卷题型对照表.html">B 卷对照</a>
-      <a href="../课程/index.html">课程</a>
-      <a href="../index.html">首页</a>
+      <a href="../课程/index.html">课程目录</a>
     </nav>
   </div>
   <div class="progress"><span></span></div>
@@ -27,21 +26,22 @@
     <div class="hero-main">
       <div class="kicker">VIDEO · 生产线</div>
       <h1 class="doc-title">视频生产说明</h1>
-      <p class="doc-sub">一份 JSON，生成一集。改旁白、改数字、改时长，重新跑一条命令。</p>
+      <p class="doc-sub">先核对原理与动作，再制作样片、接入配音。</p>
       <div class="actions"><a class="btn" href="../课程/index.html">课程目录</a></div>    </div>
   </div></section>
 
 <div class="doc-layout">
   <article class="article">
 
-<p>视频由 <code>工具/render_episode.py</code> 生成。改分镜 JSON，重跑一条命令，就能出新一集。</p>
+<p>视频由 <code>工具/render_episode.py</code> 生成。旁白、分幕音轨和画面分别保存；更换配音后，按新音轨长度重新渲染画面和字幕。</p>
+<p>《竖式的秘密》的进位演示已制作成 <a href="../制作/三上-L02-竖式的秘密/样片/进位演示-无声.mp4">60 秒无声样片</a>。本版用于检查教学动画，正式配音等待用户提供音色 ID；不会作为课程成片出现在首页。</p>
 <h2 id="sec-1">环境</h2>
 <ul>
 <li>macOS</li>
 <li>Python 3.10+，Pillow</li>
 <li>ffmpeg</li>
 <li>系统字体：Hiragino Sans GB、STHeiti Medium</li>
-<li>系统中文配音：Tingting</li>
+<li>系统中文配音 Tingting 仅用于本地临时配音；无声预览与导入配音无需它</li>
 </ul>
 <p>检查：</p>
 <pre><code class="language-bash">python3 -c &quot;import PIL; print(PIL.__version__)&quot;
@@ -56,6 +56,8 @@ say -v &#39;?&#39; | grep Tingting
 <ul>
 <li><code>视频.mp4</code>：1280×720，24fps，H.264 + AAC</li>
 <li><code>视频.srt</code>：按场景切分的字幕</li>
+<li><code>视频.vtt</code>：网页字幕</li>
+<li><code>视频.timeline.json</code>：实际分幕起止、旁白及配音来源类型</li>
 </ul>
 <p>只预览某一幕：</p>
 <pre><code class="language-bash">python3 工具/render_episode.py 工具/episodes/L01.json \
@@ -135,6 +137,11 @@ say -v &#39;?&#39; | grep Tingting
 <td>片尾</td>
 <td><code>text</code>, <code>sub</code></td>
 </tr>
+<tr>
+<td><code>regroup_add</code></td>
+<td>三上 02 的 38＋47 进位演示</td>
+<td><code>stage</code>, <code>duration</code>, <code>equation</code>；此场景固定演示 38＋47</td>
+</tr>
 </tbody></table></div>
 <h2 id="sec-5">时间参数</h2>
 <p>用来对齐旁白，不填就用默认值。</p>
@@ -149,27 +156,53 @@ say -v &#39;?&#39; | grep Tingting
 <li><code>ones_at</code> / <code>ones_step</code> / <code>tens_at</code> / <code>bundle_step</code>：小棒</li>
 <li><code>band_at</code> / <code>merge_at</code> / <code>label_at</code>：捆小棒</li>
 </ul>
-<h2 id="sec-6">配音</h2>
-<p>默认 Tingting，语速 165。换音色：</p>
+<h2 id="sec-6">先做画面，再换配音</h2>
+<p>当前样片先按预计时长制作，字幕可供无声查看：</p>
+<pre><code class="language-bash">python3 工具/render_episode.py 工具/episodes/三上-L02-进位样片.json \
+  --silent --burn-captions \
+  --out 制作/三上-L02-竖式的秘密/样片/进位演示-无声.mp4
+</code></pre>
+<p>每幕有稳定的 <code>id</code>、口播 <code>narration</code> 和无声预览时长 <code>duration</code>。进位样片的动作按该幕实际时长伸缩；旧场景的 <code>*_at</code> 仍是固定秒数，旧课换配音时需要逐项重新核对。</p>
+<p><code>--burn-captions</code> 将字幕合成到导出画面；不加此参数可导出不带字幕的画面，独立 SRT/VTT 仍会保留。</p>
+<h3 id="sec-7">复用 nba_biz 的豆包配音</h3>
+<p>本项目的 <code>工具/prepare_narration.py</code> 调用相邻 <code>nba_biz/scripts/tts.py</code>，复用其接口及凭证读取。不会修改 nba_biz，不复制凭证，也不使用默认的篮球解说语气。这里明确指定自然、温和的课堂讲解语气，保留原始语速和音高。</p>
+<p>先导出旁白，不读凭证、不请求接口：</p>
+<pre><code class="language-bash">python3 工具/prepare_narration.py 工具/episodes/三上-L02-进位样片.json \
+  --out-dir 制作/三上-L02-竖式的秘密/样片/旁白
+</code></pre>
+<p>用户提供的 ID 应是豆包的 <code>speaker</code> / 音色 ID。如果提供的是已生成音频的资源 ID，需要先取得对应音频，再处理对齐，不能直接当作音色 ID。</p>
+<p>确认音色 ID 后，把下方占位文字替换为实际值，才执行实际配音：</p>
+<pre><code class="language-bash">python3 工具/prepare_narration.py 工具/episodes/三上-L02-进位样片.json \
+  --out-dir 制作/三上-L02-竖式的秘密/样片/配音-v1 \
+  --voice-id &#39;实际音色ID&#39; --generate
+
+python3 工具/render_episode.py 工具/episodes/三上-L02-进位样片.json \
+  --audio-dir 制作/三上-L02-竖式的秘密/样片/配音-v1 --burn-captions \
+  --out 制作/三上-L02-竖式的秘密/样片/进位演示-配音版.mp4
+</code></pre>
+<p>每次换音色使用新的配音目录。全部片段成功后才写 <code>manifest.json</code>，渲染前校对分镜 ID 和旁白全文，防止旧稿音频混入。音轨保持原速，画面跟随音轨时长，句末另留短暂停顿。当前按完整短句分幕，字幕覆盖这段真实音频，不按字数猜时间。最终仍需试听自然度、数学读音和相邻段音色是否一致，并检查动画动作与具体词句的对应。</p>
+<h3 id="sec-8">系统临时配音</h3>
+<p>旧命令未指定 <code>--silent</code> 或 <code>--audio-dir</code> 时仍用 Tingting，语速 165。换音色：</p>
 <pre><code class="language-bash">--voice &quot;Eddy (中文（中国大陆）)&quot;
 </code></pre>
 <p>换语速：</p>
 <pre><code class="language-bash">--rate 150
 </code></pre>
-<h2 id="sec-7">加一集</h2>
+<h2 id="sec-9">制作一段原理短片</h2>
 <ol>
-<li>写旁白。先写孩子听完能记住的一句话，再写 3–5 分钟口语稿。</li>
-<li>切成 6–10 幕，每幕只做一件事。</li>
-<li>选现有场景。不够再写新场景。</li>
-<li>先生成一版，听节奏，再填时间参数。</li>
-<li>最后一幕留一个孩子能动手做的问题，不给答案。</li>
-<li>检查旁白和画面是否对齐，重新生成。</li>
+<li>先确认动画要解释哪一步，记录什么变、什么不变。分镜逐镜对照讲授稿。</li>
+<li>为这一步选对象和动作。当前通用场景不能实现的连续切拼、等式同步或刚性旋转，需要先补相应动画实现；有分镜不代表已有可渲染 JSON。</li>
+<li>写自然的短句旁白，公式和单位保留在画面。不限定每集同样幕数或时长。</li>
+<li>先做关键动作样片，检查数量、长度、面积、单位和对象连续性。</li>
+<li>暂停题先留出思考时间，再演示答案。接入正式声音后，按音轨重排动作和字幕。</li>
+<li>看完整连续视频、听完整音频，再标记成片可用。</li>
 </ol>
-<p>一集控制在 2.5–5 分钟。</p>
-<h2 id="sec-8">边界</h2>
+<p>当前完整标准见<a href="02-每课标准流程.html">每课标准流程</a>，逐课安排见<a href="27-数学原理全量优化与复核.html">27 号复核</a>。优先制作进位与拆包、小数乘法、等式同步、分数除法、多边形切拼、圆与圆柱切拼等短片。</p>
+<p>原理图由 <code>python3 工具/生成原理图.py</code> 生成，保存在 <code>assets/原理图/</code>。它们给出静态讲解和几何参照，不能代替连续动画的实现与审片。</p>
+<h2 id="sec-10">边界</h2>
 <ul>
 <li>只能做纸面动画，不能拍真人。</li>
-<li>配音是系统 TTS，情绪有限。</li>
+<li>自然声音需要实际试听；本次只完成无声样片和 nba_biz 配音接入，未生成或验收正式声音。</li>
 <li>适合讲清一个原理，不适合替代整节课。</li>
 <li>需要更活泼，可以在 MP4 上二次剪辑，加片头、音效或真人出镜。</li>
 </ul>
@@ -177,7 +210,7 @@ say -v &#39;?&#39; | grep Tingting
   </article>
   <aside class="toc">
         <div class="toc-title">本页目录</div>
-        <a class="lvl2" href="#sec-1">环境</a><a class="lvl2" href="#sec-2">生成</a><a class="lvl2" href="#sec-3">分镜 JSON</a><a class="lvl2" href="#sec-4">场景类型</a><a class="lvl2" href="#sec-5">时间参数</a><a class="lvl2" href="#sec-6">配音</a><a class="lvl2" href="#sec-7">加一集</a><a class="lvl2" href="#sec-8">边界</a>
+        <a class="lvl2" href="#sec-1">环境</a><a class="lvl2" href="#sec-2">生成</a><a class="lvl2" href="#sec-3">分镜 JSON</a><a class="lvl2" href="#sec-4">场景类型</a><a class="lvl2" href="#sec-5">时间参数</a><a class="lvl2" href="#sec-6">先做画面，再换配音</a><a class="lvl3" href="#sec-7">复用 nba_biz 的豆包配音</a><a class="lvl3" href="#sec-8">系统临时配音</a><a class="lvl2" href="#sec-9">制作一段原理短片</a><a class="lvl2" href="#sec-10">边界</a>
       </aside>
 </div>
 <div class="backtop"><a href="#top">↑ 回到顶部</a></div>

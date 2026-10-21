@@ -12,12 +12,8 @@
 <header class="topbar">
   <div class="inner">
     <a class="brand" href="../../../index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
-    <nav class="nav">
-      <a href="../../../00-方案/00-总方案.html">总方案</a>
-      <a href="../../../00-方案/09-96课总图.html">96 课地图</a>
-      <a href="../../../00-方案/03-B卷题型对照表.html">B 卷对照</a>
-      <a href="../../../课程/index.html">课程</a>
-      <a href="../../../index.html">首页</a>
+    <nav class="nav learning-nav" aria-label="网站导航">
+      <a href="../../../课程/index.html">课程目录</a>
     </nav>
   </div>
   <div class="progress"><span></span></div>
@@ -25,110 +21,117 @@
 <main class="page">
 <section class="doc-hero"><div class="hero-copy">
     <div class="hero-main">
-      <div class="kicker">LESSON 13 · 三年级上期</div>
+      <div class="kicker">三年级上期</div>
       <h1 class="doc-title">第 13 课：混合运算与括号</h1>
-      <p class="doc-sub">为什么不能从左往右算？</p>
-      <div class="actions"><a class="btn" href="../../../课程/三上/index.html">课程目录</a></div>    </div>
+      <p class="doc-sub">一个算式里，哪一步先算？</p>
+      <div class="actions"><a class="btn" href="../../../课程/三上/index.html">本学期课程</a></div>    </div>
   </div></section>
 
 <div class="doc-layout">
   <article class="article">
 
-<h2 id="sec-1">一句话</h2>
-<p>运算顺序是为了让同一个算式只有一个答案：先乘除，后加减；有括号，先算括号里面。</p>
-<h2 id="sec-2">为什么不能从左往右算</h2>
-<p>看一个买东西的式子：</p>
-<pre><code>3 支笔，每支 5 元；2 本本子，每本 4 元。一共多少钱？
-</code></pre>
-<p>写成算式是 <code>3×5+2×4</code>。</p>
+<p>3 支笔每支 5 元，另外买一本 4 元的本子。“3×5＋4”和“3×(5＋4)”买的是一样多的东西吗？</p>
+<h2 id="sec-1">买笔的钱，先算哪一步</h2>
+<p>3 支笔，每支 5 元，再买一本 4 元的本子，一共多少钱？</p>
+<p>写成算式是 <code>3×5+4</code>。</p>
 <ul>
-<li><code>3×5</code> 是 3 支笔的钱，一共 15 元；</li>
-<li><code>2×4</code> 是 2 本本子的钱，一共 8 元；</li>
-<li>合起来是 15+8=23 元。</li>
+<li>先算 3 支笔的钱：3×5=15（元）。</li>
+<li>再加一本本子的钱：15+4=19（元）。</li>
 </ul>
-<p><code>3×5</code> 和 <code>2×4</code> 各自是一个整体，不能把 5 和 4 先加起来：它们代表不同的东西。乘号两边是“几个几”，要先算成一个整体，再去加。</p>
-<p>所以约定：<strong>先算乘除，再算加减</strong>。</p>
-<h2 id="sec-3">括号的作用</h2>
-<p>括号是“优先标记”：括号里面的部分，先算成一个整体。</p>
+<p>如果先算 5+4，再乘 3，就把一本本子的钱也算了 3 次。</p>
+<p>再看 <code>4+3×5</code>：本子的钱写在前面，还是要先算 3×5，再加 4。这里就不能从左往右一路算。</p>
+<p><strong>有乘除，也有加减时，先算乘除，再算加减。</strong> 这是大家共同遵守的运算顺序。</p>
+<h2 id="sec-2">小括号让哪一步先算</h2>
 <pre><code>(3+4)×5
+=7×5
+=35
 </code></pre>
-<p>先算 <code>3+4=7</code>，再算 <code>7×5=35</code>。它表示 7 个 5。</p>
-<p>如果没有括号：</p>
+<p>先算小括号里的 3+4，再乘 5。</p>
+<p>去掉小括号，变成 <code>3+4×5</code>，就要先算 4×5：</p>
 <pre><code>3+4×5
+=3+20
+=23
 </code></pre>
-<p>先算 <code>4×5=20</code>，再算 <code>3+20=23</code>。它表示 3 再加 4 个 5。</p>
-<p>同一个算式里，括号的位置不同，结果就不同。括号不是装饰，它改变了“先算哪一步”。</p>
-<h2 id="sec-4">同级运算从左往右</h2>
-<p>加法和减法在同一级，乘法和除法在同一级。</p>
+<p>小括号指定先算哪一部分，结果可能因此改变。但加了括号，结果不一定变。例如 <code>3+4+5</code> 和 <code>(3+4)+5</code> 都等于 12。</p>
+<h2 id="sec-3">什么时候从左往右算</h2>
+<p>没有括号，只有加减，或者只有乘除时，从左往右算。</p>
 <pre><code>100-40+25
+=60+25
+=85
 </code></pre>
-<p>减法和加法同级，从左往右：先 <code>100-40=60</code>，再 <code>60+25=85</code>。</p>
-<pre><code>100÷4×5
+<p>这里先减 40，再加 25。如果先把 40+25 算成 65，再从 100 里减去，就变成减去 65，意思变了。</p>
+<pre><code>24÷3×2
+=8×2
+=16
 </code></pre>
-<p>除法和乘法同级，从左往右：先 <code>100÷4=25</code>，再 <code>25×5=125</code>。</p>
-<p>同级运算不能随便先算后面那一步。比如 <code>100-40+25</code> 如果先算 <code>40+25=65</code>，就变成 <code>100-65=35</code>，错了。</p>
-<h2 id="sec-5">例子</h2>
-<h3 id="sec-6">例 1：先乘后加</h3>
-<pre><code>6×4+3×5
-=24+15
-=39
-</code></pre>
-<h3 id="sec-7">例 2：先乘后减</h3>
+<p>乘除在同一级，这里先除以 3，再乘 2。不能因为有乘号，就把后面的 3×2 抢先算掉。</p>
+<h2 id="sec-4">例子</h2>
+<h3 id="sec-5">例 1：先乘后减</h3>
 <pre><code>50-5×6
 =50-30
 =20
 </code></pre>
-<h3 id="sec-8">例 3：括号优先</h3>
-<pre><code>(8+7)×4
-=15×4
-=60
+<h3 id="sec-6">例 2：小括号优先</h3>
+<pre><code>48÷(8-2)
+=48÷6
+=8
 </code></pre>
-<h3 id="sec-9">例 4：括号改变结果</h3>
-<pre><code>72÷(9-3)
-=72÷6
-=12
+<p>不加括号时，<code>48÷8-2=6-2=4</code>，要先算除法。</p>
+<h3 id="sec-7">例 3：先算的部分藏在题目里</h3>
+<p>有 18 个红气球、12 个蓝气球，平均分给 5 个小组，每组几个？</p>
+<p>要先算一共有几个气球，再平均分：</p>
+<pre><code>(18+12)÷5
+=30÷5
+=6（个）
 </code></pre>
-<p>如果不加括号：</p>
-<pre><code>72÷9-3
-=8-3
-=5
+<h3 id="sec-8">再多想一步：两样东西各买几份</h3>
+<p>3 支笔，每支 5 元；2 本本子，每本 4 元。一共多少钱？</p>
+<pre><code>3×5+2×4
+=15+8
+=23（元）
 </code></pre>
-<h3 id="sec-10">例 5：同级从左往右</h3>
-<pre><code>100-30+20
-=70+20
-=90
-</code></pre>
-<h2 id="sec-11">易错</h2>
+<p>这道题比前面的多一步：先分别算笔和本子的钱，再合起来。</p>
+<h2 id="sec-9">易错</h2>
 <ul>
-<li>从左往右一路算，忽略“先乘除后加减”。</li>
-<li>括号里面还有乘除时，没有先算括号里的乘除。</li>
-<li>同级运算跳步，先算了后面那一步。</li>
-<li>把括号当成“可有可无”，忘了它会改变结果。</li>
-<li>写递等式时漏写中间步骤，答案对但过程看不清。</li>
+<li>看到加法在前面，就先算加法，没有看后面是否还有乘除。</li>
+<li>把“先乘除”记成“先乘后除”。乘除同级，要从左往右算。</li>
+<li>忘记小括号里的一部分要先算。</li>
+<li>说“加了括号，答案一定变了”，没有实际算一算。</li>
+<li>写中间步骤时，把还没算的部分漏掉了。</li>
 </ul>
-<h2 id="sec-12">练习</h2>
+<h2 id="sec-10">括号圈住的是哪一包</h2>
+<p>给“3×5＋4”和“3×(5＋4)”各画一幅购物图，用小方框代表笔和本子。两幅图会差什么？</p>
+<details>
+<summary>看解释</summary>
+
+<p>前一幅有 3 支 5 元的笔，另加 1 本 4 元的本子，共 19 元。后一幅把一支笔和一本本子当成一包，买 3 包，共 27 元，多买了 2 本本子。括号改变了被重复的那一组。</p>
+</details>
+
+<h2 id="sec-11">练习</h2>
 <ol>
-<li>计算：<code>6×4+3×5</code></li>
-<li>计算：<code>50-5×6</code></li>
-<li>计算：<code>(8+7)×4</code></li>
-<li>计算：<code>72÷(9-3)</code></li>
-<li>计算：<code>100-30+20</code></li>
-<li>在 <code>3+4×5</code> 里加一对括号，使结果变成 35。</li>
+<li>计算：<code>7+3×6</code>。</li>
+<li>计算：<code>64-6×8</code>。</li>
+<li>计算：<code>(9+6)×3</code>。</li>
+<li>计算：<code>56÷(10-3)</code>。</li>
+<li>计算：<code>90-24+14</code>。</li>
+<li>在 <code>4+5×6</code> 里加一对小括号，使结果变成 54。</li>
+<li>小红买 4 本本子，每本 6 元，付了 30 元。应找回多少元？列出一个综合算式。</li>
 </ol>
-<h2 id="sec-13">答案</h2>
+<h2 id="sec-12">答案</h2>
 <ol>
-<li>24+15=39。</li>
-<li>50-30=20。</li>
-<li>15×4=60。</li>
-<li>72÷6=12。</li>
-<li>70+20=90。</li>
-<li><code>(3+4)×5=35</code>。</li>
+<li>7+18=25。</li>
+<li>64-48=16。</li>
+<li>15×3=45。</li>
+<li>56÷7=8。</li>
+<li>66+14=80。</li>
+<li><code>(4+5)×6=9×6=54</code>。</li>
+<li>30-4×6=30-24=6（元）。先算买本子的钱，再算找回的钱。</li>
 </ol>
 
   </article>
   <aside class="toc">
         <div class="toc-title">本页目录</div>
-        <a class="lvl2" href="#sec-1">一句话</a><a class="lvl2" href="#sec-2">为什么不能从左往右算</a><a class="lvl2" href="#sec-3">括号的作用</a><a class="lvl2" href="#sec-4">同级运算从左往右</a><a class="lvl2" href="#sec-5">例子</a><a class="lvl3" href="#sec-6">例 1：先乘后加</a><a class="lvl3" href="#sec-7">例 2：先乘后减</a><a class="lvl3" href="#sec-8">例 3：括号优先</a><a class="lvl3" href="#sec-9">例 4：括号改变结果</a><a class="lvl3" href="#sec-10">例 5：同级从左往右</a><a class="lvl2" href="#sec-11">易错</a><a class="lvl2" href="#sec-12">练习</a><a class="lvl2" href="#sec-13">答案</a>
+        <a class="lvl2" href="#sec-1">买笔的钱，先算哪一步</a><a class="lvl2" href="#sec-2">小括号让哪一步先算</a><a class="lvl2" href="#sec-3">什么时候从左往右算</a><a class="lvl2" href="#sec-4">例子</a><a class="lvl3" href="#sec-5">例 1：先乘后减</a><a class="lvl3" href="#sec-6">例 2：小括号优先</a><a class="lvl3" href="#sec-7">例 3：先算的部分藏在题目里</a><a class="lvl3" href="#sec-8">再多想一步：两样东西各买几份</a><a class="lvl2" href="#sec-9">易错</a><a class="lvl2" href="#sec-10">括号圈住的是哪一包</a><a class="lvl2" href="#sec-11">练习</a><a class="lvl2" href="#sec-12">答案</a>
       </aside>
 </div>
 <div class="backtop"><a href="#top">↑ 回到顶部</a></div>

@@ -12,12 +12,8 @@
 <header class="topbar">
   <div class="inner">
     <a class="brand" href="../../../index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
-    <nav class="nav">
-      <a href="../../../00-方案/00-总方案.html">总方案</a>
-      <a href="../../../00-方案/09-96课总图.html">96 课地图</a>
-      <a href="../../../00-方案/03-B卷题型对照表.html">B 卷对照</a>
-      <a href="../../../课程/index.html">课程</a>
-      <a href="../../../index.html">首页</a>
+    <nav class="nav learning-nav" aria-label="网站导航">
+      <a href="../../../课程/index.html">课程目录</a>
     </nav>
   </div>
   <div class="progress"><span></span></div>
@@ -25,9 +21,9 @@
 <main class="page">
 <section class="doc-hero"><div class="hero-copy">
     <div class="hero-main">
-      <div class="kicker">LESSON 10 · 六年级下期</div>
+      <div class="kicker">六年级下期</div>
       <h1 class="doc-title">第 10 课：鸽巢问题</h1>
-      <div class="actions"><a class="btn" href="../../../课程/六下/index.html">课程目录</a></div>    </div>
+      <div class="actions"><a class="btn" href="../../../课程/六下/index.html">本学期课程</a></div>    </div>
   </div></section>
 
 <div class="doc-layout">
@@ -41,7 +37,7 @@
 <pre><code>n÷m=q……r
 </code></pre>
 <p>如果 r=0，至少有一个抽屉不少于 q 个；如果 r&gt;0，至少有一个抽屉不少于 q+1 个。</p>
-<p>也可以写成：至少数=⌈n/m⌉，⌈ ⌉ 表示向上取整。</p>
+<p>先算每个抽屉都放 q 个时最多能放多少，再看有没有剩余，就不用另外背符号。</p>
 <p>“至少”说的是保证。5 只鸽子进 4 个笼，可能是 2、1、1、1，也可能是 3、1、1、0，甚至 5、0、0、0；但每一种分法里，都至少有一个笼不少于 2 只。</p>
 <p>题目问“至少有几个进同一个笼”，不是求平均每笼几个。平均数是 5÷4=1.25，笼子不能装 1.25 只，所以要取 2。</p>
 <h2 id="sec-2">例子</h2>
@@ -49,12 +45,12 @@
 <pre><code>5÷4=1……1
 </code></pre>
 <p>先每笼 1 只，还剩 1 只；这只放进任意一笼，那个笼就有 2 只。</p>
-<p>至少有一个笼有 2 只。</p>
+<p>至少有一个笼有 2 只或更多。</p>
 <h3 id="sec-4">例 2：13 本书，4 个抽屉</h3>
 <pre><code>13÷4=3……1
 </code></pre>
 <p>每个抽屉先放 3 本，共用 12 本，还剩 1 本；放进任意抽屉，那个抽屉有 4 本。</p>
-<p>至少有一个抽屉有 4 本。</p>
+<p>至少有一个抽屉有 4 本或更多。</p>
 <h3 id="sec-5">例 3：45 人，12 个月</h3>
 <pre><code>45÷12=3……9
 </code></pre>
@@ -69,7 +65,15 @@
 <li>用平均数代替“保证”。平均数 1.25 不能直接当答案。</li>
 <li>题目问“至少摸几个才能保证”时，只算到“每个抽屉 1 个”，忘了再摸 1 个。</li>
 </ul>
-<h2 id="sec-7">练习</h2>
+<h2 id="sec-7">为什么不能保证有 3 只</h2>
+<p>5 只鸽子进 4 个笼，已经能保证某笼不少于 2 只。能把这个保证提高成“某笼不少于 3 只”吗？</p>
+<details>
+<summary>看解释</summary>
+
+<p>不能。2、1、1、1 就是一种合法分法，没有任何一笼达到 3 只。既要说明 2 只一定能保证，也要能用这种分法说明 3 只保证不了。</p>
+</details>
+
+<h2 id="sec-8">练习</h2>
 <ol>
 <li>7 只鸽子飞进 3 个笼，至少有几只进同一个笼？</li>
 <li>20 个苹果放进 6 个盘子，至少有一个盘子放几个？</li>
@@ -78,7 +82,7 @@
 <li>有红、黄、蓝三种颜色的球，至少摸出几个才能保证有 2 个同色？</li>
 <li>判断：5 只鸽子进 4 个笼，一定有一个笼正好有 2 只。</li>
 </ol>
-<h2 id="sec-8">答案</h2>
+<h2 id="sec-9">答案</h2>
 <ol>
 <li>7÷3=2……1，至少 3 只。</li>
 <li>20÷6=3……2，至少 4 个。</li>
@@ -91,7 +95,7 @@
   </article>
   <aside class="toc">
         <div class="toc-title">本页目录</div>
-        <a class="lvl2" href="#sec-1">尽量分散，还是会有鸽子住在一起</a><a class="lvl2" href="#sec-2">例子</a><a class="lvl3" href="#sec-3">例 1：5 只鸽子，4 个笼</a><a class="lvl3" href="#sec-4">例 2：13 本书，4 个抽屉</a><a class="lvl3" href="#sec-5">例 3：45 人，12 个月</a><a class="lvl2" href="#sec-6">易错</a><a class="lvl2" href="#sec-7">练习</a><a class="lvl2" href="#sec-8">答案</a>
+        <a class="lvl2" href="#sec-1">尽量分散，还是会有鸽子住在一起</a><a class="lvl2" href="#sec-2">例子</a><a class="lvl3" href="#sec-3">例 1：5 只鸽子，4 个笼</a><a class="lvl3" href="#sec-4">例 2：13 本书，4 个抽屉</a><a class="lvl3" href="#sec-5">例 3：45 人，12 个月</a><a class="lvl2" href="#sec-6">易错</a><a class="lvl2" href="#sec-7">为什么不能保证有 3 只</a><a class="lvl2" href="#sec-8">练习</a><a class="lvl2" href="#sec-9">答案</a>
       </aside>
 </div>
 <div class="backtop"><a href="#top">↑ 回到顶部</a></div>

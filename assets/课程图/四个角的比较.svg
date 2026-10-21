@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" role="img" aria-labelledby="title desc">
+  <title id="title">比较甲、乙、丙、丁四个角</title>
+  <desc id="desc">四个角分两行排列，每个角标出了顶点。用三角尺或长方形纸的角比较开口，注意丁的方向和甲不同。</desc>
+  <rect width="600" height="500" fill="#fff"/>
+  <g fill="#101826" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="28" text-anchor="middle">
+    <text x="150" y="44">甲</text><text x="450" y="44">乙</text>
+    <text x="150" y="284">丙</text><text x="450" y="284">丁</text>
+  </g>
+  <g fill="none" stroke="#1e4fd8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path id="angle-a" d="M 80 80 L 80 180 L 200 180"/>
+    <path id="angle-b" d="M 452 84 L 380 180 L 500 180"/>
+    <path id="angle-c" d="M 95 325 L 150 420 L 260 420"/>
+    <path id="angle-d" d="M 350 340 L 440 430 L 530 340"/>
+  </g>
+  <g fill="#101826">
+    <circle cx="80" cy="180" r="5"/><circle cx="380" cy="180" r="5"/>
+    <circle cx="150" cy="420" r="5"/><circle cx="440" cy="430" r="5"/>
+  </g>
+</svg>

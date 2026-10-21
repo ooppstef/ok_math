@@ -12,12 +12,8 @@
 <header class="topbar">
   <div class="inner">
     <a class="brand" href="../../../index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
-    <nav class="nav">
-      <a href="../../../00-方案/00-总方案.html">总方案</a>
-      <a href="../../../00-方案/09-96课总图.html">96 课地图</a>
-      <a href="../../../00-方案/03-B卷题型对照表.html">B 卷对照</a>
-      <a href="../../../课程/index.html">课程</a>
-      <a href="../../../index.html">首页</a>
+    <nav class="nav learning-nav" aria-label="网站导航">
+      <a href="../../../课程/index.html">课程目录</a>
     </nav>
   </div>
   <div class="progress"><span></span></div>
@@ -25,29 +21,26 @@
 <main class="page">
 <section class="doc-hero"><div class="hero-copy">
     <div class="hero-main">
-      <div class="kicker">LESSON 04 · 六年级下期</div>
+      <div class="kicker">六年级下期</div>
       <h1 class="doc-title">第 4 课：圆柱的体积</h1>
-      <div class="actions"><a class="btn" href="../../../课程/六下/index.html">课程目录</a></div>    </div>
+      <div class="actions"><a class="btn" href="../../../课程/六下/index.html">本学期课程</a></div>    </div>
   </div></section>
 
 <div class="doc-layout">
   <article class="article">
 
-<p>圆柱可以看成许多相同的圆片叠起来，体积等于底面积乘高。</p>
-<h2 id="sec-1">把圆柱看成一层层圆片</h2>
-<p>长方体、正方体的体积都是“底面积×高”。圆柱也能这样看：把它看成许多薄圆片叠起来，每一片都是半径为 r 的圆，面积是 πr²；叠起来的高度是 h。所以</p>
-<pre><code>V=S底×h=πr²h
-</code></pre>
-<pre><code>   ○  ← 一层圆片
-   ○
-   ○
-   ○
-  ───
-  底面积 S，叠了 h 层
-</code></pre>
-<p>圆柱的体积与等底等高的长方体相同：底面积一样，高一样，占的空间就一样。</p>
-<p>如果题目给直径，先求半径：r=d÷2。如果给底面周长，先求半径：r=C÷(2π)。</p>
-<p>下面计算中，π 取 3.14。</p>
+<p>圆面积能靠切拼来理解，圆柱也能吗？把每一块小扇形连同它上面的整根“扇形柱”一起搬，看看能拼出什么。</p>
+<h2 id="sec-1">把圆柱切拼成接近长方体的形状</h2>
+<p><a class="lesson-figure" href="../../../assets/%E5%8E%9F%E7%90%86%E5%9B%BE/%E5%9C%86%E7%9A%84%E5%88%87%E6%8B%BC.svg" target="_blank" rel="noopener" aria-label="放大查看：圆分成16个全等扇形，右边8个朝上8个朝下交错排列，弧边保留，并非精确长方形。"><img src="../../../assets/%E5%8E%9F%E7%90%86%E5%9B%BE/%E5%9C%86%E7%9A%84%E5%88%87%E6%8B%BC.svg" alt="圆分成16个全等扇形，右边8个朝上8个朝下交错排列，弧边保留，并非精确长方形。"></a></p>
+<p>先回想圆面积的切拼：把圆平均分成许多小扇形，交错排列，越分越接近长方形。</p>
+<p>现在把同样的切线沿圆柱的高一直切下去，得到许多等高的扇形柱。把它们连同底面一起交错排列。每一块完整保留，没有重叠，没有切割损耗，所以体积没变。</p>
+<p>分得越细，拼出的立体越接近长方体。底面的长越来越接近 πr，宽越来越接近 r；每块的高都保持 h，所以整个立体的高仍是 h。</p>
+<p>长方体的体积是长×宽×高。沿着这个越来越接近的过程，可以理解圆柱的体积公式：</p>
+<p>V=πr×r×h=πr²h=底面积×高。</p>
+<p>有限块扇形柱拼好后仍有弯曲的小边，不能把它画成已经精确成为长方体。这是帮助理解公式的切拼过程。</p>
+<p><a class="lesson-figure" href="../../../assets/%E5%8E%9F%E7%90%86%E5%9B%BE/%E5%9C%86%E6%9F%B1%E5%90%8C%E5%B1%82.svg" target="_blank" rel="noopener" aria-label="放大查看：圆柱俯视圆半径r，侧视矩形高h，虚线示意等高层；侧视的矩形不是展开后的侧面。"><img src="../../../assets/%E5%8E%9F%E7%90%86%E5%9B%BE/%E5%9C%86%E6%9F%B1%E5%90%8C%E5%B1%82.svg" alt="圆柱俯视圆半径r，侧视矩形高h，虚线示意等高层；侧视的矩形不是展开后的侧面。"></a></p>
+<p>再看一层层圆片：圆柱从下到上，每一个平行于底面的截面都一样大；因此可以用同一个底面积乘整个高。圆锥的截面会逐渐缩小，就不能直接照搬这个乘法。</p>
+<p>如果题目给直径，先求半径 r=d÷2；给底面周长，则 r=C÷(2π)。下面数值题按 π 取 3.14 计算。</p>
 <h2 id="sec-2">例子</h2>
 <h3 id="sec-3">例 1：给半径</h3>
 <p>r=2 cm，h=5 cm。</p>
@@ -73,7 +66,15 @@ V=3.14×4²×10=3.14×16×10=502.4（cm³）
 <li>单位换算出错：1 L=1000 mL=1000 cm³，1 dm³=1000 cm³。</li>
 <li>把体积单位和面积单位混用。体积用立方单位。</li>
 </ul>
-<h2 id="sec-7">练习</h2>
+<h2 id="sec-7">高增加 1 厘米，多出多少体积</h2>
+<p>一个圆柱底面积 12 平方厘米，高从 5 厘米增加到 6 厘米。多出的体积是多少？需要从头算两遍吗？</p>
+<details>
+<summary>看解释</summary>
+
+<p>多出一层高 1 厘米、底面积 12 平方厘米的圆柱，体积增加 12×1=12 立方厘米。也可检查 12×6−12×5=12。</p>
+</details>
+
+<h2 id="sec-8">练习</h2>
 <ol>
 <li>圆柱底面半径 3 cm，高 7 cm，体积是多少？</li>
 <li>圆柱底面直径 6 dm，高 10 dm，体积是多少？</li>
@@ -82,7 +83,7 @@ V=3.14×4²×10=3.14×16×10=502.4（cm³）
 <li>一个圆柱的体积是 314 cm³，底面积是 78.5 cm²，高是多少厘米？</li>
 <li>把 1 升水倒入底面积 100 cm² 的圆柱形容器，水面高多少厘米？</li>
 </ol>
-<h2 id="sec-8">答案</h2>
+<h2 id="sec-9">答案</h2>
 <ol>
 <li>3.14×3²×7=3.14×9×7=197.82（cm³）。</li>
 <li>r=3 dm；3.14×3²×10=3.14×9×10=282.6（dm³）。</li>
@@ -95,7 +96,7 @@ V=3.14×4²×10=3.14×16×10=502.4（cm³）
   </article>
   <aside class="toc">
         <div class="toc-title">本页目录</div>
-        <a class="lvl2" href="#sec-1">把圆柱看成一层层圆片</a><a class="lvl2" href="#sec-2">例子</a><a class="lvl3" href="#sec-3">例 1：给半径</a><a class="lvl3" href="#sec-4">例 2：给直径</a><a class="lvl3" href="#sec-5">例 3：水杯装水</a><a class="lvl2" href="#sec-6">易错</a><a class="lvl2" href="#sec-7">练习</a><a class="lvl2" href="#sec-8">答案</a>
+        <a class="lvl2" href="#sec-1">把圆柱切拼成接近长方体的形状</a><a class="lvl2" href="#sec-2">例子</a><a class="lvl3" href="#sec-3">例 1：给半径</a><a class="lvl3" href="#sec-4">例 2：给直径</a><a class="lvl3" href="#sec-5">例 3：水杯装水</a><a class="lvl2" href="#sec-6">易错</a><a class="lvl2" href="#sec-7">高增加 1 厘米，多出多少体积</a><a class="lvl2" href="#sec-8">练习</a><a class="lvl2" href="#sec-9">答案</a>
       </aside>
 </div>
 <div class="backtop"><a href="#top">↑ 回到顶部</a></div>

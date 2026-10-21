@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" role="img" aria-labelledby="title desc">
+  <title id="title">20 名同学最喜欢的水果</title>
+  <desc id="desc">条形图的纵轴从 0 到 8，每格 2 人。苹果 6 人，香蕉 8 人，橘子 4 人，葡萄 2 人，其他 0 人。</desc>
+  <rect width="600" height="520" fill="#fff"/>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif" fill="#101826">
+    <text x="300" y="36" text-anchor="middle" font-size="26">20 名同学最喜欢的水果</text>
+    <text x="60" y="82" font-size="22">人数（人）</text>
+    <text x="300" y="493" text-anchor="middle" font-size="24">每格表示 2 人</text>
+  </g>
+  <g stroke="#d2d7dd" stroke-width="1.5">
+    <path d="M 85 120 H 550 M 85 190 H 550 M 85 260 H 550 M 85 330 H 550"/>
+  </g>
+  <path d="M 85 108 V 400 H 550" fill="none" stroke="#101826" stroke-width="2"/>
+  <g fill="#101826" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="24" text-anchor="end">
+    <text x="70" y="408">0</text><text x="70" y="338">2</text>
+    <text x="70" y="268">4</text><text x="70" y="198">6</text><text x="70" y="128">8</text>
+  </g>
+  <g fill="#1e4fd8">
+    <rect data-category="苹果" x="109" y="190" width="42" height="210"/>
+    <rect data-category="香蕉" x="199" y="120" width="42" height="280"/>
+    <rect data-category="橘子" x="289" y="260" width="42" height="140"/>
+    <rect data-category="葡萄" x="379" y="330" width="42" height="70"/>
+    <rect data-category="其他" x="469" y="400" width="42" height="0"/>
+  </g>
+  <g fill="#101826" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="24" text-anchor="middle">
+    <text x="130" y="441">苹果</text><text x="220" y="441">香蕉</text>
+    <text x="310" y="441">橘子</text><text x="400" y="441">葡萄</text><text x="490" y="441">其他</text>
+  </g>
+</svg>

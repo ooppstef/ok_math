@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-21",
+  "build": "npm run build: exit 0",
+  "static": {
+    "lecture_count": 128,
+    "storyboard_count": 53,
+    "new_svg_count": 37,
+    "arithmetic_groups": {
+      "拆包": true,
+      "除法余数": true,
+      "固定周长": true,
+      "小数乘法": true,
+      "分数乘除": true,
+      "分数加法": true,
+      "平衡与份数": true,
+      "平均与鸡兔": true,
+      "行程": true,
+      "奇数层": true,
+      "圆环": true,
+      "圆柱与锥": true,
+      "先涨后降": true,
+      "工程合做": true,
+      "面积拉伸": true,
+      "排水": true
+    },
+    "protected_files_unchanged": [
+      "课程/三上/L01-满十进一/视频.mp4",
+      "课程/三上/L03-乘法的形状/视频.mp4",
+      "工具/episodes/三上-L02-进位样片.json",
+      "工具/episodes/L01.json",
+      "工具/episodes/L03.json"
+    ]
+  },
+  "site": {
+    "html_files": 263,
+    "lessons": 128,
+    "storyboards": 53,
+    "principle_figure_references": 42,
+    "bad_links": [],
+    "bad_anchors": [],
+    "home_video_markers": 2
+  },
+  "browser": {
+    "svg_count": 37,
+    "svg_text_outside_canvas": 0,
+    "mobile_width": 390,
+    "mobile_sample_pages": 11,
+    "desktop_width": 1440,
+    "desktop_sample_pages": 3,
+    "broken_images_in_sample": 0,
+    "horizontal_overflow_in_sample": 0,
+    "details_mouse_and_keyboard": "passed",
+    "svg_open_original": "passed"
+  },
+  "not_performed": [
+    "学生试教",
+    "教师独立验收",
+    "新视频渲染与连续画面审查",
+    "正式配音及自然度试听"
+  ]
+}

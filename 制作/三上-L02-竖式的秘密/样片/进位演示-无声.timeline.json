@@ -1,0 +1,56 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/三上-L02-进位样片.json",
+  "fps": 24,
+  "audio": "silent",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "01-setup",
+      "start": 0.0,
+      "duration": 8.0,
+      "narration": "三十八加四十七。我们用长方形表示一个十，小圆片表示一个一。"
+    },
+    {
+      "id": "02-ones",
+      "start": 8.0,
+      "duration": 8.0,
+      "narration": "先把同样的单位放在一起。十有七个，一有十五个。"
+    },
+    {
+      "id": "03-pack",
+      "start": 16.0,
+      "duration": 7.0,
+      "narration": "十五个一，可以怎么换？先圈出其中的十个一。"
+    },
+    {
+      "id": "04-exchange",
+      "start": 23.0,
+      "duration": 9.0,
+      "narration": "把这十个一换成一个十，放到十位这边，还剩五个一。"
+    },
+    {
+      "id": "05-write",
+      "start": 32.0,
+      "duration": 6.0,
+      "narration": "个位剩下五个一，所以先在个位写五。"
+    },
+    {
+      "id": "06-carry",
+      "start": 38.0,
+      "duration": 8.0,
+      "narration": "换来的一个十，要记在十位。这个小小的一，表示一个十。"
+    },
+    {
+      "id": "07-tens",
+      "start": 46.0,
+      "duration": 7.0,
+      "narration": "十位原来有七个十，加上换来的一个十，一共是八个十。"
+    },
+    {
+      "id": "08-answer",
+      "start": 53.0,
+      "duration": 7.0,
+      "narration": "八个十和五个一，合起来是八十五。进位，就是把满十个一换成一个十。"
+    }
+  ]
+}

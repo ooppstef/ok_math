@@ -18,6 +18,7 @@ import random
 import re
 import subprocess
 import sys
+import tempfile
 import wave
 from functools import lru_cache
 from pathlib import Path
@@ -169,8 +170,8 @@ def footer(d, ctx, t):
     p = clamp(t / total)
     d.rectangle([0, H - 7, W, H], fill=(236, 228, 211))
     d.rectangle([0, H - 7, int(W * p), H], fill=RED)
-    d.text((M, H - 38), "为什么实验室 · 底层原理课", font=F(16), fill=MUTED)
-    d.text((W - M - 150, H - 38), "给 3–4 年级", font=F(16), fill=MUTED)
+    d.text((M, H - 38), ctx.get("footer", "为什么实验室 · 底层原理课"), font=F(16), fill=MUTED)
+    d.text((W - M - 150, H - 38), ctx.get("audience", "给 3–4 年级"), font=F(16), fill=MUTED)
 
 
 # ---------- 图形零件 ----------
@@ -701,6 +702,108 @@ def s_outro(im, d, t, sc, ctx):
     d.text((W - M - 110, H - 92), "· 完 ·", font=F(22), fill=blend(MUTED, BG, ea))
 
 
+def s_regroup_add(im, d, t, sc, ctx):
+    """38 + 47：同一批计数片从 7 个十、15 个一换成 8 个十、5 个一。"""
+    header(d, ctx)
+    d.text((M, 122), "38＋47，为什么要进位？", font=F(43, True), fill=INK)
+    stage = sc["stage"]
+    # 动作随本幕实际配音时长伸缩，停留画面不改变配音语速。
+    p = clamp(t / max(ctx.get("scene_duration", sc["duration"]), 0.1))
+    merge = ease_in_out((p - 0.12) / 0.55) if stage == "exchange" else 0.0
+    exchanged = stage in ("write", "carry", "tens", "answer")
+    if exchanged:
+        merge = 1.0
+    card(d, [M, 205, 710, 553], PAPER, LINE)
+    card(d, [744, 205, W - M, 553], PAPER, LINE)
+    d.text((218, 217), "十", font=F(28, True), fill=TEAL)
+    d.text((513, 217), "一", font=F(28, True), fill=RED)
+    d.line([(418, 219), (418, 536)], fill=LINE, width=2)
+
+    def token(cx, cy, value, alpha=1.0, highlighted=False):
+        color, fill = (TEAL, TEAL_BG) if value == 10 else (RED, RED_BG)
+        if value == 10:
+            box = [cx - 29, cy - 21, cx + 29, cy + 21]
+            d.rounded_rectangle(box, 7, fill=blend(fill, PAPER, alpha),
+                                outline=blend(color, PAPER, alpha), width=3 if highlighted else 2)
+        else:
+            box = [cx - 20, cy - 20, cx + 20, cy + 20]
+            d.ellipse(box, fill=blend(fill, PAPER, alpha), outline=blend(color, PAPER, alpha), width=2)
+        label = str(value)
+        f = F(23, True)
+        d.text((cx - tlen(d, label, f) / 2, cy - 15), label, font=f, fill=blend(color, PAPER, alpha))
+
+    # 两个加数先分行；随后各自聚拢，整段保持总量 85 不变。
+    for k in range(7):
+        if stage == "setup":
+            x, y = (152 + k * 72, 294) if k < 3 else (152 + (k - 3) * 72, 415)
+        else:
+            x, y = 152 + (k % 4) * 72, 294 + (k // 4) * 66
+        token(x, y, 10)
+    for k in range(15):
+        if stage == "setup":
+            j = k if k < 8 else k - 8
+            x, y = 457 + (j % 5) * 48, (280 if k < 8 else 408) + (j // 5) * 49
+        else:
+            x, y = 457 + (k % 5) * 48, 294 + (k // 5) * 66
+        token(x, y, 1, 1 - merge if k < 10 else 1)
+    if stage == "setup":
+        for y, label in [(335, "3 个十＋8 个一"), (479, "4 个十＋7 个一")]:
+            d.text((149, y), label, font=F(22), fill=MUTED)
+    if stage == "pack":
+        d.rounded_rectangle([430, 265, 677, 389], 15, outline=GOLD, width=4)
+        d.text((441, 485), "圈出 10 个一", font=F(25, True), fill=RED)
+    if merge > 0:
+        x = 553 + (368 - 553) * merge
+        y = 326 + (360 - 326) * merge
+        token(x, y, 10, merge, highlighted=True)
+    if stage != "setup":
+        left = "8 个十" if merge >= 1 else "7 个十"
+        right = "5 个一" if merge >= 1 else "15 个一"
+        if 0 < merge < 1:
+            # 换单位的中间状态只保留等式，不把整列误标成 10 个一。
+            left, right = "", ""
+        d.text((187, 479), left, font=F(26, True), fill=TEAL)
+        if stage != "pack":
+            d.text((485, 479), right, font=F(26, True), fill=RED)
+
+    # 竖式一直留在原处，让计数片的换单位与进位记号对应。
+    x10, x1 = 925, 1062
+    for x, label, color in [(x10, "十位", TEAL), (x1, "个位", RED)]:
+        d.text((x - 27, 217), label, font=F(22), fill=color)
+    if stage in ("ones", "pack", "write"):
+        chip(d, [x1 - 46, 267, x1 + 46, 512], 11, RED_BG)
+    if stage in ("carry", "tens"):
+        chip(d, [x10 - 46, 250, x10 + 46, 512], 11, TEAL_BG)
+    for y, numbers in [(276, "38"), (365, "47")]:
+        for x, digit in zip((x10, x1), numbers):
+            d.text((x - tlen(d, digit, F(66, True)) / 2, y), digit, font=F(66, True), fill=INK)
+    d.text((801, 361), "+", font=F(60, True), fill=MUTED)
+    d.line([(793, 443), (1138, 443)], fill=INK, width=3)
+    if stage in ("write", "carry", "tens", "answer"):
+        a = appear(t, 0.2, 0.5) if stage == "write" else 1
+        d.text((x1 - 21, 456), "5", font=F(66, True), fill=blend(RED, PAPER, a))
+    if stage in ("carry", "tens", "answer"):
+        a = appear(t, 0.3, 0.7) if stage == "carry" else 1
+        d.text((x10 - 9, 250), "1", font=F(24, True), fill=blend(TEAL, PAPER, a))
+    if stage in ("tens", "answer"):
+        a = appear(t, sc.get("result_fraction", 0.6) * ctx.get("scene_duration", sc["duration"]), 0.5) if stage == "tens" else 1
+        d.text((x10 - 21, 456), "8", font=F(66, True), fill=blend(TEAL, PAPER, a))
+    if sc.get("equation"):
+        f = F(28, True)
+        label = sc["equation"]
+        d.text(((W - tlen(d, label, f)) / 2, 563), label, font=f, fill=INK)
+
+
+def draw_caption(d, text):
+    """字幕单独合成；新场景在 605–664 留出字幕区。"""
+    f = F(26)
+    lines = wrap_text(d, text, f, W - 2 * M)
+    if len(lines) > 2:
+        raise ValueError("一幕字幕超过两行，请按完整语句拆幕")
+    for i, line in enumerate(lines):
+        d.text(((W - tlen(d, line, f)) / 2, 606 + i * 34), line, font=f, fill=INK)
+
+
 SCENES = {
     "title": s_title,
     "bullets": s_bullets,
@@ -711,6 +814,7 @@ SCENES = {
     "grid": s_grid,
     "challenge": s_challenge,
     "outro": s_outro,
+    "regroup_add": s_regroup_add,
 }
 
 
@@ -781,13 +885,20 @@ def split_sentences(text):
     return parts or [text]
 
 
-def write_srt(scenes, durations, path: Path):
+def write_srt(scenes, durations, path: Path, timing=None):
     lines = []
     idx = 1
     start = 0.0
-    for sc, d in zip(scenes, durations):
+    for scene_index, (sc, d) in enumerate(zip(scenes, durations)):
         text = (sc.get("narration") or "").strip()
         if not text:
+            start += d
+            continue
+        if timing is not None:
+            cue = timing[scene_index]
+            lines.append(f"{idx}\n{fmt_ts(start + cue['offset'])} --> "
+                         f"{fmt_ts(start + cue['offset'] + cue['speech_duration'])}\n{text}\n")
+            idx += 1
             start += d
             continue
         sents = split_sentences(text)
@@ -804,6 +915,32 @@ def write_srt(scenes, durations, path: Path):
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
+def prepare_external_audio(scenes, audio_dir, out_path, tmpdir, fps):
+    """每幕匹配一段原速配音；拒绝把旧稿音频套在新画面上。"""
+    manifest = json.loads((audio_dir / "manifest.json").read_text(encoding="utf-8"))
+    expected = [{"id": sc["id"], "text": sc["narration"]} for sc in scenes]
+    if manifest["scenes"] != expected:
+        raise ValueError("配音清单与分镜正文不一致，请按当前分镜重新配音")
+    durations, timing = [], []
+    with wave.open(str(out_path), "wb") as out:
+        out.setparams((1, 2, 44100, 0, "NONE", "not compressed"))
+        for sc in scenes:
+            sid = sc["id"]
+            if not re.fullmatch(r"[a-zA-Z0-9_-]+", sid):
+                raise ValueError(f"无效的分镜 ID：{sid}")
+            converted = tmpdir / f"{sid}.wav"
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(audio_dir / f"{sid}.mp3"),
+                            "-ar", "44100", "-ac", "1", "-c:a", "pcm_s16le", str(converted)], check=True)
+            with wave.open(str(converted), "rb") as audio:
+                raw = audio.readframes(audio.getnframes())
+                speech_duration = audio.getnframes() / 44100
+            duration = math.ceil((speech_duration + sc.get("pause_after", 0.45)) * fps) / fps
+            out.writeframes(raw + silence(duration - speech_duration))
+            durations.append(duration)
+            timing.append({"offset": 0, "speech_duration": speech_duration})
+    return durations, timing
+
+
 # ---------- 主流程 ----------
 def main():
     ap = argparse.ArgumentParser()
@@ -812,82 +949,105 @@ def main():
     ap.add_argument("--fps", type=int, default=FPS)
     ap.add_argument("--voice", default="Tingting")
     ap.add_argument("--rate", type=int, default=165)
-    ap.add_argument("--preview", type=int, default=-1, help="只渲染某一幕的若干帧，用于检查")
+    audio_mode = ap.add_mutually_exclusive_group()
+    audio_mode.add_argument("--silent", action="store_true", help="无声画面样片，按分镜 duration 渲染")
+    audio_mode.add_argument("--audio-dir", type=Path, help="nba_biz 配音适配器生成的分幕 MP3 目录")
+    ap.add_argument("--burn-captions", action="store_true", help="将字幕合成到画面；不改变分镜素材")
+    ap.add_argument("--preview", type=int, default=-1, help="只渲染某一幕的一帧")
     ap.add_argument("--preview-frame", type=float, default=1.0)
     args = ap.parse_args()
+    if args.fps <= 0:
+        ap.error("fps 必须大于 0")
 
     data = json.loads(Path(args.script).read_text(encoding="utf-8"))
     scenes = data["scenes"]
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-
-    ctx = {
-        "kicker": data.get("kicker", "为什么实验室"),
-        "no": data.get("no", "01"),
-        "total": 0,
-    }
-
-    tmpdir = out.parent / ".build"
-    tmpdir.mkdir(exist_ok=True)
+    ctx = {"kicker": data.get("kicker", "为什么实验室"), "no": data.get("no", "01"),
+           "audience": data.get("audience", "给 3–4 年级"),
+           "footer": data.get("footer", "为什么实验室 · 底层原理课"), "total": 0}
+    for sc in scenes:
+        if sc["type"] not in SCENES:
+            ap.error(f"未知场景：{sc['type']}")
 
     if args.preview >= 0:
         sc = scenes[args.preview]
         im, d = new_frame()
-        ctx["total"] = 10
+        ctx["total"] = ctx["scene_duration"] = sc.get("duration", 10)
         SCENES[sc["type"]](im, d, args.preview_frame, sc, ctx)
+        if args.burn_captions:
+            draw_caption(d, sc.get("narration", ""))
         footer(d, ctx, args.preview_frame)
         preview_path = out.with_name(out.stem + "_preview.png")
         im.save(preview_path)
         print("preview:", preview_path)
         return
 
-    print("① 生成配音 …")
-    durations = build_audio(scenes, tmpdir / "audio.wav", args.voice, args.rate, tmpdir, args.fps)
-    ctx["total"] = sum(durations)
-    print(f"   总时长 {ctx['total']:.1f}s / {ctx['total']/60:.1f}min，共 {len(scenes)} 幕")
+    with tempfile.TemporaryDirectory(prefix=".render-", dir=out.parent) as tmp:
+        tmpdir = Path(tmp)
+        audio_path = tmpdir / "audio.wav"
+        timing = None
+        if args.silent:
+            durations = [round(float(sc["duration"]) * args.fps) / args.fps for sc in scenes]
+            if any(d <= 0 for d in durations):
+                ap.error("无声样片每幕 duration 必须大于 0")
+            timing = [{"offset": 0, "speech_duration": d} for d in durations]
+        elif args.audio_dir:
+            print("① 读取分幕配音 …", flush=True)
+            durations, timing = prepare_external_audio(scenes, args.audio_dir, audio_path, tmpdir, args.fps)
+        else:
+            print("① 生成系统临时配音 …", flush=True)
+            durations = build_audio(scenes, audio_path, args.voice, args.rate, tmpdir, args.fps)
+        ctx["total"] = sum(durations)
+        print(f"总时长 {ctx['total']:.2f}s，共 {len(scenes)} 幕", flush=True)
 
-    write_srt(scenes, durations, out.with_suffix(".srt"))
-    subtitles = out.with_suffix(".srt").read_text(encoding="utf-8")
-    out.with_suffix(".vtt").write_text(
-        "WEBVTT\n\n" + re.sub(r"(\d{2}:\d{2}:\d{2}),(\d{3})", r"\1.\2", subtitles),
-        encoding="utf-8",
-    )
+        write_srt(scenes, durations, out.with_suffix(".srt"), timing)
+        subtitles = out.with_suffix(".srt").read_text(encoding="utf-8")
+        out.with_suffix(".vtt").write_text(
+            "WEBVTT\n\n" + re.sub(r"(\d{2}:\d{2}:\d{2}),(\d{3})", r"\1.\2", subtitles), encoding="utf-8")
+        cursor, timeline = 0.0, []
+        for i, (sc, duration) in enumerate(zip(scenes, durations)):
+            timeline.append({"id": sc.get("id", f"scene_{i:02d}"), "start": round(cursor, 6),
+                             "duration": duration, "narration": sc.get("narration", "")})
+            cursor += duration
+        out.with_suffix(".timeline.json").write_text(json.dumps({
+            "script": str(Path(args.script).resolve()), "fps": args.fps,
+            "audio": "silent" if args.silent else "files" if args.audio_dir else "system",
+            "burn_captions": args.burn_captions, "scenes": timeline,
+        }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    print("② 渲染画面 …")
-    cmd = [
-        "ffmpeg", "-y", "-loglevel", "error",
-        "-f", "rawvideo", "-vcodec", "rawvideo", "-pix_fmt", "rgb24",
-        "-s", f"{W}x{H}", "-r", str(args.fps), "-i", "-",
-        "-i", str(tmpdir / "audio.wav"),
-        "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
-        "-c:a", "aac", "-b:a", "160k", "-shortest",
-        "-movflags", "+faststart", str(out),
-    ]
-    proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
-    t_global = 0.0
-    written = 0
-    for si, (sc, dur) in enumerate(zip(scenes, durations)):
-        fn = SCENES[sc["type"]]
-        nframes = max(1, round(dur * args.fps))
-        for k in range(nframes):
-            t = k / args.fps
-            im, d = new_frame()
-            fn(im, d, t, sc, ctx)
-            footer(d, ctx, t_global + t)
-            proc.stdin.write(im.tobytes())
-            written += 1
-        t_global += dur
-        print(f"   幕 {si+1}/{len(scenes)} · {sc['type']:<12} {dur:5.1f}s")
-    proc.stdin.close()
-    proc.wait()
-    if proc.returncode != 0:
-        sys.exit("ffmpeg 失败")
-
-    # 清理
-    for p in tmpdir.glob("*"):
-        p.unlink()
-    tmpdir.rmdir()
-    print(f"③ 完成：{out}  ({written} 帧, {written/args.fps/60:.1f} 分钟)")
+        print("② 渲染画面 …", flush=True)
+        cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-vcodec", "rawvideo",
+               "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(args.fps), "-i", "-"]
+        if not args.silent:
+            cmd += ["-i", str(audio_path)]
+        cmd += ["-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p"]
+        cmd += ["-an"] if args.silent else ["-c:a", "aac", "-b:a", "160k", "-shortest"]
+        cmd += ["-movflags", "+faststart", str(out)]
+        proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
+        t_global, written = 0.0, 0
+        try:
+            for si, (sc, dur) in enumerate(zip(scenes, durations)):
+                fn = SCENES[sc["type"]]
+                ctx["scene_duration"] = dur
+                nframes = max(1, round(dur * args.fps))
+                for k in range(nframes):
+                    t = k / args.fps
+                    im, d = new_frame()
+                    fn(im, d, t, sc, ctx)
+                    if args.burn_captions and (timing is None or t < timing[si]["speech_duration"]):
+                        draw_caption(d, sc.get("narration", ""))
+                    footer(d, ctx, t_global + t)
+                    proc.stdin.write(im.tobytes())
+                    written += 1
+                t_global += dur
+                print(f"   幕 {si+1}/{len(scenes)} · {sc['type']:<12} {dur:5.2f}s", flush=True)
+        finally:
+            proc.stdin.close()
+            proc.wait()
+        if proc.returncode != 0:
+            sys.exit("ffmpeg 失败")
+        print(f"③ 完成：{out}  ({written} 帧)")
 
 
 if __name__ == "__main__":

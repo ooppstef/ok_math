@@ -12,12 +12,8 @@
 <header class="topbar">
   <div class="inner">
     <a class="brand" href="../../../index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
-    <nav class="nav">
-      <a href="../../../00-方案/00-总方案.html">总方案</a>
-      <a href="../../../00-方案/09-96课总图.html">96 课地图</a>
-      <a href="../../../00-方案/03-B卷题型对照表.html">B 卷对照</a>
-      <a href="../../../课程/index.html">课程</a>
-      <a href="../../../index.html">首页</a>
+    <nav class="nav learning-nav" aria-label="网站导航">
+      <a href="../../../课程/index.html">课程目录</a>
     </nav>
   </div>
   <div class="progress"><span></span></div>
@@ -25,20 +21,21 @@
 <main class="page">
 <section class="doc-hero"><div class="hero-copy">
     <div class="hero-main">
-      <div class="kicker">LESSON 02 · 四年级下期</div>
+      <div class="kicker">四年级下期</div>
       <h1 class="doc-title">第 2 课：运算律</h1>
-      <div class="actions"><a class="btn" href="../../../课程/四下/index.html">课程目录</a></div>    </div>
+      <div class="actions"><a class="btn" href="../../../课程/四下/index.html">本学期课程</a></div>    </div>
   </div></section>
 
 <div class="doc-layout">
   <article class="article">
 
-<p>交换律换顺序，结合律换分组，分配律把“合起来乘”拆成“分别乘再相加”；变的是算法，不变的是结果。</p>
+<p>一张点阵图，可以横着数，也可以竖着数；可以整块数，也可以切成两块数。点一个没添、一个没少，哪些算式会得到同一个总数？</p>
 <h2 id="sec-1">换一种算法，结果为什么相同</h2>
+<p><a class="lesson-figure" href="../../../assets/%E5%8E%9F%E7%90%86%E5%9B%BE/%E5%88%86%E9%85%8D%E5%BE%8B.svg" target="_blank" rel="noopener" aria-label="放大查看：5列7行分成3行与4行，两块15与20，合计35。"><img src="../../../assets/%E5%8E%9F%E7%90%86%E5%9B%BE/%E5%88%86%E9%85%8D%E5%BE%8B.svg" alt="5列7行分成3行与4行，两块15与20，合计35。"></a></p>
 <p>先看加法。3+5 和 5+3 都是把同一堆东西合起来，只是数的顺序不同，结果都是 8。</p>
 <p>乘法也一样。3×4 可以摆成 3 行 4 列，转 90° 就是 4 行 3 列，棋子总数还是 12。所以 a×b=b×a。</p>
 <p>结合律改变的是分组。算 (2+3)+4，先得 5，再加 4 得 9；算 2+(3+4)，先得 7，再加 2 得 9。三个数最终都合在一起，先合哪两个不影响总数。</p>
-<p>乘法结合律也一样：(2×3)×4 表示 6 个 4，2×(3×4) 表示 2 组 12 个，都是 24 个小方块。</p>
+<p>把 24 个小方块放进 2 个盒子，每盒 3 排、每排 4 个。先数排数，有 2×3=6 排，再算每排 4 个，得到 (2×3)×4；先数每盒有 3×4=12 个，再数 2 盒，得到 2×(3×4)。两种数法都把原来的小方块数了一遍，没有新增或漏掉哪一块。</p>
 <p>分配律稍微不同。看 (3+4)×5：括号里先合起来是 7 份，每份 5 个，共 35 个。也可以分开算：3 份是 15 个，4 份是 20 个，合起来还是 35 个。写成算式：</p>
 <p>(3+4)×5=3×5+4×5。</p>
 <p>用字母表示：</p>
@@ -58,7 +55,7 @@
 <p>25×4=100，先交换再结合：</p>
 <p>25×17×4=(25×4)×17=100×17=1700。</p>
 <h3 id="sec-5">例 3：99×36+36</h3>
-<p>把后面的 36 看成 36×1，再提取公因数 36：</p>
+<p>前面是 99 份 36，后面还有 1 份 36，合起来正好 100 份：</p>
 <p>99×36+36=99×36+1×36=(99+1)×36=100×36=3600。</p>
 <h2 id="sec-6">易错</h2>
 <ul>
@@ -68,7 +65,15 @@
 <li>乘法结合律不是把两个括号相乘。25×4×8 可以写成 25×(4×8)，不能写成 (25×4)×(25×8)。</li>
 <li>分配律对减法也成立：(7−3)×5=4×5=20，7×5−3×5=35−15=20。</li>
 </ul>
-<h2 id="sec-7">练习</h2>
+<h2 id="sec-7">少乘的部分在哪儿</h2>
+<p>把 7 行、每行 5 个的点阵分成上面 3 行和下面 4 行。有人写成 (3+4)×5=3×5+4。请在图里找出他没数到的点。</p>
+<details>
+<summary>看解释</summary>
+
+<p>上面 3 行的 15 个都数了，下面却只算了 4 个，相当于每行只数 1 个。下面每行还漏了 4 个，共漏 16 个。下面也得算 4×5，才是整张图的 35 个。</p>
+</details>
+
+<h2 id="sec-8">练习</h2>
 <ol>
 <li>37+58+42</li>
 <li>25×17×4</li>
@@ -77,7 +82,7 @@
 <li>判断：20÷5×2=20÷(5×2) 吗？分别计算。</li>
 <li>用分配律算 (20+4)×25。</li>
 </ol>
-<h2 id="sec-8">答案</h2>
+<h2 id="sec-9">答案</h2>
 <ol>
 <li>37+(58+42)=37+100=137。</li>
 <li>(25×4)×17=100×17=1700。</li>
@@ -90,7 +95,7 @@
   </article>
   <aside class="toc">
         <div class="toc-title">本页目录</div>
-        <a class="lvl2" href="#sec-1">换一种算法，结果为什么相同</a><a class="lvl2" href="#sec-2">例子</a><a class="lvl3" href="#sec-3">例 1：37+58+42</a><a class="lvl3" href="#sec-4">例 2：25×17×4</a><a class="lvl3" href="#sec-5">例 3：99×36+36</a><a class="lvl2" href="#sec-6">易错</a><a class="lvl2" href="#sec-7">练习</a><a class="lvl2" href="#sec-8">答案</a>
+        <a class="lvl2" href="#sec-1">换一种算法，结果为什么相同</a><a class="lvl2" href="#sec-2">例子</a><a class="lvl3" href="#sec-3">例 1：37+58+42</a><a class="lvl3" href="#sec-4">例 2：25×17×4</a><a class="lvl3" href="#sec-5">例 3：99×36+36</a><a class="lvl2" href="#sec-6">易错</a><a class="lvl2" href="#sec-7">少乘的部分在哪儿</a><a class="lvl2" href="#sec-8">练习</a><a class="lvl2" href="#sec-9">答案</a>
       </aside>
 </div>
 <div class="backtop"><a href="#top">↑ 回到顶部</a></div>

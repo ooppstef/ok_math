@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101826">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iNSIgZmlsbD0iIzFlNGZkOCIvPjxwYXRoIGQ9Ik0xNCA0OFYxNmg4bDEwIDE3IDEwLTE3aDh2MzJoLThWMjlMMzIgNDYgMjIgMjl2MTl6IiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iNDciIHk9IjQ3IiB3aWR0aD0iOSIgaGVpZ2h0PSI5IiBmaWxsPSIjZjNjODRiIi8+PC9zdmc+">
+<title>第 15 课：计算器给出的数，能直接相信吗 · 为什么实验室</title>
+<link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body class="doc-page lesson" id="top">
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../../../index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
+    <nav class="nav learning-nav" aria-label="网站导航">
+      <a href="../../../课程/index.html">课程目录</a>
+    </nav>
+  </div>
+  <div class="progress"><span></span></div>
+</header>
+<main class="page">
+<section class="doc-hero"><div class="hero-copy">
+    <div class="hero-main">
+      <div class="kicker">四年级上期</div>
+      <h1 class="doc-title">第 15 课：计算器给出的数，能直接相信吗</h1>
+      <div class="actions"><a class="btn" href="../../../课程/四上/index.html">本学期课程</a></div>    </div>
+  </div></section>
+
+<div class="doc-layout">
+  <article class="article">
+
+<p>小明想算 <code>398×21</code>，屏幕却显示 83580。先检查有没有多按一个 0，或抄错屏幕上的数。</p>
+<h2 id="sec-1">先估一下结果有多大</h2>
+<p>398 接近 400，21 接近 20，积应在 8000 附近。83580 大了很多，先检查输入。</p>
+<p>重新按 <code>398×21</code>，得到 8358。用另一种算法检查：<code>398×20+398=7960+398=8358</code>。</p>
+<p><a class="lesson-figure" href="../../../assets/%E8%AF%BE%E7%A8%8B%E5%9B%BE/%E8%AE%A1%E7%AE%97%E5%99%A8%E6%A3%80%E6%9F%A5.svg" target="_blank" rel="noopener" aria-label="放大查看：输入、结果和检查三步：398乘21，8358，约为400乘20。"><img src="../../../assets/%E8%AF%BE%E7%A8%8B%E5%9B%BE/%E8%AE%A1%E7%AE%97%E5%99%A8%E6%A3%80%E6%9F%A5.svg" alt="输入、结果和检查三步：398乘21，8358，约为400乘20。"></a></p>
+<p>开始新题前先清除上一题。不同计算器的清除键、退格键可能不同，照着键上的标记或说明使用，不能假定每台都一样。</p>
+<h2 id="sec-2">看见规律，再解释规律</h2>
+<p>用计算器算：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>算式</th>
+<th align="right">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>123×9</td>
+<td align="right">1107</td>
+</tr>
+<tr>
+<td>123×99</td>
+<td align="right">12177</td>
+</tr>
+<tr>
+<td>123×999</td>
+<td align="right">122877</td>
+</tr>
+</tbody></table></div>
+<p>这些结果不是随便排列的。<code>123×99=123×(100−1)=12300−123</code>。用“乘一个整百，再减去一份”就能解释第二行。</p>
+<p>想算 <code>456×99</code>，可以先想 <code>45600−456=45144</code>，再用计算器核对。只抄出几个结果，还没有说明规律为什么成立。</p>
+<h2 id="sec-3">混合运算要留心按键方式</h2>
+<p>有些简易计算器按按键顺序立即计算，有些会先乘除。计算 <code>2+3×4</code> 时，可靠的做法是先算 <code>3×4=12</code>，再算 <code>2+12=14</code>；若使用括号或表达式输入，先确认这台计算器的用法。</p>
+<h2 id="sec-4">自己试一试</h2>
+<ol>
+<li>算 <code>203×19</code> 得到 38570，结果合理吗？先估，再算正确值。</li>
+<li>用 <code>250×100−250</code> 检查 <code>250×99</code>，结果多少？</li>
+<li>算 <code>7200÷30</code>，得到 24。用乘法怎样检查？正确商是多少？</li>
+<li>用计算器记录 <code>37×3</code>、<code>37×6</code>、<code>37×9</code>。为什么结果每次多 111？</li>
+<li><code>5+6×7</code> 应先输入哪一部分，才能不依赖计算器的运算优先级？</li>
+</ol>
+<h2 id="sec-5">答案与说明</h2>
+<ol>
+<li>不合理，约为 <code>200×20=4000</code>。正确值 <code>203×20−203=4060−203=3857</code>。</li>
+<li><code>25000−250=24750</code>。</li>
+<li><code>24×30=720</code>，不是 7200，所以商错了；正确商是 240。</li>
+<li>111、222、333。第二个因数每次增加 3，就多了 3 份 37，即 111。</li>
+<li>先算 <code>6×7=42</code>，再加 5，得 47。</li>
+</ol>
+
+  </article>
+  <aside class="toc">
+        <div class="toc-title">本页目录</div>
+        <a class="lvl2" href="#sec-1">先估一下结果有多大</a><a class="lvl2" href="#sec-2">看见规律，再解释规律</a><a class="lvl2" href="#sec-3">混合运算要留心按键方式</a><a class="lvl2" href="#sec-4">自己试一试</a><a class="lvl2" href="#sec-5">答案与说明</a>
+      </aside>
+</div>
+<div class="backtop"><a href="#top">↑ 回到顶部</a></div>
+</main>
+<script src="../../../assets/doc.js"></script>
+</body>
+</html>
