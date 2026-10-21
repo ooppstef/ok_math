@@ -1,0 +1,152 @@
+{
+  "no": "02",
+  "kicker": "为什么实验室 · 三上",
+  "footer": "小学数学 · 看见原理",
+  "audience": "三上 · 原理短片",
+  "scenes": [
+    {
+      "id": "g3a_l02_s1_1",
+      "type": "principle_foundation",
+      "model": "column_exchange",
+      "stage": 1,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "竖式的秘密",
+      "duration": 11.18,
+      "narration": "三十八加四十七，有人算成了七百一十五。他把十五直接写在个位下面，漏了哪一步？",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l02_s2_1",
+      "type": "principle_foundation",
+      "model": "column_exchange",
+      "stage": 2,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "竖式的秘密",
+      "duration": 11.76,
+      "narration": "每个小点表示一元，每框十个点就是十元。三十八和四十七合起来，有七个十和十五个一。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l02_s3_1",
+      "type": "principle_foundation",
+      "model": "column_exchange",
+      "stage": 3,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "竖式的秘密",
+      "duration": 10.88,
+      "narration": "把十五个一里的十个一，换成一个十。还剩五个一。总量没有变，十位多了一个十。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l02_s4_1",
+      "type": "principle_foundation",
+      "model": "column_exchange",
+      "stage": 4,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "竖式的秘密",
+      "duration": 11.76,
+      "narration": "个位写五，向十位进一。这个一表示一个十。十位三加四再加一，得到八。答案是八十五。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l02_s5_1",
+      "type": "principle_foundation",
+      "model": "column_exchange",
+      "stage": 5,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "竖式的秘密",
+      "duration": 10.29,
+      "narration": "再看五十二减二十七。五十二有五个十、两个一。个位的二不够减七，怎么办？",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l02_s6_1",
+      "type": "principle_foundation",
+      "model": "column_exchange",
+      "stage": 6,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "竖式的秘密",
+      "duration": 11.47,
+      "narration": "拿出一个十，拆成十个一。原来的两个一也在，现在有四个十、十二个一，仍是五十二。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l02_s7_1",
+      "type": "principle_foundation",
+      "model": "column_exchange",
+      "stage": 7,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "竖式的秘密",
+      "duration": 6.18,
+      "narration": "从十二个一里拿走七个，从四个十里拿走两个。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l02_s7_2",
+      "type": "principle_foundation",
+      "model": "column_exchange",
+      "stage": 7,
+      "phase_start": 1.0,
+      "phase_end": 1.0,
+      "title": "竖式的秘密",
+      "duration": 7.35,
+      "narration": "红点是拿走的，蓝点还剩两个十、五个一，就是二十五。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l02_s8_1",
+      "type": "principle_foundation",
+      "model": "column_exchange",
+      "stage": 8,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "竖式的秘密",
+      "duration": 10.59,
+      "narration": "轮到你。一百减二十八，十位和个位都是零，怎么拆？先暂停，拿纸和笔试一试。",
+      "pause_after": 8
+    },
+    {
+      "id": "g3a_l02_s9_1",
+      "type": "principle_foundation",
+      "model": "column_exchange",
+      "stage": 9,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "竖式的秘密",
+      "duration": 10.0,
+      "narration": "百位拿出一个百，先换成十个十。画面里的每个小点还在，总量仍然是一百。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l02_s10_1",
+      "type": "principle_foundation",
+      "model": "column_exchange",
+      "stage": 10,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "竖式的秘密",
+      "duration": 11.47,
+      "narration": "再把其中一个十拆开，换成十个一。现在是九个十和十个一，可不是十个十再加十个一。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l02_s11_1",
+      "type": "principle_foundation",
+      "model": "column_exchange",
+      "stage": 11,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "竖式的秘密",
+      "duration": 10.0,
+      "narration": "个位十减八得二，十位九减二得七。红点是拿走的二十八，蓝点还剩七十二。",
+      "pause_after": 0.6
+    }
+  ]
+}

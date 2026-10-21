@@ -1,0 +1,14 @@
+{
+  "script": "工具/episodes/成片/三上-L01.json",
+  "video": "制作/三上-L01-满十进一/成片/视频.mp4",
+  "duration": 106.958,
+  "scenes": 15,
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "speech_rate": 0,
+  "max_volume_db": -3.5,
+  "mean_volume_db": -22.4,
+  "thinking_pauses": 1,
+  "sha256": "dc36b98798cb7bd83657e5ab81248958b87ba0450575ef2502399dda1b9880bf",
+  "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
+  "frame_samples_decoded": true
+}

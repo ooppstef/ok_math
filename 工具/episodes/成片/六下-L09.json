@@ -1,0 +1,63 @@
+{
+  "no": "09",
+  "kicker": "为什么实验室 · 六下 · 比例尺",
+  "footer": "看清变化，再说理由",
+  "scenes": [
+    {
+      "id": "01",
+      "type": "principle_geometry",
+      "model": "scale",
+      "stage": "start",
+      "heading": "长和宽都两倍，能装几块原图？",
+      "narration": "原图长三厘米、宽二厘米。长和宽都放大到两倍，先猜能装下几块原图。",
+      "equation": "原面积：3 × 2 = 6 平方厘米",
+      "duration": 8.421052631578947,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "type": "principle_geometry",
+      "model": "scale",
+      "stage": "scale",
+      "heading": "两个方向，同时按两倍变化",
+      "narration": "每条对应边都变成两倍。长宽的比没有变，形状也没有变。",
+      "equation": "长 3 → 6；宽 2 → 4",
+      "duration": 6.842105263157895,
+      "pause_after": 1
+    },
+    {
+      "id": "03",
+      "type": "principle_geometry",
+      "model": "scale",
+      "stage": "done",
+      "heading": "两行两列，共四块原图",
+      "narration": "放大后的图，能铺两行、每行两块原图。长度两倍，面积是四倍。",
+      "equation": "面积：6 × 4 = 24 平方厘米，是原来的 4 倍",
+      "duration": 7.631578947368421,
+      "pause_after": 2
+    },
+    {
+      "id": "04",
+      "type": "principle_geometry",
+      "model": "scale",
+      "stage": "stretch",
+      "heading": "只把长拉四倍，也叫二比一放大吗？",
+      "narration": "如果只把长拉到四倍，宽不变，面积也是四倍。能叫按二比一放大吗？",
+      "equation": "长 × 4；宽 × 1；面积 × 4",
+      "duration": 8.157894736842106,
+      "pause_after": 8
+    },
+    {
+      "id": "05",
+      "type": "principle_geometry",
+      "model": "scale",
+      "stage": "stretch_done",
+      "heading": "只把长拉四倍，也叫二比一放大吗？",
+      "narration": "不能。两个方向没有按同一个倍数变化，形状已经拉长。只看面积倍数，不够。",
+      "equation": "按比例缩放，要检查所有对应长度",
+      "duration": 9.210526315789474,
+      "pause_after": 2
+    }
+  ],
+  "audience": "六下 · 原理短片"
+}

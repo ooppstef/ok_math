@@ -1,0 +1,68 @@
+{
+  "no": "05",
+  "kicker": "为什么实验室 · 四下",
+  "footer": "小学数学 · 看见原理",
+  "audience": "四下 · 原理短片",
+  "scenes": [
+    {
+      "id": "g4b_l05_s1_1",
+      "type": "principle_arithmetic",
+      "model": "place_shift",
+      "stage": 1,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "小数点搬家",
+      "duration": 8.53,
+      "narration": "这个三表示三个一，二表示两个十分之一，五表示五个百分之一。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l05_s2_1",
+      "type": "principle_arithmetic",
+      "model": "place_shift",
+      "stage": 2,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "小数点搬家",
+      "duration": 9.12,
+      "narration": "整个数乘十，每个部分都变成十倍。数字要换到原来十倍大的单位上。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l05_s3_1",
+      "type": "principle_arithmetic",
+      "model": "place_shift",
+      "stage": 3,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "小数点搬家",
+      "duration": 8.53,
+      "narration": "结果三十二点五。只在末尾添零写成三点二五零，数值没有改变。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l05_s4_1",
+      "type": "principle_arithmetic",
+      "model": "place_shift",
+      "stage": 4,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "小数点搬家",
+      "duration": 5.88,
+      "narration": "一米二写成十二分米，尺子也变长十倍了吗？",
+      "pause_after": 8
+    },
+    {
+      "id": "g4b_l05_s5_1",
+      "type": "principle_arithmetic",
+      "model": "place_shift",
+      "stage": 5,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "小数点搬家",
+      "duration": 10.59,
+      "narration": "尺子没变长。单位变小了，所以要用更多个单位来数。这与把数本身乘十要分清。",
+      "pause_after": 0.6
+    }
+  ]
+}

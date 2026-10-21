@@ -1,0 +1,14 @@
+{
+  "script": "工具/episodes/成片/五下-L05.json",
+  "video": "制作/五下-L05-旋转/成片/视频.mp4",
+  "duration": 40.792,
+  "scenes": 5,
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "speech_rate": 0,
+  "max_volume_db": -3.6,
+  "mean_volume_db": -22.8,
+  "thinking_pauses": 1,
+  "sha256": "1326fb6efe6eeaea3ed7f88ca75e5195f41ee51399b9a5961d69df9fa39d885b",
+  "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
+  "frame_samples_decoded": true
+}

@@ -1,0 +1,68 @@
+{
+  "no": "11",
+  "kicker": "为什么实验室 · 五下",
+  "footer": "小学数学 · 看见原理",
+  "audience": "五下 · 原理短片",
+  "scenes": [
+    {
+      "id": "g5b_l11_s1_1",
+      "type": "principle_arithmetic",
+      "model": "fraction_add",
+      "stage": 1,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数加减",
+      "duration": 10.0,
+      "narration": "这两段要接起来。先看清，一份半米，另一份三分之一米，每份并不一样长。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5b_l11_s2_1",
+      "type": "principle_arithmetic",
+      "model": "fraction_add",
+      "stage": 2,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数加减",
+      "duration": 8.53,
+      "narration": "都换成六分之一米的小段：半米是三小段，三分之一米是两小段。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5b_l11_s3_1",
+      "type": "principle_arithmetic",
+      "model": "fraction_add",
+      "stage": 3,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数加减",
+      "duration": 6.76,
+      "narration": "三段加两段，共五个六分之一米，得到六分之五米。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5b_l11_s4_1",
+      "type": "principle_arithmetic",
+      "model": "fraction_add",
+      "stage": 4,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数加减",
+      "duration": 6.47,
+      "narration": "如果再分细，用十二分之一米量，答案会变长吗？",
+      "pause_after": 8
+    },
+    {
+      "id": "g5b_l11_s5_1",
+      "type": "principle_arithmetic",
+      "model": "fraction_add",
+      "stage": 5,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数加减",
+      "duration": 10.0,
+      "narration": "不会。六小段加四小段是十二分之十，和刚才一样长。通分换的是计数单位。",
+      "pause_after": 0.6
+    }
+  ]
+}

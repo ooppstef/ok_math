@@ -1,0 +1,34 @@
+{
+  "round": 3,
+  "scope": [
+    "prepare_narration.py",
+    "render_episode.py",
+    "batch_videos.py",
+    "audit_videos.py",
+    "build_html.js及现有播放器"
+  ],
+  "checks": {
+    "过度防御": "保留外部配音全文/音色和文件校验，未发现冗余",
+    "过度设计": "现有4个模型确有多实现；批处理调用现有CLI，无新框架",
+    "过度fallback": "系统临时配音与无声预览为明确独立模式；错误未被吞掉",
+    "理论复杂化": "只处理已复现的失败输出、字幕缺失和汇总覆盖，不增加假设分支",
+    "dead_code": "旧场景仍由历史JSON/注册入口引用，接口形参保留",
+    "复用": "字幕核验与渲染共用write_subtitles；配音复用nba_biz；路径复用batch.paths"
+  },
+  "verification": [
+    "复核最终差异、CLI→配音→分幕→渲染→字幕→网页调用契约",
+    "六项代码检查无新增问题；第一轮后本范围源码哈希未变，复用3项回归结果",
+    "全51课实际音轨、字幕、连续时间线、停顿PCM采样及314幕三相位抽帧通过",
+    "7课更新后，51课课程目录与制作目录的MP4及SRT/VTT/timeline一致"
+  ],
+  "new_findings": [],
+  "code_changes": false,
+  "source_hashes": {
+    "工具/render_episode.py": "a36eb139b79de40916398670a0d7d502fad5889cacba12e603402ce363adbab4",
+    "工具/audit_videos.py": "45e3b94ec02f701af875ab4c51c1e5033c62a0981f8c224b94653d5a1402455a",
+    "工具/batch_videos.py": "c093d0d79f99ef583754fb7d2fc256366cb223c696ab1008e40ca40e372a989b",
+    "工具/prepare_narration.py": "f4a3b1c41a8980e1e1b056ec9a5f92a3cb61510c0abc86179cc8a7d48bbc8616",
+    "工具/test_video_pipeline.py": "37a51c04756ed3d3a35fa95ba224fa138df6ad0122a53f0b551e90c249fc301b",
+    "工具/build_html.js": "9d69ebebf29bfc24811cba5ca844400d8c0de98f853e65611cf87f48d2e7e3b4"
+  }
+}

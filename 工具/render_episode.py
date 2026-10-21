@@ -12,6 +12,7 @@
 """
 
 import argparse
+import importlib
 import json
 import math
 import random
@@ -796,15 +797,30 @@ def s_regroup_add(im, d, t, sc, ctx):
 
 def draw_caption(d, text):
     """字幕单独合成；新场景在 605–664 留出字幕区。"""
+    for x, y, line in caption_layout(text):
+        d.text((x, y), line, font=F(26), fill=INK)
+
+
+@lru_cache(maxsize=512)
+def caption_layout(text):
+    d = ImageDraw.Draw(Image.new("RGB", (1, 1)))
     f = F(26)
     lines = wrap_text(d, text, f, W - 2 * M)
     if len(lines) > 2:
         raise ValueError("一幕字幕超过两行，请按完整语句拆幕")
-    for i, line in enumerate(lines):
-        d.text(((W - tlen(d, line, f)) / 2, 606 + i * 34), line, font=f, fill=INK)
+    return tuple(((W - tlen(d, line, f)) / 2, 606 + i * 34, line) for i, line in enumerate(lines))
+
+
+def s_principle(im, d, t, sc, ctx):
+    module = importlib.import_module("scenes." + sc["type"].removeprefix("principle_"))
+    module.render(im, d, t, sc, ctx, sys.modules[__name__])
 
 
 SCENES = {
+    "principle_arithmetic": s_principle,
+    "principle_geometry": s_principle,
+    "principle_relations": s_principle,
+    "principle_foundation": s_principle,
     "title": s_title,
     "bullets": s_bullets,
     "sticks": s_sticks,
@@ -915,6 +931,13 @@ def write_srt(scenes, durations, path: Path, timing=None):
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
+def write_subtitles(scenes, durations, path: Path, timing=None):
+    write_srt(scenes, durations, path.with_suffix(".srt"), timing)
+    subtitles = path.with_suffix(".srt").read_text(encoding="utf-8")
+    path.with_suffix(".vtt").write_text(
+        "WEBVTT\n\n" + re.sub(r"(\d{2}:\d{2}:\d{2}),(\d{3})", r"\1.\2", subtitles), encoding="utf-8")
+
+
 def prepare_external_audio(scenes, audio_dir, out_path, tmpdir, fps):
     """每幕匹配一段原速配音；拒绝把旧稿音频套在新画面上。"""
     manifest = json.loads((audio_dir / "manifest.json").read_text(encoding="utf-8"))
@@ -964,7 +987,7 @@ def main():
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     ctx = {"kicker": data.get("kicker", "为什么实验室"), "no": data.get("no", "01"),
-           "audience": data.get("audience", "给 3–4 年级"),
+           "audience": data.get("audience", "小学数学"),
            "footer": data.get("footer", "为什么实验室 · 底层原理课"), "total": 0}
     for sc in scenes:
         if sc["type"] not in SCENES:
@@ -974,6 +997,7 @@ def main():
         sc = scenes[args.preview]
         im, d = new_frame()
         ctx["total"] = ctx["scene_duration"] = sc.get("duration", 10)
+        ctx["speech_duration"] = max(0.1, ctx["scene_duration"] - sc.get("pause_after", 0.45))
         SCENES[sc["type"]](im, d, args.preview_frame, sc, ctx)
         if args.burn_captions:
             draw_caption(d, sc.get("narration", ""))
@@ -985,13 +1009,15 @@ def main():
 
     with tempfile.TemporaryDirectory(prefix=".render-", dir=out.parent) as tmp:
         tmpdir = Path(tmp)
+        rendered = tmpdir / out.name
         audio_path = tmpdir / "audio.wav"
         timing = None
         if args.silent:
             durations = [round(float(sc["duration"]) * args.fps) / args.fps for sc in scenes]
             if any(d <= 0 for d in durations):
                 ap.error("无声样片每幕 duration 必须大于 0")
-            timing = [{"offset": 0, "speech_duration": d} for d in durations]
+            timing = [{"offset": 0, "speech_duration": max(.1, dur - sc.get("pause_after", .45))}
+                      for sc, dur in zip(scenes, durations)]
         elif args.audio_dir:
             print("① 读取分幕配音 …", flush=True)
             durations, timing = prepare_external_audio(scenes, args.audio_dir, audio_path, tmpdir, args.fps)
@@ -1001,18 +1027,19 @@ def main():
         ctx["total"] = sum(durations)
         print(f"总时长 {ctx['total']:.2f}s，共 {len(scenes)} 幕", flush=True)
 
-        write_srt(scenes, durations, out.with_suffix(".srt"), timing)
-        subtitles = out.with_suffix(".srt").read_text(encoding="utf-8")
-        out.with_suffix(".vtt").write_text(
-            "WEBVTT\n\n" + re.sub(r"(\d{2}:\d{2}:\d{2}),(\d{3})", r"\1.\2", subtitles), encoding="utf-8")
+        write_subtitles(scenes, durations, rendered, timing)
         cursor, timeline = 0.0, []
         for i, (sc, duration) in enumerate(zip(scenes, durations)):
             timeline.append({"id": sc.get("id", f"scene_{i:02d}"), "start": round(cursor, 6),
-                             "duration": duration, "narration": sc.get("narration", "")})
+                             "duration": duration, "narration": sc.get("narration", ""),
+                             "speech_duration": timing[i]["speech_duration"] if timing else None,
+                             "pause_after": sc.get("pause_after", .45)})
             cursor += duration
-        out.with_suffix(".timeline.json").write_text(json.dumps({
+        rendered.with_suffix(".timeline.json").write_text(json.dumps({
             "script": str(Path(args.script).resolve()), "fps": args.fps,
             "audio": "silent" if args.silent else "files" if args.audio_dir else "system",
+            "audio_dir": str(args.audio_dir.resolve()) if args.audio_dir else None,
+            "voice_id": json.loads((args.audio_dir / "manifest.json").read_text())["voice_id"] if args.audio_dir else None,
             "burn_captions": args.burn_captions, "scenes": timeline,
         }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -1023,13 +1050,14 @@ def main():
             cmd += ["-i", str(audio_path)]
         cmd += ["-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p"]
         cmd += ["-an"] if args.silent else ["-c:a", "aac", "-b:a", "160k", "-shortest"]
-        cmd += ["-movflags", "+faststart", str(out)]
+        cmd += ["-movflags", "+faststart", str(rendered)]
         proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
         t_global, written = 0.0, 0
         try:
             for si, (sc, dur) in enumerate(zip(scenes, durations)):
                 fn = SCENES[sc["type"]]
                 ctx["scene_duration"] = dur
+                ctx["speech_duration"] = timing[si]["speech_duration"] if timing else max(0.1, dur - 0.55)
                 nframes = max(1, round(dur * args.fps))
                 for k in range(nframes):
                     t = k / args.fps
@@ -1047,6 +1075,10 @@ def main():
             proc.wait()
         if proc.returncode != 0:
             sys.exit("ffmpeg 失败")
+        # 整片成功后才替换交付文件，渲染异常时保留原成片及其字幕。
+        for suffix in (".srt", ".vtt", ".timeline.json"):
+            rendered.with_suffix(suffix).replace(out.with_suffix(suffix))
+        rendered.replace(out)
         print(f"③ 完成：{out}  ({written} 帧)")
 
 

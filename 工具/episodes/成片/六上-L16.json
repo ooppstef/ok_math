@@ -1,0 +1,68 @@
+{
+  "no": "16",
+  "kicker": "为什么实验室 · 六上",
+  "footer": "小学数学 · 看见原理",
+  "audience": "六上 · 原理短片",
+  "scenes": [
+    {
+      "id": "g6a_l16_s1_1",
+      "type": "principle_arithmetic",
+      "model": "successive",
+      "stage": 1,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "连续变化与还原",
+      "duration": 7.06,
+      "narration": "原来一百升，增加原来的百分之二十，就是加二十升。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l16_s2_1",
+      "type": "principle_arithmetic",
+      "model": "successive",
+      "stage": 2,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "连续变化与还原",
+      "duration": 9.41,
+      "narration": "现在有一百二十升。再倒出当时的百分之二十，这次的一份是二十四升。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l16_s3_1",
+      "type": "principle_arithmetic",
+      "model": "successive",
+      "stage": 3,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "连续变化与还原",
+      "duration": 10.59,
+      "narration": "加了二十，却倒出二十四，最后剩九十六。两次说的百分之二十，算的整体不同。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l16_s4_1",
+      "type": "principle_arithmetic",
+      "model": "successive",
+      "stage": 4,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "连续变化与还原",
+      "duration": 9.12,
+      "narration": "九十六是倒出前的百分之八十。要找回那时的全部，用乘法还是除法？",
+      "pause_after": 8
+    },
+    {
+      "id": "g6a_l16_s5_1",
+      "type": "principle_arithmetic",
+      "model": "successive",
+      "stage": 5,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "连续变化与还原",
+      "duration": 11.47,
+      "narration": "先除以零点八找回一百二十，再除以一点二找回一百。往回算，要还原每一步的整个量。",
+      "pause_after": 0.6
+    }
+  ]
+}

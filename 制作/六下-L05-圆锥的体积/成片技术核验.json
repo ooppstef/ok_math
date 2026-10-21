@@ -1,0 +1,14 @@
+{
+  "script": "工具/episodes/成片/六下-L05.json",
+  "video": "制作/六下-L05-圆锥的体积/成片/视频.mp4",
+  "duration": 63.333,
+  "scenes": 7,
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "speech_rate": 0,
+  "max_volume_db": -3.6,
+  "mean_volume_db": -23.3,
+  "thinking_pauses": 1,
+  "sha256": "5ded288f01a5b0718a683c964cc9b7b111fdfbe58ae0f104a41f9a7fbc60c896",
+  "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
+  "frame_samples_decoded": true
+}

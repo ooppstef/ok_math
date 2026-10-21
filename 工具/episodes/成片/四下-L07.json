@@ -1,0 +1,63 @@
+{
+  "no": "07",
+  "kicker": "为什么实验室 · 四下 · 内角和",
+  "footer": "看清变化，再说理由",
+  "scenes": [
+    {
+      "id": "01",
+      "type": "principle_geometry",
+      "model": "angles_sum",
+      "stage": "start",
+      "heading": "把三个角取下来",
+      "narration": "把三角形的三个角分别取下来。颜色跟着原来的角，不换位置关系。",
+      "equation": "保留每个角的开口大小",
+      "duration": 7.894736842105264,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "type": "principle_geometry",
+      "model": "angles_sum",
+      "stage": "move",
+      "heading": "只改变位置和方向",
+      "narration": "把三个顶点搬到一起。每个角只平移、旋转，开口大小不能变。",
+      "equation": "三个角，首尾相接",
+      "duration": 7.36842105263158,
+      "pause_after": 1
+    },
+    {
+      "id": "03",
+      "type": "principle_geometry",
+      "model": "angles_sum",
+      "stage": "done",
+      "heading": "合起来，是一个平角",
+      "narration": "三个角合成一个平角。这个拼角演示帮助理解内角和一百八十度，完整证明以后再学。",
+      "equation": "三角形内角和 = 180°",
+      "duration": 10.0,
+      "pause_after": 2
+    },
+    {
+      "id": "04",
+      "type": "principle_geometry",
+      "model": "angles_sum",
+      "stage": "question",
+      "heading": "两个角是 50°、60°，第三个呢？",
+      "narration": "一个角五十度，另一个六十度。第三个角是多少度？",
+      "equation": "三个角合计 180°",
+      "duration": 6.052631578947369,
+      "pause_after": 8
+    },
+    {
+      "id": "05",
+      "type": "principle_geometry",
+      "model": "angles_sum",
+      "stage": "answer",
+      "heading": "两个角是 50°、60°，第三个呢？",
+      "narration": "从一百八十度减去五十度，再减去六十度，还剩七十度。",
+      "equation": "180° - 50° - 60° = 70°",
+      "duration": 6.578947368421053,
+      "pause_after": 2
+    }
+  ],
+  "audience": "四下 · 原理短片"
+}

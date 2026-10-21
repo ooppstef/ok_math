@@ -1,0 +1,86 @@
+{
+  "no": "04",
+  "kicker": "为什么实验室 · 六下 · 圆柱的体积",
+  "footer": "看清变化，再说理由",
+  "scenes": [
+    {
+      "id": "01",
+      "type": "principle_geometry",
+      "model": "circle_cut",
+      "stage": "start",
+      "heading": "扇形连着整根柱，一起切开",
+      "narration": "把圆平均分成扇形，再沿着高切下去。每一块都连着同样高的部分。",
+      "equation": "每一块都是等高的扇形柱",
+      "duration": 7.894736842105264,
+      "pause_after": 1,
+      "volume": true,
+      "sectors": 16
+    },
+    {
+      "id": "02",
+      "type": "principle_geometry",
+      "model": "circle_cut",
+      "stage": "move",
+      "heading": "整块搬动，高不改变",
+      "narration": "把这些扇形柱交错排好。每块只转方向、换位置，没有拉伸，高也没有改变。",
+      "equation": "每块完整保留，合计体积不变",
+      "duration": 8.947368421052632,
+      "pause_after": 1,
+      "volume": true,
+      "sectors": 16
+    },
+    {
+      "id": "03",
+      "type": "principle_geometry",
+      "model": "circle_cut",
+      "stage": "done",
+      "heading": "弧面还在，只是接近长方体",
+      "narration": "拼好后仍有弯曲的小边。分得越细，就越接近长方体，不能把有限块说成已经完全一样。",
+      "equation": "底面长趋近 πr，宽趋近 r，高仍是 h",
+      "duration": 10.263157894736842,
+      "pause_after": 2,
+      "volume": true,
+      "sectors": 16
+    },
+    {
+      "id": "04",
+      "type": "principle_geometry",
+      "model": "circle_cut",
+      "stage": "done",
+      "heading": "底面积乘高，算整个空间",
+      "narration": "沿着越来越接近的过程，可以理解圆柱体积。底面积是圆周率乘半径平方，再乘高。",
+      "equation": "V = πr²h = 底面积 × 高",
+      "duration": 9.736842105263158,
+      "pause_after": 2,
+      "volume": true,
+      "sectors": 16
+    },
+    {
+      "id": "05",
+      "type": "principle_geometry",
+      "model": "cylinder_layer",
+      "stage": "question",
+      "heading": "底面积十二，高增加一，体积呢？",
+      "narration": "底面积十二平方厘米，只把高增加一厘米，多出的体积是多少？",
+      "equation": "多出一层：底面积 12 平方厘米，高 1 厘米",
+      "duration": 7.36842105263158,
+      "pause_after": 8,
+      "volume": true,
+      "sectors": 16
+    },
+    {
+      "id": "06",
+      "type": "principle_geometry",
+      "model": "cylinder_layer",
+      "stage": "grow",
+      "heading": "底面积十二，高增加一，体积呢？",
+      "narration": "多出一层底面积十二、高一厘米的圆柱。体积增加十二立方厘米。",
+      "equation": "增加的体积 = 12 × 1 = 12 立方厘米",
+      "duration": 7.631578947368421,
+      "pause_after": 2,
+      "volume": true,
+      "sectors": 16
+    }
+  ],
+  "audience": "六下 · 原理短片"
+}

@@ -1,0 +1,14 @@
+{
+  "script": "工具/episodes/成片/四下-L10.json",
+  "video": "制作/四下-L10-鸡兔同笼/成片/视频.mp4",
+  "duration": 39.583,
+  "scenes": 5,
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "speech_rate": 0,
+  "max_volume_db": -3.7,
+  "mean_volume_db": -23.4,
+  "thinking_pauses": 1,
+  "sha256": "fde4cb0432b9b3bd9ba13a7d44da306da92a6a1c4cab129224e544bbc22f4e55",
+  "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
+  "frame_samples_decoded": true
+}

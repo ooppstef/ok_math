@@ -32,6 +32,7 @@ def main():
     ap.add_argument("--out-dir", type=Path, required=True)
     ap.add_argument("--voice-id", help="用户指定的豆包 speaker/音色 ID")
     ap.add_argument("--generate", action="store_true", help="实际调用配音接口；不加此参数只导出旁白")
+    ap.add_argument("--resume", action="store_true", help="只在音色和全文均未改变时续做中断的配音")
     ap.add_argument("--nba-tts", type=Path, default=DEFAULT_TTS)
     args = ap.parse_args()
     data = json.loads(args.script.read_text(encoding="utf-8"))
@@ -43,13 +44,18 @@ def main():
         ap.error("每幕需要 1–500 字旁白")
     if args.generate and not args.voice_id:
         ap.error("生成配音必须提供 --voice-id，不会套用 nba_biz 的默认音色")
-    if args.generate and (any(args.out_dir.glob("*.mp3")) or (args.out_dir / "manifest.json").exists()):
-        ap.error("该目录已有配音。请为这次配音指定新的 --out-dir")
+    # 官方 2.0 音色与 nba_biz 的 S_ 复刻音色使用不同资源；不修改相邻项目。
+    resource_id = "seed-tts-2.0" if (args.voice_id or "").endswith("_uranus_bigtts") else "seed-icl-2.0"
+    plan = {"voice_id": args.voice_id, "model": "seed-tts-2.0-expressive", "speech_rate": 0,
+            "resource_id": resource_id, "instruction": TEACHING_INSTRUCTION, "scenes": scenes}
+    existing = any(args.out_dir.glob("*.mp3")) or (args.out_dir / "manifest.json").exists()
+    if existing:
+        previous = args.out_dir / "plan.json"
+        if not args.resume or not previous.exists() or json.loads(previous.read_text()) != plan:
+            ap.error("该目录已有不同配音；同稿续做请加 --resume，改稿或换声音请指定新目录")
     args.out_dir.mkdir(parents=True, exist_ok=True)
     for sc in scenes:
         (args.out_dir / f"{sc['id']}.txt").write_text(sc["text"] + "\n", encoding="utf-8")
-    plan = {"voice_id": args.voice_id, "model": "seed-tts-2.0-expressive", "speech_rate": 0,
-            "instruction": TEACHING_INSTRUCTION, "scenes": scenes}
     (args.out_dir / "plan.json").write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"已导出 {len(scenes)} 段旁白：{args.out_dir}")
     if not args.generate:
@@ -58,11 +64,17 @@ def main():
 
     # 每个新音色使用独立目录，避免中途失败后出现新旧音轨混用。
     tts = load_nba_tts(args.nba_tts)
+    tts.RESOURCE_ID = resource_id
     env = tts.load_env(args.nba_tts.resolve().parent.parent / ".env")
     key = env.get("voice_key", "").strip()
     if not key:
         ap.error("nba_biz 的 .env 缺少 voice_key")
     for sc in scenes:
+        target = args.out_dir / f"{sc['id']}.mp3"
+        if args.resume and target.exists():
+            tts.inspect_audio(target)
+            print(f"复用 {sc['id']}", flush=True)
+            continue
         print(f"生成 {sc['id']} …", flush=True)
         audio = tts.request_tts(key, args.voice_id, sc["text"], model=plan["model"],
                                 speech_rate=plan["speech_rate"], instruction=TEACHING_INSTRUCTION)

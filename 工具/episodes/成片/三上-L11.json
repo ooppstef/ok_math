@@ -1,0 +1,68 @@
+{
+  "no": "11",
+  "kicker": "为什么实验室 · 三上",
+  "footer": "小学数学 · 看见原理",
+  "audience": "三上 · 原理短片",
+  "scenes": [
+    {
+      "id": "g3a_l11_s1_1",
+      "type": "principle_arithmetic",
+      "model": "sets",
+      "stage": 1,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "集合圈",
+      "duration": 9.41,
+      "narration": "全班三十人。十八人喜欢苹果，十五人喜欢香蕉，两种都喜欢的有七人。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l11_s2_1",
+      "type": "principle_arithmetic",
+      "model": "sets",
+      "stage": 2,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "集合圈",
+      "duration": 8.24,
+      "narration": "把两个圈分别数一遍，中间这七个人，每人领到了两张计数票。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l11_s3_1",
+      "type": "principle_arithmetic",
+      "model": "sets",
+      "stage": 3,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "集合圈",
+      "duration": 8.82,
+      "narration": "每人只算一次，所以拿走多记的七次。至少喜欢一种的有二十六人。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l11_s4_1",
+      "type": "principle_arithmetic",
+      "model": "sets",
+      "stage": 4,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "集合圈",
+      "duration": 7.94,
+      "narration": "两种都不喜欢的有几人？中间的七个人还算在二十六人里吗？",
+      "pause_after": 8
+    },
+    {
+      "id": "g3a_l11_s5_1",
+      "type": "principle_arithmetic",
+      "model": "sets",
+      "stage": 5,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "集合圈",
+      "duration": 8.53,
+      "narration": "圈外四人。中间七人还在，只是各少记了一次，没有把他们漏掉。",
+      "pause_after": 0.6
+    }
+  ]
+}

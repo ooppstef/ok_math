@@ -1,0 +1,58 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/四下-L11.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/四下-L11-行程/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "g4b_l11_s1",
+      "start": 0.0,
+      "duration": 7.083333333333333,
+      "narration": "两人相距三百米。甲每分钟走六十米，乙每分钟走四十米，同时朝对方走。",
+      "speech_duration": 6.456009070294785,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l11_s2",
+      "start": 7.083333,
+      "duration": 7.708333333333333,
+      "narration": "一分钟，甲走六十米，乙走四十米。中间的距离一共缩短一百米，还剩二百米。",
+      "speech_duration": 7.08,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l11_s3",
+      "start": 14.791667,
+      "duration": 7.041666666666667,
+      "narration": "每分钟靠近一百米。三百米除以一百米每分钟，三分钟正好相遇。",
+      "speech_duration": 6.4320181405895696,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l11_s4",
+      "start": 21.833333,
+      "duration": 8.083333333333334,
+      "narration": "现在初始间距一百米。后面每分钟走一百米，前面走八十米。一分钟只缩短二十米。",
+      "speech_duration": 7.464013605442177,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l11_s5",
+      "start": 29.916667,
+      "duration": 14.875,
+      "narration": "从开始追赶算起，一百米的间距，每分钟少二十米。要几分钟追上？",
+      "speech_duration": 6.864013605442177,
+      "pause_after": 8
+    },
+    {
+      "id": "g4b_l11_s6",
+      "start": 44.791667,
+      "duration": 8.083333333333334,
+      "narration": "五分钟。后面走五百米，前面从一百米处再走四百米，正好到同一点。",
+      "speech_duration": 7.464013605442177,
+      "pause_after": 0.6
+    }
+  ]
+}

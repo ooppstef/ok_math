@@ -1,0 +1,30 @@
+{
+  "round": 1,
+  "findings": [
+    "渲染异常覆盖旧成片和字幕",
+    "核验未读取实际字幕文件",
+    "无抽帧时报告仍声称画面解码",
+    "局部核验覆盖全量汇总"
+  ],
+  "fixes": [
+    "复用现有临时目录，整片成功后替换文件",
+    "复用字幕生成函数比对SRT/VTT及连续时间线",
+    "实际停顿采样并单独记录是否抽帧",
+    "按script合并全量汇总"
+  ],
+  "validation": [
+    "故障/成功短渲染及字幕缺失、过期共3个回归通过",
+    "51课字幕提取前后逐字节一致",
+    "单课重验后汇总仍51课",
+    "字幕及正文边界全51课采样无溢出"
+  ],
+  "zero_findings": false,
+  "source_hashes": {
+    "工具/render_episode.py": "a36eb139b79de40916398670a0d7d502fad5889cacba12e603402ce363adbab4",
+    "工具/audit_videos.py": "45e3b94ec02f701af875ab4c51c1e5033c62a0981f8c224b94653d5a1402455a",
+    "工具/batch_videos.py": "c093d0d79f99ef583754fb7d2fc256366cb223c696ab1008e40ca40e372a989b",
+    "工具/prepare_narration.py": "f4a3b1c41a8980e1e1b056ec9a5f92a3cb61510c0abc86179cc8a7d48bbc8616",
+    "工具/test_video_pipeline.py": "37a51c04756ed3d3a35fa95ba224fa138df6ad0122a53f0b551e90c249fc301b",
+    "工具/build_html.js": "9d69ebebf29bfc24811cba5ca844400d8c0de98f853e65611cf87f48d2e7e3b4"
+  }
+}

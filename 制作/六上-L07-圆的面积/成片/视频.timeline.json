@@ -1,0 +1,66 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/六上-L07.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/六上-L07-圆的面积/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "01",
+      "start": 0.0,
+      "duration": 6.083333333333333,
+      "narration": "把这个圆平均分成十二个扇形。每一块都有弯弯的圆弧。",
+      "speech_duration": 5.0640136054421765,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "start": 6.083333,
+      "duration": 7.458333333333333,
+      "narration": "把这些扇形交错排好。每块只转方向、换位置，没有拉伸。",
+      "speech_duration": 5.448004535147392,
+      "pause_after": 2
+    },
+    {
+      "id": "03",
+      "start": 13.541667,
+      "duration": 9.083333333333334,
+      "narration": "看，上下仍然有小弧线。有限块拼出的图形，还不是精确的长方形。",
+      "speech_duration": 7.056009070294785,
+      "pause_after": 2
+    },
+    {
+      "id": "04",
+      "start": 22.625,
+      "duration": 10.041666666666666,
+      "narration": "分得越来越细，长接近半个圆周，也就是圆周率乘半径。宽接近半径。",
+      "speech_duration": 8.04,
+      "pause_after": 2
+    },
+    {
+      "id": "05",
+      "start": 32.666667,
+      "duration": 9.25,
+      "narration": "沿着这个越来越接近的过程，可以理解圆的面积，等于圆周率乘半径的平方。",
+      "speech_duration": 7.248004535147392,
+      "pause_after": 2
+    },
+    {
+      "id": "06",
+      "start": 41.916667,
+      "duration": 12.458333333333334,
+      "narration": "半径变为原来的两倍，圆的面积也只变两倍吗？",
+      "speech_duration": 4.44,
+      "pause_after": 8
+    },
+    {
+      "id": "07",
+      "start": 54.375,
+      "duration": 8.291666666666666,
+      "narration": "不是两倍，是四倍。公式里两个半径都变成两倍，要乘两次。",
+      "speech_duration": 6.288004535147392,
+      "pause_after": 2
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "no": "09",
+  "kicker": "为什么实验室 · 三上 · 周长的边界",
+  "footer": "看清变化，再说理由",
+  "scenes": [
+    {
+      "id": "01",
+      "type": "principle_geometry",
+      "model": "perimeter",
+      "stage": "start",
+      "heading": "每块都沿外边走一圈",
+      "narration": "两个正方形的边长都是三厘米。每个周长十二厘米，分开放，周长合计二十四厘米。",
+      "equation": "3 × 4 × 2 = 24 厘米",
+      "duration": 9.736842105263158,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "type": "principle_geometry",
+      "model": "perimeter",
+      "stage": "join",
+      "heading": "贴起来后，哪些边藏住了？",
+      "narration": "让两块贴紧。原来每块各有一条边，现在都藏到里面了。",
+      "equation": "接缝两侧，原来各有一条边",
+      "duration": 6.578947368421053,
+      "pause_after": 1
+    },
+    {
+      "id": "03",
+      "type": "principle_geometry",
+      "model": "perimeter",
+      "stage": "trace",
+      "heading": "沿新的外边界走一圈",
+      "narration": "沿外面走一圈，不经过接缝。长六、宽三，周长是十八厘米。",
+      "equation": "24 - 3 - 3 = 18 厘米",
+      "duration": 7.105263157894737,
+      "pause_after": 2
+    },
+    {
+      "id": "04",
+      "type": "principle_geometry",
+      "model": "perimeter",
+      "stage": "corner",
+      "heading": "剪掉一个角，周长变少了吗？",
+      "narration": "换成一个长六、宽四的长方形。从角上剪掉边长二的小正方形，周长会比二十厘米少吗？",
+      "equation": "原周长 20 厘米；剪掉一个 2 × 2 的角",
+      "duration": 10.263157894736842,
+      "pause_after": 8
+    },
+    {
+      "id": "05",
+      "type": "principle_geometry",
+      "model": "perimeter",
+      "stage": "corner_answer",
+      "heading": "剪掉一个角，周长变少了吗？",
+      "narration": "没有变，仍是二十厘米。去掉两段二厘米，又添回同样长的两段。",
+      "equation": "20 - 2 - 2 + 2 + 2 = 20 厘米",
+      "duration": 7.631578947368421,
+      "pause_after": 2
+    }
+  ],
+  "audience": "三上 · 原理短片"
+}

@@ -1,0 +1,50 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/五上-L07.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/五上-L07-等式与方程/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "g5a_l07_s1",
+      "start": 0.0,
+      "duration": 8.875,
+      "narration": "相同的小袋同样重，用一个未知数表示。左边两袋加三个砝码，右边一袋加七个砝码。",
+      "speech_duration": 8.256009070294784,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5a_l07_s2",
+      "start": 8.875,
+      "duration": 7.291666666666667,
+      "narration": "两边各拿走一个一样重的小袋，剩下的仍然一样重。左边剩一袋和三个砝码。",
+      "speech_duration": 6.672018140589569,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5a_l07_s3",
+      "start": 16.166667,
+      "duration": 5.666666666666667,
+      "narration": "再从两边同时拿走三个砝码。一袋正好和四个砝码一样重。",
+      "speech_duration": 5.0640136054421765,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5a_l07_s4",
+      "start": 21.833333,
+      "duration": 13.25,
+      "narration": "把一袋当作四个砝码，原来的两边还一样重吗？先想一想。",
+      "speech_duration": 5.232018140589569,
+      "pause_after": 8
+    },
+    {
+      "id": "g5a_l07_s5",
+      "start": 35.083333,
+      "duration": 9.708333333333334,
+      "narration": "左边两个四加三，等于十一。右边四加七，也等于十一。两边做相同的操作，最后还要检查。",
+      "speech_duration": 9.072018140589568,
+      "pause_after": 0.6
+    }
+  ]
+}

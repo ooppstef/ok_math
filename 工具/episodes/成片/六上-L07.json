@@ -1,0 +1,87 @@
+{
+  "no": "07",
+  "kicker": "为什么实验室 · 六上 · 圆的面积",
+  "footer": "看清变化，再说理由",
+  "scenes": [
+    {
+      "id": "01",
+      "type": "principle_geometry",
+      "model": "circle_cut",
+      "stage": "start",
+      "heading": "把同一个圆，平均分成十二份",
+      "narration": "把这个圆平均分成十二个扇形。每一块都有弯弯的圆弧。",
+      "equation": "12 个全等扇形",
+      "duration": 6.578947368421053,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "type": "principle_geometry",
+      "model": "circle_cut",
+      "stage": "move",
+      "heading": "每块只旋转、平移",
+      "narration": "把这些扇形交错排好。每块只转方向、换位置，没有拉伸。",
+      "equation": "块数不变，总面积不变",
+      "duration": 6.842105263157895,
+      "pause_after": 2
+    },
+    {
+      "id": "03",
+      "type": "principle_geometry",
+      "model": "circle_cut",
+      "stage": "done",
+      "heading": "弧边还在，不是精确的长方形",
+      "narration": "看，上下仍然有小弧线。有限块拼出的图形，还不是精确的长方形。",
+      "equation": "越来越接近长方形",
+      "duration": 7.894736842105264,
+      "pause_after": 2
+    },
+    {
+      "id": "04",
+      "type": "principle_geometry",
+      "model": "circle_cut",
+      "stage": "move",
+      "heading": "长和宽，各接近什么？",
+      "narration": "分得越来越细，长接近半个圆周，也就是圆周率乘半径。宽接近半径。",
+      "equation": "长趋近 πr，宽趋近 r",
+      "duration": 8.157894736842106,
+      "pause_after": 2,
+      "sectors": 24
+    },
+    {
+      "id": "05",
+      "type": "principle_geometry",
+      "model": "circle_cut",
+      "stage": "done",
+      "heading": "由越来越接近，理解面积公式",
+      "narration": "沿着这个越来越接近的过程，可以理解圆的面积，等于圆周率乘半径的平方。",
+      "equation": "S = πr × r = πr²",
+      "duration": 8.947368421052632,
+      "pause_after": 2,
+      "sectors": 24
+    },
+    {
+      "id": "06",
+      "type": "principle_geometry",
+      "model": "circle_area_scale",
+      "stage": "question",
+      "heading": "半径变为两倍，面积呢？",
+      "narration": "半径变为原来的两倍，圆的面积也只变两倍吗？",
+      "equation": "先想一想：半径同时影响哪两个因数？",
+      "duration": 5.526315789473684,
+      "pause_after": 8
+    },
+    {
+      "id": "07",
+      "type": "principle_geometry",
+      "model": "circle_area_scale",
+      "stage": "answer",
+      "heading": "半径变为两倍，面积呢？",
+      "narration": "不是两倍，是四倍。公式里两个半径都变成两倍，要乘两次。",
+      "equation": "π × (2r)² = 4πr²",
+      "duration": 7.105263157894737,
+      "pause_after": 2
+    }
+  ],
+  "audience": "六上 · 原理短片"
+}

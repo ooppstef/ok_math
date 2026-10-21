@@ -1,0 +1,88 @@
+{
+  "no": "05",
+  "kicker": "为什么实验室 · 六下 · 圆锥的体积",
+  "footer": "看清变化，再说理由",
+  "scenes": [
+    {
+      "id": "01",
+      "type": "principle_geometry",
+      "model": "cone",
+      "stage": "start",
+      "heading": "先检查内部的底面和高",
+      "narration": "先检查：圆锥和圆柱内部的底面一样大，高也一样。这是比较时的条件。",
+      "equation": "内部等底、等高",
+      "duration": 8.421052631578947,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "type": "principle_geometry",
+      "model": "cone",
+      "stage": "pour",
+      "heading": "第一满锥，对应第一份",
+      "narration": "先在圆锥里装满水，把这一锥水倒进圆柱。看，圆柱里有了一份水。",
+      "equation": "动画示意：第一份",
+      "duration": 7.894736842105264,
+      "pause_after": 1,
+      "pour": 0
+    },
+    {
+      "id": "03",
+      "type": "principle_geometry",
+      "model": "cone",
+      "stage": "pour",
+      "heading": "第二满锥，再添一份",
+      "narration": "再装满一锥水，倒进去。圆柱里的水变成了两份。",
+      "equation": "动画示意：第二份",
+      "duration": 5.7894736842105265,
+      "pause_after": 1,
+      "pour": 1
+    },
+    {
+      "id": "04",
+      "type": "principle_geometry",
+      "model": "cone",
+      "stage": "pour",
+      "heading": "第三满锥，圆柱装满",
+      "narration": "第三次装满，再倒进去。这回正好装满了等底等高的圆柱。",
+      "equation": "动画示意：三份圆锥装一份圆柱",
+      "duration": 6.842105263157895,
+      "pause_after": 1,
+      "pour": 2
+    },
+    {
+      "id": "05",
+      "type": "principle_geometry",
+      "model": "cone",
+      "stage": "done",
+      "heading": "三分之一，要带着条件用",
+      "narration": "圆锥体积，是等底等高圆柱的三分之一。动画画出了关系，不能把画好的水位当成普遍证明。",
+      "equation": "V圆锥 = 底面积 × 高 ÷ 3",
+      "duration": 10.789473684210527,
+      "pause_after": 2
+    },
+    {
+      "id": "06",
+      "type": "principle_geometry",
+      "model": "cone",
+      "stage": "same_height_question",
+      "heading": "只有高相同，就能套三分之一吗？",
+      "narration": "如果只知道高相同，不知道底面是否一样，还能直接说体积是三分之一吗？",
+      "equation": "保留问题：仅同高，条件够吗？",
+      "duration": 8.68421052631579,
+      "pause_after": 8
+    },
+    {
+      "id": "07",
+      "type": "principle_geometry",
+      "model": "cone",
+      "stage": "same_height_answer",
+      "heading": "只有高相同，就能套三分之一吗？",
+      "narration": "不能直接套。必须检查底面和高，或者分别计算体积，再作比较。",
+      "equation": "只知道同高，不能直接套用体积比 1 : 3",
+      "duration": 7.631578947368421,
+      "pause_after": 2
+    }
+  ],
+  "audience": "六下 · 原理短片"
+}

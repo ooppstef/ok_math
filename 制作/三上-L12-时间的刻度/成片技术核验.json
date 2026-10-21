@@ -1,0 +1,14 @@
+{
+  "script": "工具/episodes/成片/三上-L12.json",
+  "video": "制作/三上-L12-时间的刻度/成片/视频.mp4",
+  "duration": 40.125,
+  "scenes": 5,
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "speech_rate": 0,
+  "max_volume_db": -4.1,
+  "mean_volume_db": -24.0,
+  "thinking_pauses": 1,
+  "sha256": "0ebb2b9c99c6f72acf3daea3d0ac2373beb4a7b863facf7ccbd9fc04e441755d",
+  "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
+  "frame_samples_decoded": true
+}

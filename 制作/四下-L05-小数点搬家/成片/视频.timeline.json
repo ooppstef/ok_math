@@ -1,0 +1,50 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/四下-L05.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/四下-L05-小数点搬家/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "g4b_l05_s1_1",
+      "start": 0.0,
+      "duration": 7.291666666666667,
+      "narration": "这个三表示三个一，二表示两个十分之一，五表示五个百分之一。",
+      "speech_duration": 6.672018140589569,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l05_s2_1",
+      "start": 7.291667,
+      "duration": 6.625,
+      "narration": "整个数乘十，每个部分都变成十倍。数字要换到原来十倍大的单位上。",
+      "speech_duration": 6.0240136054421765,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l05_s3_1",
+      "start": 13.916667,
+      "duration": 8.083333333333334,
+      "narration": "结果三十二点五。只在末尾添零写成三点二五零，数值没有改变。",
+      "speech_duration": 7.464013605442177,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l05_s4_1",
+      "start": 22.0,
+      "duration": 12.041666666666666,
+      "narration": "一米二写成十二分米，尺子也变长十倍了吗？",
+      "speech_duration": 4.032018140589569,
+      "pause_after": 8
+    },
+    {
+      "id": "g4b_l05_s5_1",
+      "start": 34.041667,
+      "duration": 9.458333333333334,
+      "narration": "尺子没变长。单位变小了，所以要用更多个单位来数。这与把数本身乘十要分清。",
+      "speech_duration": 8.83201814058957,
+      "pause_after": 0.6
+    }
+  ]
+}

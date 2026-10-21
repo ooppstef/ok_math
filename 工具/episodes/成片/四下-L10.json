@@ -1,0 +1,57 @@
+{
+  "no": "10",
+  "kicker": "为什么实验室 · 四下",
+  "footer": "鸡兔同笼",
+  "scenes": [
+    {
+      "id": "g4b_l10_s1",
+      "type": "principle_relations",
+      "model": "animals",
+      "stage": "start",
+      "heading": "八只动物，实际有二十二只脚",
+      "narration": "先把八只全看成鸡，只有十六只脚，比题目少六只。",
+      "duration": 7.2,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l10_s2",
+      "type": "principle_relations",
+      "model": "animals",
+      "stage": "one",
+      "heading": "一个位置，从鸡换成兔",
+      "narration": "换一只兔，头数不变，脚多两只。",
+      "duration": 5.6,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l10_s3",
+      "type": "principle_relations",
+      "model": "animals",
+      "stage": "three",
+      "heading": "再换两次，脚数到二十二",
+      "narration": "再换两次，脚数就到二十二。一共换进三只兔，还剩五只鸡。",
+      "duration": 8.3,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l10_s4",
+      "type": "principle_relations",
+      "model": "animals",
+      "stage": "question",
+      "heading": "如果题目改成二十三只脚呢？",
+      "narration": "如果题目说有二十三只脚，还能这样凑出来吗？",
+      "duration": 14.0,
+      "pause_after": 8
+    },
+    {
+      "id": "g4b_l10_s5",
+      "type": "principle_relations",
+      "model": "animals",
+      "stage": "answer",
+      "heading": "每次加二，得不到二十三",
+      "narration": "凑不出来。每次都加两只脚，得不到二十三。条件有问题，不能答三点五只兔。",
+      "duration": 10.6,
+      "pause_after": 0.6
+    }
+  ]
+}

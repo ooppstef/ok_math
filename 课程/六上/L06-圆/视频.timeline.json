@@ -1,0 +1,58 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/六上-L06.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/六上-L06-圆/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "01",
+      "start": 0.0,
+      "duration": 8.25,
+      "narration": "针尖不动，张开的距离不变。笔尖转一圈，每一点到圆心都一样远。",
+      "speech_duration": 7.224013605442177,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "start": 8.25,
+      "duration": 8.5,
+      "narration": "圆心决定位置，半径决定大小。直径经过圆心，长是半径的两倍。",
+      "speech_duration": 7.464013605442177,
+      "pause_after": 1
+    },
+    {
+      "id": "03",
+      "start": 16.75,
+      "duration": 9.291666666666666,
+      "narration": "想象沿圆周放一条不伸长的细线，剪开、慢慢展开。它的长度就是圆周长。",
+      "speech_duration": 8.28,
+      "pause_after": 1
+    },
+    {
+      "id": "04",
+      "start": 26.041667,
+      "duration": 9.5,
+      "narration": "用直径来比，周长略多于三个直径。它们的比叫圆周率，三点一四只是近似值。",
+      "speech_duration": 7.464013605442177,
+      "pause_after": 2
+    },
+    {
+      "id": "05",
+      "start": 35.541667,
+      "duration": 12.666666666666666,
+      "narration": "把圆的直径变成原来的两倍，圆周长会变成几倍？",
+      "speech_duration": 4.656009070294784,
+      "pause_after": 8
+    },
+    {
+      "id": "06",
+      "start": 48.208333,
+      "duration": 8.458333333333334,
+      "narration": "周长也变成两倍。圆周率不变，直径乘二，周长也乘二。",
+      "speech_duration": 6.4320181405895696,
+      "pause_after": 2
+    }
+  ]
+}

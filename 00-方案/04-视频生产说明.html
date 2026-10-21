@@ -34,7 +34,7 @@
   <article class="article">
 
 <p>视频由 <code>工具/render_episode.py</code> 生成。旁白、分幕音轨和画面分别保存；更换配音后，按新音轨长度重新渲染画面和字幕。</p>
-<p>《竖式的秘密》的进位演示已制作成 <a href="../制作/三上-L02-竖式的秘密/样片/进位演示-无声.mp4">60 秒无声样片</a>。本版用于检查教学动画，正式配音等待用户提供音色 ID；不会作为课程成片出现在首页。</p>
+<p>本轮使用 <code>zh_male_kailangxuezhang_uranus_bigtts</code>（开朗学长 2.0）。用户已试听并确认保持当前语速，<code>speech_rate=0</code>，不对声音加速或拉伸。51 课的逐课输出与核验结果见<a href="28-原理视频制作与验收.html">28 号制作记录</a>。早期无声样片保留在制作目录。</p>
 <h2 id="sec-1">环境</h2>
 <ul>
 <li>macOS</li>
@@ -49,15 +49,16 @@ ffmpeg -version | head -1
 say -v &#39;?&#39; | grep Tingting
 </code></pre>
 <h2 id="sec-2">生成</h2>
-<pre><code class="language-bash">python3 工具/render_episode.py 工具/episodes/L01.json \
-  --out 课程/三上/L01-满十进一/视频.mp4
+<pre><code class="language-bash">python3 工具/render_episode.py 工具/episodes/成片/三上-L01.json \
+  --audio-dir 制作/三上-L01-满十进一/配音-开朗学长-v1 --burn-captions \
+  --out 制作/三上-L01-满十进一/成片/视频.mp4
 </code></pre>
 <p>输出：</p>
 <ul>
 <li><code>视频.mp4</code>：1280×720，24fps，H.264 + AAC</li>
 <li><code>视频.srt</code>：按场景切分的字幕</li>
 <li><code>视频.vtt</code>：网页字幕</li>
-<li><code>视频.timeline.json</code>：实际分幕起止、旁白及配音来源类型</li>
+<li><code>视频.timeline.json</code>：实际分幕起止、语音时长、停顿、旁白、音色与分幕音轨目录</li>
 </ul>
 <p>只预览某一幕：</p>
 <pre><code class="language-bash">python3 工具/render_episode.py 工具/episodes/L01.json \
@@ -142,6 +143,26 @@ say -v &#39;?&#39; | grep Tingting
 <td>三上 02 的 38＋47 进位演示</td>
 <td><code>stage</code>, <code>duration</code>, <code>equation</code>；此场景固定演示 38＋47</td>
 </tr>
+<tr>
+<td><code>principle_foundation</code></td>
+<td>十进位、借位、点阵刚性旋转</td>
+<td>见 <code>scenes/foundation.py</code> 和成片 JSON</td>
+</tr>
+<tr>
+<td><code>principle_arithmetic</code></td>
+<td>分组、分数单位、运算结构</td>
+<td>见 <code>scenes/arithmetic.py</code> 和成片 JSON</td>
+</tr>
+<tr>
+<td><code>principle_geometry</code></td>
+<td>切拼、折叠、面积体积</td>
+<td>见 <code>scenes/geometry.py</code> 和成片 JSON</td>
+</tr>
+<tr>
+<td><code>principle_relations</code></td>
+<td>等式、行程、投影、数据</td>
+<td>见 <code>scenes/relations.py</code> 和成片 JSON</td>
+</tr>
 </tbody></table></div>
 <h2 id="sec-5">时间参数</h2>
 <p>用来对齐旁白，不填就用默认值。</p>
@@ -171,16 +192,18 @@ say -v &#39;?&#39; | grep Tingting
   --out-dir 制作/三上-L02-竖式的秘密/样片/旁白
 </code></pre>
 <p>用户提供的 ID 应是豆包的 <code>speaker</code> / 音色 ID。如果提供的是已生成音频的资源 ID，需要先取得对应音频，再处理对齐，不能直接当作音色 ID。</p>
-<p>确认音色 ID 后，把下方占位文字替换为实际值，才执行实际配音：</p>
+<p>本轮实际音色的生成命令：</p>
 <pre><code class="language-bash">python3 工具/prepare_narration.py 工具/episodes/三上-L02-进位样片.json \
   --out-dir 制作/三上-L02-竖式的秘密/样片/配音-v1 \
-  --voice-id &#39;实际音色ID&#39; --generate
+  --voice-id &#39;zh_male_kailangxuezhang_uranus_bigtts&#39; --generate
 
 python3 工具/render_episode.py 工具/episodes/三上-L02-进位样片.json \
   --audio-dir 制作/三上-L02-竖式的秘密/样片/配音-v1 --burn-captions \
   --out 制作/三上-L02-竖式的秘密/样片/进位演示-配音版.mp4
 </code></pre>
 <p>每次换音色使用新的配音目录。全部片段成功后才写 <code>manifest.json</code>，渲染前校对分镜 ID 和旁白全文，防止旧稿音频混入。音轨保持原速，画面跟随音轨时长，句末另留短暂停顿。当前按完整短句分幕，字幕覆盖这段真实音频，不按字数猜时间。最终仍需试听自然度、数学读音和相邻段音色是否一致，并检查动画动作与具体词句的对应。</p>
+<p>官方 <code>*_uranus_bigtts</code> 音色使用 <code>seed-tts-2.0</code> 资源；复刻音色仍由 nba_biz 原有资源处理。凭证只从相邻项目读取，不写入本项目。相同音色、相同全文可加 <code>--resume</code> 续做；改稿或换声音必须另建目录。</p>
+<p><code>工具/batch_videos.py audio/render &lt;若干成片JSON&gt; --jobs 2</code> 支持并行任务。只对已冻结的旁白发起配音，动画模块冻结后才开始渲染。<code>工具/audit_videos.py &lt;若干成片JSON&gt; --contact-sheet</code> 核验实际文件并提取按真实语长定位的关键帧。成片先落在制作目录；复核后再复制进课程目录，首页按实际 MP4 标识视频。</p>
 <h3 id="sec-8">系统临时配音</h3>
 <p>旧命令未指定 <code>--silent</code> 或 <code>--audio-dir</code> 时仍用 Tingting，语速 165。换音色：</p>
 <pre><code class="language-bash">--voice &quot;Eddy (中文（中国大陆）)&quot;
@@ -202,7 +225,7 @@ python3 工具/render_episode.py 工具/episodes/三上-L02-进位样片.json \
 <h2 id="sec-10">边界</h2>
 <ul>
 <li>只能做纸面动画，不能拍真人。</li>
-<li>自然声音需要实际试听；本次只完成无声样片和 nba_biz 配音接入，未生成或验收正式声音。</li>
+<li>自然度以实际试听为准。用户确认过本轮样片语速；技术检查、自动转写和关键帧审查不能冒充全部音轨的人工逐句试听。</li>
 <li>适合讲清一个原理，不适合替代整节课。</li>
 <li>需要更活泼，可以在 MP4 上二次剪辑，加片头、音效或真人出镜。</li>
 </ul>

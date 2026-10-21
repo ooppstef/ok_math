@@ -1,0 +1,50 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/四下-L07.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/四下-L07-内角和/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "01",
+      "start": 0.0,
+      "duration": 7.458333333333333,
+      "narration": "把三角形的三个角分别取下来。颜色跟着原来的角，不换位置关系。",
+      "speech_duration": 6.4320181405895696,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "start": 7.458333,
+      "duration": 7.875,
+      "narration": "把三个顶点搬到一起。每个角只平移、旋转，开口大小不能变。",
+      "speech_duration": 6.84,
+      "pause_after": 1
+    },
+    {
+      "id": "03",
+      "start": 15.333333,
+      "duration": 10.291666666666666,
+      "narration": "三个角合成一个平角。这个拼角演示帮助理解内角和一百八十度，完整证明以后再学。",
+      "speech_duration": 8.256009070294784,
+      "pause_after": 2
+    },
+    {
+      "id": "04",
+      "start": 25.625,
+      "duration": 13.875,
+      "narration": "一个角五十度，另一个六十度。第三个角是多少度？",
+      "speech_duration": 5.8560090702947845,
+      "pause_after": 8
+    },
+    {
+      "id": "05",
+      "start": 39.5,
+      "duration": 7.25,
+      "narration": "从一百八十度减去五十度，再减去六十度，还剩七十度。",
+      "speech_duration": 5.232018140589569,
+      "pause_after": 2
+    }
+  ]
+}

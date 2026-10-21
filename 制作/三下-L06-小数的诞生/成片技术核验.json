@@ -1,0 +1,14 @@
+{
+  "script": "工具/episodes/成片/三下-L06.json",
+  "video": "制作/三下-L06-小数的诞生/成片/视频.mp4",
+  "duration": 41.875,
+  "scenes": 5,
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "speech_rate": 0,
+  "max_volume_db": -4.0,
+  "mean_volume_db": -23.4,
+  "thinking_pauses": 1,
+  "sha256": "73eb348d8d9cf2d36f80c78edd6dec278d576b2d63acf89d07691ccf392fa87c",
+  "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
+  "frame_samples_decoded": true
+}

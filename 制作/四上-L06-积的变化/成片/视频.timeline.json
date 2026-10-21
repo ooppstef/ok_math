@@ -1,0 +1,50 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/四上-L06.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/四上-L06-积的变化/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "g4a_l06_s1_1",
+      "start": 0.0,
+      "duration": 8.083333333333334,
+      "narration": "三列两行，一共六个点。长和宽都变成两倍，会变成几个这样的点阵？",
+      "speech_duration": 7.464013605442177,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4a_l06_s2_1",
+      "start": 8.083333,
+      "duration": 4.5,
+      "narration": "先横着加一份，总数变成十二。",
+      "speech_duration": 3.8640136054421768,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4a_l06_s3_1",
+      "start": 12.583333,
+      "duration": 5.875,
+      "narration": "再竖着加一份，现在一共四块原来的点阵，二十四个点。",
+      "speech_duration": 5.256009070294785,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4a_l06_s4_1",
+      "start": 18.458333,
+      "duration": 13.666666666666666,
+      "narration": "如果长两倍、宽三倍，要摆几排、每排几块原图？",
+      "speech_duration": 5.64,
+      "pause_after": 8
+    },
+    {
+      "id": "g4a_l06_s5_1",
+      "start": 32.125,
+      "duration": 6.875,
+      "narration": "三排，每排两块，共六块。两个方向的倍数要相乘。",
+      "speech_duration": 6.24,
+      "pause_after": 0.6
+    }
+  ]
+}

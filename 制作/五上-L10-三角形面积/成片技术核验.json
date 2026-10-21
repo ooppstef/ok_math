@@ -1,0 +1,14 @@
+{
+  "script": "工具/episodes/成片/五上-L10.json",
+  "video": "制作/五上-L10-三角形面积/成片/视频.mp4",
+  "duration": 64.042,
+  "scenes": 7,
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "speech_rate": 0,
+  "max_volume_db": -3.4,
+  "mean_volume_db": -24.2,
+  "thinking_pauses": 2,
+  "sha256": "ce3d40b65dbcabccd202caa9207a28cbaf879a4424cbc43e5b8e8bdc24597eee",
+  "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
+  "frame_samples_decoded": true
+}

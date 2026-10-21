@@ -1,0 +1,32 @@
+[
+  {
+    "script": "工具/episodes/成片/三下-L01.json",
+    "stage": "render",
+    "ok": true
+  },
+  {
+    "script": "工具/episodes/成片/六上-L12.json",
+    "stage": "render",
+    "ok": true
+  },
+  {
+    "script": "工具/episodes/成片/三上-L04.json",
+    "stage": "render",
+    "ok": true
+  },
+  {
+    "script": "工具/episodes/成片/六上-L16.json",
+    "stage": "render",
+    "ok": true
+  },
+  {
+    "script": "工具/episodes/成片/四上-L08.json",
+    "stage": "render",
+    "ok": true
+  },
+  {
+    "script": "工具/episodes/成片/四下-L10.json",
+    "stage": "render",
+    "ok": true
+  }
+]

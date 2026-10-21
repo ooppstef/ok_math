@@ -1,0 +1,50 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/三上-L05.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/三上-L05-倍不是多/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "g3a_l05_s1_1",
+      "start": 0.0,
+      "duration": 6.458333333333333,
+      "narration": "蓝绳这么长算一份。红绳有同样长的三份，是蓝绳的三倍。",
+      "speech_duration": 5.8560090702947845,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l05_s2_1",
+      "start": 6.458333,
+      "duration": 8.875,
+      "narration": "对齐起点后，多出来的是两份。三倍说的是红绳整条，有三份；多出来的只有两份。",
+      "speech_duration": 8.256009070294784,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l05_s3_1",
+      "start": 15.333333,
+      "duration": 10.25,
+      "narration": "两条合起来有四份，长短相差两份。同一张图，问总长和问相差，算的是不同的部分。",
+      "speech_duration": 9.624013605442176,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l05_s4_1",
+      "start": 25.583333,
+      "duration": 12.666666666666666,
+      "narration": "合起来二十四厘米，对应几份？一份多长？",
+      "speech_duration": 4.656009070294784,
+      "pause_after": 8
+    },
+    {
+      "id": "g3a_l05_s5_1",
+      "start": 38.25,
+      "duration": 7.416666666666667,
+      "narration": "二十四厘米分成四份，每份六厘米。蓝绳六厘米，红绳十八厘米。",
+      "speech_duration": 6.816009070294784,
+      "pause_after": 0.6
+    }
+  ]
+}

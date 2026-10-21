@@ -1,0 +1,80 @@
+{
+  "no": "12",
+  "kicker": "为什么实验室 · 六上",
+  "footer": "小学数学 · 看见原理",
+  "audience": "六上 · 原理短片",
+  "scenes": [
+    {
+      "id": "g6a_l12_s1_1",
+      "type": "principle_arithmetic",
+      "model": "odd_layers",
+      "stage": 1,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "数与形",
+      "duration": 6.18,
+      "narration": "一个点，再添三个，摆成每边两个点的正方形。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l12_s2_1",
+      "type": "principle_arithmetic",
+      "model": "odd_layers",
+      "stage": 2,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "数与形",
+      "duration": 7.06,
+      "narration": "再添五个，再添七个。每次都补右边一列和下面一行。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l12_s3_1",
+      "type": "principle_arithmetic",
+      "model": "odd_layers",
+      "stage": 3,
+      "phase_start": 0.0,
+      "phase_end": 0.5,
+      "title": "数与形",
+      "duration": 7.65,
+      "narration": "每边五个点时，新的一列有五个，下面再添四个，共九个。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l12_s3_2",
+      "type": "principle_arithmetic",
+      "model": "odd_layers",
+      "stage": 3,
+      "phase_start": 0.5,
+      "phase_end": 1.0,
+      "title": "数与形",
+      "duration": 7.94,
+      "narration": "每边有多少个，新的一列就有多少个，下面一行比它少一个。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l12_s4_1",
+      "type": "principle_arithmetic",
+      "model": "odd_layers",
+      "stage": 4,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "数与形",
+      "duration": 6.47,
+      "narration": "从每边三个点变成每边五个点，要添哪两个奇数？",
+      "pause_after": 8
+    },
+    {
+      "id": "g6a_l12_s5_1",
+      "type": "principle_arithmetic",
+      "model": "odd_layers",
+      "stage": 5,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "数与形",
+      "duration": 11.18,
+      "narration": "添七个，再添九个，一共十六个。用大正方形二十五个减小正方形九个，也得到十六。",
+      "pause_after": 0.6
+    }
+  ]
+}

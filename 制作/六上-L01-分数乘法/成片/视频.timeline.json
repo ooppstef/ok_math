@@ -1,0 +1,50 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/六上-L01.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/六上-L01-分数乘法/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "g6a_l01_s1_1",
+      "start": 0.0,
+      "duration": 2.6666666666666665,
+      "narration": "先取整块的三分之二。",
+      "speech_duration": 2.04,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l01_s2_1",
+      "start": 2.666667,
+      "duration": 2.6666666666666665,
+      "narration": "再取这部分的四分之三。",
+      "speech_duration": 2.04,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l01_s3_1",
+      "start": 5.333333,
+      "duration": 9.458333333333334,
+      "narration": "重叠有六小格，整块一共十二小格，所以是十二分之六，也就是一半。",
+      "speech_duration": 8.856009070294785,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l01_s4_1",
+      "start": 14.791667,
+      "duration": 12.458333333333334,
+      "narration": "分母的二十，和分子的六，分别数的是什么？",
+      "speech_duration": 4.44,
+      "pause_after": 8
+    },
+    {
+      "id": "g6a_l01_s5_1",
+      "start": 27.25,
+      "duration": 7.458333333333333,
+      "narration": "二十是全部小格，六是取到的小格，结果约分后是十分之三。",
+      "speech_duration": 6.84,
+      "pause_after": 0.6
+    }
+  ]
+}

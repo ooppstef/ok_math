@@ -1,0 +1,57 @@
+{
+  "no": "04",
+  "kicker": "为什么实验室 · 五下",
+  "footer": "观察物体",
+  "scenes": [
+    {
+      "id": "g5b_l04_s1",
+      "type": "principle_relations",
+      "model": "view_t",
+      "stage": "start",
+      "heading": "上面看到四个位置",
+      "narration": "上面看到四个位置，先在每个位置放一块。",
+      "duration": 6.0,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5b_l04_s2",
+      "type": "principle_relations",
+      "model": "view_t",
+      "stage": "front",
+      "heading": "正面中间要高两层",
+      "narration": "正面要求中间高两层，左右都只高一层。",
+      "duration": 5.7,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5b_l04_s3",
+      "type": "principle_relations",
+      "model": "view_t",
+      "stage": "add",
+      "heading": "前中添一块，达到要求",
+      "narration": "至少还要添一块，中间才能高起来。最少五个。",
+      "duration": 6.6,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5b_l04_s4",
+      "type": "principle_relations",
+      "model": "view_t",
+      "stage": "question",
+      "heading": "不改两张图，还能添在哪里？",
+      "narration": "还能添在哪里，又不改变这两张图？",
+      "duration": 13,
+      "pause_after": 8
+    },
+    {
+      "id": "g5b_l04_s5",
+      "type": "principle_relations",
+      "model": "view_t",
+      "stage": "answer",
+      "heading": "后中添一块，两张视图不变",
+      "narration": "后中还能添一块，最多六个。前后中间都两层，正面仍只看见中间高两层。",
+      "duration": 10.0,
+      "pause_after": 0.6
+    }
+  ]
+}

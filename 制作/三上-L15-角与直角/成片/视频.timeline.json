@@ -1,0 +1,58 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/三上-L15.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/三上-L15-角与直角/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "01",
+      "start": 0.0,
+      "duration": 7.833333333333333,
+      "narration": "两条边从同一个顶点出发，张开一个角。盯住开口，看哪次动作把角变大。",
+      "speech_duration": 6.816009070294784,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "start": 7.833333,
+      "duration": 6.291666666666667,
+      "narration": "把两条边画长，方向都没有变。开口还是原来的大小。",
+      "speech_duration": 5.256009070294785,
+      "pause_after": 1
+    },
+    {
+      "id": "03",
+      "start": 14.125,
+      "duration": 7.041666666666667,
+      "narration": "固定下面这条边，只转动另一条。开口变大，角才变大。",
+      "speech_duration": 6.0240136054421765,
+      "pause_after": 1
+    },
+    {
+      "id": "04",
+      "start": 21.166667,
+      "duration": 14.083333333333334,
+      "narration": "如果把整个角连纸一起转，两条边一起转同样多，角会变大吗？",
+      "speech_duration": 6.048004535147392,
+      "pause_after": 8
+    },
+    {
+      "id": "05",
+      "start": 35.25,
+      "duration": 9.083333333333334,
+      "narration": "没有变。两条边一起转同样多，开口没有改变，只是朝向变了。",
+      "speech_duration": 7.056009070294785,
+      "pause_after": 2
+    },
+    {
+      "id": "06",
+      "start": 44.333333,
+      "duration": 8.708333333333334,
+      "narration": "比较两个角，要把顶点对齐，再对齐一条边，看看另一条边在哪里。",
+      "speech_duration": 6.672018140589569,
+      "pause_after": 2
+    }
+  ]
+}

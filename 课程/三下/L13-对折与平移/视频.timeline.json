@@ -1,0 +1,50 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/三下-L13.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/三下-L13-对折与平移/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "g3b_l13_s1",
+      "start": 0.0,
+      "duration": 4.25,
+      "narration": "小旗向右滑三格，先盯住这三个点。",
+      "speech_duration": 3.6480045351473924,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3b_l13_s2",
+      "start": 4.25,
+      "duration": 4.875,
+      "narration": "旗尖三格，旗杆的两个端点也都三格。",
+      "speech_duration": 4.248004535147392,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3b_l13_s3",
+      "start": 9.125,
+      "duration": 6.458333333333333,
+      "narration": "每个点都朝同一方向走同样远，旗子没有变大，也没转头。",
+      "speech_duration": 5.8560090702947845,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3b_l13_s4",
+      "start": 15.583333,
+      "duration": 11.458333333333334,
+      "narration": "沿虚线对折，对应点应该在哪里？",
+      "speech_duration": 3.4560090702947845,
+      "pause_after": 8
+    },
+    {
+      "id": "g3b_l13_s5",
+      "start": 27.041667,
+      "duration": 6.875,
+      "narration": "在另一边两格。对折看两边离轴的距离，平移看每个点走了多远。",
+      "speech_duration": 6.24,
+      "pause_after": 0.6
+    }
+  ]
+}

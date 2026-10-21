@@ -1,0 +1,50 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/六上-L16.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/六上-L16-连续变化与还原/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "g6a_l16_s1_1",
+      "start": 0.0,
+      "duration": 5.833333333333333,
+      "narration": "原来一百升，增加原来的百分之二十，就是加二十升。",
+      "speech_duration": 5.232018140589569,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l16_s2_1",
+      "start": 5.833333,
+      "duration": 7.416666666666667,
+      "narration": "现在有一百二十升。再倒出当时的百分之二十，这次的一份是二十四升。",
+      "speech_duration": 6.816009070294784,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l16_s3_1",
+      "start": 13.25,
+      "duration": 9.458333333333334,
+      "narration": "加了二十，却倒出二十四，最后剩九十六。两次说的百分之二十，算的整体不同。",
+      "speech_duration": 8.856009070294785,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l16_s4_1",
+      "start": 22.708333,
+      "duration": 15.083333333333334,
+      "narration": "九十六是倒出前的百分之八十。要找回那时的全部，用乘法还是除法？",
+      "speech_duration": 7.056009070294785,
+      "pause_after": 8
+    },
+    {
+      "id": "g6a_l16_s5_1",
+      "start": 37.791667,
+      "duration": 8.25,
+      "narration": "先除以零点八找回一百二十，再除以一点二找回一百。往回算，要还原每一步的整个量。",
+      "speech_duration": 7.632018140589569,
+      "pause_after": 0.6
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/三上-L01.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/三上-L01-满十进一/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "g3a_l01_s1_1",
+      "start": 0.0,
+      "duration": 9.083333333333334,
+      "narration": "九根小棒再添一根，一共有十根。十为什么写成一和零？把小棒捆一捆，就能看明白。",
+      "speech_duration": 8.448004535147392,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l01_s2_1",
+      "start": 9.083333,
+      "duration": 8.916666666666666,
+      "narration": "把这十根小棒捆成一捆。小棒一根也没少，还是十根。十个一，换成了一个十。",
+      "speech_duration": 8.28,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l01_s3_1",
+      "start": 18.0,
+      "duration": 8.666666666666666,
+      "narration": "二十三，就是两捆，再加三根。两个十，三个一。十成了一个新的计数单位。",
+      "speech_duration": 8.04,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l01_s4_1",
+      "start": 26.666667,
+      "duration": 6.25,
+      "narration": "看二十二。右边的二表示两个一，左边的二表示两个十。",
+      "speech_duration": 5.64,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l01_s4_2",
+      "start": 32.916667,
+      "duration": 5.041666666666667,
+      "narration": "数字一样，位置不同，表示的大小就不同。",
+      "speech_duration": 4.44,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l01_s5_1",
+      "start": 37.958333,
+      "duration": 7.833333333333333,
+      "narration": "三百零五，有三个百、零个十和五个一。十位的零要占住位置。",
+      "speech_duration": 7.224013605442177,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l01_s5_2",
+      "start": 45.791667,
+      "duration": 4.875,
+      "narration": "去掉它，三就移到十位，变成三十五。",
+      "speech_duration": 4.272018140589569,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l01_s6_1",
+      "start": 50.666667,
+      "duration": 7.416666666666667,
+      "narration": "二十三加四十五，把三个一和五个一相加，两个十和四个十相加。",
+      "speech_duration": 6.816009070294784,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l01_s6_2",
+      "start": 58.083333,
+      "duration": 4.666666666666667,
+      "narration": "得到六个十、八个一，也就是六十八。",
+      "speech_duration": 4.032018140589569,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l01_s7_1",
+      "start": 62.75,
+      "duration": 8.291666666666666,
+      "narration": "九十九加一。先把十个一捆成一个十。十位又有十个十，再合成一个百。",
+      "speech_duration": 7.656009070294784,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l01_s7_2",
+      "start": 71.041667,
+      "duration": 4.25,
+      "narration": "小棒始终是一百根，最后记成一百。",
+      "speech_duration": 3.624013605442177,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l01_s8_1",
+      "start": 75.291667,
+      "duration": 8.25,
+      "narration": "用零、三、七，每个数字用一次，组成最大的三位数和最小的三位数。",
+      "speech_duration": 7.632018140589569,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l01_s8_2",
+      "start": 83.541667,
+      "duration": 12.666666666666666,
+      "narration": "先暂停，写下两个数。百位能不能放零？",
+      "speech_duration": 4.656009070294784,
+      "pause_after": 8
+    },
+    {
+      "id": "g3a_l01_s9_1",
+      "start": 96.208333,
+      "duration": 4.666666666666667,
+      "narration": "最大是七百三十，最小是三百零七。",
+      "speech_duration": 4.032018140589569,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l01_s9_2",
+      "start": 100.875,
+      "duration": 6.083333333333333,
+      "narration": "三位数的百位不能放零，所以先放三，再把零放在十位。",
+      "speech_duration": 5.47201814058957,
+      "pause_after": 0.6
+    }
+  ]
+}

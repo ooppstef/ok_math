@@ -1,0 +1,57 @@
+{
+  "no": "16",
+  "kicker": "为什么实验室 · 五下",
+  "footer": "排水测体积",
+  "scenes": [
+    {
+      "id": "g5b_l16_s1",
+      "type": "principle_relations",
+      "model": "water",
+      "stage": "start",
+      "heading": "先记下原来的水深",
+      "narration": "先记下没有石头时的水深，五厘米。",
+      "duration": 5.6,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5b_l16_s2",
+      "type": "principle_relations",
+      "model": "water",
+      "stage": "immerse",
+      "heading": "石头浸入，水量没有改变",
+      "narration": "石头挤占了空间，水面升到七厘米。水没有流出去。",
+      "duration": 7.2,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5b_l16_s3",
+      "type": "principle_relations",
+      "model": "water",
+      "stage": "layer",
+      "heading": "只看水面上升的那一层",
+      "narration": "多出来的是这两厘米厚的一层，不是整个七厘米深的部分。",
+      "duration": 8.0,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5b_l16_s4",
+      "type": "principle_relations",
+      "model": "water",
+      "stage": "question",
+      "heading": "这一层有多大？",
+      "narration": "这层有多大？它告诉我们石头的什么量？",
+      "duration": 13.1,
+      "pause_after": 8
+    },
+    {
+      "id": "g5b_l16_s5",
+      "type": "principle_relations",
+      "model": "water",
+      "stage": "answer",
+      "heading": "石头占的空间等于上升层体积",
+      "narration": "石头体积是一百六十立方厘米。石头必须完全浸没，不吸水、不溶解，水也不能溢出。",
+      "duration": 11.5,
+      "pause_after": 0.6
+    }
+  ]
+}

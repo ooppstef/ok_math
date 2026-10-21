@@ -1,0 +1,74 @@
+{
+  "no": "06",
+  "kicker": "为什么实验室 · 六上 · 圆",
+  "footer": "看清变化，再说理由",
+  "scenes": [
+    {
+      "id": "01",
+      "type": "principle_geometry",
+      "model": "circle",
+      "stage": "trace",
+      "heading": "圆心固定，距离也固定",
+      "narration": "针尖不动，张开的距离不变。笔尖转一圈，每一点到圆心都一样远。",
+      "equation": "圆上每一点，到圆心的距离都是 r",
+      "duration": 7.894736842105264,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "type": "principle_geometry",
+      "model": "circle",
+      "stage": "radius",
+      "heading": "半径决定圆的大小",
+      "narration": "圆心决定位置，半径决定大小。直径经过圆心，长是半径的两倍。",
+      "equation": "d = 2r",
+      "duration": 7.631578947368421,
+      "pause_after": 1
+    },
+    {
+      "id": "03",
+      "type": "principle_geometry",
+      "model": "circle",
+      "stage": "unroll",
+      "heading": "沿圆周的线，慢慢展开",
+      "narration": "想象沿圆周放一条不伸长的细线，剪开、慢慢展开。它的长度就是圆周长。",
+      "equation": "弯曲程度改变，线的总长不变",
+      "duration": 8.68421052631579,
+      "pause_after": 1
+    },
+    {
+      "id": "04",
+      "type": "principle_geometry",
+      "model": "circle",
+      "stage": "done",
+      "heading": "圆周长，是多少个直径？",
+      "narration": "用直径来比，周长略多于三个直径。它们的比叫圆周率，三点一四只是近似值。",
+      "equation": "C = πd = 2πr；π ≈ 3.14",
+      "duration": 9.210526315789474,
+      "pause_after": 2
+    },
+    {
+      "id": "05",
+      "type": "principle_geometry",
+      "model": "circle",
+      "stage": "done",
+      "heading": "直径变两倍，周长呢？",
+      "narration": "把圆的直径变成原来的两倍，圆周长会变成几倍？",
+      "equation": "周长和直径的比始终是 π",
+      "duration": 5.7894736842105265,
+      "pause_after": 8
+    },
+    {
+      "id": "06",
+      "type": "principle_geometry",
+      "model": "circle",
+      "stage": "scale",
+      "heading": "直径变两倍，周长呢？",
+      "narration": "周长也变成两倍。圆周率不变，直径乘二，周长也乘二。",
+      "equation": "π × 2d = 2πd",
+      "duration": 6.578947368421053,
+      "pause_after": 2
+    }
+  ],
+  "audience": "六上 · 原理短片"
+}

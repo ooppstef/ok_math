@@ -1,0 +1,68 @@
+{
+  "no": "01",
+  "kicker": "为什么实验室 · 六上",
+  "footer": "小学数学 · 看见原理",
+  "audience": "六上 · 原理短片",
+  "scenes": [
+    {
+      "id": "g6a_l01_s1_1",
+      "type": "principle_arithmetic",
+      "model": "fraction_product",
+      "stage": 1,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数乘法",
+      "duration": 4,
+      "narration": "先取整块的三分之二。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l01_s2_1",
+      "type": "principle_arithmetic",
+      "model": "fraction_product",
+      "stage": 2,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数乘法",
+      "duration": 4,
+      "narration": "再取这部分的四分之三。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l01_s3_1",
+      "type": "principle_arithmetic",
+      "model": "fraction_product",
+      "stage": 3,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数乘法",
+      "duration": 9.12,
+      "narration": "重叠有六小格，整块一共十二小格，所以是十二分之六，也就是一半。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l01_s4_1",
+      "type": "principle_arithmetic",
+      "model": "fraction_product",
+      "stage": 4,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数乘法",
+      "duration": 5.88,
+      "narration": "分母的二十，和分子的六，分别数的是什么？",
+      "pause_after": 8
+    },
+    {
+      "id": "g6a_l01_s5_1",
+      "type": "principle_arithmetic",
+      "model": "fraction_product",
+      "stage": 5,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数乘法",
+      "duration": 7.94,
+      "narration": "二十是全部小格，六是取到的小格，结果约分后是十分之三。",
+      "pause_after": 0.6
+    }
+  ]
+}

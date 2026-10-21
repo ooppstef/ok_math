@@ -1,0 +1,68 @@
+{
+  "no": "08",
+  "kicker": "为什么实验室 · 四上",
+  "footer": "小学数学 · 看见原理",
+  "audience": "四上 · 原理短片",
+  "scenes": [
+    {
+      "id": "g4a_l08_s1_1",
+      "type": "principle_arithmetic",
+      "model": "quotient_scale",
+      "stage": 1,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "商不变",
+      "duration": 7.06,
+      "narration": "六百，每两百一份，有三份。盯住总量和每份的大小。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4a_l08_s2_1",
+      "type": "principle_arithmetic",
+      "model": "quotient_scale",
+      "stage": 2,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "商不变",
+      "duration": 7.35,
+      "narration": "总量和每份都除以一百，变成六，每份是二，还是三份。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4a_l08_s3_1",
+      "type": "principle_arithmetic",
+      "model": "quotient_scale",
+      "stage": 3,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "商不变",
+      "duration": 9.71,
+      "narration": "再看八百五十除以三十。换成十作单位，就是八十五个十，每份是三个十。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4a_l08_s4_1",
+      "type": "principle_arithmetic",
+      "model": "quotient_scale",
+      "stage": 4,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "商不变",
+      "duration": 5.88,
+      "narration": "剩下的这一，是什么单位？能直接答余一吗？",
+      "pause_after": 8
+    },
+    {
+      "id": "g4a_l08_s5_1",
+      "type": "principle_arithmetic",
+      "model": "quotient_scale",
+      "stage": 5,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "商不变",
+      "duration": 10.59,
+      "narration": "剩一个十，也就是十个一。原题商二十八，余十。商没有变，余数要跟着单位读。",
+      "pause_after": 0.6
+    }
+  ]
+}

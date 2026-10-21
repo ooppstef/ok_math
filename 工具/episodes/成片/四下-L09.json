@@ -1,0 +1,57 @@
+{
+  "no": "09",
+  "kicker": "为什么实验室 · 四下",
+  "footer": "平均数",
+  "scenes": [
+    {
+      "id": "g4b_l09_s1",
+      "type": "principle_relations",
+      "model": "average",
+      "stage": "start",
+      "heading": "三堆积木：2、4、9",
+      "narration": "不添积木，也不丢积木，能不能让三个人一样多？",
+      "duration": 6.9,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l09_s2",
+      "type": "principle_relations",
+      "model": "average",
+      "stage": "move",
+      "heading": "从多的一堆，移给少的",
+      "narration": "从多的一堆拿出三块补给最少的，再拿一块补给中间这堆。",
+      "duration": 8.0,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l09_s3",
+      "type": "principle_relations",
+      "model": "average",
+      "stage": "result",
+      "heading": "十五块，平均分给三人",
+      "narration": "每人五块。总数十五没变，人数也没变，所以用十五除以三。",
+      "duration": 8.3,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l09_s4",
+      "type": "principle_relations",
+      "model": "average",
+      "stage": "question",
+      "heading": "平均五块，原来就各有五块吗？",
+      "narration": "平均数是五，能说原来每个人就有五块吗？",
+      "duration": 13.4,
+      "pause_after": 8
+    },
+    {
+      "id": "g4b_l09_s5",
+      "type": "principle_relations",
+      "model": "average",
+      "stage": "answer",
+      "heading": "平均数说的是重新平均分",
+      "narration": "不能。原来是二、四、九。平均五，说的是把这些积木平均分开，每人会分到五块。",
+      "duration": 11.2,
+      "pause_after": 0.6
+    }
+  ]
+}

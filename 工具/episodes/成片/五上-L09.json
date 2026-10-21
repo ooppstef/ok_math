@@ -1,0 +1,74 @@
+{
+  "no": "09",
+  "kicker": "为什么实验室 · 五上 · 平行四边形面积",
+  "footer": "看清变化，再说理由",
+  "scenes": [
+    {
+      "id": "01",
+      "type": "principle_geometry",
+      "model": "parallelogram",
+      "stage": "start",
+      "heading": "斜边不是高",
+      "narration": "底是六厘米。这条垂直到底边的线长三厘米，它才是高。",
+      "equation": "底 6 厘米，高 3 厘米",
+      "duration": 6.578947368421053,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "type": "principle_geometry",
+      "model": "parallelogram",
+      "stage": "start",
+      "heading": "沿高剪开",
+      "narration": "沿着高，把左边这个三角形剪下来。",
+      "equation": "切开，保留每一块",
+      "duration": 5,
+      "pause_after": 1
+    },
+    {
+      "id": "03",
+      "type": "principle_geometry",
+      "model": "parallelogram",
+      "stage": "move",
+      "heading": "把同一块搬到右边",
+      "narration": "把这一块向右移，补在另一边。没有拉长，也没有丢掉。",
+      "equation": "移动的是原来那一块",
+      "duration": 6.578947368421053,
+      "pause_after": 1
+    },
+    {
+      "id": "04",
+      "type": "principle_geometry",
+      "model": "parallelogram",
+      "stage": "done",
+      "heading": "长和宽，来自原来的底和高",
+      "narration": "拼成的长方形，长六厘米，宽三厘米。面积是十八平方厘米。",
+      "equation": "6 × 3 = 18 平方厘米",
+      "duration": 7.105263157894737,
+      "pause_after": 2
+    },
+    {
+      "id": "05",
+      "type": "principle_geometry",
+      "model": "parallelogram",
+      "stage": "start",
+      "heading": "底和高不变，更斜会怎样？",
+      "narration": "底和高都不变，只把上边往右推一点，面积会变吗？先想一想。",
+      "equation": "底 6 厘米，高 3 厘米",
+      "duration": 7.36842105263158,
+      "pause_after": 8
+    },
+    {
+      "id": "06",
+      "type": "principle_geometry",
+      "model": "parallelogram",
+      "stage": "shear",
+      "heading": "底和高不变，更斜会怎样？",
+      "narration": "还是十八平方厘米。形状更斜了，垂直的高度没有变。",
+      "equation": "面积 = 底 × 高 = 18 平方厘米",
+      "duration": 6.315789473684211,
+      "pause_after": 2
+    }
+  ],
+  "audience": "五上 · 原理短片"
+}

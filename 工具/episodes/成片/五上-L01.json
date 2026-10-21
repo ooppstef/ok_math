@@ -1,0 +1,128 @@
+{
+  "no": "01",
+  "kicker": "为什么实验室 · 五上",
+  "footer": "小学数学 · 看见原理",
+  "audience": "五上 · 原理短片",
+  "scenes": [
+    {
+      "id": "g5a_l01_s1_1",
+      "type": "principle_arithmetic",
+      "model": "decimal_product",
+      "stage": 1,
+      "phase_start": 0.0,
+      "phase_end": 0.5,
+      "title": "小数乘法",
+      "duration": 8.24,
+      "narration": "这一整块算一。先分成十列，每列再分十格，一共有一百小格。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5a_l01_s1_2",
+      "type": "principle_arithmetic",
+      "model": "decimal_product",
+      "stage": 1,
+      "phase_start": 0.5,
+      "phase_end": 1.0,
+      "title": "小数乘法",
+      "duration": 5.88,
+      "narration": "每格占一整块的百分之一，也就是零点零一。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5a_l01_s2_1",
+      "type": "principle_arithmetic",
+      "model": "decimal_product",
+      "stage": 2,
+      "phase_start": 0.0,
+      "phase_end": 0.5,
+      "title": "小数乘法",
+      "duration": 9.71,
+      "narration": "先取十分之三，是左边这三列。再取这部分的十分之四，十行里留下四行。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5a_l01_s2_2",
+      "type": "principle_arithmetic",
+      "model": "decimal_product",
+      "stage": 2,
+      "phase_start": 0.5,
+      "phase_end": 1.0,
+      "title": "小数乘法",
+      "duration": 4.71,
+      "narration": "深色的，就是两次取完剩下的部分。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5a_l01_s3_1",
+      "type": "principle_arithmetic",
+      "model": "decimal_product",
+      "stage": 3,
+      "phase_start": 0.0,
+      "phase_end": 0.5,
+      "title": "小数乘法",
+      "duration": 5.88,
+      "narration": "十二小格，每格零点零一，合起来零点一二。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5a_l01_s3_2",
+      "type": "principle_arithmetic",
+      "model": "decimal_product",
+      "stage": 3,
+      "phase_start": 0.5,
+      "phase_end": 1.0,
+      "title": "小数乘法",
+      "duration": 7.94,
+      "narration": "三乘四告诉我们有几格，小格的单位告诉我们小数点放在哪。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5a_l01_s4_1",
+      "type": "principle_arithmetic",
+      "model": "decimal_product",
+      "stage": 4,
+      "phase_start": 0.0,
+      "phase_end": 0.5,
+      "title": "小数乘法",
+      "duration": 4,
+      "narration": "换成零点二五乘零点四。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5a_l01_s4_2",
+      "type": "principle_arithmetic",
+      "model": "decimal_product",
+      "stage": 4,
+      "phase_start": 0.5,
+      "phase_end": 1.0,
+      "title": "小数乘法",
+      "duration": 10.0,
+      "narration": "先取一整块的四分之一，再取这部分的十分之四，最后占原来的一整块多少？",
+      "pause_after": 8
+    },
+    {
+      "id": "g5a_l01_s5_1",
+      "type": "principle_arithmetic",
+      "model": "decimal_product",
+      "stage": 5,
+      "phase_start": 0.0,
+      "phase_end": 0.5,
+      "title": "小数乘法",
+      "duration": 11.18,
+      "narration": "四十格里留下四格，占十分之一，就是零点一。用整数乘法检查，二十五乘四得一百。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5a_l01_s5_2",
+      "type": "principle_arithmetic",
+      "model": "decimal_product",
+      "stage": 5,
+      "phase_start": 0.5,
+      "phase_end": 1.0,
+      "title": "小数乘法",
+      "duration": 6.47,
+      "narration": "先按三位小数写成零点一零零，再去掉末尾的零。",
+      "pause_after": 0.6
+    }
+  ]
+}

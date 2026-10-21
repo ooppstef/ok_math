@@ -1,0 +1,57 @@
+{
+  "no": "17",
+  "kicker": "为什么实验室 · 三上",
+  "footer": "换个位置看物体",
+  "scenes": [
+    {
+      "id": "g3a_l17_s1",
+      "type": "principle_relations",
+      "model": "view_three",
+      "stage": "start",
+      "heading": "三个方块，固定不动",
+      "narration": "前排两个，左边后面还有一个，三个都放在桌上。",
+      "duration": 6.9,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l17_s2",
+      "type": "principle_relations",
+      "model": "view_three",
+      "stage": "front",
+      "heading": "从正前面看",
+      "narration": "从正前面看，后面的被挡住，只看见两个。",
+      "duration": 6.0,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l17_s3",
+      "type": "principle_relations",
+      "model": "view_three",
+      "stage": "side",
+      "heading": "换到上面和左面看",
+      "narration": "到上面，三个位置都看见；到左面，能分清前后两个位置。",
+      "duration": 8.0,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l17_s4",
+      "type": "principle_relations",
+      "model": "view_three",
+      "stage": "question",
+      "heading": "后右补一块，正面会变吗？",
+      "narration": "补上这一块，正面看见的样子会变吗？",
+      "duration": 13,
+      "pause_after": 8
+    },
+    {
+      "id": "g3a_l17_s5",
+      "type": "principle_relations",
+      "model": "view_three",
+      "stage": "answer",
+      "heading": "正面没变，总数变了",
+      "narration": "正面没有变，上面多了一格。一张图没变，不表示总数没变。",
+      "duration": 8.3,
+      "pause_after": 0.6
+    }
+  ]
+}

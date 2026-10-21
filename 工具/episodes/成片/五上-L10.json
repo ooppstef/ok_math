@@ -1,0 +1,85 @@
+{
+  "no": "10",
+  "kicker": "为什么实验室 · 五上 · 三角形面积",
+  "footer": "看清变化，再说理由",
+  "scenes": [
+    {
+      "id": "01",
+      "type": "principle_geometry",
+      "model": "duplicate",
+      "stage": "start",
+      "heading": "一块三角形，底六高四",
+      "narration": "这一块三角形，底六厘米，高四厘米。高要垂直到底边。",
+      "equation": "底 6 厘米，高 4 厘米",
+      "duration": 6.578947368421053,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "type": "principle_geometry",
+      "model": "duplicate",
+      "stage": "copy",
+      "heading": "再拿一块完全一样的",
+      "narration": "复制一块完全一样的三角形。让副本绕这条边的中点，转半圈。",
+      "equation": "副本旋转 180°，没有拉伸",
+      "duration": 7.36842105263158,
+      "pause_after": 1
+    },
+    {
+      "id": "03",
+      "type": "principle_geometry",
+      "model": "duplicate",
+      "stage": "done",
+      "heading": "两块拼成平行四边形",
+      "narration": "两块拼成平行四边形，底还是六，高还是四。整个面积是二十四。",
+      "equation": "两块合计：6 × 4 = 24 平方厘米",
+      "duration": 7.631578947368421,
+      "pause_after": 1
+    },
+    {
+      "id": "04",
+      "type": "principle_geometry",
+      "model": "duplicate",
+      "stage": "question",
+      "heading": "只要其中一块，怎样算？",
+      "narration": "二十四是两块的面积。只要其中一块，应该怎样算？",
+      "equation": "两块合计 24 平方厘米",
+      "duration": 6.052631578947369,
+      "pause_after": 8
+    },
+    {
+      "id": "05",
+      "type": "principle_geometry",
+      "model": "duplicate",
+      "stage": "answer",
+      "heading": "只要其中一块，怎样算？",
+      "narration": "除以二，得到十二平方厘米。这个二，来自拼图里的两块。",
+      "equation": "一块：6 × 4 ÷ 2 = 12 平方厘米",
+      "duration": 6.842105263157895,
+      "pause_after": 2
+    },
+    {
+      "id": "06",
+      "type": "principle_geometry",
+      "model": "duplicate",
+      "stage": "start",
+      "heading": "顶点平移，面积会变吗？",
+      "narration": "底边不动，顶点沿着同一条水平线移动。底和高会变吗？",
+      "equation": "想一想，再看顶点移动",
+      "duration": 6.578947368421053,
+      "pause_after": 8
+    },
+    {
+      "id": "07",
+      "type": "principle_geometry",
+      "model": "duplicate",
+      "stage": "slide",
+      "heading": "顶点平移，面积会变吗？",
+      "narration": "底还是六，高还是四。三角形的面积仍然是十二平方厘米。",
+      "equation": "等底等高，面积相等",
+      "duration": 6.842105263157895,
+      "pause_after": 2
+    }
+  ],
+  "audience": "五上 · 原理短片"
+}

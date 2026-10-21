@@ -1,0 +1,67 @@
+{
+  "no": "11",
+  "kicker": "为什么实验室 · 四下",
+  "footer": "行程：看间距怎样变",
+  "scenes": [
+    {
+      "id": "g4b_l11_s1",
+      "type": "principle_relations",
+      "model": "journey",
+      "stage": "start",
+      "heading": "相向而行，中间的路怎样变短？",
+      "narration": "两人相距三百米。甲每分钟走六十米，乙每分钟走四十米，同时朝对方走。",
+      "duration": 10.0,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l11_s2",
+      "type": "principle_relations",
+      "model": "journey",
+      "stage": "meet_one",
+      "heading": "同走一分钟，两边一共靠近多少？",
+      "narration": "一分钟，甲走六十米，乙走四十米。中间的距离一共缩短一百米，还剩二百米。",
+      "duration": 10.6,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l11_s3",
+      "type": "principle_relations",
+      "model": "journey",
+      "stage": "meet",
+      "heading": "继续同速走，直到相遇",
+      "narration": "每分钟靠近一百米。三百米除以一百米每分钟，三分钟正好相遇。",
+      "duration": 8.9,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l11_s4",
+      "type": "principle_relations",
+      "model": "journey",
+      "stage": "chase",
+      "heading": "换一道题：快者在后，同向追赶",
+      "narration": "现在初始间距一百米。后面每分钟走一百米，前面走八十米。一分钟只缩短二十米。",
+      "duration": 11.2,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l11_s5",
+      "type": "principle_relations",
+      "model": "journey",
+      "stage": "question",
+      "heading": "一百米的间距，要几分钟追上？",
+      "narration": "从开始追赶算起，一百米的间距，每分钟少二十米。要几分钟追上？",
+      "duration": 16.6,
+      "pause_after": 8
+    },
+    {
+      "id": "g4b_l11_s6",
+      "type": "principle_relations",
+      "model": "journey",
+      "stage": "catch",
+      "heading": "两人同时走，五分钟到同一点",
+      "narration": "五分钟。后面走五百米，前面从一百米处再走四百米，正好到同一点。",
+      "duration": 9.5,
+      "pause_after": 0.6
+    }
+  ]
+}

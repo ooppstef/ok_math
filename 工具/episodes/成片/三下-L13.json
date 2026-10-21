@@ -1,0 +1,57 @@
+{
+  "no": "13",
+  "kicker": "为什么实验室 · 三下",
+  "footer": "对折与平移",
+  "scenes": [
+    {
+      "id": "g3b_l13_s1",
+      "type": "principle_relations",
+      "model": "translate",
+      "stage": "start",
+      "heading": "向右平移三格，看三个点",
+      "narration": "小旗向右滑三格，先盯住这三个点。",
+      "duration": 5.6,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3b_l13_s2",
+      "type": "principle_relations",
+      "model": "translate",
+      "stage": "move",
+      "heading": "三个点同时走同样远",
+      "narration": "旗尖三格，旗杆的两个端点也都三格。",
+      "duration": 5.6,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3b_l13_s3",
+      "type": "principle_relations",
+      "model": "translate",
+      "stage": "result",
+      "heading": "大小、形状、朝向都不变",
+      "narration": "每个点都朝同一方向走同样远，旗子没有变大，也没转头。",
+      "duration": 8.0,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3b_l13_s4",
+      "type": "principle_relations",
+      "model": "translate",
+      "stage": "question",
+      "heading": "对折后的对应点在哪里？",
+      "narration": "沿虚线对折，对应点应该在哪里？",
+      "duration": 13,
+      "pause_after": 8
+    },
+    {
+      "id": "g3b_l13_s5",
+      "type": "principle_relations",
+      "model": "translate",
+      "stage": "answer",
+      "heading": "对折看两边到轴的距离",
+      "narration": "在另一边两格。对折看两边离轴的距离，平移看每个点走了多远。",
+      "duration": 8.9,
+      "pause_after": 0.6
+    }
+  ]
+}

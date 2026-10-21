@@ -1,0 +1,63 @@
+{
+  "no": "08",
+  "kicker": "为什么实验室 · 五下 · 体积与容积",
+  "footer": "看清变化，再说理由",
+  "scenes": [
+    {
+      "id": "01",
+      "type": "principle_geometry",
+      "model": "volume",
+      "stage": "base",
+      "heading": "一层能放多少块？",
+      "narration": "每个小正方体都是一立方厘米。底层三乘四，一共十二个。",
+      "equation": "每层：3 × 4 = 12 块",
+      "duration": 6.842105263157895,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "type": "principle_geometry",
+      "model": "volume",
+      "stage": "stack",
+      "heading": "一样的底层，叠五层",
+      "narration": "把同样的底层，依次叠到五层。每层十二块，就是五个十二。",
+      "equation": "5 层，每层 12 块",
+      "duration": 7.105263157894737,
+      "pause_after": 1
+    },
+    {
+      "id": "03",
+      "type": "principle_geometry",
+      "model": "volume",
+      "stage": "done",
+      "heading": "长、宽、高分别数什么？",
+      "narration": "长乘宽数出一层有几块，再乘高数出有几层。这个长方体占六十立方厘米。",
+      "equation": "3 × 4 × 5 = 60 立方厘米",
+      "duration": 8.68421052631579,
+      "pause_after": 2
+    },
+    {
+      "id": "04",
+      "type": "principle_geometry",
+      "model": "volume",
+      "stage": "container",
+      "heading": "内部边长十厘米，能装多少？",
+      "narration": "现在换成一个容器，里面的长、宽、高都是十厘米。容量是多少立方厘米，合多少升？",
+      "equation": "给的是内部尺寸：10 厘米 × 10 厘米 × 10 厘米",
+      "duration": 10.0,
+      "pause_after": 8
+    },
+    {
+      "id": "05",
+      "type": "principle_geometry",
+      "model": "volume",
+      "stage": "answer",
+      "heading": "内部边长十厘米，能装多少？",
+      "narration": "十乘十乘十，是一千立方厘米，也就是一升。容积要量里面，不能把盒壁算进去。",
+      "equation": "10 × 10 × 10 = 1000 立方厘米 = 1 升",
+      "duration": 9.473684210526317,
+      "pause_after": 2
+    }
+  ],
+  "audience": "五下 · 原理短片"
+}

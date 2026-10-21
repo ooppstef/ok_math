@@ -1,0 +1,74 @@
+{
+  "no": "15",
+  "kicker": "为什么实验室 · 三上 · 角与直角",
+  "footer": "看清变化，再说理由",
+  "scenes": [
+    {
+      "id": "01",
+      "type": "principle_geometry",
+      "model": "angle",
+      "stage": "start",
+      "heading": "看开口，还是看边长？",
+      "narration": "两条边从同一个顶点出发，张开一个角。盯住开口，看哪次动作把角变大。",
+      "equation": "角的大小，看两条边张开多少",
+      "duration": 8.68421052631579,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "type": "principle_geometry",
+      "model": "angle",
+      "stage": "extend",
+      "heading": "把边画长一些",
+      "narration": "把两条边画长，方向都没有变。开口还是原来的大小。",
+      "equation": "边画长，角不变",
+      "duration": 6.315789473684211,
+      "pause_after": 1
+    },
+    {
+      "id": "03",
+      "type": "principle_geometry",
+      "model": "angle",
+      "stage": "open",
+      "heading": "只转动其中一条边",
+      "narration": "固定下面这条边，只转动另一条。开口变大，角才变大。",
+      "equation": "方向改变，开口改变",
+      "duration": 6.578947368421053,
+      "pause_after": 1
+    },
+    {
+      "id": "04",
+      "type": "principle_geometry",
+      "model": "angle",
+      "stage": "question",
+      "heading": "把整个角一起转，会怎样？",
+      "narration": "如果把整个角连纸一起转，两条边一起转同样多，角会变大吗？",
+      "equation": "先想一想：两条边之间的开口会变吗？",
+      "duration": 7.36842105263158,
+      "pause_after": 8
+    },
+    {
+      "id": "05",
+      "type": "principle_geometry",
+      "model": "angle",
+      "stage": "rotate",
+      "heading": "把整个角一起转，会怎样？",
+      "narration": "没有变。两条边一起转同样多，开口没有改变，只是朝向变了。",
+      "equation": "整体转动，角的大小不变",
+      "duration": 7.36842105263158,
+      "pause_after": 2
+    },
+    {
+      "id": "06",
+      "type": "principle_geometry",
+      "model": "angle",
+      "stage": "rotated",
+      "heading": "找角，先找顶点和两条边",
+      "narration": "比较两个角，要把顶点对齐，再对齐一条边，看看另一条边在哪里。",
+      "equation": "顶点对齐，一条边对齐，再比较开口",
+      "duration": 7.894736842105264,
+      "pause_after": 2
+    }
+  ],
+  "audience": "三上 · 原理短片"
+}

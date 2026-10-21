@@ -1,0 +1,66 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/五上-L10.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/五上-L10-三角形面积/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "01",
+      "start": 0.0,
+      "duration": 7.041666666666667,
+      "narration": "这一块三角形，底六厘米，高四厘米。高要垂直到底边。",
+      "speech_duration": 6.0240136054421765,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "start": 7.041667,
+      "duration": 7.041666666666667,
+      "narration": "复制一块完全一样的三角形。让副本绕这条边的中点，转半圈。",
+      "speech_duration": 6.0240136054421765,
+      "pause_after": 1
+    },
+    {
+      "id": "03",
+      "start": 14.083333,
+      "duration": 7.291666666666667,
+      "narration": "两块拼成平行四边形，底还是六，高还是四。整个面积是二十四。",
+      "speech_duration": 6.264013605442177,
+      "pause_after": 1
+    },
+    {
+      "id": "04",
+      "start": 21.375,
+      "duration": 13.083333333333334,
+      "narration": "二十四是两块的面积。只要其中一块，应该怎样算？",
+      "speech_duration": 5.0640136054421765,
+      "pause_after": 8
+    },
+    {
+      "id": "05",
+      "start": 34.458333,
+      "duration": 8.083333333333334,
+      "narration": "除以二，得到十二平方厘米。这个二，来自拼图里的两块。",
+      "speech_duration": 6.048004535147392,
+      "pause_after": 2
+    },
+    {
+      "id": "06",
+      "start": 42.541667,
+      "duration": 13.25,
+      "narration": "底边不动，顶点沿着同一条水平线移动。底和高会变吗？",
+      "speech_duration": 5.232018140589569,
+      "pause_after": 8
+    },
+    {
+      "id": "07",
+      "start": 55.791667,
+      "duration": 8.25,
+      "narration": "底还是六，高还是四。三角形的面积仍然是十二平方厘米。",
+      "speech_duration": 6.24,
+      "pause_after": 2
+    }
+  ]
+}

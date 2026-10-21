@@ -1,0 +1,57 @@
+{
+  "no": "05",
+  "kicker": "为什么实验室 · 五下",
+  "footer": "旋转",
+  "scenes": [
+    {
+      "id": "g5b_l05_s1",
+      "type": "principle_relations",
+      "model": "rotate",
+      "stage": "start",
+      "heading": "绕 O，顺时针旋转九十度",
+      "narration": "这次绕中心点，顺时针转九十度。先看图上的两个点。",
+      "duration": 7.5,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5b_l05_s2",
+      "type": "principle_relations",
+      "model": "rotate",
+      "stage": "turn_a",
+      "heading": "整块转动，盯住 A 点",
+      "narration": "右边的点转到下边，离中心仍是三格。",
+      "duration": 5.6,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5b_l05_s3",
+      "type": "principle_relations",
+      "model": "rotate",
+      "stage": "turn_b",
+      "heading": "回放同一次旋转，盯住 B 点",
+      "narration": "上边的点同时转到右边，仍是两格。所有点都转相同角度，三角形没有拉长。",
+      "duration": 10.3,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5b_l05_s4",
+      "type": "principle_relations",
+      "model": "rotate",
+      "stage": "question",
+      "heading": "从原位置逆时针转，A 去哪里？",
+      "narration": "回到原来的位置。如果换成逆时针，右边这个点会去哪边？",
+      "duration": 15.4,
+      "pause_after": 8
+    },
+    {
+      "id": "g5b_l05_s5",
+      "type": "principle_relations",
+      "model": "rotate",
+      "stage": "answer",
+      "heading": "逆时针九十度，A 到上边",
+      "narration": "会到上边三格。方向换了，落点也变了，所以这三件事都要说清。",
+      "duration": 8.9,
+      "pause_after": 0.6
+    }
+  ]
+}

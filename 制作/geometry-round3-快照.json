@@ -1,0 +1,115 @@
+{
+  "geometry_sha256": "0cd7404a667684c72dc276a29e2f2203b058f638b34ae13e90152f9c58aaa1fe",
+  "all_geometry_assets_unchanged_since_round2": true,
+  "narration_unchanged_since_round1": true,
+  "assets": [
+    {
+      "lesson": "三上-L09",
+      "json_sha256": "6d2b61d6c2ee32a38e46c72fe1d373c827509556952e52b65737d1919a07e297",
+      "video_size": 1117793,
+      "video_mtime_ns": 1792570142129631180
+    },
+    {
+      "lesson": "三上-L15",
+      "json_sha256": "d7a6b4d68b9ece89aeaa7f251a3098cca319f5063f04d35db0b3346c5f4fdaec",
+      "video_size": 1317123,
+      "video_mtime_ns": 1792570142036643907
+    },
+    {
+      "lesson": "三下-L03",
+      "json_sha256": "5a307b0de65e61f2d1ad8e08aedd79fd43ab1a396478336297e3490b529fe09e",
+      "video_size": 1538553,
+      "video_mtime_ns": 1792570200387294334
+    },
+    {
+      "lesson": "三下-L04",
+      "json_sha256": "5afc15d47c420af094ca2f6ce39b3bcc1d4483f4a283dadc973b4e31851719ce",
+      "video_size": 1451396,
+      "video_mtime_ns": 1792570196651105800
+    },
+    {
+      "lesson": "三下-L14",
+      "json_sha256": "a1f57b3229754e2cb60de7d7d8276d6d37d8f6f343a79a28a439a905a5188ac7",
+      "video_size": 1314090,
+      "video_mtime_ns": 1792570235356873871
+    },
+    {
+      "lesson": "五上-L09",
+      "json_sha256": "f5eef923d5d008f6107ff1eb8c87f13e9f13f964e4e8993f00f7c10dc31e9f48",
+      "video_size": 1090928,
+      "video_mtime_ns": 1792570232429044906
+    },
+    {
+      "lesson": "五上-L10",
+      "json_sha256": "f8e27ad1a6241120ff896b8db8652dda5762e7563e4126b781bb2052fde33f4e",
+      "video_size": 1504223,
+      "video_mtime_ns": 1792570292956336700
+    },
+    {
+      "lesson": "五上-L11",
+      "json_sha256": "81a129ce2c1a58fd335a647c71f174c4176c2ac9526ede649d2922f9f1d277eb",
+      "video_size": 1279065,
+      "video_mtime_ns": 1792570291563809276
+    },
+    {
+      "lesson": "五下-L08",
+      "json_sha256": "0dfcbaee94f4c2aa47d8e7bd478a5317c5d7b311211960fce3fe9a5b47e2b769",
+      "video_size": 1282870,
+      "video_mtime_ns": 1792570350908332965
+    },
+    {
+      "lesson": "六上-L06",
+      "json_sha256": "4bba19c2de718d9dcc7be24fb6d4c891ecbdb8e41df6ea022f1ac867d0f1b097",
+      "video_size": 1488595,
+      "video_mtime_ns": 1792571525184970296
+    },
+    {
+      "lesson": "六上-L07",
+      "json_sha256": "433e93e59a82cc5f6667d0b1c9226109ba84dd16ff2f32ab8ffe8d1f3e1f2b0b",
+      "video_size": 2420346,
+      "video_mtime_ns": 1792570606400024524
+    },
+    {
+      "lesson": "六下-L03",
+      "json_sha256": "d2435516767125b227d79c5de5b2a6c9276af79309618a7f8c6fc5f02f1b572a",
+      "video_size": 1310451,
+      "video_mtime_ns": 1792570601987506090
+    },
+    {
+      "lesson": "六下-L04",
+      "json_sha256": "9d314e25ea607a042652e1329c2a32d409138aa0cb9e2dd297f1452282889400",
+      "video_size": 1851458,
+      "video_mtime_ns": 1792570485878845178
+    },
+    {
+      "lesson": "六下-L05",
+      "json_sha256": "8a0f6aadedb0821e4813ea61b1be20aacb8d1ffaf62da3c805c683199cb9415c",
+      "video_size": 1741463,
+      "video_mtime_ns": 1792570633821591217
+    },
+    {
+      "lesson": "六下-L09",
+      "json_sha256": "c5928b26d66eb70d90325c2b3bbe07a9bd133ca6a5421228dbc9324bd54cc7fd",
+      "video_size": 1102449,
+      "video_mtime_ns": 1792570535306959072
+    },
+    {
+      "lesson": "六下-L13",
+      "json_sha256": "43f2a326aceed7d3b30006ee3d5265730a2a20afd05f417004bee3333e79cf6a",
+      "video_size": 1303898,
+      "video_mtime_ns": 1792570547424662080
+    },
+    {
+      "lesson": "四上-L09",
+      "json_sha256": "d5314db7e58e9b4338f2d03753bdc9bb8414750e8ee0c4f6a73d28e72098060d",
+      "video_size": 1361542,
+      "video_mtime_ns": 1792570559049117990
+    },
+    {
+      "lesson": "四下-L07",
+      "json_sha256": "57d5db3ac41bffd13bf2eef0cab106d8525a1cb8b2bb969ea16f6fcb384fdce2",
+      "video_size": 1140745,
+      "video_mtime_ns": 1792570564506168384
+    }
+  ]
+}

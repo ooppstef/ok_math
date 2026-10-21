@@ -1,0 +1,63 @@
+{
+  "no": "13",
+  "kicker": "为什么实验室 · 六下 · 立体图形切拼",
+  "footer": "看清变化，再说理由",
+  "scenes": [
+    {
+      "id": "01",
+      "type": "principle_geometry",
+      "model": "solid_cut",
+      "stage": "start",
+      "heading": "切开木块，什么会变？",
+      "narration": "木块长八厘米、宽四厘米、高三厘米。沿长的中点切开，假定没有切割损耗。",
+      "equation": "原体积：8 × 4 × 3 = 96 立方厘米",
+      "duration": 8.947368421052632,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "type": "principle_geometry",
+      "model": "solid_cut",
+      "stage": "cut",
+      "heading": "一刀，两边各露出一个新面",
+      "narration": "两块分开。左块新露出一个面，右块也新露出一个面。不是只有一个切面。",
+      "equation": "每个新面：4 × 3 = 12 平方厘米",
+      "duration": 8.68421052631579,
+      "pause_after": 1
+    },
+    {
+      "id": "03",
+      "type": "principle_geometry",
+      "model": "solid_cut",
+      "stage": "done",
+      "heading": "体积没变，表面积增加",
+      "narration": "两块木料合起来还是原来的体积。多出的两个面，每个十二平方厘米，合计二十四。",
+      "equation": "体积仍为 96 立方厘米；表面积增加 24 平方厘米",
+      "duration": 9.736842105263158,
+      "pause_after": 2
+    },
+    {
+      "id": "04",
+      "type": "principle_geometry",
+      "model": "solid_cut",
+      "stage": "question",
+      "heading": "沿切面贴回去，少几个面？",
+      "narration": "如果沿原来的切面把两块贴紧，外表面积会减少多少？体积会减少吗？",
+      "equation": "每个切面 12 平方厘米；共有两个",
+      "duration": 8.157894736842106,
+      "pause_after": 8
+    },
+    {
+      "id": "05",
+      "type": "principle_geometry",
+      "model": "solid_cut",
+      "stage": "join",
+      "heading": "沿切面贴回去，少几个面？",
+      "narration": "两个切面都藏到里面，外表面积减少二十四平方厘米。木料一块没少，体积不变。",
+      "equation": "少掉两块外露的面；体积不变",
+      "duration": 9.473684210526317,
+      "pause_after": 2
+    }
+  ],
+  "audience": "六下 · 原理短片"
+}

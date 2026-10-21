@@ -1,0 +1,68 @@
+{
+  "no": "10",
+  "kicker": "为什么实验室 · 五下",
+  "footer": "小学数学 · 看见原理",
+  "audience": "五下 · 原理短片",
+  "scenes": [
+    {
+      "id": "g5b_l10_s1_1",
+      "type": "principle_arithmetic",
+      "model": "equivalent",
+      "stage": 1,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数基本性质",
+      "duration": 7.65,
+      "narration": "涂色是整条的一半。接下来只改分法，不再涂，也不擦掉。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5b_l10_s2_1",
+      "type": "principle_arithmetic",
+      "model": "equivalent",
+      "stage": 2,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数基本性质",
+      "duration": 7.94,
+      "narration": "每一份再分成两份。总共四份，涂色占两份，写成四分之二。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5b_l10_s3_1",
+      "type": "principle_arithmetic",
+      "model": "equivalent",
+      "stage": 3,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数基本性质",
+      "duration": 7.94,
+      "narration": "再分细，变成八份中的四份。小份变多，涂色的总长度没变。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g5b_l10_s4_1",
+      "type": "principle_arithmetic",
+      "model": "equivalent",
+      "stage": 4,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数基本性质",
+      "duration": 9.12,
+      "narration": "这次在右边接上白纸，整条变长了。原来的涂色还占新整体的一半吗？",
+      "pause_after": 8
+    },
+    {
+      "id": "g5b_l10_s5_1",
+      "type": "principle_arithmetic",
+      "model": "equivalent",
+      "stage": 5,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数基本性质",
+      "duration": 9.71,
+      "narration": "现在只占三分之一。改变分法可以不改分数大小，换掉整体却是另一件事。",
+      "pause_after": 0.6
+    }
+  ]
+}

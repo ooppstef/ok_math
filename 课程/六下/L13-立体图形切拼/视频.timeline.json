@@ -1,0 +1,50 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/六下-L13.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/六下-L13-立体图形切拼/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "01",
+      "start": 0.0,
+      "duration": 8.875,
+      "narration": "木块长八厘米、宽四厘米、高三厘米。沿长的中点切开，假定没有切割损耗。",
+      "speech_duration": 7.848004535147393,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "start": 8.875,
+      "duration": 8.083333333333334,
+      "narration": "两块分开。左块新露出一个面，右块也新露出一个面。不是只有一个切面。",
+      "speech_duration": 7.08,
+      "pause_after": 1
+    },
+    {
+      "id": "03",
+      "start": 16.958333,
+      "duration": 9.875,
+      "narration": "两块木料合起来还是原来的体积。多出的两个面，每个十二平方厘米，合计二十四。",
+      "speech_duration": 7.848004535147393,
+      "pause_after": 2
+    },
+    {
+      "id": "04",
+      "start": 26.833333,
+      "duration": 14.875,
+      "narration": "如果沿原来的切面把两块贴紧，外表面积会减少多少？体积会减少吗？",
+      "speech_duration": 6.84,
+      "pause_after": 8
+    },
+    {
+      "id": "05",
+      "start": 41.708333,
+      "duration": 8.875,
+      "narration": "两个切面都藏到里面，外表面积减少二十四平方厘米。木料一块没少，体积不变。",
+      "speech_duration": 6.84,
+      "pause_after": 2
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "script": "工具/episodes/成片/六下-L03.json",
+    "stage": "render",
+    "ok": true
+  },
+  {
+    "script": "工具/episodes/成片/六上-L07.json",
+    "stage": "render",
+    "ok": true
+  },
+  {
+    "script": "工具/episodes/成片/六下-L05.json",
+    "stage": "render",
+    "ok": true
+  }
+]

@@ -1,0 +1,122 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/三上-L03.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/三上-L03-乘法的形状/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "g3a_l03_s1_1",
+      "start": 0.0,
+      "duration": 8.875,
+      "narration": "十二颗棋子排成三行，每行四颗。四个四个地数，三个四，一共十二。",
+      "speech_duration": 8.256009070294784,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l03_s2_1",
+      "start": 8.875,
+      "duration": 8.5,
+      "narration": "把同一批棋子一起转九十度。每两颗棋子间的距离不变，三行四列变成四行三列。",
+      "speech_duration": 7.872018140589569,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l03_s2_2",
+      "start": 17.375,
+      "duration": 2.25,
+      "narration": "总数还是十二。",
+      "speech_duration": 1.632018140589569,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l03_s3_1",
+      "start": 19.625,
+      "duration": 8.25,
+      "narration": "再摆六行，每行七颗，一共四十二颗。一起转过来，就是七行，每行六颗。",
+      "speech_duration": 7.632018140589569,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l03_s3_2",
+      "start": 27.875,
+      "duration": 3.0833333333333335,
+      "narration": "六乘七和七乘六也相等。",
+      "speech_duration": 2.4480045351473922,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l03_s4_1",
+      "start": 30.958333,
+      "duration": 4.666666666666667,
+      "narration": "如果最后一行缺了一颗，每行就不一样多了。",
+      "speech_duration": 4.032018140589569,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l03_s4_2",
+      "start": 35.625,
+      "duration": 6.083333333333333,
+      "narration": "这时是四加四加三，只有十一颗，不能直接算成三乘四。",
+      "speech_duration": 5.47201814058957,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l03_s5_1",
+      "start": 41.708333,
+      "duration": 9.833333333333334,
+      "narration": "十二颗还能摆成一行十二颗、两行六颗、三行四颗。转向算同一种，有三种。",
+      "speech_duration": 9.216009070294785,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l03_s5_2",
+      "start": 51.541667,
+      "duration": 3.2916666666666665,
+      "narration": "行列分开算，有六种。",
+      "speech_duration": 2.664013605442177,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l03_s6_1",
+      "start": 54.833333,
+      "duration": 8.083333333333334,
+      "narration": "现在用二十四颗棋子，摆每行一样多的完整长方形。规定转九十度算同一种。",
+      "speech_duration": 7.464013605442177,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l03_s6_2",
+      "start": 62.916667,
+      "duration": 10.666666666666666,
+      "narration": "先暂停，找出所有摆法。",
+      "speech_duration": 2.664013605442177,
+      "pause_after": 8
+    },
+    {
+      "id": "g3a_l03_s7_1",
+      "start": 73.583333,
+      "duration": 9.666666666666666,
+      "narration": "一行二十四颗，两行十二颗，三行八颗，四行六颗。转过来的算同一种，一共有四种。",
+      "speech_duration": 9.048004535147392,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l03_s8_1",
+      "start": 83.25,
+      "duration": 5.833333333333333,
+      "narration": "这里有四行，每行二十五颗。四个二十五相加是一百。",
+      "speech_duration": 5.232018140589569,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l03_s8_2",
+      "start": 89.083333,
+      "duration": 5.041666666666667,
+      "narration": "写成乘法，四乘二十五，也等于二十五乘四。",
+      "speech_duration": 4.416009070294785,
+      "pause_after": 0.6
+    }
+  ]
+}

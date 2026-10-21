@@ -1,0 +1,63 @@
+{
+  "no": "03",
+  "kicker": "为什么实验室 · 六下 · 圆柱的表面积",
+  "footer": "看清变化，再说理由",
+  "scenes": [
+    {
+      "id": "01",
+      "type": "principle_geometry",
+      "model": "cylinder_surface",
+      "stage": "start",
+      "heading": "标签长度，原来绕着哪一圈？",
+      "narration": "把圆柱侧面沿一条高剪开。上下两圈边，用同样的颜色追踪。",
+      "equation": "侧面是一张弯曲的面",
+      "duration": 7.105263157894737,
+      "pause_after": 1
+    },
+    {
+      "id": "02",
+      "type": "principle_geometry",
+      "model": "cylinder_surface",
+      "stage": "unroll",
+      "heading": "慢慢摊平，边长不变",
+      "narration": "慢慢摊平。绕底面一圈的长度，变成长方形的长，高仍是原来的高。",
+      "equation": "长 = 底面周长 C；宽 = 高 h",
+      "duration": 7.894736842105264,
+      "pause_after": 1
+    },
+    {
+      "id": "03",
+      "type": "principle_geometry",
+      "model": "cylinder_surface",
+      "stage": "flat",
+      "heading": "侧面积为什么是周长乘高？",
+      "narration": "展开后是长方形。长等于底面周长，宽等于高，所以侧面积是周长乘高。",
+      "equation": "侧面积 = C × h = 2πrh",
+      "duration": 8.421052631578947,
+      "pause_after": 2
+    },
+    {
+      "id": "04",
+      "type": "principle_geometry",
+      "model": "cylinder_surface",
+      "stage": "question",
+      "heading": "有盖圆柱，还要加几个底面？",
+      "narration": "算完侧面，有盖圆柱还要加几个圆形底面？无盖的水桶呢？",
+      "equation": "侧面之外，再数实际保留的底面",
+      "duration": 6.842105263157895,
+      "pause_after": 8
+    },
+    {
+      "id": "05",
+      "type": "principle_geometry",
+      "model": "cylinder_surface",
+      "stage": "answer",
+      "heading": "有盖圆柱，还要加几个底面？",
+      "narration": "有盖加两个底面，无盖加一个。两端开口的管子，只算侧面。材料题忽略接缝和厚度。",
+      "equation": "有盖表面积 = 2πrh + 2πr²",
+      "duration": 10.0,
+      "pause_after": 2
+    }
+  ],
+  "audience": "六下 · 原理短片"
+}

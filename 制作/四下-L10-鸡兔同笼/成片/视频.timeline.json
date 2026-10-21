@@ -1,0 +1,50 @@
+{
+  "script": "/Users/charles/Desktop/Projects/小学数学/工具/episodes/成片/四下-L10.json",
+  "fps": 24,
+  "audio": "files",
+  "audio_dir": "/Users/charles/Desktop/Projects/小学数学/制作/四下-L10-鸡兔同笼/配音-开朗学长-v1",
+  "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
+  "burn_captions": true,
+  "scenes": [
+    {
+      "id": "g4b_l10_s1",
+      "start": 0.0,
+      "duration": 5.875,
+      "narration": "先把八只全看成鸡，只有十六只脚，比题目少六只。",
+      "speech_duration": 5.256009070294785,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l10_s2",
+      "start": 5.875,
+      "duration": 4.5,
+      "narration": "换一只兔，头数不变，脚多两只。",
+      "speech_duration": 3.8640136054421768,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l10_s3",
+      "start": 10.375,
+      "duration": 7.25,
+      "narration": "再换两次，脚数就到二十二。一共换进三只兔，还剩五只鸡。",
+      "speech_duration": 6.648004535147392,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g4b_l10_s4",
+      "start": 17.625,
+      "duration": 11.875,
+      "narration": "如果题目说有二十三只脚，还能这样凑出来吗？",
+      "speech_duration": 3.8640136054421768,
+      "pause_after": 8
+    },
+    {
+      "id": "g4b_l10_s5",
+      "start": 29.5,
+      "duration": 10.083333333333334,
+      "narration": "凑不出来。每次都加两只脚，得不到二十三。条件有问题，不能答三点五只兔。",
+      "speech_duration": 9.456009070294785,
+      "pause_after": 0.6
+    }
+  ]
+}

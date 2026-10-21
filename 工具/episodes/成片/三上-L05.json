@@ -1,0 +1,68 @@
+{
+  "no": "05",
+  "kicker": "为什么实验室 · 三上",
+  "footer": "小学数学 · 看见原理",
+  "audience": "三上 · 原理短片",
+  "scenes": [
+    {
+      "id": "g3a_l05_s1_1",
+      "type": "principle_arithmetic",
+      "model": "multiple",
+      "stage": 1,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "倍不是多",
+      "duration": 7.65,
+      "narration": "蓝绳这么长算一份。红绳有同样长的三份，是蓝绳的三倍。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l05_s2_1",
+      "type": "principle_arithmetic",
+      "model": "multiple",
+      "stage": 2,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "倍不是多",
+      "duration": 10.88,
+      "narration": "对齐起点后，多出来的是两份。三倍说的是红绳整条，有三份；多出来的只有两份。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l05_s3_1",
+      "type": "principle_arithmetic",
+      "model": "multiple",
+      "stage": 3,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "倍不是多",
+      "duration": 11.18,
+      "narration": "两条合起来有四份，长短相差两份。同一张图，问总长和问相差，算的是不同的部分。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3a_l05_s4_1",
+      "type": "principle_arithmetic",
+      "model": "multiple",
+      "stage": 4,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "倍不是多",
+      "duration": 5.59,
+      "narration": "合起来二十四厘米，对应几份？一份多长？",
+      "pause_after": 8
+    },
+    {
+      "id": "g3a_l05_s5_1",
+      "type": "principle_arithmetic",
+      "model": "multiple",
+      "stage": 5,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "倍不是多",
+      "duration": 8.53,
+      "narration": "二十四厘米分成四份，每份六厘米。蓝绳六厘米，红绳十八厘米。",
+      "pause_after": 0.6
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "no": "01",
+  "kicker": "为什么实验室 · 三下",
+  "footer": "小学数学 · 看见原理",
+  "audience": "三下 · 原理短片",
+  "scenes": [
+    {
+      "id": "g3b_l01_s1_1",
+      "type": "principle_arithmetic",
+      "model": "long_divide",
+      "stage": 1,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "除法竖式",
+      "duration": 5.29,
+      "narration": "56平均分成三份，先把五个十分一分。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3b_l01_s2_1",
+      "type": "principle_arithmetic",
+      "model": "long_divide",
+      "stage": 2,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "除法竖式",
+      "duration": 4.41,
+      "narration": "每份先拿到一个十，还剩两个十。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3b_l01_s3_1",
+      "type": "principle_arithmetic",
+      "model": "long_divide",
+      "stage": 3,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "除法竖式",
+      "duration": 8.24,
+      "narration": "26个一，每份还能拿8个，最后剩2个。每份合起来是18。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3b_l01_s4_1",
+      "type": "principle_arithmetic",
+      "model": "long_divide",
+      "stage": 4,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "除法竖式",
+      "duration": 4,
+      "narration": "为什么剩下的数必须比3小？",
+      "pause_after": 8
+    },
+    {
+      "id": "g3b_l01_s5_1",
+      "type": "principle_arithmetic",
+      "model": "long_divide",
+      "stage": 5,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "除法竖式",
+      "duration": 9.12,
+      "narration": "换成五十七个试试。如果每份十八个，还剩三个，每份就能再拿一个。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g3b_l01_s5_2",
+      "type": "principle_arithmetic",
+      "model": "long_divide",
+      "stage": 6,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "除法竖式",
+      "duration": 7.94,
+      "narration": "要分到不能再平均分为止。原来五十六那题，商十八，余二。",
+      "pause_after": 0.6
+    }
+  ]
+}

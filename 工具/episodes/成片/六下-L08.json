@@ -1,0 +1,57 @@
+{
+  "no": "08",
+  "kicker": "为什么实验室 · 六下",
+  "footer": "反比例",
+  "scenes": [
+    {
+      "id": "g6b_l08_s1",
+      "type": "principle_relations",
+      "model": "inverse",
+      "stage": "start",
+      "heading": "面积十二，长和宽怎样变？",
+      "narration": "这块面积十二平方厘米。长变成六，宽应该变多少，面积才不变？",
+      "duration": 8.9,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6b_l08_s2",
+      "type": "principle_relations",
+      "model": "inverse",
+      "stage": "move",
+      "heading": "长在变，宽每一步都重新计算",
+      "narration": "长变长的同时，宽要按十二除以长来计算。长变成两倍，宽就变成一半。",
+      "duration": 9.7,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6b_l08_s3",
+      "type": "principle_relations",
+      "model": "inverse",
+      "stage": "result",
+      "heading": "长变两倍，宽变成一半",
+      "narration": "变的是长和宽，不变的是乘积十二。这种关系叫反比例。",
+      "duration": 7.7,
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6b_l08_s4",
+      "type": "principle_relations",
+      "model": "inverse",
+      "stage": "question",
+      "heading": "换条件：只固定周长",
+      "narration": "另一块只固定周长。长四宽二，改成长五宽一，也是一大一小。它们成反比例吗？",
+      "duration": 18.3,
+      "pause_after": 8
+    },
+    {
+      "id": "g6b_l08_s5",
+      "type": "principle_relations",
+      "model": "inverse",
+      "stage": "answer",
+      "heading": "一大一小，还要检查乘积",
+      "narration": "不成。乘积从八变成五，保持的是和。判断反比例，要看乘积。",
+      "duration": 8.6,
+      "pause_after": 0.6
+    }
+  ]
+}

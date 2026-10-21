@@ -1,0 +1,80 @@
+{
+  "no": "02",
+  "kicker": "为什么实验室 · 六上",
+  "footer": "小学数学 · 看见原理",
+  "audience": "六上 · 原理短片",
+  "scenes": [
+    {
+      "id": "g6a_l02_s1_1",
+      "type": "principle_arithmetic",
+      "model": "fraction_divide",
+      "stage": 1,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数除法",
+      "duration": 9.71,
+      "narration": "四分之三米里，有两段八分之三米。用同样的小段来数，六除以三就是二。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l02_s2_1",
+      "type": "principle_arithmetic",
+      "model": "fraction_divide",
+      "stage": 2,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数除法",
+      "duration": 10.0,
+      "narration": "再看三分之二除以五分之四。都换成十五分之一，分别是十小段和十二小段。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l02_s3_1",
+      "type": "principle_arithmetic",
+      "model": "fraction_divide",
+      "stage": 3,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数除法",
+      "duration": 10.88,
+      "narration": "十二小段算一整份，十小段占这一份的六分之五。商不够一，也可以表示不满一份。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l02_s4_1",
+      "type": "principle_arithmetic",
+      "model": "fraction_divide",
+      "stage": 4,
+      "phase_start": 0.0,
+      "phase_end": 1.0,
+      "title": "分数除法",
+      "duration": 9.41,
+      "narration": "想把五分之四这一份变成一，应先除以几，再乘几？总量要不要一起变？",
+      "pause_after": 8
+    },
+    {
+      "id": "g6a_l02_s5_1",
+      "type": "principle_arithmetic",
+      "model": "fraction_divide",
+      "stage": 5,
+      "phase_start": 0.0,
+      "phase_end": 0.5,
+      "title": "分数除法",
+      "duration": 9.12,
+      "narration": "先除以四，再乘五，也就是乘四分之五。总量同步这样变，份数不变。",
+      "pause_after": 0.6
+    },
+    {
+      "id": "g6a_l02_s5_2",
+      "type": "principle_arithmetic",
+      "model": "fraction_divide",
+      "stage": 5,
+      "phase_start": 0.5,
+      "phase_end": 1.0,
+      "title": "分数除法",
+      "duration": 5.29,
+      "narration": "这就解释了为什么除以分数可以乘倒数。",
+      "pause_after": 0.6
+    }
+  ]
+}
