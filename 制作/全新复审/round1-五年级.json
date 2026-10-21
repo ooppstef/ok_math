@@ -1,0 +1,1163 @@
+{
+  "round": 1,
+  "status": "修复轮，非无问题轮；等待独立第2轮及后续至少第3轮",
+  "source": "教育部义务教育数学课程标准（2022年版）更正版，数与数量关系印刷24—25页；不宣称北师大新版册次同步",
+  "lessons": [
+    {
+      "path": "课程/五上/L01-小数乘法",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础；运算律为后续短课",
+      "prerequisites": [
+        "小数意义",
+        "整数乘法",
+        "面积单位"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "百格单位0.01，12格得0.12；25×4=100按3位小数回到0.100。复算全部例题、A/B/C组、分段加餐答案。",
+        "挑战题问两个正小数却用整数2举例，改为两个正数；补动手单核对。"
+      ],
+      "fixes": [
+        "挑战题问两个正小数却用整数2举例，改为两个正数；补动手单核对。"
+      ],
+      "reviewed_files": [
+        "课程/五上/L01-小数乘法/动手单.md",
+        "课程/五上/L01-小数乘法/挑战单.md",
+        "课程/五上/L01-小数乘法/视频稿与分镜.md",
+        "课程/五上/L01-小数乘法/讲授稿.md",
+        "工具/episodes/成片/五上-L01.json",
+        "课程/五上/L01-小数乘法/视频.mp4",
+        "课程/五上/L01-小数乘法/视频.timeline.json",
+        "课程/五上/L01-小数乘法/视频.srt",
+        "课程/五上/L01-小数乘法/视频.vtt",
+        "assets/原理图/小数乘法百格.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "对应内容一致，实际抽帧和技术核验完成",
+        "actual_frame_review": "制作/全新复审/五年级实际抽帧/五上-L01.jpg",
+        "sample_count": 6,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "五下L08新预览已核查；所有片旁白均未改。分镜属于教学意图，实际逐句以成片JSON为准。"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五上/L02-小数除法",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础",
+      "prerequisites": [
+        "整数除法竖式",
+        "小数意义"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "6.08÷4=1.52、1÷8=0.125的换位单位完整；绳段14、瓶数15不能四舍五入。复算全部题答案。",
+        "补动手单移位、竖式与单位核对。"
+      ],
+      "fixes": [
+        "补动手单移位、竖式与单位核对。"
+      ],
+      "reviewed_files": [
+        "课程/五上/L02-小数除法/动手单.md",
+        "课程/五上/L02-小数除法/挑战单.md",
+        "课程/五上/L02-小数除法/讲授稿.md"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "无引用图片"
+    },
+    {
+      "path": "课程/五上/L03-循环小数",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础识别；有限小数的质因数判据选学",
+      "prerequisites": [
+        "五上L02小数除法"
+      ],
+      "core_or_extension": "mixed",
+      "findings": [
+        "1÷7余数链1,3,2,6,4,5,1；5÷12循环节6；所有例题及练习复算。",
+        "质因数判据前置条件原在答案后，移至题组标题并补判据理由；补动手核对。"
+      ],
+      "fixes": [
+        "质因数判据前置条件原在答案后，移至题组标题并补判据理由；补动手核对。"
+      ],
+      "reviewed_files": [
+        "课程/五上/L03-循环小数/动手单.md",
+        "课程/五上/L03-循环小数/挑战单.md",
+        "课程/五上/L03-循环小数/讲授稿.md"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "无引用图片"
+    },
+    {
+      "path": "课程/五上/L04-数对",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础；交换数对的对称关系提高",
+      "prerequisites": [
+        "行列",
+        "方向",
+        "整数加减",
+        "长方形面积"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "交换(3,4)/(4,3)位置不同；逆移结果(6,4)；矩形4×3=12，全部题核对。",
+        "动手单6×6格却只编6点易混，改6×6点阵；移动每项起点明确；倒推题不用未学方程。"
+      ],
+      "fixes": [
+        "动手单6×6格却只编6点易混，改6×6点阵；移动每项起点明确；倒推题不用未学方程。"
+      ],
+      "reviewed_files": [
+        "课程/五上/L04-数对/动手单.md",
+        "课程/五上/L04-数对/挑战单.md",
+        "课程/五上/L04-数对/讲授稿.md",
+        "assets/原理图/数对定位.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五上/L05-可能性",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础定性；概率分数和预期次数高年级兴趣拓展",
+      "prerequisites": [
+        "随机摸球体验",
+        "数量比较；选学另需分数意义和比较"
+      ],
+      "core_or_extension": "mixed",
+      "findings": [
+        "逐题复核一定/可能/不可能、3红1蓝与5红1蓝、20次不必15红。",
+        "原选学提示未改变正文定量主线；新增完整定性基础教学和6题答案，定量内容整体置后折叠；动手记录不用概率分数；补记录局限。",
+        "交叉发现动手单尚未明确要求列出所有可能结果。"
+      ],
+      "fixes": [
+        "原选学提示未改变正文定量主线；新增完整定性基础教学和6题答案，定量内容整体置后折叠；动手记录不用概率分数；补记录局限。",
+        "新增按颜色列全红/蓝、不可能绿及重复红色只列一次的核对。"
+      ],
+      "reviewed_files": [
+        "课程/五上/L05-可能性/动手单.md",
+        "课程/五上/L05-可能性/挑战单.md",
+        "课程/五上/L05-可能性/讲授稿.md"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "无引用图片"
+    },
+    {
+      "path": "课程/五上/L06-字母表示数",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础字母关系；平方比较提高",
+      "prerequisites": [
+        "整数乘法",
+        "正方形周长和面积",
+        "数位"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "共边n个正方形3n+1仅n≥1；两位数10a+b；逐题算值核对。",
+        "补n²=n×n定义；不以求解方程作为等式入门要求；补动手答案。"
+      ],
+      "fixes": [
+        "补n²=n×n定义；不以求解方程作为等式入门要求；补动手答案。"
+      ],
+      "reviewed_files": [
+        "课程/五上/L06-字母表示数/动手单.md",
+        "课程/五上/L06-字母表示数/挑战单.md",
+        "课程/五上/L06-字母表示数/讲授稿.md"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "无引用图片"
+    },
+    {
+      "path": "课程/五上/L07-等式与方程",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础等式性质；系统解方程高年级选学/初中衔接",
+      "prerequisites": [
+        "等号含义",
+        "四则运算",
+        "字母表示数"
+      ],
+      "core_or_extension": "mixed",
+      "findings": [
+        "课标24/25页要求具体情境感受等式性质，基础保留同加减、同乘除非零数；全部原6方程解为5,4,8,5,5,4。",
+        "基础先实物等量和算术6题；原两边未知数/变形练习移折叠选学；两份练习单同步分层并补答案；实际天平含字母式需按层观看。"
+      ],
+      "fixes": [
+        "基础先实物等量和算术6题；原两边未知数/变形练习移折叠选学；两份练习单同步分层并补答案；实际天平含字母式需按层观看。"
+      ],
+      "reviewed_files": [
+        "课程/五上/L07-等式与方程/动手单.md",
+        "课程/五上/L07-等式与方程/挑战单.md",
+        "课程/五上/L07-等式与方程/视频稿与分镜.md",
+        "课程/五上/L07-等式与方程/讲授稿.md",
+        "工具/episodes/成片/五上-L07.json",
+        "课程/五上/L07-等式与方程/视频.mp4",
+        "课程/五上/L07-等式与方程/视频.timeline.json",
+        "课程/五上/L07-等式与方程/视频.srt",
+        "课程/五上/L07-等式与方程/视频.vtt",
+        "assets/原理图/等式同步.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "对应内容一致，实际抽帧和技术核验完成",
+        "actual_frame_review": "制作/全新复审/五年级实际抽帧/五上-L07.jpg",
+        "sample_count": 6,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "五下L08新预览已核查；所有片旁白均未改。分镜属于教学意图，实际逐句以成片JSON为准。"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五上/L08-列方程",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础画图与数量关系；盈亏年龄提高/方程衔接",
+      "prerequisites": [
+        "线段示意",
+        "份数",
+        "加减乘除；衔接需五上L07选学"
+      ],
+      "core_or_extension": "mixed",
+      "findings": [
+        "基础和差/和倍六题结果7与10、13与18、9与15、6与18、12、12与8；原转移24/18、盈亏6人25张、年龄6年均复算。",
+        "新增线段份数完整基础主线和练习答案；原系统方程/括号/双未知在等式两边的内容整段选学；动手与挑战同步分层。"
+      ],
+      "fixes": [
+        "新增线段份数完整基础主线和练习答案；原系统方程/括号/双未知在等式两边的内容整段选学；动手与挑战同步分层。"
+      ],
+      "reviewed_files": [
+        "课程/五上/L08-列方程/动手单.md",
+        "课程/五上/L08-列方程/挑战单.md",
+        "课程/五上/L08-列方程/讲授稿.md",
+        "assets/原理图/线段方程.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五上/L09-平行四边形面积",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础",
+      "prerequisites": [
+        "长方形面积",
+        "垂直",
+        "平移",
+        "小数乘法"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "剪拼底6高3面积18；另一底8的高5；增高面积54，全部题复算。",
+        "动手任意斜率不保证半格且高不一定落在底上，固定错位2并改为不足整格拼补；补14完整格+4格说明。"
+      ],
+      "fixes": [
+        "动手任意斜率不保证半格且高不一定落在底上，固定错位2并改为不足整格拼补；补14完整格+4格说明。"
+      ],
+      "reviewed_files": [
+        "课程/五上/L09-平行四边形面积/动手单.md",
+        "课程/五上/L09-平行四边形面积/挑战单.md",
+        "课程/五上/L09-平行四边形面积/视频稿与分镜.md",
+        "课程/五上/L09-平行四边形面积/讲授稿.md",
+        "工具/episodes/成片/五上-L09.json",
+        "课程/五上/L09-平行四边形面积/视频.mp4",
+        "课程/五上/L09-平行四边形面积/视频.timeline.json",
+        "课程/五上/L09-平行四边形面积/视频.srt",
+        "课程/五上/L09-平行四边形面积/视频.vtt",
+        "assets/原理图/平行四边形剪拼.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "对应内容一致，实际抽帧和技术核验完成",
+        "actual_frame_review": "制作/全新复审/五年级实际抽帧/五上-L09.jpg",
+        "sample_count": 6,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "五下L08新预览已核查；所有片旁白均未改。分镜属于教学意图，实际逐句以成片JSON为准。"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五上/L10-三角形面积",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础",
+      "prerequisites": [
+        "五上L09平行四边形面积",
+        "对应高",
+        "旋转半周"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "两份全等三角形总面积24，一份12；反求高先面积×2÷底；所有题复算。",
+        "补动手判断与答案。"
+      ],
+      "fixes": [
+        "补动手判断与答案。"
+      ],
+      "reviewed_files": [
+        "课程/五上/L10-三角形面积/动手单.md",
+        "课程/五上/L10-三角形面积/挑战单.md",
+        "课程/五上/L10-三角形面积/视频稿与分镜.md",
+        "课程/五上/L10-三角形面积/讲授稿.md",
+        "工具/episodes/成片/五上-L10.json",
+        "课程/五上/L10-三角形面积/视频.mp4",
+        "课程/五上/L10-三角形面积/视频.timeline.json",
+        "课程/五上/L10-三角形面积/视频.srt",
+        "课程/五上/L10-三角形面积/视频.vtt",
+        "assets/原理图/三角形复制.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "对应内容一致，实际抽帧和技术核验完成",
+        "actual_frame_review": "制作/全新复审/五年级实际抽帧/五上-L10.jpg",
+        "sample_count": 6,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "五下L08新预览已核查；所有片旁白均未改。分镜属于教学意图，实际逐句以成片JSON为准。"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五上/L11-梯形面积",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础；估测范围提高",
+      "prerequisites": [
+        "五上L09/L10面积",
+        "面积估测"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "梯形16/40；高6/5；草皮126块需13包；估测3到15、约9，全部题答案核对。",
+        "腰可当高的判断含直角梯形例外，改任何腰都可；分成长方形+两三角需短底端点落内侧，补条件；补动手核对。"
+      ],
+      "fixes": [
+        "腰可当高的判断含直角梯形例外，改任何腰都可；分成长方形+两三角需短底端点落内侧，补条件；补动手核对。"
+      ],
+      "reviewed_files": [
+        "课程/五上/L11-梯形面积/动手单.md",
+        "课程/五上/L11-梯形面积/挑战单.md",
+        "课程/五上/L11-梯形面积/视频稿与分镜.md",
+        "课程/五上/L11-梯形面积/讲授稿.md",
+        "工具/episodes/成片/五上-L11.json",
+        "课程/五上/L11-梯形面积/视频.mp4",
+        "课程/五上/L11-梯形面积/视频.timeline.json",
+        "课程/五上/L11-梯形面积/视频.srt",
+        "课程/五上/L11-梯形面积/视频.vtt",
+        "assets/原理图/梯形分割.svg",
+        "assets/课程图/方格面积估测.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "对应内容一致，实际抽帧和技术核验完成",
+        "actual_frame_review": "制作/全新复审/五年级实际抽帧/五上-L11.jpg",
+        "sample_count": 6,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "五下L08新预览已核查；所有片旁白均未改。分镜属于教学意图，实际逐句以成片JSON为准。"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五上/L12-植树",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "综合应用提高",
+      "prerequisites": [
+        "除法",
+        "等间隔点段关系"
+      ],
+      "core_or_extension": "extension",
+      "findings": [
+        "两端5、单端4、环4；120米两侧26去3得23/去1得25，全部题核对。",
+        "两侧植树动手题未说明两端，补齐；补所有动手答案。"
+      ],
+      "fixes": [
+        "两侧植树动手题未说明两端，补齐；补所有动手答案。"
+      ],
+      "reviewed_files": [
+        "课程/五上/L12-植树/动手单.md",
+        "课程/五上/L12-植树/挑战单.md",
+        "课程/五上/L12-植树/讲授稿.md",
+        "assets/原理图/点段闭合.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五上/L13-组合图形的面积",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础综合",
+      "prerequisites": [
+        "长方形/三角形面积",
+        "周长",
+        "分割相加"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "L形42、周长28；第二图58/34；拼接33；重叠31，六题核对。",
+        "新增动手验证分割与补减，并给42/28及两种分块答案。"
+      ],
+      "fixes": [
+        "新增动手验证分割与补减，并给42/28及两种分块答案。"
+      ],
+      "reviewed_files": [
+        "课程/五上/L13-组合图形的面积/讲授稿.md",
+        "assets/课程图/组合图形面积.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五上/L14-近似数与实际取整",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础",
+      "prerequisites": [
+        "小数除法",
+        "四舍五入",
+        "现实整份"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "9.96→10.0；43人6辆/43米5根；2.4元笔最多4支，全部题核对。",
+        "新增棋子分车与剪纸条对照动手验证。"
+      ],
+      "fixes": [
+        "新增棋子分车与剪纸条对照动手验证。"
+      ],
+      "reviewed_files": [
+        "课程/五上/L14-近似数与实际取整/讲授稿.md",
+        "assets/课程图/实际取整.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五上/L15-分段计费",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础应用",
+      "prerequisites": [
+        "时间单位",
+        "整数和小数除法",
+        "实际进一"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "4h11元、4h10m14元；11元时间(3h,4h]；六题边界复核。",
+        "新增整点与过整点的时间线活动，核对8/8/11元。"
+      ],
+      "fixes": [
+        "新增整点与过整点的时间线活动，核对8/8/11元。"
+      ],
+      "reviewed_files": [
+        "课程/五上/L15-分段计费/讲授稿.md",
+        "assets/课程图/分段计费.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五下/L01-因数与倍数",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础；恰有3因数的规律提高",
+      "prerequisites": [
+        "整数乘除",
+        "整除",
+        "方阵"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "18/24/36因数逐个列举；17/29质数、91=7×13，所有答案核对。",
+        "讲授稿补非零自然数、正倍数和旋转算同一形状约定；补动手答案。",
+        "交叉发现使用奇偶术语却未下定义。"
+      ],
+      "fixes": [
+        "讲授稿补非零自然数、正倍数和旋转算同一形状约定；补动手答案。",
+        "前置能否被2整除的奇偶分类、0也是偶数、分类练习答案；与质合分类区分，非零范围仅限定后续因数倍数。"
+      ],
+      "reviewed_files": [
+        "课程/五下/L01-因数与倍数/动手单.md",
+        "课程/五下/L01-因数与倍数/挑战单.md",
+        "课程/五下/L01-因数与倍数/讲授稿.md"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "无引用图片"
+    },
+    {
+      "path": "课程/五下/L02-2-5-3的倍数",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础2/5/3；4/9判据拓展",
+      "prerequisites": [
+        "五下L01因数倍数",
+        "十进制位值"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "375=3×99+7×9+15；4□2填0/3/6/9，3□5填1/4/7；逐题核对。",
+        "原句472不能整除3方向错误，改不能被3整除；补动手全部表格答案。"
+      ],
+      "fixes": [
+        "原句472不能整除3方向错误，改不能被3整除；补动手全部表格答案。"
+      ],
+      "reviewed_files": [
+        "课程/五下/L02-2-5-3的倍数/动手单.md",
+        "课程/五下/L02-2-5-3的倍数/挑战单.md",
+        "课程/五下/L02-2-5-3的倍数/讲授稿.md"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "无引用图片"
+    },
+    {
+      "path": "课程/五下/L03-公因数与公倍数",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础列举；质因数和最大公因数×最小公倍数提高",
+      "prerequisites": [
+        "五下L01/L02",
+        "列举",
+        "整除"
+      ],
+      "core_or_extension": "mixed",
+      "findings": [
+        "12与18公因数1/2/3/6、最小公倍数36；18/24为6/72；9/15为3/45，全部题答案核对。",
+        "分解质因数/指数法移独立选学并补拆因数解释；基础答案改列举；鼓声首次重合明确不含第0拍；补动手核对。",
+        "覆盖核查补充：原活动未完整列1—100内两数全部倍数。"
+      ],
+      "fixes": [
+        "分解质因数/指数法移独立选学并补拆因数解释；基础答案改列举；鼓声首次重合明确不含第0拍；补动手核对。",
+        "动手单新增1—100数表双色圈6/8全部倍数，共同24/48/72/96，最小24，排除0和超100的数。"
+      ],
+      "reviewed_files": [
+        "课程/五下/L03-公因数与公倍数/动手单.md",
+        "课程/五下/L03-公因数与公倍数/挑战单.md",
+        "课程/五下/L03-公因数与公倍数/讲授稿.md"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "无引用图片"
+    },
+    {
+      "path": "课程/五下/L04-观察物体",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础；最少最多提高",
+      "prerequisites": [
+        "方块搭建",
+        "方向",
+        "数对可辅助"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "T形4位置，正面1/2/1最少5最多6；2×2正面两列2最少6最多8；全题核对。",
+        "补动手核对；实际视频六帧核查5/6块和目标视图条件。"
+      ],
+      "fixes": [
+        "补动手核对；实际视频六帧核查5/6块和目标视图条件。"
+      ],
+      "reviewed_files": [
+        "课程/五下/L04-观察物体/动手单.md",
+        "课程/五下/L04-观察物体/挑战单.md",
+        "课程/五下/L04-观察物体/视频稿与分镜.md",
+        "课程/五下/L04-观察物体/讲授稿.md",
+        "工具/episodes/成片/五下-L04.json",
+        "课程/五下/L04-观察物体/视频.mp4",
+        "课程/五下/L04-观察物体/视频.timeline.json",
+        "课程/五下/L04-观察物体/视频.srt",
+        "课程/五下/L04-观察物体/视频.vtt"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "对应内容一致，实际抽帧和技术核验完成",
+        "actual_frame_review": "制作/全新复审/五年级实际抽帧/五下-L04.jpg",
+        "sample_count": 6,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "五下L08新预览已核查；所有片旁白均未改。分镜属于教学意图，实际逐句以成片JSON为准。"
+      },
+      "static_image_review": "无引用图片"
+    },
+    {
+      "path": "课程/五下/L05-旋转",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础",
+      "prerequisites": [
+        "直角",
+        "钟面方向",
+        "距离不变"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "右3顺90到下3、上2顺90到右2；逆时针答案方向与代码屏幕y轴一致。",
+        "每个点绕中心画圆遗漏中心不动，改其他点走圆弧；连续两次90度补同中心同方向；精确格点去掉大约；补动手核对。",
+        "交叉发现旋转动手只有照做转动，缺自主设计。"
+      ],
+      "fixes": [
+        "每个点绕中心画圆遗漏中心不动，改其他点走圆弧；连续两次90度补同中心同方向；精确格点去掉大约；补动手核对。",
+        "新增4个相同图形的开放图案任务，选择平移/轴对称/旋转并说明关系、同伴重画与核对标准。"
+      ],
+      "reviewed_files": [
+        "课程/五下/L05-旋转/动手单.md",
+        "课程/五下/L05-旋转/挑战单.md",
+        "课程/五下/L05-旋转/视频稿与分镜.md",
+        "课程/五下/L05-旋转/讲授稿.md",
+        "工具/episodes/成片/五下-L05.json",
+        "课程/五下/L05-旋转/视频.mp4",
+        "课程/五下/L05-旋转/视频.timeline.json",
+        "课程/五下/L05-旋转/视频.srt",
+        "课程/五下/L05-旋转/视频.vtt"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "对应内容一致，实际抽帧和技术核验完成",
+        "actual_frame_review": "制作/全新复审/五年级实际抽帧/五下-L05.jpg",
+        "sample_count": 6,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "五下L08新预览已核查；所有片旁白均未改。分镜属于教学意图，实际逐句以成片JSON为准。"
+      },
+      "static_image_review": "无引用图片"
+    },
+    {
+      "path": "课程/五下/L06-长方体与正方体",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础；欧拉关系兴趣拓展",
+      "prerequisites": [
+        "平面图形",
+        "长度",
+        "分组计数"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "6面12棱8顶点；总棱长48/52/60/30；高4，全部题答案核对。",
+        "欧拉验证按题目顶点−棱+面写8−12+6，去未经证实初中承诺并限定拓展；补动手答案。"
+      ],
+      "fixes": [
+        "欧拉验证按题目顶点−棱+面写8−12+6，去未经证实初中承诺并限定拓展；补动手答案。"
+      ],
+      "reviewed_files": [
+        "课程/五下/L06-长方体与正方体/动手单.md",
+        "课程/五下/L06-长方体与正方体/挑战单.md",
+        "课程/五下/L06-长方体与正方体/讲授稿.md"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "无引用图片"
+    },
+    {
+      "path": "课程/五下/L07-表面积",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础；切拼表面变化提高",
+      "prerequisites": [
+        "五下L06",
+        "长方形/正方形面积"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "表面积94/108/160/150；无盖74/188；拼接90；三切增加80/64/40，全部题核对。",
+        "补动手五面/六面、实测与不计粘贴边的核对。"
+      ],
+      "fixes": [
+        "补动手五面/六面、实测与不计粘贴边的核对。"
+      ],
+      "reviewed_files": [
+        "课程/五下/L07-表面积/动手单.md",
+        "课程/五下/L07-表面积/挑战单.md",
+        "课程/五下/L07-表面积/讲授稿.md"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "无引用图片"
+    },
+    {
+      "path": "课程/五下/L08-体积与容积",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础；壁厚计算提高",
+      "prerequisites": [
+        "五下L06",
+        "面积单位",
+        "单位立方体",
+        "小数乘法"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "3×4×5=60；1L=1000cm³；有盖192/480、无盖420；换水槽120÷80+3=4.5，全部题核对。",
+        "补动手答案；实际视频容器用27块图易误接前例单位块，授权只改geometry draw_volume容器分支为空心内腔，预览核查通过，待root重渲。",
+        "交叉发现只有dm³/cm³换算，缺m³量感及1000进率。"
+      ],
+      "fixes": [
+        "补动手答案；实际视频容器用27块图易误接前例单位块，授权只改geometry draw_volume容器分支为空心内腔，预览核查通过，待root重渲。",
+        "新增1米立方体空间模型，10×10×10推导1m³=1000dm³，联系升，选择与换算题及答案。"
+      ],
+      "reviewed_files": [
+        "课程/五下/L08-体积与容积/动手单.md",
+        "课程/五下/L08-体积与容积/挑战单.md",
+        "课程/五下/L08-体积与容积/视频稿与分镜.md",
+        "课程/五下/L08-体积与容积/讲授稿.md",
+        "工具/episodes/成片/五下-L08.json",
+        "课程/五下/L08-体积与容积/视频.mp4",
+        "课程/五下/L08-体积与容积/视频.timeline.json",
+        "课程/五下/L08-体积与容积/视频.srt",
+        "课程/五下/L08-体积与容积/视频.vtt",
+        "assets/原理图/体积层.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "需重渲容器画面",
+        "actual_frame_review": "制作/全新复审/五年级实际抽帧/五下-L08.jpg",
+        "sample_count": 6,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "五下L08新预览已核查；所有片旁白均未改。分镜属于教学意图，实际逐句以成片JSON为准。"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五下/L09-分数的意义",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础",
+      "prerequisites": [
+        "平均分",
+        "整数除法",
+        "分数初步"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "3米分4段每段3/4米、占原根1/4；17/5=3又2/5、3又2/7=23/7；全部题答案核对。",
+        "新增12颗/6颗棋子单位整体变化活动与答案。"
+      ],
+      "fixes": [
+        "新增12颗/6颗棋子单位整体变化活动与答案。"
+      ],
+      "reviewed_files": [
+        "课程/五下/L09-分数的意义/讲授稿.md"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "无引用图片"
+    },
+    {
+      "path": "课程/五下/L10-分数基本性质",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础",
+      "prerequisites": [
+        "五下L09分数意义",
+        "五下L03公因数公倍数；互化需小数除法"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "1/2=2/4=4/8；换整体后1/3不与原1/2相等；互化0.48=12/25，全部题答案核对。",
+        "约分除数明确共同非零因数；新增纸条分细和合并活动。"
+      ],
+      "fixes": [
+        "约分除数明确共同非零因数；新增纸条分细和合并活动。"
+      ],
+      "reviewed_files": [
+        "课程/五下/L10-分数基本性质/视频稿与分镜.md",
+        "课程/五下/L10-分数基本性质/讲授稿.md",
+        "工具/episodes/成片/五下-L10.json",
+        "课程/五下/L10-分数基本性质/视频.mp4",
+        "课程/五下/L10-分数基本性质/视频.timeline.json",
+        "课程/五下/L10-分数基本性质/视频.srt",
+        "课程/五下/L10-分数基本性质/视频.vtt",
+        "assets/原理图/分数细分.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "对应内容一致，实际抽帧和技术核验完成",
+        "actual_frame_review": "制作/全新复审/五年级实际抽帧/五下-L10.jpg",
+        "sample_count": 6,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "五下L08新预览已核查；所有片旁白均未改。分镜属于教学意图，实际逐句以成片JSON为准。"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五下/L11-分数加减",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础",
+      "prerequisites": [
+        "五下L10基本性质",
+        "五下L13通分比较可先学"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "1/2+1/3=5/6；5/6−3/8=11/24；六题全部用有理数复算。",
+        "把突兀的单式/复式统计完整移到五下L14，恢复分数主线；新增纸带接合活动。"
+      ],
+      "fixes": [
+        "把突兀的单式/复式统计完整移到五下L14，恢复分数主线；新增纸带接合活动。"
+      ],
+      "reviewed_files": [
+        "课程/五下/L11-分数加减/视频稿与分镜.md",
+        "课程/五下/L11-分数加减/讲授稿.md",
+        "工具/episodes/成片/五下-L11.json",
+        "课程/五下/L11-分数加减/视频.mp4",
+        "课程/五下/L11-分数加减/视频.timeline.json",
+        "课程/五下/L11-分数加减/视频.srt",
+        "课程/五下/L11-分数加减/视频.vtt",
+        "assets/原理图/分数相加.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "对应内容一致，实际抽帧和技术核验完成",
+        "actual_frame_review": "制作/全新复审/五年级实际抽帧/五下-L11.jpg",
+        "sample_count": 6,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "五下L08新预览已核查；所有片旁白均未改。分镜属于教学意图，实际逐句以成片JSON为准。"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五下/L12-找次品",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "逻辑探究提高；字母指数高年级兴趣拓展",
+      "prerequisites": [
+        "分类",
+        "比较轻重",
+        "树状分组",
+        "整数乘法"
+      ],
+      "core_or_extension": "extension",
+      "findings": [
+        "已知次品偏轻前提下3/9/27对应1/2/3次；8分3/3/2两次，10分3/3/4三次，六题核对。",
+        "基础说明用3×3×3和分支数，不前置3^k/3^{k−1}字母指数；指数记法置后折叠；新增秘密卡穷尽9位置活动。"
+      ],
+      "fixes": [
+        "基础说明用3×3×3和分支数，不前置3^k/3^{k−1}字母指数；指数记法置后折叠；新增秘密卡穷尽9位置活动。"
+      ],
+      "reviewed_files": [
+        "课程/五下/L12-找次品/讲授稿.md"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "无引用图片"
+    },
+    {
+      "path": "课程/五下/L13-约分通分与比较",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础，建议先于五下L11",
+      "prerequisites": [
+        "五下L09/L10",
+        "五下L03公因数公倍数"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "8/12=2/3；7/10>2/3；5/8<3/4；5/12/1/2两计算题全核对。",
+        "新增12格纸带约分通分活动，建议入口顺序L10→L13→L11。"
+      ],
+      "fixes": [
+        "新增12格纸带约分通分活动，建议入口顺序L10→L13→L11。"
+      ],
+      "reviewed_files": [
+        "课程/五下/L13-约分通分与比较/讲授稿.md",
+        "assets/课程图/约分与通分.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五下/L14-折线统计图",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础单式和复式统计图",
+      "prerequisites": [
+        "条形图",
+        "数轴",
+        "减法",
+        "相等时间间隔"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "豆苗4/6/7/7/10，增量2/1/0/3，总增6；甲乙借书四周题逐题核对。",
+        "承接五下L11移入的复式折线完整教学和答案，新增不同纵轴刻度重画活动。"
+      ],
+      "fixes": [
+        "承接五下L11移入的复式折线完整教学和答案，新增不同纵轴刻度重画活动。"
+      ],
+      "reviewed_files": [
+        "课程/五下/L14-折线统计图/讲授稿.md",
+        "assets/课程图/豆苗折线图.svg",
+        "assets/课程图/单式复式折线图.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五下/L15-展开图与包装",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础应用",
+      "prerequisites": [
+        "五下L06/L07",
+        "展开图",
+        "长度面积"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "8×5×3六面158、无盖118+粘贴12=130；练习80/78/188/208/80与形状限制均核对。",
+        "新增展开图描画折合与118面积核验；仅补充片段分镜，无独立JSON/视频。"
+      ],
+      "fixes": [
+        "新增展开图描画折合与118面积核验；仅补充片段分镜，无独立JSON/视频。"
+      ],
+      "reviewed_files": [
+        "课程/五下/L15-展开图与包装/视频稿与分镜.md",
+        "课程/五下/L15-展开图与包装/讲授稿.md",
+        "assets/课程图/长方体包装展开.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "无独立实际视频",
+        "actual_frame_review": null,
+        "sample_count": 0,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "无视频不记为已观看或已试听"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    },
+    {
+      "path": "课程/五下/L16-排水测体积",
+      "stage": "第三学段（5—6年级）；目录不作为新版教材册次同步证据",
+      "level": "基础探究；换水槽提高",
+      "prerequisites": [
+        "五下L08",
+        "体积单位",
+        "底面积×高"
+      ],
+      "core_or_extension": "core",
+      "findings": [
+        "80×(7−5)=160；180/1.5/35等答案核对；浸没、不吸水不溶解、不溢水且直壁条件完整。",
+        "新增真实量杯活动，强调填实际读数并给35立方厘米示例。"
+      ],
+      "fixes": [
+        "新增真实量杯活动，强调填实际读数并给35立方厘米示例。"
+      ],
+      "reviewed_files": [
+        "课程/五下/L16-排水测体积/视频稿与分镜.md",
+        "课程/五下/L16-排水测体积/讲授稿.md",
+        "工具/episodes/成片/五下-L16.json",
+        "课程/五下/L16-排水测体积/视频.mp4",
+        "课程/五下/L16-排水测体积/视频.timeline.json",
+        "课程/五下/L16-排水测体积/视频.srt",
+        "课程/五下/L16-排水测体积/视频.vtt",
+        "assets/课程图/排水测体积.svg"
+      ],
+      "coverage": "讲授稿、全部例题/练习/挑战题及现有答案逐项通读复算；现有动手单与分镜全文读；未采用旧通过结论",
+      "video_alignment": {
+        "status": "对应内容一致，实际抽帧和技术核验完成",
+        "actual_frame_review": "制作/全新复审/五年级实际抽帧/五下-L16.jpg",
+        "sample_count": 6,
+        "whole_video_watched": false,
+        "audio_audition": false,
+        "narration_changed": false,
+        "production_note": "五下L08新预览已核查；所有片旁白均未改。分镜属于教学意图，实际逐句以成片JSON为准。"
+      },
+      "static_image_review": "所引用图片已实际渲染查看"
+    }
+  ],
+  "code_review": {
+    "scope": [
+      "工具/render_episode.py:s_principle/SCENES/preview与ctx构造",
+      "工具/scenes/arithmetic.py:decimal_product/equivalent/fraction_add及实际帮助函数",
+      "工具/scenes/relations.py:balance/rotate/view_t/water及progress",
+      "工具/scenes/geometry.py:render/transform/text helpers/draw_parallelogram/draw_duplicate/cube/draw_volume",
+      "工具/batch_videos.py",
+      "工具/prepare_narration.py",
+      "工具/audit_videos.py"
+    ],
+    "checks": {
+      "过度防御": "输入JSON场景校验、除数duration下限均有外部配置职责；没有删除契约校验。",
+      "过度设计": "按现有model分发，容器修复仅替换原分支，不添加接口或配置层。",
+      "过度fallback": "阅读progress对实际speech_duration与预览时长的回退，两种现存入口职责不同，保留；实际manifest与JSON相等核验无静默成功。",
+      "理论问题复杂化": "仅修实际抽帧发现27块与10厘米内腔冲突，不造未来兼容配置。",
+      "dead_code": "所有11份配置的type/model/stage均追到已有注册和分支；cube仍被体积叠层和其他场景调用，未删除。",
+      "复用": "新容器复用现有poly/dash/txt，保持原container/answer入口、字幕、旁白和时长不变。"
+    },
+    "behavior_change": "draw_volume容器画面由27方块改空心内腔，属用户授权教学缺陷修复，不冒称画面行为等价。"
+  },
+  "validation": [
+    "83份Markdown本地链接可达、details成对",
+    "全部31课题与答案人工核算；受影响分数及线段数题额外精确算术核验",
+    "11片实际JSON/时间线/配音manifest/SRT/VTT一致；1280x720、24fps、AAC及时间线时长/停顿校验通过",
+    "11片每片6个实际视频帧已查看，证据保存在五年级实际抽帧",
+    "五下L08修复后container/answer预览渲染成功并实际看布局",
+    "20张讲授稿引用SVG已渲染实际查看；两个较高SVG另用完整画布补看，核对折线点位及估测完整3格/边缘12格",
+    "geometry.py py_compile及本范围git diff --check通过"
+  ],
+  "limitations": [
+    "未逐秒完整播放11片；未实际试听音轨，不能以技术检查替代读音和自然度审听",
+    "五下L08新最终视频待根代理重渲；旧帧不作为修复后通过证据"
+  ]
+}

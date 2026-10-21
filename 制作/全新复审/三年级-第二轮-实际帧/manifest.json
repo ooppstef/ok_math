@@ -1,0 +1,230 @@
+[
+  {
+    "key": "三上-L01",
+    "video": "制作/三上-L01-满十进一/成片/视频.mp4",
+    "video_sha256": "dc36b98798cb7bd83657e5ab81248958b87ba0450575ef2502399dda1b9880bf",
+    "scene_count": 15,
+    "sample_count": 30,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三上-L01-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三上-L02",
+    "video": "制作/三上-L02-竖式的秘密/成片/视频.mp4",
+    "video_sha256": "469108bc4c10605d950ce4e3ca6a6e8685379d3cb902b9b8d1fb617a042e2c44",
+    "scene_count": 12,
+    "sample_count": 24,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三上-L02-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三上-L03",
+    "video": "制作/三上-L03-乘法的形状/成片/视频.mp4",
+    "video_sha256": "bde68c5dd10aa8035b9940e023541280723b87c24c312bf03a77159b892cfe3e",
+    "scene_count": 14,
+    "sample_count": 28,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三上-L03-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三上-L04",
+    "video": "制作/三上-L04-除法的两张脸/成片/视频.mp4",
+    "video_sha256": "9d94311486965246be58756b57f662d3da8949c622c00e2982218797b415d8df",
+    "scene_count": 16,
+    "sample_count": 32,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三上-L04-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三上-L05",
+    "video": "制作/三上-L05-倍不是多/成片/视频.mp4",
+    "video_sha256": "b1b9d337bfcb53b2e28a8cb7c2e27dce2f63ec4b04b5443e4c57f48fee3f68a2",
+    "scene_count": 5,
+    "sample_count": 10,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三上-L05-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三上-L09",
+    "video": "制作/三上-L09-周长的边界/成片/视频.mp4",
+    "video_sha256": "7d449e2a42abdbb713b541069ee019546d0a6ef9ba3d39c955b629e3a88a8f45",
+    "scene_count": 5,
+    "sample_count": 10,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三上-L09-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三上-L10",
+    "video": "制作/三上-L10-分数的诞生/成片/视频.mp4",
+    "video_sha256": "2befabe0cc60e79f751ae2a862a5caf4c4ed53d2c9810c8be7562ac1d3ed79bd",
+    "scene_count": 5,
+    "sample_count": 10,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三上-L10-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三上-L11",
+    "video": "制作/三上-L11-集合圈/成片/视频.mp4",
+    "video_sha256": "e77b914ccff8e3aba4a28bdadb0f0d4d98e2df352a7171e502daf55816819aeb",
+    "scene_count": 5,
+    "sample_count": 10,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三上-L11-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三上-L12",
+    "video": "制作/三上-L12-时间的刻度/成片/视频.mp4",
+    "video_sha256": "0ebb2b9c99c6f72acf3daea3d0ac2373beb4a7b863facf7ccbd9fc04e441755d",
+    "scene_count": 5,
+    "sample_count": 10,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三上-L12-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三上-L15",
+    "video": "制作/三上-L15-角与直角/成片/视频.mp4",
+    "video_sha256": "aef54d18ac30ea6c14f25a410ce8e3f7f728792c9889045d5066b921dfc000d5",
+    "scene_count": 6,
+    "sample_count": 12,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三上-L15-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三上-L17",
+    "video": "制作/三上-L17-换个位置看物体/成片/视频.mp4",
+    "video_sha256": "04d7e2a0200344b2cb8517a09c9a1fcfbcd9d476101f23b26d88ced926d57cbc",
+    "scene_count": 5,
+    "sample_count": 10,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三上-L17-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三下-L01",
+    "video": "制作/三下-L01-除法竖式/成片/视频.mp4",
+    "video_sha256": "ccac4acb504d1b87343e26226c4f551c244bfe26ce2cca421fbb3666782b4681",
+    "scene_count": 6,
+    "sample_count": 12,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三下-L01-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三下-L02",
+    "video": "制作/三下-L02-两位数乘法/成片/视频.mp4",
+    "video_sha256": "74c926aa7955bf0ecc71d646b7a432f586a9be8a170b374030a2f131e47f91bc",
+    "scene_count": 5,
+    "sample_count": 10,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三下-L02-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三下-L03",
+    "video": "制作/三下-L03-面积/成片/视频.mp4",
+    "video_sha256": "f0bb180c909062c3ed2fd7771e0785bba54ac3598e3c540bfa5919a69652395c",
+    "scene_count": 6,
+    "sample_count": 12,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三下-L03-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三下-L04",
+    "video": "制作/三下-L04-周长与面积/成片/视频.mp4",
+    "video_sha256": "477484bf2a6e9dc037f16a7919d80c129c868bbeeddc1509c2fa7e8630d462b7",
+    "scene_count": 6,
+    "sample_count": 12,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三下-L04-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三下-L06",
+    "video": "制作/三下-L06-小数的诞生/成片/视频.mp4",
+    "video_sha256": "5632e41861c638951ae6b0d7afe2e2344e590a70772bb4a57d91256b01a4a62b",
+    "scene_count": 5,
+    "sample_count": 10,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三下-L06-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三下-L12",
+    "video": "制作/三下-L12-植树/成片/视频.mp4",
+    "video_sha256": "982f09f9f326b7e419719ba6430844ae78815939207d1bb352b367e79169cf26",
+    "scene_count": 5,
+    "sample_count": 10,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三下-L12-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三下-L13",
+    "video": "制作/三下-L13-对折与平移/成片/视频.mp4",
+    "video_sha256": "2671176b17761f60a7e3faa71e2c0900db20ef733443b511e6b9848979409c90",
+    "scene_count": 5,
+    "sample_count": 10,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三下-L13-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  },
+  {
+    "key": "三下-L14",
+    "video": "制作/三下-L14-拆盒子与展开图/成片/视频.mp4",
+    "video_sha256": "d25038341ff9d37f4b57b1ffe103190953fe2c76c9cfc480bc61592000aebfae",
+    "scene_count": 5,
+    "sample_count": 10,
+    "contact": "制作/全新复审/三年级-第二轮-实际帧/三下-L14-contact.jpg",
+    "narration_matches": true,
+    "pauses": [
+      8
+    ]
+  }
+]

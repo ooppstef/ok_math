@@ -1,0 +1,1275 @@
+{
+  "round": 4,
+  "status": "第四轮全量复核后扩查配图交付缺口，8课已补图示；本轮有修复，进入第五轮",
+  "scope": {
+    "lessons": 32,
+    "full_markdown_files": 44,
+    "storyboards": 12,
+    "configured_scenes": 68,
+    "distinct_referenced_images": 24,
+    "distinct_referenced_images_after_fix": 30
+  },
+  "curriculum_note": "按2022课标学段与前置知识，不把旧册目录当作北师大新版同步教材。",
+  "learning_plan_review": {
+    "path": "课程/学习安排.json",
+    "sha256": "359dc10b0001acf287e41c72f320797beffefaf1dc4e4d314ee8691abaf8dc30",
+    "evidence": "32课入口逐条核对；分数除法前置无倒数，倒数在本课定义；认识扇形排在圆面积前；数与形/连续变化/反比例/鸽巢/切拼/行程综合/综合挑战为提高，衔接段另列。"
+  },
+  "lessons": [
+    {
+      "key": "六上-L01",
+      "path": "课程/六上/L01-分数乘法",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "分数意义",
+        "分数基本性质",
+        "长方形面积"
+      ],
+      "math_and_age_evidence": "重算正文2/3×3/4=1/2、3/5×2/3=2/5、5/8×7/10=7/16；5题依次3/10、3/2、1/6、6米、2/3；接绳17/12米。单位整体框与深色6格一致。",
+      "static_images": [
+        "assets/原理图/分数连取.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": {
+        "scenes": 5,
+        "json_storyboard_timeline_consistent": true,
+        "audio_listened": false,
+        "continuous_full_video_watched": false,
+        "actual_frames_evidence": "此前root实际抽帧证据，本轮未重新冒领观看"
+      },
+      "reviewed_files": [
+        "课程/六上/L01-分数乘法/讲授稿.md",
+        "assets/原理图/分数连取.svg",
+        "课程/六上/L01-分数乘法/视频稿与分镜.md",
+        "工具/episodes/成片/六上-L01.json",
+        "课程/六上/L01-分数乘法/视频.timeline.json"
+      ],
+      "file_sha256": {
+        "课程/六上/L01-分数乘法/讲授稿.md": "9babe7003414f19d499a3e098f01f5f83769d441b2ccb8efe0224947fdd8cc8d",
+        "assets/原理图/分数连取.svg": "4fb8af82c9cb653aa6402614d02be5096dee47bb20b979abf2323fa94e948f67",
+        "课程/六上/L01-分数乘法/视频稿与分镜.md": "c9626ed1dc653ad9084d916ff1df2c03b3c7691d8a0a20a91ff0310fa0f45a4e",
+        "工具/episodes/成片/六上-L01.json": "bfa8b6f23cb736aa9fc7856abf221959c987be9f6f3a8733b12def865168767d",
+        "课程/六上/L01-分数乘法/视频.timeline.json": "5d2a5c52432d35f2ebc27bad61cb22f417e0cc1ee10e8bd0bb5021399986f90c"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": true,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六上-L02",
+      "path": "课程/六上/L02-分数除法",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "分数乘法",
+        "分数加减",
+        "商不变"
+      ],
+      "math_and_age_evidence": "倒数积为1、0无倒数定义完整；6题15、2、2/5、2、9段、3/4；合作例2天、4/3天及总10/3天，练习24/5天、合作18/5天总28/5天；混合题1、5/12、6/5；1/15单位计数与乘5/4的两个解释一致。",
+      "static_images": [
+        "assets/原理图/分数除法同单位.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": {
+        "scenes": 6,
+        "json_storyboard_timeline_consistent": true,
+        "audio_listened": false,
+        "continuous_full_video_watched": false,
+        "actual_frames_evidence": "round2-新成片画面.json"
+      },
+      "reviewed_files": [
+        "课程/六上/L02-分数除法/讲授稿.md",
+        "assets/原理图/分数除法同单位.svg",
+        "课程/六上/L02-分数除法/视频稿与分镜.md",
+        "工具/episodes/成片/六上-L02.json",
+        "课程/六上/L02-分数除法/视频.timeline.json"
+      ],
+      "file_sha256": {
+        "课程/六上/L02-分数除法/讲授稿.md": "e9d210815b8706de878c07adec2dbbb55a66a08f42c549e183d479cbeb4414bc",
+        "assets/原理图/分数除法同单位.svg": "f3508c6315d01f82735e2e37f5a1843a4ffffd9c262bf831f06c22e81643ddf9",
+        "课程/六上/L02-分数除法/视频稿与分镜.md": "a6005dba00b9396793c4b5f242c80dc609f15bd53aebdca59e32a8bb386c4b5e",
+        "工具/episodes/成片/六上-L02.json": "614a0a019092925afbce823f9446ea744c911323b9a75a2434a91362347cdfac",
+        "课程/六上/L02-分数除法/视频.timeline.json": "7892d8ff033c4b0307418e78cc0658798583cc50879a7cfd5706525619c6bff0"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": true,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六上-L03",
+      "path": "课程/六上/L03-比",
+      "status": "第四轮发现交付配图缺口，已修复，需第五轮复核",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "除法与分数",
+        "约分"
+      ],
+      "math_and_age_evidence": "比值与最简整数比区分，15厘米:1米=3:20；6题含2:3、2:5、3:4、3:20、糖水1:9与1:10、速度4千米/时；2:3与占整体2/5区分。",
+      "static_images": [],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六上/L03-比/讲授稿.md"
+      ],
+      "file_sha256": {
+        "课程/六上/L03-比/讲授稿.md": "3f75ca4a224f9c286ac984d38c2df664e71792a6ba3f247bfe39c56d3c67ad73"
+      },
+      "findings": [
+        "比的份数只写在算式和文字中，缺少对应的等份实物图。"
+      ],
+      "fixes": [
+        "复用两组同量杯图，使2:3与4:6的倍数关系可数可看。"
+      ],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true,
+      "post_fix_sha256": {
+        "课程/六上/L03-比/讲授稿.md": "49e2eb738ea6278c3605e2eaef2bdb33ae2313e2246e1c0151dad86920c7e303",
+        "assets/课程图/比例同量杯.svg": "65e30f748721c84aad33d4df5178e451551eb7eb8a637b294b64b0ba50a0d189"
+      }
+    },
+    {
+      "key": "六上-L04",
+      "path": "课程/六上/L04-按比分配",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "比的意义",
+        "整数乘除"
+      ],
+      "math_and_age_evidence": "例分24/36，40/60/80，长宽15/9；5题20/25，20/40/60，24/56，18/30，12/8；差对应份数差，7本不可拆不能恰分2:3。",
+      "static_images": [],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六上/L04-按比分配/讲授稿.md"
+      ],
+      "file_sha256": {
+        "课程/六上/L04-按比分配/讲授稿.md": "c7cad576132f05ed4b601096bf09110efb66a99579f7cd8e31c19e15fe90f957"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六上-L05",
+      "path": "课程/六上/L05-位置与方向",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "八个方向",
+        "量角",
+        "长度单位"
+      ],
+      "math_and_age_evidence": "北偏东30与东偏北30不同，相反方向南偏西30；5题反向角度距离逐一核对，飞机相距20千米。",
+      "static_images": [
+        "assets/课程图/北偏东30度.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六上/L05-位置与方向/讲授稿.md",
+        "assets/课程图/北偏东30度.svg"
+      ],
+      "file_sha256": {
+        "课程/六上/L05-位置与方向/讲授稿.md": "ecbebb3d8a9e2ce9e906c3aea37909062b1320644789fd39d292c0ebc95f2585",
+        "assets/课程图/北偏东30度.svg": "1d81878729ae8f085c75122665c975a25c4d39dfa1d27c2186a0098d37358cbe"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六上-L06",
+      "path": "课程/六上/L06-圆",
+      "status": "第四轮发现交付配图缺口，已修复，需第五轮复核",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "角与线段",
+        "使用圆规"
+      ],
+      "math_and_age_evidence": "π近似与精确值区分，半径直径作用完整；6题直径5周长15.7、25.12、直径14半径7、3.77、比1:2、半圆15.42；本轮新片直径线证据已核对。",
+      "static_images": [],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": {
+        "scenes": 6,
+        "json_storyboard_timeline_consistent": true,
+        "audio_listened": false,
+        "continuous_full_video_watched": false,
+        "actual_frames_evidence": "round2-新成片画面.json"
+      },
+      "reviewed_files": [
+        "课程/六上/L06-圆/讲授稿.md",
+        "课程/六上/L06-圆/视频稿与分镜.md",
+        "工具/episodes/成片/六上-L06.json",
+        "课程/六上/L06-圆/视频.timeline.json"
+      ],
+      "file_sha256": {
+        "课程/六上/L06-圆/讲授稿.md": "c1cf5cf8a94ecfca8b1da48983cb75ae4734d46b0459c5d78212a68435f6a03b",
+        "课程/六上/L06-圆/视频稿与分镜.md": "f458dbcfe6520dc4e0044ed083c51a098bc2a133356c6a3b3624451a96943f24",
+        "工具/episodes/成片/六上-L06.json": "4bba19c2de718d9dcc7be24fb6d4c891ecbdb8e41df6ea022f1ac867d0f1b097",
+        "课程/六上/L06-圆/视频.timeline.json": "b632502521640491e4d8e5e9d7ef5f6f43148bbfe9c8c23dfa5d1702f209a080"
+      },
+      "findings": [
+        "圆的核心空间对象此前只有术语和算式，讲授稿缺圆示意。"
+      ],
+      "fixes": [
+        "补圆心O、红色半径、经过圆心的金色直径，d=2r。"
+      ],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": true,
+      "metadata_final_match": true,
+      "post_fix_sha256": {
+        "课程/六上/L06-圆/讲授稿.md": "b82c93b77b7e64c729400c97afaabd98662a2fbcaf1bd899ee7dfa36e228b7f4",
+        "assets/课程图/圆心半径直径.svg": "8453ebc4bbb37af3d21b89b8f40964b595e7c94cdb789795a50c8235bc72996e"
+      }
+    },
+    {
+      "key": "六上-L07",
+      "path": "课程/六上/L07-圆的面积",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "圆的周长",
+        "认识扇形",
+        "长方形面积"
+      ],
+      "math_and_age_evidence": "有限切拼保留弧边，不说16份精确长方形；5题28.26、50.24、78.5、50.24、半圆6.28及周长10.28；面积平方单位正确。",
+      "static_images": [
+        "assets/原理图/圆的切拼.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": {
+        "scenes": 7,
+        "json_storyboard_timeline_consistent": true,
+        "audio_listened": false,
+        "continuous_full_video_watched": false,
+        "actual_frames_evidence": "此前root实际抽帧证据，本轮未重新冒领观看"
+      },
+      "reviewed_files": [
+        "课程/六上/L07-圆的面积/讲授稿.md",
+        "assets/原理图/圆的切拼.svg",
+        "课程/六上/L07-圆的面积/视频稿与分镜.md",
+        "工具/episodes/成片/六上-L07.json",
+        "课程/六上/L07-圆的面积/视频.timeline.json"
+      ],
+      "file_sha256": {
+        "课程/六上/L07-圆的面积/讲授稿.md": "2e9fb208902f1aece4b32568afde28c82506d1d69b70e7604a9fe05436e03da9",
+        "assets/原理图/圆的切拼.svg": "50a08cb1452158452b1643cbc178528a7d7b2bbd2d4cd545f238dd528a6f69fb",
+        "课程/六上/L07-圆的面积/视频稿与分镜.md": "07eb262046db45acdb795689e7a33fc012fe020f3a2e0151661f8f54c30ed782",
+        "工具/episodes/成片/六上-L07.json": "433e93e59a82cc5f6667d0b1c9226109ba84dd16ff2f32ab8ffe8d1f3e1f2b0b",
+        "课程/六上/L07-圆的面积/视频.timeline.json": "2c2589a9131e2c36dfbd620e37aec6813c3a75f0cbeb369fa6163bdd97c28acd"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": true,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六上-L08",
+      "path": "课程/六上/L08-扇形",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "圆心与半径",
+        "角的大小"
+      ],
+      "math_and_age_evidence": "基础先认两条半径和一段弧，半圆及大于半圆扇形合法；基础4题完整。选学6题面积/弧12.56/6.28、84.78/18.84、4.71/3.14、45度、周长25.7面积39.25，以及同半径条件。",
+      "static_images": [
+        "assets/课程图/认识扇形.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六上/L08-扇形/讲授稿.md",
+        "assets/课程图/认识扇形.svg"
+      ],
+      "file_sha256": {
+        "课程/六上/L08-扇形/讲授稿.md": "be0b0b7fe6ade45ee615288f75913c54f40df5fad9a3657dbbb9813177a89675",
+        "assets/课程图/认识扇形.svg": "0a0658aa1fc965d58c5db978ffb655834a75ef3eb0122f88736d5bfdfe35b0af"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六上-L09",
+      "path": "课程/六上/L09-百分数",
+      "status": "第四轮发现交付配图缺口，已修复，需第五轮复核",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "分数小数互化",
+        "部分与整体"
+      ],
+      "math_and_age_evidence": "全部互化与百分率分母核对；5题含45%=9/20、37.5%、120%=6/5、96%、95%、667/1000>2/3>0.6；不将具体长度与百分数混用。",
+      "static_images": [],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六上/L09-百分数/讲授稿.md"
+      ],
+      "file_sha256": {
+        "课程/六上/L09-百分数/讲授稿.md": "d9818b0750f0aaa23a9f3c04fcb4bec12258a46b804d0b5f829c56ac7bb85cf2"
+      },
+      "findings": [
+        "百分数核心整体与部分没有数量图。"
+      ],
+      "fixes": [
+        "补100个等大格、35格涂色，关联35/100=35%=0.35=7/20。"
+      ],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true,
+      "post_fix_sha256": {
+        "课程/六上/L09-百分数/讲授稿.md": "9d3c50f0c1ffbbd0a49e04f58892d06ce6887ce3f51b4ef7114775e00d1ce456",
+        "assets/课程图/百分数百格.svg": "7f00e07032a0a4218aec418303d9e886edf6447c8d80457ed0a1ba7b0590f05f"
+      }
+    },
+    {
+      "key": "六上-L10",
+      "path": "课程/六上/L10-百分数应用",
+      "status": "第四轮发现交付配图缺口，已修复，需第五轮复核",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "百分数意义",
+        "求一个量的百分之几"
+      ],
+      "math_and_age_evidence": "基础6题100、170、396、240、25%/20%、50；连续变化100→120→96及涨25%降20%还原；浓度例8%、20%、约13.3%、约13.3%，练习加水200克、14%、加盐10克，盐水总质量随操作更新。",
+      "static_images": [],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六上/L10-百分数应用/讲授稿.md"
+      ],
+      "file_sha256": {
+        "课程/六上/L10-百分数应用/讲授稿.md": "d240d1ba61c4a5ec73c760ba95ec28695c96e6bd984225cacd0973b6f3e8fe6f"
+      },
+      "findings": [
+        "提高段有浓度表，基础段40人与50人的比较整体仍缺图。"
+      ],
+      "fixes": [
+        "补同尺度40/50人数条，将相同差10人与两个分母对应。"
+      ],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true,
+      "post_fix_sha256": {
+        "课程/六上/L10-百分数应用/讲授稿.md": "e11a663ea1244882ea084ae2f26c0cd758984c8d9049f83794baf3bda0d2fd97",
+        "assets/课程图/百分数比较起点.svg": "5a4a7960d4b5d808c814d7ec6835c3e340519171dd0ad357977db3d4a056551a"
+      }
+    },
+    {
+      "key": "六上-L11",
+      "path": "课程/六上/L11-扇形统计图",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "百分数",
+        "读统计图"
+      ],
+      "math_and_age_evidence": "读图足球18乒乓12，差6；6题含同为15人、70人、25%、约33.3%。选学角108/72对应20%/120度正确，舍入和偏离100%例外保留。",
+      "static_images": [
+        "assets/课程图/运动扇形图.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六上/L11-扇形统计图/讲授稿.md",
+        "assets/课程图/运动扇形图.svg"
+      ],
+      "file_sha256": {
+        "课程/六上/L11-扇形统计图/讲授稿.md": "c7c196be08b4ee42cd4c6f6c1c8c6e4a8705ba7cf5f6cc010f409f74061b7809",
+        "assets/课程图/运动扇形图.svg": "be53bf12efe6878536a038b7253280bf2898579aefda89fc7cb230320571da66"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六上-L12",
+      "path": "课程/六上/L12-数与形",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "提高",
+      "prerequisites": [
+        "奇数",
+        "乘法与正方形面积"
+      ],
+      "math_and_age_evidence": "L层n+(n−1)不重复角点，前50项2500、101至199和7500；5题16、36、2500、15及64、44；外圈与L层区分，n=1单列。",
+      "static_images": [
+        "assets/原理图/奇数L层.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": {
+        "scenes": 6,
+        "json_storyboard_timeline_consistent": true,
+        "audio_listened": false,
+        "continuous_full_video_watched": false,
+        "actual_frames_evidence": "round2-新成片画面.json"
+      },
+      "reviewed_files": [
+        "课程/六上/L12-数与形/讲授稿.md",
+        "assets/原理图/奇数L层.svg",
+        "课程/六上/L12-数与形/视频稿与分镜.md",
+        "工具/episodes/成片/六上-L12.json",
+        "课程/六上/L12-数与形/视频.timeline.json"
+      ],
+      "file_sha256": {
+        "课程/六上/L12-数与形/讲授稿.md": "0de6b92fa12d9cde9a0043f097fe0c988ced1d057ce718006dcec7b234030190",
+        "assets/原理图/奇数L层.svg": "58c71810caea2697d007202f7b297cbf6a1c38fa9cc171091ec67532c3317bab",
+        "课程/六上/L12-数与形/视频稿与分镜.md": "f9174c3729eb16678b741ef04c056b87afbc240354cf231f74e3da0e0eab7563",
+        "工具/episodes/成片/六上-L12.json": "370266f69e8a6c8b0134afe8e6dd65c7647437eef42048ea2ecb5b2c823a47c9",
+        "课程/六上/L12-数与形/视频.timeline.json": "994a645635fb41e8f17269f442b110f14341a97ff70d242bc75508cc5a064962"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": true,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六上-L13",
+      "path": "课程/六上/L13-分数应用找单位一",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "分数意义",
+        "分数乘除"
+      ],
+      "math_and_age_evidence": "单位一随问法识别，6题48、80、80、30、24、1/5；相差5米对应蓝绳1/4，改比较对象后为红绳1/3。",
+      "static_images": [
+        "assets/课程图/分数找单位一.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六上/L13-分数应用找单位一/讲授稿.md",
+        "assets/课程图/分数找单位一.svg"
+      ],
+      "file_sha256": {
+        "课程/六上/L13-分数应用找单位一/讲授稿.md": "844b4cfe7e37e7d4e651cc5b2adbd47e2977d9741313446476a1f1bc00d64ba2",
+        "assets/课程图/分数找单位一.svg": "4db07b59d1d18ec8f405f3e500042dd410b9c4044abc07bac31f214e4021d734"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六上-L14",
+      "path": "课程/六上/L14-分数混合运算",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "分数四则",
+        "括号与运算顺序"
+      ],
+      "math_and_age_evidence": "先乘后减5/12与括号后乘1/6不同，6题1、7/8、3/2、1/3、4/5、11/12；不能跨加号约分，不能截断循环小数冒充精确值。",
+      "static_images": [
+        "assets/课程图/分数运算顺序.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六上/L14-分数混合运算/讲授稿.md",
+        "assets/课程图/分数运算顺序.svg"
+      ],
+      "file_sha256": {
+        "课程/六上/L14-分数混合运算/讲授稿.md": "82bf20ee83713bf762f93808d072fe08de8146baa9a1bbbf89e195353a3642ae",
+        "assets/课程图/分数运算顺序.svg": "662b6e0601ad92ea122bddc5f0421106b407f67a33476e383245c7f315659b89"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六上-L15",
+      "path": "课程/六上/L15-百分率与统计判断",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "百分数应用",
+        "平均数"
+      ],
+      "math_and_age_evidence": "30/40=75%与24/30=80%，合计54/70约77.1%；6题92%、90%、80%比70%、74%、10个百分点及12.5%、不保证下次恰好90粒；人数不同不直接平均百分率。",
+      "static_images": [
+        "assets/课程图/人数与百分率.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六上/L15-百分率与统计判断/讲授稿.md",
+        "assets/课程图/人数与百分率.svg"
+      ],
+      "file_sha256": {
+        "课程/六上/L15-百分率与统计判断/讲授稿.md": "3c233942f0dfaf25248f8b9dbf5d331616b86c52403ec8d664c160250c9a729a",
+        "assets/课程图/人数与百分率.svg": "32930e293d1a9ed3fa907f02ff59d444a36f9e4e232146b761cc4ef5130077d0"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六上-L16",
+      "path": "课程/六上/L16-连续变化与还原",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "提高",
+      "prerequisites": [
+        "百分数应用",
+        "乘除法还原"
+      ],
+      "math_and_age_evidence": "100→120→96，逆序96÷0.8÷1.2=100；6题198、1/2、36米、33又1/3%、50页、60页，原来/剩下作为不同整体明确。",
+      "static_images": [
+        "assets/课程图/连续变化.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": {
+        "scenes": 5,
+        "json_storyboard_timeline_consistent": true,
+        "audio_listened": false,
+        "continuous_full_video_watched": false,
+        "actual_frames_evidence": "此前root实际抽帧证据，本轮未重新冒领观看"
+      },
+      "reviewed_files": [
+        "课程/六上/L16-连续变化与还原/讲授稿.md",
+        "assets/课程图/连续变化.svg",
+        "课程/六上/L16-连续变化与还原/视频稿与分镜.md",
+        "工具/episodes/成片/六上-L16.json",
+        "课程/六上/L16-连续变化与还原/视频.timeline.json"
+      ],
+      "file_sha256": {
+        "课程/六上/L16-连续变化与还原/讲授稿.md": "9781e4e10787bdf75ea7752f836736ca446952a3d9f5c9ced72a30b5741a1213",
+        "assets/课程图/连续变化.svg": "11f82a8b34fb5aa443a4e7eaa07f8561836e9249b8dfed8bd04d0dde9981d56e",
+        "课程/六上/L16-连续变化与还原/视频稿与分镜.md": "7c7f89596f48068ed029b1e468dd267b0e9bae06d52746df59b3fe028bc05237",
+        "工具/episodes/成片/六上-L16.json": "05c3f5b5e39ae6a4e75fd04407307a322348c774a770e2cebee6c89593f0da13",
+        "课程/六上/L16-连续变化与还原/视频.timeline.json": "9c1dad6accf7dba615068d0477a78d649635a18043561b1ccce0e8bb7788f5ca"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": true,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六下-L01",
+      "path": "课程/六下/L01-负数",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "数的大小",
+        "温度与方向"
+      ],
+      "math_and_age_evidence": "0为基准，楼层明说没有0层，−3到7为9间隔；6题−2较大、11度、9、−100元、8单位且−2更近、错对对；负数运算独立衔接，选做3/−4/8。",
+      "static_images": [],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六下/L01-负数/讲授稿.md"
+      ],
+      "file_sha256": {
+        "课程/六下/L01-负数/讲授稿.md": "e80450b7b7f653bd0fedc3d50582f2cb05631f7824e63dbd84420b85d7e0f2da"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六下-L02",
+      "path": "课程/六下/L02-折扣利率税率",
+      "status": "第四轮发现交付配图缺口，已修复，需第五轮复核",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "百分数应用",
+        "小数乘除"
+      ],
+      "math_and_age_evidence": "练习利税为题设数据，单利与单一税率条件完整；6题432省48、450、300、利225共5225、3000、72%；成数逆向练习4500、4000、70%/30%。",
+      "static_images": [],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六下/L02-折扣利率税率/讲授稿.md"
+      ],
+      "file_sha256": {
+        "课程/六下/L02-折扣利率税率/讲授稿.md": "1bd3d47ae359bc498c4a060b94476c11b2c25ff70a79fdef7368692e6862e2fc"
+      },
+      "findings": [
+        "折扣只有算式，原价整体与现价、省下部分没有图示。"
+      ],
+      "fixes": [
+        "补320元整体、240元现价和80元节省的3:1分段图。"
+      ],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true,
+      "post_fix_sha256": {
+        "课程/六下/L02-折扣利率税率/讲授稿.md": "d7becf7e6b3d8497e934e44f8ebe418d39a7baaafd7839d29454534988225c38",
+        "assets/课程图/折扣分段.svg": "5455ef74dade90e4f482fb77001bb88aa96a47d3f8821e26fd2e597ef39d7961"
+      }
+    },
+    {
+      "key": "六下-L03",
+      "path": "课程/六下/L03-圆柱的表面积",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "圆的周长和面积",
+        "长方形面积"
+      ],
+      "math_and_age_evidence": "先定义直圆柱底侧高；例244.92/75.36/6.28，6题75.36、100.48、62.8、103.62、2.826、251.2；无盖一个底管子无底，侧面两种卷法均72但体积不必相同。",
+      "static_images": [
+        "assets/原理图/圆柱侧面.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": {
+        "scenes": 5,
+        "json_storyboard_timeline_consistent": true,
+        "audio_listened": false,
+        "continuous_full_video_watched": false,
+        "actual_frames_evidence": "此前root实际抽帧证据，本轮未重新冒领观看"
+      },
+      "reviewed_files": [
+        "课程/六下/L03-圆柱的表面积/讲授稿.md",
+        "assets/原理图/圆柱侧面.svg",
+        "课程/六下/L03-圆柱的表面积/视频稿与分镜.md",
+        "工具/episodes/成片/六下-L03.json",
+        "课程/六下/L03-圆柱的表面积/视频.timeline.json"
+      ],
+      "file_sha256": {
+        "课程/六下/L03-圆柱的表面积/讲授稿.md": "b68457f3d057d5c911e9113b020024ea24a3f4da0f9752e4c2b4b05cc79e488c",
+        "assets/原理图/圆柱侧面.svg": "d5dada61e1a275996963de4ef876b23194fad513f2e458b1862bb0a6053334e0",
+        "课程/六下/L03-圆柱的表面积/视频稿与分镜.md": "15e1f3ba30c76cc08d192b2a5fa9d1556572823c5518db5dc36a2566b730c16a",
+        "工具/episodes/成片/六下-L03.json": "d2435516767125b227d79c5de5b2a6c9276af79309618a7f8c6fc5f02f1b572a",
+        "课程/六下/L03-圆柱的表面积/视频.timeline.json": "7dc6df925f400cb62e7c9dd730d37055f739b3dadcd065cfc515bda87d588ea3"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": true,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六下-L04",
+      "path": "课程/六下/L04-圆柱的体积",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "长方体体积",
+        "圆的面积"
+      ],
+      "math_and_age_evidence": "扇形柱完整搬动，高固定；例62.8/314/502.4毫升，6题197.82、282.6、37.68、600毫升、4厘米、10厘米；加高1底12的增量12，新片32份和分镜一致。",
+      "static_images": [
+        "assets/原理图/圆的切拼.svg",
+        "assets/原理图/圆柱同层.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": {
+        "scenes": 6,
+        "json_storyboard_timeline_consistent": true,
+        "audio_listened": false,
+        "continuous_full_video_watched": false,
+        "actual_frames_evidence": "round2-新成片画面.json"
+      },
+      "reviewed_files": [
+        "课程/六下/L04-圆柱的体积/讲授稿.md",
+        "assets/原理图/圆的切拼.svg",
+        "assets/原理图/圆柱同层.svg",
+        "课程/六下/L04-圆柱的体积/视频稿与分镜.md",
+        "工具/episodes/成片/六下-L04.json",
+        "课程/六下/L04-圆柱的体积/视频.timeline.json"
+      ],
+      "file_sha256": {
+        "课程/六下/L04-圆柱的体积/讲授稿.md": "d09dcc1fec8e7dc0f4c30895ab3d880ecbb04dc7a8c49b983706f460b8a21191",
+        "assets/原理图/圆的切拼.svg": "50a08cb1452158452b1643cbc178528a7d7b2bbd2d4cd545f238dd528a6f69fb",
+        "assets/原理图/圆柱同层.svg": "305037157ea6680adfcd7c0b7d81cce9e7e11b417fabdf3212722a349d9be8f9",
+        "课程/六下/L04-圆柱的体积/视频稿与分镜.md": "0ff70ce334554211bf5803ff7009bb79e7f63178b8fdcfbb45c9d76a41b793bc",
+        "工具/episodes/成片/六下-L04.json": "d81569ba7835d1b394268e2e81221f1b1e5396ae3dabce4f99ab56e6b569df61",
+        "课程/六下/L04-圆柱的体积/视频.timeline.json": "7df66e55f1bd016bbb4fd8c3de310be9a16dc681fac75d586e0af8b12f71802e"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": true,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六下-L05",
+      "path": "课程/六下/L05-圆锥的体积",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "圆柱体积",
+        "除以3"
+      ],
+      "math_and_age_evidence": "直圆锥高垂直底面，与斜边区分；灌装说明与普遍证明区分；6题48、37.68、47.1、9、30、存在等底等高的某个圆柱；同高底面积2倍时体积比2/3。",
+      "static_images": [
+        "assets/课程图/圆锥的高.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": {
+        "scenes": 7,
+        "json_storyboard_timeline_consistent": true,
+        "audio_listened": false,
+        "continuous_full_video_watched": false,
+        "actual_frames_evidence": "此前root实际抽帧证据，本轮未重新冒领观看"
+      },
+      "reviewed_files": [
+        "课程/六下/L05-圆锥的体积/讲授稿.md",
+        "assets/课程图/圆锥的高.svg",
+        "课程/六下/L05-圆锥的体积/视频稿与分镜.md",
+        "工具/episodes/成片/六下-L05.json",
+        "课程/六下/L05-圆锥的体积/视频.timeline.json"
+      ],
+      "file_sha256": {
+        "课程/六下/L05-圆锥的体积/讲授稿.md": "da3574345da058f220e19e323fde7d78b25e772d7640df130268a01afa617104",
+        "assets/课程图/圆锥的高.svg": "e33fd3901409fcbfe5e1392036a6f5ec22751bcbe0482925feab92295a97a803",
+        "课程/六下/L05-圆锥的体积/视频稿与分镜.md": "41826ec99f77d0f2b04b1e548884fe6a3a43b0755c8deec4124f06106421d705",
+        "工具/episodes/成片/六下-L05.json": "8a0f6aadedb0821e4813ea61b1be20aacb8d1ffaf62da3c805c683199cb9415c",
+        "课程/六下/L05-圆锥的体积/视频.timeline.json": "3f48531652ed30f8393870d5003afa277fe04a213892d0911ee8d43c22a43b97"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": true,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六下-L06",
+      "path": "课程/六下/L06-比例",
+      "status": "第四轮发现交付配图缺口，已修复，需第五轮复核",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "比的意义和化简",
+        "按份数计算"
+      ],
+      "math_and_age_evidence": "基础用相同倍数和份数填空，不先要求解方程；6题能、4、16、4、15、多组有效比例；外内项乘积及字母方程放在衔接折叠段。",
+      "static_images": [],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六下/L06-比例/讲授稿.md"
+      ],
+      "file_sha256": {
+        "课程/六下/L06-比例/讲授稿.md": "80e42c4e885b610e34792654e226f654ab7ffea825d4cae8442dec320d9a2ab9"
+      },
+      "findings": [
+        "交付完整性复查发现比例课没有图或图示，未落实补齐配图要求。"
+      ],
+      "fixes": [
+        "补同量杯SVG，左2果汁3水，右相同两组共4果汁6水；统一杯型液面，实际预览修正分组框底线与合计标签间距。"
+      ],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true,
+      "post_fix_sha256": {
+        "课程/六下/L06-比例/讲授稿.md": "448487b6e02ab5288990d8c774c9d5e8c2467c98571ece0739b6c67420fcbf66",
+        "assets/课程图/比例同量杯.svg": "65e30f748721c84aad33d4df5178e451551eb7eb8a637b294b64b0ba50a0d189"
+      }
+    },
+    {
+      "key": "六下-L07",
+      "path": "课程/六下/L07-正比例",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "比与比例",
+        "数对和方格描点"
+      ],
+      "math_and_age_evidence": "单价比值固定，非零比值定义，整数笔数只取离散点；描点(0,0)至(4,12)自作任务完整。6题正比、k3、不成、π、300千米、不成；加固定包装费反例有效。",
+      "static_images": [
+        "assets/课程图/正比例描点.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六下/L07-正比例/讲授稿.md",
+        "assets/课程图/正比例描点.svg"
+      ],
+      "file_sha256": {
+        "课程/六下/L07-正比例/讲授稿.md": "5183390fbeda0bae6483d7a822e7e362bca5e10aa8ccc1fdac973ea1299885a4",
+        "assets/课程图/正比例描点.svg": "80716feb8f636c5f4d6b5b528b660f4e707a7ebc50a48b5de1cedc5806347781"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六下-L08",
+      "path": "课程/六下/L08-反比例",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "提高",
+      "prerequisites": [
+        "长方形面积",
+        "乘除法与倍数"
+      ],
+      "math_and_age_evidence": "提高入口先固定面积12格，基础3题8/6/4/3、4与2小时、24与21；衔接正式反比例6题乘积24、固定路程、乘积20、和固定不成、15车、圆面积半径不成。载重取整限制写清。",
+      "static_images": [
+        "assets/原理图/固定面积.svg",
+        "assets/原理图/固定面积.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": {
+        "scenes": 5,
+        "json_storyboard_timeline_consistent": true,
+        "audio_listened": false,
+        "continuous_full_video_watched": false,
+        "actual_frames_evidence": "round2-新成片画面.json"
+      },
+      "reviewed_files": [
+        "课程/六下/L08-反比例/讲授稿.md",
+        "assets/原理图/固定面积.svg",
+        "assets/原理图/固定面积.svg",
+        "课程/六下/L08-反比例/视频稿与分镜.md",
+        "工具/episodes/成片/六下-L08.json",
+        "课程/六下/L08-反比例/视频.timeline.json"
+      ],
+      "file_sha256": {
+        "课程/六下/L08-反比例/讲授稿.md": "08b8f9d9b9493169c25667b9f90e4fee703fa23b31874433a259ba12b80641a2",
+        "assets/原理图/固定面积.svg": "1c69ea214cdda6efb95c69c79e1a9fff45e4d57909aef8ff3523097b69d79afa",
+        "课程/六下/L08-反比例/视频稿与分镜.md": "c1bd3af8eddd7ab216e647c9dd65ef73193fd186b52241687889922794f41968",
+        "工具/episodes/成片/六下-L08.json": "82adc1e60d821ae46dcf51aa2d25777eb317d2bc8aa71c8f99f6c7fb0492a542",
+        "课程/六下/L08-反比例/视频.timeline.json": "9cec0c5592dc991054be2ad55801b58bac59c3f96119f57a9b767aebc00b7dc4"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": true,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六下-L09",
+      "path": "课程/六下/L09-比例尺",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "比的意义",
+        "长度单位换算",
+        "方向"
+      ],
+      "math_and_age_evidence": "比例尺单位统一，长度2倍面积4倍体积8倍；6题50米、3厘米、1:500000、8平方米、100平方米、1/10000；校园(0,4)/(3,4)/(3,2)、1:1000、90米；真实测图两次测量并确认方向。",
+      "static_images": [
+        "assets/原理图/两向放大.svg",
+        "assets/课程图/线段比例尺.svg",
+        "assets/课程图/图形放大缩小.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": {
+        "scenes": 5,
+        "json_storyboard_timeline_consistent": true,
+        "audio_listened": false,
+        "continuous_full_video_watched": false,
+        "actual_frames_evidence": "此前root实际抽帧证据，本轮未重新冒领观看"
+      },
+      "reviewed_files": [
+        "课程/六下/L09-比例尺/讲授稿.md",
+        "assets/原理图/两向放大.svg",
+        "assets/课程图/线段比例尺.svg",
+        "assets/课程图/图形放大缩小.svg",
+        "课程/六下/L09-比例尺/视频稿与分镜.md",
+        "工具/episodes/成片/六下-L09.json",
+        "课程/六下/L09-比例尺/视频.timeline.json"
+      ],
+      "file_sha256": {
+        "课程/六下/L09-比例尺/讲授稿.md": "5a80467a3b29589451c362d3e3a5df5dec803c3ded414dde974b1be31913bf30",
+        "assets/原理图/两向放大.svg": "743b6830a7b33e6ce0ae6578b9846853b0b4fd39bfd04eda96bcbde06d73bf06",
+        "assets/课程图/线段比例尺.svg": "c556dad3d06b0902ee1085ac278536430a8e1a39bb6cff63d4d1519e314dad6d",
+        "assets/课程图/图形放大缩小.svg": "71c247c89c756569aeae1a5516ab1c0630d70bc4da2749f7710bd748dd50aa43",
+        "课程/六下/L09-比例尺/视频稿与分镜.md": "cd362e802f2796ad92cc58f52375580ae8af9f98d04e657baa6337cacc14cd60",
+        "工具/episodes/成片/六下-L09.json": "c5928b26d66eb70d90325c2b3bbe07a9bd133ca6a5421228dbc9324bd54cc7fd",
+        "课程/六下/L09-比例尺/视频.timeline.json": "36f21b048d6dacc0085921ede4284e641106a2b7a98335ce43a4db1d34f12f33"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": true,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六下-L10",
+      "path": "课程/六下/L10-鸽巢问题",
+      "status": "第四轮发现交付配图缺口，已修复，需第五轮复核",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "提高",
+      "prerequisites": [
+        "有余数除法",
+        "有序分类"
+      ],
+      "math_and_age_evidence": "保证至少而非恰好；整除不加1；6题3、4、3、4、4、错；球三色每色有且总数至少4、摸后不放回条件充分。",
+      "static_images": [],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六下/L10-鸽巢问题/讲授稿.md"
+      ],
+      "file_sha256": {
+        "课程/六下/L10-鸽巢问题/讲授稿.md": "5bbd5e8280a657352c43d0bc16a6ea6f053db4adb0d5ae41dd072f2d3eca6547"
+      },
+      "findings": [
+        "鸽巢核心分配关系此前只列算式和文字，缺少可数图示。"
+      ],
+      "fixes": [
+        "补5个鸽子点放进4个框的2/1/1/1图，明确这是一种分法，并以每笼至多1只只能装4只解释保证。"
+      ],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true,
+      "post_fix_sha256": {
+        "课程/六下/L10-鸽巢问题/讲授稿.md": "adc2ca3e75c05fd18cb04a7b7f67306fbec2e3c0afd6bfee9b2c001eff6c487c"
+      }
+    },
+    {
+      "key": "六下-L11",
+      "path": "课程/六下/L11-统计图怎么选",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "三种统计图",
+        "平均数与百分数"
+      ],
+      "math_and_age_evidence": "三种图功能与单位分母核对，跨图总300、艺术60其他30、新科普1/3约33.3%；6题三种图、10人、110%有误、实际90%非一半；公开图表任务有来源日期和可核对数据。",
+      "static_images": [
+        "assets/课程图/图书跨图读数.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六下/L11-统计图怎么选/讲授稿.md",
+        "assets/课程图/图书跨图读数.svg"
+      ],
+      "file_sha256": {
+        "课程/六下/L11-统计图怎么选/讲授稿.md": "8e1bd35329a74fbd69816513054c83782750373bb2d0250e1fc08fd82b09d0e9",
+        "assets/课程图/图书跨图读数.svg": "8cafdb2df28b4e40ea14f7fe13ad2d44d0561fc26b2c0ef04da5f6a16ca6999c"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六下-L12",
+      "path": "课程/六下/L12-整理与复习",
+      "status": "第四轮发现交付配图缺口，已修复，需第五轮复核",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "分数和百分数",
+        "平面与立体测量",
+        "比例尺"
+      ],
+      "math_and_age_evidence": "等式同操作限定准确；例水深3.14分米，书48/72。花圃57.6平方米需5包，甲81乙84，多买6包97.2/96不省，预算差1；路线600米10分，8:45出发9:55回共70分。6基础题11/12、6千克、75.36、400、12千米、红更可能但不一定。",
+      "static_images": [],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六下/L12-整理与复习/讲授稿.md"
+      ],
+      "file_sha256": {
+        "课程/六下/L12-整理与复习/讲授稿.md": "d94e68786ed63739abca21c7ba9109a8147a512770a9f864e87a568d10d5095e"
+      },
+      "findings": [
+        "圆柱水倒入长方体的空间转换此前只有文字和算式。"
+      ],
+      "fixes": [
+        "补水桶与容器侧视图；内直径4dm、内高5dm、水量62.8dm³，右底面积20dm²、水深3.14dm。"
+      ],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true,
+      "post_fix_sha256": {
+        "课程/六下/L12-整理与复习/讲授稿.md": "d35359ab6dcc70de43645ebec5393ecb10074f37202e6714d6e5d8b7200a78cb",
+        "assets/课程图/水从圆柱倒入长方体.svg": "ff5616ccf344b5c40283c2db731694e522e05b66e00de09e10a2409b00150d71"
+      }
+    },
+    {
+      "key": "六下-L13",
+      "path": "课程/六下/L13-立体图形切拼",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "提高",
+      "prerequisites": [
+        "长方体表面积与体积"
+      ],
+      "math_and_age_evidence": "8×4×3体积96，原表面积136切后160；6题96、增加24、增加64、3立方体外表56、圆柱增加56.52、面积体积不能相加；两个切面均计入。",
+      "static_images": [
+        "assets/课程图/切开与拼合.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": {
+        "scenes": 5,
+        "json_storyboard_timeline_consistent": true,
+        "audio_listened": false,
+        "continuous_full_video_watched": false,
+        "actual_frames_evidence": "此前root实际抽帧证据，本轮未重新冒领观看"
+      },
+      "reviewed_files": [
+        "课程/六下/L13-立体图形切拼/讲授稿.md",
+        "assets/课程图/切开与拼合.svg",
+        "课程/六下/L13-立体图形切拼/视频稿与分镜.md",
+        "工具/episodes/成片/六下-L13.json",
+        "课程/六下/L13-立体图形切拼/视频.timeline.json"
+      ],
+      "file_sha256": {
+        "课程/六下/L13-立体图形切拼/讲授稿.md": "c4e358da858d2e8fe964c693cd05151a2cdf4e8f9dcb03f39761cdd192c99b3f",
+        "assets/课程图/切开与拼合.svg": "fefe50b6677da68b3f81e0dc56c729fbcd4cfd767445d155db1b9bd9d67423bf",
+        "课程/六下/L13-立体图形切拼/视频稿与分镜.md": "07887729cd79269711f6d89902c3d8391514def644a3b01f2e3ce721c52ab608",
+        "工具/episodes/成片/六下-L13.json": "43f2a326aceed7d3b30006ee3d5265730a2a20afd05f417004bee3333e79cf6a",
+        "课程/六下/L13-立体图形切拼/视频.timeline.json": "91070265b1211530f1a636cdff51d4980ce25d286403384278999a55f9e132c5"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": true,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六下-L14",
+      "path": "课程/六下/L14-比例与行程综合",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "提高",
+      "prerequisites": [
+        "比与比例",
+        "速度时间路程"
+      ],
+      "math_and_age_evidence": "地图6厘米对应3千米，0.75小时45分；6题800米、10分、5厘米、4:5、5:6、11:30；同时间与同路程条件分别明确。",
+      "static_images": [
+        "assets/课程图/比例尺与行程.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六下/L14-比例与行程综合/讲授稿.md",
+        "assets/课程图/比例尺与行程.svg"
+      ],
+      "file_sha256": {
+        "课程/六下/L14-比例与行程综合/讲授稿.md": "05b9fd58b967530d1ed2aedd4f9bf52cbe90b031b4a667b4f8734259ba6f5fdb",
+        "assets/课程图/比例尺与行程.svg": "4959e25a06bd897a3d7229fbcd719689d783b0515234b6a015234104191477ce"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六下-L15",
+      "path": "课程/六下/L15-统计调查与节水方案",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "基础",
+      "prerequisites": [
+        "平均数",
+        "百分数",
+        "数据记录"
+      ],
+      "math_and_age_evidence": "270升/3=90，少30、25%；6题含450升估计假设、每人次0.6/0.45、0.6不能声称更省、不得挑最少一天。调查范围与水表范围对齐，合计水量除合计人次，缺失不编数。",
+      "static_images": [
+        "assets/课程图/节水调查.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六下/L15-统计调查与节水方案/讲授稿.md",
+        "assets/课程图/节水调查.svg"
+      ],
+      "file_sha256": {
+        "课程/六下/L15-统计调查与节水方案/讲授稿.md": "f1d047fbd3a7550dd067d99a7e3b7de92ae5893b1906815b914a1d52fc495dbe",
+        "assets/课程图/节水调查.svg": "d86be63251332a111da92dd89b6e747c188597964f89cfcc874b3ad39c08b070"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true
+    },
+    {
+      "key": "六下-L16",
+      "path": "课程/六下/L16-小学数学综合挑战",
+      "status": "第四轮未发现新增问题",
+      "review_basis": "第四轮从最终文件再次阅读全文（含全部基础/提高/衔接题答和活动核对）、重新复算，及该课存在的完整分镜；不只复看旧发现。",
+      "stage": "5–6",
+      "level": "提高",
+      "prerequisites": [
+        "分数百分数应用",
+        "面积与比例尺",
+        "统计判断"
+      ],
+      "math_and_age_evidence": "阅读角22平方米、330元，故事书30→50总80→100；7题88块、316.8元、买20、6/4厘米、1.8本、9升与材料条件、80本次平均16且不能推不同书本数。每组数量明示为个人阅读数之和。",
+      "static_images": [
+        "assets/课程图/阅读角方案.svg"
+      ],
+      "static_images_review": "源SVG SHA256与第三轮一致；复用第三轮全部24张图的实际目视结论。",
+      "video_alignment": null,
+      "reviewed_files": [
+        "课程/六下/L16-小学数学综合挑战/讲授稿.md",
+        "assets/课程图/阅读角方案.svg"
+      ],
+      "file_sha256": {
+        "课程/六下/L16-小学数学综合挑战/讲授稿.md": "883e336410d4fd006c69cb7bf830ea661754376ffce88b1e2ed798341b582639",
+        "assets/课程图/阅读角方案.svg": "66ea48e324bcf1ae66a366f202c0cf5caa87f4e3ce556db3d0f89d928ed5216f"
+      },
+      "findings": [],
+      "fixes": [],
+      "final_full_text_reviewed": true,
+      "all_examples_exercises_answers_recalculated": true,
+      "final_storyboard_full_text_reviewed": false,
+      "metadata_final_match": true
+    }
+  ],
+  "code_checks": {
+    "过度防御": "读取当前进度和关键模型；clamp用于实际音频结束后停顿，不新增吞错或无依据守卫。",
+    "过度设计": "沿用stage/phase配置和s_principle分派，无新增课程专用架构。",
+    "过度fallback": "实际成片speech_duration来自时间线；预览fallback不当作实际同步证据。",
+    "理论问题复杂化": "有限切拼、倒数份数、等底等高演示保持小学可解释范围，未加入更复杂证明任务。",
+    "dead_code": "复核draw_cylinder_surface：此前无调用caps分支已由root清除，当前answer/展开分支均有配置调用；本轮未发现新增无调用课程模型。",
+    "基建复用": "12片使用现有三个principle模块；分数除法和L层末段phase=1保持最终画面，未另建时间线。"
+  },
+  "validation": [
+    "第四轮重新全文审查32份讲授稿和12份分镜，全部例题、练习与答案逐课复算；该部分未发现新增数学问题。",
+    "收尾交付完整性复查发现8课核心关系缺图，补6个SVG（同量杯复用两课）和1个文本分配图，因此本轮不是无问题轮。",
+    "补图前记录的file_sha256为第四轮原始快照，新增post_fix_sha256记录补图后版本。未变的12分镜/JSON/timeline及24旧SVG证据可复用。",
+    "6新SVG实际渲染目视通过，杯图3组各2杯果汁3杯水、百格总100涂35经XML核对；正文图片链接可达。"
+  ],
+  "limitations": [
+    "本记录仅覆盖六年级32课；整体终轮结论由root合并各范围报告。",
+    "未进行听审或连续观看所有12部成片；实际画面证据为已记录的抽帧范围，不冒称整片视听通过。"
+  ],
+  "review_sequence": "六下L16至L01、六上L16至L01逆序阅读全文，逐课复算题答，再阅读全文12份分镜；未以第三轮报告或hash检查代替全文审查。",
+  "evidence_reuse": {
+    "unchanged_files_confirmed_by_sha256": true,
+    "static_images": "24张SVG内容未变，复用第三轮实际目视的4张联系图与逐图结论。",
+    "technical_checks": "12配置与timeline未变，复用第三轮68镜ID/旁白/停顿检查；本轮不重复渲染或跑未变测试。",
+    "actual_new_video_frames": "复用round2-新成片画面.json中已实际查看的画面证据；未把抽帧扩大为连续全片或听审。"
+  },
+  "followup_required": "第5轮全32课复核，不将本轮视作无问题终轮。",
+  "delivery_completeness": {
+    "root_cause": "纯算式代码块不能替代数量或空间关系图；保留已有有效文本图和数据表，不为图片数量添装饰。",
+    "updated_lessons": [
+      "六上-L03",
+      "六上-L06",
+      "六上-L09",
+      "六上-L10",
+      "六下-L02",
+      "六下-L06",
+      "六下-L10",
+      "六下-L12"
+    ],
+    "new_svg_count": 6,
+    "new_text_diagram_count": 1,
+    "existing_effective_diagrams_retained": {
+      "六上-L04": "甲2份乙3份的点图，明确一份12颗。",
+      "六下-L01": "−5至5的有序数轴，左右方向明确。"
+    },
+    "actual_render_review": "6个新SVG均经QuickLook实际渲染及view_image逐图查看，核对数量/尺度/标注/可读性；预览保存于六年级第五轮配图。"
+  }
+}

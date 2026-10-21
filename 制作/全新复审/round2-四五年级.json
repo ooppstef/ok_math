@@ -1,0 +1,2367 @@
+{
+  "round": 2,
+  "reviewer": "fresh_grade3（交叉审四五年级，未参与其第1轮）",
+  "scope": "四上15、四下15、五上15、五下16，共61课；全部123份MD（61讲授、40动手挑战、22分镜）",
+  "method": "逐课全文独立阅读、重算全部例题练习答案；复核官方2022课标印刷页20–26、29–34、38–41；完整读取20份成片JSON和对应模型，查看39张课内SVG、110幕中末220源渲染静帧。未使用第1轮审查结论替代本轮阅读。",
+  "curriculum_source": {
+    "pdf": "/tmp/math-standard-2022.pdf",
+    "ocr": "/tmp/math-standard-ocr",
+    "limitations": "扫描OCR仅作阅读辅助；不根据旧目录推出必修，不宣称已取得北师大某版教材全套同步或教辅覆盖。三角形/四边形分类仍属3–4，三边关系/内角和属5–6。"
+  },
+  "summary": {
+    "lesson_count": 61,
+    "markdown_count": 123,
+    "content_issues": 20,
+    "storyboard_issues": 9,
+    "findings_count": 29,
+    "fixed_count": 29,
+    "text_edit_locations": 27,
+    "text_files_changed": 23,
+    "storyboards_calibrated": 20,
+    "scene_count": 110,
+    "source_frames_viewed": 220,
+    "svg_viewed": 39,
+    "unresolved_content_findings": 0,
+    "clean_round": false
+  },
+  "six_code_checks": [
+    {
+      "check": "过度防御",
+      "evidence": "arithmetic.render的duration下界、geometry.progress和relations.progress的钳位服务逐帧插值，render_episode.main检查fps及注册类型；未发现本范围重复校验需删除。"
+    },
+    {
+      "check": "过度设计",
+      "evidence": "现有3个模型模块用直接函数/分支分发，20份配置复用20种既有模型；没有为本轮文本修复新加包装、管理器或配置。"
+    },
+    {
+      "check": "过度fallback",
+      "evidence": "s_principle按type加载模块；arithmetic/relations未知model明确报错，geometry按draw_model查找。speech_duration→scene_duration/duration兼顾有配音和静态预览，不吞错猜模型。"
+    },
+    {
+      "check": "理论问题复杂化",
+      "evidence": "保留现有小数/分数分格与逐层体积模型；未为任意维度、未来未知题型增开关。27处教材改动均对应实际题意或步骤，不引入假想数学特例。"
+    },
+    {
+      "check": "dead code",
+      "evidence": "通过20份成片JSON的type/model/stage追踪SCENES→s_principle→render→draw函数；geometry使用globals动态分发，不能因文本零直接调用删除draw函数。本范围实际分支已调用出220帧，未证实可删死代码。"
+    },
+    {
+      "check": "复用",
+      "evidence": "静态核查复用render_episode.new_frame/F和现有模块render；三种模块progress的时基与phase语义不同，本轮不抽合。只调整MD，不复制模型实现或新增依赖。"
+    }
+  ],
+  "code_reviewed_files": [
+    "工具/render_episode.py（SCENES注册、s_principle分发、时基/字幕/主渲染调用）",
+    "工具/scenes/arithmetic.py（render及_other相关完整分支）",
+    "工具/scenes/geometry.py（完整相关函数与辅助函数）",
+    "工具/scenes/relations.py（完整render和progress）"
+  ],
+  "validation": [
+    "20份JSON读取及110幕中/末源渲染成功",
+    "39张SVG转换及人工查看",
+    "逐课例题练习重新计算；教材修复27处逐一复读",
+    "20份分镜逐幕旁白与JSON一致、镜数110相符"
+  ],
+  "not_verified": [
+    "未在本轮连续观看20个最终重渲mp4；未试听音轨，未核最终TTS停顿和读音",
+    "源帧使用配置时基归一化，无最终字幕/页脚合成，不当作手机完整成片版式通过",
+    "不宣称三轮loop已完成；本轮有修复，须继续第3轮"
+  ],
+  "lessons": [
+    {
+      "id": "四上-L01",
+      "path": "课程/四上/L01-一亿有多大",
+      "prerequisites": "万以内位值、长度质量换算",
+      "core_or_extension": "3–4基础；公顷/平方千米为5–6衔接",
+      "reviewed_files": [
+        "课程/四上/L01-一亿有多大/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "305006700读三亿零五百万六千七百；十二亿零三十万零五写1200300005；998000000≈10亿；400×250平方米=10公顷",
+      "teaching_and_schedule": "先把读写多位数、分级与估算学稳；公顷量感放面积单位之后。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四上/L01-一亿有多大/讲授稿.md": "634a724edfe2c5acf369fd3c718931f28b0f17892835701889a15acc4215805b"
+      }
+    },
+    {
+      "id": "四上-L02",
+      "path": "课程/四上/L02-如果人有八根手指",
+      "prerequisites": "十进位值、整数除法",
+      "core_or_extension": "兴趣提高",
+      "reviewed_files": [
+        "课程/四上/L02-如果人有八根手指/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "45=140(五进制)；17=10001(二进制)；37(八进制)=31；限制每位可用数字成立",
+      "teaching_and_schedule": "不作小学必学，读写十进制熟练后选做一种进制即可。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四上/L02-如果人有八根手指/讲授稿.md": "87a89e7c5b2ec5668301d51ae3987acf6f294af868d2d2232255af8b40aabcee"
+      }
+    },
+    {
+      "id": "四上-L03",
+      "path": "课程/四上/L03-一度是谁定的",
+      "prerequisites": "角、时钟、分数初步",
+      "core_or_extension": "3–4基础；时针夹角为提高",
+      "reviewed_files": [
+        "课程/四上/L03-一度是谁定的/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "2:20时分针120度、时针70度，夹角50度；38度余角52度；复制3、4、5厘米线段接成12厘米",
+      "teaching_and_schedule": "先量角画角，时针连续走的题另次选学。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四上/L03-一度是谁定的/讲授稿.md": "b44f259324e07e036ae843afd69833977606ece4e64c99d9d54d79665e6eab3e"
+      }
+    },
+    {
+      "id": "四上-L04",
+      "path": "课程/四上/L04-平行与垂直",
+      "prerequisites": "直线射线线段、直角",
+      "core_or_extension": "3–4基础",
+      "reviewed_files": [
+        "课程/四上/L04-平行与垂直/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "同一平面前提、延长判平行成立；3直线最多3交点；长方形两组对边平行",
+      "teaching_and_schedule": "先画垂线和平行线再讨论位置关系。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四上/L04-平行与垂直/讲授稿.md": "c0879e277a6e0c42f6c4f07afcbf110ed841f8f82859654b1ab081fd0e753b68"
+      }
+    },
+    {
+      "id": "四上-L05",
+      "path": "课程/四上/L05-两层积的秘密",
+      "prerequisites": "两位数乘一位数、位值、分配",
+      "core_or_extension": "3–4基础",
+      "reviewed_files": [
+        "课程/四上/L05-两层积的秘密/讲授稿.md",
+        "assets/原理图/乘法分块.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "145×27=3915；208×36=7488；306×25=7650；125×32=4000；第二层积表示十",
+      "teaching_and_schedule": "分块图与两层积联系清楚，含0位保留。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四上/L05-两层积的秘密/讲授稿.md": "e69462373ce74b7c26d70dec42e21ef2d001afc210de3699073fc5e8b1a3b064"
+      }
+    },
+    {
+      "id": "四上-L06",
+      "path": "课程/四上/L06-积的变化",
+      "prerequisites": "乘法数组、倍数",
+      "core_or_extension": "3–4基础探索",
+      "reviewed_files": [
+        "课程/四上/L06-积的变化/视频稿与分镜.md",
+        "课程/四上/L06-积的变化/讲授稿.md",
+        "assets/原理图/两向放大.svg",
+        "工具/episodes/成片/四上-L06.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "3×2变6×4为24即4倍；48÷8×25×2=300；两因数分别乘3、4积乘12",
+      "teaching_and_schedule": "先单向变化再双向变化，面积图给理由，不只记口令。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 5,
+        "models": [
+          "product_change"
+        ],
+        "frames_viewed": 10,
+        "contact_sheet": "/tmp/grade45-round2-frames/四上-L06-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/四上/L06-积的变化/视频稿与分镜.md": "fe3fc1b22c0e742973a5607f7d3c28efa75bd3ef75860a9eb42e8583374c95e2",
+        "课程/四上/L06-积的变化/讲授稿.md": "0afedf27ca14456b63471310e7bdab9057883ac497bd067feb47a77026c6f8d7"
+      }
+    },
+    {
+      "id": "四上-L07",
+      "path": "课程/四上/L07-试商",
+      "prerequisites": "整数长除、余数小于除数",
+      "core_or_extension": "3–4基础",
+      "reviewed_files": [
+        "课程/四上/L07-试商/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "245÷37=6余23；196÷39=5余1；768÷24=32；612÷30=20余12；936÷24=39；630÷31=20余10",
+      "teaching_and_schedule": "先试商调商，再商为两位及个位0；修复平均分的单位解释。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "正文与题意",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/四上/L07-试商/讲授稿.md",
+              "line": 67,
+              "before": "76 个十里面有 3 个“24 个十”，所以商的十位写 3：24×30=720。还剩 768−720=48，48÷24=2，商的个位写 2。",
+              "after": "把 76 个十平均分成 24 份，每份先得 3 个十，共分去 72 个十，所以商的十位写 3。剩下 4 个十，和原来的 8 个一合成 48 个一；48 个一再平均分成 24 份，每份得 2 个一，商的个位写 2。",
+              "finding": "分成24份与按24个十分组混用；统一每一步平均分的单位。"
+            }
+          ]
+        }
+      ],
+      "findings_count": 1,
+      "fixes_count": 1,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四上/L07-试商/讲授稿.md": "2d01066d8e4fc3ed85f0265c1a8c3e2f7fe55d2cc6491fd33131355a57736f97"
+      }
+    },
+    {
+      "id": "四上-L08",
+      "path": "课程/四上/L08-商不变",
+      "prerequisites": "等分除、单位换算、有余数除法",
+      "core_or_extension": "3–4基础探索",
+      "reviewed_files": [
+        "课程/四上/L08-商不变/视频稿与分镜.md",
+        "课程/四上/L08-商不变/讲授稿.md",
+        "assets/原理图/商与份数.svg",
+        "工具/episodes/成片/四上-L08.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "600÷200=6÷2=3；850÷30=28余10；730÷20=36余10；余数随单位恢复",
+      "teaching_and_schedule": "不把约掉0后的余1直接作原式余数。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 5,
+        "models": [
+          "quotient_scale"
+        ],
+        "frames_viewed": 10,
+        "contact_sheet": "/tmp/grade45-round2-frames/四上-L08-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/四上/L08-商不变/视频稿与分镜.md": "5f0da688cf9e2bb9097efc846c08eed8c27b0384581097117661266add2a60fc",
+        "课程/四上/L08-商不变/讲授稿.md": "f5a0ba6a35d6d391b8ad5b8d9cd42a1ce021fe8c9092d074575b9ddc7c2a51f9"
+      }
+    },
+    {
+      "id": "四上-L09",
+      "path": "课程/四上/L09-三角形晃不动",
+      "prerequisites": "三角形四边形、固定长度",
+      "core_or_extension": "3–4基础观察；三边约束论证5–6衔接",
+      "reviewed_files": [
+        "课程/四上/L09-三角形晃不动/视频稿与分镜.md",
+        "课程/四上/L09-三角形晃不动/讲授稿.md",
+        "assets/原理图/框架约束.svg",
+        "工具/episodes/成片/四上-L09.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "3、4、5能围三角形；3、4、8不能；斜撑分两个三角形，需接点可转棒长固定",
+      "teaching_and_schedule": "实际强度与形状稳定区分；不需要勾股定理。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 5,
+        "models": [
+          "frame"
+        ],
+        "frames_viewed": 10,
+        "contact_sheet": "/tmp/grade45-round2-frames/四上-L09-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/四上/L09-三角形晃不动/视频稿与分镜.md": "38bc71923c603231b1039309d496082e63f4f2f73e49b9dc84f2e117b1f99ec9",
+        "课程/四上/L09-三角形晃不动/讲授稿.md": "b2b6c40c4d2a79ded6c5c6b589b2c70bd407f5ed21089e8ea4a28d84c8230883"
+      }
+    },
+    {
+      "id": "四上-L10",
+      "path": "课程/四上/L10-优化",
+      "prerequisites": "时长、顺序、乘法",
+      "core_or_extension": "提高应用",
+      "reviewed_files": [
+        "课程/四上/L10-优化/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "3张饼双面每面3分最少9分；5张15分；并行泡茶10分；赛马按配对能赢2场",
+      "teaching_and_schedule": "先画过程检验资源条件；不作为人人必会的最优化题型。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四上/L10-优化/讲授稿.md": "f00f642ce9eb5a7e07fd03e3b22199b0aa7b70b7732be8c1b4a065d0016ef1c6"
+      }
+    },
+    {
+      "id": "四上-L11",
+      "path": "课程/四上/L11-两个圈重叠",
+      "prerequisites": "集合分类、加减、重复计数",
+      "core_or_extension": "提高应用",
+      "reviewed_files": [
+        "课程/四上/L11-两个圈重叠/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "32+25−12=45；全体48则圈外3；三集合37−12+2=27",
+      "teaching_and_schedule": "两圈先用实物，三圈为再选学，不用公式替代理解重计。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四上/L11-两个圈重叠/讲授稿.md": "c58200895635df035079e795d6f65041adce9f720ca10233f6963e4fd64c477c"
+      }
+    },
+    {
+      "id": "四上-L12",
+      "path": "课程/四上/L12-竖式侦探",
+      "prerequisites": "乘加竖式、进位、排除",
+      "core_or_extension": "提高应用",
+      "reviewed_files": [
+        "课程/四上/L12-竖式侦探/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "AB+AB=1A2解96+96=192；44×9=396；数码组合765",
+      "teaching_and_schedule": "按个位进位到高位逐步试，先保证普通竖式熟练。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四上/L12-竖式侦探/讲授稿.md": "b04874e9579e7578f13a6b9600641c5ca2ad5b9e53546c7935b291dbc0019b72"
+      }
+    },
+    {
+      "id": "四上-L13",
+      "path": "课程/四上/L13-从数量关系列算式",
+      "prerequisites": "整数四则、单位、读题",
+      "core_or_extension": "3–4基础",
+      "reviewed_files": [
+        "课程/四上/L13-从数量关系列算式/讲授稿.md",
+        "assets/课程图/单价数量总价.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "18×4=72元；16千米/时走半小时8千米；11×18=198≤200，向上估220不能证明不够",
+      "teaching_and_schedule": "乘法数量关系与估算方向独立成课，可先于应用提高题。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四上/L13-从数量关系列算式/讲授稿.md": "8c18e92d7af79e5b211210fc22a97f39480574944d80b482872ba551074b7575"
+      }
+    },
+    {
+      "id": "四上-L14",
+      "path": "课程/四上/L14-量角器从哪边读",
+      "prerequisites": "角与直角、线段测量",
+      "core_or_extension": "3–4基础",
+      "reviewed_files": [
+        "课程/四上/L14-量角器从哪边读/视频稿与分镜.md",
+        "课程/四上/L14-量角器从哪边读/讲授稿.md",
+        "assets/课程图/量角器双刻度.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "右零起60度，左零起120度；画70度、辨110钝角；35+55=90",
+      "teaching_and_schedule": "用实物量角器；分镜为补充设计，未单独成片。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四上/L14-量角器从哪边读/视频稿与分镜.md": "0d2f7dad6f4ed6b545e57121f3553621ca6e371323a1acb3700f8dda58780546",
+        "课程/四上/L14-量角器从哪边读/讲授稿.md": "2f70d1aad295868aa6faae6e106131bf16dc92944bd24d362811a59c97857664"
+      }
+    },
+    {
+      "id": "四上-L15",
+      "path": "课程/四上/L15-计算器也要会检查",
+      "prerequisites": "整数乘法、估算、逆运算",
+      "core_or_extension": "3–4基础",
+      "reviewed_files": [
+        "课程/四上/L15-计算器也要会检查/讲授稿.md",
+        "assets/课程图/计算器检查.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "398×21=8358；123×99=12177；203×19=3857；37倍数差37",
+      "teaching_and_schedule": "计算器录入后以数量级和分解核对，避免只照屏幕。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四上/L15-计算器也要会检查/讲授稿.md": "7fb9a14eb6c8c34dbbc2544bceb8e61170db338e1bf7993dd55be90606227cba"
+      }
+    },
+    {
+      "id": "四下-L01",
+      "path": "课程/四下/L01-运算顺序",
+      "prerequisites": "整数四则含义、小括号",
+      "core_or_extension": "3–4基础",
+      "reviewed_files": [
+        "课程/四下/L01-运算顺序/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "36÷(6−3)×2=24；100−20×3+10=50；96÷[2×(7−3)]=12",
+      "teaching_and_schedule": "从同级从左到右到括号，多层括号逐步增加。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四下/L01-运算顺序/讲授稿.md": "6efe2735a3cc895ccb78cadb2d369a38db1d78335fa54514ec9cc4d63bdece78"
+      }
+    },
+    {
+      "id": "四下-L02",
+      "path": "课程/四下/L02-运算律",
+      "prerequisites": "数组、整数四则",
+      "core_or_extension": "3–4基础",
+      "reviewed_files": [
+        "课程/四下/L02-运算律/视频稿与分镜.md",
+        "课程/四下/L02-运算律/讲授稿.md",
+        "assets/原理图/分配律.svg",
+        "工具/episodes/成片/四下-L02.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "7×5=3×5+4×5=35；错成3×5+4漏16；99×36+36=3600",
+      "teaching_and_schedule": "分配律与结合律分例讲；动画只覆盖分配律。",
+      "findings": [
+        {
+          "kind": "分镜与配置",
+          "status": "fixed",
+          "location": "课程/四下/L02-运算律/视频稿与分镜.md",
+          "evidence": {
+            "path": "课程/四下/L02-运算律/视频稿与分镜.md",
+            "old_scene_count": 5,
+            "new_scene_count": 5,
+            "narration_differences": [],
+            "fix": "逐幕校准到当前JSON的完整旁白与已核源码/静帧动作；去除未实际演示的设计。"
+          },
+          "detail": "分配律旧稿虚写行列编号、框线与闪烁；实际用彩色点阵、位移及红色漏点。"
+        }
+      ],
+      "findings_count": 1,
+      "fixes_count": 1,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 5,
+        "models": [
+          "distributive"
+        ],
+        "frames_viewed": 10,
+        "contact_sheet": "/tmp/grade45-round2-frames/四下-L02-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/四下/L02-运算律/视频稿与分镜.md": "ce3cd33d0183c27f89ba4c32c65ed2567b1208133e6bdb5427eabed4f16ab8df",
+        "课程/四下/L02-运算律/讲授稿.md": "f6c0a7b202d0114e61306ff7e43c8496c56c90c2c7e4929d84c5b27eec28dd99"
+      }
+    },
+    {
+      "id": "四下-L03",
+      "path": "课程/四下/L03-简便计算",
+      "prerequisites": "运算律、凑整",
+      "core_or_extension": "3–4基础",
+      "reviewed_files": [
+        "课程/四下/L03-简便计算/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "25×32×125=100000；476−198=278；102×45=4590",
+      "teaching_and_schedule": "每步指出用了哪个关系，别把减法随意交换。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四下/L03-简便计算/讲授稿.md": "37f2de7951b1a8d452a5b467829d32bddf43c4ec43a117ce6986946dee7dc323"
+      }
+    },
+    {
+      "id": "四下-L04",
+      "path": "课程/四下/L04-小数意义",
+      "prerequisites": "十分之一初识、十进位值",
+      "core_or_extension": "5–6基础；一位小数直观3–4",
+      "reviewed_files": [
+        "课程/四下/L04-小数意义/讲授稿.md",
+        "assets/原理图/小数尺.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "0.1=0.10=0.100在同一整体下相等；0.6有60个0.01",
+      "teaching_and_schedule": "按学习安排跨目录进入，先固定整体和计数单位。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四下/L04-小数意义/讲授稿.md": "9d7df6292fe326f20a1b8cca02c760dfb1e0671ebffaaaf22c143b0caa706b38"
+      }
+    },
+    {
+      "id": "四下-L05",
+      "path": "课程/四下/L05-小数点搬家",
+      "prerequisites": "小数位值、乘除10",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/四下/L05-小数点搬家/视频稿与分镜.md",
+        "课程/四下/L05-小数点搬家/讲授稿.md",
+        "assets/原理图/数位乘十.svg",
+        "工具/episodes/成片/四下-L05.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "3.25×10=32.5；1.2米=12分米实长未变；9.96≈10.0，2.304≈2.30",
+      "teaching_and_schedule": "数值扩大与改单位两情形分开；近似值保留末0。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 5,
+        "models": [
+          "place_shift"
+        ],
+        "frames_viewed": 10,
+        "contact_sheet": "/tmp/grade45-round2-frames/四下-L05-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/四下/L05-小数点搬家/视频稿与分镜.md": "1fc52db0d31a205b3a2b41b881652e6acc3215f56035c67a4a9d84eb1657cc42",
+        "课程/四下/L05-小数点搬家/讲授稿.md": "83d035e0ed78eeaddf754ef94809bcbee02ed3c649993f6b04577f012b9647c7"
+      }
+    },
+    {
+      "id": "四下-L06",
+      "path": "课程/四下/L06-三边关系",
+      "prerequisites": "三角形、长度加减",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/四下/L06-三边关系/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "两边4、7时第三整数边可4至10；两边5时第三整数边最大9",
+      "teaching_and_schedule": "先用小棒验证严格大于，等号只能摆成线。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四下/L06-三边关系/讲授稿.md": "0a9a03df4d3f59eb56145a7976a92728e5f99eb46af5013f293ba6fdaf75c235"
+      }
+    },
+    {
+      "id": "四下-L07",
+      "path": "课程/四下/L07-内角和",
+      "prerequisites": "量角、三角形分类",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/四下/L07-内角和/视频稿与分镜.md",
+        "课程/四下/L07-内角和/讲授稿.md",
+        "assets/课程图/三角形拼角.svg",
+        "工具/episodes/成片/四下-L07.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "50+60+70=180；等腰顶40底角70；45+65第三70；四边形360",
+      "teaching_and_schedule": "拼角是操作体验；四边形拆成两三角形拓展。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 5,
+        "models": [
+          "angles_sum"
+        ],
+        "frames_viewed": 10,
+        "contact_sheet": "/tmp/grade45-round2-frames/四下-L07-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/四下/L07-内角和/视频稿与分镜.md": "bdd52f2e58eb974ed66a84c59dabced0d4b336bf5f3ef2fe4249804d7e1b1dea",
+        "课程/四下/L07-内角和/讲授稿.md": "8e9157fdb420baed112b11e8a6856a67fe03f9e1df555bc94314852ff19dc83e"
+      }
+    },
+    {
+      "id": "四下-L08",
+      "path": "课程/四下/L08-图形运动",
+      "prerequisites": "方向、数格、图形对应点",
+      "core_or_extension": "3–4现象；5–6精确作图",
+      "reviewed_files": [
+        "课程/四下/L08-图形运动/讲授稿.md",
+        "assets/课程图/方格平移对称.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "A(1,1)B(3,1)C(1,3)向右4上1后(5,2)(7,2)(5,4)；轴x=5像点(9,1)(7,1)(9,3)",
+      "teaching_and_schedule": "前段现象可先学，方格补图随5–6图形运动安排。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四下/L08-图形运动/讲授稿.md": "e64abd8015d4a36964c917b13488686b926412bf7b2c26aff3f64b41c17a0896"
+      }
+    },
+    {
+      "id": "四下-L09",
+      "path": "课程/四下/L09-平均数",
+      "prerequisites": "总数、平均分、读条形图",
+      "core_or_extension": "3–4基础",
+      "reviewed_files": [
+        "课程/四下/L09-平均数/视频稿与分镜.md",
+        "课程/四下/L09-平均数/讲授稿.md",
+        "assets/原理图/平均数移块.svg",
+        "assets/课程图/借书复式条形图.svg",
+        "工具/episodes/成片/四下-L09.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "2+4+9=15，平均5；四次90再一次0平均72；目标总340减250得90；两周均30本",
+      "teaching_and_schedule": "移多补少说明总量不变；0数据不删除，条形图实读。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 5,
+        "models": [
+          "average"
+        ],
+        "frames_viewed": 10,
+        "contact_sheet": "/tmp/grade45-round2-frames/四下-L09-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/四下/L09-平均数/视频稿与分镜.md": "5fe075c0ce62ee3db91d056dec75f0a264946b092f79e21b800aa44fa71f12e0",
+        "课程/四下/L09-平均数/讲授稿.md": "3e5d06357324ed9256a24c17cdc844c7f519e939968844d2959072e3b679fed7"
+      }
+    },
+    {
+      "id": "四下-L10",
+      "path": "课程/四下/L10-鸡兔同笼",
+      "prerequisites": "差、乘除、假设",
+      "core_or_extension": "提高应用",
+      "reviewed_files": [
+        "课程/四下/L10-鸡兔同笼/视频稿与分镜.md",
+        "课程/四下/L10-鸡兔同笼/讲授稿.md",
+        "assets/原理图/替换鸡兔.svg",
+        "工具/episodes/成片/四下-L10.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "8头22脚=5鸡3兔；23脚不可能；盈亏铅笔6人22支；卡片33或21取决一盈一亏/两盈",
+      "teaching_and_schedule": "先实物替换再差÷每次差，盈亏独立选学。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "正文与题意",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/四下/L10-鸡兔同笼/讲授稿.md",
+              "line": 74,
+              "before": "从“多 4”到“少 8”，一共需要补 4+8=12 支。",
+              "after": "第一种分法所需的铅笔比现有的少 4 支，第二种比现有的多 8 支，两种分法所需的总数相差 4+8=12 支。",
+              "finding": "盈亏差12不是实际还缺12；把两种分配所需量作比较。"
+            }
+          ]
+        }
+      ],
+      "findings_count": 1,
+      "fixes_count": 1,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 5,
+        "models": [
+          "animals"
+        ],
+        "frames_viewed": 10,
+        "contact_sheet": "/tmp/grade45-round2-frames/四下-L10-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/四下/L10-鸡兔同笼/视频稿与分镜.md": "bcd723a73a615a2ccb165caee0ad761f29cfbf710001470f95ff63a72ac6806b",
+        "课程/四下/L10-鸡兔同笼/讲授稿.md": "51e9c96e072706bfb26fabd950680d4ba2b206aa95cfb2b5e4de24f133e51da2"
+      }
+    },
+    {
+      "id": "四下-L11",
+      "path": "课程/四下/L11-行程",
+      "prerequisites": "路程速度时间、同单位",
+      "core_or_extension": "提高应用（以3–4数量关系为前置）",
+      "reviewed_files": [
+        "课程/四下/L11-行程/视频稿与分镜.md",
+        "课程/四下/L11-行程/讲授稿.md",
+        "assets/原理图/间距变化.svg",
+        "工具/episodes/成片/四下-L11.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "相向300÷(60+40)=3；追赶300÷30=10；12÷(3+1)=3；24÷(4+2)=4",
+      "teaching_and_schedule": "先对齐共同出发时刻与间距；修正先走路程相向要扣除。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "正文与题意",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/四下/L11-行程/讲授稿.md",
+              "line": 66,
+              "before": "两人出发时间不同，要先算先走的人已经走了多远，把这段距离补进初始距离。",
+              "after": "两人出发时间不同，先把时间对到后一个人出发时，画出此时两人的位置。同地同向追赶时，先走的路程成为领先距离；两地相向而行时，先走的路程要从原来的间距中扣除。不能一律相加。",
+              "finding": "先出发的路程不一定加到间距；相向情形应扣除。"
+            }
+          ]
+        }
+      ],
+      "findings_count": 1,
+      "fixes_count": 1,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 6,
+        "models": [
+          "journey"
+        ],
+        "frames_viewed": 12,
+        "contact_sheet": "/tmp/grade45-round2-frames/四下-L11-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/四下/L11-行程/视频稿与分镜.md": "76d8b2513a004114e0db8f2b4b8308fe90910a22673bced17249162594c85520",
+        "课程/四下/L11-行程/讲授稿.md": "c04318dc77772d6d9869b003ad935317788c75206fee8115d189a022950175e2"
+      }
+    },
+    {
+      "id": "四下-L12",
+      "path": "课程/四下/L12-建模",
+      "prerequisites": "总价、成本、收入、整数四则",
+      "core_or_extension": "3–4真实问题；优化选学",
+      "reviewed_files": [
+        "课程/四下/L12-建模/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "进价8售价12，25件成本200、全部售出收入300利润100；未卖完不能凭80收入直接定损失20",
+      "teaching_and_schedule": "明示全部售完等假设；答案解释实际意义。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四下/L12-建模/讲授稿.md": "c2c0c63d377d3e0285f3b23170f86c2780a77f7b2f6f7dea2662070515b9acbc"
+      }
+    },
+    {
+      "id": "四下-L13",
+      "path": "课程/四下/L13-小数加减对齐什么",
+      "prerequisites": "小数意义、相同单位相加减",
+      "core_or_extension": "5–6基础；一位小数加减3–4",
+      "reviewed_files": [
+        "课程/四下/L13-小数加减对齐什么/讲授稿.md",
+        "assets/课程图/小数加减数位.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "3.75+2.60=6.35；10−6.35=3.65；2.35+3.15=5.50",
+      "teaching_and_schedule": "按数位对齐、退位和末0，不把末位强行对齐。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四下/L13-小数加减对齐什么/讲授稿.md": "7ddd7b762ad21a02856647f36e592a94e855c46e7edf9c01d8f448c25825b0d0"
+      }
+    },
+    {
+      "id": "四下-L14",
+      "path": "课程/四下/L14-图形怎样分类",
+      "prerequisites": "角特征、平行垂直",
+      "core_or_extension": "3–4基础",
+      "reviewed_files": [
+        "课程/四下/L14-图形怎样分类/讲授稿.md",
+        "assets/课程图/图形分类.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "45、45、90既等腰又直角；正方形属长方形属平行四边形；梯形仅一组平行对边",
+      "teaching_and_schedule": "分类按不同标准可重叠，保留3–4基础，不因两种三角形关系在5–6就整体推迟。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四下/L14-图形怎样分类/讲授稿.md": "6eb26445446f35352e7d402167b985336ec438c6ab08f871f202582bd3485015"
+      }
+    },
+    {
+      "id": "四下-L15",
+      "path": "课程/四下/L15-平均数里藏着总数",
+      "prerequisites": "平均数、总数与份数",
+      "core_or_extension": "3–4基础；合并平均提高",
+      "reviewed_files": [
+        "课程/四下/L15-平均数里藏着总数/讲授稿.md",
+        "assets/课程图/平均数找总数.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "9+11+13+15=48平均12；(10×2+20×3)÷5=16；(140×4+150)÷5=142",
+      "teaching_and_schedule": "人数不同先还原总数，不能把两组平均直接平均。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/四下/L15-平均数里藏着总数/讲授稿.md": "a6d56be4d5455dfaa55cbe4e602eb115f7e53ea264ac08c926831fac97be795f"
+      }
+    },
+    {
+      "id": "五上-L01",
+      "path": "课程/五上/L01-小数乘法",
+      "prerequisites": "小数位值、整数乘法、面积分格",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五上/L01-小数乘法/动手单.md",
+        "课程/五上/L01-小数乘法/挑战单.md",
+        "课程/五上/L01-小数乘法/视频稿与分镜.md",
+        "课程/五上/L01-小数乘法/讲授稿.md",
+        "assets/原理图/小数乘法百格.svg",
+        "工具/episodes/成片/五上-L01.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "0.3×0.4=.12；0.25×0.4=.1；1.2×2.6=3.12；0.04×9=.36",
+      "teaching_and_schedule": "百格固定整体解释缩放；挑战题另课做，不连做全部单。",
+      "findings": [
+        {
+          "kind": "分镜与配置",
+          "status": "fixed",
+          "location": "课程/五上/L01-小数乘法/视频稿与分镜.md",
+          "evidence": {
+            "path": "课程/五上/L01-小数乘法/视频稿与分镜.md",
+            "old_scene_count": 5,
+            "new_scene_count": 10,
+            "narration_differences": [],
+            "fix": "逐幕校准到当前JSON的完整旁白与已核源码/静帧动作；去除未实际演示的设计。"
+          },
+          "detail": "镜数或逐句旁白与当前成片JSON不同，已按真实镜头动作校准。"
+        }
+      ],
+      "findings_count": 1,
+      "fixes_count": 1,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 10,
+        "models": [
+          "decimal_product"
+        ],
+        "frames_viewed": 20,
+        "contact_sheet": "/tmp/grade45-round2-frames/五上-L01-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/五上/L01-小数乘法/动手单.md": "504406cc105a0e8b6aede3879a39b6b3b8840393f0b752692e3823f7f5facda8",
+        "课程/五上/L01-小数乘法/挑战单.md": "9dffcc7526bbfeeb5111e9fa42169a40344e19a061e67fb94b36d17b83d8da0f",
+        "课程/五上/L01-小数乘法/视频稿与分镜.md": "99082f10baf421c50e50dad1304b58326a7bae692b34adcb14fcd212ecb325ff",
+        "课程/五上/L01-小数乘法/讲授稿.md": "847534760a141c4020c2055a5bb6c01a2b2a129e0bb01898a4f6e5abe64053d3"
+      }
+    },
+    {
+      "id": "五上-L02",
+      "path": "课程/五上/L02-小数除法",
+      "prerequisites": "商不变、小数位值、整数除法",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五上/L02-小数除法/动手单.md",
+        "课程/五上/L02-小数除法/挑战单.md",
+        "课程/五上/L02-小数除法/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "0.48÷0.6=4.8÷6=.8；商点与变换后的被除数对齐；除数整数后被除数仍可小数",
+      "teaching_and_schedule": "修正“变成整数除法”误导；乘法验算商与数量级。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "正文与题意",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五上/L02-小数除法/讲授稿.md",
+              "line": 13,
+              "before": "被除数位数不够就补 0，然后按整数除法算。",
+              "after": "被除数位数不够就补 0。变换后的被除数仍可能有小数，要按“小数除以整数”的方法算，商的小数点与新的被除数的小数点对齐。",
+              "finding": "除数化整数不代表被除数也成整数。"
+            }
+          ]
+        }
+      ],
+      "findings_count": 1,
+      "fixes_count": 1,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五上/L02-小数除法/动手单.md": "d52b2bb35a3be4af77a1dd106ced3b8bf927dfb193feccf0b46e6f9d5f1998bc",
+        "课程/五上/L02-小数除法/挑战单.md": "66fa5841bd34a64bca19d4a05903707d14cf9bef32f453b7cbb154a1ad8fc021",
+        "课程/五上/L02-小数除法/讲授稿.md": "bdedfef96b36e6d727ceba11d351910d3d59827089b5c4da7083973e0bd6125d"
+      }
+    },
+    {
+      "id": "五上-L03",
+      "path": "课程/五上/L03-循环小数",
+      "prerequisites": "长除、小数、余数",
+      "core_or_extension": "5–6基础延伸",
+      "reviewed_files": [
+        "课程/五上/L03-循环小数/动手单.md",
+        "课程/五上/L03-循环小数/挑战单.md",
+        "课程/五上/L03-循环小数/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "1÷7循环142857，余数1→3→2→6→4→5→1；1÷6=.166…，1÷8=.125",
+      "teaching_and_schedule": "不要求循环小数转分数；余数数字重复与实际单位区分，统一初始计数。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "正文与题意",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五上/L03-循环小数/动手单.md",
+              "line": 52,
+              "before": "1÷7 的余数有 ______ 种，算到第 ______ 次开始重复。",
+              "after": "1÷7 的非零余数有 ______ 种。把初始余数 1 记作第 1 个，记到第 ______ 个余数时第一次重复。",
+              "finding": "首次重复的计数起点不明，初始与每次算后会差1。"
+            },
+            {
+              "path": "课程/五上/L03-循环小数/动手单.md",
+              "line": 75,
+              "before": "分类依次为循环、循环、有限、循环。",
+              "after": "分类依次为循环、循环、有限、循环。第 4 步两空为 6、7：六步除法后回到初始余数，第 7 个余数第一次重复。第 6 步可说：余数的数字开始重复，后续产生的商也按同样顺序重复；余数变成 0，除法就结束，得到有限小数。",
+              "finding": "补齐按新计数约定的答案和用自己话说的核对。"
+            }
+          ]
+        }
+      ],
+      "findings_count": 1,
+      "fixes_count": 1,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五上/L03-循环小数/动手单.md": "920c0a81d7ed585c6af711249964176c31e25ce44fc7bccc4e42915491c08083",
+        "课程/五上/L03-循环小数/挑战单.md": "2ff96608c28b7c4438e585f58e4956afc0b907d91a0322ee7eadc2a5aaa3793f",
+        "课程/五上/L03-循环小数/讲授稿.md": "f0c4cfc624028d8e63346ce278f605d4c5118c39e68a1ab8edcd4d0a2cb1a2e9"
+      }
+    },
+    {
+      "id": "五上-L04",
+      "path": "课程/五上/L04-数对",
+      "prerequisites": "左右上下、方格行列",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五上/L04-数对/动手单.md",
+        "课程/五上/L04-数对/挑战单.md",
+        "课程/五上/L04-数对/讲授稿.md",
+        "assets/原理图/数对定位.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "有序数对(3,4)与(4,3)不同；先列后行；0起编号图与正文一致",
+      "teaching_and_schedule": "建立参照与编号后定位，不默换行列约定。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五上/L04-数对/动手单.md": "b7c69828362b63b77aea434bcd22183a9d19ba3823df746fdce3ad57fe4b872f",
+        "课程/五上/L04-数对/挑战单.md": "12b37e5c49cf89b1a633607eb066a6744369b633e6e418a9fa28705e040bb03e",
+        "课程/五上/L04-数对/讲授稿.md": "47c05bf3264b9a1e3ac25ea171ccd777c0505eeae3c7c69962f2904354d2ab16"
+      }
+    },
+    {
+      "id": "五上-L05",
+      "path": "课程/五上/L05-可能性",
+      "prerequisites": "分类、比较多少、记录试验",
+      "core_or_extension": "5–6基础；分数概率选学",
+      "reviewed_files": [
+        "课程/五上/L05-可能性/动手单.md",
+        "课程/五上/L05-可能性/挑战单.md",
+        "课程/五上/L05-可能性/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "3红1蓝红更可能，2红2蓝等可能；有放回试验不保证20次恰15红；数量比的分数表达需分数前置",
+      "teaching_and_schedule": "定性判断先学，分数表示与理论机会不强制提前。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五上/L05-可能性/动手单.md": "afa14c103f0210ff6b7b0dae70f66235a253fe34ccf0b3b8ff96bdfc17b1526a",
+        "课程/五上/L05-可能性/挑战单.md": "26a5a5b8b12ba5ff7f6af1947b304d1e5a304281f45dfa381197fd313da09455",
+        "课程/五上/L05-可能性/讲授稿.md": "b7f3402d36466fa94b3ceb8ebb8068d551d9d356a665dc95502cefbab2e2cd77"
+      }
+    },
+    {
+      "id": "五上-L06",
+      "path": "课程/五上/L06-字母表示数",
+      "prerequisites": "整数运算、周长面积、模式",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五上/L06-字母表示数/动手单.md",
+        "课程/五上/L06-字母表示数/挑战单.md",
+        "课程/五上/L06-字母表示数/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "连摆n个正方形3n+1=4n−(n−1)；n²与2n不同；5a需每盒同为a支",
+      "teaching_and_schedule": "先具体代值再一般式；补齐每盒相同条件。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "正文与题意",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五上/L06-字母表示数/讲授稿.md",
+              "line": 46,
+              "before": "一个文具盒里有 a 支笔，5 个文具盒共有 5a 支笔。",
+              "after": "每个文具盒里都有 a 支笔，5 个文具盒共有 5a 支笔。",
+              "finding": "算5a需要五个文具盒每盒都有a支，原题只给一个。"
+            },
+            {
+              "path": "课程/五上/L06-字母表示数/动手单.md",
+              "line": 32,
+              "before": "一个文具盒有 a 支笔，5 个文具盒一共有 __________ 支。",
+              "after": "每个文具盒都有 a 支笔，5 个文具盒一共有 __________ 支。",
+              "finding": "算5a需要五个文具盒每盒都有a支，原题只给一个。"
+            },
+            {
+              "path": "课程/五上/L06-字母表示数/挑战单.md",
+              "line": 15,
+              "before": "一个文具盒里有 a 支笔，5 个文具盒一共有多少支？",
+              "after": "每个文具盒里都有 a 支笔，5 个文具盒一共有多少支？",
+              "finding": "算5a需要五个文具盒每盒都有a支，原题只给一个。"
+            }
+          ]
+        }
+      ],
+      "findings_count": 1,
+      "fixes_count": 1,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五上/L06-字母表示数/动手单.md": "d79a4f53c56092537000b9232ff8075455f3b72016ef0137d33517da408c45bb",
+        "课程/五上/L06-字母表示数/挑战单.md": "1137f7da04623125c9caf80ee24c9ea4a763b642019888aec7858dbad95903ca",
+        "课程/五上/L06-字母表示数/讲授稿.md": "d27dfd2713201b7e566f926a53d146265c813634c72b16a1ac6bea7003816b15"
+      }
+    },
+    {
+      "id": "五上-L07",
+      "path": "课程/五上/L07-等式与方程",
+      "prerequisites": "等号含义、字母表达、逆运算",
+      "core_or_extension": "5–6基础等式性质；解方程为初中衔接选学",
+      "reviewed_files": [
+        "课程/五上/L07-等式与方程/动手单.md",
+        "课程/五上/L07-等式与方程/挑战单.md",
+        "课程/五上/L07-等式与方程/视频稿与分镜.md",
+        "课程/五上/L07-等式与方程/讲授稿.md",
+        "assets/原理图/等式同步.svg",
+        "工具/episodes/成片/五上-L07.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "2x+3=x+7可同步减x减3得4，代回11=11；x+3=8错成x=8+3是两边反向运算",
+      "teaching_and_schedule": "正文基础与折叠选学分层；视频作为等量同步例子，非要求方程题型熟练。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "正文与题意",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五上/L07-等式与方程/讲授稿.md",
+              "line": 107,
+              "before": "- 只在一边加减。x+3=8 应两边同时减 3，得 x=5；写成 x=8+3=11 是只在右边动了。",
+              "after": "- 两边做了不同的运算。把 x+3=8 写成 x=8+3，是左边减了 3，右边却加了 3。应两边同时减 3，得 x=5。",
+              "finding": "原错因说成只右边动，忽略左边也已减3。"
+            },
+            {
+              "path": "课程/五上/L07-等式与方程/挑战单.md",
+              "line": 49,
+              "before": "他只在右边加了 3，没有在左边做同样的事；",
+              "after": "他在左边去掉 3，相当于减 3，右边却加了 3，两边做了不同的运算；",
+              "finding": "同课挑战错因同步纠正。"
+            }
+          ]
+        },
+        {
+          "kind": "分镜与配置",
+          "status": "fixed",
+          "location": "课程/五上/L07-等式与方程/视频稿与分镜.md",
+          "evidence": {
+            "path": "课程/五上/L07-等式与方程/视频稿与分镜.md",
+            "old_scene_count": 5,
+            "new_scene_count": 5,
+            "narration_differences": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "fix": "逐幕校准到当前JSON的完整旁白与已核源码/静帧动作；去除未实际演示的设计。"
+          },
+          "detail": "镜数或逐句旁白与当前成片JSON不同，已按真实镜头动作校准。"
+        }
+      ],
+      "findings_count": 2,
+      "fixes_count": 2,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 5,
+        "models": [
+          "balance"
+        ],
+        "frames_viewed": 10,
+        "contact_sheet": "/tmp/grade45-round2-frames/五上-L07-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/五上/L07-等式与方程/动手单.md": "06615349b796b5ec0d427e0d052b0a9a3fa97d1b5cfe6604dc31d20aeef19a2a",
+        "课程/五上/L07-等式与方程/挑战单.md": "908273eeb483d484dffbbe16fce3406262eee48bc537099639e6cbdf242499f4",
+        "课程/五上/L07-等式与方程/视频稿与分镜.md": "8863c58a8af7c20dfb5a988e31b81dd4d020462e08548418a4af9f93a59ba958",
+        "课程/五上/L07-等式与方程/讲授稿.md": "46d77eb08e0b686041e7501f04ff1f4fc0f7acad82b796f3844f41c4f3174430"
+      }
+    },
+    {
+      "id": "五上-L08",
+      "path": "课程/五上/L08-列方程",
+      "prerequisites": "等量关系、字母式、等式性质",
+      "core_or_extension": "提高/初中衔接选学",
+      "reviewed_files": [
+        "课程/五上/L08-列方程/动手单.md",
+        "课程/五上/L08-列方程/挑战单.md",
+        "课程/五上/L08-列方程/讲授稿.md",
+        "assets/原理图/线段方程.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "和17差3为7与10；盈亏3x+5=4x−3得8人29本；两盈差法8人28本",
+      "teaching_and_schedule": "先图示或算术，方程作为另一表示；不把旧目录当必修。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "正文与题意",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五上/L08-列方程/讲授稿.md",
+              "line": 141,
+              "before": "从“余 5”变成“缺 3”，共需再有 5+3=8 本。",
+              "after": "第一种分法所需本数比现有的少 5 本，第二种比现有的多 3 本，两种分法所需的本数相差 5+3=8 本。",
+              "finding": "盈亏差8并非现有29还需补8。"
+            }
+          ]
+        }
+      ],
+      "findings_count": 1,
+      "fixes_count": 1,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五上/L08-列方程/动手单.md": "e64262098a53c478076e92316555cbdfbff74e2812c300705b09239c380956f0",
+        "课程/五上/L08-列方程/挑战单.md": "ef4ebe44642dcd0f0c23323667dbadf960ffa305d6218bb1af483135a727d917",
+        "课程/五上/L08-列方程/讲授稿.md": "131c7da6dc25e4d856d4c140235a8e60a1c3c446f9977c26d8005a9b06b63820"
+      }
+    },
+    {
+      "id": "五上-L09",
+      "path": "课程/五上/L09-平行四边形面积",
+      "prerequisites": "长方形面积、平移、高",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五上/L09-平行四边形面积/动手单.md",
+        "课程/五上/L09-平行四边形面积/挑战单.md",
+        "课程/五上/L09-平行四边形面积/视频稿与分镜.md",
+        "课程/五上/L09-平行四边形面积/讲授稿.md",
+        "assets/原理图/平行四边形剪拼.svg",
+        "工具/episodes/成片/五上-L09.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "底6高3剪拼得18；6×3方格完整14格、碎格合4；同底同高斜推面积不变",
+      "teaching_and_schedule": "动手固定左上剪点；先剪拼再公式与等积变化。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "正文与题意",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五上/L09-平行四边形面积/动手单.md",
+              "line": 17,
+              "before": "从上面的一个顶点向底边作一条垂线，沿高剪开。",
+              "after": "从左上顶点向下底作垂线，垂足落在下底上，沿这条高剪开。",
+              "finding": "给定右移的平行四边形只有左上顶点垂足在底边内，任一顶点无法按本步骤剪拼。"
+            }
+          ]
+        },
+        {
+          "kind": "分镜与配置",
+          "status": "fixed",
+          "location": "课程/五上/L09-平行四边形面积/视频稿与分镜.md",
+          "evidence": {
+            "path": "课程/五上/L09-平行四边形面积/视频稿与分镜.md",
+            "old_scene_count": 5,
+            "new_scene_count": 6,
+            "narration_differences": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "fix": "逐幕校准到当前JSON的完整旁白与已核源码/静帧动作；去除未实际演示的设计。"
+          },
+          "detail": "镜数或逐句旁白与当前成片JSON不同，已按真实镜头动作校准。"
+        }
+      ],
+      "findings_count": 2,
+      "fixes_count": 2,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 6,
+        "models": [
+          "parallelogram"
+        ],
+        "frames_viewed": 12,
+        "contact_sheet": "/tmp/grade45-round2-frames/五上-L09-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/五上/L09-平行四边形面积/动手单.md": "f5f13e1a409c093f3cc1e5fab4f8697bb637c9464f0fc746540168b3f2c21d47",
+        "课程/五上/L09-平行四边形面积/挑战单.md": "ed2bbb97fa705f1e248e0d284f0d4cc2b198f0ea181f8b048187e318c63db4bc",
+        "课程/五上/L09-平行四边形面积/视频稿与分镜.md": "f2d2cb6042c54bc106fcdf588b24629b3e57748b1189bc6adda0c564a2f6cd61",
+        "课程/五上/L09-平行四边形面积/讲授稿.md": "9cd29f1e5f419ab2288bc7ece53457256ad58461261c02ba549e3b11466f765d"
+      }
+    },
+    {
+      "id": "五上-L10",
+      "path": "课程/五上/L10-三角形面积",
+      "prerequisites": "平行四边形面积、全等复制",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五上/L10-三角形面积/动手单.md",
+        "课程/五上/L10-三角形面积/挑战单.md",
+        "课程/五上/L10-三角形面积/视频稿与分镜.md",
+        "课程/五上/L10-三角形面积/讲授稿.md",
+        "assets/原理图/三角形复制.svg",
+        "工具/episodes/成片/五上-L10.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "底6高4两块24，一块12；2.4×1.5÷2=1.8；同底同高面积相同",
+      "teaching_and_schedule": "修正高的线段定义及乘除顺序措辞，区分复制两块与原一块。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "高的定义",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五上/L10-三角形面积/讲授稿.md",
+              "line": 20,
+              "before": "高是从对面的顶点向底边作的垂线。钝角三角形的高可能落在底边的延长线上，但仍然是垂直距离。",
+              "after": "从底边对面的顶点向底边所在的直线作垂线，顶点到垂足的线段叫这条底边上的高。面积计算用这段线段的长度。钝角三角形的垂足可能在底边的延长线上。",
+              "finding": "高是有限线段及其长度，不能把整条垂线叫高。"
+            }
+          ]
+        },
+        {
+          "kind": "教学内容",
+          "topic": "运算顺序",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五上/L10-三角形面积/讲授稿.md",
+              "line": 50,
+              "before": "2.4×1.5÷2=1.8，先乘后除，顺序不影响结果，但不能不除。",
+              "after": "2.4×1.5÷2，要先算乘积 3.6，再除以 2，得 1.8；不能漏掉除以 2。",
+              "finding": "原说顺序不影响结果易推广成任意改变乘除顺序。"
+            }
+          ]
+        },
+        {
+          "kind": "分镜与配置",
+          "status": "fixed",
+          "location": "课程/五上/L10-三角形面积/视频稿与分镜.md",
+          "evidence": {
+            "path": "课程/五上/L10-三角形面积/视频稿与分镜.md",
+            "old_scene_count": 7,
+            "new_scene_count": 7,
+            "narration_differences": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "fix": "逐幕校准到当前JSON的完整旁白与已核源码/静帧动作；去除未实际演示的设计。"
+          },
+          "detail": "镜数或逐句旁白与当前成片JSON不同，已按真实镜头动作校准。"
+        }
+      ],
+      "findings_count": 3,
+      "fixes_count": 3,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 7,
+        "models": [
+          "duplicate"
+        ],
+        "frames_viewed": 14,
+        "contact_sheet": "/tmp/grade45-round2-frames/五上-L10-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/五上/L10-三角形面积/动手单.md": "41bf435caea0f29b5c4dd763ad9274c28e96e91b3f2e9649bf1446fa5db42322",
+        "课程/五上/L10-三角形面积/挑战单.md": "f0cc212577e49f2c62ff84e57e7ccc89b119959be6de2878f4283c981a1e6a13",
+        "课程/五上/L10-三角形面积/视频稿与分镜.md": "6af19f5a87675701baee73d16aca3b313bea7d80ee129ae2e975e9fd5037f270",
+        "课程/五上/L10-三角形面积/讲授稿.md": "86b4f97962782f035cb38a4bde474c048a977115b7ef20eae7a259defa323542"
+      }
+    },
+    {
+      "id": "五上-L11",
+      "path": "课程/五上/L11-梯形面积",
+      "prerequisites": "三角形面积、平行与高",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五上/L11-梯形面积/动手单.md",
+        "课程/五上/L11-梯形面积/挑战单.md",
+        "课程/五上/L11-梯形面积/视频稿与分镜.md",
+        "课程/五上/L11-梯形面积/讲授稿.md",
+        "assets/原理图/梯形分割.svg",
+        "assets/课程图/方格面积估测.svg",
+        "工具/episodes/成片/五上-L11.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "上3下5高4面积16；24×2÷8高6；两底5和9各±2后7和7成平行四边形仍28；不规则图3整格12部分格粗估9",
+      "teaching_and_schedule": "矩形/三角形拆拼均保留面积；近似符号区别上下界。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "高的定义",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五上/L11-梯形面积/动手单.md",
+              "line": 35,
+              "before": "梯形的高是两条底之间的垂线",
+              "after": "梯形的高表示两条平行底边之间的垂直距离",
+              "finding": "判断题把无限垂线误作高；改距离后原答案√成立。"
+            }
+          ]
+        },
+        {
+          "kind": "教学内容",
+          "topic": "变化后图形分类",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五上/L11-梯形面积/挑战单.md",
+              "line": 33,
+              "before": "第一种变化中两底之和仍为 14，面积不变，都是 28 cm²。",
+              "after": "第一种变化中两底之和仍为 14，面积不变，都是 28 cm²。此时两条底都是 7 cm，图形已变成平行四边形，面积也可算 7×4=28 cm²。",
+              "finding": "底同长后应说明已非本课只一组平行边的梯形。"
+            }
+          ]
+        },
+        {
+          "kind": "分镜与配置",
+          "status": "fixed",
+          "location": "课程/五上/L11-梯形面积/视频稿与分镜.md",
+          "evidence": {
+            "path": "课程/五上/L11-梯形面积/视频稿与分镜.md",
+            "old_scene_count": 6,
+            "new_scene_count": 6,
+            "narration_differences": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "fix": "逐幕校准到当前JSON的完整旁白与已核源码/静帧动作；去除未实际演示的设计。"
+          },
+          "detail": "镜数或逐句旁白与当前成片JSON不同，已按真实镜头动作校准。"
+        }
+      ],
+      "findings_count": 3,
+      "fixes_count": 3,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 6,
+        "models": [
+          "duplicate"
+        ],
+        "frames_viewed": 12,
+        "contact_sheet": "/tmp/grade45-round2-frames/五上-L11-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/五上/L11-梯形面积/动手单.md": "c04d13da1fa7b94d4caa727dab92d7df55768a8cef25cb25f0ae4888e241e96b",
+        "课程/五上/L11-梯形面积/挑战单.md": "884911bee582d4d20d6e2589321961fb1bef4832b21469b5a70de6ea80d335d1",
+        "课程/五上/L11-梯形面积/视频稿与分镜.md": "95c1f34b6b2d8f2dbd106f4cd6b231d8b0ff19f2e83d4b0ac5d5bd6193a76683",
+        "课程/五上/L11-梯形面积/讲授稿.md": "a860ad7decfe127a18ce261764730ec9e932138fa74913668320c0f019758f58"
+      }
+    },
+    {
+      "id": "五上-L12",
+      "path": "课程/五上/L12-植树",
+      "prerequisites": "线段间隔、除法",
+      "core_or_extension": "提高应用",
+      "reviewed_files": [
+        "课程/五上/L12-植树/动手单.md",
+        "课程/五上/L12-植树/挑战单.md",
+        "课程/五上/L12-植树/讲授稿.md",
+        "assets/原理图/点段闭合.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "开放两端种树棵数=段数+1，闭合棵数=段数；40米每5米闭环8棵；单根逐次锯n段n−1次",
+      "teaching_and_schedule": "先画点段再选公式，补锯法条件。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "正文与题意",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五上/L12-植树/讲授稿.md",
+              "line": 34,
+              "before": "锯成 n 段要锯 n−1 次；",
+              "after": "一根木料不叠放、每次只锯开一段，锯成 n 段要锯 n−1 次；",
+              "finding": "锯段次数需要单根逐次锯开的条件。"
+            },
+            {
+              "path": "课程/五上/L12-植树/讲授稿.md",
+              "line": 70,
+              "before": "锯成 n 段只需 n−1 次，",
+              "after": "一根木料按前面的条件锯成 n 段，需 n−1 次，",
+              "finding": "易错段同步明确锯的条件。"
+            }
+          ]
+        }
+      ],
+      "findings_count": 1,
+      "fixes_count": 1,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五上/L12-植树/动手单.md": "2d93b9de67107fccc844cbcd5579bb7955484a7239af43139cab63c2bd0f5898",
+        "课程/五上/L12-植树/挑战单.md": "6d6000988fcfa009909240b240da15fdd7b87e60c9af4b27ef1e1003faefc88f",
+        "课程/五上/L12-植树/讲授稿.md": "916de7fc52539993bfe2e27e3a81124aac20f15c08a30110c1cd65b1ac5e3bac"
+      }
+    },
+    {
+      "id": "五上-L13",
+      "path": "课程/五上/L13-组合图形的面积",
+      "prerequisites": "矩形三角形梯形面积",
+      "core_or_extension": "5–6基础应用",
+      "reviewed_files": [
+        "课程/五上/L13-组合图形的面积/讲授稿.md",
+        "assets/课程图/组合图形面积.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "8×6−3×2=42；两种分块32+10及30+12；该角缺口周长仍28",
+      "teaching_and_schedule": "先划不重叠分块，面积相加不据此推周长相加。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五上/L13-组合图形的面积/讲授稿.md": "2bb33387d00a309d611a33bd366b05b37a85167a778a69cde7e9adc78d722966"
+      }
+    },
+    {
+      "id": "五上-L14",
+      "path": "课程/五上/L14-近似数与实际取整",
+      "prerequisites": "小数除法、余数、位值",
+      "core_or_extension": "5–6基础应用",
+      "reviewed_files": [
+        "课程/五上/L14-近似数与实际取整/讲授稿.md",
+        "assets/课程图/实际取整.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "21÷5=4.2装完5瓶、完整段4段；7.98≈8.0；43人每车8人需6车；2.4元10元最多4支",
+      "teaching_and_schedule": "依任务取整与四舍五入区别清楚。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五上/L14-近似数与实际取整/讲授稿.md": "05abe34f02cd6711da52754c696ca9b8ea29a6985fa8d4e2e99e66aef3d5c269"
+      }
+    },
+    {
+      "id": "五上-L15",
+      "path": "课程/五上/L15-分段计费",
+      "prerequisites": "时长、乘加、余数取整",
+      "core_or_extension": "5–6基础应用",
+      "reviewed_files": [
+        "课程/五上/L15-分段计费/讲授稿.md",
+        "assets/课程图/分段计费.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "前2小时5元，4小时11元、4小时10分14元；5时20分17元；11元对应>3≤4小时",
+      "teaching_and_schedule": "价目表为题目约定；边界点逐一核对。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五上/L15-分段计费/讲授稿.md": "3ae91217102eb9bf483d544550817ca0bea227081ed1b3f850c7f669172fb9ea"
+      }
+    },
+    {
+      "id": "五下-L01",
+      "path": "课程/五下/L01-因数与倍数",
+      "prerequisites": "整数乘除、因数配对",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五下/L01-因数与倍数/动手单.md",
+        "课程/五下/L01-因数与倍数/挑战单.md",
+        "课程/五下/L01-因数与倍数/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "36有9个正因数；17为质数；4与9各3因数；13颗长方形旋转去重只有1种",
+      "teaching_and_schedule": "范围正整数、0与1的分类已区分；单据补旋转同形约定。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "正文与题意",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五下/L01-因数与倍数/动手单.md",
+              "line": 24,
+              "before": "能摆出几种长方形？__________",
+              "after": "把旋转后形状相同的算作一种，能摆出几种长方形？__________",
+              "finding": "13颗摆长方形的种数未说明旋转去重。"
+            }
+          ]
+        }
+      ],
+      "findings_count": 1,
+      "fixes_count": 1,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五下/L01-因数与倍数/动手单.md": "046873e7dcfc8efd431e633599995633fa7cfcef6dd1ecbbf47860af07b6e4ee",
+        "课程/五下/L01-因数与倍数/挑战单.md": "d69e0cb1551b4b1d3efb11fe86940b1d7a82db449cf84a239db02fefb95c1449",
+        "课程/五下/L01-因数与倍数/讲授稿.md": "b28313c2f2452009039b35279ccfe43f178ae9e3d77cd7da3a827a08dec9421e"
+      }
+    },
+    {
+      "id": "五下-L02",
+      "path": "课程/五下/L02-2-5-3的倍数",
+      "prerequisites": "位值、倍数、除法余数",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五下/L02-2-5-3的倍数/动手单.md",
+        "课程/五下/L02-2-5-3的倍数/挑战单.md",
+        "课程/五下/L02-2-5-3的倍数/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "472数字和13，÷3余1；12个位2却为3倍数，13个位3却非；2/5特征用个位",
+      "teaching_and_schedule": "用真正反例破除只看个位，3特征以位值拆分说明。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "正文与题意",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五下/L02-2-5-3的倍数/讲授稿.md",
+              "line": 37,
+              "before": "472 个位是 2，却不能被 3 整除；要看数字和。",
+              "after": "12 的个位是 2，却能被 3 整除；13 的个位是 3，却不能被 3 整除。要看各位数字的和。",
+              "finding": "472不是反例，原例不能反驳只看个位。"
+            }
+          ]
+        }
+      ],
+      "findings_count": 1,
+      "fixes_count": 1,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五下/L02-2-5-3的倍数/动手单.md": "c537b2ac0446ba8377b3bbfd709cdd0f38f54202762b37fd73ec9efac47789ba",
+        "课程/五下/L02-2-5-3的倍数/挑战单.md": "4d09fccbdfea4003887fb8f6b367ff28304ea1554154c8febc452674e9c2cf17",
+        "课程/五下/L02-2-5-3的倍数/讲授稿.md": "029f79c5a8dbfb04b5a3cb9b5498e9467bd0c51c739892246ba2d42432a3820b"
+      }
+    },
+    {
+      "id": "五下-L03",
+      "path": "课程/五下/L03-公因数与公倍数",
+      "prerequisites": "因数倍数、正整数列表",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五下/L03-公因数与公倍数/动手单.md",
+        "课程/五下/L03-公因数与公倍数/挑战单.md",
+        "课程/五下/L03-公因数与公倍数/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "18与24最大公因数6、最小公倍数72；9、15为3与45；7、12为1与84；12×18矩形最大正方砖6厘米共6块",
+      "teaching_and_schedule": "修正挑战铺砖方向；公倍数本课约定正的，从下一次重合计时。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "正文与题意",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五下/L03-公因数与公倍数/挑战单.md",
+              "line": 15,
+              "before": "用 12×18 的长方形铺最大正方形，边长多少？一共几个？",
+              "after": "用同样大的正方形沿长、宽整齐铺满一个长 18 厘米、宽 12 厘米的长方形，不切割、不留空隙。正方形边长最大几厘米？共要几个？",
+              "finding": "铺砖方向写反导致题目无最大值，和答案6含义不符。"
+            },
+            {
+              "path": "课程/五下/L03-公因数与公倍数/挑战单.md",
+              "line": 34,
+              "before": "边长 6；18÷6=3，12÷6=2，3×2=6 个。",
+              "after": "边长 6 厘米；18÷6=3，12÷6=2，3×2=6 个。",
+              "finding": "补边长单位，与修正题意一致。"
+            }
+          ]
+        }
+      ],
+      "findings_count": 1,
+      "fixes_count": 1,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五下/L03-公因数与公倍数/动手单.md": "4a3da99a0b404ccaafd5b481bea257c363757d2cad993c3d2c578ed282ab62c6",
+        "课程/五下/L03-公因数与公倍数/挑战单.md": "7aa2a76355d8453d64346b14fbfe31eae19de0f1cfc9c641a4766ff9cb1a5e1d",
+        "课程/五下/L03-公因数与公倍数/讲授稿.md": "e939ae93dab90c881421a732919dd02d8c83a55f73ed9d4cc1344d80dd884a14"
+      }
+    },
+    {
+      "id": "五下-L04",
+      "path": "课程/五下/L04-观察物体",
+      "prerequisites": "不同方向观察、方块层数",
+      "core_or_extension": "5–6基础；最少最多提高",
+      "reviewed_files": [
+        "课程/五下/L04-观察物体/动手单.md",
+        "课程/五下/L04-观察物体/挑战单.md",
+        "课程/五下/L04-观察物体/视频稿与分镜.md",
+        "课程/五下/L04-观察物体/讲授稿.md",
+        "工具/episodes/成片/五下-L04.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "T形俯视4位置，正面1、2、1，至少5最多6；2×2俯视正面两列高2至少6最多8",
+      "teaching_and_schedule": "俯视只给占位不定层数；动画目标视图区分现状。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 5,
+        "models": [
+          "view_t"
+        ],
+        "frames_viewed": 10,
+        "contact_sheet": "/tmp/grade45-round2-frames/五下-L04-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/五下/L04-观察物体/动手单.md": "1c2c0cd834554788df4bc68858aca8ab02dd056c2c40fba7665ff2166cd563ff",
+        "课程/五下/L04-观察物体/挑战单.md": "3070e220c4d9ee8801bc2bd4d1c87669550ca29ea9c8c1065c20993efd810b45",
+        "课程/五下/L04-观察物体/视频稿与分镜.md": "3eaa6adb476bc30693d3edf6767510711b896442afe89a673a4020b593856c69",
+        "课程/五下/L04-观察物体/讲授稿.md": "4ed0a3a3ef8cd934e3dfa96d6105ceccad43a96b8145bf989739bc65539abcda"
+      }
+    },
+    {
+      "id": "五下-L05",
+      "path": "课程/五下/L05-旋转",
+      "prerequisites": "角、方格位置、旋转现象",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五下/L05-旋转/动手单.md",
+        "课程/五下/L05-旋转/挑战单.md",
+        "课程/五下/L05-旋转/视频稿与分镜.md",
+        "课程/五下/L05-旋转/讲授稿.md",
+        "工具/episodes/成片/五下-L05.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "右3顺转90到下3，原右3转180到左3；右4上2绕点转距离不变",
+      "teaching_and_schedule": "每次说明原图起点；修复“再转180”与答案矛盾。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "正文与题意",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五下/L05-旋转/动手单.md",
+              "line": 31,
+              "before": "## 4. 再转 180°\n\n绕 O 顺时针转 180°，A 会转到哪里？画一画。",
+              "after": "## 4. 从原图转 180°\n\n把三角形放回第 1 步的原来位置，再绕 O 顺时针转 180°，A 会转到哪里？画一画。",
+              "finding": "再转暗示90后累计270，与答案从原图180不一致。"
+            },
+            {
+              "path": "课程/五下/L05-旋转/挑战单.md",
+              "line": 10,
+              "before": "2. 转 180° 后，A 在哪？",
+              "after": "2. 仍从 A 在 O 的右边 3 格的原位置出发，绕 O 转 180° 后，A 在哪？",
+              "finding": "连续题的旋转起点需明确，防累计270。"
+            }
+          ]
+        },
+        {
+          "kind": "分镜与配置",
+          "status": "fixed",
+          "location": "课程/五下/L05-旋转/视频稿与分镜.md",
+          "evidence": {
+            "path": "课程/五下/L05-旋转/视频稿与分镜.md",
+            "old_scene_count": 5,
+            "new_scene_count": 5,
+            "narration_differences": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "fix": "逐幕校准到当前JSON的完整旁白与已核源码/静帧动作；去除未实际演示的设计。"
+          },
+          "detail": "镜数或逐句旁白与当前成片JSON不同，已按真实镜头动作校准。"
+        }
+      ],
+      "findings_count": 2,
+      "fixes_count": 2,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 5,
+        "models": [
+          "rotate"
+        ],
+        "frames_viewed": 10,
+        "contact_sheet": "/tmp/grade45-round2-frames/五下-L05-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/五下/L05-旋转/动手单.md": "1a2ed75d1665186cbfe3b262ebd562d96ce4f0f82318b1c6a4e9a392cb0aa203",
+        "课程/五下/L05-旋转/挑战单.md": "9191f273492e5b3de8e808800e6e8e554f3244e75c2506e931fb5b08ce425808",
+        "课程/五下/L05-旋转/视频稿与分镜.md": "1eb09d452e377c0718dbc6ac5ffb1b6df86cf53250317f11d27d9f022cbfc4a4",
+        "课程/五下/L05-旋转/讲授稿.md": "ebedced1bc36c45ae1c2ddc80c3d46c30043b668756b5f576d56b13f8b7e7dee"
+      }
+    },
+    {
+      "id": "五下-L06",
+      "path": "课程/五下/L06-长方体与正方体",
+      "prerequisites": "面边顶点、长方形正方形",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五下/L06-长方体与正方体/动手单.md",
+        "课程/五下/L06-长方体与正方体/挑战单.md",
+        "课程/五下/L06-长方体与正方体/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "长方体8顶点12棱6面；5、4、3棱长和48；72总棱长且长8宽6则高4",
+      "teaching_and_schedule": "欧拉式只验证两种立体的兴趣拓展，不泛化所有立体。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五下/L06-长方体与正方体/动手单.md": "1be97d4671d4efc36d4c6bf9a67cdef5e0fc0093670c32eea1ba983a89906933",
+        "课程/五下/L06-长方体与正方体/挑战单.md": "855cdfd31a4b8009442b90a45cd93cccf0592e98d2e4a15598acc2faa7c0825f",
+        "课程/五下/L06-长方体与正方体/讲授稿.md": "19072a361d631e33719e00ac2e2a269bb2d0f8e5846a36454c5ae3aefdb269c2"
+      }
+    },
+    {
+      "id": "五下-L07",
+      "path": "课程/五下/L07-表面积",
+      "prerequisites": "长方体特征、矩形面积",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五下/L07-表面积/动手单.md",
+        "课程/五下/L07-表面积/挑战单.md",
+        "课程/五下/L07-表面积/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "5×4×3表面积94、无盖74；8×6×5无盖188；两个棱3正方体粘合90；8×5×4等分最大增80",
+      "teaching_and_schedule": "按真实外露面统计，厚度和粘贴边另给才计。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五下/L07-表面积/动手单.md": "9874cb06fed070a59c9e9966c33905ff50fc626e515c80236b3752ed48e66526",
+        "课程/五下/L07-表面积/挑战单.md": "0475f98f2c20ddfe9f25d87ac642298805769a1c24443f07a61f8265403ba495",
+        "课程/五下/L07-表面积/讲授稿.md": "912a45dee801f7c94993d2f07a50d6061b5e27d9dbf7fe21e43ea6720eb45279"
+      }
+    },
+    {
+      "id": "五下-L08",
+      "path": "课程/五下/L08-体积与容积",
+      "prerequisites": "体积单位、层数、乘法",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五下/L08-体积与容积/动手单.md",
+        "课程/五下/L08-体积与容积/挑战单.md",
+        "课程/五下/L08-体积与容积/视频稿与分镜.md",
+        "课程/五下/L08-体积与容积/讲授稿.md",
+        "assets/原理图/体积层.svg",
+        "工具/episodes/成片/五下-L08.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "3×4×5=60；外10×8×6厚1有盖内192无盖240；外12×10×8厚1有盖480；石120入底80水升1.5",
+      "teaching_and_schedule": "区分外体积/内容积/排水空间；修复上升水量措辞。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "正文与题意",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五下/L08-体积与容积/讲授稿.md",
+              "line": 55,
+              "before": "物体体积等于上升部分水的体积，不是最后的水位。",
+              "after": "物体体积等于原水面与新水面之间那层空间的体积，水量本身没有增加；计算用水位差，不是最后的水深。",
+              "finding": "上升部分水的体积易误解为水增加，明确占据空间和差。"
+            }
+          ]
+        },
+        {
+          "kind": "分镜与配置",
+          "status": "fixed",
+          "location": "课程/五下/L08-体积与容积/视频稿与分镜.md",
+          "evidence": {
+            "path": "课程/五下/L08-体积与容积/视频稿与分镜.md",
+            "old_scene_count": 5,
+            "new_scene_count": 5,
+            "narration_differences": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "fix": "逐幕校准到当前JSON的完整旁白与已核源码/静帧动作；去除未实际演示的设计。"
+          },
+          "detail": "镜数或逐句旁白与当前成片JSON不同，已按真实镜头动作校准。"
+        }
+      ],
+      "findings_count": 2,
+      "fixes_count": 2,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 5,
+        "models": [
+          "volume"
+        ],
+        "frames_viewed": 10,
+        "contact_sheet": "/tmp/grade45-round2-frames/五下-L08-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/五下/L08-体积与容积/动手单.md": "1d4f3e968a7a0b562948747fa7263380dfcb69bb7d98ddc0e2e13ec4a834a456",
+        "课程/五下/L08-体积与容积/挑战单.md": "402b56bc9fb879fd40ac3cdd51be6d7efc98d1e68385c056db954a976f6e2391",
+        "课程/五下/L08-体积与容积/视频稿与分镜.md": "121fbf940d904efa6a8b7197a5b685aeabaaa30841b8af6316f0e31bbb2ccce8",
+        "课程/五下/L08-体积与容积/讲授稿.md": "1b271e392a81caa5fdbafa907ca0ef6ad9b6c467717a57c6a5265823468c5042"
+      }
+    },
+    {
+      "id": "五下-L09",
+      "path": "课程/五下/L09-分数的意义",
+      "prerequisites": "平均分、整数除法、单位1",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五下/L09-分数的意义/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "12颗的1/3=4颗、6颗的1/3=2颗；3米÷4=3/4米但占整绳1/4；17/5=3又2/5；3又2/7=23/7",
+      "teaching_and_schedule": "补分数单位定义，分数本身与整体对应实量区分。",
+      "findings": [
+        {
+          "kind": "教学内容",
+          "topic": "正文与题意",
+          "status": "fixed",
+          "locations": [
+            {
+              "path": "课程/五下/L09-分数的意义/讲授稿.md",
+              "line": 9,
+              "before": "单位“1”不同，同一个分数对应的实际数量可能不同。",
+              "after": "把单位“1”平均分成若干份，表示其中一份的分数叫作分数单位。例如，平均分成 7 份，每份是 1/7，1/7 就是分母为 7 的分数的分数单位；3/7 里有 3 个 1/7。分母确定每份多大，分子记录这样的份数。\n\n单位“1”不同，同一个分数对应的实际数量可能不同。",
+              "finding": "练习要求分数单位但正文没定义，补概念及3/7实例。"
+            }
+          ]
+        }
+      ],
+      "findings_count": 1,
+      "fixes_count": 1,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五下/L09-分数的意义/讲授稿.md": "802984f1d7c6590f2d74bd1b1b0541322f43ed26f3bfa7b2b0ad011523c66a78"
+      }
+    },
+    {
+      "id": "五下-L10",
+      "path": "课程/五下/L10-分数基本性质",
+      "prerequisites": "分数意义、因数倍数",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五下/L10-分数基本性质/视频稿与分镜.md",
+        "课程/五下/L10-分数基本性质/讲授稿.md",
+        "assets/原理图/分数细分.svg",
+        "工具/episodes/成片/五下-L10.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "1/2=2/4=4/8；另接半条整体变化后涂色占1/3；.48=12/25；7/20=.35",
+      "teaching_and_schedule": "分子分母同步乘除非0数；固定整体是图意关键。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 5,
+        "models": [
+          "equivalent"
+        ],
+        "frames_viewed": 10,
+        "contact_sheet": "/tmp/grade45-round2-frames/五下-L10-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/五下/L10-分数基本性质/视频稿与分镜.md": "c9b3b0549bd4c1a572fbf8c4e3bf548a92b8ab8d0e015d33e634786ca8b49ffe",
+        "课程/五下/L10-分数基本性质/讲授稿.md": "3e7334e7c503322aa3d7f007cdea234b57fbb9ce1e2d0ec7adff5b4824cff587"
+      }
+    },
+    {
+      "id": "五下-L11",
+      "path": "课程/五下/L11-分数加减",
+      "prerequisites": "分数单位、通分、约分",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五下/L11-分数加减/视频稿与分镜.md",
+        "课程/五下/L11-分数加减/讲授稿.md",
+        "assets/原理图/分数相加.svg",
+        "工具/episodes/成片/五下-L11.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "1/2+1/3=5/6；5/6−3/8=11/24；2/9+1/6=7/18；3/4−1/6=7/12",
+      "teaching_and_schedule": "统一计数单位再加减，优先理解同一米参照。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 5,
+        "models": [
+          "fraction_add"
+        ],
+        "frames_viewed": 10,
+        "contact_sheet": "/tmp/grade45-round2-frames/五下-L11-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/五下/L11-分数加减/视频稿与分镜.md": "cc5ccb062d976797b0667dfa501cca8898f2be04725ef515535563405989f851",
+        "课程/五下/L11-分数加减/讲授稿.md": "a3e614b1272fc328464342f0c2dbd726b9fa6ddb17ce70893a0453701bc2393a"
+      }
+    },
+    {
+      "id": "五下-L12",
+      "path": "课程/五下/L12-找次品",
+      "prerequisites": "天平、分类、三种结果",
+      "core_or_extension": "提高探究",
+      "reviewed_files": [
+        "课程/五下/L12-找次品/讲授稿.md"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "已知偏轻或偏重，9个2次、27个3次、8个2次、10个3次；10先3/3/4可处理",
+      "teaching_and_schedule": "必须已知次品轻重；指数3^k为选学表达，不把猜测当证明。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五下/L12-找次品/讲授稿.md": "0d8c39a1429c629832b83bbee2bdf531bcbd2133996be713cfbd9a0a3659abfc"
+      }
+    },
+    {
+      "id": "五下-L13",
+      "path": "课程/五下/L13-约分通分与比较",
+      "prerequisites": "最大公因数、最小公倍数、分数性质",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五下/L13-约分通分与比较/讲授稿.md",
+        "assets/课程图/约分与通分.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "24/36=2/3；18/24=3/4；.75<5/6；1/6+1/4=5/12",
+      "teaching_and_schedule": "同分母、同分子、通分、转小数按适用情形选，不只背交叉乘。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五下/L13-约分通分与比较/讲授稿.md": "d94dcc91af2a5794086e3bf353273fbb15bf904f85cee93271d76616f45aeae2"
+      }
+    },
+    {
+      "id": "五下-L14",
+      "path": "课程/五下/L14-折线统计图",
+      "prerequisites": "读轴刻度、加减、条形图",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五下/L14-折线统计图/讲授稿.md",
+        "assets/课程图/单式复式折线图.svg",
+        "assets/课程图/豆苗折线图.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "4、6、7、7、10总增6，增量2、1、0、3；另一图4、6、6、10末段增4；甲20、35、30、40乙25、25、40、35与答案相符",
+      "teaching_and_schedule": "统计独立学习序列，不依赖分数课；不同轴尺度不能只比陡缓。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五下/L14-折线统计图/讲授稿.md": "8592c1347ad2740bc40c6df7b209c8b7ac3b3f4d4c574cb20c0a15d54316d018"
+      }
+    },
+    {
+      "id": "五下-L15",
+      "path": "课程/五下/L15-展开图与包装",
+      "prerequisites": "长方体表面积、展开图",
+      "core_or_extension": "5–6基础",
+      "reviewed_files": [
+        "课程/五下/L15-展开图与包装/视频稿与分镜.md",
+        "课程/五下/L15-展开图与包装/讲授稿.md",
+        "assets/课程图/长方体包装展开.svg"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "8×5×3六面158、去盖118、粘贴边12共130；10×6×4无盖188加20=208；棱4无盖80",
+      "teaching_and_schedule": "平面展开保留每面大小；本分镜尚未单独成片。",
+      "findings": [],
+      "findings_count": 0,
+      "fixes_count": 0,
+      "video_alignment": {
+        "status": "无独立成片；如有分镜，仅作补充设计",
+        "audio_listened": false,
+        "continuous_final_video_watched": false
+      },
+      "file_sha256": {
+        "课程/五下/L15-展开图与包装/视频稿与分镜.md": "5061e64a03976353030272392917ab31e21d53d67b14408d296beea8bad6e6bf",
+        "课程/五下/L15-展开图与包装/讲授稿.md": "12f2f617abbe0cd377a21f57c849b35a8190307146d8fd158f769d9dbb74cd74"
+      }
+    },
+    {
+      "id": "五下-L16",
+      "path": "课程/五下/L16-排水测体积",
+      "prerequisites": "体积容积、矩形底面积、水位差",
+      "core_or_extension": "5–6基础测量",
+      "reviewed_files": [
+        "课程/五下/L16-排水测体积/视频稿与分镜.md",
+        "课程/五下/L16-排水测体积/讲授稿.md",
+        "assets/课程图/排水测体积.svg",
+        "工具/episodes/成片/五下-L16.json"
+      ],
+      "full_text_read": true,
+      "examples_and_answers_recomputed": true,
+      "independent_evidence": "10×8×(7−5)=160；同石换底160升1厘米；120×1.5=180；90÷60=1.5",
+      "teaching_and_schedule": "完全浸没、不吸水不溶解不溢水；水位法与溢水法不能相加。",
+      "findings": [
+        {
+          "kind": "分镜与配置",
+          "status": "fixed",
+          "location": "课程/五下/L16-排水测体积/视频稿与分镜.md",
+          "evidence": {
+            "path": "课程/五下/L16-排水测体积/视频稿与分镜.md",
+            "old_scene_count": 5,
+            "new_scene_count": 5,
+            "narration_differences": [
+              5
+            ],
+            "fix": "逐幕校准到当前JSON的完整旁白与已核源码/静帧动作；去除未实际演示的设计。"
+          },
+          "detail": "镜数或逐句旁白与当前成片JSON不同，已按真实镜头动作校准。"
+        }
+      ],
+      "findings_count": 1,
+      "fixes_count": 1,
+      "video_alignment": {
+        "status": "已核全量JSON/相关模型源代码，并逐幕查看中间和结束源渲染静帧；重渲成片待统一视听复核",
+        "scene_count": 5,
+        "models": [
+          "water"
+        ],
+        "frames_viewed": 10,
+        "contact_sheet": "/tmp/grade45-round2-frames/五下-L16-contact.jpg",
+        "audio_listened": false,
+        "continuous_final_video_watched": false,
+        "source_preview_only": true
+      },
+      "file_sha256": {
+        "课程/五下/L16-排水测体积/视频稿与分镜.md": "c2e45ea7424ad7431542e33d8602dfe064b1f74180f637ec28b69269d2a17123",
+        "课程/五下/L16-排水测体积/讲授稿.md": "911155dfc6e28e9a2830f7306a5cf612820049e60ce5d59a6211c091f72ea069"
+      }
+    }
+  ]
+}

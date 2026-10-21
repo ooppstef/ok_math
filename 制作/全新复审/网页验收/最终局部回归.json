@@ -1,0 +1,47 @@
+{
+  "checks": [
+    {
+      "width": 390,
+      "path": "课程/五下/L07-表面积/讲授稿.html",
+      "overflow": false,
+      "wrap": "anywhere",
+      "badImages": 0
+    },
+    {
+      "width": 390,
+      "path": "课程/六下/L06-比例/讲授稿.html",
+      "overflow": false,
+      "wrap": "anywhere",
+      "badImages": 0
+    },
+    {
+      "width": 390,
+      "path": "课程/五上/L04-数对/动手单.html",
+      "overflow": false,
+      "wrap": "anywhere",
+      "badImages": 0
+    },
+    {
+      "width": 1280,
+      "path": "课程/五下/L07-表面积/讲授稿.html",
+      "overflow": false,
+      "wrap": "anywhere",
+      "badImages": 0
+    },
+    {
+      "width": 1280,
+      "path": "课程/六下/L06-比例/讲授稿.html",
+      "overflow": false,
+      "wrap": "anywhere",
+      "badImages": 0
+    },
+    {
+      "width": 1280,
+      "path": "课程/五上/L04-数对/动手单.html",
+      "overflow": false,
+      "wrap": "anywhere",
+      "badImages": 0
+    }
+  ],
+  "allPass": true
+}

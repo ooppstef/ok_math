@@ -1,0 +1,167 @@
+[
+  {
+    "lesson": "五上-L01",
+    "duration": "71.499864",
+    "scenes": 10,
+    "sha256": "a0735f6cc4671d26a0b4c906eb461f0f389eb604248c2fbf019d978ffb222fcb",
+    "checks": [
+      "JSON与实际时间线旁白一致",
+      "实际SRT/VTT逐字一致",
+      "TTS manifest一致",
+      "1280x720/24fps/AAC音轨",
+      "实际时长与时间线一致",
+      "思考停顿时长符合配置"
+    ],
+    "audition": "未试听，不据音轨存在判断读音或自然度"
+  },
+  {
+    "lesson": "五上-L07",
+    "duration": "44.791610",
+    "scenes": 5,
+    "sha256": "bbce2399a02d4f88d974b062e719e4ba336b74fb292b20239dbdce3b8b000cb3",
+    "checks": [
+      "JSON与实际时间线旁白一致",
+      "实际SRT/VTT逐字一致",
+      "TTS manifest一致",
+      "1280x720/24fps/AAC音轨",
+      "实际时长与时间线一致",
+      "思考停顿时长符合配置"
+    ],
+    "audition": "未试听，不据音轨存在判断读音或自然度"
+  },
+  {
+    "lesson": "五上-L09",
+    "duration": "47.666599",
+    "scenes": 6,
+    "sha256": "c33724fd4609492973693194e2d8c0d47411f86dd4ee7f94c24a79788fa4fe73",
+    "checks": [
+      "JSON与实际时间线旁白一致",
+      "实际SRT/VTT逐字一致",
+      "TTS manifest一致",
+      "1280x720/24fps/AAC音轨",
+      "实际时长与时间线一致",
+      "思考停顿时长符合配置"
+    ],
+    "audition": "未试听，不据音轨存在判断读音或自然度"
+  },
+  {
+    "lesson": "五上-L10",
+    "duration": "64.041587",
+    "scenes": 7,
+    "sha256": "ce3d40b65dbcabccd202caa9207a28cbaf879a4424cbc43e5b8e8bdc24597eee",
+    "checks": [
+      "JSON与实际时间线旁白一致",
+      "实际SRT/VTT逐字一致",
+      "TTS manifest一致",
+      "1280x720/24fps/AAC音轨",
+      "实际时长与时间线一致",
+      "思考停顿时长符合配置"
+    ],
+    "audition": "未试听，不据音轨存在判断读音或自然度"
+  },
+  {
+    "lesson": "五上-L11",
+    "duration": "51.666621",
+    "scenes": 6,
+    "sha256": "f273b0a5e104179dc53f39c65f5461880ffc9e8c4bf74a6c9653c68a4f2452c8",
+    "checks": [
+      "JSON与实际时间线旁白一致",
+      "实际SRT/VTT逐字一致",
+      "TTS manifest一致",
+      "1280x720/24fps/AAC音轨",
+      "实际时长与时间线一致",
+      "思考停顿时长符合配置"
+    ],
+    "audition": "未试听，不据音轨存在判断读音或自然度"
+  },
+  {
+    "lesson": "五下-L04",
+    "duration": "33.999977",
+    "scenes": 5,
+    "sha256": "9f57c58a21fe8c9678d719806d35460761117602bdf2cf682c092cd3390e58e0",
+    "checks": [
+      "JSON与实际时间线旁白一致",
+      "实际SRT/VTT逐字一致",
+      "TTS manifest一致",
+      "1280x720/24fps/AAC音轨",
+      "实际时长与时间线一致",
+      "思考停顿时长符合配置"
+    ],
+    "audition": "未试听，不据音轨存在判断读音或自然度"
+  },
+  {
+    "lesson": "五下-L05",
+    "duration": "40.791610",
+    "scenes": 5,
+    "sha256": "1326fb6efe6eeaea3ed7f88ca75e5195f41ee51399b9a5961d69df9fa39d885b",
+    "checks": [
+      "JSON与实际时间线旁白一致",
+      "实际SRT/VTT逐字一致",
+      "TTS manifest一致",
+      "1280x720/24fps/AAC音轨",
+      "实际时长与时间线一致",
+      "思考停顿时长符合配置"
+    ],
+    "audition": "未试听，不据音轨存在判断读音或自然度"
+  },
+  {
+    "lesson": "五下-L08",
+    "duration": "50.333265",
+    "scenes": 5,
+    "sha256": "cba80086825d5938b6a12542add62fa51a96d0693b6d83069ff3ca5ebd1edf9f",
+    "checks": [
+      "JSON与实际时间线旁白一致",
+      "实际SRT/VTT逐字一致",
+      "TTS manifest一致",
+      "1280x720/24fps/AAC音轨",
+      "实际时长与时间线一致",
+      "思考停顿时长符合配置"
+    ],
+    "audition": "未试听，不据音轨存在判断读音或自然度"
+  },
+  {
+    "lesson": "五下-L10",
+    "duration": "47.291633",
+    "scenes": 5,
+    "sha256": "598e360449e19e64669b4dc25e84eb6df39c385ec2dca8767ac8ce74b440a773",
+    "checks": [
+      "JSON与实际时间线旁白一致",
+      "实际SRT/VTT逐字一致",
+      "TTS manifest一致",
+      "1280x720/24fps/AAC音轨",
+      "实际时长与时间线一致",
+      "思考停顿时长符合配置"
+    ],
+    "audition": "未试听，不据音轨存在判断读音或自然度"
+  },
+  {
+    "lesson": "五下-L11",
+    "duration": "41.874966",
+    "scenes": 5,
+    "sha256": "bd70e004a21840f1118827c29809b8dbc01168fb01d2328c8e62b2a7fa38ea93",
+    "checks": [
+      "JSON与实际时间线旁白一致",
+      "实际SRT/VTT逐字一致",
+      "TTS manifest一致",
+      "1280x720/24fps/AAC音轨",
+      "实际时长与时间线一致",
+      "思考停顿时长符合配置"
+    ],
+    "audition": "未试听，不据音轨存在判断读音或自然度"
+  },
+  {
+    "lesson": "五下-L16",
+    "duration": "36.083265",
+    "scenes": 5,
+    "sha256": "311df9a58e1e4c05160869ac8678c1f0740cc1107306feb6b6efb34810fce3a7",
+    "checks": [
+      "JSON与实际时间线旁白一致",
+      "实际SRT/VTT逐字一致",
+      "TTS manifest一致",
+      "1280x720/24fps/AAC音轨",
+      "实际时长与时间线一致",
+      "思考停顿时长符合配置"
+    ],
+    "audition": "未试听，不据音轨存在判断读音或自然度"
+  }
+]

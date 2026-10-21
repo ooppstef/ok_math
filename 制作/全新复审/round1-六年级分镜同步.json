@@ -1,0 +1,161 @@
+{
+  "round": 1,
+  "scope": "12份分镜同步；不替代全课复审与实际成片审查",
+  "lessons": [
+    {
+      "path": "课程/六上/L01-分数乘法/视频稿与分镜.md",
+      "source": "工具/episodes/成片/六上-L01.json",
+      "timeline": "课程/六上/L01-分数乘法/视频.timeline.json",
+      "scene_count": 5,
+      "finding": "旧稿按5镜概述，未逐条对应当前镜头与实际旁白；已按实际镜头细分并同步。",
+      "fix": "全文按实际镜头动作、精确旁白、时间与停顿重写；删除未渲染状态。",
+      "narration_changed": false,
+      "actual_video_watched_by_this_pass": false,
+      "audio_listened": false
+    },
+    {
+      "path": "课程/六上/L02-分数除法/视频稿与分镜.md",
+      "source": "工具/episodes/成片/六上-L02.json",
+      "timeline": "课程/六上/L02-分数除法/视频.timeline.json",
+      "scene_count": 6,
+      "finding": "旧稿按5镜概述，未逐条对应当前镜头与实际旁白；已按实际镜头细分并同步。",
+      "fix": "全文按实际镜头动作、精确旁白、时间与停顿重写；删除未渲染状态。",
+      "narration_changed": false,
+      "actual_video_watched_by_this_pass": false,
+      "audio_listened": false
+    },
+    {
+      "path": "课程/六上/L06-圆/视频稿与分镜.md",
+      "source": "工具/episodes/成片/六上-L06.json",
+      "timeline": "课程/六上/L06-圆/视频.timeline.json",
+      "scene_count": 6,
+      "finding": "旧稿写滚动圆轮与直径6厘米半圆周长题，实际是圆周线展开、直径两倍问题。",
+      "fix": "全文按实际镜头动作、精确旁白、时间与停顿重写；删除未渲染状态。",
+      "narration_changed": false,
+      "actual_video_watched_by_this_pass": false,
+      "audio_listened": false
+    },
+    {
+      "path": "课程/六上/L07-圆的面积/视频稿与分镜.md",
+      "source": "工具/episodes/成片/六上-L07.json",
+      "timeline": "课程/六上/L07-圆的面积/视频.timeline.json",
+      "scene_count": 7,
+      "finding": "旧稿16/32扇形及直径10米求面积题，实际12/24扇形及半径翻倍面积倍数题。",
+      "fix": "全文按实际镜头动作、精确旁白、时间与停顿重写；删除未渲染状态。",
+      "narration_changed": false,
+      "actual_video_watched_by_this_pass": false,
+      "audio_listened": false
+    },
+    {
+      "path": "课程/六上/L12-数与形/视频稿与分镜.md",
+      "source": "工具/episodes/成片/六上-L12.json",
+      "timeline": "课程/六上/L12-数与形/视频.timeline.json",
+      "scene_count": 6,
+      "finding": "旧稿按5镜概述，未逐条对应当前镜头与实际旁白；已按实际镜头细分并同步。",
+      "fix": "全文按实际镜头动作、精确旁白、时间与停顿重写；删除未渲染状态。",
+      "narration_changed": false,
+      "actual_video_watched_by_this_pass": false,
+      "audio_listened": false
+    },
+    {
+      "path": "课程/六上/L16-连续变化与还原/视频稿与分镜.md",
+      "source": "工具/episodes/成片/六上-L16.json",
+      "timeline": "课程/六上/L16-连续变化与还原/视频.timeline.json",
+      "scene_count": 5,
+      "finding": "旧稿按5镜概述，未逐条对应当前镜头与实际旁白；已按实际镜头细分并同步。",
+      "fix": "全文按实际镜头动作、精确旁白、时间与停顿重写；删除未渲染状态。",
+      "narration_changed": false,
+      "actual_video_watched_by_this_pass": false,
+      "audio_listened": false
+    },
+    {
+      "path": "课程/六下/L03-圆柱的表面积/视频稿与分镜.md",
+      "source": "工具/episodes/成片/六下-L03.json",
+      "timeline": "课程/六下/L03-圆柱的表面积/视频.timeline.json",
+      "scene_count": 5,
+      "finding": "旧稿r=3、h=10及244.92数值题，实际无具体尺寸，比较有盖/无盖/两端开口的底面数量。",
+      "fix": "全文按实际镜头动作、精确旁白、时间与停顿重写；删除未渲染状态。",
+      "narration_changed": false,
+      "actual_video_watched_by_this_pass": false,
+      "audio_listened": false
+    },
+    {
+      "path": "课程/六下/L04-圆柱的体积/视频稿与分镜.md",
+      "source": "工具/episodes/成片/六下-L04.json",
+      "timeline": "课程/六下/L04-圆柱的体积/视频.timeline.json",
+      "scene_count": 6,
+      "finding": "旧稿16再32扇形柱，实际4镜均16块；新增一层题确为底面积12、原高5、加高1。",
+      "fix": "全文按实际镜头动作、精确旁白、时间与停顿重写；删除未渲染状态。",
+      "narration_changed": false,
+      "actual_video_watched_by_this_pass": false,
+      "audio_listened": false
+    },
+    {
+      "path": "课程/六下/L05-圆锥的体积/视频稿与分镜.md",
+      "source": "工具/episodes/成片/六下-L05.json",
+      "timeline": "课程/六下/L05-圆锥的体积/视频.timeline.json",
+      "scene_count": 7,
+      "finding": "旧稿S=30、h=9的90/270数值题，实际无这些数值，分三镜转移并单列动画非证明。",
+      "fix": "全文按实际镜头动作、精确旁白、时间与停顿重写；删除未渲染状态。",
+      "narration_changed": false,
+      "actual_video_watched_by_this_pass": false,
+      "audio_listened": false
+    },
+    {
+      "path": "课程/六下/L08-反比例/视频稿与分镜.md",
+      "source": "工具/episodes/成片/六下-L08.json",
+      "timeline": "课程/六下/L08-反比例/视频.timeline.json",
+      "scene_count": 5,
+      "finding": "旧稿按5镜概述，未逐条对应当前镜头与实际旁白；已按实际镜头细分并同步。",
+      "fix": "全文按实际镜头动作、精确旁白、时间与停顿重写；删除未渲染状态。",
+      "narration_changed": false,
+      "actual_video_watched_by_this_pass": false,
+      "audio_listened": false
+    },
+    {
+      "path": "课程/六下/L09-比例尺/视频稿与分镜.md",
+      "source": "工具/episodes/成片/六下-L09.json",
+      "timeline": "课程/六下/L09-比例尺/视频.timeline.json",
+      "scene_count": 5,
+      "finding": "旧稿按5镜概述，未逐条对应当前镜头与实际旁白；已按实际镜头细分并同步。",
+      "fix": "全文按实际镜头动作、精确旁白、时间与停顿重写；删除未渲染状态。",
+      "narration_changed": false,
+      "actual_video_watched_by_this_pass": false,
+      "audio_listened": false
+    },
+    {
+      "path": "课程/六下/L13-立体图形切拼/视频稿与分镜.md",
+      "source": "工具/episodes/成片/六下-L13.json",
+      "timeline": "课程/六下/L13-立体图形切拼/视频.timeline.json",
+      "scene_count": 5,
+      "finding": "旧稿最后问沿高中点切开增加64，实际最后问沿原切面贴回减少24。",
+      "fix": "全文按实际镜头动作、精确旁白、时间与停顿重写；删除未渲染状态。",
+      "narration_changed": false,
+      "actual_video_watched_by_this_pass": false,
+      "audio_listened": false
+    }
+  ],
+  "code_read": [
+    "工具/scenes/arithmetic.py: fraction_product/fraction_divide/odd_layers/successive",
+    "工具/scenes/geometry.py: circle/circle_cut/circle_area_scale/cylinder_surface/cylinder_layer/cone/scale/solid_cut",
+    "工具/scenes/relations.py: inverse"
+  ],
+  "narration_or_json_changed": false,
+  "limitations": [
+    "实际成片抽帧由root另做；本次未顺序观看12片或试听音轨。",
+    "未修改六年级讲授稿、配置或共享动画代码。"
+  ],
+  "validation": [
+    "12份68镜旁白逐句与当前JSON及timeline完全一致。",
+    "12份镜数、场景顺序、时码和停顿对应当前timeline。",
+    "所有本地Markdown链接存在；相关diff --check通过。"
+  ],
+  "code_checks": {
+    "过度防御": "已读对应模型和进度调用；未新增异常吞没或重复输入检查。",
+    "过度设计": "本次仅修正分镜文档，不增加新的模板系统或抽象层。",
+    "过度fallback": "使用实际成片JSON与timeline，缺失数据应报告，不从旧稿猜测；当前12份数据均齐全。",
+    "理论问题复杂化": "有限扇形拼图明确仅近似；圆锥按结论示意，不要求小学阶段完成极限或积分证明。",
+    "dead_code": "逐镜所列model/stage均在动画分派内有实际分支；分镜不再描述未被配置调用的旧题动作。",
+    "基建复用": "继续使用当前render_episode、scenes和实际timeline；未复制渲染实现或新增生产管线。"
+  }
+}

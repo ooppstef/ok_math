@@ -34,13 +34,13 @@
       "type": "principle_geometry",
       "model": "circle_cut",
       "stage": "done",
-      "heading": "弧面还在，只是接近长方体",
+      "heading": "再分细一些：32 份仍有弧面",
       "narration": "拼好后仍有弯曲的小边。分得越细，就越接近长方体，不能把有限块说成已经完全一样。",
       "equation": "底面长趋近 πr，宽趋近 r，高仍是 h",
       "duration": 10.263157894736842,
       "pause_after": 2,
       "volume": true,
-      "sectors": 16
+      "sectors": 32
     },
     {
       "id": "04",
@@ -53,7 +53,7 @@
       "duration": 9.736842105263158,
       "pause_after": 2,
       "volume": true,
-      "sectors": 16
+      "sectors": 32
     },
     {
       "id": "05",

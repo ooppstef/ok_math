@@ -12,6 +12,16 @@
 
   // 目录高亮
   var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+  function openLinkedSection() {
+    var target = document.getElementById(location.hash.slice(1));
+    if (!target) return;
+    for (var parent = target.parentElement; parent; parent = parent.parentElement) {
+      if (parent.tagName === 'DETAILS') parent.open = true;
+    }
+    target.scrollIntoView();
+  }
+  window.addEventListener('hashchange', openLinkedSection);
+  openLinkedSection();
   if (links.length) {
     var heads = links.map(function (a) {
       var id = a.getAttribute('href');

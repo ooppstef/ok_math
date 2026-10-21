@@ -17,7 +17,8 @@ def paths(script):
     if len(matches) != 1:
         raise ValueError(f"课程目录不唯一：{script}")
     work = ROOT / "制作" / (term + "-" + matches[0].name)
-    return work, work / "配音-开朗学长-v1", work / "成片" / "视频.mp4"
+    audio_version = json.loads(script.read_text()).get("audio_version", "配音-开朗学长-v1")
+    return work, work / audio_version, work / "成片" / "视频.mp4"
 
 
 def run_one(script, stage):

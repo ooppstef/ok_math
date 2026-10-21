@@ -1,0 +1,199 @@
+{
+  "samples": [
+    {
+      "width": 1280,
+      "path": "",
+      "title": "小学数学 · B 卷原理课",
+      "overflow": false,
+      "badImages": [],
+      "images": 0,
+      "courseLinks": 128,
+      "videoBadges": 51,
+      "video": [],
+      "prerequisites": null
+    },
+    {
+      "width": 1280,
+      "path": "课程/index.html",
+      "title": "课程目录 · 为什么实验室",
+      "overflow": false,
+      "badImages": [],
+      "images": 0,
+      "courseLinks": 128,
+      "videoBadges": 51,
+      "video": [],
+      "prerequisites": null
+    },
+    {
+      "width": 1280,
+      "path": "课程/六下/L06-比例/讲授稿.html",
+      "title": "比例 · 为什么实验室",
+      "overflow": false,
+      "badImages": [],
+      "images": 1,
+      "courseLinks": 0,
+      "videoBadges": 0,
+      "video": [],
+      "prerequisites": "先会：比的意义和化简、按份数计算"
+    },
+    {
+      "width": 1280,
+      "path": "课程/六上/L09-百分数/讲授稿.html",
+      "title": "百分数 · 为什么实验室",
+      "overflow": false,
+      "badImages": [],
+      "images": 1,
+      "courseLinks": 0,
+      "videoBadges": 0,
+      "video": [],
+      "prerequisites": "先会：分数小数互化、部分与整体"
+    },
+    {
+      "width": 1280,
+      "path": "课程/五下/L07-表面积/讲授稿.html",
+      "title": "表面积 · 为什么实验室",
+      "overflow": false,
+      "badImages": [],
+      "images": 1,
+      "courseLinks": 0,
+      "videoBadges": 0,
+      "video": [],
+      "prerequisites": "先会：长方体的面、长方形和正方形面积"
+    },
+    {
+      "width": 1280,
+      "path": "课程/五上/L07-等式与方程/讲授稿.html",
+      "title": "相等关系与未知数 · 为什么实验室",
+      "overflow": false,
+      "badImages": [],
+      "images": 1,
+      "courseLinks": 0,
+      "videoBadges": 0,
+      "video": [
+        {
+          "duration": 44.79161,
+          "ready": 4,
+          "error": null
+        }
+      ],
+      "prerequisites": "先会：等号含义、四则运算、字母表示数"
+    },
+    {
+      "width": 1280,
+      "path": "课程/五上/L04-数对/动手单.html",
+      "title": "第 4 课 动手单：数对 · 为什么实验室",
+      "overflow": false,
+      "badImages": [],
+      "images": 0,
+      "courseLinks": 1,
+      "videoBadges": 0,
+      "video": [],
+      "prerequisites": "先会：行列、方向、整数加减、长方形面积"
+    },
+    {
+      "width": 390,
+      "path": "",
+      "title": "小学数学 · B 卷原理课",
+      "overflow": false,
+      "badImages": [],
+      "images": 0,
+      "courseLinks": 128,
+      "videoBadges": 51,
+      "video": [],
+      "prerequisites": null
+    },
+    {
+      "width": 390,
+      "path": "课程/index.html",
+      "title": "课程目录 · 为什么实验室",
+      "overflow": false,
+      "badImages": [],
+      "images": 0,
+      "courseLinks": 128,
+      "videoBadges": 51,
+      "video": [],
+      "prerequisites": null
+    },
+    {
+      "width": 390,
+      "path": "课程/六下/L06-比例/讲授稿.html",
+      "title": "比例 · 为什么实验室",
+      "overflow": false,
+      "badImages": [],
+      "images": 1,
+      "courseLinks": 0,
+      "videoBadges": 0,
+      "video": [],
+      "prerequisites": "先会：比的意义和化简、按份数计算"
+    },
+    {
+      "width": 390,
+      "path": "课程/六上/L09-百分数/讲授稿.html",
+      "title": "百分数 · 为什么实验室",
+      "overflow": false,
+      "badImages": [],
+      "images": 1,
+      "courseLinks": 0,
+      "videoBadges": 0,
+      "video": [],
+      "prerequisites": "先会：分数小数互化、部分与整体"
+    },
+    {
+      "width": 390,
+      "path": "课程/五下/L07-表面积/讲授稿.html",
+      "title": "表面积 · 为什么实验室",
+      "overflow": true,
+      "badImages": [],
+      "images": 1,
+      "courseLinks": 0,
+      "videoBadges": 0,
+      "video": [],
+      "prerequisites": "先会：长方体的面、长方形和正方形面积"
+    },
+    {
+      "width": 390,
+      "path": "课程/五上/L07-等式与方程/讲授稿.html",
+      "title": "相等关系与未知数 · 为什么实验室",
+      "overflow": false,
+      "badImages": [],
+      "images": 1,
+      "courseLinks": 0,
+      "videoBadges": 0,
+      "video": [
+        {
+          "duration": 44.79161,
+          "ready": 4,
+          "error": null
+        }
+      ],
+      "prerequisites": "先会：等号含义、四则运算、字母表示数"
+    },
+    {
+      "width": 390,
+      "path": "课程/五上/L04-数对/动手单.html",
+      "title": "第 4 课 动手单：数对 · 为什么实验室",
+      "overflow": false,
+      "badImages": [],
+      "images": 0,
+      "courseLinks": 1,
+      "videoBadges": 0,
+      "video": [],
+      "prerequisites": "先会：行列、方向、整数加减、长方形面积"
+    }
+  ],
+  "optionalSection": {
+    "closedInitially": true,
+    "openedViaToc": true,
+    "reopenedSameHash": true
+  },
+  "playback": {
+    "time": 0.020759,
+    "paused": false,
+    "duration": 46.416576,
+    "error": null
+  },
+  "print": {
+    "text": true,
+    "display": "block"
+  }
+}

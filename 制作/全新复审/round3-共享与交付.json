@@ -1,0 +1,39 @@
+{
+  "round": 3,
+  "scope": "共享代码、128课学习安排、51份媒体配置与发布契约；课程正文审查见各年级轮次文件",
+  "status": "生成页差异检查发现空视频提示留下行尾空格，已修模板；需第四轮复核",
+  "findings": [
+    {
+      "issue": "有视频但无video_note时生成一整行空格，git diff --check失败",
+      "fix": "只在有提示时输出整行，避免模板空插值产生多余空格"
+    },
+    {
+      "issue": "附带源文档链接检查发现两份历史报告的58个相对路径按根目录书写，直接阅读MD失效；其HTML已正确",
+      "fix": "仅更正07/14号MD相对链接，不改历史审查结论"
+    }
+  ],
+  "checks": {
+    "过度防御": "学习安排唯一性/对应路径/学段/前置属于新单一入口校验；没有重复多层校验",
+    "过度设计": "四个学段级别组合复用learningLabel和lessonsIn，不增抽象层",
+    "过度fallback": "batch_videos仅对旧配置使用原v1默认；新三下01指定v2可定位，不尝试默默切回旧稿",
+    "理论问题复杂化": "对两次点击目录的假设已实际复现为能正常展开；无新增兼容分支",
+    "dead_code": "复核所有改动完整函数和相关调用；删除caps后无孤立helper，动态模型分发函数不能按直接调用次数误删",
+    "复用": "讲授、练习、分镜复用renderDoc；字幕/配音验证仍走原入口，音轨版本由paths集中读取"
+  },
+  "artifacts": {
+    "工具/build_html.js": "efcc94e3df138254fb4b3a1b8ec34f811f1c48b8f11c03056c6bd0aab39d138e",
+    "assets/doc.css": "bd6d7031fd58a15186c61b12160756d494dcfdb180c73d8e519d7f6d5a24a0f2",
+    "assets/doc.js": "64c70a07ebd373c9427a1efa293de05799d133dfde7fab7d2586102c5fb13227",
+    "工具/batch_videos.py": "66df1283bf50e6513ec3012b22bf54bcd740a15e75458748f7b58f85cec78195",
+    "工具/scenes/arithmetic.py": "e44268477de32ea637e7185adbb0b202e7ca28272cfcd957de314afcd26c2d20",
+    "工具/scenes/geometry.py": "575aca8e06d2ba243d7b5c39f483289e2de5dc4dcf03dfabdf87a4ade596f85c",
+    "课程/学习安排.json": "359dc10b0001acf287e41c72f320797beffefaf1dc4e4d314ee8691abaf8dc30"
+  },
+  "validation_reused": [
+    "3项视频管线回归",
+    "51片技术核验",
+    "51×5个发布文件哈希一致",
+    "桌面/移动端5课与目录交互检查"
+  ],
+  "pending": "第四轮后一次全量HTML构建和全部本地链接检查，不将生成前旧HTML当作最终交付"
+}

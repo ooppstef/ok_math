@@ -12,8 +12,8 @@
       "phase_start": 0.0,
       "phase_end": 1.0,
       "title": "除法竖式",
-      "duration": 5.29,
-      "narration": "56平均分成三份，先把五个十分一分。",
+      "duration": 8,
+      "narration": "把五十六平均分成三份，先分五捆小棒，每捆十根。",
       "pause_after": 0.6
     },
     {
@@ -36,8 +36,8 @@
       "phase_start": 0.0,
       "phase_end": 1.0,
       "title": "除法竖式",
-      "duration": 8.24,
-      "narration": "26个一，每份还能拿8个，最后剩2个。每份合起来是18。",
+      "duration": 14,
+      "narration": "剩下两捆，拆成二十根，和原来的六根合在一起，共二十六根。每份再拿八根，最后剩两根。",
       "pause_after": 0.6
     },
     {
@@ -76,5 +76,6 @@
       "narration": "要分到不能再平均分为止。原来五十六那题，商十八，余二。",
       "pause_after": 0.6
     }
-  ]
+  ],
+  "audio_version": "配音-开朗学长-v2"
 }

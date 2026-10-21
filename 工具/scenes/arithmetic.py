@@ -142,12 +142,34 @@ def _other(d,sc,r,p,txt,box,dot,bar,formula,note):
             formula(['1/2 米和 1/3 米，每份并不一样长','1/2 = 3/6；1/3 = 2/6','1/2 + 1/3 = 5/6 米','改用 1/12 米量，绳子会变长吗？','6/12 + 4/12 = 10/12 = 5/6 米'][s-1])
     elif m in ('multiply','distributive','product_change','odd_layers'):
         if m=='multiply':
-            cols,rows=23,14;gx,gy,dx,dy=160,222,24,21
+            cols,rows=23,14;gx,gy,dx,dy=130,240,19,18
             for j in range(rows):
                 for i in range(cols):
                     yy=gy+j*dy+(18*math.sin(math.pi*p) if s==1 and j>=10 else 0)
                     box(gx+i*dx,yy,dx,dy,blue if j<10 else gold,r.LINE)
-            txt(760,255,'10 行 × 23 = 230',27,blue);txt(760,385,'4 行 × 23 = 92',27,gold)
+            txt(585,300,'10 行',25,blue);txt(585,440,'4 行',25,gold)
+            txt(270,205,'每行 23 个，共 14 行',25)
+            # 每个数字按同一组个位、十位、百位坐标排齐。
+            columns=(940,985,1030,1075)
+            for x,name in zip(columns,('千','百','十','个')):txt(x,205,name,21,r.MUTED)
+            for row,value in ((245,'23'),(290,'14')):
+                for x,ch in zip(columns[-len(value):],value):txt(x,row,ch,34)
+            txt(905,290,'×',32)
+            d.line((900,334,1130,334),fill=ink,width=2)
+            if s>=2:
+                txt(columns[2],345,'9',34,gold);txt(columns[3],345,'2',34,gold)
+                txt(740,350,'23 × 4',22,gold)
+            if s>=3:
+                txt(columns[1],395,'2',34,blue);txt(columns[2],395,'3',34,blue)
+                txt(columns[3],395,'0',34,r.MUTED)
+                txt(710,400,'23 × 10',22,blue)
+                d.line((900,442,1130,442),fill=ink,width=2)
+            if s==4:txt(1010,458,'?',36,red)
+            if s==5:
+                for x,ch in zip(columns[1:],'322'):txt(x,458,ch,36,blue)
+            if s in (2,3):
+                y1,y2=(gy+10*dy,gy+14*dy) if s==2 else (gy,gy+10*dy)
+                d.rectangle((gx,y1,gx+cols*dx,y2),outline=red,width=4)
             formula(['23 × 14 = 23 × (10 + 4)','23 × 4 = 92','23 × 10 = 230；第二层表示 23 个十','92 + 230 = ?','92 + 230 = 322；不能把 230 写成 23'][s-1])
         elif m=='distributive':
             for row in range(7):
@@ -237,22 +259,44 @@ def _other(d,sc,r,p,txt,box,dot,bar,formula,note):
     else: raise ValueError('Unknown arithmetic model: '+m)
 
 def _groups(d,sc,p,r,txt,box,dot,formula):
-    s=sc['stage'];m=sc['model'];blue,gold=r.TEAL,r.GOLD
+    s=sc['stage'];m=sc['model'];blue,gold,ink,red=r.TEAL,r.GOLD,r.INK,r.RED
     if m=='grouping':
         n=12 if s<=4 else 13 if s<=6 else 17
         size=3 if s<=6 else 5
         equal=s==2 or s==8
         groups=size if equal else n//size
         each=n//size if equal else size
-        if s==8:
-            for row,(ng,each,label) in enumerate([(5,3,'分给 5 人：每人 3 颗'),(3,5,'每袋 5 颗：装满 3 袋')]):
+        if s in (4,8):
+            arrangements=[(3,4,'分给 3 人：每人 4 颗'),(4,3,'每袋 3 颗：装满 4 袋')] if s==4 else [(5,3,'分给 5 人：每人 3 颗'),(3,5,'每袋 5 颗：装满 3 袋')]
+            for row,(ng,each,label) in enumerate(arrangements):
                 yy=265+row*145
                 txt(140,yy-38,label,25)
                 for g in range(ng):
                     xx=140+g*170;box(xx,yy,145,80,r.PAPER)
                     for j in range(each):dot(xx+28+(j%3)*40,yy+24+(j//3)*34,blue,10)
-                for j in range(2):dot(1100+j*40,yy+40,gold,10)
-            formula('17 ÷ 5 = 3 余 2；上图的 3 是颗数，下图的 3 是袋数')
+                if s==8:
+                    for j in range(2):dot(1100+j*40,yy+40,gold,10)
+            formula('12 ÷ 3 = 4；上图求每人几颗，下图求装几袋' if s==4 else '17 ÷ 5 = 3 余 2；上图的 3 是颗数，下图的 3 是袋数')
+            return
+        if s==6:
+            # 前半仍是13颗；后半明确另起15颗，保留4袋和外面的3颗。
+            changed=p>.5
+            spacing=170 if changed else 190
+            for g in range(4):
+                xx=140+g*spacing;box(xx,350,150,155,r.PAPER)
+                txt(xx+15,510,f'{g+1}袋',23)
+                for j in range(3):dot(xx+30+j*40,385,blue,12)
+            if changed:
+                txt(140,205,'另起一题：15 颗糖',27)
+                box(820,350,150,155,r.PAPER);txt(835,510,'第 5 袋',23)
+                a=r.clamp((p-.5)*2)
+                for j in range(3):
+                    sx,sy=1100,350+j*45;tx,ty=850+j*40,385
+                    dot(sx+(tx-sx)*a,sy+(ty-sy)*a,gold,12)
+                formula('15 颗：外面剩的 3 颗，还能再装满一袋')
+            else:
+                dot(1100,380,gold,12)
+                formula('13 颗：装满 4 袋，余 1；1 < 3')
             return
         if s in (1,7):
             for i in range(n):dot(210+(i%9)*90,290+(i//9)*90,blue,15)
@@ -266,47 +310,69 @@ def _groups(d,sc,p,r,txt,box,dot,formula):
                 if i<groups*each:
                     g=i%groups if equal else i//each;j=i//groups if equal else i%each
                     tx,ty=170+g*spacing+(j%3)*40,385+(j//3)*55
-                    a=r.clamp(p*1.5-i/n*.5)
+                    motion=r.clamp(p*2) if s==5 else p
+                    a=1 if s==9 else r.clamp(motion*1.5-i/n*.5)
                     dot(sx+(tx-sx)*a,sy+(ty-sy)*a,blue,12)
                 else:dot(1100,380+(i-groups*each)*45,gold,12)
         fs=['12 颗糖 ÷ 3 = 4：这个 3 表示什么？','12 颗 ÷ 3 人 = 每人 4 颗','12 颗 ÷ 每袋 3 颗 = 4 袋','3 × 4 = 12：每份几个，还是有几份？','13 颗：4 袋，每袋 3 颗，剩 1 颗','1 < 3；再添 2 颗，就能装满一袋','17 ÷ 5：请讲两个故事','17 颗 ÷ 5 人：每人 3 颗，剩 2 颗','17 = 5 × 3 + 2；每袋 5 颗，共 3 袋']
         formula(fs[s-1])
     else:
-        for g in range(3):box(150+g*300,365,240,175,r.PAPER)
+        for g in range(3):box(120+g*270,365,220,175,r.PAPER)
         if s<3:
             for b in range(5):
-                sx,sy=160+b*170,245
+                sx,sy=120+b*140,245
                 a=p if s==2 and b<3 else 0
-                tx,ty=180+b*300,405
+                tx,ty=150+b*270,390
                 xx=sx+(tx-sx)*a;yy=sy+(ty-sy)*a
-                for j in range(10):d.line((xx+j*8,yy,xx+j*8,yy+55),fill=blue,width=4)
-                d.line((xx-4,yy+27,xx+77,yy+27),fill=gold,width=5)
-            for j in range(6):dot(1050+(j%2)*35,260+(j//2)*35,gold,9)
+                for j in range(10):d.line((xx+j*6,yy,xx+j*6,yy+55),fill=blue,width=4)
+                d.line((xx-4,yy+27,xx+58,yy+27),fill=gold,width=5)
+            for j in range(6):dot(835+(j%2)*24,260+(j//2)*35,gold,9)
         else:
             # Every ten remains ten strokes, including while the last two bundles open.
             for g in range(3):
-                for j in range(10):d.line((175+g*300+j*6,390,175+g*300+j*6,430),fill=blue,width=3)
+                for j in range(10):d.line((150+g*270+j*6,390,150+g*270+j*6,445),fill=blue,width=4)
             total=27 if s==5 else 26
             for i in range(total):
                 g=i%3;j=i//3
-                sx=160+(i%13)*65;sy=240+(i//13)*55
-                tx=180+g*300+(j%4)*45;ty=465+(j//4)*28
-                if i>=24 and s!=5:tx,ty=1110,380+(i-24)*45
+                sx=120+(i%13)*56;sy=240+(i//13)*55
+                tx=150+g*270+(j%4)*40;ty=465+(j//4)*28
+                if i>=24 and s!=5:tx,ty=925,380+(i-24)*45
                 a=r.clamp((p-.3)/.7) if s==3 else 1
                 if s==3 and i<20:
                     b,jj=divmod(i,10)
-                    ox,oy=670+b*170+jj*8,272
+                    ox,oy=540+b*140+jj*6,272
                     unfold=r.clamp(p/.3)
                     sx=ox+(sx-ox)*unfold;sy=oy+(sy-oy)*unfold
                 if s==3 and i>=20:
-                    j=i-20;ox,oy=1050+(j%2)*35,260+(j//2)*35
+                    j=i-20;ox,oy=835+(j%2)*24,260+(j//2)*35
                     unfold=r.clamp(p/.3)
                     sx=ox+(sx-ox)*unfold;sy=oy+(sy-oy)*unfold
-                if s==5 and i>=24:a=p
+                if s==5 and i>=24:
+                    sx,sy=925,330+(i-24)*35;a=p
                 xx=sx+(tx-sx)*a;yy=sy+(ty-sy)*a
                 if s==3 and i<20:
                     half=27*(1-r.clamp(p/.3))+9*r.clamp(p/.3)
                     d.line((xx,yy-half,xx,yy+half),fill=gold,width=4)
                 else:dot(xx,yy,gold,9)
-            txt(920,205,'另起一题：57 ÷ 3' if s==5 else '回到原题：56 ÷ 3' if s==6 else '20 个一 + 6 个一',24)
+            txt(120,205,'另起一题：57 ÷ 3' if s==5 else '回到原题：56 ÷ 3' if s==6 else '20 个一 + 6 个一',24)
+        # 商的数字始终与被除数的十位、个位对齐。
+        tens,ones=1090,1140
+        txt(tens,205,'十',22,r.MUTED);txt(ones,205,'个',22,r.MUTED)
+        txt(995,300,'3',32)
+        d.line(((1040,342),(1050,285),(1190,285)),fill=ink,width=2)
+        txt(tens,300,'5',32);txt(ones,300,'7' if s==5 else '6',32)
+        if s>=2:
+            txt(tens,245,'1',32,blue)
+            txt(tens,345,'3',32)
+            d.line((1075,385,1185,385),fill=ink,width=2)
+            txt(tens,390,'2',32,gold)
+        if s>=3:
+            ready=s!=3 or p>.7
+            txt(ones,390,'7' if s==5 else '6',32,gold)
+            if ready:
+                extra=s==5 and p>.95
+                txt(ones,245,'9' if extra else '8',32,blue)
+                txt(tens,435,'2',32);txt(ones,435,'7' if extra else '4',32)
+                d.line((1075,475,1185,475),fill=ink,width=2)
+                txt(ones,482,('0' if extra else '3') if s==5 else '2',32,red)
         formula(['56：5 个十、6 个一，平均分 3 份','每份先拿 1 个十，剩 2 个十','2 个十拆成 20 个一；26 ÷ 3 = 8 余 2','18 × 3 + 2 = 56；余数能是 3 吗？','57 ÷ 3：每份 18 再拿 1，得到 19','56 ÷ 3 = 18 余 2；18 × 3 + 2 = 56'][s-1])

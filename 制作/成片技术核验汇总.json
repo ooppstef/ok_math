@@ -11,7 +11,7 @@
     "thinking_pauses": 1,
     "sha256": "dc36b98798cb7bd83657e5ab81248958b87ba0450575ef2502399dda1b9880bf",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/三上-L02.json",
@@ -25,7 +25,7 @@
     "thinking_pauses": 1,
     "sha256": "469108bc4c10605d950ce4e3ca6a6e8685379d3cb902b9b8d1fb617a042e2c44",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/三上-L03.json",
@@ -39,7 +39,7 @@
     "thinking_pauses": 1,
     "sha256": "bde68c5dd10aa8035b9940e023541280723b87c24c312bf03a77159b892cfe3e",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/三上-L04.json",
@@ -51,7 +51,7 @@
     "max_volume_db": -3.5,
     "mean_volume_db": -22.3,
     "thinking_pauses": 1,
-    "sha256": "d47dfdf4c1c7ad1485d0e4f75dec30183dbb25b24f5c430d6cb9b32e3f679eb2",
+    "sha256": "9d94311486965246be58756b57f662d3da8949c622c00e2982218797b415d8df",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
     "frame_samples_decoded": true
   },
@@ -67,7 +67,7 @@
     "thinking_pauses": 1,
     "sha256": "b1b9d337bfcb53b2e28a8cb7c2e27dce2f63ec4b04b5443e4c57f48fee3f68a2",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/三上-L09.json",
@@ -81,7 +81,7 @@
     "thinking_pauses": 1,
     "sha256": "7d449e2a42abdbb713b541069ee019546d0a6ef9ba3d39c955b629e3a88a8f45",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/三上-L10.json",
@@ -95,7 +95,7 @@
     "thinking_pauses": 1,
     "sha256": "2befabe0cc60e79f751ae2a862a5caf4c4ed53d2c9810c8be7562ac1d3ed79bd",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/三上-L11.json",
@@ -109,7 +109,7 @@
     "thinking_pauses": 1,
     "sha256": "e77b914ccff8e3aba4a28bdadb0f0d4d98e2df352a7171e502daf55816819aeb",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/三上-L12.json",
@@ -123,7 +123,7 @@
     "thinking_pauses": 1,
     "sha256": "0ebb2b9c99c6f72acf3daea3d0ac2373beb4a7b863facf7ccbd9fc04e441755d",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/三上-L15.json",
@@ -137,7 +137,7 @@
     "thinking_pauses": 1,
     "sha256": "aef54d18ac30ea6c14f25a410ce8e3f7f728792c9889045d5066b921dfc000d5",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/三上-L17.json",
@@ -151,19 +151,19 @@
     "thinking_pauses": 1,
     "sha256": "04d7e2a0200344b2cb8517a09c9a1fcfbcd9d476101f23b26d88ced926d57cbc",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/三下-L01.json",
     "video": "制作/三下-L01-除法竖式/成片/视频.mp4",
-    "duration": 42.833,
+    "duration": 46.417,
     "scenes": 6,
     "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
     "speech_rate": 0,
-    "max_volume_db": -3.5,
-    "mean_volume_db": -23.1,
+    "max_volume_db": -3.7,
+    "mean_volume_db": -22.9,
     "thinking_pauses": 1,
-    "sha256": "7a64add45ab8890cfc2d412b691a99797fe7fa02f1f794f7b994377f8755a06c",
+    "sha256": "ccac4acb504d1b87343e26226c4f551c244bfe26ce2cca421fbb3666782b4681",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
     "frame_samples_decoded": true
   },
@@ -177,7 +177,7 @@
     "max_volume_db": -3.5,
     "mean_volume_db": -23.5,
     "thinking_pauses": 1,
-    "sha256": "8426de744cf67e848efbb275625448835af942e8fa2d30d01173e0f99ae7f4c5",
+    "sha256": "74c926aa7955bf0ecc71d646b7a432f586a9be8a170b374030a2f131e47f91bc",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
     "frame_samples_decoded": true
   },
@@ -193,7 +193,7 @@
     "thinking_pauses": 1,
     "sha256": "f0bb180c909062c3ed2fd7771e0785bba54ac3598e3c540bfa5919a69652395c",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/三下-L04.json",
@@ -207,7 +207,7 @@
     "thinking_pauses": 1,
     "sha256": "477484bf2a6e9dc037f16a7919d80c129c868bbeeddc1509c2fa7e8630d462b7",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/三下-L06.json",
@@ -219,7 +219,7 @@
     "max_volume_db": -4.0,
     "mean_volume_db": -23.4,
     "thinking_pauses": 1,
-    "sha256": "73eb348d8d9cf2d36f80c78edd6dec278d576b2d63acf89d07691ccf392fa87c",
+    "sha256": "5632e41861c638951ae6b0d7afe2e2344e590a70772bb4a57d91256b01a4a62b",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
     "frame_samples_decoded": true
   },
@@ -235,7 +235,7 @@
     "thinking_pauses": 1,
     "sha256": "982f09f9f326b7e419719ba6430844ae78815939207d1bb352b367e79169cf26",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/三下-L13.json",
@@ -247,7 +247,7 @@
     "max_volume_db": -3.6,
     "mean_volume_db": -23.2,
     "thinking_pauses": 1,
-    "sha256": "b2a21315d8d6d1a91b5495b0ee1cd7fcf09a5601d60b491d86fc7306e4d60559",
+    "sha256": "2671176b17761f60a7e3faa71e2c0900db20ef733443b511e6b9848979409c90",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
     "frame_samples_decoded": true
   },
@@ -261,7 +261,7 @@
     "max_volume_db": -3.9,
     "mean_volume_db": -23.3,
     "thinking_pauses": 1,
-    "sha256": "12ad35aa1b30e1887b079da7fadee93eb32b65efdcf4b48ffc3902a788ad5133",
+    "sha256": "d25038341ff9d37f4b57b1ffe103190953fe2c76c9cfc480bc61592000aebfae",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
     "frame_samples_decoded": true
   },
@@ -277,7 +277,7 @@
     "thinking_pauses": 1,
     "sha256": "a0735f6cc4671d26a0b4c906eb461f0f389eb604248c2fbf019d978ffb222fcb",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/五上-L07.json",
@@ -291,7 +291,7 @@
     "thinking_pauses": 1,
     "sha256": "bbce2399a02d4f88d974b062e719e4ba336b74fb292b20239dbdce3b8b000cb3",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/五上-L09.json",
@@ -305,7 +305,7 @@
     "thinking_pauses": 1,
     "sha256": "c33724fd4609492973693194e2d8c0d47411f86dd4ee7f94c24a79788fa4fe73",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/五上-L10.json",
@@ -319,7 +319,7 @@
     "thinking_pauses": 2,
     "sha256": "ce3d40b65dbcabccd202caa9207a28cbaf879a4424cbc43e5b8e8bdc24597eee",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/五上-L11.json",
@@ -333,7 +333,7 @@
     "thinking_pauses": 1,
     "sha256": "f273b0a5e104179dc53f39c65f5461880ffc9e8c4bf74a6c9653c68a4f2452c8",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/五下-L04.json",
@@ -347,7 +347,7 @@
     "thinking_pauses": 1,
     "sha256": "9f57c58a21fe8c9678d719806d35460761117602bdf2cf682c092cd3390e58e0",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/五下-L05.json",
@@ -361,7 +361,7 @@
     "thinking_pauses": 1,
     "sha256": "1326fb6efe6eeaea3ed7f88ca75e5195f41ee51399b9a5961d69df9fa39d885b",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/五下-L08.json",
@@ -373,7 +373,7 @@
     "max_volume_db": -3.5,
     "mean_volume_db": -23.2,
     "thinking_pauses": 1,
-    "sha256": "cba80086825d5938b6a12542add62fa51a96d0693b6d83069ff3ca5ebd1edf9f",
+    "sha256": "fc79e53289adf2fdfd17b317df470811e7b90145de240314b77ac9236ab410b2",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
     "frame_samples_decoded": true
   },
@@ -389,7 +389,7 @@
     "thinking_pauses": 1,
     "sha256": "598e360449e19e64669b4dc25e84eb6df39c385ec2dca8767ac8ce74b440a773",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/五下-L11.json",
@@ -403,7 +403,7 @@
     "thinking_pauses": 1,
     "sha256": "bd70e004a21840f1118827c29809b8dbc01168fb01d2328c8e62b2a7fa38ea93",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/五下-L16.json",
@@ -417,7 +417,7 @@
     "thinking_pauses": 1,
     "sha256": "311df9a58e1e4c05160869ac8678c1f0740cc1107306feb6b6efb34810fce3a7",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/六上-L01.json",
@@ -431,7 +431,7 @@
     "thinking_pauses": 1,
     "sha256": "8520cb7769d8315ac1221b1fa94da30c3e73c917e98201e8cd3d7f41491b38fa",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/六上-L02.json",
@@ -443,7 +443,7 @@
     "max_volume_db": -3.8,
     "mean_volume_db": -22.5,
     "thinking_pauses": 1,
-    "sha256": "68e3a0c03e8677c22c976178a959c745d01fe10a811605d7629492690c7f0a4f",
+    "sha256": "1bced4a92b882e1a4cdf7442b35c6da8dbf61c303e753d2ac5096c90890165b2",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
     "frame_samples_decoded": true
   },
@@ -457,7 +457,7 @@
     "max_volume_db": -3.2,
     "mean_volume_db": -24.1,
     "thinking_pauses": 1,
-    "sha256": "8307f2b11c260abdc7e58780fbab85482d993f7b24df9a0fbcec898d3ace903d",
+    "sha256": "4345e3cd339e628412eba0f79405c0a67fa75f99d9fa1061a16d8c2f9adaae48",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
     "frame_samples_decoded": true
   },
@@ -473,7 +473,7 @@
     "thinking_pauses": 1,
     "sha256": "fa283f69463fb4000a9642864f9321f8284913705c55e6ce4138b54eacfc429b",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/六上-L12.json",
@@ -485,7 +485,7 @@
     "max_volume_db": -3.8,
     "mean_volume_db": -23.6,
     "thinking_pauses": 1,
-    "sha256": "6f1ab09b54ed018299c47a53fe559c920ea2773ab17a743acccb756bdaf9848e",
+    "sha256": "3de7c223b16b91d67cce4a75a2375f01f31e3ac9649e07e7f20c45c64fc90b07",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
     "frame_samples_decoded": true
   },
@@ -501,7 +501,7 @@
     "thinking_pauses": 1,
     "sha256": "f11d54bce7fed0030e3c5493f98dbc6432f198dd4ccfbd6db07a4751c9e80141",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/六下-L03.json",
@@ -515,7 +515,7 @@
     "thinking_pauses": 1,
     "sha256": "3b711dc76de70cd797edd4318e4c1cce9f718af2fec0d9d7f7be0a6716a658ab",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/六下-L04.json",
@@ -527,7 +527,7 @@
     "max_volume_db": -3.7,
     "mean_volume_db": -23.1,
     "thinking_pauses": 1,
-    "sha256": "5af0e21b707a5fc1b9c407b81f079f4b067b2814a5d42ceedf5267320e30c337",
+    "sha256": "c83be5f3f023f4922812f16c58676011a170a5403959d85cd0ae0d1b70157e59",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
     "frame_samples_decoded": true
   },
@@ -543,7 +543,7 @@
     "thinking_pauses": 1,
     "sha256": "5ded288f01a5b0718a683c964cc9b7b111fdfbe58ae0f104a41f9a7fbc60c896",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/六下-L08.json",
@@ -555,7 +555,7 @@
     "max_volume_db": -3.5,
     "mean_volume_db": -23.1,
     "thinking_pauses": 1,
-    "sha256": "ad88c65bc68bde632ddd918f68d38f0c0ad4c106c4346fc910a2049401668fc2",
+    "sha256": "9b1d0fff0717218cfdf10c527ad1cc3e971aa2f06451dac37dc2d6be92c182d4",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
     "frame_samples_decoded": true
   },
@@ -571,7 +571,7 @@
     "thinking_pauses": 1,
     "sha256": "2255fb69e9508121f6eaaf76daff23b06a1622fab986841bb4cd0d586b9d559b",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/六下-L13.json",
@@ -585,7 +585,7 @@
     "thinking_pauses": 1,
     "sha256": "c21bb6122ae545d9baab25a4dd56dab499eae3d8f44f2007358d457d8e78616e",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/四上-L06.json",
@@ -599,7 +599,7 @@
     "thinking_pauses": 1,
     "sha256": "ce699d1ac4ce738b4534e7914e10d4075a0cba928f392eed8b17cedee7e89426",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/四上-L08.json",
@@ -611,7 +611,7 @@
     "max_volume_db": -3.6,
     "mean_volume_db": -23.9,
     "thinking_pauses": 1,
-    "sha256": "a30298b1a89bbca90c1b9d6b38fc70156394b6c6c273eb766fd459e0e51eb81f",
+    "sha256": "8eff4de37666f71bc248535f7a2ff1aac1af890bee1f81b4f37742f390afc2d4",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
     "frame_samples_decoded": true
   },
@@ -627,7 +627,7 @@
     "thinking_pauses": 1,
     "sha256": "f36d5d3e1b00795380c5d0b0e18440224062535d68e2b570718341e49896fb07",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/四下-L02.json",
@@ -641,7 +641,7 @@
     "thinking_pauses": 1,
     "sha256": "0b80f33f7b99d424065b67a0320dd35b3edecd6d2b93799c7b1ecf488e53e3a5",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/四下-L05.json",
@@ -653,7 +653,7 @@
     "max_volume_db": -3.6,
     "mean_volume_db": -22.0,
     "thinking_pauses": 1,
-    "sha256": "db67fb14359d09acabe94c2ee81a58d6b7e1bf80709d03baf0d75b5e7662c813",
+    "sha256": "6e8787869abe3a88774525348b98ac2901eaa80fad8e5cd72d42c92012549c4d",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
     "frame_samples_decoded": true
   },
@@ -667,7 +667,7 @@
     "max_volume_db": -3.7,
     "mean_volume_db": -23.8,
     "thinking_pauses": 1,
-    "sha256": "171fe41f31f28f0370d2c213d25e2f5b44d99b1d11b727281597c390db42f704",
+    "sha256": "22b4c833e7a2be4304a8b0fa2a99813bb48189d7e7f3f9bb4dba9ed092be7c3a",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
     "frame_samples_decoded": true
   },
@@ -683,7 +683,7 @@
     "thinking_pauses": 1,
     "sha256": "d837918cbc3d25ad02265db17e1e52519344b61f114bfff1cb58358eed2272e4",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/四下-L10.json",
@@ -697,7 +697,7 @@
     "thinking_pauses": 1,
     "sha256": "fde4cb0432b9b3bd9ba13a7d44da306da92a6a1c4cab129224e544bbc22f4e55",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   },
   {
     "script": "工具/episodes/成片/四下-L11.json",
@@ -711,6 +711,6 @@
     "thinking_pauses": 1,
     "sha256": "3790162eb57c4922ea374c80d51002b2b027cd83309f5000fb6a47a2a0a1b543",
     "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-    "frame_samples_decoded": true
+    "frame_samples_decoded": false
   }
 ]

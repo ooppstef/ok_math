@@ -1,14 +1,14 @@
 {
   "script": "工具/episodes/成片/三下-L01.json",
   "video": "制作/三下-L01-除法竖式/成片/视频.mp4",
-  "duration": 42.833,
+  "duration": 46.417,
   "scenes": 6,
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
   "speech_rate": 0,
-  "max_volume_db": -3.5,
-  "mean_volume_db": -23.1,
+  "max_volume_db": -3.7,
+  "mean_volume_db": -22.9,
   "thinking_pauses": 1,
-  "sha256": "7a64add45ab8890cfc2d412b691a99797fe7fa02f1f794f7b994377f8755a06c",
+  "sha256": "ccac4acb504d1b87343e26226c4f551c244bfe26ce2cca421fbb3666782b4681",
   "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
   "frame_samples_decoded": true
 }

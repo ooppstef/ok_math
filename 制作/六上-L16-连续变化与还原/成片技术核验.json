@@ -10,5 +10,5 @@
   "thinking_pauses": 1,
   "sha256": "f11d54bce7fed0030e3c5493f98dbc6432f198dd4ccfbd6db07a4751c9e80141",
   "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
-  "frame_samples_decoded": true
+  "frame_samples_decoded": false
 }

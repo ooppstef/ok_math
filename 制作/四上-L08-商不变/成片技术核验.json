@@ -8,7 +8,7 @@
   "max_volume_db": -3.6,
   "mean_volume_db": -23.9,
   "thinking_pauses": 1,
-  "sha256": "a30298b1a89bbca90c1b9d6b38fc70156394b6c6c273eb766fd459e0e51eb81f",
+  "sha256": "8eff4de37666f71bc248535f7a2ff1aac1af890bee1f81b4f37742f390afc2d4",
   "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
   "frame_samples_decoded": true
 }

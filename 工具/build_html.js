@@ -11,6 +11,10 @@ const ROOT = path.resolve(__dirname, '..');
 
 const DOCS = [
   {
+    src: '00-方案/29-全量课程重新审查.md', kind: 'doc', kicker: 'REVIEW · 全新复审',
+    subtitle: '128 课的学段、前置、内容修复与验证边界。', fullWidth: true
+  },
+  {
     src: '00-方案/28-原理视频制作与验收.md', kind: 'doc', kicker: 'VIDEO · 制作记录',
     subtitle: '51 课原理动画、指定音色与实际成片核验。', fullWidth: true
   },
@@ -486,6 +490,17 @@ function expandSem(text) {
   return String(text).replace(SEM_RE, m => SEM_NAMES[m]);
 }
 const ALL_LESSONS = [];
+const learningPlan = JSON.parse(fs.readFileSync(path.join(ROOT, '课程/学习安排.json'), 'utf8')).lessons;
+const planById = new Map(learningPlan.map((item, order) => [item.id, { ...item, order }]));
+if (planById.size !== learningPlan.length) throw new Error('学习安排含重复课号');
+const LEARNING_GROUPS = [
+  { stage: '3–4', level: '基础', title: '三、四年级 · 基础' },
+  { stage: '3–4', level: '提高', title: '三、四年级 · 提高选学' },
+  { stage: '5–6', level: '基础', title: '五、六年级 · 基础' },
+  { stage: '5–6', level: '提高', title: '五、六年级 · 提高选学' }
+];
+function stageName(stage) { return stage === '3–4' ? '三、四年级' : '五、六年级'; }
+function learningLabel(lesson) { return `${stageName(lesson.stage)} · ${lesson.level === '提高' ? '提高选学' : '基础'}`; }
 
 for (const sem of SEMESTERS) {
   const base = path.join(ROOT, '课程', sem);
@@ -498,11 +513,19 @@ for (const sem of SEMESTERS) {
     const src = `课程/${sem}/${dir}/讲授稿.md`;
     if (!fs.existsSync(path.join(ROOT, src))) continue;
     const no = dir.slice(1, 3);
-    const title = dir.replace(/^L\d{2}-/, '');
+    const heading = fs.readFileSync(path.join(ROOT, src), 'utf8').match(/^#\s+(.+)/m);
+    const title = heading[1].replace(/^第\s*\d+\s*课[：:]\s*/, '');
     const hasVideo = fs.existsSync(path.join(base, dir, '视频.mp4'));
-    ALL_LESSONS.push({ sem, dir, no, title, src, hasVideo, hub: `课程/${sem}/index.html` });
+    const plan = planById.get(`${sem}-L${no}`);
+    if (!plan || plan.path !== src || !LEARNING_GROUPS.some(g => g.stage === plan.stage && g.level === plan.level) || !plan.prerequisites?.length) {
+      throw new Error(`课程缺少有效学习安排：${src}`);
+    }
+    ALL_LESSONS.push({ ...plan, sem, dir, no, title, src, hasVideo, hub: '课程/index.html' });
   }
 }
+if (ALL_LESSONS.length !== learningPlan.length) throw new Error('学习安排含不存在的课程');
+ALL_LESSONS.sort((a, b) => a.order - b.order);
+function lessonsIn(group) { return ALL_LESSONS.filter(l => l.stage === group.stage && l.level === group.level); }
 
 const knownDocs = new Set(DOCS.map(d => d.src));
 for (const l of ALL_LESSONS) {
@@ -591,20 +614,21 @@ function renderDoc(doc) {
 
   let body = marked.parse(md, { gfm: true, breaks: false });
   const h1 = body.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
-  const title = doc.title || (h1 ? stripTags(h1[1]) : path.basename(doc.src, '.md'));
+  const sourceTitle = doc.title || (h1 ? stripTags(h1[1]) : path.basename(doc.src, '.md'));
+  const title = doc.kind === 'lesson' ? sourceTitle.replace(/^第\s*\d+\s*课[：:]\s*/, '') : sourceTitle;
   if (h1) body = body.replace(h1[0], '');
 
-  // 课程类页面：去掉顶部的课程信息引用块
+  // 只去掉旧制作信息；学习顺序、材料和前置提示是正文的一部分。
   if (doc.kind === 'lesson' || doc.kind === 'storyboard' || doc.kind === 'handout') {
     const bq = body.indexOf('<blockquote>');
     const h2 = body.indexOf('<h2');
-    if (bq >= 0 && (h2 < 0 || bq < h2)) {
+    if (bq >= 0 && (h2 < 0 || bq < h2) && /(?:时长|状态|制作状态)[：:]/.test(body.match(/<blockquote>[\s\S]*?<\/blockquote>/)[0])) {
       body = body.replace(/<blockquote>[\s\S]*?<\/blockquote>\s*/, '');
     }
   }
 
   if (doc.kind === 'lesson' || doc.kind === 'handout') {
-    body = body.replace(/^\s*(?:<p><strong>(?:大问题|本课要点|一句话原理|核心一句话|时长|材料|状态|今天的大问题|对应课|用法)<\/strong>[：:][\s\S]*?<\/p>\s*)+/, '');
+    body = body.replace(/^\s*(?:<p><strong>(?:大问题|本课要点|一句话原理|核心一句话|时长|状态|今天的大问题|对应课)<\/strong>[：:][\s\S]*?<\/p>\s*)+/, '');
   }
   if (doc.kind === 'handout') {
     body = body.replace(/<p><strong>今天的大问题<\/strong>[：:][\s\S]*?<\/p>\s*/, '');
@@ -648,12 +672,13 @@ function renderDoc(doc) {
 
   // 视频
   const videoPath = path.join(ROOT, dir, '视频.mp4');
+  const lesson = ALL_LESSONS.find(l => path.dirname(l.src) === dir);
   const hasVideo = (doc.kind === 'lesson' || doc.kind === 'storyboard') && fs.existsSync(videoPath);
   let video = '';
   if (hasVideo) {
     const poster = fs.existsSync(path.join(ROOT, dir, 'poster.jpg')) ? 'poster.jpg' : '';
     video = `<div class="video-hero">
-      <div class="video-frame">
+${lesson?.video_note ? `      <p class="video-scope">${escapeHtml(lesson.video_note)}</p>\n` : ''}      <div class="video-frame">
         <video id="lessonVideo" preload="metadata" playsinline ${poster ? `poster="${poster}"` : ''}>
           <source src="视频.mp4" type="video/mp4">
           ${fs.existsSync(path.join(ROOT, dir, '视频.vtt')) ? '<track kind="subtitles" src="视频.vtt" srclang="zh" label="中文">' : ''}
@@ -690,8 +715,8 @@ function renderDoc(doc) {
     if (selfName !== '挑战单.md' && fs.existsSync(path.join(ROOT, dir, '挑战单.html'))) actions.push('<a class="btn" href="挑战单.html">挑战单</a>');
   }
   const learning = doc.kind === 'lesson' || doc.kind === 'handout';
-  const courseHub = doc.courseHub || (learning ? `课程/${doc.src.split('/')[1]}/index.html` : '课程/index.html');
-  actions.push(`<a class="btn" href="${href(root, courseHub)}">${learning ? '本学期课程' : '课程目录'}</a>`);
+  const courseHub = learning ? '课程/index.html' : (doc.courseHub || '课程/index.html');
+  actions.push(`<a class="btn" href="${href(root, courseHub)}">课程目录</a>`);
 
   const tocHtml = toc.length && !doc.fullWidth
     ? `<aside class="toc">
@@ -702,9 +727,9 @@ function renderDoc(doc) {
 
   const heroCopy = `<div class="hero-copy">
     <div class="hero-main">
-      <div class="kicker">${escapeHtml(expandSem(learning ? doc.src.split('/')[1] : doc.kicker || '为什么实验室'))}</div>
+      <div class="kicker">${escapeHtml(learning && lesson ? learningLabel(lesson) : expandSem(doc.kicker || '为什么实验室'))}</div>
       <h1 class="doc-title">${escapeHtml(title)}</h1>
-${doc.subtitle ? `      <p class="doc-sub">${escapeHtml(doc.subtitle)}</p>\n` : ''}      <div class="actions">${actions.join('')}</div>    </div>
+${learning && lesson ? `      <p class="lesson-prerequisites">先会：${escapeHtml(lesson.prerequisites.join('、'))}</p>\n` : ''}${!learning && doc.subtitle ? `      <p class="doc-sub">${escapeHtml(doc.subtitle)}</p>\n` : ''}      <div class="actions">${actions.join('')}</div>    </div>
   </div>`;
   const heroMedia = video;
   const heroClasses = ['doc-hero'];
@@ -752,20 +777,21 @@ function renderDocsHub() {
     ['18', '课程补齐与制作记录', '128 课与重点分镜', '新增 28 课、三上学习入口与本轮复验。', '25-课程补齐与制作记录.html'],
     ['19', '早期视频取舍', '历史记录', '当前安排见 27 号全量复核。', '26-视频必要性复核.html'],
     ['20', '数学原理全量优化', '128 课逐课记录', '原理、配图、分镜和内容复验。', '27-数学原理全量优化与复核.html'],
-    ['21', '原理视频制作', '51 课动画与配音', '指定音色、画面修正与成片核验。', '28-原理视频制作与验收.html']
+    ['21', '原理视频制作', '51 课动画与配音', '指定音色、画面修正与成片核验。', '28-原理视频制作与验收.html'],
+    ['22', '全新课程复审', '当前学习安排与修复', '从课标重查128课、前置、练习和成片。', '29-全量课程重新审查.html']
   ];
   const content = `<section class="hub-hero">
   <div class="hub-hero-grid">
     <div>
       <div class="kicker">DOCS · 方案与工具</div>
       <h1 class="doc-title">先读哪一份？</h1>
-      <p class="doc-sub">当前课程和学习入口见 25 号记录；教材依据见 19 号版本映射。旧地图与审查报告保留作历史参考。</p>
+      <p class="doc-sub">当前审查与教材边界见 29 号记录，学习入口按学段和前置安排。旧地图与报告保留作历史参考。</p>
     </div>
     <aside class="hub-side">
       <div class="side-label">推荐阅读顺序</div>
       <ol>
-        <li>25 号记录：当前课程与学习入口</li>
-        <li>19 号映射：教材版本与边界</li>
+        <li>29 号记录：全新复审与学习安排</li>
+        <li>课标覆盖核查：内容与证据</li>
         <li>课程目录：选择正在学的内容</li>
         <li>审查清单：视频制作前核对</li>
       </ol>
@@ -787,16 +813,17 @@ ${cards.map(c => `<a class="hub-card" href="${c[4]}">
 
 function renderAutoHubs() {
   for (const sem of SEMESTERS) {
-    const lessons = ALL_LESSONS.filter(l => l.sem === sem);
+    const lessons = ALL_LESSONS.filter(l => l.sem === sem).sort((a, b) => a.no.localeCompare(b.no));
     if (!lessons.length) continue;
     const out = `课程/${sem}/index.html`;
     const root = rootRel(out);
     const rows = lessons.map(l => `<a class="lesson-row" href="${l.dir}/讲授稿.html">
         <div class="no">${l.no}</div>
-        <h3>${escapeHtml(l.title)}${videoBadge(l)}</h3>
+        <div><h3>${escapeHtml(l.title)}${videoBadge(l)}</h3><p>${learningLabel(l)}</p></div>
       </a>`).join('');
     const content = `<section class="hub-hero">
-  <h1 class="doc-title">${SEM_NAMES[sem]}</h1>
+  <h1 class="doc-title">${sem} · 原课号索引</h1>
+  <p class="doc-sub">按旧课号找课；学习阶段以每课标注为准。</p>
 </section>
 <div class="lesson-list">
 ${rows}
@@ -811,26 +838,13 @@ ${rows}
 function renderCourseIndex() {
   const out = '课程/index.html';
   const root = rootRel(out);
-  const cards = [
-    ['三上', '位值、乘除、混合运算、周长与测量。'],
-    ['三下', '面积、小数、年月日、搭配。'],
-    ['四上', '大数、角度、积商规律、优化。'],
-    ['四下', '运算律、小数、三角形、统计。'],
-    ['五上', '小数、方程、面积、植树。'],
-    ['五下', '因数倍数、长方体、分数。'],
-    ['六上', '分数乘除、比、圆、百分数。'],
-    ['六下', '负数、圆柱圆锥、比例、鸽巢。']
-  ];
   const content = `<section class="hub-hero">
   <h1 class="doc-title">课程目录</h1>
 </section>
-<div class="hub-grid">
-${cards.map(([sem, summary]) => `<a class="hub-card" href="${sem}/index.html">
-  <h3>${SEM_NAMES[sem]}</h3>
-  <p>${summary}</p>
-  <span class="go">查看课程 →</span>
-</a>`).join('')}
-</div>`;
+${LEARNING_GROUPS.map(group => `<section class="learning-group">
+  <h2>${group.title}</h2>
+  <div class="lesson-list">${lessonsIn(group).map((l, i) => `<a class="lesson-row" href="${href(root, l.src.replace(/\.md$/, '.html'))}"><span class="no">${String(i + 1).padStart(2, '0')}</span><h3>${escapeHtml(l.title)}${videoBadge(l)}</h3></a>`).join('')}</div>
+</section>`).join('')}`;
   const html = shell({ root, title: '课程目录', content, bodyClass: 'hub course-hub', learning: true });
   fs.mkdirSync(path.join(ROOT, '课程'), { recursive: true });
   fs.writeFileSync(path.join(ROOT, out), html);
@@ -847,13 +861,13 @@ renderCourseIndex();
 const indexFile = path.join(ROOT, 'index.html');
 if (fs.existsSync(indexFile)) {
   let s = fs.readFileSync(indexFile, 'utf8');
-  const terms = SEMESTERS.map((sem, i) => `      <section class="term">
+  const terms = LEARNING_GROUPS.map((group, i) => `      <section class="term">
         <div class="term-head">
           <span class="term-no">${String(i + 1).padStart(2, '0')}</span>
-          <h3>${SEM_NAMES[sem]}</h3>
+          <h3>${group.title}</h3>
         </div>
         <ol class="term-list">
-${ALL_LESSONS.filter(l => l.sem === sem).map(l => `          <li><a class="lesson" href="${escapeHtml(l.src.replace(/\.md$/, '.html'))}"><span class="lesson-no">${l.no}</span><span class="lesson-name">${escapeHtml(l.title)}${videoBadge(l)}</span></a></li>`).join('\n')}
+${lessonsIn(group).map((l, j) => `          <li><a class="lesson" href="${escapeHtml(l.src.replace(/\.md$/, '.html'))}"><span class="lesson-no">${String(j + 1).padStart(2, '0')}</span><span class="lesson-name">${escapeHtml(l.title)}${videoBadge(l)}</span></a></li>`).join('\n')}
         </ol>
       </section>`).join('\n');
   s = s.replace(/<section id="courses">[\s\S]*?(?=  <div class="backtop">)/,

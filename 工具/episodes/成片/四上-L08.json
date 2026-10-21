@@ -11,7 +11,7 @@
       "stage": 1,
       "phase_start": 0.0,
       "phase_end": 1.0,
-      "title": "商不变",
+      "title": "商不变 · 按份数示意",
       "duration": 7.06,
       "narration": "六百，每两百一份，有三份。盯住总量和每份的大小。",
       "pause_after": 0.6
@@ -23,7 +23,7 @@
       "stage": 2,
       "phase_start": 0.0,
       "phase_end": 1.0,
-      "title": "商不变",
+      "title": "商不变 · 按份数示意",
       "duration": 7.35,
       "narration": "总量和每份都除以一百，变成六，每份是二，还是三份。",
       "pause_after": 0.6

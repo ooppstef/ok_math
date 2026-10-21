@@ -254,12 +254,20 @@ def cube(d,x,y,z,s,origin,r,color=None):
 
 def draw_volume(im,d,p,st,sc,r):
     if st in ['container','answer']:
-        for z in range(3):
-            for y in reversed(range(3)):
-                for x in range(3): cube(d,x,y,z,54,(360,440),r)
+        # 容器内腔单独画成空心轮廓，不沿用前题的单位小方块。
+        a,b,c,e=(360,475),(570,475),(660,415),(450,415)
+        top=[(x,y-210) for x,y in (a,b,c,e)]
+        poly(d,[a,b,top[1],top[0]],r.TEAL_BG,r)
+        poly(d,[b,c,top[2],top[1]],r.GOLD_BG,r)
+        poly(d,top,r.PAPER,r)
+        dash(d,a,e,r); dash(d,e,c,r); dash(d,e,top[3],r)
+        txt(d,(475,225),'开口',r,26,r.TEAL)
+        txt(d,(405,490),'内长 10 厘米',r,24)
+        txt(d,(665,440),'内宽 10 厘米',r,24)
+        txt(d,(175,350),'内高 10 厘米',r,24)
         txt(d,(820,280),'内部长、宽、高',r,29)
         txt(d,(820,330),'各 10 厘米',r,29)
-        txt(d,(820,395),'图中分线只表示层次',r,23)
+        txt(d,(820,395),'量的是能装水的内腔',r,23)
         return
     count=(12*p if st=='base' else (12+48*p if st=='stack' else 60))
     for z in range(5):
@@ -323,6 +331,13 @@ def draw_circle(im,d,p,st,sc,r):
         tip=(cx+rad*math.cos(end),cy+rad*math.sin(end));line(d,(cx,cy),tip,r,r.RED,4)
         d.ellipse((cx-5,cy-5,cx+5,cy+5),fill=r.INK)
         txt(d,(650,290),'圆心固定',r,30);txt(d,(650,345),'到圆心的距离始终等于 r',r,28)
+        if st=='radius':
+            line(d,(cx-rad,cy),(cx+rad,cy),r,r.GOLD,4)
+            line(d,(cx,cy),(cx+rad,cy),r,r.RED,4)
+            d.ellipse((cx-5,cy-5,cx+5,cy+5),fill=r.INK)
+            txt(d,(cx-55,cy+18),'r',r,25,r.GOLD)
+            txt(d,(cx+38,cy+18),'r',r,25,r.RED)
+            txt(d,(650,400),'经过圆心：直径由两个半径接成',r,25)
     else:
         q=p if st=='unroll' else 1
         rad=65; length=2*math.pi*rad; k=(1-q)/rad
@@ -380,11 +395,6 @@ def draw_cylinder_surface(im,d,p,st,sc,r):
     if q==1:
         txt(d,(480,460),'长 = 底面周长 C',r,27)
         txt(d,(235,345),'高 h',r,27)
-    if st=='caps':
-        d.ellipse((880,230,1010,360),fill=r.GOLD_BG,outline=r.INK,width=3)
-        d.ellipse((880,390,1010,520),fill=r.GOLD_BG,outline=r.INK,width=3)
-
-
 def cylinder(d,x,y,w,h,r,level=None):
     ry=w*.18
     if level is not None and level>0:

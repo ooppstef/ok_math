@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#101826">
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iNSIgZmlsbD0iIzFlNGZkOCIvPjxwYXRoIGQ9Ik0xNCA0OFYxNmg4bDEwIDE3IDEwLTE3aDh2MzJoLThWMjlMMzIgNDYgMjIgMjl2MTl6IiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iNDciIHk9IjQ3IiB3aWR0aD0iOSIgaGVpZ2h0PSI5IiBmaWxsPSIjZjNjODRiIi8+PC9zdmc+">
-<title>第 12 课：找次品 · 为什么实验室</title>
+<title>找次品 · 为什么实验室</title>
 <link rel="stylesheet" href="../../../assets/doc.css">
 </head>
 <body class="doc-page lesson" id="top">
@@ -21,9 +21,10 @@
 <main class="page">
 <section class="doc-hero"><div class="hero-copy">
     <div class="hero-main">
-      <div class="kicker">五年级下期</div>
-      <h1 class="doc-title">第 12 课：找次品</h1>
-      <div class="actions"><a class="btn" href="../../../课程/五下/index.html">本学期课程</a></div>    </div>
+      <div class="kicker">五、六年级 · 提高选学</div>
+      <h1 class="doc-title">找次品</h1>
+      <p class="lesson-prerequisites">先会：分类、比较轻重、树状分组、整数乘法</p>
+      <div class="actions"><a class="btn" href="../../../课程/index.html">课程目录</a></div>    </div>
   </div></section>
 
 <div class="doc-layout">
@@ -37,10 +38,10 @@
 <li>右边轻：次品在右边这一堆；</li>
 <li>两边一样重：次品在没有放上天平的那一堆。</li>
 </ul>
-<p>一次称量能告诉我们应该继续检查哪一堆。分成同样多的 3 堆，就只用接着查其中的三分之一。倒过来想，称 k 次，最多能从 3^k 个物品中保证找出次品：3^1=3，3^2=9，3^3=27。</p>
+<p>一次称量能告诉我们应该继续检查哪一堆。分成同样多的 3 堆，就只用接着查其中的三分之一。一称有左轻、右轻、平衡三种结果，最多区分 3 个候选；再称一次，每个结果又能分成 3 种，最多区分 3×3=9 个；三次最多区分 3×3×3=27 个。</p>
 <p>如果每次只拿两个零件互称，平衡时只能排除这两个；把两堆放上天平，平衡时可以一次排除两整堆。安排分堆时，要让每一种结果留下的候选都尽量少。</p>
-<p>要让“最坏情况”下次数最少，每次分堆要尽量平均，不能分成 1 个和一大堆。把 9 个分成 3、3、3；把 8 个分成 3、3、2；把 27 个分成 9、9、9。最大的一堆不超过 3^{k-1}，k 次才够。</p>
-<p>这节课的题，都会先告诉你次品偏轻还是偏重。如果连轻重也不知道，天平一边低，就不能确定是这一边有偏重的次品，还是另一边有偏轻的次品。那时要重新安排怎样称，不能直接用 3^k 来判断次数。</p>
+<p>要让“最坏情况”下次数最少，每次分堆要尽量平均，不能分成 1 个和一大堆。把 9 个分成 3、3、3；把 8 个分成 3、3、2；把 27 个分成 9、9、9。例如还剩一次称量时，候选最多应有 3 个；还剩两次时，最多应有 9 个。</p>
+<p>这节课的题，都会先告诉你次品偏轻还是偏重。如果连轻重也不知道，天平一边低，就不能确定是这一边有偏重的次品，还是另一边有偏轻的次品。那时要重新安排怎样称，不能直接用上面的 3、9、27 来判断次数。</p>
 <h2 id="sec-2">例子</h2>
 <h3 id="sec-3">例 1：9 个零件，1 个偏轻，2 次找出</h3>
 <p>第一次：分成 3、3、3，称前两堆。</p>
@@ -49,12 +50,14 @@
 <li>若不平衡：次品在较轻的那一堆 3 个里。</li>
 </ul>
 <p>无论哪种，范围都变成 3 个。</p>
+<p><a class="lesson-figure" href="../../../assets/%E5%8E%9F%E7%90%86%E5%9B%BE/%E4%BA%94%E4%B8%8B12-%E7%A7%B0%E9%87%8F%E4%B8%89%E5%88%86%E6%94%AF.svg" target="_blank" rel="noopener" aria-label="放大查看：第一次称量的三种结果，各对应一堆3个候选。再按同样的方法把3个分成1、1、1，第二次就能确定。"><img src="../../../assets/%E5%8E%9F%E7%90%86%E5%9B%BE/%E4%BA%94%E4%B8%8B12-%E7%A7%B0%E9%87%8F%E4%B8%89%E5%88%86%E6%94%AF.svg" alt="第一次称量的三种结果，各对应一堆3个候选。再按同样的方法把3个分成1、1、1，第二次就能确定。"></a></p>
+<p>第一次称量的三种结果，各对应一堆3个候选。再按同样的方法把3个分成1、1、1，第二次就能确定。</p>
 <p>第二次：从这 3 个里取 2 个，一边 1 个。若平衡，剩下那个是次品；若不平衡，轻的那个是次品。</p>
 <h3 id="sec-4">例 2：27 个零件，1 个偏轻，3 次找出</h3>
 <p>第一次：9、9、9，找出含次品的 9 个；
 第二次：3、3、3，找出含次品的 3 个；
 第三次：1、1、1，找出次品。</p>
-<p>3^3=27，所以 3 次足够；2 次最多覆盖 3^2=9 个，不够。</p>
+<p>3×3×3=27，所以 3 次足够；2 次最多区分 3×3=9 个，不够。</p>
 <h3 id="sec-5">例 3：8 个零件，1 个偏轻，2 次找出</h3>
 <p>分成 3、3、2。</p>
 <p>第一次称 3 和 3：</p>
@@ -69,7 +72,7 @@
 <li>分成 1 个和剩下的一大堆。这样最坏情况范围几乎没缩小。</li>
 <li>认为 8 个也要 3 次。8 个可以分成 3、3、2，2 次就够。</li>
 <li>忘记“最坏情况”。保证找出，要看最多需要几次，不是运气好的那次。</li>
-<li>次品轻重未知时照搬 3^k。轻重未知时信息不同，方案要重新设计。</li>
+<li>次品轻重未知时照搬三等分方案。轻重未知时信息不同，方案要重新设计。</li>
 </ul>
 <h2 id="sec-7">练习</h2>
 <ol>
@@ -86,14 +89,22 @@
 <li>2 次。分成 3、3、3；第二次从可疑的 3 个中取 2 个称。</li>
 <li>3 次。分成 9、9、9；再分成 3、3、3；最后 1、1、1。</li>
 <li>2 次。分成 3、3、2；先称 3 和 3，之后按例 3 处理。</li>
-<li>3 次。3^2=9&lt;10≤27=3^3，2 次不够，3 次够。分成 3、3、4；先称 3 和 3。若平衡，次品在 4 个那堆，第二次称 1 对 1，若平衡，剩下 2 个再称一次，最坏共 3 次；若不平衡，次品在较轻的 3 个里，再称一次即可。</li>
+<li>3 次。两次最多区分 9 个，10 个已超过这个范围；三次可以区分至多 27 个，所以至少 3 次。分成 3、3、4；先称 3 和 3。若平衡，次品在 4 个那堆，第二次称 1 对 1，若平衡，剩下 2 个再称一次，最坏共 3 次；若不平衡，次品在较轻的 3 个里，再称一次即可。</li>
 <li>错。1 次最多区分 3 种情况，5 个里找次品至少 2 次。</li>
 </ol>
+<details>
+<summary>高年级兴趣拓展：把重复乘法记成乘方</summary>
+
+<p>3×3记作3²，3×3×3记作3³。每次称量最多有3种结果，称k次最多有k个3相乘那么多种结果，简记3^k。这个记法只是把上面的分组过程写短；基础题先画出每一种称量结果怎样继续，不要求用字母指数公式。</p>
+</details>
+
+<h2 id="sec-9">动手验证</h2>
+<p>用9张编号卡代替零件，另写一张秘密卡指定哪个偏轻。一个人提出称法，另一个按秘密卡报告左轻、右轻或平衡，不用真的把纸卡称重。试遍9种次品位置，检查3、3、3分法是否每种情况都能两次找到。核对：第一次留下3个，第二次1对1即可。</p>
 
   </article>
   <aside class="toc">
         <div class="toc-title">本页目录</div>
-        <a class="lvl2" href="#sec-1">一次称量能排除哪些零件</a><a class="lvl2" href="#sec-2">例子</a><a class="lvl3" href="#sec-3">例 1：9 个零件，1 个偏轻，2 次找出</a><a class="lvl3" href="#sec-4">例 2：27 个零件，1 个偏轻，3 次找出</a><a class="lvl3" href="#sec-5">例 3：8 个零件，1 个偏轻，2 次找出</a><a class="lvl2" href="#sec-6">易错</a><a class="lvl2" href="#sec-7">练习</a><a class="lvl2" href="#sec-8">答案</a>
+        <a class="lvl2" href="#sec-1">一次称量能排除哪些零件</a><a class="lvl2" href="#sec-2">例子</a><a class="lvl3" href="#sec-3">例 1：9 个零件，1 个偏轻，2 次找出</a><a class="lvl3" href="#sec-4">例 2：27 个零件，1 个偏轻，3 次找出</a><a class="lvl3" href="#sec-5">例 3：8 个零件，1 个偏轻，2 次找出</a><a class="lvl2" href="#sec-6">易错</a><a class="lvl2" href="#sec-7">练习</a><a class="lvl2" href="#sec-8">答案</a><a class="lvl2" href="#sec-9">动手验证</a>
       </aside>
 </div>
 <div class="backtop"><a href="#top">↑ 回到顶部</a></div>
