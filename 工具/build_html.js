@@ -139,6 +139,26 @@ const DOCS = [
     src: '课程/三上/L04-除法的两张脸/动手单.md', kind: 'handout', kicker: 'WORKSHEET · 第 4 课',
     subtitle: '打印出来，直接做。'
   },
+  {
+    src: '课程/三上/L13-混合运算与括号/讲授稿.md', kind: 'lesson', kicker: 'LESSON 13 · 三上',
+    subtitle: '为什么不能从左往右算？',
+    courseHub: '课程/三上/index.html'
+  },
+  {
+    src: '课程/三上/L14-吨、千克、克/讲授稿.md', kind: 'lesson', kicker: 'LESSON 14 · 三上',
+    subtitle: '1 吨到底有多重？',
+    courseHub: '课程/三上/index.html'
+  },
+  {
+    src: '课程/三上/L15-角与直角/讲授稿.md', kind: 'lesson', kicker: 'LESSON 15 · 三上',
+    subtitle: '角的大小，看边还是看开口？',
+    courseHub: '课程/三上/index.html'
+  },
+  {
+    src: '课程/三上/L16-调查与记录/讲授稿.md', kind: 'lesson', kicker: 'LESSON 16 · 三上',
+    subtitle: '数据怎样数，才不会重也不会漏？',
+    courseHub: '课程/三上/index.html'
+  },
 
   {
     src: '课程/五上/L01-小数乘法/讲授稿.md', kind: 'lesson', kicker: 'LESSON 01 · 五上',
@@ -795,7 +815,7 @@ function renderCourseIndex() {
     <div>
       <div class="kicker">COURSE · 课程目录</div>
       <h1 class="doc-title">从哪一册开始？</h1>
-      <p class="doc-sub">96 课讲解稿已齐，按学期进入；文本修订记录见方案区，教师复核和学生试用待开展。</p>
+      <p class="doc-sub">三上已扩到 16 课，其余学期仍为 12 课；目标每期 16 课。按学期进入，教师复核和学生试用待开展。</p>
       <div class="actions">
         <a class="btn primary" href="五上/L01-小数乘法/讲授稿.html">五年级上期第 1 课</a>
         <a class="btn" href="三上/L01-满十进一/讲授稿.html">三年级上期第 1 课</a>
@@ -805,7 +825,7 @@ function renderCourseIndex() {
     <aside class="hub-side">
       <div class="side-label">生产顺序</div>
       <ol>
-        <li>96 课文本初稿：已完成</li>
+        <li>原有 96 课文本初稿：已完成</li>
         <li>文本审查与修订：见 21 号复验记录</li>
         <li>教师复核：待开展</li>
         <li>学生试教、独立验收：未开始</li>

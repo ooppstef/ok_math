@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101826">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iNSIgZmlsbD0iIzFlNGZkOCIvPjxwYXRoIGQ9Ik0xNCA0OFYxNmg4bDEwIDE3IDEwLTE3aDh2MzJoLThWMjlMMzIgNDYgMjIgMjl2MTl6IiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iNDciIHk9IjQ3IiB3aWR0aD0iOSIgaGVpZ2h0PSI5IiBmaWxsPSIjZjNjODRiIi8+PC9zdmc+">
+<title>第 13 课：混合运算与括号 · 为什么实验室</title>
+<link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body class="doc-page lesson" id="top">
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../../../index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
+    <nav class="nav">
+      <a href="../../../00-方案/00-总方案.html">总方案</a>
+      <a href="../../../00-方案/09-96课总图.html">96 课地图</a>
+      <a href="../../../00-方案/03-B卷题型对照表.html">B 卷对照</a>
+      <a href="../../../课程/index.html">课程</a>
+      <a href="../../../index.html">首页</a>
+    </nav>
+  </div>
+  <div class="progress"><span></span></div>
+</header>
+<main class="page">
+<section class="doc-hero"><div class="hero-copy">
+    <div class="hero-main">
+      <div class="kicker">LESSON 13 · 三年级上期</div>
+      <h1 class="doc-title">第 13 课：混合运算与括号</h1>
+      <p class="doc-sub">为什么不能从左往右算？</p>
+      <div class="actions"><a class="btn" href="../../../课程/三上/index.html">课程目录</a></div>    </div>
+  </div></section>
+
+<div class="doc-layout">
+  <article class="article">
+
+<h2 id="sec-1">一句话</h2>
+<p>运算顺序是为了让同一个算式只有一个答案：先乘除，后加减；有括号，先算括号里面。</p>
+<h2 id="sec-2">为什么不能从左往右算</h2>
+<p>看一个买东西的式子：</p>
+<pre><code>3 支笔，每支 5 元；2 本本子，每本 4 元。一共多少钱？
+</code></pre>
+<p>写成算式是 <code>3×5+2×4</code>。</p>
+<ul>
+<li><code>3×5</code> 是 3 支笔的钱，一共 15 元；</li>
+<li><code>2×4</code> 是 2 本本子的钱，一共 8 元；</li>
+<li>合起来是 15+8=23 元。</li>
+</ul>
+<p><code>3×5</code> 和 <code>2×4</code> 各自是一个整体，不能把 5 和 4 先加起来：它们代表不同的东西。乘号两边是“几个几”，要先算成一个整体，再去加。</p>
+<p>所以约定：<strong>先算乘除，再算加减</strong>。</p>
+<h2 id="sec-3">括号的作用</h2>
+<p>括号是“优先标记”：括号里面的部分，先算成一个整体。</p>
+<pre><code>(3+4)×5
+</code></pre>
+<p>先算 <code>3+4=7</code>，再算 <code>7×5=35</code>。它表示 7 个 5。</p>
+<p>如果没有括号：</p>
+<pre><code>3+4×5
+</code></pre>
+<p>先算 <code>4×5=20</code>，再算 <code>3+20=23</code>。它表示 3 再加 4 个 5。</p>
+<p>同一个算式里，括号的位置不同，结果就不同。括号不是装饰，它改变了“先算哪一步”。</p>
+<h2 id="sec-4">同级运算从左往右</h2>
+<p>加法和减法在同一级，乘法和除法在同一级。</p>
+<pre><code>100-40+25
+</code></pre>
+<p>减法和加法同级，从左往右：先 <code>100-40=60</code>，再 <code>60+25=85</code>。</p>
+<pre><code>100÷4×5
+</code></pre>
+<p>除法和乘法同级，从左往右：先 <code>100÷4=25</code>，再 <code>25×5=125</code>。</p>
+<p>同级运算不能随便先算后面那一步。比如 <code>100-40+25</code> 如果先算 <code>40+25=65</code>，就变成 <code>100-65=35</code>，错了。</p>
+<h2 id="sec-5">例子</h2>
+<h3 id="sec-6">例 1：先乘后加</h3>
+<pre><code>6×4+3×5
+=24+15
+=39
+</code></pre>
+<h3 id="sec-7">例 2：先乘后减</h3>
+<pre><code>50-5×6
+=50-30
+=20
+</code></pre>
+<h3 id="sec-8">例 3：括号优先</h3>
+<pre><code>(8+7)×4
+=15×4
+=60
+</code></pre>
+<h3 id="sec-9">例 4：括号改变结果</h3>
+<pre><code>72÷(9-3)
+=72÷6
+=12
+</code></pre>
+<p>如果不加括号：</p>
+<pre><code>72÷9-3
+=8-3
+=5
+</code></pre>
+<h3 id="sec-10">例 5：同级从左往右</h3>
+<pre><code>100-30+20
+=70+20
+=90
+</code></pre>
+<h2 id="sec-11">易错</h2>
+<ul>
+<li>从左往右一路算，忽略“先乘除后加减”。</li>
+<li>括号里面还有乘除时，没有先算括号里的乘除。</li>
+<li>同级运算跳步，先算了后面那一步。</li>
+<li>把括号当成“可有可无”，忘了它会改变结果。</li>
+<li>写递等式时漏写中间步骤，答案对但过程看不清。</li>
+</ul>
+<h2 id="sec-12">练习</h2>
+<ol>
+<li>计算：<code>6×4+3×5</code></li>
+<li>计算：<code>50-5×6</code></li>
+<li>计算：<code>(8+7)×4</code></li>
+<li>计算：<code>72÷(9-3)</code></li>
+<li>计算：<code>100-30+20</code></li>
+<li>在 <code>3+4×5</code> 里加一对括号，使结果变成 35。</li>
+</ol>
+<h2 id="sec-13">答案</h2>
+<ol>
+<li>24+15=39。</li>
+<li>50-30=20。</li>
+<li>15×4=60。</li>
+<li>72÷6=12。</li>
+<li>70+20=90。</li>
+<li><code>(3+4)×5=35</code>。</li>
+</ol>
+
+  </article>
+  <aside class="toc">
+        <div class="toc-title">本页目录</div>
+        <a class="lvl2" href="#sec-1">一句话</a><a class="lvl2" href="#sec-2">为什么不能从左往右算</a><a class="lvl2" href="#sec-3">括号的作用</a><a class="lvl2" href="#sec-4">同级运算从左往右</a><a class="lvl2" href="#sec-5">例子</a><a class="lvl3" href="#sec-6">例 1：先乘后加</a><a class="lvl3" href="#sec-7">例 2：先乘后减</a><a class="lvl3" href="#sec-8">例 3：括号优先</a><a class="lvl3" href="#sec-9">例 4：括号改变结果</a><a class="lvl3" href="#sec-10">例 5：同级从左往右</a><a class="lvl2" href="#sec-11">易错</a><a class="lvl2" href="#sec-12">练习</a><a class="lvl2" href="#sec-13">答案</a>
+      </aside>
+</div>
+<div class="backtop"><a href="#top">↑ 回到顶部</a></div>
+</main>
+<script src="../../../assets/doc.js"></script>
+</body>
+</html>

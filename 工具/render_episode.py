@@ -495,12 +495,12 @@ def s_number_roll(im, d, t, sc, ctx):
 
     start, end = str(sc.get("from", 999)), str(sc.get("to", 1000))
     n = max(len(start), len(end))
-    start, end = start.rjust(n, "0"), end.rjust(n, "0")
+    start, end = start.rjust(n), end.rjust(n, "0")
     cw, gap = 150, 22
     total = n * cw + (n - 1) * gap
     x0 = (W - total) / 2
     y0 = 274
-    names = ["千位", "百位", "十位", "个位"][:n]
+    names = ["千位", "百位", "十位", "个位"][-n:]
 
     for i in range(n):
         x = x0 + i * (cw + gap)
@@ -847,6 +847,11 @@ def main():
     print(f"   总时长 {ctx['total']:.1f}s / {ctx['total']/60:.1f}min，共 {len(scenes)} 幕")
 
     write_srt(scenes, durations, out.with_suffix(".srt"))
+    subtitles = out.with_suffix(".srt").read_text(encoding="utf-8")
+    out.with_suffix(".vtt").write_text(
+        "WEBVTT\n\n" + re.sub(r"(\d{2}:\d{2}:\d{2}),(\d{3})", r"\1.\2", subtitles),
+        encoding="utf-8",
+    )
 
     print("② 渲染画面 …")
     cmd = [
