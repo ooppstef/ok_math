@@ -127,7 +127,10 @@ npm run build
 <p>课程分组和顺序由 <code>课程/学习安排.json</code> 管理。新增或调整课程后，运行构建命令即可同步首页和课程目录。</p>
 <p>页面结构在模板中修改，首页外观在 <code>assets/home.css</code> 中修改，全站公共样式在 <code>assets/doc.css</code> 中修改。HTML 是生成结果，直接修改其中的内容会在下次构建时被覆盖。</p>
 <p>修改目录或页面模板后，可运行 <code>npm run test:site</code> 检查课程清单、目录顺序和视频标识。</p>
-<h2 id="sec-4">修改视频</h2>
+<h2 id="sec-4">网站部署</h2>
+<p>运行 <code>npm run build:public</code>，将生成的 <code>dist/</code> 目录部署到静态托管平台。发布目录包含课程阅读页、练习、配图、成片和网页字幕；分镜、配音源文件和制作工具保留在仓库中。</p>
+<p>Cloudflare Pages 配置：框架选择 <code>None</code>，构建命令为 <code>npm run build:public</code>，输出目录为 <code>dist</code>，生产分支为 <code>main</code>。连接 GitHub 仓库后，推送到该分支即可自动更新网站。</p>
+<h2 id="sec-5">修改视频</h2>
 <p>有成片的课程保留了分镜配置、分幕配音和字幕，配音使用“开朗学长”音色（<code>zh_male_kailangxuezhang_uranus_bigtts</code>），语速为自然语速的 1.2 倍（豆包 <code>speech_rate=20</code>）。文字版分镜在各课的 <code>视频稿与分镜.md</code> 中。</p>
 <p>视频工具使用 Python 3、Pillow 和 FFmpeg，目前使用 macOS 自带中文字体。画面采用自动取景：按每幕实际绘制范围把图放大到舞台内，避免小图缩在角落；结论统一放在底栏，正式成片不再烧录整段旁白字幕，字幕由 <code>视频.vtt</code> 提供，可在播放器里开关。片头、片尾和 1.2 倍配音都已接入批量命令。已有配音可直接复用，例如：</p>
 <pre><code class="language-bash">python3 工具/batch_videos.py render 课程/三上/L03-乘法的形状/视频源文件/分镜.json
@@ -141,7 +144,7 @@ npm run build
   </article>
   <aside class="toc">
         <div class="toc-title">本页目录</div>
-        <a class="lvl2" href="#sec-1">课程内容</a><a class="lvl2" href="#sec-2">怎样学习</a><a class="lvl2" href="#sec-3">本地使用与修改</a><a class="lvl2" href="#sec-4">修改视频</a>
+        <a class="lvl2" href="#sec-1">课程内容</a><a class="lvl2" href="#sec-2">怎样学习</a><a class="lvl2" href="#sec-3">本地使用与修改</a><a class="lvl2" href="#sec-4">网站部署</a><a class="lvl2" href="#sec-5">修改视频</a>
       </aside>
 </div>
 <div class="backtop"><a href="#top">↑ 回到顶部</a></div>

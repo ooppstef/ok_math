@@ -69,6 +69,12 @@ npm run build
 
 修改目录或页面模板后，可运行 `npm run test:site` 检查课程清单、目录顺序和视频标识。
 
+## 网站部署
+
+运行 `npm run build:public`，将生成的 `dist/` 目录部署到静态托管平台。发布目录包含课程阅读页、练习、配图、成片和网页字幕；分镜、配音源文件和制作工具保留在仓库中。
+
+Cloudflare Pages 配置：框架选择 `None`，构建命令为 `npm run build:public`，输出目录为 `dist`，生产分支为 `main`。连接 GitHub 仓库后，推送到该分支即可自动更新网站。
+
 ## 修改视频
 
 有成片的课程保留了分镜配置、分幕配音和字幕，配音使用“开朗学长”音色（`zh_male_kailangxuezhang_uranus_bigtts`），语速为自然语速的 1.2 倍（豆包 `speech_rate=20`）。文字版分镜在各课的 `视频稿与分镜.md` 中。
