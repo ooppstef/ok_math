@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g3b_l12_s1",
-      "start": 0.0,
-      "duration": 7.291666666666667,
+      "start": 2.6,
+      "duration": 7.0,
       "narration": "四段路，两端都种树，需要五个位置。段和点数的不是同一样东西。",
-      "speech_duration": 6.672018140589569,
+      "speech_duration": 6.384013605442177,
       "pause_after": 0.6
     },
     {
       "id": "g3b_l12_s2",
-      "start": 7.291667,
-      "duration": 5.666666666666667,
+      "start": 9.6,
+      "duration": 4.666666666666667,
       "narration": "四段各配一个右端点，还剩最左边一个点，所以多一个。",
-      "speech_duration": 5.0640136054421765,
+      "speech_duration": 4.032018140589569,
       "pause_after": 0.6
     },
     {
       "id": "g3b_l12_s3",
-      "start": 12.958333,
-      "duration": 7.875,
+      "start": 14.266667,
+      "duration": 7.208333333333333,
       "narration": "把两端接起来，这两个端点落到同一个位置。四段还在，不同的位置只剩四个。",
-      "speech_duration": 7.248004535147392,
+      "speech_duration": 6.576009070294784,
       "pause_after": 0.6
     },
     {
       "id": "g3b_l12_s4",
-      "start": 20.833333,
-      "duration": 13.25,
+      "start": 21.475,
+      "duration": 12.25,
       "narration": "一圈四十米，每段五米，有几段？需要再加一个点吗？",
-      "speech_duration": 5.232018140589569,
+      "speech_duration": 4.224013605442177,
       "pause_after": 8
     },
     {
       "id": "g3b_l12_s5",
-      "start": 34.083333,
-      "duration": 7.833333333333333,
+      "start": 33.725,
+      "duration": 7.208333333333333,
       "narration": "八段对应八棵。沿圈走，每棵树都对应后面的一段，没有多出来的端点。",
-      "speech_duration": 7.224013605442177,
+      "speech_duration": 6.576009070294784,
       "pause_after": 0.6
     }
   ]

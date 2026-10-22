@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "01",
-      "start": 0.0,
-      "duration": 8.875,
+      "start": 2.6,
+      "duration": 6.916666666666667,
       "narration": "木块长八厘米、宽四厘米、高三厘米。沿长的中点切开，假定没有切割损耗。",
-      "speech_duration": 7.848004535147393,
+      "speech_duration": 5.88,
       "pause_after": 1
     },
     {
       "id": "02",
-      "start": 8.875,
-      "duration": 8.083333333333334,
+      "start": 9.516667,
+      "duration": 7.25,
       "narration": "两块分开。左块新露出一个面，右块也新露出一个面。不是只有一个切面。",
-      "speech_duration": 7.08,
+      "speech_duration": 6.216009070294785,
       "pause_after": 1
     },
     {
       "id": "03",
-      "start": 16.958333,
-      "duration": 9.875,
+      "start": 16.766667,
+      "duration": 8.708333333333334,
       "narration": "两块木料合起来还是原来的体积。多出的两个面，每个十二平方厘米，合计二十四。",
-      "speech_duration": 7.848004535147393,
+      "speech_duration": 6.696009070294784,
       "pause_after": 2
     },
     {
       "id": "04",
-      "start": 26.833333,
-      "duration": 14.875,
+      "start": 25.475,
+      "duration": 13.75,
       "narration": "如果沿原来的切面把两块贴紧，外表面积会减少多少？体积会减少吗？",
-      "speech_duration": 6.84,
+      "speech_duration": 5.712018140589569,
       "pause_after": 8
     },
     {
       "id": "05",
-      "start": 41.708333,
-      "duration": 8.875,
+      "start": 39.225,
+      "duration": 8.083333333333334,
       "narration": "两个切面都藏到里面，外表面积减少二十四平方厘米。木料一块没少，体积不变。",
-      "speech_duration": 6.84,
+      "speech_duration": 6.048004535147392,
       "pause_after": 2
     }
   ]

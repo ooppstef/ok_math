@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "01",
-      "start": 0.0,
-      "duration": 8.25,
+      "start": 2.6,
+      "duration": 7.041666666666667,
       "narration": "两个正方形的边长都是三厘米。每个周长十二厘米，分开放，周长合计二十四厘米。",
-      "speech_duration": 7.248004535147392,
+      "speech_duration": 6.0240136054421765,
       "pause_after": 1
     },
     {
       "id": "02",
-      "start": 8.25,
-      "duration": 6.666666666666667,
+      "start": 9.641667,
+      "duration": 5.375,
       "narration": "让两块贴紧。原来每块各有一条边，现在都藏到里面了。",
-      "speech_duration": 5.64,
+      "speech_duration": 4.368004535147392,
       "pause_after": 1
     },
     {
       "id": "03",
-      "start": 14.916667,
-      "duration": 8.458333333333334,
+      "start": 15.016667,
+      "duration": 7.416666666666667,
       "narration": "沿外面走一圈，不经过接缝。长六、宽三，周长是十八厘米。",
-      "speech_duration": 6.4320181405895696,
+      "speech_duration": 5.376009070294785,
       "pause_after": 2
     },
     {
       "id": "04",
-      "start": 23.375,
-      "duration": 16.291666666666668,
+      "start": 22.433333,
+      "duration": 14.916666666666666,
       "narration": "换成一个长六、宽四的长方形。从角上剪掉边长二的小正方形，周长会比二十厘米少吗？",
-      "speech_duration": 8.256009070294784,
+      "speech_duration": 6.888004535147393,
       "pause_after": 8
     },
     {
       "id": "05",
-      "start": 39.666667,
-      "duration": 7.875,
+      "start": 37.35,
+      "duration": 7.583333333333333,
       "narration": "没有变，仍是二十厘米。去掉两段二厘米，又添回同样长的两段。",
-      "speech_duration": 5.8560090702947845,
+      "speech_duration": 5.568004535147392,
       "pause_after": 2
     }
   ]

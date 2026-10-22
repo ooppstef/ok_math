@@ -9,13 +9,12 @@ def progress(t, sc, ctx, r):
 def render(im, d, t, sc, ctx, r):
     p = progress(t, sc, ctx, r)
     r.header(d, ctx)
-    d.text((84, 122), sc['heading'], font=r.F(39, True), fill=r.INK)
     def txt(x,y,s,size=25,color=None):
         d.text((x,y),str(s).replace('−', '-').replace('cm²', '平方厘米').replace('cm³', '立方厘米'),font=r.F(size),fill=color or r.INK)
     def line(a,b,color=None,width=3): d.line([a,b],fill=color or r.LINE,width=width)
     def dot(x,y,color=None,rad=9): d.ellipse((x-rad,y-rad,x+rad,y+rad),fill=color or r.TEAL)
     def box(x,y,w,h,color=None): d.rounded_rectangle((x,y,x+w,y+h),radius=5,fill=color or r.TEAL_BG,outline=r.TEAL,width=2)
-    def eq(s): txt(84,565,s,30,r.RED)
+    def eq(s): r.set_conclusion(ctx, s)
     model, stage = sc['model'], sc['stage']
     if model == 'balance':
         # Fixed pan positions; removed objects remain visible in labelled trays.
@@ -99,15 +98,25 @@ def render(im, d, t, sc, ctx, r):
         original=[(j,k) for j,n in enumerate((2,4,9)) for k in range(n)]
         # The top four blocks of pile 3 move, carrying their permanent IDs.
         destinations={12:(0,2),13:(0,3),14:(0,4),11:(1,4)}
+        block_w,block_h,gap=126,44,47
+        base=548;centers=(196,640,1084)
+        # 平均线：5 块的高度，让“移多补少”有可见的目标。
+        mean_y=base-5*block_h
+        for x in range(132,1180,22):
+            d.line([(x,mean_y),(x+12,mean_y)],fill=r.GOLD,width=2)
+        txt(702,mean_y-32,'平均线：每人 5 块',23,r.GOLD)
         for ident,(col,row) in enumerate(original):
             target=destinations.get(ident,(col,row))
             u=r.clamp(q*2) if ident in (12,13,14) else r.clamp(q*2-1)
             if ident not in destinations:u=0
-            x=250+col*320+(target[0]-col)*320*u
-            y=520-row*32+(row-target[1])*32*u-60*math.sin(math.pi*u)
-            box(x,y,70,27,r.GOLD_BG if ident in destinations else r.TEAL_BG);txt(x+24,y+1,ident+1,18)
-        for i in range(3):txt(220+i*320,515,'甲乙丙'[i],21)
-        txt(100,208,'15 块，编号始终不变；3 个人',26,r.MUTED)
+            x=centers[col]-block_w/2+(centers[target[0]]-centers[col])*u
+            y=base-(row+1)*block_h+(row-target[1])*block_h*u-54*math.sin(math.pi*u)
+            box(x,y,block_w,block_h,r.GOLD_BG if ident in destinations else r.TEAL_BG)
+            txt(x+block_w/2-10,y+9,ident+1,20)
+        for i,name in enumerate('甲乙丙'):
+            txt(centers[i]-12,558,name,25)
+        txt(100,202,'15 块，编号始终不变；3 个人',26,r.MUTED)
+        txt(100,236,'不添一块，也不丢一块',24,r.MUTED)
         eq('平均数是 5，原来每个人就有 5 块吗？' if stage=='question' else ('原来 2、4、9；平均分后每人 5' if stage=='answer' else ('总数 15 块；怎样让三个人一样多？' if stage in ('start','move') else '总数不变：15 ÷ 3 = 5')))
     elif model == 'animals':
         n=0 if stage in ('start','question','answer') else (int(p>=.4) if stage=='one' else 1+min(2,int(p*2+1e-6)))

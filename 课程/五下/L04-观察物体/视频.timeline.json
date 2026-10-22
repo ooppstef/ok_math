@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g5b_l04_s1",
-      "start": 0.0,
-      "duration": 4.5,
+      "start": 2.6,
+      "duration": 3.8333333333333335,
       "narration": "上面看到四个位置，先在每个位置放一块。",
-      "speech_duration": 3.8640136054421768,
+      "speech_duration": 3.2160090702947848,
       "pause_after": 0.6
     },
     {
       "id": "g5b_l04_s2",
-      "start": 4.5,
-      "duration": 4.5,
+      "start": 6.433333,
+      "duration": 4.0,
       "narration": "正面要求中间高两层，左右都只高一层。",
-      "speech_duration": 3.8640136054421768,
+      "speech_duration": 3.3840136054421768,
       "pause_after": 0.6
     },
     {
       "id": "g5b_l04_s3",
-      "start": 9.0,
-      "duration": 5.291666666666667,
+      "start": 10.433333,
+      "duration": 4.875,
       "narration": "至少还要添一块，中间才能高起来。最少五个。",
-      "speech_duration": 4.656009070294784,
+      "speech_duration": 4.248004535147392,
       "pause_after": 0.6
     },
     {
       "id": "g5b_l04_s4",
-      "start": 14.291667,
-      "duration": 11.458333333333334,
+      "start": 15.308333,
+      "duration": 11.083333333333334,
       "narration": "还能添在哪里，又不改变这两张图？",
-      "speech_duration": 3.4560090702947845,
+      "speech_duration": 3.0480045351473923,
       "pause_after": 8
     },
     {
       "id": "g5b_l04_s5",
-      "start": 25.75,
-      "duration": 8.25,
+      "start": 26.391667,
+      "duration": 7.166666666666667,
       "narration": "后中还能添一块，最多六个。前后中间都两层，正面仍只看见中间高两层。",
-      "speech_duration": 7.632018140589569,
+      "speech_duration": 6.552018140589569,
       "pause_after": 0.6
     }
   ]

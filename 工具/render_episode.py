@@ -30,27 +30,29 @@ W, H = 1280, 720
 FPS = 24
 
 # ---------- 色板 ----------
-BG      = (246, 240, 226)
-PAPER   = (255, 252, 244)
-INK     = (36, 33, 29)
-MUTED   = (122, 115, 104)
-LINE    = (216, 205, 184)
-RED     = (195, 74, 54)
-TEAL    = (46, 111, 106)
-GOLD    = (203, 150, 55)
-TEAL_BG = (224, 236, 232)
-RED_BG  = (244, 224, 218)
-GOLD_BG = (247, 236, 209)
+BG      = (243, 236, 221)
+PAPER   = (255, 253, 247)
+INK     = (34, 31, 27)
+MUTED   = (118, 110, 98)
+LINE    = (214, 202, 180)
+RED     = (194, 70, 50)
+TEAL    = (30, 108, 101)
+GOLD    = (198, 145, 48)
+TEAL_BG = (219, 236, 230)
+RED_BG  = (246, 223, 216)
+GOLD_BG = (249, 235, 203)
+SHADOW  = (220, 208, 187)
 
-M = 84  # 页边距
+M = 84  # 旧版页边距，保留给分镜模块
 
 BODY_PATH = "/System/Library/Fonts/Hiragino Sans GB.ttc"
-BOLD_PATH = "/System/Library/Fonts/STHeiti Medium.ttc"
+BOLD_PATH = "/System/Library/Fonts/Hiragino Sans GB.ttc"
 
 
 @lru_cache(maxsize=None)
 def F(size, bold=False):
-    return ImageFont.truetype(BOLD_PATH if bold else BODY_PATH, size, index=0)
+    # Hiragino W6 比 STHeiti 更接近现代中文字体，也避免繁简字形混用。
+    return ImageFont.truetype(BOLD_PATH if bold else BODY_PATH, size, index=2 if bold else 0)
 
 
 # ---------- 基础工具 ----------
@@ -126,53 +128,341 @@ def chip(d, box, r, fill, alpha=1.0, outline=None, width=2):
                         width=width)
 
 
-# ---------- 纸面背景 ----------
+# ---------- 版面 ----------
+STAGE = (52, 150, 1228, 594)
+CONCL = (52, 608, 1228, 690)
+CONTENT_BOX = (76, 176, 1204, 582)
+SS = 2  # 场景内容超采样倍数
+
+
 def make_bg():
+    """暖纸底：轻微渐层、纸纹与四周压暗，不再用满屏硬网格。"""
     im = Image.new("RGB", (W, H), BG)
     d = ImageDraw.Draw(im)
-    for x in range(0, W, 40):
-        d.line([(x, 0), (x, H)], fill=(240, 233, 218), width=1)
-    for y in range(0, H, 40):
-        d.line([(0, y), (W, y)], fill=(240, 233, 218), width=1)
+    top, bottom = (249, 243, 231), (234, 224, 205)
+    for y in range(H):
+        q = y / max(1, H - 1)
+        d.line([(0, y), (W, y)],
+               fill=tuple(int(top[i] + (bottom[i] - top[i]) * q) for i in range(3)))
+    # 极淡的点阵，给纸面一点方向感。
+    for y in range(18, H, 34):
+        for x in range(18, W, 34):
+            d.point((x, y), fill=(238, 230, 214))
+    # 纸纹
     rnd = random.Random(11)
-    for _ in range(1600):
+    for _ in range(2600):
         x, y = rnd.randrange(W), rnd.randrange(H)
-        c = rnd.choice([(232, 224, 207), (250, 245, 233), (228, 219, 201)])
+        c = rnd.choice([(232, 223, 205), (250, 246, 235), (229, 219, 200)])
         d.point((x, y), fill=c)
-    # 四角轻微压暗
+    # 四周压暗
+    mask = Image.radial_gradient("L").resize((W, H), Image.BILINEAR)
+    mask = mask.point(lambda v: int(v * 0.22))
+    shade = Image.new("RGBA", (W, H), (91, 73, 47, 0))
+    shade.putalpha(mask)
+    im = Image.alpha_composite(im.convert("RGBA"), shade).convert("RGB")
     return im
 
 
+def make_stage():
+    """预渲染舞台卡片：投影、纸面、点阵和四角标记。"""
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    x0, y0, x1, y1 = STAGE
+    # 投影
+    shadow = Image.new("L", (W, H), 0)
+    sd = ImageDraw.Draw(shadow)
+    sd.rounded_rectangle([x0 + 3, y0 + 9, x1 + 3, y1 + 9], 22, fill=78)
+    from PIL import ImageFilter
+    shadow = shadow.filter(ImageFilter.GaussianBlur(9))
+    layer.paste(Image.new("RGBA", (W, H), (147, 127, 94, 255)), (0, 0),
+                shadow.point(lambda v: int(v * 0.5)))
+    d.rounded_rectangle([x0, y0, x1, y1], 22, fill=PAPER)
+    # 内点阵
+    for yy in range(y0 + 24, y1 - 10, 32):
+        for xx in range(x0 + 24, x1 - 10, 32):
+            d.point((xx, yy), fill=(239, 231, 214))
+    # 上沿高光
+    d.line([(x0 + 22, y0 + 1), (x1 - 22, y0 + 1)], fill=(255, 255, 255, 210), width=2)
+    # 四角短标记
+    for cx, cy, sx, sy in ((x0 + 14, y0 + 14, 1, 1), (x1 - 14, y0 + 14, -1, 1),
+                           (x0 + 14, y1 - 14, 1, -1), (x1 - 14, y1 - 14, -1, -1)):
+        d.line([(cx, cy), (cx + 18 * sx, cy)], fill=LINE, width=2)
+        d.line([(cx, cy), (cx, cy + 18 * sy)], fill=LINE, width=2)
+    return layer
+
+
 BG_IMG = make_bg()
+STAGE_IMG = make_stage()
 
 
 def new_frame():
     im = BG_IMG.copy()
+    im.paste(STAGE_IMG, (0, 0), STAGE_IMG)
     return im, ImageDraw.Draw(im)
+
+
+class ZoomDraw:
+    """把分镜模块的原生 1280×720 坐标映射到超采样图层。
+
+    文字、线宽、圆角一起缩放，textlength 仍返回原生坐标下的长度，
+    因此分镜模块里按最大宽度折行的逻辑不需要改。
+    """
+
+    def __init__(self, draw, zoom, ox, oy):
+        self.draw = draw
+        self.k = zoom
+        self.ox = ox
+        self.oy = oy
+
+    def _x(self, x):
+        return x * self.k + self.ox
+
+    def _y(self, y):
+        return y * self.k + self.oy
+
+    def _pt(self, p):
+        return (self._x(p[0]), self._y(p[1]))
+
+    def _box(self, box):
+        return [self._x(box[0]), self._y(box[1]), self._x(box[2]), self._y(box[3])]
+
+    def _pts(self, pts):
+        return [self._pt(p) for p in pts]
+
+    def _w(self, width):
+        return max(1, int(round((width or 1) * self.k)))
+
+    def _font(self, font):
+        if font is None:
+            return None
+        bold = font.getname()[1].endswith("W6")
+        return F(max(1, int(round(font.size * self.k))), bold)
+
+    def text(self, xy, text, font=None, **kw):
+        return self.draw.text(self._pt(xy), text, font=self._font(font), **kw)
+
+    def textlength(self, text, font=None, **kw):
+        return self.draw.textlength(text, font=self._font(font), **kw) / self.k
+
+    def textbbox(self, xy, text, font=None, **kw):
+        box = self.draw.textbbox(self._pt(xy), text, font=self._font(font), **kw)
+        return [v / self.k for v in box]
+
+    def line(self, pts, width=1, **kw):
+        if len(pts) == 4 and not isinstance(pts[0], (tuple, list)):
+            pts = [(pts[0], pts[1]), (pts[2], pts[3])]
+        return self.draw.line(self._pts(pts), width=self._w(width), **kw)
+
+    def rectangle(self, box, width=1, **kw):
+        return self.draw.rectangle(self._box(box), width=self._w(width), **kw)
+
+    def rounded_rectangle(self, box, radius=0, width=1, **kw):
+        return self.draw.rounded_rectangle(self._box(box), radius=radius * self.k,
+                                           width=self._w(width), **kw)
+
+    def ellipse(self, box, width=1, **kw):
+        return self.draw.ellipse(self._box(box), width=self._w(width), **kw)
+
+    def polygon(self, pts, width=1, **kw):
+        return self.draw.polygon(self._pts(pts), width=self._w(width), **kw)
+
+    def arc(self, box, start=0, end=360, width=1, **kw):
+        return self.draw.arc(self._box(box), start, end, width=self._w(width), **kw)
+
+    def chord(self, box, start=0, end=360, width=1, **kw):
+        return self.draw.chord(self._box(box), start, end, width=self._w(width), **kw)
+
+    def pieslice(self, box, start=0, end=360, width=1, **kw):
+        return self.draw.pieslice(self._box(box), start, end, width=self._w(width), **kw)
+
+    def point(self, pts, **kw):
+        if isinstance(pts, (tuple, list)) and pts and isinstance(pts[0], (int, float)):
+            pts = [pts]
+        return self.draw.point(self._pts(pts), **kw)
+
+    def __getattr__(self, name):
+        return getattr(self.draw, name)
+
+
+def scene_camera(sc, ctx):
+    """按一幕内多个时刻的实际绘制范围自动取景，避免小图缩在角落。"""
+    bbox = None
+    speech = max(0.2, float(ctx.get("speech_duration", sc.get("duration", 8))))
+    for frac in (0.12, 0.3, 0.5, 0.72, 0.92):
+        probe = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        pd = ImageDraw.Draw(probe)
+        pctx = dict(ctx)
+        pctx["_content"] = True
+        pctx["_probe"] = True
+        pctx["conclusion"] = ""
+        SCENES[sc["type"]](probe, pd, frac * speech, sc, pctx)
+        b = probe.getbbox()
+        if not b:
+            continue
+        bbox = b if bbox is None else (min(bbox[0], b[0]), min(bbox[1], b[1]),
+                                       max(bbox[2], b[2]), max(bbox[3], b[3]))
+    if not bbox:
+        bbox = (M, 190, W - M, 560)
+    x0, y0, x1, y1 = bbox
+    # 场景内容不越过标题和结论条；留一点呼吸空间。
+    x0, x1 = max(0, x0 - 10), min(W, x1 + 10)
+    y0, y1 = max(166, y0 - 10), min(590, y1 + 10)
+    bw, bh = max(60, x1 - x0), max(60, y1 - y0)
+    tx0, ty0, tx1, ty1 = CONTENT_BOX
+    tw, th = tx1 - tx0, ty1 - ty0
+    zoom = min(tw / bw, th / bh, 1.5)
+    zoom = max(zoom, 0.82)
+    cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
+    tx, ty = (tx0 + tx1) / 2, (ty0 + ty1) / 2
+    return zoom, tx - cx * zoom, ty - cy * zoom
+
+
+def content_layer(sc, ctx, t, camera, fade=1.0):
+    """在 2× 透明图层上绘制一幕，再缩回 1280×720。"""
+    k = SS
+    layer = Image.new("RGBA", (W * k, H * k), (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    zoom, ox, oy = camera
+    zd = ZoomDraw(d, zoom * k, ox * k, oy * k)
+    cctx = dict(ctx)
+    cctx["_content"] = True
+    cctx["_probe"] = False
+    SCENES[sc["type"]](None, zd, t, sc, cctx)
+    ctx["conclusion"] = cctx.get("conclusion", "")
+    if fade < 1:
+        layer.putalpha(layer.getchannel("A").point(lambda v: int(v * fade)))
+    return layer.resize((W, H), Image.LANCZOS)
 
 
 # ---------- 页头页尾 ----------
 def header(d, ctx, kicker=None, rule=True):
-    kicker = kicker or ctx.get("kicker", "为什么实验室")
-    d.text((M, 42), kicker, font=F(21), fill=MUTED)
-    # 右上角期号
-    num = ctx.get("no", "01")
-    box = [W - M - 56, 32, W - M, 88]
-    chip(d, box, 10, RED)
-    f = F(26, True)
-    tw = tlen(d, num, f)
-    d.text((box[0] + (56 - tw) / 2, box[1] + 15), num, font=f, fill=PAPER)
-    if rule:
-        d.line([(M, 104), (W - M, 104)], fill=LINE, width=2)
+    if ctx.get("_content"):
+        return
+    if rule is False:
+        return
+    # 左侧品牌锁定
+    d.rounded_rectangle([56, 26, 84, 54], 7, fill=RED)
+    wf = F(16, True)
+    ww = tlen(d, "为", wf)
+    d.text((70 - ww / 2, 29), "为", font=wf, fill=PAPER)
+    d.text((94, 26), "为什么实验室", font=F(19, True), fill=INK)
+    d.text((94, 53), "小学数学 · 看见原理", font=F(13), fill=MUTED)
+
+    # 课程名
+    title = ctx.get("lesson_title", "")
+    if title:
+        tf = F(24, True)
+        while tlen(d, title, tf) > 560 and tf.size > 18:
+            tf = F(tf.size - 1, True)
+        d.text((300, 28), title, font=tf, fill=INK)
+    d.text((300, 59), ctx.get("audience", "三上 · 原理短片"), font=F(13), fill=MUTED)
+
+    # 右上角课号
+    num = str(ctx.get("no", "01"))
+    chip_box = [1160, 24, 1224, 72]
+    d.rounded_rectangle(chip_box, 10, fill=RED)
+    nf = F(25, True)
+    nw = tlen(d, num, nf)
+    d.text((1192 - nw / 2, 31), num, font=nf, fill=PAPER)
+
+    d.line([(56, 88), (1224, 88)], fill=LINE, width=1)
+    d.line([(56, 88), (150, 88)], fill=RED, width=3)
+
+
+def scene_heading(sc, ctx):
+    return sc.get("heading") or ctx.get("scene_label") or sc.get("title") or ""
+
+
+def section_title(d, sc, ctx):
+    if ctx.get("_content"):
+        return
+    text = scene_heading(sc, ctx)
+    if not text:
+        return
+    idx = ctx.get("scene_index", 1)
+    total = ctx.get("scene_total", 1)
+    # 步号
+    d.rounded_rectangle([56, 103, 102, 137], 8, fill=RED)
+    nf = F(14, True)
+    ns = f"{idx:02d}"
+    d.text((79 - tlen(d, ns, nf) / 2, 109), ns, font=nf, fill=PAPER)
+    # 标题
+    tf = F(29, True)
+    while tlen(d, text, tf) > 860 and tf.size > 19:
+        tf = F(tf.size - 1, True)
+    tw = tlen(d, text, tf)
+    d.text((116, 103), text, font=tf, fill=INK)
+    d.rounded_rectangle([116, 139, 116 + tw, 142], 2, fill=RED)
+    # 进度点
+    gap = 15 if total <= 16 else 11
+    r = 3 if total <= 16 else 2
+    x = 1208 - (total - 1) * gap
+    for i in range(total):
+        color = RED if i + 1 == idx else (TEAL if i + 1 < idx else LINE)
+        d.ellipse([x - r, 120 - r, x + r, 120 + r], fill=color)
+        x += gap
+    ps = f"{idx} / {total}"
+    d.text((1208 - tlen(d, ps, F(12)), 132), ps, font=F(12), fill=MUTED)
 
 
 def footer(d, ctx, t):
-    total = max(0.001, ctx["total"])
+    if ctx.get("_content"):
+        return
+    total = max(0.001, ctx.get("total", 1))
     p = clamp(t / total)
-    d.rectangle([0, H - 7, W, H], fill=(236, 228, 211))
-    d.rectangle([0, H - 7, int(W * p), H], fill=RED)
-    d.text((M, H - 38), ctx.get("footer", "为什么实验室 · 底层原理课"), font=F(16), fill=MUTED)
-    d.text((W - M - 150, H - 38), ctx.get("audience", "给 3–4 年级"), font=F(16), fill=MUTED)
+    d.text((56, 696), "看见原理，才算真的会。", font=F(11), fill=MUTED)
+    label = ctx.get("footer", "为什么实验室 · 小学数学")
+    d.text((1224 - tlen(d, label, F(11)), 696), label, font=F(11), fill=MUTED)
+    d.rounded_rectangle([56, 714, 1224, 719], 3, fill=(231, 221, 202))
+    d.rounded_rectangle([56, 714, 56 + int(1168 * p), 719], 3, fill=RED)
+
+
+def set_conclusion(ctx, text):
+    """分镜模块把结论交给统一底栏，不再散落在画面底部。"""
+    if not ctx.get("_probe"):
+        text = str(text or "").strip()
+        text = text.replace("cm²", "平方厘米").replace("cm³", "立方厘米")
+        text = text.replace("−", "-").replace("↔", "与")
+        ctx["conclusion"] = text
+
+
+def draw_rich_text(d, x, y, text, font, fill):
+    """底栏公式支持平方、立方上标，避免 Hiragino 缺字变成方框。"""
+    xx = x
+    for ch in text:
+        if ch in "²³":
+            glyph = "2" if ch == "²" else "3"
+            small = F(max(1, int(font.size * 0.6)), True)
+            d.text((xx, y - int(font.size * 0.18)), glyph, font=small, fill=fill)
+            xx += d.textlength(glyph, font=small)
+        else:
+            d.text((xx, y), ch, font=font, fill=fill)
+            xx += d.textlength(ch, font=font)
+
+
+def conclusion(d, ctx, t):
+    if ctx.get("_content"):
+        return
+    text = (ctx.get("conclusion") or "").strip()
+    if not text:
+        return
+    a = ease_out((t - 0.15) / 0.45)
+    if a <= 0:
+        return
+    slide = int(10 * (1 - a))
+    x0, y0, x1, y1 = CONCL
+    d.rounded_rectangle([x0 + 3, y0 + 7, x1 + 3, y1 + 7], 15, fill=(223, 211, 190))
+    d.rounded_rectangle([x0, y0, x1, y1], 15, fill=INK)
+    is_q = text.endswith("？") or text.endswith("?")
+    tag = "想一想" if is_q else "结论"
+    tw = tlen(d, tag, F(15, True))
+    tag_box = [72, 630 + slide, 72 + tw + 26, 666 + slide]
+    d.rounded_rectangle(tag_box, 8, fill=GOLD if is_q else RED)
+    d.text((85, 634 + slide), tag, font=F(15, True), fill=INK if is_q else PAPER)
+    f = F(29, True)
+    while tlen(d, text, f) > 1010 and f.size > 20:
+        f = F(f.size - 1, True)
+    draw_rich_text(d, 158, 632 + slide, text, f, blend(PAPER, INK, a))
 
 
 # ---------- 图形零件 ----------
@@ -816,6 +1106,41 @@ def s_principle(im, d, t, sc, ctx):
     module.render(im, d, t, sc, ctx, sys.modules[__name__])
 
 
+MODEL_LABELS = {
+    "rigid_array": "点阵里的乘法",
+    "grouping": "分一分，还是装一装",
+    "multiple": "倍，不是多",
+    "fraction_birth": "分出来，还要平均分",
+    "sets": "集合圈里的重复",
+    "decimal_birth": "十等分，再百等分",
+    "equivalent": "等值分数",
+    "fraction_add": "异分母相加",
+    "multiply": "先拆开，再相乘",
+    "distributive": "拆开算，还是一起算",
+    "product_change": "长和宽各变几倍",
+    "odd_layers": "每次多一层",
+    "place_shift": "数字卡向左移",
+    "successive": "先涨后降，回到哪里",
+    "quotient_scale": "总量和每份一起变",
+    "long_divide": "一位一位地分",
+    "decimal_product": "先画成方格，再数格",
+    "fraction_product": "先取一份，再取一份",
+    "fraction_divide": "同一把尺，量一量",
+    "balance": "等式像天平",
+    "journey": "行程图",
+    "clock": "时间的刻度",
+    "average": "平均数",
+    "animals": "鸡兔同笼",
+    "rotate": "旋转",
+    "translate": "平移与对折",
+    "inverse": "反比例",
+    "trees": "植树问题",
+    "water": "排水测体积",
+    "view_three": "换个位置看",
+    "view_t": "从三视图搭积木",
+}
+
+
 SCENES = {
     "principle_arithmetic": s_principle,
     "principle_geometry": s_principle,
@@ -832,6 +1157,77 @@ SCENES = {
     "outro": s_outro,
     "regroup_add": s_regroup_add,
 }
+
+
+# ---------- 片头片尾 ----------
+def intro_frame(t, ctx, duration=2.6):
+    im = BG_IMG.copy()
+    d = ImageDraw.Draw(im)
+    a = ease_out(t / 0.8)
+    # 左侧红色竖条
+    bar_h = int(300 * ease_out((t - 0.05) / 0.7))
+    d.rounded_rectangle([64, 190, 74, 190 + bar_h], 5, fill=RED)
+    # 品牌
+    d.text((96, 62), "为什么实验室", font=F(20, True), fill=INK)
+    d.text((96, 92), "小学数学 · 看见原理", font=F(13), fill=MUTED)
+    d.text((1160 - tlen(d, ctx.get("audience", ""), F(13)), 62),
+           ctx.get("audience", ""), font=F(13), fill=MUTED)
+    # 巨号幽灵数字
+    num = str(ctx.get("no", "01"))
+    gf = F(390, True)
+    gw = tlen(d, num, gf)
+    d.text((1128 - gw, 212), num, font=gf, fill=(236, 226, 207))
+    # 标题
+    title = ctx.get("lesson_title", "")
+    tf = F(78, True)
+    lines = wrap_text(d, title, tf, 830)
+    while len(lines) > 2 and tf.size > 48:
+        tf = F(tf.size - 4, True)
+        lines = wrap_text(d, title, tf, 830)
+    y = 236 - int(20 * (1 - a))
+    for k, ln in enumerate(lines):
+        aa = ease_out((t - 0.12 - k * 0.1) / 0.7)
+        d.text((96, y + k * int(tf.size * 1.18)), ln, font=tf,
+               fill=blend(INK, BG, 0.15 + 0.85 * aa))
+    underline_w = 300 * ease_out((t - 0.65) / 0.8)
+    uy = y + len(lines) * int(tf.size * 1.18) + 24
+    d.rounded_rectangle([96, uy, 96 + underline_w, uy + 9], 4, fill=RED)
+    # 副标题
+    sa = ease_out((t - 0.95) / 0.7)
+    if sa > 0:
+        d.text((98, uy + 42), "一课只讲一个原理，看见它，再算它。",
+               font=F(24), fill=blend(MUTED, BG, sa))
+    # 右下角标签
+    d.text((96, 620), "先看变化 · 再问为什么", font=F(16), fill=MUTED)
+    d.text((1224 - tlen(d, "WHY LAB", F(14, True)), 620), "WHY LAB",
+           font=F(14, True), fill=blend(RED, BG, 0.55))
+    return im
+
+
+def outro_frame(t, ctx, duration=2.8):
+    im = BG_IMG.copy()
+    d = ImageDraw.Draw(im)
+    a = ease_out(t / 0.7)
+    d.rounded_rectangle([64, 210, 74, 210 + int(250 * ease_out(t / 0.7))], 5, fill=RED)
+    d.text((96, 62), "为什么实验室", font=F(20, True), fill=INK)
+    d.text((96, 92), "小学数学 · 看见原理", font=F(13), fill=MUTED)
+    text = "把今天看见的原理，\n讲给一个人听。"
+    f = F(60, True)
+    y = 250
+    for k, ln in enumerate(text.split("\n")):
+        aa = ease_out((t - 0.18 - k * 0.18) / 0.7)
+        d.text((96, y + k * 82), ln, font=f, fill=blend(INK, BG, aa))
+    uw = 240 * ease_out((t - 0.7) / 0.8)
+    d.rounded_rectangle([96, 448, 96 + uw, 458], 5, fill=RED)
+    sa = ease_out((t - 1.0) / 0.6)
+    if sa > 0:
+        d.text((98, 486), ctx.get("lesson_title", ""), font=F(22, True),
+               fill=blend(TEAL, BG, sa))
+        d.text((98, 522), "算得对，是结果；看见为什么，才是会了。",
+               font=F(23), fill=blend(MUTED, BG, sa))
+    d.text((1224 - tlen(d, "· 本课完 ·", F(16)), 620), "· 本课完 ·",
+           font=F(16), fill=blend(MUTED, BG, ease_out((t - 1.2) / 0.6)))
+    return im
 
 
 # ---------- 配音 ----------
@@ -901,10 +1297,10 @@ def split_sentences(text):
     return parts or [text]
 
 
-def write_srt(scenes, durations, path: Path, timing=None):
+def write_srt(scenes, durations, path: Path, timing=None, offset=0.0):
     lines = []
     idx = 1
-    start = 0.0
+    start = offset
     for scene_index, (sc, d) in enumerate(zip(scenes, durations)):
         text = (sc.get("narration") or "").strip()
         if not text:
@@ -931,15 +1327,15 @@ def write_srt(scenes, durations, path: Path, timing=None):
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
-def write_subtitles(scenes, durations, path: Path, timing=None):
-    write_srt(scenes, durations, path.with_suffix(".srt"), timing)
+def write_subtitles(scenes, durations, path: Path, timing=None, offset=0.0):
+    write_srt(scenes, durations, path.with_suffix(".srt"), timing, offset)
     subtitles = path.with_suffix(".srt").read_text(encoding="utf-8")
     path.with_suffix(".vtt").write_text(
         "WEBVTT\n\n" + re.sub(r"(\d{2}:\d{2}:\d{2}),(\d{3})", r"\1.\2", subtitles), encoding="utf-8")
 
 
-def prepare_external_audio(scenes, audio_dir, out_path, tmpdir, fps):
-    """每幕匹配一段原速配音；拒绝把旧稿音频套在新画面上。"""
+def prepare_external_audio(scenes, audio_dir, out_path, tmpdir, fps, lead=0.0, tail=0.0):
+    """每幕匹配一段配音；拒绝把旧稿音频套在新画面上。"""
     manifest = json.loads((audio_dir / "manifest.json").read_text(encoding="utf-8"))
     expected = [{"id": sc["id"], "text": sc["narration"]} for sc in scenes]
     if manifest["scenes"] != expected:
@@ -947,6 +1343,8 @@ def prepare_external_audio(scenes, audio_dir, out_path, tmpdir, fps):
     durations, timing = [], []
     with wave.open(str(out_path), "wb") as out:
         out.setparams((1, 2, 44100, 0, "NONE", "not compressed"))
+        if lead:
+            out.writeframes(silence(lead))
         for sc in scenes:
             sid = sc["id"]
             if not re.fullmatch(r"[a-zA-Z0-9_-]+", sid):
@@ -961,10 +1359,29 @@ def prepare_external_audio(scenes, audio_dir, out_path, tmpdir, fps):
             out.writeframes(raw + silence(duration - speech_duration))
             durations.append(duration)
             timing.append({"offset": 0, "speech_duration": speech_duration})
+        if tail:
+            out.writeframes(silence(tail))
     return durations, timing
 
 
 # ---------- 主流程 ----------
+INTRO_DURATION = 2.6
+OUTRO_DURATION = 2.8
+
+
+def scene_frame(t, sc, ctx, camera, global_t):
+    im, d = new_frame()
+    ctx["conclusion"] = ""
+    fade = ease_out(t / 0.34)
+    layer = content_layer(sc, ctx, t, camera, fade)
+    im.paste(layer, (0, 0), layer)
+    header(d, ctx)
+    section_title(d, sc, ctx)
+    conclusion(d, ctx, t)
+    footer(d, ctx, global_t)
+    return im
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("script")
@@ -975,7 +1392,9 @@ def main():
     audio_mode = ap.add_mutually_exclusive_group()
     audio_mode.add_argument("--silent", action="store_true", help="无声画面样片，按分镜 duration 渲染")
     audio_mode.add_argument("--audio-dir", type=Path, help="nba_biz 配音适配器生成的分幕 MP3 目录")
-    ap.add_argument("--burn-captions", action="store_true", help="将字幕合成到画面；不改变分镜素材")
+    ap.add_argument("--branding", action="store_true", help="加入片头、片尾与自动取景")
+    ap.add_argument("--burn-captions", action="store_true",
+                    help="兼容旧命令；正式成片改用独立 VTT 字幕，避免遮挡结论")
     ap.add_argument("--preview", type=int, default=-1, help="只渲染某一幕的一帧")
     ap.add_argument("--preview-frame", type=float, default=1.0)
     args = ap.parse_args()
@@ -986,22 +1405,26 @@ def main():
     scenes = data["scenes"]
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
+    lesson_dir = Path(args.script).resolve().parent.parent
+    lesson_title = re.sub(r"^L\d+-", "", lesson_dir.name)
+    grade = lesson_dir.parent.name
     ctx = {"kicker": data.get("kicker", "为什么实验室"), "no": data.get("no", "01"),
-           "audience": data.get("audience", "小学数学"),
-           "footer": data.get("footer", "为什么实验室 · 底层原理课"), "total": 0}
+           "audience": data.get("audience") or f"{grade} · 原理短片",
+           "footer": data.get("footer", "为什么实验室 · 小学数学"),
+           "lesson_title": lesson_title,
+           "scene_total": len(scenes), "total": 0}
     for sc in scenes:
         if sc["type"] not in SCENES:
             ap.error(f"未知场景：{sc['type']}")
 
     if args.preview >= 0:
         sc = scenes[args.preview]
-        im, d = new_frame()
         ctx["total"] = ctx["scene_duration"] = sc.get("duration", 10)
         ctx["speech_duration"] = max(0.1, ctx["scene_duration"] - sc.get("pause_after", 0.45))
-        SCENES[sc["type"]](im, d, args.preview_frame, sc, ctx)
-        if args.burn_captions:
-            draw_caption(d, sc.get("narration", ""))
-        footer(d, ctx, args.preview_frame)
+        ctx["scene_index"] = args.preview + 1
+        ctx["scene_label"] = MODEL_LABELS.get(sc.get("model", ""), "")
+        camera = scene_camera(sc, ctx)
+        im = scene_frame(args.preview_frame, sc, ctx, camera, args.preview_frame)
         preview_path = out.with_name(out.stem + "_preview.png")
         im.save(preview_path)
         print("preview:", preview_path)
@@ -1020,27 +1443,36 @@ def main():
                       for sc, dur in zip(scenes, durations)]
         elif args.audio_dir:
             print("① 读取分幕配音 …", flush=True)
-            durations, timing = prepare_external_audio(scenes, args.audio_dir, audio_path, tmpdir, args.fps)
+            durations, timing = prepare_external_audio(
+                scenes, args.audio_dir, audio_path, tmpdir, args.fps,
+                lead=INTRO_DURATION if args.branding else 0.0,
+                tail=OUTRO_DURATION if args.branding else 0.0)
         else:
             print("① 生成系统临时配音 …", flush=True)
             durations = build_audio(scenes, audio_path, args.voice, args.rate, tmpdir, args.fps)
-        ctx["total"] = sum(durations)
+        intro = INTRO_DURATION if args.branding else 0.0
+        outro = OUTRO_DURATION if args.branding else 0.0
+        ctx["total"] = intro + sum(durations) + outro
         print(f"总时长 {ctx['total']:.2f}s，共 {len(scenes)} 幕", flush=True)
 
-        write_subtitles(scenes, durations, rendered, timing)
-        cursor, timeline = 0.0, []
+        write_subtitles(scenes, durations, rendered, timing, offset=intro)
+        cursor, timeline = intro, []
         for i, (sc, duration) in enumerate(zip(scenes, durations)):
             timeline.append({"id": sc.get("id", f"scene_{i:02d}"), "start": round(cursor, 6),
                              "duration": duration, "narration": sc.get("narration", ""),
                              "speech_duration": timing[i]["speech_duration"] if timing else None,
                              "pause_after": sc.get("pause_after", .45)})
             cursor += duration
+        manifest = {}
+        if args.audio_dir:
+            manifest = json.loads((args.audio_dir / "manifest.json").read_text())
         rendered.with_suffix(".timeline.json").write_text(json.dumps({
             "script": os.path.relpath(Path(args.script).resolve(), out.parent.resolve()), "fps": args.fps,
             "audio": "silent" if args.silent else "files" if args.audio_dir else "system",
             "audio_dir": os.path.relpath(args.audio_dir.resolve(), out.parent.resolve()) if args.audio_dir else None,
-            "voice_id": json.loads((args.audio_dir / "manifest.json").read_text())["voice_id"] if args.audio_dir else None,
-            "burn_captions": args.burn_captions, "scenes": timeline,
+            "voice_id": manifest.get("voice_id"), "speech_rate": manifest.get("speech_rate"),
+            "intro_duration": intro, "outro_duration": outro,
+            "burn_captions": False, "scenes": timeline,
         }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
         print("② 渲染画面 …", flush=True)
@@ -1048,28 +1480,52 @@ def main():
                "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(args.fps), "-i", "-"]
         if not args.silent:
             cmd += ["-i", str(audio_path)]
-        cmd += ["-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p"]
-        cmd += ["-an"] if args.silent else ["-c:a", "aac", "-b:a", "160k", "-shortest"]
+        cmd += ["-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p"]
+        if args.silent:
+            cmd += ["-an"]
+        else:
+            cmd += ["-af", "loudnorm=I=-16:TP=-1.5:LRA=11",
+                    "-ar", "44100", "-c:a", "aac", "-b:a", "160k", "-shortest"]
         cmd += ["-movflags", "+faststart", str(rendered)]
         proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
         t_global, written = 0.0, 0
         try:
+            if args.branding:
+                n = max(1, round(INTRO_DURATION * args.fps))
+                for k in range(n):
+                    t = k / args.fps
+                    im = intro_frame(t, ctx, INTRO_DURATION)
+                    if t < 0.35:
+                        im = Image.blend(BG_IMG, im, ease_out(t / 0.35))
+                    proc.stdin.write(im.tobytes())
+                    written += 1
+                t_global += INTRO_DURATION
             for si, (sc, dur) in enumerate(zip(scenes, durations)):
-                fn = SCENES[sc["type"]]
                 ctx["scene_duration"] = dur
                 ctx["speech_duration"] = timing[si]["speech_duration"] if timing else max(0.1, dur - 0.55)
+                ctx["scene_index"] = si + 1
+                ctx["scene_label"] = MODEL_LABELS.get(sc.get("model", ""), "")
+                camera = scene_camera(sc, ctx)
                 nframes = max(1, round(dur * args.fps))
                 for k in range(nframes):
                     t = k / args.fps
-                    im, d = new_frame()
-                    fn(im, d, t, sc, ctx)
-                    if args.burn_captions and (timing is None or t < timing[si]["speech_duration"]):
-                        draw_caption(d, sc.get("narration", ""))
-                    footer(d, ctx, t_global + t)
+                    im = scene_frame(t, sc, ctx, camera, t_global + t)
                     proc.stdin.write(im.tobytes())
                     written += 1
                 t_global += dur
-                print(f"   幕 {si+1}/{len(scenes)} · {sc['type']:<12} {dur:5.2f}s", flush=True)
+                print(f"   幕 {si+1}/{len(scenes)} · {sc.get('model', sc['type']):<16} {dur:5.2f}s", flush=True)
+            if args.branding:
+                n = max(1, round(OUTRO_DURATION * args.fps))
+                for k in range(n):
+                    t = k / args.fps
+                    im = outro_frame(t, ctx, OUTRO_DURATION)
+                    # 片尾从纸面淡入，避免硬切。
+                    if t < 0.35:
+                        veil = BG_IMG.copy()
+                        alpha = ease_out(t / 0.35)
+                        im = Image.blend(veil, im, alpha)
+                    proc.stdin.write(im.tobytes())
+                    written += 1
         finally:
             proc.stdin.close()
             proc.wait()

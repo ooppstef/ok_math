@@ -54,6 +54,27 @@ class RenderTests(unittest.TestCase):
             self.assertEqual(json.loads((folder / "video.timeline.json").read_text())["script"], "script.json")
             self.assertFalse(list(folder.glob(".render-*")))
 
+    def test_branding_adds_intro_outro_and_offsets_subtitles(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp)
+            scene = {"id": "one", "type": "principle_arithmetic", "model": "multiple",
+                     "stage": 1, "title": "测试", "narration": "一份", "duration": .25,
+                     "pause_after": 0}
+            script = folder / "script.json"
+            script.write_text(json.dumps({"scenes": [scene]}, ensure_ascii=False))
+            result = subprocess.run([sys.executable, str(ROOT / "工具/render_episode.py"), str(script),
+                                     "--out", str(folder / "video.mp4"), "--silent", "--branding"],
+                                    capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            data = json.loads((folder / "video.timeline.json").read_text())
+            self.assertAlmostEqual(data["intro_duration"], 2.6)
+            self.assertAlmostEqual(data["outro_duration"], 2.8)
+            self.assertAlmostEqual(data["scenes"][0]["start"], 2.6)
+            self.assertTrue((folder / "video.srt").read_text().startswith("1\n00:00:02,600"))
+            probe = json.loads(subprocess.check_output(["ffprobe", "-v", "error", "-show_streams",
+                                                       "-of", "json", str(folder / "video.mp4")]))
+            self.assertEqual(int(probe["streams"][0]["nb_frames"]), 135)
+
 
 class SubtitleTests(unittest.TestCase):
     def test_missing_or_stale_delivery_subtitles_are_rejected(self):

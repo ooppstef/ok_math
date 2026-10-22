@@ -5,7 +5,6 @@ def render(im,d,t,sc,ctx,r):
     r.header(d,ctx)
     ink,blue,red,gold,paper=r.INK,r.TEAL,r.RED,r.GOLD,r.PAPER
     def txt(x,y,s,size=28,c=ink): d.text((x,y),str(s),font=r.F(size),fill=c)
-    txt(84,122,sc['title'],36)
     duration=max(.01,ctx.get('speech_duration',sc['duration']))
     q=r.clamp(t/duration/.88)
     p=sc.get('phase_start',0)+(sc.get('phase_end',1)-sc.get('phase_start',0))*q
@@ -17,7 +16,7 @@ def render(im,d,t,sc,ctx,r):
         for j in range(n):
             if j<k: box(x+w*j/n,y,w/n,h,c)
             if j: d.line((x+w*j/n,y,x+w*j/n,y+h),fill=ink,width=2)
-    def formula(f): txt(84,565,f,29,blue)
+    def formula(f): r.set_conclusion(ctx, f)
     def note(a,b=''): txt(750,280,a,27); txt(750,332,b,25)
     if m in ('decimal_product','fraction_product'):
         dec=m=='decimal_product'; cols=10 if dec else 3; rows=10 if dec else 4
@@ -77,6 +76,9 @@ def _other(d,sc,r,p,txt,box,dot,bar,formula,note):
             if s==5:
                 for j in range(3):txt(x+j*u+35,403,'6 厘米',24,r.PAPER)
                 txt(x+35,273,'6 厘米',24,r.PAPER)
+        if s>=3:
+            d.line([(220,468),(220,478),(760,478),(760,468)],fill=gold,width=3)
+            txt(365,486,'4 份合起来：24 厘米',24,gold)
         formula(['1 份 → 同样长的 3 份','3 倍是整条；多出的是 2 份','和：1 + 3 = 4 份；差：3 - 1 = 2 份','24 厘米对应几份？一份多长？','24 ÷ 4 = 6；蓝 6 厘米，红 18 厘米'][s-1])
     elif m=='fraction_birth':
         x,y,w=240,215,300
@@ -110,13 +112,22 @@ def _other(d,sc,r,p,txt,box,dot,bar,formula,note):
     elif m in ('decimal_birth','equivalent','fraction_add'):
         x,w=180,720
         if m=='decimal_birth':
-            n=10 if s<3 else 100
-            bar(x,335,w,10 if s==3 else n,(1 if s==1 else 3) if s<=3 else 30)
-            txt(x,280,'0',25);txt(x+w-35,280,'1 米',25)
-            if s==3:
-                # Fine ticks grow inside the same fixed ruler.
+            groups=1 if s==1 else 3
+            bar(x,330,w,10,groups,blue,h=76)
+            txt(x,262,'0',25);txt(x+w-48,262,'1 米',25)
+            txt(x,302,'每大格 0.1 米' + ('；每小格 0.01 米' if s>=3 else ''),23,r.MUTED)
+            for i in range(1,10):
+                txt(x+w*i/10-15,415,f'{i/10:.1f}',19,r.MUTED)
+            if s>=3:
+                # Fine ticks grow inside each 0.1 m major cell.
                 for i in range(1,100):
-                    if i%10:d.line((x+w*i/100,335,x+w*i/100,335+58*p),fill=ink,width=1)
+                    if i%10:d.line([(x+w*i/100,330),(x+w*i/100,330+76*min(1,p*2))],fill=ink,width=1)
+            # 括号：把“几大格 / 几小格”落到同一条尺上。
+            bx2=x+w*groups/10
+            d.line([(x,452),(x,462),(bx2,462),(bx2,452)],fill=red,width=3)
+            label=(f'{groups} 个 0.1 米 = {groups/10:.1f} 米' if s<=2
+                   else '3 大格 × 10 小格 = 30 小格')
+            txt((x+bx2)/2-len(label)*9,472,label,23,red)
             formula(['1 米 ÷ 10 = 0.1 米 = 1 分米','3 个 0.1 米 = 0.3 米','1 米 ÷ 100 = 0.01 米','3 大格现在有多少小格？长度变了吗？','0.3 米 = 0.30 米；30 个百分之一米'][s-1])
         elif m=='equivalent':
             w=600;n=[2,4,8,2,3][s-1]
@@ -142,34 +153,45 @@ def _other(d,sc,r,p,txt,box,dot,bar,formula,note):
             formula(['1/2 米和 1/3 米，每份并不一样长','1/2 = 3/6；1/3 = 2/6','1/2 + 1/3 = 5/6 米','改用 1/12 米量，绳子会变长吗？','6/12 + 4/12 = 10/12 = 5/6 米'][s-1])
     elif m in ('multiply','distributive','product_change','odd_layers'):
         if m=='multiply':
-            cols,rows=23,14;gx,gy,dx,dy=130,240,19,18
+            cols,rows=23,14;gx,gy,dx,dy=104,256,19,18
+            lift=10*math.sin(math.pi*p) if s==1 else 0
             for j in range(rows):
                 for i in range(cols):
-                    yy=gy+j*dy+(18*math.sin(math.pi*p) if s==1 and j>=10 else 0)
+                    yy=gy+j*dy+(lift if j>=10 else 0)
                     box(gx+i*dx,yy,dx,dy,blue if j<10 else gold,r.LINE)
-            txt(585,300,'10 行',25,blue);txt(585,440,'4 行',25,gold)
-            txt(270,205,'每行 23 个，共 14 行',25)
-            # 每个数字按同一组个位、十位、百位坐标排齐。
-            columns=(940,985,1030,1075)
-            for x,name in zip(columns,('千','百','十','个')):txt(x,205,name,21,r.MUTED)
-            for row,value in ((245,'23'),(290,'14')):
-                for x,ch in zip(columns[-len(value):],value):txt(x,row,ch,34)
-            txt(905,290,'×',32)
-            d.line((900,334,1130,334),fill=ink,width=2)
-            if s>=2:
-                txt(columns[2],345,'9',34,gold);txt(columns[3],345,'2',34,gold)
-                txt(740,350,'23 × 4',22,gold)
-            if s>=3:
-                txt(columns[1],395,'2',34,blue);txt(columns[2],395,'3',34,blue)
-                txt(columns[3],395,'0',34,r.MUTED)
-                txt(710,400,'23 × 10',22,blue)
-                d.line((900,442,1130,442),fill=ink,width=2)
-            if s==4:txt(1010,458,'?',36,red)
-            if s==5:
-                for x,ch in zip(columns[1:],'322'):txt(x,458,ch,36,blue)
+            txt(gx,210,'每行 23 个，共 14 行',25)
+            # 左侧说明：10 行 + 4 行，与竖式的两层一一对应。
+            d.line([(gx,gy+10*dy),(gx+cols*dx,gy+10*dy)],fill=red,width=2)
+            txt(gx+cols*dx+8,gy+6*dy,'10 行',23,blue)
+            txt(gx+cols*dx+8,gy+11.4*dy,'4 行',23,gold)
             if s in (2,3):
-                y1,y2=(gy+10*dy,gy+14*dy) if s==2 else (gy,gy+10*dy)
+                y1,y2=(gy,gy+10*dy) if s==2 else (gy+10*dy,gy+14*dy)
                 d.rectangle((gx,y1,gx+cols*dx,y2),outline=red,width=4)
+            # 竖式卡片：四列对齐，部分积和最终结果各有自己的基线。
+            d.rounded_rectangle((650,180,1200,570),16,fill=(252,248,239),outline=r.LINE,width=2)
+            txt(682,196,'竖式',20,r.MUTED)
+            columns=(900,970,1040,1110)
+            for x,name in zip(columns,('千','百','十','个')):txt(x,220,name,20,r.MUTED)
+            for row,value in ((254,'23'),(322,'14')):
+                for x,ch in zip(columns[-len(value):],value):txt(x,row,ch,47)
+            txt(846,286,'×',40,r.MUTED)
+            d.line((872,382,1162,382),fill=ink,width=3)
+            if s==2:
+                d.rounded_rectangle((880,388,1162,448),12,fill=r.GOLD_BG)
+            if s==3:
+                d.rounded_rectangle((880,455,1162,515),12,fill=r.TEAL_BG)
+            if s==5:
+                d.rounded_rectangle((880,522,1162,568),12,fill=r.RED_BG)
+            if s>=2:
+                for x,ch in zip(columns[2:],'92'):txt(x,396,ch,46,gold)
+                txt(690,410,'第一层：23 × 4',21,gold)
+            if s>=3:
+                for x,ch in zip(columns[1:],'230'):txt(x,462,ch,46,blue)
+                txt(690,476,'第二层：23 × 10',21,blue)
+                d.line((872,516,1162,516),fill=ink,width=3)
+            if s==4:txt(1090,524,'?',44,red)
+            if s==5:
+                for x,ch in zip(columns[1:],'322'):txt(x,523,ch,46,red)
             formula(['23 × 14 = 23 × (10 + 4)','23 × 4 = 92','23 × 10 = 230；第二层表示 23 个十','92 + 230 = ?','92 + 230 = 322；不能把 230 写成 23'][s-1])
         elif m=='distributive':
             for row in range(7):
@@ -181,18 +203,26 @@ def _other(d,sc,r,p,txt,box,dot,bar,formula,note):
             note('上：3 行，每行 5 个','下：4 行，每行 5 个')
             formula(['7 行，每行 5 个','(3 + 4) × 5','3 × 5 + 4 × 5 = 35','如果写成 3 × 5 + 4，漏了哪里？','下面每行漏 4 个：共漏 4 × 4 = 16'][s-1])
         elif m=='product_change':
+            # 固定 2 列 × 3 行的“积木盘”：每次复制一块，盘面直接变大。
             nr=1 if s<3 else 2 if s<5 else 3;nc=1 if s==1 else 2
-            for br in range(nr):
-                for bc in range(nc):
+            card_w,card_h=470,112
+            for br in range(3):
+                for bc in range(2):
+                    xx=140+bc*560;yy=186+br*128
+                    active=br<nr and bc<nc
+                    d.rounded_rectangle((xx,yy,xx+card_w,yy+card_h),14,
+                                        fill=(252,248,239) if active else (247,242,231),
+                                        outline=r.GOLD if active else r.LINE,width=2)
+                    if not active:continue
                     a=1
                     if s==2 and bc==1:a=p
                     if s==3 and br==1:a=p
                     if s==5 and br==2:a=p
-                    xx=210+bc*220+(1-a)*80;yy=240+br*95
-                    d.rectangle((xx-25,yy-25,xx+145,yy+70),outline=gold,width=2)
                     for row in range(2):
-                        for col in range(3):dot(xx+col*55,yy+row*45,r.blend(blue,r.BG,a),10)
-            note('每小块：3 列 × 2 行','复制一块，就多 6 个点')
+                        for col in range(3):
+                            dot(xx+100+col*105,yy+34+row*48,r.blend(blue,r.BG,a),15)
+                    txt(xx+360,yy+38,'6 点',24,r.MUTED)
+            txt(140,150,'每块：3 列 × 2 行 = 6 点',25,r.MUTED)
             formula(['3 × 2 = 6 个点','横向两块：6 × 2 = 12','两排，每排两块：6 × 4 = 24','长 ×2，宽 ×3，能摆几块？','3 排 × 每排 2 块 = 6 块；共 36 点'][s-1])
         else:
             start,end={1:(1,2),2:(2,4),3:(4,5),4:(3,3),5:(3,5)}[s]
@@ -299,7 +329,10 @@ def _groups(d,sc,p,r,txt,box,dot,formula):
                 formula('13 颗：装满 4 袋，余 1；1 < 3')
             return
         if s in (1,7):
-            for i in range(n):dot(210+(i%9)*90,290+(i//9)*90,blue,15)
+            if n==12:
+                for i in range(n):dot(150+i*82,330,blue,15)
+            else:
+                for i in range(n):dot(210+(i%9)*90,290+(i//9)*90,blue,15)
         else:
             spacing=190 if groups<=4 else 170
             for g in range(groups):

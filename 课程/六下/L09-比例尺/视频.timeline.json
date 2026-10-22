@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "01",
-      "start": 0.0,
-      "duration": 8.083333333333334,
+      "start": 2.6,
+      "duration": 6.375,
       "narration": "原图长三厘米、宽二厘米。长和宽都放大到两倍，先猜能装下几块原图。",
-      "speech_duration": 7.056009070294785,
+      "speech_duration": 5.3520181405895695,
       "pause_after": 1
     },
     {
       "id": "02",
-      "start": 8.083333,
-      "duration": 6.25,
+      "start": 8.975,
+      "duration": 5.375,
       "narration": "每条对应边都变成两倍。长宽的比没有变，形状也没有变。",
-      "speech_duration": 5.232018140589569,
+      "speech_duration": 4.368004535147392,
       "pause_after": 1
     },
     {
       "id": "03",
-      "start": 14.333333,
-      "duration": 8.875,
+      "start": 14.35,
+      "duration": 7.583333333333333,
       "narration": "放大后的图，能铺两行、每行两块原图。长度两倍，面积是四倍。",
-      "speech_duration": 6.84,
+      "speech_duration": 5.568004535147392,
       "pause_after": 2
     },
     {
       "id": "04",
-      "start": 23.208333,
-      "duration": 14.875,
+      "start": 21.933333,
+      "duration": 13.583333333333334,
       "narration": "如果只把长拉到四倍，宽不变，面积也是四倍。能叫按二比一放大吗？",
-      "speech_duration": 6.864013605442177,
+      "speech_duration": 5.568004535147392,
       "pause_after": 8
     },
     {
       "id": "05",
-      "start": 38.083333,
-      "duration": 9.875,
+      "start": 35.516667,
+      "duration": 9.25,
       "narration": "不能。两个方向没有按同一个倍数变化，形状已经拉长。只看面积倍数，不够。",
-      "speech_duration": 7.872018140589569,
+      "speech_duration": 7.224013605442177,
       "pause_after": 2
     }
   ]

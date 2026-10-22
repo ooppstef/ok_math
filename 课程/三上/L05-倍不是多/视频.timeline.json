@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g3a_l05_s1_1",
-      "start": 0.0,
-      "duration": 6.458333333333333,
+      "start": 2.6,
+      "duration": 5.333333333333333,
       "narration": "蓝绳这么长算一份。红绳有同样长的三份，是蓝绳的三倍。",
-      "speech_duration": 5.8560090702947845,
+      "speech_duration": 4.7280045351473925,
       "pause_after": 0.6
     },
     {
       "id": "g3a_l05_s2_1",
-      "start": 6.458333,
-      "duration": 8.875,
+      "start": 7.933333,
+      "duration": 7.333333333333333,
       "narration": "对齐起点后，多出来的是两份。三倍说的是红绳整条，有三份；多出来的只有两份。",
-      "speech_duration": 8.256009070294784,
+      "speech_duration": 6.696009070294784,
       "pause_after": 0.6
     },
     {
       "id": "g3a_l05_s3_1",
-      "start": 15.333333,
-      "duration": 10.25,
+      "start": 15.266667,
+      "duration": 8.5,
       "narration": "两条合起来有四份，长短相差两份。同一张图，问总长和问相差，算的是不同的部分。",
-      "speech_duration": 9.624013605442176,
+      "speech_duration": 7.8960090702947845,
       "pause_after": 0.6
     },
     {
       "id": "g3a_l05_s4_1",
-      "start": 25.583333,
-      "duration": 12.666666666666666,
+      "start": 23.766667,
+      "duration": 11.916666666666666,
       "narration": "合起来二十四厘米，对应几份？一份多长？",
-      "speech_duration": 4.656009070294784,
+      "speech_duration": 3.888004535147392,
       "pause_after": 8
     },
     {
       "id": "g3a_l05_s5_1",
-      "start": 38.25,
-      "duration": 7.416666666666667,
+      "start": 35.683333,
+      "duration": 6.0,
       "narration": "二十四厘米分成四份，每份六厘米。蓝绳六厘米，红绳十八厘米。",
-      "speech_duration": 6.816009070294784,
+      "speech_duration": 5.376009070294785,
       "pause_after": 0.6
     }
   ]

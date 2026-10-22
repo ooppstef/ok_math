@@ -2,56 +2,59 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "01",
-      "start": 0.0,
-      "duration": 7.291666666666667,
+      "start": 2.6,
+      "duration": 6.583333333333333,
       "narration": "把圆平均分成扇形，再沿着高切下去。每一块都连着同样高的部分。",
-      "speech_duration": 6.264013605442177,
+      "speech_duration": 5.568004535147392,
       "pause_after": 1
     },
     {
       "id": "02",
-      "start": 7.291667,
-      "duration": 8.25,
+      "start": 9.183333,
+      "duration": 7.041666666666667,
       "narration": "把这些扇形柱交错排好。每块只转方向、换位置，没有拉伸，高也没有改变。",
-      "speech_duration": 7.224013605442177,
+      "speech_duration": 6.0240136054421765,
       "pause_after": 1
     },
     {
       "id": "03",
-      "start": 15.541667,
-      "duration": 11.875,
+      "start": 16.225,
+      "duration": 9.916666666666666,
       "narration": "拼好后仍有弯曲的小边。分得越细，就越接近长方体，不能把有限块说成已经完全一样。",
-      "speech_duration": 9.864013605442176,
+      "speech_duration": 7.8960090702947845,
       "pause_after": 2
     },
     {
       "id": "04",
-      "start": 27.416667,
-      "duration": 10.708333333333334,
+      "start": 26.141667,
+      "duration": 9.041666666666666,
       "narration": "沿着越来越接近的过程，可以理解圆柱体积。底面积是圆周率乘半径平方，再乘高。",
-      "speech_duration": 8.688004535147392,
+      "speech_duration": 7.032018140589569,
       "pause_after": 2
     },
     {
       "id": "05",
-      "start": 38.125,
-      "duration": 14.291666666666666,
+      "start": 35.183333,
+      "duration": 12.583333333333334,
       "narration": "底面积十二平方厘米，只把高增加一厘米，多出的体积是多少？",
-      "speech_duration": 6.264013605442177,
+      "speech_duration": 4.56,
       "pause_after": 8
     },
     {
       "id": "06",
-      "start": 52.416667,
-      "duration": 7.916666666666667,
+      "start": 47.766667,
+      "duration": 7.25,
       "narration": "多出一层底面积十二、高一厘米的圆柱。体积增加十二立方厘米。",
-      "speech_duration": 5.88,
+      "speech_duration": 5.232018140589569,
       "pause_after": 2
     }
   ]

@@ -33,10 +33,9 @@ def progress(t,ctx,sc):
     return smooth(t/max(.1,float(dur)*.86))
 def render(im,d,t,sc,ctx,r):
     r.header(d,ctx)
-    txt(d,(84,122),sc.get('heading',''),r,39)
     p=progress(t,ctx,sc); stage=sc.get('stage',0)
     globals()['draw_'+sc['model']](im,d,p,stage,sc,r)
-    if sc.get('equation'): txt(d,(84,565),sc['equation'],r,30,r.TEAL)
+    if sc.get('equation'): r.set_conclusion(ctx,sc['equation'])
 
 
 def draw_parallelogram(im,d,p,st,sc,r):
@@ -77,7 +76,7 @@ def draw_duplicate(im,d,p,st,sc,r):
     txt(d,(170,370),'高 4 厘米',r)
     if st=='slide':
         # replace the previous polygon cleanly on a separate region, illustrating fixed base/height
-        d.rectangle((290,205,810,550),fill=r.BG)
+        d.rectangle((290,205,810,550),fill=r.PAPER)
         apex=(x+(2+4*p)*u,y-4*u)
         dash(d,(300,y-4*u),(820,y-4*u),r)
         poly(d,[(x,y),(x+6*u,y),apex],r.TEAL_BG,r)
@@ -236,7 +235,7 @@ def draw_angles_sum(im,d,p,st,sc,r):
     target_starts=[-180,-130,-70]
     for k,(v,sta,w) in enumerate(zip(verts,starts,widths)):
         # For top corner start=60 to130 matches rays down-right and down-left.
-        pts=sector_points(62,math.radians(sta),math.radians(sta+w),24)
+        pts=sector_points(108 if st=='done' else 62,math.radians(sta),math.radians(sta+w),24)
         ang=math.radians(target_starts[k]-sta)*q
         center=(mix(v[0],850,q),mix(v[1],460,q))
         out=[rot(z,ang) for z in pts]; out=[(z[0]+center[0],z[1]+center[1]) for z in out]
@@ -244,7 +243,10 @@ def draw_angles_sum(im,d,p,st,sc,r):
     if st in ['question','answer']:
         d.line(verts+[a],fill=r.INK,width=3)
         txt(d,(320,435),'50°',r); txt(d,(565,435),'60°',r); txt(d,(c[0]-20,c[1]+25),'70°' if st=='answer' else '?',r)
-    if st=='done': txt(d,(760,300),'合成一个平角',r,30)
+    if st=='done':
+        d.line([(742,460),(958,460)],fill=r.INK,width=4)
+        txt(d,(760,300),'合成一个平角',r,30)
+        txt(d,(812,486),'180°',r,26,r.RED)
 
 
 def cube(d,x,y,z,s,origin,r,color=None):

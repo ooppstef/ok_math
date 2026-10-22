@@ -2,88 +2,91 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g5a_l01_s1_1",
-      "start": 0.0,
-      "duration": 7.083333333333333,
+      "start": 2.6,
+      "duration": 6.333333333333333,
       "narration": "这一整块算一。先分成十列，每列再分十格，一共有一百小格。",
-      "speech_duration": 6.456009070294785,
+      "speech_duration": 5.712018140589569,
       "pause_after": 0.6
     },
     {
       "id": "g5a_l01_s1_2",
-      "start": 7.083333,
-      "duration": 6.083333333333333,
+      "start": 8.933333,
+      "duration": 4.0,
       "narration": "每格占一整块的百分之一，也就是零点零一。",
-      "speech_duration": 5.47201814058957,
+      "speech_duration": 3.36,
       "pause_after": 0.6
     },
     {
       "id": "g5a_l01_s2_1",
-      "start": 13.166667,
-      "duration": 8.5,
+      "start": 12.933333,
+      "duration": 7.541666666666667,
       "narration": "先取十分之三，是左边这三列。再取这部分的十分之四，十行里留下四行。",
-      "speech_duration": 7.872018140589569,
+      "speech_duration": 6.912018140589569,
       "pause_after": 0.6
     },
     {
       "id": "g5a_l01_s2_2",
-      "start": 21.666667,
-      "duration": 4.25,
+      "start": 20.475,
+      "duration": 3.5416666666666665,
       "narration": "深色的，就是两次取完剩下的部分。",
-      "speech_duration": 3.6480045351473924,
+      "speech_duration": 2.904013605442177,
       "pause_after": 0.6
     },
     {
       "id": "g5a_l01_s3_1",
-      "start": 25.916667,
-      "duration": 6.083333333333333,
+      "start": 24.016667,
+      "duration": 5.5,
       "narration": "十二小格，每格零点零一，合起来零点一二。",
-      "speech_duration": 5.448004535147392,
+      "speech_duration": 4.8960090702947845,
       "pause_after": 0.6
     },
     {
       "id": "g5a_l01_s3_2",
-      "start": 32.0,
-      "duration": 6.458333333333333,
+      "start": 29.516667,
+      "duration": 5.333333333333333,
       "narration": "三乘四告诉我们有几格，小格的单位告诉我们小数点放在哪。",
-      "speech_duration": 5.8560090702947845,
+      "speech_duration": 4.704013605442177,
       "pause_after": 0.6
     },
     {
       "id": "g5a_l01_s4_1",
-      "start": 38.458333,
-      "duration": 3.0416666666666665,
+      "start": 34.85,
+      "duration": 2.5,
       "narration": "换成零点二五乘零点四。",
-      "speech_duration": 2.424013605442177,
+      "speech_duration": 1.8960090702947845,
       "pause_after": 0.6
     },
     {
       "id": "g5a_l01_s4_2",
-      "start": 41.5,
-      "duration": 15.083333333333334,
+      "start": 37.35,
+      "duration": 13.75,
       "narration": "先取一整块的四分之一，再取这部分的十分之四，最后占原来的一整块多少？",
-      "speech_duration": 7.056009070294785,
+      "speech_duration": 5.712018140589569,
       "pause_after": 8
     },
     {
       "id": "g5a_l01_s5_1",
-      "start": 56.583333,
-      "duration": 9.458333333333334,
+      "start": 51.1,
+      "duration": 8.5,
       "narration": "四十格里留下四格，占十分之一，就是零点一。用整数乘法检查，二十五乘四得一百。",
-      "speech_duration": 8.83201814058957,
+      "speech_duration": 7.8960090702947845,
       "pause_after": 0.6
     },
     {
       "id": "g5a_l01_s5_2",
-      "start": 66.041667,
-      "duration": 5.458333333333333,
+      "start": 59.6,
+      "duration": 4.666666666666667,
       "narration": "先按三位小数写成零点一零零，再去掉末尾的零。",
-      "speech_duration": 4.824013605442177,
+      "speech_duration": 4.032018140589569,
       "pause_after": 0.6
     }
   ]

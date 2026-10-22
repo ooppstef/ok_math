@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g3a_l11_s1_1",
-      "start": 0.0,
-      "duration": 9.666666666666666,
+      "start": 2.6,
+      "duration": 6.875,
       "narration": "全班三十人。十八人喜欢苹果，十五人喜欢香蕉，两种都喜欢的有七人。",
-      "speech_duration": 9.048004535147392,
+      "speech_duration": 6.24,
       "pause_after": 0.6
     },
     {
       "id": "g3a_l11_s2_1",
-      "start": 9.666667,
-      "duration": 5.833333333333333,
+      "start": 9.475,
+      "duration": 5.625,
       "narration": "把两个圈分别数一遍，中间这七个人，每人领到了两张计数票。",
-      "speech_duration": 5.232018140589569,
+      "speech_duration": 5.016009070294785,
       "pause_after": 0.6
     },
     {
       "id": "g3a_l11_s3_1",
-      "start": 15.5,
-      "duration": 7.25,
+      "start": 15.1,
+      "duration": 6.0,
       "narration": "每人只算一次，所以拿走多记的七次。至少喜欢一种的有二十六人。",
-      "speech_duration": 6.648004535147392,
+      "speech_duration": 5.376009070294785,
       "pause_after": 0.6
     },
     {
       "id": "g3a_l11_s4_1",
-      "start": 22.75,
-      "duration": 13.25,
+      "start": 21.1,
+      "duration": 12.916666666666666,
       "narration": "两种都不喜欢的有几人？中间的七个人还算在二十六人里吗？",
-      "speech_duration": 5.232018140589569,
+      "speech_duration": 4.8960090702947845,
       "pause_after": 8
     },
     {
       "id": "g3a_l11_s5_1",
-      "start": 36.0,
-      "duration": 7.666666666666667,
+      "start": 34.016667,
+      "duration": 6.0,
       "narration": "圈外四人。中间七人还在，只是各少记了一次，没有把他们漏掉。",
-      "speech_duration": 7.056009070294785,
+      "speech_duration": 5.376009070294785,
       "pause_after": 0.6
     }
   ]

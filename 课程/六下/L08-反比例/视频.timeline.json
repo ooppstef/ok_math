@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g6b_l08_s1",
-      "start": 0.0,
-      "duration": 6.875,
+      "start": 2.6,
+      "duration": 5.666666666666667,
       "narration": "这块面积十二平方厘米。长变成六，宽应该变多少，面积才不变？",
-      "speech_duration": 6.264013605442177,
+      "speech_duration": 5.0640136054421765,
       "pause_after": 0.6
     },
     {
       "id": "g6b_l08_s2",
-      "start": 6.875,
-      "duration": 8.666666666666666,
+      "start": 8.266667,
+      "duration": 7.208333333333333,
       "narration": "长变长的同时，宽要按十二除以长来计算。长变成两倍，宽就变成一半。",
-      "speech_duration": 8.064013605442177,
+      "speech_duration": 6.576009070294784,
       "pause_after": 0.6
     },
     {
       "id": "g6b_l08_s3",
-      "start": 15.541667,
-      "duration": 7.041666666666667,
+      "start": 15.475,
+      "duration": 6.0,
       "narration": "变的是长和宽，不变的是乘积十二。这种关系叫反比例。",
-      "speech_duration": 6.4320181405895696,
+      "speech_duration": 5.376009070294785,
       "pause_after": 0.6
     },
     {
       "id": "g6b_l08_s4",
-      "start": 22.583333,
-      "duration": 16.666666666666668,
+      "start": 21.475,
+      "duration": 15.416666666666666,
       "narration": "另一块只固定周长。长四宽二，改成长五宽一，也是一大一小。它们成反比例吗？",
-      "speech_duration": 8.664013605442177,
+      "speech_duration": 7.3920181405895695,
       "pause_after": 8
     },
     {
       "id": "g6b_l08_s5",
-      "start": 39.25,
-      "duration": 8.666666666666666,
+      "start": 36.891667,
+      "duration": 6.5,
       "narration": "不成。乘积从八变成五，保持的是和。判断反比例，要看乘积。",
-      "speech_duration": 8.04,
+      "speech_duration": 5.88,
       "pause_after": 0.6
     }
   ]

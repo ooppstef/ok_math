@@ -2,56 +2,59 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "01",
-      "start": 0.0,
-      "duration": 6.666666666666667,
+      "start": 2.6,
+      "duration": 5.708333333333333,
       "narration": "底是六厘米。这条垂直到底边的线长三厘米，它才是高。",
-      "speech_duration": 5.64,
+      "speech_duration": 4.704013605442177,
       "pause_after": 1
     },
     {
       "id": "02",
-      "start": 6.666667,
-      "duration": 4.25,
+      "start": 8.308333,
+      "duration": 3.75,
       "narration": "沿着高，把左边这个三角形剪下来。",
-      "speech_duration": 3.24,
+      "speech_duration": 2.7120181405895694,
       "pause_after": 1
     },
     {
       "id": "03",
-      "start": 10.916667,
-      "duration": 6.625,
+      "start": 12.058333,
+      "duration": 5.708333333333333,
       "narration": "把这一块向右移，补在另一边。没有拉长，也没有丢掉。",
-      "speech_duration": 5.616009070294784,
+      "speech_duration": 4.704013605442177,
       "pause_after": 1
     },
     {
       "id": "04",
-      "start": 17.541667,
-      "duration": 8.625,
+      "start": 17.766667,
+      "duration": 6.916666666666667,
       "narration": "拼成的长方形，长六厘米，宽三厘米。面积是十八平方厘米。",
-      "speech_duration": 6.624013605442177,
+      "speech_duration": 4.8960090702947845,
       "pause_after": 2
     },
     {
       "id": "05",
-      "start": 26.166667,
-      "duration": 14.25,
+      "start": 24.683333,
+      "duration": 13.208333333333334,
       "narration": "底和高都不变，只把上边往右推一点，面积会变吗？先想一想。",
-      "speech_duration": 6.24,
+      "speech_duration": 5.208004535147392,
       "pause_after": 8
     },
     {
       "id": "06",
-      "start": 40.416667,
-      "duration": 7.25,
+      "start": 37.891667,
+      "duration": 6.25,
       "narration": "还是十八平方厘米。形状更斜了，垂直的高度没有变。",
-      "speech_duration": 5.232018140589569,
+      "speech_duration": 4.224013605442177,
       "pause_after": 2
     }
   ]

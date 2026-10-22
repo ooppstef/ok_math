@@ -60,6 +60,7 @@ npm run build
 | `工具/site/templates.js` | 首页、课程页和目录页模板 |
 | `工具/site/render.js` | Markdown 转换与阅读页输出 |
 | `工具/batch_videos.py` | 分幕配音与视频渲染入口 |
+| `工具/publish_videos.py` | 成片、字幕、封面与时间线的发布 |
 | `工具/scenes/` | 数学动画的绘制代码 |
 
 课程分组和顺序由 `课程/学习安排.json` 管理。新增或调整课程后，运行构建命令即可同步首页和课程目录。
@@ -70,14 +71,20 @@ npm run build
 
 ## 修改视频
 
-有成片的课程保留了分镜配置、分幕配音和字幕，配音使用“开朗学长”音色（`zh_male_kailangxuezhang_uranus_bigtts`），保持原速。文字版分镜在各课的 `视频稿与分镜.md` 中。
+有成片的课程保留了分镜配置、分幕配音和字幕，配音使用“开朗学长”音色（`zh_male_kailangxuezhang_uranus_bigtts`），语速为自然语速的 1.2 倍（豆包 `speech_rate=20`）。文字版分镜在各课的 `视频稿与分镜.md` 中。
 
-视频工具使用 Python 3、Pillow 和 FFmpeg，目前使用 macOS 自带中文字体。已有配音可直接复用，例如：
+视频工具使用 Python 3、Pillow 和 FFmpeg，目前使用 macOS 自带中文字体。画面采用自动取景：按每幕实际绘制范围把图放大到舞台内，避免小图缩在角落；结论统一放在底栏，正式成片不再烧录整段旁白字幕，字幕由 `视频.vtt` 提供，可在播放器里开关。片头、片尾和 1.2 倍配音都已接入批量命令。已有配音可直接复用，例如：
 
 ```bash
 python3 工具/batch_videos.py render 课程/三上/L03-乘法的形状/视频源文件/分镜.json
 ```
 
-渲染结果、日志和检查图片放在 `.cache/videos/`，不会覆盖课程中的成片。确认画面和声音后再更新课程视频、字幕、封面和时间线；时间线中的源文件路径相对于其所在目录。
+渲染结果、日志和检查图片放在 `.cache/videos/`，不会覆盖课程中的成片。确认画面和声音后发布：
 
-换声音或修改旁白时，用 `工具/prepare_narration.py` 指定新的配音目录，再更新分镜配置中的 `audio_version`。生成配音复用相邻 `nba_biz` 项目的 `scripts/tts.py` 及其本地配置；阅读课程和使用已有配音渲染均不需要配音服务。
+```bash
+python3 工具/publish_videos.py 课程/三上/L03-乘法的形状/视频源文件/分镜.json --storyboard
+```
+
+发布命令会写入成片、SRT/VTT、时间线，并从片头截取 `poster.jpg`；`--storyboard` 会顺手把 `视频稿与分镜.md` 表格中的时间改成当前成片时间。时间线中的源文件路径相对于其所在目录。
+
+换声音、改语速或修改旁白时，用 `工具/prepare_narration.py --speech-rate 20` 指定新的配音目录，再更新分镜配置中的 `audio_version`。生成配音复用相邻 `nba_biz` 项目的 `scripts/tts.py` 及其本地配置；阅读课程和使用已有配音渲染均不需要配音服务。

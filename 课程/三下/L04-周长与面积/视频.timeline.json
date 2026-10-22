@@ -2,56 +2,59 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "01",
-      "start": 0.0,
-      "duration": 7.458333333333333,
+      "start": 2.6,
+      "duration": 6.041666666666667,
       "narration": "长五厘米、宽一厘米，周长十二厘米，面积五平方厘米。",
-      "speech_duration": 6.456009070294785,
+      "speech_duration": 5.04,
       "pause_after": 1
     },
     {
       "id": "02",
-      "start": 7.458333,
-      "duration": 7.666666666666667,
+      "start": 8.641667,
+      "duration": 7.25,
       "narration": "先把长缩短一厘米，拿走一格。再给宽添一厘米，需要添一整排四格。",
-      "speech_duration": 6.648004535147392,
+      "speech_duration": 6.24,
       "pause_after": 1
     },
     {
       "id": "03",
-      "start": 15.125,
-      "duration": 10.875,
+      "start": 15.891667,
+      "duration": 9.041666666666666,
       "narration": "现在长四、宽二，周长仍是十二厘米。面积从五变成八，多了三平方厘米。",
-      "speech_duration": 8.856009070294785,
+      "speech_duration": 7.032018140589569,
       "pause_after": 2
     },
     {
       "id": "04",
-      "start": 26.0,
-      "duration": 16.833333333333332,
+      "start": 24.933333,
+      "duration": 14.75,
       "narration": "从四乘二，再把长减一、宽加一。会拿走几格，添上几格？面积多多少？",
-      "speech_duration": 8.83201814058957,
+      "speech_duration": 6.72,
       "pause_after": 8
     },
     {
       "id": "05",
-      "start": 42.833333,
-      "duration": 9.5,
+      "start": 39.683333,
+      "duration": 9.25,
       "narration": "拿走一列两格，添上一排三格，所以多一格。三乘三的面积是九平方厘米。",
-      "speech_duration": 7.464013605442177,
+      "speech_duration": 7.248004535147392,
       "pause_after": 2
     },
     {
       "id": "06",
-      "start": 52.333333,
-      "duration": 10.291666666666666,
+      "start": 48.933333,
+      "duration": 9.041666666666666,
       "narration": "这三种围法的周长都是十二厘米。面积却是五、八、九，不能只凭周长判断面积。",
-      "speech_duration": 8.256009070294784,
+      "speech_duration": 7.032018140589569,
       "pause_after": 2
     }
   ]

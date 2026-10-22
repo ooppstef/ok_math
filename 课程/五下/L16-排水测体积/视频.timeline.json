@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g5b_l16_s1",
-      "start": 0.0,
-      "duration": 3.8333333333333335,
+      "start": 2.6,
+      "duration": 3.3333333333333335,
       "narration": "先记下没有石头时的水深，五厘米。",
-      "speech_duration": 3.2160090702947848,
+      "speech_duration": 2.7120181405895694,
       "pause_after": 0.6
     },
     {
       "id": "g5b_l16_s2",
-      "start": 3.833333,
-      "duration": 6.083333333333333,
+      "start": 5.933333,
+      "duration": 5.5,
       "narration": "石头挤占了空间，水面升到七厘米。水没有流出去。",
-      "speech_duration": 5.47201814058957,
+      "speech_duration": 4.872018140589569,
       "pause_after": 0.6
     },
     {
       "id": "g5b_l16_s3",
-      "start": 9.916667,
-      "duration": 6.25,
+      "start": 11.433333,
+      "duration": 5.5,
       "narration": "多出来的是这两厘米厚的一层，不是整个七厘米深的部分。",
-      "speech_duration": 5.64,
+      "speech_duration": 4.8960090702947845,
       "pause_after": 0.6
     },
     {
       "id": "g5b_l16_s4",
-      "start": 16.166667,
-      "duration": 12.041666666666666,
+      "start": 16.933333,
+      "duration": 10.916666666666666,
       "narration": "这层有多大？它告诉我们石头的什么量？",
-      "speech_duration": 4.032018140589569,
+      "speech_duration": 2.904013605442177,
       "pause_after": 8
     },
     {
       "id": "g5b_l16_s5",
-      "start": 28.208333,
-      "duration": 7.875,
+      "start": 27.85,
+      "duration": 6.875,
       "narration": "石头体积是一百六十立方厘米。石头必须完全浸没，不吸水、不溶解，水也不能溢出。",
-      "speech_duration": 7.248004535147392,
+      "speech_duration": 6.24,
       "pause_after": 0.6
     }
   ]

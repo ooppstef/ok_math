@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g3a_l10_s1_1",
-      "start": 0.0,
-      "duration": 7.041666666666667,
+      "start": 2.6,
+      "duration": 5.833333333333333,
       "narration": "整张纸分成四份，每份一样大。取这一份，就是四分之一。",
-      "speech_duration": 6.4320181405895696,
+      "speech_duration": 5.232018140589569,
       "pause_after": 0.6
     },
     {
       "id": "g3a_l10_s2_1",
-      "start": 7.041667,
-      "duration": 6.083333333333333,
+      "start": 8.433333,
+      "duration": 5.333333333333333,
       "narration": "再取两份，一共三份。每份大小没变，现在是四分之三。",
-      "speech_duration": 5.448004535147392,
+      "speech_duration": 4.704013605442177,
       "pause_after": 0.6
     },
     {
       "id": "g3a_l10_s3_1",
-      "start": 13.125,
-      "duration": 7.291666666666667,
+      "start": 13.766667,
+      "duration": 6.208333333333333,
       "narration": "两种切法的形状不同，但都把同样大的纸平均分成四份，每份面积相同。",
-      "speech_duration": 6.672018140589569,
+      "speech_duration": 5.568004535147392,
       "pause_after": 0.6
     },
     {
       "id": "g3a_l10_s4_1",
-      "start": 20.416667,
-      "duration": 14.666666666666666,
+      "start": 19.975,
+      "duration": 13.416666666666666,
       "narration": "这次也切了四块，可是有大有小。还能说每块都是四分之一吗？",
-      "speech_duration": 6.648004535147392,
+      "speech_duration": 5.376009070294785,
       "pause_after": 8
     },
     {
       "id": "g3a_l10_s5_1",
-      "start": 35.083333,
-      "duration": 8.083333333333334,
+      "start": 33.391667,
+      "duration": 8.666666666666666,
       "narration": "不能。四分之一要求平均分，每份一样大。只数出四块，还不够。",
-      "speech_duration": 7.464013605442177,
+      "speech_duration": 8.04,
       "pause_after": 0.6
     }
   ]

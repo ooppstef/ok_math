@@ -2,64 +2,67 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "01",
-      "start": 0.0,
-      "duration": 7.666666666666667,
+      "start": 2.6,
+      "duration": 6.583333333333333,
       "narration": "先检查：圆锥和圆柱内部的底面一样大，高也一样。这是比较时的条件。",
-      "speech_duration": 6.648004535147392,
+      "speech_duration": 5.544013605442177,
       "pause_after": 1
     },
     {
       "id": "02",
-      "start": 7.666667,
-      "duration": 7.875,
+      "start": 9.183333,
+      "duration": 6.916666666666667,
       "narration": "先在圆锥里装满水，把这一锥水倒进圆柱。看，圆柱里有了一份水。",
-      "speech_duration": 6.84,
+      "speech_duration": 5.904013605442177,
       "pause_after": 1
     },
     {
       "id": "03",
-      "start": 15.541667,
-      "duration": 6.25,
+      "start": 16.1,
+      "duration": 5.25,
       "narration": "再装满一锥水，倒进去。圆柱里的水变成了两份。",
-      "speech_duration": 5.232018140589569,
+      "speech_duration": 4.248004535147392,
       "pause_after": 1
     },
     {
       "id": "04",
-      "start": 21.791667,
-      "duration": 7.291666666666667,
+      "start": 21.35,
+      "duration": 5.708333333333333,
       "narration": "第三次装满，再倒进去。这回正好装满了等底等高的圆柱。",
-      "speech_duration": 6.264013605442177,
+      "speech_duration": 4.704013605442177,
       "pause_after": 1
     },
     {
       "id": "05",
-      "start": 29.083333,
-      "duration": 11.083333333333334,
+      "start": 27.058333,
+      "duration": 9.75,
       "narration": "圆锥体积，是等底等高圆柱的三分之一。动画画出了关系，不能把画好的水位当成普遍证明。",
-      "speech_duration": 9.072018140589568,
+      "speech_duration": 7.7280045351473925,
       "pause_after": 2
     },
     {
       "id": "06",
-      "start": 40.166667,
-      "duration": 14.458333333333334,
+      "start": 36.808333,
+      "duration": 13.583333333333334,
       "narration": "如果只知道高相同，不知道底面是否一样，还能直接说体积是三分之一吗？",
-      "speech_duration": 6.4320181405895696,
+      "speech_duration": 5.568004535147392,
       "pause_after": 8
     },
     {
       "id": "07",
-      "start": 54.625,
-      "duration": 8.708333333333334,
+      "start": 50.391667,
+      "duration": 7.041666666666667,
       "narration": "不能直接套。必须检查底面和高，或者分别计算体积，再作比较。",
-      "speech_duration": 6.672018140589569,
+      "speech_duration": 5.04,
       "pause_after": 2
     }
   ]

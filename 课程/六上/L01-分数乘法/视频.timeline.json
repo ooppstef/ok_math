@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g6a_l01_s1_1",
-      "start": 0.0,
-      "duration": 2.6666666666666665,
+      "start": 2.6,
+      "duration": 2.3333333333333335,
       "narration": "先取整块的三分之二。",
-      "speech_duration": 2.04,
+      "speech_duration": 1.7040136054421768,
       "pause_after": 0.6
     },
     {
       "id": "g6a_l01_s2_1",
-      "start": 2.666667,
-      "duration": 2.6666666666666665,
+      "start": 4.933333,
+      "duration": 2.3333333333333335,
       "narration": "再取这部分的四分之三。",
-      "speech_duration": 2.04,
+      "speech_duration": 1.7040136054421768,
       "pause_after": 0.6
     },
     {
       "id": "g6a_l01_s3_1",
-      "start": 5.333333,
-      "duration": 9.458333333333334,
+      "start": 7.266667,
+      "duration": 6.291666666666667,
       "narration": "重叠有六小格，整块一共十二小格，所以是十二分之六，也就是一半。",
-      "speech_duration": 8.856009070294785,
+      "speech_duration": 5.6880045351473925,
       "pause_after": 0.6
     },
     {
       "id": "g6a_l01_s4_1",
-      "start": 14.791667,
-      "duration": 12.458333333333334,
+      "start": 13.558333,
+      "duration": 11.75,
       "narration": "分母的二十，和分子的六，分别数的是什么？",
-      "speech_duration": 4.44,
+      "speech_duration": 3.72,
       "pause_after": 8
     },
     {
       "id": "g6a_l01_s5_1",
-      "start": 27.25,
-      "duration": 7.458333333333333,
+      "start": 25.308333,
+      "duration": 5.666666666666667,
       "narration": "二十是全部小格，六是取到的小格，结果约分后是十分之三。",
-      "speech_duration": 6.84,
+      "speech_duration": 5.04,
       "pause_after": 0.6
     }
   ]

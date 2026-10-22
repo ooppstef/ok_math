@@ -10,15 +10,16 @@ import re
 import subprocess
 import tempfile
 
-from batch_videos import ROOT, VOICE, paths
+from batch_videos import ROOT, SPEECH_RATE, VOICE, paths
 import render_episode as r
 
 
-def check_subtitles(movie, scenes, timeline):
+def check_subtitles(movie, scenes, timeline, offset=0.0):
     with tempfile.TemporaryDirectory() as tmp:
         expected = Path(tmp) / "video.mp4"
         r.write_subtitles(scenes, [s["duration"] for s in timeline], expected,
-                          [{"offset": 0, "speech_duration": s["speech_duration"]} for s in timeline])
+                          [{"offset": 0, "speech_duration": s["speech_duration"]} for s in timeline],
+                          offset=offset)
         for suffix in (".srt", ".vtt"):
             assert movie.with_suffix(suffix).read_text() == expected.with_suffix(suffix).read_text(), (movie, suffix)
 
@@ -30,22 +31,25 @@ def inspect(script, contact_sheet=False, published=False):
         movie = script.parent.parent / "视频.mp4"
     work.mkdir(parents=True, exist_ok=True)
     manifest = json.loads((audio / "manifest.json").read_text())
-    assert manifest["voice_id"] == VOICE and manifest["speech_rate"] == 0
+    assert manifest["voice_id"] == VOICE and manifest["speech_rate"] == SPEECH_RATE
     assert manifest["scenes"] == [{"id": s["id"], "text": s["narration"]} for s in data["scenes"]]
     timeline = json.loads(movie.with_suffix(".timeline.json").read_text())
     assert (movie.parent / timeline["script"]).resolve() == script.resolve()
     assert (movie.parent / timeline["audio_dir"]).resolve() == audio.resolve()
     assert timeline["audio"] == "files" and timeline["voice_id"] == VOICE
-    check_subtitles(movie, data["scenes"], timeline["scenes"])
+    assert timeline.get("speech_rate") == SPEECH_RATE
+    intro = float(timeline.get("intro_duration", 0))
+    outro = float(timeline.get("outro_duration", 0))
+    check_subtitles(movie, data["scenes"], timeline["scenes"], intro)
     probe = json.loads(subprocess.check_output(["ffprobe", "-v", "error", "-show_streams", "-show_format", "-of", "json", str(movie)]))
     v = next(s for s in probe["streams"] if s["codec_type"] == "video")
     a = next(s for s in probe["streams"] if s["codec_type"] == "audio")
     assert (v["width"], v["height"], v["avg_frame_rate"]) == (1280, 720, "24/1")
     assert v["codec_name"] == "h264" and a["codec_name"] == "aac"
-    total = sum(s["duration"] for s in timeline["scenes"])
+    total = intro + sum(s["duration"] for s in timeline["scenes"]) + outro
     assert abs(float(probe["format"]["duration"]) - total) < .1
     assert len(timeline["scenes"]) == len(data["scenes"])
-    pauses, cursor = 0, 0.0
+    pauses, cursor = 0, intro
     for sc, actual in zip(data["scenes"], timeline["scenes"]):
         assert sc["id"] == actual["id"] and sc["narration"] == actual["narration"]
         assert abs(actual["start"] - cursor) < .000002
@@ -85,9 +89,10 @@ def inspect(script, contact_sheet=False, published=False):
         out.save(work / "实际成片关键帧.jpg", quality=88)
     result = {"script": str(script.relative_to(ROOT)), "video": str(movie.relative_to(ROOT)),
               "duration": round(total, 3), "scenes": len(data["scenes"]), "voice_id": VOICE,
-              "speech_rate": 0, "max_volume_db": peak, "mean_volume_db": mean,
+              "speech_rate": SPEECH_RATE, "intro_duration": intro, "outro_duration": outro,
+              "max_volume_db": peak, "mean_volume_db": mean,
               "thinking_pauses": pauses, "sha256": hashlib.sha256(movie.read_bytes()).hexdigest(),
-              "checks": "配音清单/时间线音色/原速、1280×720/24fps/H264/AAC、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波",
+              "checks": "配音清单/音色/1.2倍语速、1280×720/24fps/H264/AAC、片头片尾、连续分幕、实际SRT/VTT、字幕两行、思考静音≥8秒及实际采样、音量无削波、结论栏文案",
               "frame_samples_decoded": contact_sheet}
     (work / "成片技术核验.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
     print("核验完成", work.name, flush=True)

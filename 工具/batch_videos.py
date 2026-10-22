@@ -9,6 +9,8 @@ import sys
 
 ROOT = Path(__file__).resolve().parent.parent
 VOICE = "zh_male_kailangxuezhang_uranus_bigtts"
+# 豆包语速参数：20 表示在自然语速上再快约 20%。
+SPEECH_RATE = 20
 
 
 def paths(script):
@@ -23,10 +25,11 @@ def run_one(script, stage):
     work.mkdir(parents=True, exist_ok=True)
     if stage == "audio":
         cmd = [sys.executable, str(ROOT / "工具/prepare_narration.py"), str(script),
-               "--out-dir", str(audio), "--voice-id", VOICE, "--generate", "--resume"]
+               "--out-dir", str(audio), "--voice-id", VOICE, "--speech-rate", str(SPEECH_RATE),
+               "--generate", "--resume"]
     else:
         cmd = [sys.executable, str(ROOT / "工具/render_episode.py"), str(script),
-               "--out", str(movie), "--audio-dir", str(audio), "--burn-captions"]
+               "--out", str(movie), "--audio-dir", str(audio), "--branding"]
     with (work / (stage + ".log")).open("w") as log:
         result = subprocess.run(cmd, stdout=log, stderr=subprocess.STDOUT)
     print(f"{stage} {work.name}: {'完成' if result.returncode == 0 else '失败，检查日志'}", flush=True)

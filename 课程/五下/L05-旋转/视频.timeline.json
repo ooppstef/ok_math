@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g5b_l05_s1",
-      "start": 0.0,
-      "duration": 6.458333333333333,
+      "start": 2.6,
+      "duration": 5.0,
       "narration": "这次绕中心点，顺时针转九十度。先看图上的两个点。",
-      "speech_duration": 5.8560090702947845,
+      "speech_duration": 4.3920181405895695,
       "pause_after": 0.6
     },
     {
       "id": "g5b_l05_s2",
-      "start": 6.458333,
-      "duration": 4.5,
+      "start": 7.6,
+      "duration": 3.5,
       "narration": "右边的点转到下边，离中心仍是三格。",
-      "speech_duration": 3.8640136054421768,
+      "speech_duration": 2.88,
       "pause_after": 0.6
     },
     {
       "id": "g5b_l05_s3",
-      "start": 10.958333,
-      "duration": 9.708333333333334,
+      "start": 11.1,
+      "duration": 7.166666666666667,
       "narration": "上边的点同时转到右边，仍是两格。所有点都转相同角度，三角形没有拉长。",
-      "speech_duration": 9.072018140589568,
+      "speech_duration": 6.552018140589569,
       "pause_after": 0.6
     },
     {
       "id": "g5b_l05_s4",
-      "start": 20.666667,
-      "duration": 13.25,
+      "start": 18.266667,
+      "duration": 12.583333333333334,
       "narration": "回到原来的位置。如果换成逆时针，右边这个点会去哪边？",
-      "speech_duration": 5.232018140589569,
+      "speech_duration": 4.56,
       "pause_after": 8
     },
     {
       "id": "g5b_l05_s5",
-      "start": 33.916667,
-      "duration": 6.875,
+      "start": 30.85,
+      "duration": 5.666666666666667,
       "narration": "会到上边三格。方向换了，落点也变了，所以这三件事都要说清。",
-      "speech_duration": 6.24,
+      "speech_duration": 5.04,
       "pause_after": 0.6
     }
   ]

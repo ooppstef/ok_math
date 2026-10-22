@@ -2,56 +2,59 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g6a_l12_s1_1",
-      "start": 0.0,
-      "duration": 5.833333333333333,
+      "start": 2.6,
+      "duration": 5.0,
       "narration": "一个点，再添三个，摆成每边两个点的正方形。",
-      "speech_duration": 5.232018140589569,
+      "speech_duration": 4.368004535147392,
       "pause_after": 0.6
     },
     {
       "id": "g6a_l12_s2_1",
-      "start": 5.833333,
-      "duration": 5.875,
+      "start": 7.6,
+      "duration": 5.333333333333333,
       "narration": "再添五个，再添七个。每次都补右边一列和下面一行。",
-      "speech_duration": 5.256009070294785,
+      "speech_duration": 4.704013605442177,
       "pause_after": 0.6
     },
     {
       "id": "g6a_l12_s3_1",
-      "start": 11.708333,
-      "duration": 6.625,
+      "start": 12.933333,
+      "duration": 5.666666666666667,
       "narration": "每边五个点时，新的一列有五个，下面再添四个，共九个。",
-      "speech_duration": 6.0240136054421765,
+      "speech_duration": 5.04,
       "pause_after": 0.6
     },
     {
       "id": "g6a_l12_s3_2",
-      "start": 18.333333,
-      "duration": 6.458333333333333,
+      "start": 18.6,
+      "duration": 5.5,
       "narration": "每边有多少个，新的一列就有多少个，下面一行比它少一个。",
-      "speech_duration": 5.8560090702947845,
+      "speech_duration": 4.872018140589569,
       "pause_after": 0.6
     },
     {
       "id": "g6a_l12_s4_1",
-      "start": 24.791667,
-      "duration": 12.875,
+      "start": 24.1,
+      "duration": 12.25,
       "narration": "从每边三个点变成每边五个点，要添哪两个奇数？",
-      "speech_duration": 4.848004535147393,
+      "speech_duration": 4.224013605442177,
       "pause_after": 8
     },
     {
       "id": "g6a_l12_s5_1",
-      "start": 37.666667,
-      "duration": 12.083333333333334,
+      "start": 36.35,
+      "duration": 9.875,
       "narration": "添七个，再添九个，一共十六个。用大正方形二十五个减小正方形九个，也得到十六。",
-      "speech_duration": 11.448004535147392,
+      "speech_duration": 9.24,
       "pause_after": 0.6
     }
   ]

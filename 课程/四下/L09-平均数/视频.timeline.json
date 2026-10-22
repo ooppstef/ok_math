@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g4b_l09_s1",
-      "start": 0.0,
-      "duration": 5.666666666666667,
+      "start": 2.6,
+      "duration": 4.666666666666667,
       "narration": "不添积木，也不丢积木，能不能让三个人一样多？",
-      "speech_duration": 5.0640136054421765,
+      "speech_duration": 4.032018140589569,
       "pause_after": 0.6
     },
     {
       "id": "g4b_l09_s2",
-      "start": 5.666667,
-      "duration": 5.666666666666667,
+      "start": 7.266667,
+      "duration": 5.0,
       "narration": "从多的一堆拿出三块补给最少的，再拿一块补给中间这堆。",
-      "speech_duration": 5.0640136054421765,
+      "speech_duration": 4.3920181405895695,
       "pause_after": 0.6
     },
     {
       "id": "g4b_l09_s3",
-      "start": 11.333333,
-      "duration": 7.041666666666667,
+      "start": 12.266667,
+      "duration": 6.875,
       "narration": "每人五块。总数十五没变，人数也没变，所以用十五除以三。",
-      "speech_duration": 6.4320181405895696,
+      "speech_duration": 6.24,
       "pause_after": 0.6
     },
     {
       "id": "g4b_l09_s4",
-      "start": 18.375,
-      "duration": 12.041666666666666,
+      "start": 19.141667,
+      "duration": 11.416666666666666,
       "narration": "平均数是五，能说原来每个人就有五块吗？",
-      "speech_duration": 4.008004535147392,
+      "speech_duration": 3.3840136054421768,
       "pause_after": 8
     },
     {
       "id": "g4b_l09_s5",
-      "start": 30.416667,
-      "duration": 10.083333333333334,
+      "start": 30.558333,
+      "duration": 9.666666666666666,
       "narration": "不能。原来是二、四、九。平均五，说的是把这些积木平均分开，每人会分到五块。",
-      "speech_duration": 9.456009070294785,
+      "speech_duration": 9.048004535147392,
       "pause_after": 0.6
     }
   ]

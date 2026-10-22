@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g4a_l08_s1_1",
-      "start": 0.0,
-      "duration": 6.875,
+      "start": 2.6,
+      "duration": 6.0,
       "narration": "六百，每两百一份，有三份。盯住总量和每份的大小。",
-      "speech_duration": 6.264013605442177,
+      "speech_duration": 5.376009070294785,
       "pause_after": 0.6
     },
     {
       "id": "g4a_l08_s2_1",
-      "start": 6.875,
-      "duration": 5.833333333333333,
+      "start": 8.6,
+      "duration": 6.208333333333333,
       "narration": "总量和每份都除以一百，变成六，每份是二，还是三份。",
-      "speech_duration": 5.232018140589569,
+      "speech_duration": 5.568004535147392,
       "pause_after": 0.6
     },
     {
       "id": "g4a_l08_s3_1",
-      "start": 12.708333,
-      "duration": 8.25,
+      "start": 14.808333,
+      "duration": 7.541666666666667,
       "narration": "再看八百五十除以三十。换成十作单位，就是八十五个十，每份是三个十。",
-      "speech_duration": 7.632018140589569,
+      "speech_duration": 6.912018140589569,
       "pause_after": 0.6
     },
     {
       "id": "g4a_l08_s4_1",
-      "start": 20.958333,
-      "duration": 12.708333333333334,
+      "start": 22.35,
+      "duration": 11.916666666666666,
       "narration": "剩下的这一，是什么单位？能直接答余一吗？",
-      "speech_duration": 4.68,
+      "speech_duration": 3.888004535147392,
       "pause_after": 8
     },
     {
       "id": "g4a_l08_s5_1",
-      "start": 33.666667,
-      "duration": 9.083333333333334,
+      "start": 34.266667,
+      "duration": 8.666666666666666,
       "narration": "剩一个十，也就是十个一。原题商二十八，余十。商没有变，余数要跟着单位读。",
-      "speech_duration": 8.448004535147392,
+      "speech_duration": 8.064013605442177,
       "pause_after": 0.6
     }
   ]

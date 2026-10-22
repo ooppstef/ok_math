@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g4b_l10_s1",
-      "start": 0.0,
-      "duration": 5.875,
+      "start": 2.6,
+      "duration": 4.833333333333333,
       "narration": "先把八只全看成鸡，只有十六只脚，比题目少六只。",
-      "speech_duration": 5.256009070294785,
+      "speech_duration": 4.224013605442177,
       "pause_after": 0.6
     },
     {
       "id": "g4b_l10_s2",
-      "start": 5.875,
-      "duration": 4.5,
+      "start": 7.433333,
+      "duration": 4.166666666666667,
       "narration": "换一只兔，头数不变，脚多两只。",
-      "speech_duration": 3.8640136054421768,
+      "speech_duration": 3.552018140589569,
       "pause_after": 0.6
     },
     {
       "id": "g4b_l10_s3",
-      "start": 10.375,
-      "duration": 7.25,
+      "start": 11.6,
+      "duration": 5.666666666666667,
       "narration": "再换两次，脚数就到二十二。一共换进三只兔，还剩五只鸡。",
-      "speech_duration": 6.648004535147392,
+      "speech_duration": 5.04,
       "pause_after": 0.6
     },
     {
       "id": "g4b_l10_s4",
-      "start": 17.625,
-      "duration": 11.875,
+      "start": 17.266667,
+      "duration": 11.708333333333334,
       "narration": "如果题目说有二十三只脚，还能这样凑出来吗？",
-      "speech_duration": 3.8640136054421768,
+      "speech_duration": 3.6960090702947848,
       "pause_after": 8
     },
     {
       "id": "g4b_l10_s5",
-      "start": 29.5,
-      "duration": 10.083333333333334,
+      "start": 28.975,
+      "duration": 8.0,
       "narration": "凑不出来。每次都加两只脚，得不到二十三。条件有问题，不能答三点五只兔。",
-      "speech_duration": 9.456009070294785,
+      "speech_duration": 7.368004535147392,
       "pause_after": 0.6
     }
   ]

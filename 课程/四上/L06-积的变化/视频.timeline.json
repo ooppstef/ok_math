@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g4a_l06_s1_1",
-      "start": 0.0,
-      "duration": 8.083333333333334,
+      "start": 2.6,
+      "duration": 7.0,
       "narration": "三列两行，一共六个点。长和宽都变成两倍，会变成几个这样的点阵？",
-      "speech_duration": 7.464013605442177,
+      "speech_duration": 6.36,
       "pause_after": 0.6
     },
     {
       "id": "g4a_l06_s2_1",
-      "start": 8.083333,
-      "duration": 4.5,
+      "start": 9.6,
+      "duration": 3.3333333333333335,
       "narration": "先横着加一份，总数变成十二。",
-      "speech_duration": 3.8640136054421768,
+      "speech_duration": 2.7120181405895694,
       "pause_after": 0.6
     },
     {
       "id": "g4a_l06_s3_1",
-      "start": 12.583333,
-      "duration": 5.875,
+      "start": 12.933333,
+      "duration": 5.333333333333333,
       "narration": "再竖着加一份，现在一共四块原来的点阵，二十四个点。",
-      "speech_duration": 5.256009070294785,
+      "speech_duration": 4.704013605442177,
       "pause_after": 0.6
     },
     {
       "id": "g4a_l06_s4_1",
-      "start": 18.458333,
-      "duration": 13.666666666666666,
+      "start": 18.266667,
+      "duration": 12.583333333333334,
       "narration": "如果长两倍、宽三倍，要摆几排、每排几块原图？",
-      "speech_duration": 5.64,
+      "speech_duration": 4.56,
       "pause_after": 8
     },
     {
       "id": "g4a_l06_s5_1",
-      "start": 32.125,
-      "duration": 6.875,
+      "start": 30.85,
+      "duration": 5.666666666666667,
       "narration": "三排，每排两块，共六块。两个方向的倍数要相乘。",
-      "speech_duration": 6.24,
+      "speech_duration": 5.04,
       "pause_after": 0.6
     }
   ]

@@ -2,56 +2,59 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "01",
-      "start": 0.0,
-      "duration": 8.083333333333334,
+      "start": 2.6,
+      "duration": 7.083333333333333,
       "narration": "每块小正方形边长一厘米，面积是一平方厘米。沿着长铺，一行能放六格。",
-      "speech_duration": 7.08,
+      "speech_duration": 6.048004535147392,
       "pause_after": 1
     },
     {
       "id": "02",
-      "start": 8.083333,
-      "duration": 7.833333333333333,
+      "start": 9.683333,
+      "duration": 6.75,
       "narration": "一行六格，一共五行。不重叠，也不留空，正好铺满三十格。",
-      "speech_duration": 6.816009070294784,
+      "speech_duration": 5.712018140589569,
       "pause_after": 1
     },
     {
       "id": "03",
-      "start": 15.916667,
-      "duration": 10.291666666666666,
+      "start": 16.433333,
+      "duration": 7.583333333333333,
       "narration": "长告诉我们每行有几格，宽告诉我们有几行。长乘宽，把整个面数完。",
-      "speech_duration": 8.256009070294784,
+      "speech_duration": 5.568004535147392,
       "pause_after": 2
     },
     {
       "id": "04",
-      "start": 26.208333,
-      "duration": 16.291666666666668,
+      "start": 24.016667,
+      "duration": 15.083333333333334,
       "narration": "如果把这三十格拆开，拼成一排，小格一块没少。面积会变吗？外面一圈呢？",
-      "speech_duration": 8.256009070294784,
+      "speech_duration": 7.056009070294785,
       "pause_after": 8
     },
     {
       "id": "05",
-      "start": 42.5,
-      "duration": 8.5,
+      "start": 39.1,
+      "duration": 7.416666666666667,
       "narration": "把画面缩小一些，好看清整条。每一格仍是一平方厘米。三十格逐块排成一行。",
-      "speech_duration": 7.464013605442177,
+      "speech_duration": 6.384013605442177,
       "pause_after": 1
     },
     {
       "id": "06",
-      "start": 51.0,
-      "duration": 9.875,
+      "start": 46.516667,
+      "duration": 8.416666666666666,
       "narration": "面积仍是三十平方厘米。边界却变了，长三十、宽一，周长变成六十二厘米。",
-      "speech_duration": 7.872018140589569,
+      "speech_duration": 6.384013605442177,
       "pause_after": 2
     }
   ]

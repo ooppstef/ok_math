@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g5b_l10_s1_1",
-      "start": 0.0,
-      "duration": 7.666666666666667,
+      "start": 2.6,
+      "duration": 6.208333333333333,
       "narration": "涂色是整条的一半。接下来只改分法，不再涂，也不擦掉。",
-      "speech_duration": 7.056009070294785,
+      "speech_duration": 5.568004535147392,
       "pause_after": 0.6
     },
     {
       "id": "g5b_l10_s2_1",
-      "start": 7.666667,
-      "duration": 7.458333333333333,
+      "start": 8.808333,
+      "duration": 6.5,
       "narration": "每一份再分成两份。总共四份，涂色占两份，写成四分之二。",
-      "speech_duration": 6.84,
+      "speech_duration": 5.88,
       "pause_after": 0.6
     },
     {
       "id": "g5b_l10_s3_1",
-      "start": 15.125,
-      "duration": 7.458333333333333,
+      "start": 15.308333,
+      "duration": 6.541666666666667,
       "narration": "再分细，变成八份中的四份。小份变多，涂色的总长度没变。",
-      "speech_duration": 6.84,
+      "speech_duration": 5.904013605442177,
       "pause_after": 0.6
     },
     {
       "id": "g5b_l10_s4_1",
-      "start": 22.583333,
-      "duration": 15.666666666666666,
+      "start": 21.85,
+      "duration": 14.25,
       "narration": "这次在右边接上白纸，整条变长了。原来的涂色还占新整体的一半吗？",
-      "speech_duration": 7.656009070294784,
+      "speech_duration": 6.24,
       "pause_after": 8
     },
     {
       "id": "g5b_l10_s5_1",
-      "start": 38.25,
-      "duration": 9.041666666666666,
+      "start": 36.1,
+      "duration": 7.333333333333333,
       "narration": "现在只占三分之一。改变分法可以不改分数大小，换掉整体却是另一件事。",
-      "speech_duration": 8.424013605442177,
+      "speech_duration": 6.696009070294784,
       "pause_after": 0.6
     }
   ]

@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "01",
-      "start": 0.0,
-      "duration": 6.875,
+      "start": 2.6,
+      "duration": 5.75,
       "narration": "把圆柱侧面沿一条高剪开。上下两圈边，用同样的颜色追踪。",
-      "speech_duration": 5.8560090702947845,
+      "speech_duration": 4.7280045351473925,
       "pause_after": 1
     },
     {
       "id": "02",
-      "start": 6.875,
-      "duration": 8.875,
+      "start": 8.35,
+      "duration": 7.583333333333333,
       "narration": "慢慢摊平。绕底面一圈的长度，变成长方形的长，高仍是原来的高。",
-      "speech_duration": 7.872018140589569,
+      "speech_duration": 6.552018140589569,
       "pause_after": 1
     },
     {
       "id": "03",
-      "start": 15.75,
-      "duration": 9.25,
+      "start": 15.933333,
+      "duration": 7.916666666666667,
       "narration": "展开后是长方形。长等于底面周长，宽等于高，所以侧面积是周长乘高。",
-      "speech_duration": 7.224013605442177,
+      "speech_duration": 5.904013605442177,
       "pause_after": 2
     },
     {
       "id": "04",
-      "start": 25.0,
-      "duration": 13.875,
+      "start": 23.85,
+      "duration": 12.916666666666666,
       "narration": "算完侧面，有盖圆柱还要加几个圆形底面？无盖的水桶呢？",
-      "speech_duration": 5.8560090702947845,
+      "speech_duration": 4.8960090702947845,
       "pause_after": 8
     },
     {
       "id": "05",
-      "start": 38.875,
-      "duration": 11.083333333333334,
+      "start": 36.766667,
+      "duration": 8.916666666666666,
       "narration": "有盖加两个底面，无盖加一个。两端开口的管子，只算侧面。材料题忽略接缝和厚度。",
-      "speech_duration": 9.048004535147392,
+      "speech_duration": 6.912018140589569,
       "pause_after": 2
     }
   ]

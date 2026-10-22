@@ -14,12 +14,11 @@ def render(im,d,t,sc,ctx,r):
     r.header(d,ctx)
     blue,gold,red,ink=r.TEAL,r.GOLD,r.RED,r.INK
     def txt(x,y,text,size=28,color=ink):d.text((x,y),str(text),font=r.F(size),fill=color)
-    def formula(text):txt(84,565,text,28,blue)
+    def formula(text):r.set_conclusion(ctx,text)
     def dot(x,y,color=blue,rad=6):
         if sc['model']=='place_value':d.line((x,y-rad,x,y+rad),fill=color,width=4)
         else:d.ellipse((x-rad,y-rad,x+rad,y+rad),fill=color)
     def box(x,y,w,h,color=r.PAPER):d.rectangle((x,y,x+w,y+h),fill=color,outline=ink,width=2)
-    txt(84,122,sc['title'],36)
     q=r.clamp(t/max(.01,ctx.get('speech_duration',sc['duration']))/.88)
     p=sc.get('phase_start',0)+(sc.get('phase_end',1)-sc.get('phase_start',0))*q
     s=sc['stage'];model=sc['model']
@@ -148,9 +147,14 @@ def render(im,d,t,sc,ctx,r):
             gap=58 if s<3 else 35
             pts=array_points(rows,cols,430,375,gap,angle)
             for i,(x,y) in enumerate(pts):dot(x,y,[blue,gold,red][(i//cols)%3],12 if s<3 else 8)
-            txt(770,290,'同一批棋子一起转',29)
-            txt(770,345,f'始终 {rows*cols} 颗',30)
-            txt(770,400,'距离不变，没有拉伸',25)
+            if s==1:
+                txt(770,290,f'{rows} 行，每行 {cols} 颗',30)
+                txt(770,345,f'一共 {rows*cols} 颗',31)
+                txt(770,400,'每行一样多',25)
+            else:
+                txt(770,290,'同一批棋子一起转',29)
+                txt(770,345,f'始终 {rows*cols} 颗',30)
+                txt(770,400,'距离不变，没有拉伸',25)
             formula(['3 行，每行 4 颗：3 × 4 = 12','转过 90°：4 行，每行 3 颗，还是 12','6 × 7 = 7 × 6 = 42'][s-1])
         elif s==4:
             # Counterexample: no missing dot is silently filled.
@@ -162,18 +166,22 @@ def render(im,d,t,sc,ctx,r):
             formula('不完整的点阵：4 + 4 + 3 = 11，不能直接算成 3 × 4')
         elif s==5:
             for k,(rows,cols) in enumerate([(1,12),(2,6),(3,4)]):
-                xx=260+k*370
-                for x,y in array_points(rows,cols,xx,355,22):dot(x,y,blue,7)
-                txt(xx-80,450,f'{rows} × {cols}',30)
+                y0=192+k*128
+                d.rounded_rectangle((230,y0,900,y0+112),12,fill=(252,248,239),outline=r.LINE,width=2)
+                gap=min(46,520/max(1,cols-1),86/max(1,rows-1))
+                for x,y in array_points(rows,cols,565,y0+56,gap):dot(x,y,blue,8)
+                txt(920,y0+34,f'{rows} × {cols}',31)
+                txt(920,y0+72,'一种摆法',20,r.MUTED)
             formula('12 颗：转向算同一种，有 3 种；行列分开算，有 6 种')
         elif s==6:
             for x,y in array_points(3,8,490,340,45):dot(x,y,gold,10)
             formula('24 颗摆完整长方形，转 90° 算同一种：有几种摆法？')
         elif s==7:
-            for k,(rows,cols) in enumerate([(1,24),(2,12),(3,8),(4,6)]):
-                cx=370 if k%2==0 else 920;cy=280+(k//2)*180
-                for x,y in array_points(rows,cols,cx,cy,18):dot(x,y,blue,5)
-                txt(cx-70,cy+48,f'{rows} × {cols}',27)
+            for k,(rows,cols,gap) in enumerate([(1,24,20),(2,12,30),(3,8,32),(4,6,34)]):
+                x0=110+(k%2)*560;y0=185+(k//2)*200
+                d.rounded_rectangle((x0,y0,x0+540,y0+180),14,fill=(252,248,239),outline=r.LINE,width=2)
+                for x,y in array_points(rows,cols,x0+270,y0+82,gap):dot(x,y,blue,8)
+                txt(x0+22,y0+144,f'{rows} × {cols}',28)
             formula('1 × 24、2 × 12、3 × 8、4 × 6：共 4 种')
         elif s==8:
             for row in range(4):

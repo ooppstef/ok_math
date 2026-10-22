@@ -33,8 +33,11 @@ def main():
     ap.add_argument("--voice-id", help="用户指定的豆包 speaker/音色 ID")
     ap.add_argument("--generate", action="store_true", help="实际调用配音接口；不加此参数只导出旁白")
     ap.add_argument("--resume", action="store_true", help="只在音色和全文均未改变时续做中断的配音")
+    ap.add_argument("--speech-rate", type=int, default=0, help="语速 -50 到 100，20 约为原速的 1.2 倍")
     ap.add_argument("--nba-tts", type=Path, default=DEFAULT_TTS)
     args = ap.parse_args()
+    if not -50 <= args.speech_rate <= 100:
+        ap.error("speech-rate 必须在 -50 到 100 之间")
     data = json.loads(args.script.read_text(encoding="utf-8"))
     scenes = [{"id": sc["id"], "text": sc["narration"]} for sc in data["scenes"]]
     ids = [sc["id"] for sc in scenes]
@@ -46,7 +49,8 @@ def main():
         ap.error("生成配音必须提供 --voice-id，不会套用 nba_biz 的默认音色")
     # 官方 2.0 音色与 nba_biz 的 S_ 复刻音色使用不同资源；不修改相邻项目。
     resource_id = "seed-tts-2.0" if (args.voice_id or "").endswith("_uranus_bigtts") else "seed-icl-2.0"
-    plan = {"voice_id": args.voice_id, "model": "seed-tts-2.0-expressive", "speech_rate": 0,
+    plan = {"voice_id": args.voice_id, "model": "seed-tts-2.0-expressive",
+            "speech_rate": args.speech_rate,
             "resource_id": resource_id, "instruction": TEACHING_INSTRUCTION, "scenes": scenes}
     existing = any(args.out_dir.glob("*.mp3")) or (args.out_dir / "manifest.json").exists()
     if existing:
@@ -77,7 +81,7 @@ def main():
             continue
         print(f"生成 {sc['id']} …", flush=True)
         audio = tts.request_tts(key, args.voice_id, sc["text"], model=plan["model"],
-                                speech_rate=plan["speech_rate"], instruction=TEACHING_INSTRUCTION)
+                                speech_rate=args.speech_rate, instruction=TEACHING_INSTRUCTION)
         with tempfile.TemporaryDirectory(prefix=".tts-", dir=args.out_dir) as tmp:
             candidate = Path(tmp) / f"{sc['id']}.mp3"
             candidate.write_bytes(audio)

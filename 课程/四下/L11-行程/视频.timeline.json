@@ -2,56 +2,59 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "g4b_l11_s1",
-      "start": 0.0,
-      "duration": 7.083333333333333,
+      "start": 2.6,
+      "duration": 6.208333333333333,
       "narration": "两人相距三百米。甲每分钟走六十米，乙每分钟走四十米，同时朝对方走。",
-      "speech_duration": 6.456009070294785,
+      "speech_duration": 5.568004535147392,
       "pause_after": 0.6
     },
     {
       "id": "g4b_l11_s2",
-      "start": 7.083333,
-      "duration": 7.708333333333333,
+      "start": 8.808333,
+      "duration": 6.666666666666667,
       "narration": "一分钟，甲走六十米，乙走四十米。中间的距离一共缩短一百米，还剩二百米。",
-      "speech_duration": 7.08,
+      "speech_duration": 6.048004535147392,
       "pause_after": 0.6
     },
     {
       "id": "g4b_l11_s3",
-      "start": 14.791667,
-      "duration": 7.041666666666667,
+      "start": 15.475,
+      "duration": 6.333333333333333,
       "narration": "每分钟靠近一百米。三百米除以一百米每分钟，三分钟正好相遇。",
-      "speech_duration": 6.4320181405895696,
+      "speech_duration": 5.712018140589569,
       "pause_after": 0.6
     },
     {
       "id": "g4b_l11_s4",
-      "start": 21.833333,
-      "duration": 8.083333333333334,
+      "start": 21.808333,
+      "duration": 7.541666666666667,
       "narration": "现在初始间距一百米。后面每分钟走一百米，前面走八十米。一分钟只缩短二十米。",
-      "speech_duration": 7.464013605442177,
+      "speech_duration": 6.912018140589569,
       "pause_after": 0.6
     },
     {
       "id": "g4b_l11_s5",
-      "start": 29.916667,
-      "duration": 14.875,
+      "start": 29.35,
+      "duration": 13.583333333333334,
       "narration": "从开始追赶算起，一百米的间距，每分钟少二十米。要几分钟追上？",
-      "speech_duration": 6.864013605442177,
+      "speech_duration": 5.568004535147392,
       "pause_after": 8
     },
     {
       "id": "g4b_l11_s6",
-      "start": 44.791667,
-      "duration": 8.083333333333334,
+      "start": 42.933333,
+      "duration": 7.0,
       "narration": "五分钟。后面走五百米，前面从一百米处再走四百米，正好到同一点。",
-      "speech_duration": 7.464013605442177,
+      "speech_duration": 6.36,
       "pause_after": 0.6
     }
   ]

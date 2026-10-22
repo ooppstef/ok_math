@@ -2,48 +2,51 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "01",
-      "start": 0.0,
-      "duration": 7.458333333333333,
+      "start": 2.6,
+      "duration": 6.041666666666667,
       "narration": "把三角形的三个角分别取下来。颜色跟着原来的角，不换位置关系。",
-      "speech_duration": 6.4320181405895696,
+      "speech_duration": 5.04,
       "pause_after": 1
     },
     {
       "id": "02",
-      "start": 7.458333,
-      "duration": 7.875,
+      "start": 8.641667,
+      "duration": 6.416666666666667,
       "narration": "把三个顶点搬到一起。每个角只平移、旋转，开口大小不能变。",
-      "speech_duration": 6.84,
+      "speech_duration": 5.376009070294785,
       "pause_after": 1
     },
     {
       "id": "03",
-      "start": 15.333333,
-      "duration": 10.291666666666666,
+      "start": 15.058333,
+      "duration": 9.708333333333334,
       "narration": "三个角合成一个平角。这个拼角演示帮助理解内角和一百八十度，完整证明以后再学。",
-      "speech_duration": 8.256009070294784,
+      "speech_duration": 7.704013605442177,
       "pause_after": 2
     },
     {
       "id": "04",
-      "start": 25.625,
-      "duration": 13.875,
+      "start": 24.766667,
+      "duration": 12.416666666666666,
       "narration": "一个角五十度，另一个六十度。第三个角是多少度？",
-      "speech_duration": 5.8560090702947845,
+      "speech_duration": 4.3920181405895695,
       "pause_after": 8
     },
     {
       "id": "05",
-      "start": 39.5,
-      "duration": 7.25,
+      "start": 37.183333,
+      "duration": 6.041666666666667,
       "narration": "从一百八十度减去五十度，再减去六十度，还剩七十度。",
-      "speech_duration": 5.232018140589569,
+      "speech_duration": 4.032018140589569,
       "pause_after": 2
     }
   ]

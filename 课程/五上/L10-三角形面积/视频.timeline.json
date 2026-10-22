@@ -2,64 +2,67 @@
   "script": "视频源文件/分镜.json",
   "fps": 24,
   "audio": "files",
-  "audio_dir": "视频源文件/配音-开朗学长-v1",
+  "audio_dir": "视频源文件/配音-开朗学长-v2-1.2x",
   "voice_id": "zh_male_kailangxuezhang_uranus_bigtts",
-  "burn_captions": true,
+  "speech_rate": 20,
+  "intro_duration": 2.6,
+  "outro_duration": 2.8,
+  "burn_captions": false,
   "scenes": [
     {
       "id": "01",
-      "start": 0.0,
-      "duration": 7.041666666666667,
+      "start": 2.6,
+      "duration": 5.583333333333333,
       "narration": "这一块三角形，底六厘米，高四厘米。高要垂直到底边。",
-      "speech_duration": 6.0240136054421765,
+      "speech_duration": 4.56,
       "pause_after": 1
     },
     {
       "id": "02",
-      "start": 7.041667,
-      "duration": 7.041666666666667,
+      "start": 8.183333,
+      "duration": 5.583333333333333,
       "narration": "复制一块完全一样的三角形。让副本绕这条边的中点，转半圈。",
-      "speech_duration": 6.0240136054421765,
+      "speech_duration": 4.56,
       "pause_after": 1
     },
     {
       "id": "03",
-      "start": 14.083333,
-      "duration": 7.291666666666667,
+      "start": 13.766667,
+      "duration": 6.25,
       "narration": "两块拼成平行四边形，底还是六，高还是四。整个面积是二十四。",
-      "speech_duration": 6.264013605442177,
+      "speech_duration": 5.232018140589569,
       "pause_after": 1
     },
     {
       "id": "04",
-      "start": 21.375,
-      "duration": 13.083333333333334,
+      "start": 20.016667,
+      "duration": 12.083333333333334,
       "narration": "二十四是两块的面积。只要其中一块，应该怎样算？",
-      "speech_duration": 5.0640136054421765,
+      "speech_duration": 4.056009070294785,
       "pause_after": 8
     },
     {
       "id": "05",
-      "start": 34.458333,
-      "duration": 8.083333333333334,
+      "start": 32.1,
+      "duration": 7.25,
       "narration": "除以二，得到十二平方厘米。这个二，来自拼图里的两块。",
-      "speech_duration": 6.048004535147392,
+      "speech_duration": 5.232018140589569,
       "pause_after": 2
     },
     {
       "id": "06",
-      "start": 42.541667,
-      "duration": 13.25,
+      "start": 39.35,
+      "duration": 12.916666666666666,
       "narration": "底边不动，顶点沿着同一条水平线移动。底和高会变吗？",
-      "speech_duration": 5.232018140589569,
+      "speech_duration": 4.8960090702947845,
       "pause_after": 8
     },
     {
       "id": "07",
-      "start": 55.791667,
-      "duration": 8.25,
+      "start": 52.266667,
+      "duration": 6.375,
       "narration": "底还是六，高还是四。三角形的面积仍然是十二平方厘米。",
-      "speech_duration": 6.24,
+      "speech_duration": 4.368004535147392,
       "pause_after": 2
     }
   ]
