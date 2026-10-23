@@ -128,7 +128,7 @@ ${lesson?.video_note ? `      <p class="video-scope">${escapeHtml(lesson.video_n
   <div class="practice-head">
     <div class="practice-kicker">换一组练习</div>
     <h2 id="practice-heading">这一课，再练一练</h2>
-    <p class="practice-intro">每次 5 题，答完就能看解析。做错的知识点会记在这个浏览器里，同类题连对 2 次后消除。</p>
+    <p class="practice-intro">每次 5 题，答完一题就能看解析。做错题的知识点会记在这个浏览器里，留着下次练。同一知识点连对 2 次，就从待练列表里划掉。</p>
     <p class="practice-weak" data-practice-weak>正在读取本课记录……</p>
   </div>
   <div class="practice-body" data-practice-body></div>

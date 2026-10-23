@@ -79,7 +79,7 @@ function documentPage({ doc, root, title, body, lesson, video, note, actions, to
     <div class="hero-main">
       <div class="kicker">${escapeHtml(learning && lesson ? learningLabel(lesson) : expandSem(doc.kicker || '为什么实验室'))}</div>
       <h1 class="doc-title">${escapeHtml(title)}</h1>
-${learning && lesson ? `      <p class="lesson-prerequisites">先会：${escapeHtml(lesson.prerequisites.join('、'))}</p>\n` : ''}${learning && lesson && lesson.knowledge ? `      <p class="lesson-knowledge">本课知识点：${lesson.knowledge.map(k => `<span class="kn-tag">${escapeHtml(k)}</span>`).join('')}</p>\n` : ''}${learning && lesson && prereqLinks ? `      <p class="lesson-links">站内先修：${prereqLinks}</p>\n` : ''}${!learning && doc.subtitle ? `      <p class="doc-sub">${escapeHtml(doc.subtitle)}</p>\n` : ''}      <div class="actions">${actions.join('')}</div>    </div>
+${learning && lesson ? `      <p class="lesson-prerequisites">先会：${escapeHtml(lesson.prerequisites.join('、'))}</p>\n` : ''}${learning && lesson && lesson.knowledge ? `      <p class="lesson-knowledge">本课知识点：${lesson.knowledge.map(k => `<span class="kn-tag">${escapeHtml(k)}</span>`).join('')}</p>\n` : ''}${learning && lesson && prereqLinks ? `      <p class="lesson-links">可以先学：${prereqLinks}</p>\n` : ''}${!learning && doc.subtitle ? `      <p class="doc-sub">${escapeHtml(doc.subtitle)}</p>\n` : ''}      <div class="actions">${actions.join('')}</div>    </div>
   </div>`;
   const heroMedia = video;
   const heroClasses = ['doc-hero'];
@@ -146,12 +146,12 @@ function practicePage(lessons) {
   }).join('');
   const content = `<section class="hub-hero">
   <h1 class="doc-title">练习记录</h1>
-  <p class="doc-sub">做错的题按知识点记在这个浏览器里。同一知识点连对 2 次才消除，换设备、浏览器或清空浏览器数据后从头开始。</p>
+  <p class="doc-sub">这里记下做错题的知识点，方便下次再练。同一知识点连对 2 次，就从待练列表里划掉。记录保存在这个浏览器里，换设备或浏览器不会跟着过去；清空浏览器数据也会删掉记录。</p>
 </section>
 <div class="practice-summary" data-practice-summary>
-  <div class="practice-summary-count"><strong data-practice-total>0</strong><span>个薄弱点</span></div>
-  <p class="practice-summary-detail" data-practice-detail>正在读取本机记录……</p>
-  <button class="btn" type="button" data-practice-clear>清空本机记录</button>
+  <div class="practice-summary-count"><strong data-practice-total>0</strong><span>个知识点还要练</span></div>
+  <p class="practice-summary-detail" data-practice-detail>正在读取练习记录……</p>
+  <button class="btn" type="button" data-practice-clear>清空练习记录</button>
 </div>
 ${sections}`;
   return shell({ root, title: '练习记录', content, bodyClass: 'hub course-hub practice-hub', learning: true, scripts: `<script src="${href(root, 'assets/practice-all.js')}"></script>\n<script src="${href(root, 'assets/practice-hub.js')}"></script>` });
@@ -177,7 +177,7 @@ function knowledgePage(lessons) {
   const singleHtml = single.map(([tag, list]) => `<p class="kn-single"><strong>${escapeHtml(tag)}</strong> ${lessonLink(list[0])}</p>`).join('');
   const content = `<section class="hub-hero">
   <h1 class="doc-title">知识点索引</h1>
-  <p class="doc-sub">按知识点找课。先列在多课出现的知识点，再列只出现在一课的条目。每课页面顶部也标出了本课知识点。</p>
+  <p class="doc-sub">想复习哪个知识点，就从这里找一课。</p>
 </section>
 <div class="kn-index">
 ${multiHtml}

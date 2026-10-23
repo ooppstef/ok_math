@@ -237,8 +237,8 @@
       var box = section.querySelector('[data-practice-weak]');
       if (!box) return;
       box.textContent = list.length
-        ? '本课薄弱点：' + list.map(function (w) { return w.point; }).join('、') + '（同类题连对 2 次后消除）'
-        : '本课暂无薄弱点。做错的题会记在这里。';
+        ? '还要练一练：' + list.map(function (w) { return w.point; }).join('、') + '（同一知识点连对 2 次，就从这里划掉）'
+        : '这里会记下做错题的知识点，方便下次再练。';
       box.classList.toggle('has-weak', list.length > 0);
     }
 
@@ -301,8 +301,8 @@
       done.appendChild(el('p', 'practice-score', '这一组答对 ' + state.right + ' / ' + state.set.length + ' 题。'));
       var tips = weakPoints(id);
       done.appendChild(el('p', 'practice-tip', tips.length
-        ? '还没消掉：' + tips.map(function (w) { return w.point; }).join('、') + '。再来一组，优先练这些知识点。'
-        : '本课薄弱点已清空，可以换一组继续巩固。'));
+        ? '还要练一练：' + tips.map(function (w) { return w.point; }).join('、') + '。换一组时，会优先出这些知识点的题。'
+        : '这课暂时没有需要重练的知识点。想再试试，可以换一组。'));
       var again = el('button', 'practice-again', '换一组');
       again.type = 'button';
       again.addEventListener('click', start);

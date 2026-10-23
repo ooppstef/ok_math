@@ -19,15 +19,15 @@
     var detail = document.querySelector('[data-practice-detail]');
     if (detail) {
       detail.textContent = list.length
-        ? '下面标出的课还有知识点没有消掉，点课名进入练习。'
-        : '还没有薄弱点。做错一题就会记在这里，同一知识点连对 2 次才消除。';
+        ? '可以再练练下面标出的知识点，点课名开始。'
+        : '暂时没有需要重练的知识点。以后做错题，会把对应的知识点记在这里。';
     }
   }
 
   var clear = document.querySelector('[data-practice-clear]');
   if (clear) {
     clear.addEventListener('click', function () {
-      if (window.confirm('清空这台设备上的全部练习记录？')) {
+      if (window.confirm('清空这个浏览器里的全部练习记录？')) {
         MP.clearAll();
         render();
       }
