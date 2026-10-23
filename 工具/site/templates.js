@@ -10,6 +10,9 @@ function rootRel(outRel, ROOT) {
 function href(root, p) {
   return root === '.' ? p : root + '/' + p;
 }
+function courseHref(lesson) {
+  return lesson.src.replace(/^课程\//, '').replace(/\.md$/, '.html');
+}
 function escapeHtml(s) {
   return String(s)
     .replace(/&/g, '&amp;')
@@ -33,13 +36,15 @@ function topbar(root, learning) {
     <a class="brand" href="${href(root, 'index.html')}"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
     <nav class="nav${learning ? ' learning-nav' : ''}" aria-label="网站导航">
 ${learning ? '' : `      <a href="${href(root, 'README.html')}">使用说明</a>\n`}      <a href="${href(root, '课程/index.html')}">课程目录</a>
+      <a href="${href(root, '课程/知识点.html')}">知识点</a>
+      <a href="${href(root, '课程/练习.html')}">练习记录</a>
     </nav>
   </div>
   <div class="progress"><span></span></div>
 </header>`;
 }
 
-function shell({ root, title, kicker, subtitle, content, bodyClass, learning = false }) {
+function shell({ root, title, kicker, subtitle, content, bodyClass, learning = false, scripts = '' }) {
   return `<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -57,11 +62,11 @@ ${content}
 <div class="backtop"><a href="#top">↑ 回到顶部</a></div>
 </main>
 <script src="${href(root, 'assets/doc.js')}"></script>
-</body>
+${scripts ? scripts + '\n' : ''}</body>
 </html>`;
 }
 
-function documentPage({ doc, root, title, body, lesson, video, note, actions, toc }) {
+function documentPage({ doc, root, title, body, lesson, video, note, actions, toc, practice = '', prereqLinks = '', scripts = '' }) {
   const learning = doc.kind === 'lesson' || doc.kind === 'handout';
   const tocHtml = toc.length && !doc.fullWidth
     ? `<aside class="toc">
@@ -74,7 +79,7 @@ function documentPage({ doc, root, title, body, lesson, video, note, actions, to
     <div class="hero-main">
       <div class="kicker">${escapeHtml(learning && lesson ? learningLabel(lesson) : expandSem(doc.kicker || '为什么实验室'))}</div>
       <h1 class="doc-title">${escapeHtml(title)}</h1>
-${learning && lesson ? `      <p class="lesson-prerequisites">先会：${escapeHtml(lesson.prerequisites.join('、'))}</p>\n` : ''}${!learning && doc.subtitle ? `      <p class="doc-sub">${escapeHtml(doc.subtitle)}</p>\n` : ''}      <div class="actions">${actions.join('')}</div>    </div>
+${learning && lesson ? `      <p class="lesson-prerequisites">先会：${escapeHtml(lesson.prerequisites.join('、'))}</p>\n` : ''}${learning && lesson && lesson.knowledge ? `      <p class="lesson-knowledge">本课知识点：${lesson.knowledge.map(k => `<span class="kn-tag">${escapeHtml(k)}</span>`).join('')}</p>\n` : ''}${learning && lesson && prereqLinks ? `      <p class="lesson-links">站内先修：${prereqLinks}</p>\n` : ''}${!learning && doc.subtitle ? `      <p class="doc-sub">${escapeHtml(doc.subtitle)}</p>\n` : ''}      <div class="actions">${actions.join('')}</div>    </div>
   </div>`;
   const heroMedia = video;
   const heroClasses = ['doc-hero'];
@@ -87,10 +92,11 @@ ${note}
 <div class="doc-layout${doc.fullWidth || !tocHtml ? ' no-toc' : ''}">
   <article class="article">
 ${body}
+${practice}
   </article>
 ${tocHtml ? '  ' + tocHtml + '\n' : ''}</div>`;
 
-  return shell({ root, title, content, bodyClass: doc.kind || 'doc', learning });
+  return shell({ root, title, content, bodyClass: doc.kind || 'doc', learning, scripts });
 }
 
 function semesterPage(sem, lessons) {
@@ -125,6 +131,64 @@ ${sections}`;
   return shell({ root, title: '课程目录', content, bodyClass: 'hub course-hub', learning: true });
 }
 
+function practicePage(lessons) {
+  const root = '..';
+  const sections = LEARNING_GROUPS.map(group => {
+    const rows = lessonsIn(group, lessons).map((l, i) => `<a class="lesson-row practice-row" href="${courseHref(l)}#practice-heading" data-lesson="${l.id}">
+        <span class="no">${String(i + 1).padStart(2, '0')}</span>
+        <h3>${escapeHtml(l.title)}</h3>
+        <span class="practice-row-weak" data-weak-for="${l.id}"></span>
+      </a>`).join('');
+    return `<section class="learning-group">
+  <h2>${group.title}</h2>
+  <div class="lesson-list">${rows}</div>
+</section>`;
+  }).join('');
+  const content = `<section class="hub-hero">
+  <h1 class="doc-title">练习记录</h1>
+  <p class="doc-sub">做错的题按知识点记在这个浏览器里。同一知识点连对 2 次才消除，换设备、浏览器或清空浏览器数据后从头开始。</p>
+</section>
+<div class="practice-summary" data-practice-summary>
+  <div class="practice-summary-count"><strong data-practice-total>0</strong><span>个薄弱点</span></div>
+  <p class="practice-summary-detail" data-practice-detail>正在读取本机记录……</p>
+  <button class="btn" type="button" data-practice-clear>清空本机记录</button>
+</div>
+${sections}`;
+  return shell({ root, title: '练习记录', content, bodyClass: 'hub course-hub practice-hub', learning: true, scripts: `<script src="${href(root, 'assets/practice-all.js')}"></script>\n<script src="${href(root, 'assets/practice-hub.js')}"></script>` });
+}
+
+function knowledgePage(lessons) {
+  const root = '..';
+  const map = new Map();
+  lessons.forEach(l => {
+    (l.knowledge || []).forEach(tag => {
+      if (!map.has(tag)) map.set(tag, []);
+      map.get(tag).push(l);
+    });
+  });
+  const tags = [...map.entries()].sort((a, b) => b[1].length - a[1].length || lessons.indexOf(a[1][0]) - lessons.indexOf(b[1][0]));
+  const multi = tags.filter(([, list]) => list.length > 1);
+  const single = tags.filter(([, list]) => list.length === 1);
+  const lessonLink = l => `<a href="${courseHref(l)}">${escapeHtml(l.title)}（${escapeHtml(learningLabel(l))}）</a>`;
+  const multiHtml = multi.map(([tag, list]) => `<section class="kn-entry">
+  <h2>${escapeHtml(tag)}<span class="kn-count">${list.length} 课</span></h2>
+  <p>${list.map(lessonLink).join(' · ')}</p>
+</section>`).join('');
+  const singleHtml = single.map(([tag, list]) => `<p class="kn-single"><strong>${escapeHtml(tag)}</strong> ${lessonLink(list[0])}</p>`).join('');
+  const content = `<section class="hub-hero">
+  <h1 class="doc-title">知识点索引</h1>
+  <p class="doc-sub">按知识点找课。先列在多课出现的知识点，再列只出现在一课的条目。每课页面顶部也标出了本课知识点。</p>
+</section>
+<div class="kn-index">
+${multiHtml}
+<section class="kn-entry kn-entry-single">
+  <h2>其他知识点<span class="kn-count">${single.length} 条</span></h2>
+  <div class="kn-single-grid">${singleHtml}</div>
+</section>
+</div>`;
+  return shell({ root, title: '知识点索引', content, bodyClass: 'hub course-hub knowledge-hub', learning: true });
+}
+
 function homePage(lessons) {
   const terms = LEARNING_GROUPS.map((group, i) => {
     const list = `<ol class="term-list">
@@ -154,6 +218,10 @@ ${lessonsIn(group, lessons).map((l, j) => `          <li><a class="lesson" href=
 <header class="topbar">
   <div class="inner">
     <a class="brand" href="index.html"><span class="mark">M</span><span>为什么实验室 · 小学数学</span></a>
+    <nav class="nav learning-nav" aria-label="网站导航">
+      <a href="课程/知识点.html">知识点</a>
+      <a href="课程/练习.html">练习记录</a>
+    </nav>
   </div>
 </header>
 <main class="page">
@@ -173,4 +241,4 @@ ${terms}
 `;
 }
 
-module.exports = { rootRel, href, escapeHtml, stripTags, documentPage, semesterPage, coursePage, homePage };
+module.exports = { rootRel, href, escapeHtml, stripTags, documentPage, semesterPage, coursePage, practicePage, knowledgePage, homePage };

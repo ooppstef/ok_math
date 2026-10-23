@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('fs');
 const path = require('path');
 const { loadCatalog, learningLabel } = require('./site/catalog');
-const { homePage, coursePage } = require('./site/templates');
+const { homePage, coursePage, knowledgePage, practicePage } = require('./site/templates');
 
 const root = path.resolve(__dirname, '..');
 const removedIds = ['三上-L01', '三上-L02', '三上-L06'];
@@ -37,4 +37,27 @@ test('首页和课程目录使用同一学习顺序，不再显示基础回顾',
     assert.ok(html.includes('三、四年级 · 轻奥选学'));
     assert.ok(html.includes('五、六年级 · 轻奥选学'));
   }
+});
+
+test('知识点索引覆盖全部知识点，练习记录页覆盖全部课程', () => {
+  const { ALL_LESSONS } = loadCatalog(root);
+  const knowledge = knowledgePage(ALL_LESSONS);
+  const counts = new Map();
+  for (const lesson of ALL_LESSONS) for (const tag of lesson.knowledge) counts.set(tag, (counts.get(tag) || 0) + 1);
+  for (const tag of counts.keys()) assert.ok(knowledge.includes(tag), `知识点索引缺少：${tag}`);
+  const multi = [...counts.values()].filter(n => n > 1).length;
+  const single = [...counts.values()].filter(n => n === 1).length;
+  assert.equal((knowledge.match(/class="kn-entry(?: |")/g) || []).length, multi + 1);
+  assert.equal((knowledge.match(/class="kn-single"/g) || []).length, single);
+
+  const practice = practicePage(ALL_LESSONS);
+  assert.equal((practice.match(/class="lesson-row practice-row"/g) || []).length, 125);
+  for (const lesson of ALL_LESSONS) assert.ok(practice.includes(`data-lesson="${lesson.id}"`));
+});
+
+test('知识点索引按当前学习阶段标注课程，不把存放目录当作适学年级', () => {
+  const { ALL_LESSONS } = loadCatalog(root);
+  const knowledge = knowledgePage(ALL_LESSONS);
+  assert.ok(knowledge.includes('小数意义（五、六年级 · 基础）'));
+  assert.ok(!/>四下 04 /.test(knowledge));
 });

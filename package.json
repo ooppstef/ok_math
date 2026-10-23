@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node 工具/build_html.js",
     "build:public": "node 工具/build_public.js",
-    "test:site": "node --test 工具/test_site.js"
+    "test:site": "node --test 工具/test_site.js 工具/test_practice.js"
   },
   "dependencies": {
     "marked": "^15.0.12"

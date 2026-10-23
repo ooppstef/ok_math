@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { marked } = require('marked');
 const { rootRel, href, escapeHtml, stripTags, documentPage } = require('./templates');
+const { learningLabel } = require('./catalog');
 
 function renderDoc(doc, { ROOT, ALL_LESSONS }) {
   const abs = path.join(ROOT, doc.src);
@@ -71,6 +72,12 @@ function renderDoc(doc, { ROOT, ALL_LESSONS }) {
   // 视频
   const videoPath = path.join(ROOT, dir, '视频.mp4');
   const lesson = ALL_LESSONS.find(l => path.dirname(l.src) === dir);
+  const lessonById = new Map(ALL_LESSONS.map(l => [l.id, l]));
+  const prereqLinks = (lesson?.prerequisiteLessons || []).map(id => {
+    const p = lessonById.get(id);
+    if (!p) return '';
+    return `<a href="${href(root, p.src.replace(/\.md$/, '.html'))}">${escapeHtml(p.title)}（${escapeHtml(learningLabel(p))}）</a>`;
+  }).filter(Boolean).join('、');
   const hasVideo = (doc.kind === 'lesson' || doc.kind === 'storyboard') && fs.existsSync(videoPath);
   let video = '';
   if (hasVideo) {
@@ -102,6 +109,7 @@ ${lesson?.video_note ? `      <p class="video-scope">${escapeHtml(lesson.video_n
   if (doc.kind === 'lesson') {
     if (fs.existsSync(path.join(ROOT, dir, '动手单.md'))) actions.push('<a class="btn" href="动手单.html">动手练习</a>');
     if (fs.existsSync(path.join(ROOT, dir, '挑战单.md'))) actions.push('<a class="btn" href="挑战单.html">挑战单</a>');
+    actions.push('<a class="btn" href="#practice-heading">换一组练习</a>');
   }
   if (doc.kind === 'storyboard') {
     if (fs.existsSync(path.join(ROOT, dir, '讲授稿.md'))) actions.push('<a class="btn" href="讲授稿.html">课程讲解</a>');
@@ -116,7 +124,18 @@ ${lesson?.video_note ? `      <p class="video-scope">${escapeHtml(lesson.video_n
   const courseHub = learning ? '课程/index.html' : (doc.courseHub || '课程/index.html');
   actions.push(`<a class="btn" href="${href(root, courseHub)}">课程目录</a>`);
 
-  const html = documentPage({ doc, root, title, body, lesson, video, note, actions, toc });
+  const practice = doc.kind === 'lesson' && lesson ? `<section class="practice" data-practice="${lesson.id}" aria-labelledby="practice-heading">
+  <div class="practice-head">
+    <div class="practice-kicker">换一组练习</div>
+    <h2 id="practice-heading">这一课，再练一练</h2>
+    <p class="practice-intro">每次 5 题，答完就能看解析。做错的知识点会记在这个浏览器里，同类题连对 2 次后消除。</p>
+    <p class="practice-weak" data-practice-weak>正在读取本课记录……</p>
+  </div>
+  <div class="practice-body" data-practice-body></div>
+</section>` : '';
+  const scripts = doc.kind === 'lesson' ? `<script src="${href(root, 'assets/practice-all.js')}"></script>` : '';
+
+  const html = documentPage({ doc, root, title, body, lesson, video, note, actions, toc, practice, prereqLinks, scripts });
   fs.mkdirSync(path.dirname(path.join(ROOT, out)), { recursive: true });
   fs.writeFileSync(path.join(ROOT, out), html);
   console.log('✓', out);

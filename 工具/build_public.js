@@ -21,6 +21,8 @@ function copy(file) {
 
 copy('index.html');
 copy('课程/index.html');
+copy('课程/知识点.html');
+copy('课程/练习.html');
 fs.cpSync(path.join(root, 'assets'), path.join(out, 'assets'), { recursive: true });
 for (const sem of SEMESTERS) {
   if (site.ALL_LESSONS.some(lesson => lesson.sem === sem)) copy(`课程/${sem}/index.html`);
